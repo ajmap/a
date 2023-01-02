@@ -1,1 +1,137 @@
-Hello
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interesque App</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      #aa {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: navy;
+      }
+      #ab {
+        display: none;
+      }
+      #ac,
+      #ad,
+      #ae {
+        width: 100vw;
+        height: 33.33vh;
+      }
+      #ac {
+        background: navy;
+      }
+      #ad {
+        background: royalblue;
+      }
+      #ae {
+        background: indigo;
+      }
+      #af {
+        display: none;
+      }
+      button {
+        background-color: black;
+        color: rgb(0, 75, 75);
+        display: block;
+        width: 100vw;
+        height: 33.333vh;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        font-size: 20vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="aa"></div>
+    <div id="ab">
+      <div id="ac"></div>
+      <div id="ad"></div>
+      <div id="ae"></div>
+    </div>
+    <div id="af">
+      <button onclick="E()"></button>
+      <button onclick="D()" id="ag"></button>
+      <button onclick="F()"></button>
+      <audio id="ah" src="a.mp3"></audio>
+    </div>
+    <script>
+      let aa = document.getElementById("aa");
+      let ab = document.getElementById("ab");
+      let ac = document.getElementById("ac");
+      let ad = document.getElementById("ad");
+      let ae = document.getElementById("ae");
+      let af = document.getElementById("af");
+      let ag = document.getElementById("ag");
+      let ah = document.getElementById("ah");
+      let ai = Number(localStorage.getItem("#timer"));
+      let aj = true;
+      function A() {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        aa.style.display = "none";
+        ab.style.display = "block";
+      }
+      aa.addEventListener("click", A);
+      ac.addEventListener("click", () => {
+        ab.style.display = "none";
+        af.style.display = "block";
+      });
+      ad.addEventListener("click", () => {
+        window.close();
+      });
+      if (ai == 0) {
+        localStorage.setItem("#timer", 15000);
+      }
+      ai = Number(localStorage.getItem("#timer"));
+      function B() {
+        if (ai / 1000 <= 60) {
+          ag.innerHTML = `${ai / 1000}`;
+        } else if ((ai / 1000) % 60 < 10) {
+          ag.innerHTML = `${Math.floor(ai / 1000 / 60)}:0${(ai / 1000) % 60}`;
+        } else {
+          ag.innerHTML = `${Math.floor(ai / 1000 / 60)}:${(ai / 1000) % 60}`;
+        }
+      }
+      B();
+      function C() {
+        B();
+        ai -= 1000;
+        if (ai < 0) {
+          ai = Number(localStorage.getItem("#timer")) + 1000;
+          localStorage.setItem("#timer", ai);
+          ah.play();
+          clearInterval(ak);
+          aj = true;
+          setTimeout(function () {
+            B;
+          }, 12000);
+        }
+      }
+      function D() {
+        if (aj) {
+          aj = false;
+          ak = setInterval(C, 1000);
+        }
+      }
+      function E() {
+        ah.play();
+      }
+      function F() {
+        af.style.display = "none";
+        ab.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
