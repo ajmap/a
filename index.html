@@ -22,9 +22,10 @@
       }
       #ac,
       #ad,
-      #ae {
+      #ae,
+      #as {
         width: 100vw;
-        height: 33.33vh;
+        height: 25vh;
       }
       #ac {
         background: navy;
@@ -35,10 +36,13 @@
       #ae {
         background: indigo;
       }
+      #as {
+        background: midnightblue;
+      }
       #af {
         display: none;
       }
-      button {
+      #af button {
         background-color: black;
         color: rgb(0, 75, 75);
         display: block;
@@ -82,6 +86,58 @@
       #ao {
         display: none;
       }
+      #at {
+        display: none;
+        margin: 0 auto;
+        width: 400px;
+      }
+      .au {
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+        padding: 4px 10px 24px 10px;
+        background-color: aqua;
+        margin: 4px 0;
+        border-radius: 6px;
+      }
+      #av {
+        font-size: 18px;
+        width: 338px;
+        border: none;
+        background: lightblue;
+        padding: 10px;
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+      }
+      #av:focus {
+        outline: none;
+      }
+      #aw {
+        font-size: 32px;
+        padding: 2.5px 10px 2px 9px;
+        border: none;
+        background: lightblue;
+        transform: translateY(11%);
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      #ax {
+        padding: 0 0 7px 0;
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+      }
+      .ay {
+        font-family: "Times New Roman", Times, serif;
+        position: absolute;
+        right: 1px;
+        bottom: 1px;
+        color: blueviolet;
+        font-size: 12px;
+        transform: translateY(-9%) translateX(-3%);
+      }
+      #az {
+        margin: 0 0 55px 0;
+      }
     </style>
   </head>
   <body>
@@ -90,6 +146,7 @@
       <div id="ac"></div>
       <div id="ad"></div>
       <div id="ae"></div>
+      <div id="as"></div>
     </div>
     <div id="af">
       <button onclick="E()"></button>
@@ -99,8 +156,19 @@
     </div>
     <div id="ao">
       <main class="ap" id="ap">
-        <div class="al an" title="IndianRed | #CD5C5C | rgb(205, 92, 92)"></div>
+        <div
+          class="al an"
+          id="an"
+          title="IndianRed | #CD5C5C | rgb(205, 92, 92)"
+        ></div>
       </main>
+    </div>
+    <div id="at">
+      <div id="az"></div>
+      <footer id="ax">
+        <input id="av" type="text" autofocus />
+        <button id="aw">+</button>
+      </footer>
     </div>
     <script>
       let aa = document.getElementById("aa");
@@ -113,8 +181,32 @@
       let ah = document.getElementById("ah");
       let ai = Number(localStorage.getItem("#timer"));
       let aj = true;
+      let an = document.getElementById("an");
       let ao = document.getElementById("ao");
       let ap = document.getElementById("ap");
+      let as = document.getElementById("as");
+      let ba = new Date("1/1/2023");
+      let bb = new Date();
+      let bc = Math.ceil((bb.getTime() - ba.getTime()) / 24 / 60 / 60 / 1000);
+      let bd = bb.getDate();
+      let be = Math.ceil((bc - 1) / 7);
+      let bf = bb.getHours();
+      let bg = bb.getMinutes();
+      let bh;
+      if (bg < 10) {
+        bh = "0" + bg;
+      } else {
+        bh = bg;
+      }
+      let bi = "";
+      let bj = "";
+      as.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      });
       function A() {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
@@ -128,6 +220,10 @@
       ac.addEventListener("click", () => {
         ab.style.display = "none";
         af.style.display = "block";
+      });
+      ae.addEventListener("click", () => {
+        ab.style.display = "none";
+        at.style.display = "block";
       });
       if (ai == 0) {
         localStorage.setItem("#timer", 15000);
@@ -344,6 +440,126 @@
         ao.style.display = "block";
         G();
       });
+      an.addEventListener("click", () => {
+        ab.style.display = "block";
+        ao.style.display = "none";
+      });
+      switch (bb.getMonth()) {
+        case 0:
+          bi = "januari";
+          break;
+        case 1:
+          bi = "februari";
+          break;
+        case 2:
+          bi = "maart";
+          break;
+        case 3:
+          bi = "april";
+          break;
+        case 4:
+          bi = "mei";
+          break;
+        case 5:
+          bi = "juni";
+          break;
+        case 6:
+          bi = "juli";
+          break;
+        case 7:
+          bi = "augustus";
+          break;
+        case 8:
+          bi = "september";
+          break;
+        case 9:
+          bi = "oktober";
+          break;
+        case 10:
+          bi = "november";
+          break;
+        case 11:
+          bi = "december";
+          break;
+      }
+      switch (bb.getDay()) {
+        case 0:
+          bj = "zondag";
+          break;
+        case 1:
+          bj = "maandag";
+          break;
+        case 2:
+          bj = "dinsdag";
+          break;
+        case 3:
+          bj = "woensdag";
+          break;
+        case 4:
+          bj = "donderdag";
+          break;
+        case 5:
+          bj = "vrijdag";
+          break;
+        default:
+          bj = "zaterdag";
+      }
+      let bk = [];
+      let bl = [];
+      let av = document.getElementById("av");
+      let aw = document.getElementById("aw");
+      let az = document.getElementById("az");
+      let bm = localStorage.getItem("bm");
+      if (bm == null) {
+        bm = 1000;
+      }
+      aw.addEventListener("click", H);
+      aw.addEventListener("dblclick", () => {
+        ab.style.display = "block";
+        at.style.display = "none";
+      });
+      let bn = Object.keys(localStorage);
+      for (let bp = 0; bp < bn.length; bp++) {
+        if (bn[bp].startsWith("bo")) {
+          bk.push(bn[bp]);
+        }
+      }
+      bk.sort();
+      function I(bq) {
+        let br = document.getElementById(bq);
+        br.remove();
+        localStorage.removeItem(bq);
+      }
+      for (let bs = 0; bs < bk.length; bs++) {
+        let bt = document.createElement("div");
+        let bu = JSON.parse(localStorage.getItem(bk[bs]));
+        bt.innerHTML = `<div class="au" id="${bk[bs]}" onclick="I('${bk[bs]}')">${bu.ce}<div class="ay">dag ${bu.bx} ${bu.by} ${bu.bz} ${bu.ca} ${bu.cc}:${bu.cd} week ${bu.cb} </div></div>`;
+        az.appendChild(bt);
+      }
+      function H() {
+        if (av.value != "") {
+          bm++;
+          let bv = {
+            bw: bm,
+            bx: bc,
+            by: bj,
+            bz: bd,
+            ca: bi,
+            cb: be,
+            cc: bf,
+            cd: bh,
+            ce: av.value,
+          };
+          let cf = "bo" + bm;
+          localStorage.setItem("bm", bm);
+          localStorage.setItem(cf, JSON.stringify(bv));
+          let cg = document.createElement("div");
+          cg.innerHTML = `<div class="au" id="${cf}" onclick="I('${cf}')">${bv.ce}<div class="ay">dag ${bv.bx} ${bv.by} ${bv.bz} ${bv.ca} ${bv.cc}:${bv.cd} week ${bv.cb} </div></div>`;
+          az.appendChild(cg);
+          av.value = "";
+          av.focus();
+        }
+      }
     </script>
   </body>
 </html>
