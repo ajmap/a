@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What's Up</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #r {
+        margin: 0 auto;
+        width: 412px;
+      }
+      .l {
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+        padding: 4px 10px 24px 10px;
+        background-color: aqua;
+        margin: 4px 0;
+        border-radius: 6px;
+      }
+      #i {
+        font-size: 18px;
+        width: 350px;
+        border: none;
+        background: lightblue;
+        padding: 10px;
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+      }
+      #i:focus {
+        outline: none;
+      }
+      #b {
+        font-size: 32px;
+        padding: 2.5px 10px 2px 9px;
+        border: none;
+        background: lightblue;
+        transform: translateY(11%);
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      #f {
+        padding: 0 0 7px 0;
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+      }
+      .z {
+        font-family: "Times New Roman", Times, serif;
+        position: absolute;
+        right: 1px;
+        bottom: 1px;
+        color: blueviolet;
+        font-size: 12px;
+        transform: translateY(-9%) translateX(-3%);
+      }
+      #m {
+        margin: 0 0 55px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="r">
+      <div id="m"></div>
+      <footer id="f">
+        <input id="i" type="text" autofocus />
+        <button id="b">+</button>
+      </footer>
+    </div>
+    <script>
+      let firstDay = new Date("1/1/2023");
+      let today = new Date();
+      let dayToday = Math.ceil(
+        (today.getTime() - firstDay.getTime()) / 24 / 60 / 60 / 1000
+      );
+      let dat = today.getDate();
+      let wk = Math.ceil((dayToday - 1) / 7);
+      let hr = today.getHours();
+      let mn = today.getMinutes();
+      let mnt;
+      if (mn < 10) {
+        mnt = "0" + mn;
+      } else {
+        mnt = mn;
+      }
+      let month = "";
+      let dag = "";
+      switch (today.getMonth()) {
+        case 0:
+          month = "januari";
+          break;
+        case 1:
+          month = "februari";
+          break;
+        case 2:
+          month = "maart";
+          break;
+        case 3:
+          month = "april";
+          break;
+        case 4:
+          month = "mei";
+          break;
+        case 5:
+          month = "juni";
+          break;
+        case 6:
+          month = "juli";
+          break;
+        case 7:
+          month = "augustus";
+          break;
+        case 8:
+          month = "september";
+          break;
+        case 9:
+          month = "oktober";
+          break;
+        case 10:
+          month = "november";
+          break;
+        case 11:
+          month = "december";
+          break;
+      }
+      switch (today.getDay()) {
+        case 0:
+          dag = "zondag";
+          break;
+        case 1:
+          dag = "maandag";
+          break;
+        case 2:
+          dag = "dinsdag";
+          break;
+        case 3:
+          dag = "woensdag";
+          break;
+        case 4:
+          dag = "donderdag";
+          break;
+        case 5:
+          dag = "vrijdag";
+          break;
+        default:
+          dag = "zaterdag";
+      }
+      let a = [];
+      let p = [];
+      let i = document.getElementById("i");
+      let b = document.getElementById("b");
+      let m = document.getElementById("m");
+      let c = localStorage.getItem("c");
+      if (c == null) {
+        c = 100;
+      }
+      b.addEventListener("click", A);
+      let t = Object.keys(localStorage);
+      for (let j = 0; j < t.length; j++) {
+        if (t[j].startsWith("w")) {
+          a.push(t[j]);
+        }
+      }
+      a.sort();
+      function reMove(x) {
+        let xy = document.getElementById(x);
+        xy.remove();
+        localStorage.removeItem(x);
+      }
+      for (let j = 0; j < a.length; j++) {
+        let d = document.createElement("div");
+        let p = JSON.parse(localStorage.getItem(a[j]));
+        d.innerHTML = `<div class="l" id="${a[j]}" onclick="reMove('${a[j]}')">${p.x}<div class="z">dag ${p.t} ${p.g} ${p.d} ${p.m} ${p.h}:${p.i} week ${p.w} </div></div>`;
+        m.appendChild(d);
+      }
+
+      function A() {
+        if (i.value != "") {
+          c++;
+          let k = "c" + c;
+          let p = {
+            n: c,
+            t: dayToday,
+            g: dag,
+            d: dat,
+            m: month,
+            w: wk,
+            h: hr,
+            i: mnt,
+            x: i.value,
+          };
+          let key = "w" + c;
+          localStorage.setItem("c", c);
+          localStorage.setItem(key, JSON.stringify(p));
+          let d = document.createElement("div");
+          d.innerHTML = `<div class="l" id="${key}" onclick="reMove('${key}')">${p.x}<div class="z">dag ${p.t} ${p.g} ${p.d} ${p.m} ${p.h}:${p.i} week ${p.w} </div></div>`;
+          m.appendChild(d);
+          i.value = "";
+          i.focus();
+        }
+      }
+    </script>
+  </body>
+</html>
