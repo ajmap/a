@@ -157,8 +157,8 @@
     <div id="ao">
       <main class="ap" id="ap">
         <div
+          onclick="J()"
           class="al an"
-          id="an"
           title="IndianRed | #CD5C5C | rgb(205, 92, 92)"
         ></div>
       </main>
@@ -181,7 +181,6 @@
       let ah = document.getElementById("ah");
       let ai = Number(localStorage.getItem("#timer"));
       let aj = true;
-      let an = document.getElementById("an");
       let ao = document.getElementById("ao");
       let ap = document.getElementById("ap");
       let as = document.getElementById("as");
@@ -427,7 +426,7 @@
               ar.parentElement.remove();
               ap = document.createElement("main");
               ap.classList.add("ap");
-              ap.innerHTML = `<div class='al an' title='${"IndianRed"} | ${"#CD5C5C"} | ${"rgb(205, 92, 92)"}'></div>`;
+              ap.innerHTML = `<div onclick="J()" class='al an' title='${"IndianRed"} | ${"#CD5C5C"} | ${"rgb(205, 92, 92)"}'></div>`;
               ao.appendChild(ap);
               G();
             });
@@ -439,10 +438,6 @@
         ab.style.display = "none";
         ao.style.display = "block";
         G();
-      });
-      an.addEventListener("click", () => {
-        ab.style.display = "block";
-        ao.style.display = "none";
       });
       switch (bb.getMonth()) {
         case 0:
@@ -529,6 +524,10 @@
         let br = document.getElementById(bq);
         br.remove();
         localStorage.removeItem(bq);
+      }
+      function J() {
+        ab.style.display = "block";
+        ao.style.display = "none";
       }
       for (let bs = 0; bs < bk.length; bs++) {
         let bt = document.createElement("div");
