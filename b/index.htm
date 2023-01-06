@@ -7,11 +7,11 @@
     <title>Notes</title>
     <style>
       span {
-        font-size: 4vw;
+        font-size: 7vw;
         margin: 0.5vw;
         text-align: center;
         display: inline-block;
-        width: 6vw;
+        width: 15vw;
         font-family: Arial, Helvetica, sans-serif;
       }
       #z {
@@ -23,9 +23,10 @@
       }
       select {
         border: none;
-        font-size: 10vw;
+        font-size: 15vw;
         display: block;
         margin: 1vw auto;
+        border-radius: 1vw;
       }
     </style>
   </head>
@@ -313,6 +314,11 @@
           while (d.firstChild) {
             d.removeChild(d.lastChild);
           }
+        }
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
         }
         if (n1 >= 0 && n2 >= 0 && n3 >= 0 && n4 >= 0) {
           for (let i = 0; i < 12; i++) {
