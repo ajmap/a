@@ -7,11 +7,12 @@
     <title>Notes</title>
     <style>
       span {
-        font-size: 1vw;
+        font-size: 3vw;
         margin: 0.5vw;
         text-align: center;
         display: inline-block;
         width: 2vw;
+        font-family: Arial, Helvetica, sans-serif;
       }
       #z {
         margin: 0 auto;
@@ -22,7 +23,7 @@
       }
       select {
         border: none;
-        font-size: 5vw;
+        font-size: 10vw;
         display: block;
         margin: 1vw auto;
       }
@@ -92,8 +93,8 @@
         <option value="A#">A#</option>
         <option value="B">B</option>
       </select>
-      <div id="d"></div>
     </div>
+    <div id="d"></div>
 
     <script>
       let n1;
@@ -308,17 +309,32 @@
       let d = document.getElementById("d");
       let dv;
       function Notes() {
+        if (d.hasChildNodes) {
+          while (d.firstChild) {
+            d.removeChild(d.lastChild);
+          }
+        }
         if (n1 >= 0 && n2 >= 0 && n3 >= 0 && n4 >= 0) {
           for (let i = 0; i < 12; i++) {
             dv = document.createElement("div");
-            dv.innerHTML = `<span>${notes[n1 + i]}</span><span>${
-              notes[n2 + i]
-            }</span><span>${notes[n3 + i]}</span><span>${notes[n4 + i]}</span>`;
+            dv.innerHTML = `<span class='n'>${
+              notes[n1 + i]
+            }</span><span class='n'>${notes[n2 + i]}</span><span class='n'>${
+              notes[n3 + i]
+            }</span><span class='n'>${notes[n4 + i]}</span>`;
             d.appendChild(dv);
           }
         }
+        z.style.display = "none";
       }
-      z.addEventListener("dblclick", Notes, true);
+      z.addEventListener("dblclick", Notes);
     </script>
   </body>
 </html>
+
+<!-- doFoo.onclick = () => {
+  const myNode = document.getElementById("foo");
+  while (myNode.firstChild) {
+    myNode.removeChild(myNode.lastChild);
+  }
+} -->
