@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes</title>
+    <style>
+      span {
+        font-size: 1vw;
+        margin: 0.5vw;
+        text-align: center;
+        display: inline-block;
+        width: 2vw;
+      }
+      #z {
+        margin: 0 auto;
+        width: 400px;
+      }
+      #d {
+        text-align: center;
+      }
+      select {
+        border: none;
+        font-size: 5vw;
+        display: block;
+        margin: 1vw auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="z">
+      <select name="note1" id="n1">
+        <option value="#">&#9833;</option>
+        <option value="C">C</option>
+        <option value="C#">C#</option>
+        <option value="D">D</option>
+        <option value="D#">D#</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+        <option value="F#">F#</option>
+        <option value="G">G</option>
+        <option value="G#">G#</option>
+        <option value="A">A</option>
+        <option value="A#">A#</option>
+        <option value="B">B</option>
+      </select>
+      <select name="note2" id="n2">
+        <option value="#">&#9833;</option>
+        <option value="C">C</option>
+        <option value="C#">C#</option>
+        <option value="D">D</option>
+        <option value="D#">D#</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+        <option value="F#">F#</option>
+        <option value="G">G</option>
+        <option value="G#">G#</option>
+        <option value="A">A</option>
+        <option value="A#">A#</option>
+        <option value="B">B</option>
+      </select>
+      <select name="note3" id="n3">
+        <option value="#">&#9833;</option>
+        <option value="X"></option>
+        <option value="C">C</option>
+        <option value="C#">C#</option>
+        <option value="D">D</option>
+        <option value="D#">D#</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+        <option value="F#">F#</option>
+        <option value="G">G</option>
+        <option value="G#">G#</option>
+        <option value="A">A</option>
+        <option value="A#">A#</option>
+        <option value="B">B</option>
+      </select>
+      <select name="note4" id="n4">
+        <option value="#">&#9833;</option>
+        <option value="X"></option>
+        <option value="C">C</option>
+        <option value="C#">C#</option>
+        <option value="D">D</option>
+        <option value="D#">D#</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+        <option value="F#">F#</option>
+        <option value="G">G</option>
+        <option value="G#">G#</option>
+        <option value="A">A</option>
+        <option value="A#">A#</option>
+        <option value="B">B</option>
+      </select>
+      <div id="d"></div>
+    </div>
+
+    <script>
+      let n1;
+      document.getElementById("n1").addEventListener("change", (event) => {
+        switch (event.target.value) {
+          case "C":
+            n1 = 0;
+            break;
+          case "C#":
+            n1 = 1;
+            break;
+          case "D":
+            n1 = 2;
+            break;
+          case "D#":
+            n1 = 3;
+            break;
+          case "E":
+            n1 = 4;
+            break;
+          case "F":
+            n1 = 5;
+            break;
+          case "F#":
+            n1 = 6;
+            break;
+          case "G":
+            n1 = 7;
+            break;
+          case "G#":
+            n1 = 8;
+            break;
+          case "A":
+            n1 = 9;
+            break;
+          case "A#":
+            n1 = 10;
+            break;
+          case "B":
+            n1 = 11;
+            break;
+        }
+      });
+      let n2;
+      document.getElementById("n2").addEventListener("change", (event) => {
+        switch (event.target.value) {
+          case "C":
+            n2 = 0;
+            break;
+          case "C#":
+            n2 = 1;
+            break;
+          case "D":
+            n2 = 2;
+            break;
+          case "D#":
+            n2 = 3;
+            break;
+          case "E":
+            n2 = 4;
+            break;
+          case "F":
+            n2 = 5;
+            break;
+          case "F#":
+            n2 = 6;
+            break;
+          case "G":
+            n2 = 7;
+            break;
+          case "G#":
+            n2 = 8;
+            break;
+          case "A":
+            n2 = 9;
+            break;
+          case "A#":
+            n2 = 10;
+            break;
+          case "B":
+            n2 = 11;
+            break;
+        }
+      });
+      let n3;
+      document.getElementById("n3").addEventListener("change", (event) => {
+        switch (event.target.value) {
+          case "C":
+            n3 = 0;
+            break;
+          case "C#":
+            n3 = 1;
+            break;
+          case "D":
+            n3 = 2;
+            break;
+          case "D#":
+            n3 = 3;
+            break;
+          case "E":
+            n3 = 4;
+            break;
+          case "F":
+            n3 = 5;
+            break;
+          case "F#":
+            n3 = 6;
+            break;
+          case "G":
+            n3 = 7;
+            break;
+          case "G#":
+            n3 = 8;
+            break;
+          case "A":
+            n3 = 9;
+            break;
+          case "A#":
+            n3 = 10;
+            break;
+          case "B":
+            n3 = 11;
+            break;
+          case "X":
+            n3 = 24;
+            break;
+        }
+      });
+      let n4;
+      document.getElementById("n4").addEventListener("change", (event) => {
+        switch (event.target.value) {
+          case "C":
+            n4 = 0;
+            break;
+          case "C#":
+            n4 = 1;
+            break;
+          case "D":
+            n4 = 2;
+            break;
+          case "D#":
+            n4 = 3;
+            break;
+          case "E":
+            n4 = 4;
+            break;
+          case "F":
+            n4 = 5;
+            break;
+          case "F#":
+            n4 = 6;
+            break;
+          case "G":
+            n4 = 7;
+            break;
+          case "G#":
+            n4 = 8;
+            break;
+          case "A":
+            n4 = 9;
+            break;
+          case "A#":
+            n4 = 10;
+            break;
+          case "B":
+            n4 = 11;
+            break;
+          case "X":
+            n4 = 24;
+            break;
+        }
+      });
+      let notes = [
+        "C",
+        "C#",
+        "D",
+        "D#",
+        "E",
+        "F",
+        "F#",
+        "G",
+        "G#",
+        "A",
+        "A#",
+        "B",
+        "C",
+        "C#",
+        "D",
+        "D#",
+        "E",
+        "F",
+        "F#",
+        "G",
+        "G#",
+        "A",
+        "A#",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+      ];
+      let z = document.getElementById("z");
+      let d = document.getElementById("d");
+      let dv;
+      function Notes() {
+        if (n1 >= 0 && n2 >= 0 && n3 >= 0 && n4 >= 0) {
+          for (let i = 0; i < 12; i++) {
+            dv = document.createElement("div");
+            dv.innerHTML = `<span>${notes[n1 + i]}</span><span>${
+              notes[n2 + i]
+            }</span><span>${notes[n3 + i]}</span><span>${notes[n4 + i]}</span>`;
+            d.appendChild(dv);
+          }
+        }
+      }
+      z.addEventListener("dblclick", Notes, true);
+    </script>
+  </body>
+</html>
