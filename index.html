@@ -23,9 +23,10 @@
       #ac,
       #ad,
       #ae,
-      #as {
+      #as,
+      #ci {
         width: 100vw;
-        height: 25vh;
+        height: 20vh;
       }
       #ac {
         background: navy;
@@ -38,6 +39,9 @@
       }
       #as {
         background: midnightblue;
+      }
+      #ci {
+        background: blueviolet;
       }
       #af {
         display: none;
@@ -138,6 +142,54 @@
       #az {
         margin: 0 0 55px 0;
       }
+      #ch span {
+        font-size: 11.5vw;
+        margin: 1.5vw;
+        text-align: center;
+        display: inline-block;
+        width: 17.5vw;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #cj {
+        display: none;
+        margin: 2vw auto 0 auto;
+        width: 400px;
+      }
+      #ch {
+        display: none;
+        margin: 3vh;
+        text-align: center;
+      }
+      #cj select {
+        border: none;
+        font-size: 32vw;
+        display: block;
+        margin: 5vw auto;
+        border-radius: 1vw;
+      }
+      #ch div {
+        background: lightcyan;
+        color: midnightblue;
+      }
+      #ch div:nth-child(odd) {
+        background: azure;
+        color: darkslategrey;
+      }
+      @media screen and (min-width: 1081px) {
+        #cj select {
+          font-size: 8vw;
+          margin: 3vw 4vw 1vw 6vw;
+          display: inline;
+        }
+        #ch span {
+          font-size: 3vw;
+          margin: 0.5vw;
+          text-align: center;
+          display: inline-block;
+          width: 4vw;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      }
     </style>
   </head>
   <body>
@@ -146,6 +198,7 @@
       <div id="ac"></div>
       <div id="ad"></div>
       <div id="ae"></div>
+      <div id="ci"></div>
       <div id="as"></div>
     </div>
     <div id="af">
@@ -170,6 +223,71 @@
         <button id="aw">+</button>
       </footer>
     </div>
+    <div id="cj">
+      <select id="ck">
+        <option value="#">&#9833;</option>
+        <option value="C">C</option>
+        <option value="C#">C#</option>
+        <option value="D">D</option>
+        <option value="D#">D#</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+        <option value="F#">F#</option>
+        <option value="G">G</option>
+        <option value="G#">G#</option>
+        <option value="A">A</option>
+        <option value="A#">A#</option>
+        <option value="B">B</option>
+      </select>
+      <select id="cl">
+        <option value="#">&#9833;</option>
+        <option value="C">C</option>
+        <option value="C#">C#</option>
+        <option value="D">D</option>
+        <option value="D#">D#</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+        <option value="F#">F#</option>
+        <option value="G">G</option>
+        <option value="G#">G#</option>
+        <option value="A">A</option>
+        <option value="A#">A#</option>
+        <option value="B">B</option>
+      </select>
+      <select id="cm">
+        <option value="#">&#9833;</option>
+        <option value="X"></option>
+        <option value="C">C</option>
+        <option value="C#">C#</option>
+        <option value="D">D</option>
+        <option value="D#">D#</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+        <option value="F#">F#</option>
+        <option value="G">G</option>
+        <option value="G#">G#</option>
+        <option value="A">A</option>
+        <option value="A#">A#</option>
+        <option value="B">B</option>
+      </select>
+      <select id="cn">
+        <option value="#">&#9833;</option>
+        <option value="X"></option>
+        <option value="C">C</option>
+        <option value="C#">C#</option>
+        <option value="D">D</option>
+        <option value="D#">D#</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+        <option value="F#">F#</option>
+        <option value="G">G</option>
+        <option value="G#">G#</option>
+        <option value="A">A</option>
+        <option value="A#">A#</option>
+        <option value="B">B</option>
+      </select>
+    </div>
+    <div id="ch"></div>
     <script>
       let aa = document.getElementById("aa");
       let ab = document.getElementById("ab");
@@ -559,6 +677,254 @@
           av.focus();
         }
       }
+      let co;
+      document.getElementById("ck").addEventListener("change", (event) => {
+        switch (event.target.value) {
+          case "C":
+            co = 0;
+            break;
+          case "C#":
+            co = 1;
+            break;
+          case "D":
+            co = 2;
+            break;
+          case "D#":
+            co = 3;
+            break;
+          case "E":
+            co = 4;
+            break;
+          case "F":
+            co = 5;
+            break;
+          case "F#":
+            co = 6;
+            break;
+          case "G":
+            co = 7;
+            break;
+          case "G#":
+            co = 8;
+            break;
+          case "A":
+            co = 9;
+            break;
+          case "A#":
+            co = 10;
+            break;
+          case "B":
+            co = 11;
+            break;
+        }
+      });
+      let cp;
+      document.getElementById("cl").addEventListener("change", (event) => {
+        switch (event.target.value) {
+          case "C":
+            cp = 0;
+            break;
+          case "C#":
+            cp = 1;
+            break;
+          case "D":
+            cp = 2;
+            break;
+          case "D#":
+            cp = 3;
+            break;
+          case "E":
+            cp = 4;
+            break;
+          case "F":
+            cp = 5;
+            break;
+          case "F#":
+            cp = 6;
+            break;
+          case "G":
+            cp = 7;
+            break;
+          case "G#":
+            cp = 8;
+            break;
+          case "A":
+            cp = 9;
+            break;
+          case "A#":
+            cp = 10;
+            break;
+          case "B":
+            cp = 11;
+            break;
+        }
+      });
+      let cq;
+      document.getElementById("cm").addEventListener("change", (event) => {
+        switch (event.target.value) {
+          case "C":
+            cq = 0;
+            break;
+          case "C#":
+            cq = 1;
+            break;
+          case "D":
+            cq = 2;
+            break;
+          case "D#":
+            cq = 3;
+            break;
+          case "E":
+            cq = 4;
+            break;
+          case "F":
+            cq = 5;
+            break;
+          case "F#":
+            cq = 6;
+            break;
+          case "G":
+            cq = 7;
+            break;
+          case "G#":
+            cq = 8;
+            break;
+          case "A":
+            cq = 9;
+            break;
+          case "A#":
+            cq = 10;
+            break;
+          case "B":
+            cq = 11;
+            break;
+          case "X":
+            cq = 24;
+            break;
+        }
+      });
+      let cr;
+      document.getElementById("cn").addEventListener("change", (event) => {
+        switch (event.target.value) {
+          case "C":
+            cr = 0;
+            break;
+          case "C#":
+            cr = 1;
+            break;
+          case "D":
+            cr = 2;
+            break;
+          case "D#":
+            cr = 3;
+            break;
+          case "E":
+            cr = 4;
+            break;
+          case "F":
+            cr = 5;
+            break;
+          case "F#":
+            cr = 6;
+            break;
+          case "G":
+            cr = 7;
+            break;
+          case "G#":
+            cr = 8;
+            break;
+          case "A":
+            cr = 9;
+            break;
+          case "A#":
+            cr = 10;
+            break;
+          case "B":
+            cr = 11;
+            break;
+          case "X":
+            cr = 24;
+            break;
+        }
+      });
+      let cs = [
+        "C",
+        "C#",
+        "D",
+        "D#",
+        "E",
+        "F",
+        "F#",
+        "G",
+        "G#",
+        "A",
+        "A#",
+        "B",
+        "C",
+        "C#",
+        "D",
+        "D#",
+        "E",
+        "F",
+        "F#",
+        "G",
+        "G#",
+        "A",
+        "A#",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+      ];
+      let cj = document.getElementById("cj");
+      let cg = document.getElementById("cg");
+      let ch = document.getElementById("ch");
+      let ct;
+      function K() {
+        if (ch.hasChildNodes) {
+          while (ch.firstChild) {
+            ch.removeChild(ch.lastChild);
+          }
+        }
+        if (co >= 0 && cp >= 0 && cq >= 0 && cr >= 0) {
+          for (let i = 0; i < 12; i++) {
+            ct = document.createElement("div");
+            ct.innerHTML = `<span>${cs[co + i]}</span><span>${
+              cs[cp + i]
+            }</span><span>${cs[cq + i]}</span><span>${cs[cr + i]}</span>`;
+            ch.appendChild(ct);
+          }
+        }
+        cj.style.display = "none";
+        ch.style.display = "block";
+      }
+      cj.addEventListener("dblclick", K);
+      ci.addEventListener("click", () => {
+        if (ch.hasChildNodes) {
+          while (ch.firstChild) {
+            ch.removeChild(ch.lastChild);
+          }
+        }
+        ck.selectedIndex = null;
+        cl.selectedIndex = null;
+        cm.selectedIndex = null;
+        cn.selectedIndex = null;
+        ab.style.display = "none";
+        cj.style.display = "block";
+      });
+      ch.addEventListener("click", () => {
+        ab.style.display = "block";
+        ch.style.display = "none";
+      });
     </script>
   </body>
 </html>
