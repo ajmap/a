@@ -199,5 +199,15 @@
         duración, bastarán.
       </div>
     </main>
+    <script>
+      let n = document.getElementById("n");
+      n.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      });
+    </script>
   </body>
 </html>
