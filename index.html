@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -650,7 +651,7 @@
       for (let bs = 0; bs < bk.length; bs++) {
         let bt = document.createElement("div");
         let bu = JSON.parse(localStorage.getItem(bk[bs]));
-        bt.innerHTML = `<div class="au" id="${bk[bs]}" onclick="I('${bk[bs]}')">${bu.ce}<div class="ay">dag ${bu.bx} ${bu.by} ${bu.bz} ${bu.ca} ${bu.cc}:${bu.cd} week ${bu.cb} </div></div>`;
+        bt.innerHTML = `<div class="au" id="${bk[bs]}" ondblclick="I('${bk[bs]}')">${bu.ce}<div class="ay">dag ${bu.bx} ${bu.by} ${bu.bz} ${bu.ca} ${bu.cc}:${bu.cd} week ${bu.cb} </div></div>`;
         az.appendChild(bt);
       }
       function H() {
