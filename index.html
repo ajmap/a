@@ -903,9 +903,9 @@
             }</span><span>${cs[cq + i]}</span><span>${cs[cr + i]}</span>`;
             ch.appendChild(ct);
           }
+          cj.style.display = "none";
+          ch.style.display = "block";
         }
-        cj.style.display = "none";
-        ch.style.display = "block";
       }
       cj.addEventListener("dblclick", K);
       ci.addEventListener("click", () => {
@@ -922,6 +922,7 @@
         cj.style.display = "block";
       });
       ch.addEventListener("click", () => {
+        cr = -1;
         ab.style.display = "block";
         ch.style.display = "none";
       });
