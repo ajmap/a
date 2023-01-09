@@ -7,14 +7,15 @@
     <title>Test</title>
     <style>
       textarea {
-        width: 95vw;
-        height: 95vh;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 3vw;
+        width: 98vw;
+        height: 96.5vh;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2vw;
       }
       #b {
         display: none;
-        font-size: 3vw;
+        font-size: 0.5vw;
+        font-family: "Courier New", Courier, monospace;
       }
     </style>
   </head>
@@ -29,11 +30,6 @@
       let txt = localStorage.getItem("tx");
       let txtr = document.getElementById("txtr");
       txtr.addEventListener("dblclick", () => {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
-        } else if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
         if (txt == null) {
           localStorage.setItem("tx", txtr.value);
           txt = localStorage.getItem("tx");
@@ -49,7 +45,7 @@
         b.innerHTML = `<p onclick="A()">${txt}</p>`;
         b.style.display = "block";
       });
-      let fS = 3;
+      let fS = 0.5;
       function A() {
         fS += 0.1;
         b.style.fontSize = fS + "vw";
