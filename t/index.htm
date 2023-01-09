@@ -14,9 +14,9 @@
       }
       #b {
         margin: 0 0 0 0.1vw;
-        line-height: 1vw;
+        line-height: 3vw;
         display: none;
-        font-size: 4vw;
+        font-size: 3.5vw;
         font-family: "Courier New", Courier, monospace;
         font-weight: bold;
       }
@@ -53,7 +53,7 @@
         b.innerHTML = `<p onclick="A()">${txt}</p>`;
         b.style.display = "block";
       });
-      let lH = 0.1;
+      let lH = 3;
       function A() {
         lH += 0.1;
         b.style.lineHeight = lH + "vw";
