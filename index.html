@@ -24,9 +24,10 @@
       #ad,
       #ae,
       #as,
-      #ci {
+      #ci,
+      #cu {
         width: 100vw;
-        height: 20vh;
+        height: 16.67vh;
       }
       #ac {
         background: navy;
@@ -42,6 +43,9 @@
       }
       #ci {
         background: blueviolet;
+      }
+      #cu {
+        background: magenta;
       }
       #af {
         display: none;
@@ -190,6 +194,14 @@
           font-family: Arial, Helvetica, sans-serif;
         }
       }
+      #cv {
+        margin: 0 0 0 0.1vw;
+        display: none;
+        line-height: 3.2vw;
+        font-size: 3.276vw;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
@@ -199,6 +211,7 @@
       <div id="ad"></div>
       <div id="ae"></div>
       <div id="ci"></div>
+      <div id="cu"></div>
       <div id="as"></div>
     </div>
     <div id="af">
@@ -288,6 +301,7 @@
       </select>
     </div>
     <div id="ch"></div>
+    <div id="cv"></div>
     <script>
       let aa = document.getElementById("aa");
       let ab = document.getElementById("ab");
@@ -926,6 +940,33 @@
         ab.style.display = "block";
         ch.style.display = "none";
       });
+
+      function L() {
+        let tx = localStorage.getItem("tx");
+        let cw = "";
+        let cx = tx.split("");
+        let cy = Math.floor(Math.random() * tx.length);
+        if (cx[cy] == "." || cx[cy] === " " || cx[cy] === ",") {
+          L();
+        } else {
+          cx[cy] = ".";
+          cw = cx.join("");
+          localStorage.setItem("tx", cw);
+        }
+        cv.innerHTML = `<p onclick="M()">${tx}</p>`;
+      }
+      let cu = document.getElementById("cu");
+      let cv = document.getElementById("cv");
+      cu.addEventListener("click", () => {
+        ab.style.display = "none";
+        cv.style.display = "block";
+        L();
+      });
+
+      function M() {
+        ab.style.display = "block";
+        cv.style.display = "none";
+      }
     </script>
   </body>
 </html>
