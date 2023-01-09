@@ -195,10 +195,10 @@
         }
       }
       #cv {
-        margin: 0 0 0 0.2vw;
+        margin: 0 0 0 0.3vw;
         display: none;
-        line-height: 3.2vw;
-        font-size: 3.28vw;
+        line-height: 3.3vw;
+        font-size: 3.3vw;
         font-family: "Courier New", Courier, monospace;
         font-weight: bold;
       }
@@ -940,7 +940,7 @@
         ab.style.display = "block";
         ch.style.display = "none";
       });
-
+      let cv = document.getElementById("cv");
       function L() {
         let tx = localStorage.getItem("tx");
         let cw = "";
@@ -956,7 +956,6 @@
         cv.innerHTML = `<p onclick="M()">${tx}</p>`;
       }
       let cu = document.getElementById("cu");
-      let cv = document.getElementById("cv");
       cu.addEventListener("click", () => {
         ab.style.display = "none";
         cv.style.display = "block";
