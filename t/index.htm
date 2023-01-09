@@ -14,7 +14,7 @@
       }
       #b {
         display: none;
-        font-size: 1vw;
+        font-size: 2vw;
       }
     </style>
   </head>
@@ -29,6 +29,11 @@
       let txt = localStorage.getItem("tx");
       let txtr = document.getElementById("txtr");
       txtr.addEventListener("dblclick", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
         if (txt == null) {
           localStorage.setItem("tx", txtr.value);
           txt = localStorage.getItem("tx");
@@ -44,7 +49,7 @@
         b.innerHTML = `<p onclick="A()">${txt}</p>`;
         b.style.display = "block";
       });
-      let fS = 0.5;
+      let fS = 2;
       function A() {
         fS += 0.1;
         b.style.fontSize = fS + "vw";
