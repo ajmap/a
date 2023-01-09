@@ -30,6 +30,11 @@
       let txt = localStorage.getItem("tx");
       let txtr = document.getElementById("txtr");
       txtr.addEventListener("dblclick", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
         if (txt == null) {
           localStorage.setItem("tx", txtr.value);
           txt = localStorage.getItem("tx");
