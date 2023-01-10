@@ -22,7 +22,7 @@
         background-color: orange;
       }
       main {
-        display: none;
+        display: flex;
         background-color: mediumpurple;
         align-items: center;
         flex-direction: column;
@@ -35,23 +35,19 @@
         background: navy;
         font-size: 8vw;
       }
-      #x {
+      #v {
         position: absolute;
-        background: lightskyblue;
-        color: midnightblue;
+        width: 5vw;
+        height: 5vw;
         top: 0;
         left: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        font-size: 115vw;
+        background: mediumpurple;
       }
     </style>
   </head>
   <body>
-    <div id="x">.</div>
     <main id="m">
+      <div id="v"></div>
       <span class="span">Roll On Slow</span><br />
       <span class="span">Time Time</span><br />
       <span class="span">Damn Your Eyes</span><br />
@@ -63,17 +59,16 @@
       <span class="span"> . . . . </span>
     </main>
     <script>
-      let x = document.getElementById("x");
-      let m = document.getElementById("m");
-      x.addEventListener("click", () => {
+      let v = document.getElementById("v");
+      v.addEventListener("click", () => {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
         } else if (document.exitFullscreen) {
           document.exitFullscreen();
         }
-        x.style.display = "none";
-        m.style.display = "flex";
       });
+      let x = document.getElementById("x");
+      let m = document.getElementById("m");
       let s = document.getElementsByClassName("span");
       for (let i = 0; i < s.length; i++) {
         s[i].addEventListener("click", S);
