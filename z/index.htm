@@ -13,7 +13,7 @@
         font-size: 7vw;
         background: lightsteelblue;
         font-family: Arial, Helvetica, sans-serif;
-        padding: 3vw;
+        padding: 3vw 4vw;
         margin: 1vw;
         border-radius: 2vw;
       }
@@ -45,7 +45,7 @@
         height: 100vh;
         display: flex;
         justify-content: center;
-        font-size: 110vw;
+        font-size: 115vw;
       }
     </style>
   </head>
@@ -79,6 +79,11 @@
         s[i].addEventListener("click", S);
       }
       function S() {
+        for (let i = 0; i < s.length; i++) {
+          if (s[i].classList.contains("e")) {
+            s[i].parentNode.removeChild(s[i]);
+          }
+        }
         let t = 50;
         let i = setInterval(() => {
           let r = A();
@@ -92,7 +97,6 @@
 
           setTimeout(() => {
             let r = A();
-
             E(r);
           }, 100);
         }, t * 100);
@@ -100,7 +104,6 @@
       function A() {
         return s[Math.floor(Math.random() * s.length)];
       }
-
       function H(c) {
         c.classList.add("s");
       }
