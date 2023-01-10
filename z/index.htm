@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Choice</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      .span {
+        font-size: 5vw;
+        background: lightsteelblue;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 3vw;
+        border-radius: 1vw;
+      }
+      .s {
+        color: blue;
+        background-color: orange;
+      }
+      main {
+        display: none;
+        background-color: mediumpurple;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        padding: 1vw;
+      }
+      .e {
+        color: yellow;
+        background: navy;
+        font-size: 6vw;
+      }
+      #x {
+        position: absolute;
+        background: lightskyblue;
+        color: midnightblue;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        font-size: 85vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="x">.</div>
+    <main id="m">
+      <span class="span">Roll On Slow</span><br />
+      <span class="span">Time Time</span><br />
+      <span class="span">Damn Your Eyes</span><br />
+      <span class="span">Strange Year</span><br />
+      <span class="span">Roadhouse Blues</span><br />
+      <span class="span">Novocaine For The Soul</span><br />
+      <span class="span">Where Is My Mind</span><br />
+      <span class="span">Do You Love Me?</span><br />
+      <span class="span"> . . . . </span>
+    </main>
+    <script>
+      let x = document.getElementById("x");
+      let m = document.getElementById("m");
+      x.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        x.style.display = "none";
+        m.style.display = "flex";
+      });
+      let s = document.getElementsByClassName("span");
+      for (let i = 0; i < s.length; i++) {
+        s[i].addEventListener("click", S);
+      }
+      function S() {
+        let t = 60;
+        let i = setInterval(() => {
+          let r = A();
+          H(r);
+          setTimeout(() => {
+            U(r);
+          }, 100);
+        }, 100);
+        setTimeout(() => {
+          clearInterval(i);
+
+          setTimeout(() => {
+            let r = A();
+
+            E(r);
+          }, 100);
+        }, t * 100);
+      }
+      function A() {
+        return s[Math.floor(Math.random() * s.length)];
+      }
+
+      function H(c) {
+        c.classList.add("s");
+      }
+      function U(c) {
+        c.classList.remove("s");
+      }
+      function E(c) {
+        c.classList.add("e");
+      }
+    </script>
+  </body>
+</html>
