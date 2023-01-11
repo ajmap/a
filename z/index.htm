@@ -70,31 +70,40 @@
       let x = document.getElementById("x");
       let m = document.getElementById("m");
       let s = document.getElementsByClassName("span");
-      for (let i = 0; i < s.length; i++) {
-        s[i].addEventListener("click", S);
-      }
-      function S() {
-        for (let i = 0; i < s.length; i++) {
-          if (s[i].classList.contains("e")) {
-            s[i].parentNode.removeChild(s[i]);
-          }
-        }
-        let t = 50;
-        let i = setInterval(() => {
-          let r = A();
-          H(r);
-          setTimeout(() => {
-            U(r);
-          }, 100);
-        }, 90);
-        setTimeout(() => {
-          clearInterval(i);
+      let ch = false;
 
-          setTimeout(() => {
+      m.addEventListener("click", () => {
+        if (ch == false) {
+          S();
+        }
+      });
+
+      function S() {
+        ch = true;
+        if (ch == true) {
+          for (let i = 0; i < s.length; i++) {
+            if (s[i].classList.contains("e")) {
+              s[i].parentNode.removeChild(s[i]);
+            }
+          }
+          let t = 50;
+          let i = setInterval(() => {
             let r = A();
-            E(r);
-          }, 100);
-        }, t * 100);
+            H(r);
+            setTimeout(() => {
+              U(r);
+            }, 100);
+          }, 90);
+          setTimeout(() => {
+            clearInterval(i);
+
+            setTimeout(() => {
+              let r = A();
+              ch = false;
+              E(r);
+            }, 100);
+          }, t * 100);
+        }
       }
       function A() {
         return s[Math.floor(Math.random() * s.length)];
