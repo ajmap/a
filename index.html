@@ -75,239 +75,29 @@
       }
     </style>
   </head>
-  
-   
-  
-            cp = 0;
-            break;
-          case "C#":
-            cp = 1;
-            break;
-          case "D":
-            cp = 2;
-            break;
-          case "D#":
-            cp = 3;
-            break;
-          case "E":
-            cp = 4;
-            break;
-          case "F":
-            cp = 5;
-            break;
-          case "F#":
-            cp = 6;
-            break;
-          case "G":
-            cp = 7;
-            break;
-          case "G#":
-            cp = 8;
-            break;
-          case "A":
-            cp = 9;
-            break;
-          case "A#":
-            cp = 10;
-            break;
-          case "B":
-            cp = 11;
-            break;
-        }
-      });
-      let cq;
-      document.getElementById("cm").addEventListener("change", (event) => {
-        switch (event.target.value) {
-          case "C":
-            cq = 0;
-            break;
-          case "C#":
-            cq = 1;
-            break;
-          case "D":
-            cq = 2;
-            break;
-          case "D#":
-            cq = 3;
-            break;
-          case "E":
-            cq = 4;
-            break;
-          case "F":
-            cq = 5;
-            break;
-          case "F#":
-            cq = 6;
-            break;
-          case "G":
-            cq = 7;
-            break;
-          case "G#":
-            cq = 8;
-            break;
-          case "A":
-            cq = 9;
-            break;
-          case "A#":
-            cq = 10;
-            break;
-          case "B":
-            cq = 11;
-            break;
-          case "X":
-            cq = 24;
-            break;
-        }
-      });
-      let cr;
-      document.getElementById("cn").addEventListener("change", (event) => {
-        switch (event.target.value) {
-          case "C":
-            cr = 0;
-            break;
-          case "C#":
-            cr = 1;
-            break;
-          case "D":
-            cr = 2;
-            break;
-          case "D#":
-            cr = 3;
-            break;
-          case "E":
-            cr = 4;
-            break;
-          case "F":
-            cr = 5;
-            break;
-          case "F#":
-            cr = 6;
-            break;
-          case "G":
-            cr = 7;
-            break;
-          case "G#":
-            cr = 8;
-            break;
-          case "A":
-            cr = 9;
-            break;
-          case "A#":
-            cr = 10;
-            break;
-          case "B":
-            cr = 11;
-            break;
-          case "X":
-            cr = 24;
-            break;
-        }
-      });
-      let cs = [
-        "C",
-        "C#",
-        "D",
-        "D#",
-        "E",
-        "F",
-        "F#",
-        "G",
-        "G#",
-        "A",
-        "A#",
-        "B",
-        "C",
-        "C#",
-        "D",
-        "D#",
-        "E",
-        "F",
-        "F#",
-        "G",
-        "G#",
-        "A",
-        "A#",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-      ];
-      let cj = document.getElementById("cj");
-      let cg = document.getElementById("cg");
-      let ch = document.getElementById("ch");
-      let ct;
-      function K() {
-        if (ch.hasChildNodes) {
-          while (ch.firstChild) {
-            ch.removeChild(ch.lastChild);
-          }
-        }
-        if (co >= 0 && cp >= 0 && cq >= 0 && cr >= 0) {
-          for (let i = 0; i < 12; i++) {
-            ct = document.createElement("div");
-            ct.innerHTML = `<span>${cs[co + i]}</span><span>${
-              cs[cp + i]
-            }</span><span>${cs[cq + i]}</span><span>${cs[cr + i]}</span>`;
-            ch.appendChild(ct);
-          }
-          cj.style.display = "none";
-          ch.style.display = "block";
-        }
+  <body>
+    <main>
+      <div id="dif">
+        <p>For Sale</p>
+        <h1>www.interesque.com</h1>
+        <h6>info:</h6>
+        <section id="g">
+          <span class="y">i</span><span>ntere</span><span class="y">s</span
+          ><span>q</span><span class="y">ue</span><span>@gmail.com</span>
+        </section>
+      </div>
+    </main>
+    <script>
+      let y = document.getElementsByClassName("y");
+      for (let i = 0; i < y.length; i++) {
+        setTimeout(() => {
+          y[i].style.display = "none";
+        }, 5000);
       }
-      cj.addEventListener("dblclick", K);
-      ci.addEventListener("click", () => {
-        if (ch.hasChildNodes) {
-          while (ch.firstChild) {
-            ch.removeChild(ch.lastChild);
-          }
-        }
-        ck.selectedIndex = null;
-        cl.selectedIndex = null;
-        cm.selectedIndex = null;
-        cn.selectedIndex = null;
-        ab.style.display = "none";
-        cj.style.display = "block";
-      });
-      ch.addEventListener("click", () => {
-        cr = -1;
-        ab.style.display = "block";
-        ch.style.display = "none";
-      });
-      let cv = document.getElementById("cv");
-      function L() {
-        let tx = localStorage.getItem("tx");
-        let cw = "";
-        let cx = tx.split("");
-        let cy = Math.floor(Math.random() * tx.length);
-        if (cx[cy] == "." || cx[cy] === " " || cx[cy] === ",") {
-          L();
-        } else {
-          cx[cy] = ".";
-          cw = cx.join("");
-          localStorage.setItem("tx", cw);
-        }
-        cv.innerHTML = `<p onclick="M()">${tx}</p>`;
-      }
-      let cu = document.getElementById("cu");
-      cu.addEventListener("click", () => {
-        ab.style.display = "none";
-        cv.style.display = "block";
-        L();
-      });
-
-      function M() {
-        ab.style.display = "block";
-        cv.style.display = "none";
-      }
+      let g = document.getElementById("g");
+      setTimeout(() => {
+        g.style.transform = "translateX(2.75vw)";
+      }, 5000);
     </script>
   </body>
 </html>
