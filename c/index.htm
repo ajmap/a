@@ -75,6 +75,33 @@
         public method. The advantage of the constructor is that it is called
         automatically.
       </p>
+      <br />
+      <p>
+        Constructors can be very useful for setting initial values for certain
+        member variables. <br />
+        A default constuctor has no parameters. However, when needed, parameters
+        can be added to a constructor. This makes it possible to assign an
+        initial value to an object when it's created, as shown in the following
+        example.
+      </p>
+      <br />
+      <div>
+        class Person<br />{<br />&nbsp; private int age;<br />&nbsp; private
+        string name;<br />&nbsp; public Person(string nm)<br />&nbsp; {<br />&nbsp;
+        &nbsp; name = nm;<br />&nbsp; } <br />&nbsp; public string getName()<br />&nbsp;
+        {<br />&nbsp; &nbsp; return name;<br />&nbsp; } <br />}<br />
+        static void Main(string[] args)<br />
+        {<br />&nbsp; Person p = new Person("David"); <br />&nbsp;
+        Console.WriteLine(p.getName()); <br />}
+      </div>
+      <br />
+      <p>
+        Now, when the object is created, we can pass a parameter that will be
+        assigned to the name variable.
+        <br />
+        Constructors can be overloaded like any method by using different
+        numbers of parameters.
+      </p>
     </main>
   </body>
 </html>
