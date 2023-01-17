@@ -19,15 +19,20 @@
         text-align: justify;
         text-justify: inter-word;
       }
-      #a {
+      .a {
         font-size: 24px;
         text-align: left;
+      }
+      div {
+        font-family: "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 17px;
       }
     </style>
   </head>
   <body>
     <main>
-      <p id="a">Constructors</p>
+      <p class="a">Constructors</p>
       <br />
       <p>
         A class constructor is a special member method of a class that is
@@ -36,6 +41,32 @@
       <p>
         A constuctor has exactly the same name as its class, is public, and does
         not have any return type.
+      </p>
+      <br />
+      <h6>For example:</h6>
+      <br />
+      <div>
+        class Person<br />{<br />&nbsp; private int age;<br />&nbsp; public
+        Person()<br />&nbsp; {<br />&nbsp; &nbsp; Console.WriteLine("Hi
+        there");<br />&nbsp; } <br />}
+      </div>
+      <br />
+      <p>
+        Now, upon the creation of an object of type Person, the constuctor is
+        automatically called.
+      </p>
+      <br />
+      <div>
+        static void Main(string[] args)<br />
+        {<br />&nbsp; Person p = new Person(); <br />}
+      </div>
+      <br />
+      <p>
+        This can be useful in a number of situations. For example, when creating
+        an object of type BankAccount, you could send an email notification to
+        the owner. The same functionality could be achieved using a separate
+        public method. The advantage of the constructor is that it is called
+        automatically.
       </p>
     </main>
   </body>
