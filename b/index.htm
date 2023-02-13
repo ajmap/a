@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fullscreen Pictures</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #b {
+        display: none;
+      }
+      #c {
+        display: none;
+      }
+      #d {
+        display: none;
+      }
+      #e {
+        display: none;
+      }
+      #f {
+        display: none;
+      }
+      #g {
+        display: none;
+      }
+      #h {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="a" onclick="atob()" src="a.jpg" alt="" />
+    <img id="b" onclick="btoc()" src="b.jpg" alt="" />
+    <img id="c" onclick="ctod()" src="a.jpg" alt="" />
+    <img id="d" onclick="dtoe()" src="b.jpg" alt="" />
+    <img id="e" onclick="etof()" src="a.jpg" alt="" />
+    <img id="f" onclick="ftog()" src="b.jpg" alt="" />
+    <img id="g" onclick="gtoh()" src="a.jpg" alt="" />
+    <img id="h" src="c.jpg" alt="" />
+    <script>
+      const a = document.getElementById("a");
+      const b = document.getElementById("b");
+      const c = document.getElementById("c");
+      const d = document.getElementById("d");
+      const e = document.getElementById("e");
+      const f = document.getElementById("f");
+      const g = document.getElementById("g");
+      const h = document.getElementById("h");
+      function atob() {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        a.style.display = "none";
+        b.style.display = "block";
+      }
+      function btoc() {
+        b.style.display = "none";
+        c.style.display = "block";
+      }
+      function ctod() {
+        c.style.display = "none";
+        d.style.display = "block";
+      }
+      function dtoe() {
+        d.style.display = "none";
+        e.style.display = "block";
+      }
+      function etof() {
+        e.style.display = "none";
+        f.style.display = "block";
+      }
+      function ftog() {
+        f.style.display = "none";
+        g.style.display = "block";
+      }
+      function gtoh() {
+        g.style.display = "none";
+        h.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
