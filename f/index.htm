@@ -26,8 +26,15 @@
             display: none;
             font-size: 4.7vw;
         }
-        span {
+        #l1 span {
             font-size:4.7vw;
+        }
+        #l2 {
+            display: none;
+            font-size: 4.9vw;
+        }
+        #l2 span {
+            font-size:4.9vw;
         }
     </style>
     <title>Frans</title>
@@ -52,8 +59,12 @@
       </div>
       <div id='l1'>
           <span id='spl1'>C'est le début de l'automne : dans les jardins et les parcs de Bordeaux, les feuilles des arbres commencent à jaunir. La chaleur étouffante de l'été a disparu et l'air est frais et claire. </span>C'est dans cette ville que, depuis quelques semaines, vit Anne. Anne est allemande ; elle vient d'un petit village près de Munich, en Bavière, et elle étudie le français à l'université. Elle se trouve à Bordeaux pour une période de cinq mois grâce à une bourse d'étude. Elle veut améliorer sa connaissance de la langue française mais aussi voyager un peu pour connaître la France. La mère d'Anne est française : voilà pourquoi elle s'intéresse à cette langue. Elle aime beaucoup Bordeaux parce que cette ville n'est pas loin de l'océan Atlantique. En effet, Anne adore aller à la plage et dans cette région est la possibilité d'y aller très souvent. À Bordeaux, elle habite dans un appartement près de l'université avec deux autres étudiants français, Paul et Suzanne. Suzanne, qui vient de Pau, et étudiante en droit, tandis que Paul, qui est de Périgueux, est étudiant en pharmacie. Ils sont tous les deux très gentil avec Anne et ils préparent souvent pour elle des spécialités de la région, telles que l'entrecôte à la bordelaise ou l'omelette aux cèpes. <span id='nl1'>Parfois, ils sortent ensemble pour aller à la crêperie ou au cinéma. Un soir, Paul frappe à la porte d'Anne : Écoute Anne, Suzanne et moi, nous allons en boîte ce soir. Tu veux venir avec nous ? Non, merci, répond Anne, je suis trop fatiguée ! Et puis je n'aime pas beaucoup aller en boîte. Viens ! insiste Paul. Tu restes toujours à la maison ! Viens t'amuser avec nous ! Anne accepte alors d'aller avec eux.</span>
-
       <div>    
+      <div id='l2'>
+          <span id='spl2'>La boîte où Paul et Suzanne vont souvent le samedi soir se trouve un peu en dehors de la ville. C'est un bâtiment moderne, assez grand : à l'intérieur, il y a une salle pour danser et un bar. Quand les trois amis arrivent, la salle et plein de garçons et de filles qui dansent, parlent et s'amusent. La musique est très forte. </span>Paul et Suzanne se jettent dans la foule et commence à danser, tandis qu’Anne préfère s'asseoir dans un coin et regarder les gens. Soudain, elle entend une voix qui lui dit : Salut, je m'appelle Luc. Je peux m'asseoir à côté de toi ? Tu es seule ? Vas-y, répond Anne, non, je ne suis pas seule. Je suis avec deux amis qui sont en train de danser. Allons danser, nous aussi, lui dit Luc. Mais Anne lui répond qu’elle est trop fatiguée et qu'elle préfère rester assise. Je peux t'offrir quelque chose à boire ? insiste Luc. Merci, c'est très gentil. Je prends une bière. Quand Luc revient du bar, les deux commence à parler. Anne lui raconte qu'elle est allemande et qu'elle se trouve à Bordeaux pour une période de cinq mois, grâce à une bourse d'études. <span id='nl2'>Luc lui dit qu'il est de Toulouse mais il travaille à Bordeaux comme policier dans une unité spéciale chargée de la lutte contre le trafic de biens culturels volés en France. Pendant cette conversation, Paul et Suzanne reviennent à leur table et tous les quatre commence à parler de tout et de rien. Luc trouve Anne très sympathique : ils échangent leurs numéros de téléphone et décident de se revoir.</span>
+      <div> 
+      <audio id="al1" src="l1.mp3"></audio>    
+      <audio id="al2" src="l2.mp3"></audio>   
     <script>
         function FS() {
         if (!document.fullscreenElement) {
@@ -67,6 +78,8 @@
       let nl1 = document.getElementById("nl1"); 
       let A = document.getElementById("A");
       let l1 = document.getElementById("l1");  
+      let al1 = document.getElementById("al1"); 
+      let al2 = document.getElementById("al2"); 
       L9.addEventListener("click", () => {
         FS();
       });
@@ -74,10 +87,20 @@
         A.style.display = 'none';
         l1.style.display = 'block';  
       });  
-      nl1.addEventListener("click", () => {
+      L2.addEventListener("click", () => {
+        A.style.display = 'none';
+        l2.style.display = 'block';  
+      });   
+      nl2.addEventListener("click", () => {
         A.style.display = 'block';
-        l1.style.display = 'none'; 
-      });  
+        l2.style.display = 'none'; 
+      });
+      spl1.addEventListener("click", () => {
+        al1.play();
+      });   
+      spl2.addEventListener("click", () => {
+        al2.play();
+      });     
     </script>
   </body>
 </html>
