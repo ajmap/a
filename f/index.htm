@@ -8,12 +8,12 @@
             font-family: Arial;
             font-size: 1.9vw;
         }
-        #R1, #R2 {
+        #R1, #R2, #R3 {
             display: flex;
-            margin: 1vw 3vw 1vw 1vw;;
+            margin: 3vw 3vw 3vw 1vw;;
         }
-        #L1, #L2, #L3, #L4, #L5, #L6, #L7, #L8 {
-            width: 25vw;
+        #L1, #L2, #L3, #L4, #L5, #L6, #L7, #L8, #L9 {
+            width: 33vw;
             text-align: center;
         }
         div {
@@ -32,15 +32,29 @@
         <div id='L1'><div>CHAPITRE 1</div><b>Anne</b></div>
         <div id='L2'><div>CHAPITRE 2</div><b>En boîte</b></div>
         <div id='L3'><div>CHAPITRE 3</div><b>Bordeaux</b></div>
-        <div id='L4'><div>CHAPITRE 4</div><b>Le journal intime</b></div>
       </div>
       <div id='R2'>
-        <div id='L1'><div>CHAPITRE 5</div><b>Louise</b></div>
-        <div id='L2'><div>CHAPITRE 6</div><b>Une étrange découverte</b></div>
-        <div id='L3'><div>CHAPITRE 7</div><b>Luc, un véritable ami</b></div>
-        <div id='L4'><div>CHAPITRE 8</div><b>Au musée</b></div>
+        <div id='L4'><div>CHAPITRE 4</div><b>Le journal intime</b></div>
+        <div id='L5'><div>CHAPITRE 5</div><b>Louise</b></div>
+        <div id='L6'><div>CHAPITRE 6</div><b>Une étrange découverte</b></div>
+      </div>
+      <div id='R3'>
+        <div id='L7'><div>CHAPITRE 7</div><b>Luc, un véritable ami</b></div>
+        <div id='L8'><div>CHAPITRE 8</div><b>Au musée</b></div>
+        <div id='L9'><div>FULL</div><b>Screen</b></div>
       </div>
     <script>
+        function FS() {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+      let L9 = document.getElementById("L9");
+      L9.addEventListener("click", () => {
+        FS();
+      });  
     </script>
   </body>
 </html>
