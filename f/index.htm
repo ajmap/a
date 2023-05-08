@@ -1,3 +1,6 @@
+58 lines (58 sloc)  1.68 KB
+ 
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -22,25 +25,35 @@
             font-size: 3.5vw;
             color: navy;
         }
+        #l1 {
+            display: none;
+            font-size: 0.8vw;
+        }
     </style>
     <title>Frans</title>
   </head>
   <body>
-      <div id='R1'>
-        <div id='L1'><div>CHAPITRE 1</div><b>Anne</b></div>
-        <div id='L2'><div>CHAPITRE 2</div><b>En boîte</b></div>
-        <div id='L3'><div>CHAPITRE 3</div><b>Bordeaux</b></div>
+      <div id='A'>
+          <div id='R1'>
+            <div id='L1'><div>CHAPITRE 1</div><b>Anne</b></div>
+            <div id='L2'><div>CHAPITRE 2</div><b>En boîte</b></div>
+            <div id='L3'><div>CHAPITRE 3</div><b>Bordeaux</b></div>
+          </div>
+          <div id='R2'>
+            <div id='L4'><div>CHAPITRE 4</div><b>Le journal intime</b></div>
+            <div id='L5'><div>CHAPITRE 5</div><b>Louise</b></div>
+            <div id='L6'><div>CHAPITRE 6</div><b>Une étrange découverte</b></div>
+          </div>
+          <div id='R3'>
+            <div id='L7'><div>CHAPITRE 7</div><b>Luc, un véritable ami</b></div>
+            <div id='L8'><div>CHAPITRE 8</div><b>Au musée</b></div>
+            <div id='L9'><div>FULL</div><b>Screen</b></div>
+          </div>
       </div>
-      <div id='R2'>
-        <div id='L4'><div>CHAPITRE 4</div><b>Le journal intime</b></div>
-        <div id='L5'><div>CHAPITRE 5</div><b>Louise</b></div>
-        <div id='L6'><div>CHAPITRE 6</div><b>Une étrange découverte</b></div>
-      </div>
-      <div id='R3'>
-        <div id='L7'><div>CHAPITRE 7</div><b>Luc, un véritable ami</b></div>
-        <div id='L8'><div>CHAPITRE 8</div><b>Au musée</b></div>
-        <div id='L9'><div>FULL</div><b>Screen</b></div>
-      </div>
+      <div id='l1'>
+          <span id='spl1'>C'est le début de l'automne : dans les jardins et les parcs de Bordeaux, les feuilles des arbres commencent à jaunir. La chaleur étouffante de l'été a disparu et l'air est frais et claire. </span>C'est dans cette ville que, depuis quelques semaines, vit Anne. Anne est allemande ; elle vient d'un petit village près de Munich, en Bavière, et elle étudie le français à l'université. Elle se trouve à Bordeaux pour une période de cinq mois grâce à une bourse d'étude. Elle veut améliorer sa connaissance de la langue française mais aussi voyager un peu pour connaître la France. La mère d'Anne est française : voilà pourquoi elle s'intéresse à cette langue. Elle aime beaucoup Bordeaux parce que cette ville n'est pas loin de l'océan Atlantique. En effet, Anne adore aller à la plage et dans cette région est la possibilité d'y aller très souvent. À Bordeaux, elle habite dans un appartement près de l'université avec deux autres étudiants français, Paul et Suzanne. Suzanne, qui vient de Pau, et étudiante en droit, tandis que Paul, qui est de Périgueux, est étudiant en pharmacie. Ils sont tous les deux très gentil avec Anne et ils préparent souvent pour elle des spécialités de la région, telles que l'entrecôte à la bordelaise ou l'omelette aux cèpes. <span id='nl1'>Parfois, ils sortent ensemble pour aller à la crêperie ou au cinéma. Un soir, Paul frappe à la porte d'Anne : Écoute Anne, Suzanne et moi, nous allons en boîte ce soir. Tu veux venir avec nous ? Non, merci, répond Anne, je suis trop fatiguée ! Et puis je n'aime pas beaucoup aller en boîte. Viens ! insiste Paul. Tu restes toujours à la maison ! Viens t'amuser avec nous ! Anne accepte alors d'aller avec eux.</span>
+
+      <div>    
     <script>
         function FS() {
         if (!document.fullscreenElement) {
@@ -50,8 +63,20 @@
         }
       }
       let L9 = document.getElementById("L9");
+      let spl1 = document.getElementById("spl1");
+      let nl1 = document.getElementById("nl1"); 
+      let A = document.getElementById("A");
+      let l1 = document.getElementById("l1");  
       L9.addEventListener("click", () => {
         FS();
+      });
+      spl1.addEventListener("click", () => {
+        A.style.display = 'none';
+        l1.style.display = 'block';  
+      });  
+      nl1.addEventListener("click", () => {
+        A.style.display = 'block';
+        l1.style.display = 'none'; 
       });  
     </script>
   </body>
