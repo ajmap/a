@@ -8,7 +8,8 @@
     <style>
         * {
             margin: 0;
-            position: absolute
+            position: absolute;
+            font-family: sans-serif;
         }
         .r {
             height: 92vh;
@@ -110,9 +111,26 @@
         }  
         #d4b {
             top: 77.9vh;
-            left: 94.1vw;
-                
+            left: 94.1vw;  
         } 
+        #B4 { 
+            top: 54.8vh; 
+            left: 64.1rem 
+        }
+       .n { 
+           background-color: lightblue; 
+           opacity: 1; 
+           font-size: 3vw; 
+           border: solid 0.1vw black; 
+           border-radius: 50%; 
+           width: 4vw;
+           height: 4vw; 
+           z-index: 2; 
+           color: black; 
+           font-weight: bold;
+           display: flex;
+           align-items: center;
+           justify-content: center }
     </style>
   </head>
     <body>
@@ -141,6 +159,8 @@
         <div id='d3' class='d'>&#11044;</div>
         <div id='d4a' class='d'>&#11044;</div>
         <div id='d4b' class='d'>&#11044;</div>
+        <a onclick='sB4()'><div id='B4' class='n'>B</div></a>
+        <audio id='sndB4' src='B4.mp3'></audio>  
     <script>
         function f() {
             if (!document.fullscreenElement) {
