@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            font-family: Arial;
+            font-size: 4vw;
+            margin: 4vw;
+            cursor: pointer;
+        }
+        #e { color: red }
 
+    </style>
+    <title>Havana</title>
+  </head>
+  <body>
+      <div id='b'>Your Heart Is As Black As Night</div>    
+      <div id='r'>Riding With The King</div> 
+      <div id='f'>Find Another You</div>    
+      <div id='e'>RE-FRESH / STOP</div>    
+      <audio id="b3" src="b.mp3"></audio>    
+      <audio id="r3" src="r.mp3"></audio>
+      <audio id="f3" src="f.mp3"></audio>    
+    <script>
+      let b3 = document.getElementById("b3");  
+      let r3 = document.getElementById("r3");
+      let f3 = document.getElementById("f3");     
+      let b = document.getElementById("b");
+      let r = document.getElementById("r");
+      let f = document.getElementById("f");
+      let e = document.getElementById("e");
+      b.addEventListener("click", () => {
+        b3.play();
+      });   
+      r.addEventListener("click", () => {
+        r3.play();
+      });
+      f.addEventListener("click", () => {
+        f3.play();
+      });
+    e.addEventListener("click", () => {
+        location.reload()
+      });
+     
+    </script>
+  </body>
+</html>
