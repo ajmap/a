@@ -1,49 +1,109 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-        * {
-            font-family: Arial;
-            font-size: 4vw;
-            margin: 4vw;
-            cursor: pointer;
-        }
-        #e { color: red }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+      body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+ font-family: Arial;
+          font-size: 24px;
+}
 
-    </style>
-    <title>Havana</title>
-  </head>
-  <body>
-      <div id='b'>Your Heart Is As Black As Night</div>    
-      <div id='r'>Riding With The King</div> 
-      <div id='f'>Find Another You</div>    
-      <div id='e'>RE-FRESH / STOP</div>    
-      <audio id="b3" src="black.mp3"></audio>    
-      <audio id="r3" src="king.mp3"></audio>
-      <audio id="f3" src="find.mp3"></audio>    
-    <script>
-      let b3 = document.getElementById("b3");  
-      let r3 = document.getElementById("r3");
-      let f3 = document.getElementById("f3");     
-      let b = document.getElementById("b");
-      let r = document.getElementById("r");
-      let f = document.getElementById("f");
-      let e = document.getElementById("e");
-      b.addEventListener("click", () => {
-        b3.play();
-      });   
-      r.addEventListener("click", () => {
-        r3.play();
-      });
-      f.addEventListener("click", () => {
-        f3.play();
-      });
-    e.addEventListener("click", () => {
-        location.reload()
-      });
-     
-    </script>
-  </body>
+.player-container {
+  text-align: center;
+    
+}
+
+.player {
+  max-width: 400px;
+  margin: 5vw auto;
+}
+
+.controls {
+  margin-top: 10px;
+    
+}
+
+#playPauseBtn {
+  padding: 10px;
+  cursor: pointer;
+}
+      li {
+          
+          list-style-type: none;
+          margin: 2vw;
+      }
+
+  </style>
+  <title>MP3 Player</title>
+</head>
+<body>
+  <div class="player-container">
+    <div class="player">
+      <audio id="audioPlayer" controls>
+        <source src="song1.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+      </audio>
+
+    </div>
+    <div class="playlist">
+
+      <ul>
+        <li onclick="changeSong('black.mp3')">Your Hear Is As Black As Night</li>
+        <li onclick="changeSong('king.mp3')">Riding With The King</li>
+        <li onclick="changeSong('find.mp3')">Find Another You</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+  const audioPlayer = document.getElementById('audioPlayer');
+  const playPauseBtn = document.getElementById('playPauseBtn');
+  const volumeControl = document.getElementById('volumeControl');
+  const progressBar = document.getElementById('progressBar');
+
+  let isPlaying = false;
+
+  playPauseBtn.addEventListener('click', function () {
+    if (audioPlayer.paused) {
+      audioPlayer.play();
+      isPlaying = true;
+      playPauseBtn.textContent = 'Pause';
+    } else {
+      audioPlayer.pause();
+      isPlaying = false;
+      playPauseBtn.textContent = 'Play';
+    }
+  });
+
+  volumeControl.addEventListener('input', function () {
+    audioPlayer.volume = volumeControl.value;
+  });
+
+  audioPlayer.addEventListener('timeupdate', function () {
+    const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+    progressBar.value = progress;
+  });
+
+  progressBar.addEventListener('input', function () {
+    const seekTime = (progressBar.value / 100) * audioPlayer.duration;
+    audioPlayer.currentTime = seekTime;
+  });
+});
+
+function changeSong(songSrc) {
+  const audioPlayer = document.getElementById('audioPlayer');
+  audioPlayer.src = songSrc;
+  audioPlayer.play();
+  document.getElementById('playPauseBtn').textContent = 'Pause';
+}
+
+  </script>
+</body>
 </html>
