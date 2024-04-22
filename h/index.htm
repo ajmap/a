@@ -1,1 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sing App + Input</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      body {
+        background: black;
+        color: white;
+      }
+      .key {
+        position: absolute;
+        background: white;
+        top: 0;
+        height: 100vh;
+        width: 14.1vw;
+        z-index: 1;
+      }
+      #x {
+        left: 0;
+        width: 9vw;
+        height: 25vh;
+        z-index: 2;
+      }
+      #r {
+        left: 18.5vw;
+        width: 5.3vw;
+        height: 25vh;
+        z-index: 4;
+      }
+      #t {
+        right: 0.1vw;
+        width: 9.8vw;
+        height: 25vh;
+        z-index: 2;
+      }
+      #l {
+        right: 43vw;
+        width: 14vw;
+        height: 25vh;
+        z-index: 2;
+      }
+      #lrcs {
+        left: 33.1vw;
+        width: 4.9vw;
+        height: 25vh;
+        z-index: 4;
+      }
+      #f {
+        left: 0;
+      }
+      #f0 {
+        top: 80vh;
+        left: 0;
+        height: 20vh;
+        z-index: 2;
+      }
+      #fg0 {
+        left: 9.3vw;
+      }
+      #fg {
+        left: 9.3vw;
+        height: 33vh;
+        z-index: 3;
+      }
+      #g {
+        left: 14.3vw;
+      }
+      #g0 {
+        top: 80vh;
+        left: 14.3vw;
+        height: 20vh;
+        z-index: 2;
+      }
+      #ga0 {
+        left: 23.8vw;
+      }
+      #ga {
+        left: 23.8vw;
+        height: 33vh;
+        z-index: 3;
+      }
+      #a {
+        left: 28.6vw;
+      }
+      #a0 {
+        top: 80vh;
+        left: 28.6vw;
+        height: 20vh;
+        z-index: 2;
+      }
+      #ab0 {
+        left: 38.1vw;
+      }
+      #ab {
+        left: 38.1vw;
+        height: 33vh;
+        z-index: 3;
+      }
+      #b {
+        left: 42.9vw;
+      }
+      #b0 {
+        top: 80vh;
+        left: 42.9vw;
+        height: 20vh;
+        z-index: 2;
+      }
+      #c {
+        left: 57.2vw;
+      }
+      #c0 {
+        top: 80vh;
+        left: 57.2vw;
+        height: 20vh;
+        z-index: 2;
+      }
+      #cd0 {
+        left: 66.8vw;
+      }
+      #cd {
+        left: 66.8vw;
+        height: 33vh;
+        z-index: 3;
+      }
+      #d {
+        left: 71.5vw;
+      }
+      #d0 {
+        top: 80vh;
+        left: 71.5vw;
+        height: 20vh;
+        z-index: 2;
+      }
+      #de0 {
+        left: 81vw;
+      }
+      #de {
+        left: 81vw;
+        height: 33vh;
+        z-index: 3;
+      }
+      #e {
+        left: 85.8vw;
+      }
+      #e0 {
+        top: 80vh;
+        left: 85.8vw;
+        height: 20vh;
+        z-index: 2;
+      }
+      .b {
+        background-color: black;
+        color: black;
+        height: 66vh;
+        width: 9.1vw;
+        border-bottom-left-radius: 0.6vw;
+        border-bottom-right-radius: 0.6vw;
+        z-index: 3;
+      }
+      .bl {
+        background: blueviolet;
+      }
+      .rd {
+        background: orangered;
+      }
+      .qw {
+        background: darkmagenta;
+      }
+      .qb {
+        background: magenta;
+      }
+              .y {
+        background: gold;
+      }
+      .z {
+        background: deepskyblue;
+      }
+      #randm {
+        left: 57.2vw;
+        width: 14vw;
+        height: 25vh;
+        z-index: 2;
+      }
+      .v {
+        background: yellow;
+      }
+      #kb {
+        display: block;
+      }
+      #tx {
+        background-color: slateblue;
+        height: 60vh;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2.5vw;
+      }
+      #txt {
+        border: 2px solid deepskyblue;
+        background-color: navy;
+        color: lightblue;
+        border-radius: 1vw;
+        padding: 2.8vw;
+        width: 70vw;
+        line-height: 5.5vw;
+      }
+      #txl {
+        width: 15vw;
+        height: 60vh;
+      }
+      #txr {
+        width: 15vw;
+        height: 60vh;
+      }
+      #txp {
+        background-color: slateblue;
+        display: none;
+        width: 100vw;
+        height: 20vh;
+      }
+      #txb {
+        background-color: slateblue;
+        display: none;
+        width: 100vw;
+        height: 20vh;
+      }
+      #ntvl {
+        width: 50vw;
+        height: 20vh;
+      }
+      #clrntvl {
+        width: 50vw;
+        height: 20vh;
+      }
+      #addt {
+        z-index: 5;
+        top: 25vh;
+        position: absolute;
+        width: 100vw;
+        height: 50vh;
+        background: blueviolet;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+      #addu {
+        z-index: 5;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 25vh;
+        background: blueviolet;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+      #addb {
+        display: none;
+        bottom: 0;
+        z-index: 5;
+        position: absolute;
+        width: 100vw;
+        height: 25vh;
+        background: blueviolet;
+        align-items: center;
+        justify-content: center;
+      }
+      textarea {
+        width: 50vw;
+        height: 42vh;
+        font-size: 2vw;
+        padding: 3vh 2vw;
+        border: 2px solid deepskyblue;
+        background-color: navy;
+        color: lightblue;
+        border-radius: 1vw;
+      }
+      textarea:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="addu"></div>
+    <div id="addt">
+      <textarea name="add" id="add" spellcheck="false"></textarea>
+    </div>
+    <div id="addb"></div>
+    <div id="txp"></div>
+    <div id="tx">
+      <div id="txl"></div>
+      <div id="txt"></div>
+      <div id="txr"></div>
+    </div>
+    <div id="txb">
+      <div id="ntvl"></div>
+      <div id="clrntvl"></div>
+    </div>
+    <div id="kb">
+      <div id="x" class="key"></div>
+      <div id="f" class="key"></div>
+      <div id="f0" class="key"></div>
+      <div id="fg0" class="b key"></div>
+      <div id="fg" class="b key"></div>
+      <div id="r" class="key"></div>
+      <div id="g" class="key"></div>
+      <div id="g0" class="key"></div>
+      <div id="ga0" class="b key"></div>
+      <div id="ga" class="b key"></div>
+      <div id="lrcs" class="key"></div>
+      <div id="a" class="key"></div>
+      <div id="a0" class="key"></div>
+      <div id="ab0" class="b key"></div>
+      <div id="ab" class="b key"></div>
+      <div id="b" class="key"></div>
+      <div id="b0" class="key"></div>
+      <div id="l" class="key"></div>
+      <div id="c" class="key"></div>
+      <div id="randm" class="key"></div>
+      <div id="c0" class="key"></div>
+      <div id="cd0" class="b key"></div>
+      <div id="cd" class="b key"></div>
+      <div id="d" class="key"></div>
+      <div id="d0" class="key"></div>
+      <div id="de0" class="b key"></div>
+      <div id="de" class="b key"></div>
+      <div id="e" class="key"></div>
+      <div id="e0" class="key"></div>
+      <div id="t" class="key"></div>
+    </div>
+    <audio id="F" src="f1.mp3"></audio>
+    <audio id="F0" src="f0.mp3"></audio>
+    <audio id="FG0" src="../b/fg0.mp3"></audio>
+    <audio id="FG" src="../b/fg1.mp3"></audio>
+    <audio id="G" src="../b/g1.mp3"></audio>
+    <audio id="G0" src="../b/g0.mp3"></audio>
+    <audio id="GA0" src="../b/ga0.mp3"></audio>
+    <audio id="GA" src="../b/ga1.mp3"></audio>
+    <audio id="A" src="../b/a1.mp3"></audio>
+    <audio id="A0" src="../b/a0.mp3"></audio>
+    <audio id="AB0" src="../b/ab0.mp3"></audio>
+    <audio id="AB" src="../b/ab1.mp3"></audio>
+    <audio id="B" src="../b/b1.mp3"></audio>
+    <audio id="B0" src="../b/b0.mp3"></audio>
+    <audio id="C" src="../b/c1.mp3"></audio>
+    <audio id="C0" src="../b/c0.mp3"></audio>
+    <audio id="CD0" src="../b/cd0.mp3"></audio>
+    <audio id="CD" src="../b/cd1.mp3"></audio>
+    <audio id="D" src="../b/d1.mp3"></audio>
+    <audio id="D0" src="../b/d0.mp3"></audio>
+    <audio id="DE0" src="../b/de0.mp3"></audio>
+    <audio id="DE" src="../b/de1.mp3"></audio>
+    <audio id="E" src="../b/e1.mp3"></audio>
+    <audio id="E0" src="../b/e0.mp3"></audio>
+    <audio id="f1p" src="../e/f1p.mp3"></audio>
+    <audio id="f2p" src="../e/f2p.mp3"></audio>
+    <audio id="fg1p" src="../e/fg1p.mp3"></audio>
+    <audio id="fg2p" src="../e/fg2p.mp3"></audio>
+    <audio id="g1p" src="../e/g1p.mp3"></audio>
+    <audio id="g2p" src="../e/g2p.mp3"></audio>
+    <audio id="ga1p" src="../e/ga1p.mp3"></audio>
+    <audio id="ga2p" src="../e/ga2p.mp3"></audio>
+    <audio id="a1p" src="../e/a1p.mp3"></audio>
+    <audio id="a2p" src="../e/a2p.mp3"></audio>
+    <audio id="ab1p" src="../e/ab1p.mp3"></audio>
+    <audio id="ab2p" src="../e/ab2p.mp3"></audio>
+    <audio id="b1p" src="../e/b1p.mp3"></audio>
+    <audio id="b2p" src="../e/b2p.mp3"></audio>
+    <audio id="c2p" src="../e/c2p.mp3"></audio>
+    <audio id="c3p" src="../e/c3p.mp3"></audio>
+    <audio id="cd2p" src="../e/cd2p.mp3"></audio>
+    <audio id="cd3p" src="../e/cd3p.mp3"></audio>
+    <audio id="d2p" src="../e/d2p.mp3"></audio>
+    <audio id="d3p" src="../e/d3p.mp3"></audio>
+    <audio id="de2p" src="../e/de2p.mp3"></audio>
+    <audio id="de3p" src="../e/de3p.mp3"></audio>
+    <audio id="e2p" src="../e/e2p.mp3"></audio>
+    <audio id="e3p" src="../e/e3p.mp3"></audio>
+    <script>
+      const t = document.getElementById("t");
+      const x = document.getElementById("x");
+      const randm = document.getElementById("randm");
+      const lrcs = document.getElementById("lrcs");
+      const l = document.getElementById("l");
+      const tx = document.getElementById("tx");
+      const txt = document.getElementById("txt");
+      const kb = document.getElementById("kb");
+      const txp = document.getElementById("txp");
+      const txb = document.getElementById("txb");
+      const txl = document.getElementById("txl");
+      const txr = document.getElementById("txr");
+      const f = document.getElementById("f");
+      const f0 = document.getElementById("f0");
+      const fg0 = document.getElementById("fg0");
+      const fg = document.getElementById("fg");
+      const g = document.getElementById("g");
+      const g0 = document.getElementById("g0");
+      const ga0 = document.getElementById("ga0");
+      const ga = document.getElementById("ga");
+      const a = document.getElementById("a");
+      const a0 = document.getElementById("a0");
+      const ab0 = document.getElementById("ab0");
+      const ab = document.getElementById("ab");
+      const b = document.getElementById("b");
+      const b0 = document.getElementById("b0");
+      const c = document.getElementById("c");
+      const c0 = document.getElementById("c0");
+      const cd0 = document.getElementById("cd0");
+      const cd = document.getElementById("cd");
+      const d = document.getElementById("d");
+      const d0 = document.getElementById("d0");
+      const de0 = document.getElementById("de0");
+      const de = document.getElementById("de");
+      const e = document.getElementById("e");
+      const e0 = document.getElementById("e0");
+      const f1p = document.getElementById("f1p");
+      const f2p = document.getElementById("f2p");
+      const fg1p = document.getElementById("fg1p");
+      const fg2p = document.getElementById("fg2p");
+      const g1p = document.getElementById("g1p");
+      const g2p = document.getElementById("g2p");
+      const ga1p = document.getElementById("ga1p");
+      const ga2p = document.getElementById("ga2p");
+      const a1p = document.getElementById("a1p");
+      const a2p = document.getElementById("a2p");
+      const ab1p = document.getElementById("ab1p");
+      const ab2p = document.getElementById("ab2p");
+      const b1p = document.getElementById("b1p");
+      const b2p = document.getElementById("b2p");
+      const c2p = document.getElementById("c2p");
+      const c3p = document.getElementById("c3p");
+      const cd2p = document.getElementById("cd2p");
+      const cd3p = document.getElementById("cd3p");
+      const d2p = document.getElementById("d2p");
+      const d3p = document.getElementById("d3p");
+      const de2p = document.getElementById("de2p");
+      const de3p = document.getElementById("de3p");
+      const e2p = document.getElementById("e2p");
+      const e3p = document.getElementById("e3p");
+      const ntvl = document.getElementById("ntvl");
+      const clrntvl = document.getElementById("clrntvl");
+      const add = document.getElementById("add");
+      const addu = document.getElementById("addu");
+      const addt = document.getElementById("addt");
+      const addb = document.getElementById("addb");
+      // for (var i = 0; i < 10; i++) {
+      //   document
+      //     .querySelectorAll(".b")
+      //     [i].addEventListener("dblclick", function () {
+      //       this.classList.add("yllw");
+      //     });
+      // }
 
+      //   document.onkeyup = function (e) {
+      //     if (e.which == 67) {
+      //       C.play();
+      //     } else if (e.which == 68) {
+      //       D.play();
+      //     } else if (e.which == 69) {
+      //       E.play();
+      //     } else if (e.which == 70) {
+      //       F.play();
+      //     } else if (e.which == 71) {
+      //       G.play();
+      //     } else if (e.which == 65) {
+      //       A.play();
+      //     } else if (e.which == 66) {
+      //       B.play();
+      //     } else if (e.which == 72) {
+      //       CD.play();
+      //     } else if (e.which == 73) {
+      //       DE.play();
+      //     } else if (e.which == 74) {
+      //       FG.play();
+      //     } else if (e.which == 75) {
+      //       GA.play();
+      //     } else if (e.which == 76) {
+      //       AB.play();
+      //     } else if (e.which == 81) {
+      //       L();
+      //     } else if (e.which == 82) {
+      //       R();
+      //     } else if (e.which == 84) {
+      //       T();
+      //     } else if (e.which == 88) {
+      //       X();
+      //     } else if (e.which == 90) {
+      //       ranDom();
+      //     }
+      //   };
+
+      r.addEventListener("click", R);
+      x.addEventListener("click", X);
+      txp.addEventListener("click", X);
+      l.addEventListener("click", Quint);
+      randm.addEventListener("click", showAdd);
+      txl.addEventListener("click", ranDom);
+      txr.addEventListener("click", Quint);
+      lrcs.addEventListener("click", L);
+      addb.addEventListener("click", hideAdd);
+      f.addEventListener("click", () => {
+        f2p.play();
+        f.classList.add("z");
+        f0.classList.add("z");
+        x.classList.add("z");
+      });
+      f0.addEventListener("click", () => {
+        f1p.play();
+        f.classList.add("z");
+        f0.classList.add("z");
+        x.classList.add("z");
+      });
+      fg0.addEventListener("click", () => {
+        fg1p.play();
+        fg0.classList.add("y");
+        fg.classList.add("y");
+      });
+      fg.addEventListener("click", () => {
+        fg2p.play();
+        fg0.classList.add("y");
+        fg.classList.add("y");
+      });
+      g.addEventListener("click", () => {
+        g2p.play();
+        g.classList.add("z");
+        g0.classList.add("z");
+        r.classList.add("z");
+      });
+      g0.addEventListener("click", () => {
+        g1p.play();
+        g.classList.add("z");
+        g0.classList.add("z");
+        r.classList.add("z");
+      });
+      ga0.addEventListener("click", () => {
+        ga1p.play();
+        ga0.classList.add("y");
+        ga.classList.add("y");
+      });
+      ga.addEventListener("click", () => {
+        ga2p.play();
+        ga0.classList.add("y");
+        ga.classList.add("y");
+      });
+      a.addEventListener("click", () => {
+        a2p.play();
+        a.classList.add("z");
+        a0.classList.add("z");
+        lrcs.classList.add("z");
+      });
+      a0.addEventListener("click", () => {
+        a1p.play();
+        a.classList.add("z");
+        a0.classList.add("z");
+        lrcs.classList.add("z");
+      });
+      ab0.addEventListener("click", () => {
+        ab1p.play();
+        ab0.classList.add("y");
+        ab.classList.add("y");
+      });
+      ab.addEventListener("click", () => {
+        ab2p.play();
+        ab0.classList.add("y");
+        ab.classList.add("y");
+      });
+      b.addEventListener("click", () => {
+        b2p.play();
+        b.classList.add("z");
+        b0.classList.add("z");
+        l.classList.add("z");
+      });
+      b0.addEventListener("click", () => {
+        b1p.play();
+        b.classList.add("z");
+        b0.classList.add("z");
+        l.classList.add("z");
+      });
+      c.addEventListener("click", () => {
+        c3p.play();
+        c.classList.add("z");
+        c0.classList.add("z");
+        randm.classList.add("z");
+      });
+      c0.addEventListener("click", () => {
+        c2p.play();
+        c.classList.add("z");
+        c0.classList.add("z");
+        randm.classList.add("z");
+      });
+      cd0.addEventListener("click", () => {
+        cd2p.play();
+        cd0.classList.add("y");
+        cd.classList.add("y");
+      });
+      cd.addEventListener("click", () => {
+        cd3p.play();
+        cd0.classList.add("y");
+        cd.classList.add("y");
+      });
+      d.addEventListener("click", () => {
+        d3p.play();
+        d.classList.add("z");
+        d0.classList.add("z");
+      });
+      d0.addEventListener("click", () => {
+        d2p.play();
+        d.classList.add("z");
+        d0.classList.add("z");
+      });
+      de0.addEventListener("click", () => {
+        de2p.play();
+        de0.classList.add("y");
+        de.classList.add("y");
+      });
+      de.addEventListener("click", () => {
+        de3p.play();
+        de0.classList.add("y");
+        de.classList.add("y");
+      });
+      e.addEventListener("click", () => {
+        e3p.play();
+        e.classList.add("z");
+        e0.classList.add("z");
+        t.classList.add("z");
+      });
+      e0.addEventListener("click", () => {
+        e2p.play();
+        e.classList.add("z");
+        e0.classList.add("z");
+        t.classList.add("z");
+      });
+      function showAdd() {
+        addu.style.display = "block";
+        addt.style.display = "flex";
+        addb.style.display = "block";
+      }
+      function hideAdd() {
+        addu.style.display = "none";
+        addt.style.display = "none";
+        addb.style.display = "none";
+      }
+      function X() {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+      function R() {
+        window.location.reload();
+      }
+      function L() {
+        window.location.href = "../c/";
+      }
+      let notes = [
+        "c",
+        "cd",
+        "d",
+        "de",
+        "e",
+        "f",
+        "fg",
+        "g",
+        "ga",
+        "a",
+        "ab",
+        "b",
+      ];
+      function ranDom() {
+        let j;
+        let xx = Math.floor(Math.random() * notes.length);
+        switch (notes[xx]) {
+          case "f":
+            playF0();
+            setTimeout(playF, 1700);
+            f.classList.add("bl");
+            f0.classList.add("bl");
+            x.classList.add("bl");
+            notes.splice(xx, 1);
+            j = qnotes.indexOf("f");
+            qnotes.splice(j, 1);
+            break;
+          case "fg":
+            playFG0();
+            setTimeout(playFG, 1700);
+            fg.classList.add("rd");
+            fg0.classList.add("rd");
+            notes.splice(xx, 1);
+            j = qnotes.indexOf("fg");
+            qnotes.splice(j, 1);
+            break;
+          case "g":
+            playG0();
+            setTimeout(playG, 1700);
+            g.classList.add("bl");
+            g0.classList.add("bl");
+            r.classList.add("bl");
+            notes.splice(xx, 1);
+            j = qnotes.indexOf("g");
+            qnotes.splice(j, 1);
+            break;
+          case "ga":
+            playGA0();
+            setTimeout(playGA, 1700);
+            ga.classList.add("rd");
+            ga0.classList.add("rd");
+            notes.splice(xx, 1);
+            j = qnotes.indexOf("ga");
+            qnotes.splice(j, 1);
+            break;
+          case "a":
+            playA0();
+            setTimeout(playA, 1700);
+            a.classList.add("bl");
+            a0.classList.add("bl");
+            lrcs.classList.add("bl");
+            notes.splice(xx, 1);
+            j = qnotes.indexOf("a");
+            qnotes.splice(j, 1);
+            break;
+          case "ab":
+            playAB0();
+            setTimeout(playAB, 1700);
+            ab.classList.add("rd");
+            ab0.classList.add("rd");
+            notes.splice(xx, 1);
+            j = qnotes.indexOf("ab");
+            qnotes.splice(j, 1);
+            break;
+          case "b":
+            playB0();
+            setTimeout(playB, 1700);
+            b.classList.add("bl");
+            b0.classList.add("bl");
+            l.classList.add("bl");
+            notes.splice(xx, 1);
+            j = qnotes.indexOf("b");
+            qnotes.splice(j, 1);
+            break;
+          case "c":
+            playC0();
+            setTimeout(playC, 1700);
+            c.classList.add("bl");
+            c0.classList.add("bl");
+            randm.classList.add("bl");
+            notes.splice(xx, 1);
+            j = qnotes.indexOf("c");
+            qnotes.splice(j, 1);
+            break;
+          case "cd":
+            playCD0();
+            setTimeout(playCD, 1700);
+            cd.classList.add("rd");
+            cd0.classList.add("rd");
+            notes.splice(xx, 1);
+            j = qnotes.indexOf("cd");
+            qnotes.splice(j, 1);
+            break;
+          case "d":
+            playD0();
+            setTimeout(playD, 1700);
+            d.classList.add("bl");
+            d0.classList.add("bl");
+            notes.splice(xx, 1);
+            j = qnotes.indexOf("d");
+            qnotes.splice(j, 1);
+            break;
+          case "de":
+            playDE0();
+            setTimeout(playDE, 1700);
+            de.classList.add("rd");
+            de0.classList.add("rd");
+            notes.splice(xx, 1);
+            j = qnotes.indexOf("de");
+            qnotes.splice(j, 1);
+            break;
+          case "e":
+            playE0();
+            setTimeout(playE, 1700);
+            e.classList.add("bl");
+            e0.classList.add("bl");
+            t.classList.add("bl");
+            notes.splice(xx, 1);
+            j = qnotes.indexOf("e");
+            qnotes.splice(j, 1);
+            break;
+        }
+      }
+      let qnotes = [
+        "f",
+        "c",
+        "g",
+        "d",
+        "a",
+        "e",
+        "b",
+        "fg",
+        "cd",
+        "ga",
+        "de",
+        "ab",
+      ];
+      function Quint() {
+        let yy = 0;
+        let q;
+        switch (qnotes[yy]) {
+          case "f":
+            playF0();
+            setTimeout(playF, 1700);
+            f.classList.add("qw");
+            f0.classList.add("qw");
+            x.classList.add("qw");
+            qnotes.shift();
+            q = notes.indexOf("f");
+            notes.splice(q, 1);
+            break;
+          case "fg":
+            playFG0();
+            setTimeout(playFG, 1700);
+            fg.classList.add("qb");
+            fg0.classList.add("qb");
+            qnotes.shift();
+            q = notes.indexOf("fg");
+            notes.splice(q, 1);
+            break;
+          case "g":
+            playG0();
+            setTimeout(playG, 1700);
+            g.classList.add("qw");
+            g0.classList.add("qw");
+            r.classList.add("qw");
+            qnotes.shift();
+            q = notes.indexOf("g");
+            notes.splice(q, 1);
+            break;
+          case "ga":
+            playGA0();
+            setTimeout(playGA, 1700);
+            ga.classList.add("qb");
+            ga0.classList.add("qb");
+            qnotes.shift();
+            q = notes.indexOf("ga");
+            notes.splice(q, 1);
+            break;
+          case "a":
+            playA0();
+            setTimeout(playA, 1700);
+            a.classList.add("qw");
+            a0.classList.add("qw");
+            lrcs.classList.add("qw");
+            qnotes.shift();
+            q = notes.indexOf("a");
+            notes.splice(q, 1);
+            break;
+          case "ab":
+            playAB0();
+            setTimeout(playAB, 1700);
+            ab.classList.add("qb");
+            ab0.classList.add("qb");
+            qnotes.shift();
+            q = notes.indexOf("ab");
+            notes.splice(q, 1);
+            break;
+          case "b":
+            playB0();
+            setTimeout(playB, 1700);
+            b.classList.add("qw");
+            b0.classList.add("qw");
+            l.classList.add("qw");
+            qnotes.shift();
+            q = notes.indexOf("b");
+            notes.splice(q, 1);
+            break;
+          case "c":
+            playC0();
+            setTimeout(playC, 1700);
+            c.classList.add("qw");
+            c0.classList.add("qw");
+            randm.classList.add("qw");
+            qnotes.shift();
+            q = notes.indexOf("c");
+            notes.splice(q, 1);
+            break;
+          case "cd":
+            playCD0();
+            setTimeout(playCD, 1700);
+            cd.classList.add("qb");
+            cd0.classList.add("qb");
+            qnotes.shift();
+            q = notes.indexOf("cd");
+            notes.splice(q, 1);
+            break;
+          case "d":
+            playD0();
+            setTimeout(playD, 1700);
+            d.classList.add("qw");
+            d0.classList.add("qw");
+            qnotes.shift();
+            q = notes.indexOf("d");
+            notes.splice(q, 1);
+            break;
+          case "de":
+            playDE0();
+            setTimeout(playDE, 1700);
+            de.classList.add("qb");
+            de0.classList.add("qb");
+            qnotes.shift();
+            q = notes.indexOf("de");
+            notes.splice(q, 1);
+            break;
+          case "e":
+            playE0();
+            setTimeout(playE, 1700);
+            e.classList.add("qw");
+            e0.classList.add("qw");
+            t.classList.add("qw");
+            qnotes.shift();
+            q = notes.indexOf("e");
+            notes.splice(q, 1);
+            break;
+        }
+      }
+      function playF() {
+        F.play();
+      }
+      function playF0() {
+        F0.play();
+      }
+      function playFG() {
+        FG.play();
+      }
+      function playFG0() {
+        FG0.play();
+      }
+      function playG() {
+        G.play();
+      }
+      function playG0() {
+        G0.play();
+      }
+      function playGA() {
+        GA.play();
+      }
+      function playGA0() {
+        GA0.play();
+      }
+      function playA() {
+        A.play();
+      }
+      function playA0() {
+        A0.play();
+      }
+      function playAB() {
+        AB.play();
+      }
+      function playAB0() {
+        AB0.play();
+      }
+      function playB() {
+        B.play();
+      }
+      function playB0() {
+        B0.play();
+      }
+      function playC() {
+        C.play();
+      }
+      function playC0() {
+        C0.play();
+      }
+      function playCD() {
+        CD.play();
+      }
+      function playCD0() {
+        CD0.play();
+      }
+      function playD() {
+        D.play();
+      }
+      function playD0() {
+        D0.play();
+      }
+      function playDE() {
+        DE.play();
+      }
+      function playDE0() {
+        DE0.play();
+      }
+      function playE() {
+        E.play();
+      }
+      function playE0() {
+        E0.play();
+      }
+      let check = false;
+      f.addEventListener("dblclick", () => {
+        if (!check) {
+          f.classList.add("v");
+          f0.classList.add("v");
+          x.classList.add("v");
+        }
+      });
+      f0.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          f.classList.add("v");
+          f0.classList.add("v");
+          x.classList.add("v");
+        }
+      });
+      fg0.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          fg0.classList.add("v");
+          fg.classList.add("v");
+        }
+      });
+      fg.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          fg0.classList.add("v");
+          fg.classList.add("v");
+        }
+      });
+      g.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          g.classList.add("v");
+          g0.classList.add("v");
+          r.classList.add("v");
+        }
+      });
+      g0.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          g.classList.add("v");
+          g0.classList.add("v");
+          r.classList.add("v");
+        }
+      });
+      ga0.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          ga0.classList.add("v");
+          ga.classList.add("v");
+        }
+      });
+      ga.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          ga0.classList.add("v");
+          ga.classList.add("v");
+        }
+      });
+      a.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          a.classList.add("v");
+          a0.classList.add("v");
+          lrcs.classList.add("v");
+        }
+      });
+      a0.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          a.classList.add("v");
+          a0.classList.add("v");
+          lrcs.classList.add("v");
+        }
+      });
+      ab0.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          ab0.classList.add("v");
+          ab.classList.add("v");
+        }
+      });
+      ab.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          ab0.classList.add("v");
+          ab.classList.add("v");
+        }
+      });
+      b.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          b.classList.add("v");
+          b0.classList.add("v");
+          l.classList.add("v");
+        }
+      });
+      b0.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          b.classList.add("v");
+          b0.classList.add("v");
+          l.classList.add("v");
+        }
+      });
+      c.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          c.classList.add("v");
+          c0.classList.add("v");
+          randm.classList.add("v");
+        }
+      });
+      c0.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          c.classList.add("v");
+          c0.classList.add("v");
+          randm.classList.add("v");
+        }
+      });
+      cd0.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          cd0.classList.add("v");
+          cd.classList.add("v");
+        }
+      });
+      cd.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          cd0.classList.add("v");
+          cd.classList.add("v");
+        }
+      });
+      d.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          d.classList.add("v");
+          d0.classList.add("v");
+        }
+      });
+      d0.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          d.classList.add("v");
+          d0.classList.add("v");
+        }
+      });
+      de0.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          de0.classList.add("v");
+          de.classList.add("v");
+        }
+      });
+      de.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          de0.classList.add("v");
+          de.classList.add("v");
+        }
+      });
+      e.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          e.classList.add("v");
+          e0.classList.add("v");
+          t.classList.add("v");
+        }
+      });
+      e0.addEventListener("dblclick", () => {
+        if (!check) {
+          check = true;
+          e.classList.add("v");
+          e0.classList.add("v");
+          t.classList.add("v");
+        }
+      });
+      let rnd;
+      let lrc;
+      let locStore = Object.keys(localStorage);
+      let lyrKeys = [];
+      txt.innerHTML = localStorage.getItem(lrc);
+      function T() {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        locStore = Object.keys(localStorage);
+        lyrKeys = [];
+        for (let i = 0; i < locStore.length; i++) {
+          if (locStore[i].startsWith("lyr")) {
+            lyrKeys.push(locStore[i]);
+          }
+        }
+        tx.style.display = "flex";
+        txp.style.display = "block";
+        txb.style.display = "flex";
+        kb.style.display = "none";
+        rnd = Math.floor(Math.random() * lyrKeys.length);
+        lrc = lyrKeys[rnd];
+        txt.innerHTML = localStorage.getItem(lrc);
+        localStorage.removeItem(lrc);
+      }
+      t.addEventListener("click", T);
+      txt.addEventListener("click", () => {
+        tx.style.display = "none";
+        txp.style.display = "none";
+        txb.style.display = "none";
+        kb.style.display = "block";
+      });
+      let tSec = 0;
+      let iVal;
+      function XX() {
+        tSec++;
+      }
+      ntvl.onclick = () => {
+        ranDom();
+        clearInterval(iVal);
+        iVal = setInterval(XX, 10);
+      };
+      let intVal;
+      let clearIval;
+      clrntvl.onclick = () => {
+        clearInterval(iVal);
+        ranDom();
+        intVal = setInterval(ranDom, tSec * 10);
+        clearIval = setInterval(clearFunc, tSec * 110);
+      };
+      function clearFunc() {
+        clearInterval(intVal);
+        clearInterval(clearIval);
+      }
+      function AddTxt() {
+        function clrTxt() {
+          add.value = "";
+        }
+        function setLs() {
+          localStorage.setItem(
+            "lyr" + Math.round(Math.random() * new Date().getTime()),
+            add.value
+          );
+        }
+        setTimeout(setLs, 1);
+        setTimeout(setLs, 2);
+        setTimeout(clrTxt, 3);
+      }
+      addu.addEventListener("click", AddTxt);
+    </script>
+  </body>
+</html>
