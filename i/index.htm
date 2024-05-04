@@ -26,10 +26,11 @@
         bottom: 0;
         background-color: white;
       }
+        #test { fontsize: 10vw; }
     </style>
   </head>
   <body>
-
+    <div id="test">Dit is een heleboel tekst om te kijken of de fullscreen wel werkt op de telefoon.</div>
       <div id="az"></div>
       <footer id="ax">
         <input id="av" type="text" autofocus />
@@ -50,11 +51,12 @@
       let aw = document.getElementById("aw");
       let az = document.getElementById("az");
       let bm = localStorage.getItem("bm");
+        let test = localStorage.getItem("test");
       if (bm == null) {
         bm = 1000;
       }
       aw.addEventListener("click", H);
-      av.addEventListener("dblclick", () => {
+      test.addEventListener("dblclick", () => {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
         } else if (document.exitFullscreen) {
