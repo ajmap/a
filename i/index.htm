@@ -12,6 +12,14 @@
         <div id='test'>Dit is tekst om te testen<div>
     <script>
         let test = document.getElementById("test");
+        function X() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+        test.addEventListener("click", X);
     </script>
   </body>
 </html>
