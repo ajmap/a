@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notes App</title>
+    <style>
+
+      #av {
+        font-size: 24px;
+        width: 93vw;
+        border: none;
+        padding: 10px;
+      }
+      #av:focus {
+        outline: none;
+      }
+      #aw {
+        font-size: 48px;
+        border: none;
+        background-color: white;
+      }
+      #ax {
+        padding: 0;
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+
+      <div id="az"></div>
+      <footer id="ax">
+        <input id="av" type="text" autofocus />
+        <button id="aw">+</button>
+      </footer>
+    <script>
+      let bh;
+      let bi = "";
+      let bj = "";
+      function D() {
+        if (aj) {
+          aj = false;
+          ak = setInterval(C, 1000);
+        }
+      }
+      let bk = [];
+      let av = document.getElementById("av");
+      let aw = document.getElementById("aw");
+      let az = document.getElementById("az");
+      let bm = localStorage.getItem("bm");
+      if (bm == null) {
+        bm = 1000;
+      }
+      aw.addEventListener("click", H);
+      aw.addEventListener("dblclick", () => {
+        ab.style.display = "block";
+        at.style.display = "none";
+      });
+      av.addEventListener("dblclick", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      });
+      let bn = Object.keys(localStorage);
+      for (let bp = 0; bp < bn.length; bp++) {
+        if (bn[bp].startsWith("zo")) {
+          bk.push(bn[bp]);
+        }
+      }
+      bk.sort();
+      function I(bq) {
+        let br = document.getElementById(bq);
+        br.remove();
+        localStorage.removeItem(bq);
+      }
+      for (let bs = 0; bs < bk.length; bs++) {
+        let bt = document.createElement("div");
+        let bu = JSON.parse(localStorage.getItem(bk[bs]));
+        bt.innerHTML = `<div class="au" id="${bk[bs]}" ondblclick="I('${bk[bs]}')">${bu.ce}</div>`;
+        az.appendChild(bt);
+      }
+      function H() {
+        if (av.value != "") {
+          bm++;
+          let bv = {
+            bw: bm,
+            ce: av.value,
+          };
+          let cf = "zo" + bm;
+          localStorage.setItem("bm", bm);
+          localStorage.setItem(cf, JSON.stringify(bv));
+          let cg = document.createElement("div");
+          cg.innerHTML = `<div class="au" id="${cf}" ondblclick="I('${cf}')">${bv.ce}</div>`;
+          az.appendChild(cg);
+          av.value = "";
+          av.focus();
+        }
+      }
+    </script>
+  </body>
+</html>
