@@ -1,41 +1,69 @@
 <!DOCTYPE html>
     <head>
-        <title>App</title>    
+        <title>App</title>
+        <style>
+            * {
+                margin: 0;
+            }
+            div {
+                display: block;
+                height: 100vh;
+                width: 100vw;
+                background-color: grey;
+            }
+            main {
+                display: none;
+            }
+        </style>    
     </head>
     <body>
-        <p id='p1'>This is line 1 of this write/delete app.</p>
-        <p id='p2'>This is line 2 of this write/delete app.</p>
-        <p id='p1'>This is line 3 of this write/delete app.</p>
-        <p id='p2'>This is line 4 of this write/delete app.</p>
-        <p id='p1'>This is line 5 of this write/delete app.</p>
-        <p id='p2'>This is line 6 of this write/delete app.</p>
-        <p id='p1'>This is line 7 of this write/delete app.</p>
-        <p id='p2'>This is line 8 of this write/delete app.</p>
-        <p id='p1'>This is line 9 of this write/delete app.</p>
-        <p id='p2'>This is line 10 of this write/delete app.</p>
-        <p id='p1'>This is line 11 of this write/delete app.</p>
-        <p id='p2'>This is line 12 of this write/delete app.</p>
-        <p id='p1'>This is line 13 of this write/delete app.</p>
-        <p id='p2'>This is line 14 of this write/delete app.</p>
-        <p id='p1'>This is line 15 of this write/delete app.</p>
-        <p id='p2'>This is line 16 of this write/delete app.</p>
-        <p id='p1'>This is line 17 of this write/delete app.</p>
-        <p id='p2'>This is line 18 of this write/delete app.</p>
-        <p id='p1'>This is line 19 of this write/delete app.</p>
-        <p id='p2'>This is line 20 of this write/delete app.</p>
-        <p id='p1'>This is line 21 of this write/delete app.</p>
-        <p id='p2'>This is line 22 of this write/delete app.</p>
-        <p id='p1'>This is line 23 of this write/delete app.</p>
-        <p id='p2'>This is line 24 of this write/delete app.</p>
-        <p id='p1'>This is line 25 of this write/delete app.</p>
-        <p id='p2'>This is line 26 of this write/delete app.</p>
-        <p id='p1'>This is line 27 of this write/delete app.</p>
-        <p id='p2'>This is line 28 of this write/delete app.</p>
-        <p id='p1'>This is line 29 of this write/delete app.</p>
-        <p id='p2'>This is line 30 of this write/delete app.</p>
-        <p id='p1'>This is line 31 of this write/delete app.</p>
-        <p id='p2'>This is line 32 of this write/delete app.</p>
+        <div id='fllscrn'></div>
+        <main id='mn'>
+            <p id='p1'>This is line 1 of this write/delete app.</p>
+            <p id='p2'>This is line 2 of this write/delete app.</p>
+            <p id='p1'>This is line 3 of this write/delete app.</p>
+            <p id='p2'>This is line 4 of this write/delete app.</p>
+            <p id='p1'>This is line 5 of this write/delete app.</p>
+            <p id='p2'>This is line 6 of this write/delete app.</p>
+            <p id='p1'>This is line 7 of this write/delete app.</p>
+            <p id='p2'>This is line 8 of this write/delete app.</p>
+            <p id='p1'>This is line 9 of this write/delete app.</p>
+            <p id='p2'>This is line 10 of this write/delete app.</p>
+            <p id='p1'>This is line 11 of this write/delete app.</p>
+            <p id='p2'>This is line 12 of this write/delete app.</p>
+            <p id='p1'>This is line 13 of this write/delete app.</p>
+            <p id='p2'>This is line 14 of this write/delete app.</p>
+            <p id='p1'>This is line 15 of this write/delete app.</p>
+            <p id='p2'>This is line 16 of this write/delete app.</p>
+            <p id='p1'>This is line 17 of this write/delete app.</p>
+            <p id='p2'>This is line 18 of this write/delete app.</p>
+            <p id='p1'>This is line 19 of this write/delete app.</p>
+            <p id='p2'>This is line 20 of this write/delete app.</p>
+            <p id='p1'>This is line 21 of this write/delete app.</p>
+            <p id='p2'>This is line 22 of this write/delete app.</p>
+            <p id='p1'>This is line 23 of this write/delete app.</p>
+            <p id='p2'>This is line 24 of this write/delete app.</p>
+            <p id='p1'>This is line 25 of this write/delete app.</p>
+            <p id='p2'>This is line 26 of this write/delete app.</p>
+            <p id='p1'>This is line 27 of this write/delete app.</p>
+            <p id='p2'>This is line 28 of this write/delete app.</p>
+            <p id='p1'>This is line 29 of this write/delete app.</p>
+            <p id='p2'>This is line 30 of this write/delete app.</p>
+            <p id='p1'>This is line 31 of this write/delete app.</p>
+            <p id='p2'>This is line 32 of this write/delete app.</p>
+        </main>            
         <script>
+            let fllscrn = document.getElementById('fllscrn');
+            let mn = document.getElementById('mn');
+            fllscrn.addEventListener("click", () => {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+                fllscrn.style.display = "none";
+                mn.style.display = "block";
+            });
         </script>    
     </body>
 </html>    
