@@ -55,14 +55,15 @@
                     document.exitFullscreen();
                 }
                 a.style.display = "none";
-                b.style.display = "block";
+                e.innerHTML = localStorage.getItem("inotes");
+                e.style.display = "block";
             });
             c.addEventListener("click", () => {
                 b.style.display = "none";
                 e.style.display = 'block';
                 e.innerHTML = d.value;
             });
-            localStorage.setItem("inotes", "Test");
+            
         </script>    
     </body>
 </html>    
