@@ -6,23 +6,23 @@
                 margin: 0;
                 background-color: rgb(225,225,225);
             }
-            div {
+            #a {
                 display: block;
                 height: 100vh;
                 width: 100vw;
                 background-color: grey;
             }
-            main {   
+            #b {   
                 display: none;
             }
-            textarea {
+            #d {
                 border: none;
                 font-size: 6vw;
             }
-            textarea:focus {
+            #d:focus {
                 outline: none;
             }
-            p {
+            #c {
                 color: grey;
                 background-color: grey;
                 font-size: 8vw
@@ -31,12 +31,19 @@
     </head>
     <body>
         <div id='a'></div>
-        <main>
-            <p>Deze tekst is n.</p>
-            <textarea></textarea>
-        </main>            
+        <div id='b'>
+            <p id='c'>Deze tekst is n.</p>
+            <textarea id='d'></textarea>
+        </div>
+        <div id='e'>
+        </div>    
         <script>
             let a = document.getElementById('a');
+            let b = document.getElementById('b');
+            let c = document.getElementById('c');
+            let d = document.getElementById('d');
+            let e = document.getElementById('e');
+
             a.addEventListener("click", () => {
                 if (!document.fullscreenElement) {
                     document.documentElement.requestFullscreen();
