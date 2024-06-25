@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,7 +34,7 @@
       let check = true;
 
       if (x == 0) {
-        localStorage.setItem("#timer", 15000);
+        localStorage.setItem("#write", 15000);
       }
 
       x = Number(localStorage.getItem("#write"));
@@ -64,8 +62,8 @@
         Dsply();
         x -= 1000;
         if (x < 0) {
-          x = Number(localStorage.getItem("#timer")) + 1000;
-          localStorage.setItem("#timer", x);
+          x = Number(localStorage.getItem("#write")) + 1000;
+          localStorage.setItem("#write", x);
           b.play();
           clearInterval(z);
           check = true;
