@@ -30,7 +30,7 @@
     <audio id="b" src="m.mp3"></audio>
     <script>
       const b = document.getElementById("b");
-      let x = Number(localStorage.getItem("#writime"));
+      let x = Number(localStorage.getItem("#write"));
       const r = document.getElementById("r");
       const s = document.getElementById("s");
       let check = true;
@@ -39,7 +39,7 @@
         localStorage.setItem("#timer", 15000);
       }
 
-      x = Number(localStorage.getItem("#timer"));
+      x = Number(localStorage.getItem("#write"));
       s.innerHTML = `${x / 1000}`;
       function FllScrn() {
         if (!document.fullscreenElement) {
