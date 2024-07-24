@@ -11,19 +11,18 @@
         #start {
             background-color: black;
             width: 100vw;
-            height: 100vh;
+            height: 100vw;
         }
         #text-container {
             display: none;
-            padding: 3vw;
+            padding: 1vw;
             font-family: Arial;
-            font-size: 8.3vw;
         }
 
 .word {
     cursor: pointer;
     display: inline-block;
-
+    font-size: 1vw;
 }
 
 .word.greyed {
@@ -33,6 +32,9 @@
 .word.lighter-greyed {
     color: lightgrey;
 }
+        .word.white {
+    color: white;
+}
 
     </style>
 </head>
@@ -41,13 +43,11 @@
     <div id="text-container">
         <span class="word">I</span>
         <span class="word">believe</span>
-        <span class="word">that</span>
         <span class="word">the</span>
         <span class="word">universe</span>
         <span class="word">is</span>
         <span class="word">constantly</span>
         <span class="word">working</span>
-        <span class="word">in</span>
         <span class="word">my</span>
         <span class="word">favor.</span>
         <span class="word">I</span>
@@ -150,6 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
             word.classList.add('greyed');
         } else if (wordStates1[index] === 2) {
             word.classList.add('lighter-greyed');
+        } else if (wordStates1[index] === 3) {
+            word.classList.add('white');
         }
 
         word.addEventListener('click', () => {
@@ -163,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (wordStates1[index] === 2) {
                 wordStates1[index] = 3; // To mark it has been clicked three times
                 word.classList.remove('lighter-greyed');
-                word.style.visibility = 'hidden'; // Hidden but space remains
+                word.classList.add('white');
             }
             localStorage.setItem('wordStates1', JSON.stringify(wordStates1));
         });
