@@ -145,5 +145,14 @@
       function E(c) {
         c.classList.add("e");
       }
+            let s = document.getElementsByClassName("span");
+      let ch = false;
+      for (let i = 0; i < s.length; i++) {
+        s[i].addEventListener("click", () => {
+          if (ch == false) {
+            S();
+          }
+        });
+      }
     </script>
   </body>
