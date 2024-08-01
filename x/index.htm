@@ -1,0 +1,156 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Choice</title>
+    <style>
+      * {
+        margin: 0;
+                  font-family: Arial, Helvetica, sans-serif;
+      }
+      .span {
+        font-size: 7vw;
+        background: lightsteelblue;
+
+        padding: 3vw 4vw;
+        margin: 1vw;
+        border-radius: 2vw;
+      }
+      .s {
+        color: blue;
+        background-color: orange;
+      }
+      #m {
+        display: flex;
+        background-color: mediumpurple;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        padding: 12vw 0 0 0;
+      }
+      .e {
+        color: yellow;
+        background: navy;
+        font-size: 8vw;
+      }
+      #v {
+            z-index: 1;
+          width: 100vw;
+          height: 100vh;
+        background-color: black;
+          opacity: 0.5;
+      }
+                * {
+            margin: 0
+        }
+        #a {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            display: block;
+        }
+        #b {
+            font-size: 20vw;
+            padding: 25vh 19vw;
+            display: none;
+            background-color: black;
+            color: white;
+            position: absolute;
+            width: 100vw;
+            height: 100vw;
+            z-index: 1;
+            opacity: 0.6;
+        }
+        #c {
+            display: none;
+            position: absolute;
+            width: 100vw;
+            height: 100vw;
+            z-index: 0;
+        }
+    </style>
+  </head>
+  <body>
+      <div id='a'></div>
+      <div id='b'>START</div>
+      <div id='c'>      
+      <span class="span">Lady Madonna</span><br />
+      <span class="span">Have You Ever Seen</span><br />
+      <span class="span">Take It Easy</span><br />
+      <span class="span">After Midnight</span><br />
+      <span class="span">We Can Work It Out</span><br />
+      <span class="span">While My Guitar Gently</span><br />
+      <span class="span">Hard to Handle</span><br />
+      <span class="span">Allright Now</span><br />
+      <span class="span">Jumping Jack Flash</span>
+      <span class="span">When The Lady Smiles</span><br />
+      <span class="span">It's Only Rock 'n Roll</span>
+    </div>
+    <script>
+                let a = document.getElementById("a");
+        let b = document.getElementById("b");
+        let c = document.getElementById("c");
+      a.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+          a.style.display = 'none'
+          b.style.display = 'block'
+          c.style.display = 'block'
+      });
+      let x = document.getElementById("x");
+      let m = document.getElementById("m");
+      let s = document.getElementsByClassName("span");
+      let ch = false;
+        b.addEventListener("click", () => {
+          if (ch == false) {
+            b.style.display = 'none';
+              S();
+          }
+        });
+      function S() {
+        ch = true;
+        if (ch == true) {
+          for (let i = 0; i < s.length; i++) {
+            if (s[i].classList.contains("e")) {
+              s[i].parentNode.removeChild(s[i]);
+            }
+          }
+          let t = 50;
+          let i = setInterval(() => {
+            let r = A();
+            H(r);
+            setTimeout(() => {
+              U(r);
+            }, 100);
+          }, 90);
+          setTimeout(() => {
+            clearInterval(i);
+
+            setTimeout(() => {
+              let r = A();
+              ch = false;
+              E(r);
+            }, 100);
+          }, t * 40);
+        }
+      }
+      function A() {
+        return s[Math.floor(Math.random() * s.length)];
+      }
+      function H(c) {
+        c.classList.add("s");
+      }
+      function U(c) {
+        c.classList.remove("s");
+      }
+      function E(c) {
+        c.classList.add("e");
+      }
+    </script>
+  </body>
