@@ -20,15 +20,6 @@
         color: blue;
         background-color: orange;
       }
-      #m {
-        display: flex;
-        background-color: mediumpurple;
-        align-items: center;
-        flex-direction: column;
-        width: 100vw;
-        height: 100vh;
-        padding: 12vw 0 0 0;
-      }
       .e {
         color: yellow;
         background: navy;
@@ -64,6 +55,11 @@
             opacity: 0.6;
         }
         #c {
+        background-color: mediumpurple;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
             display: none;
             position: absolute;
             width: 100vw;
@@ -100,7 +96,7 @@
         }
           a.style.display = 'none'
           b.style.display = 'block'
-          c.style.display = 'block'
+          c.style.display = 'flex'
       });
       let x = document.getElementById("x");
       let m = document.getElementById("m");
