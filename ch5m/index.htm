@@ -15,9 +15,9 @@
     color: white;
 }
 
-.container {
+#c {
     flex: 1;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
@@ -40,13 +40,20 @@
 }
 
 .time {
-    font-size: 12vw;
+    font-size: 20vw;
 }
+    #a {                background-color: black;
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            display: block;
+        }
 
     </style>
 </head>
 <body>
-    <div class="container">
+    <div id='a'></div>
+    <div id='c' class="container">
         <div class="player" id="player1">
             <div class="time" id="time1">05:00</div>
         </div>
@@ -56,6 +63,18 @@
     </div>
 
     <script>
+        let a = document.getElementById("a");
+        let c = document.getElementById("c");
+      a.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+          a.style.display = 'none'
+          c.style.display = 'flex'
+
+      });
 let time1 = 300; // Default to 5 minutes (300 seconds)
 let time2 = 300; // Default to 5 minutes (300 seconds)
 let timer1, timer2;
