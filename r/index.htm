@@ -1,0 +1,90 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hold Your Breath</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      button {
+        background-color: lightblue;
+        color: orange;
+        display: block;
+        width: 100vw;
+        height: 33.333vh;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        font-size: 20vw;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="Check()"></button>
+    <button onclick="Timer()" id="s"></button>
+    <button onclick="Check()"></button>
+    <audio id="b" src="m.mp3"></audio>
+    <script>
+      const b = document.getElementById("b");
+      let x = Number(localStorage.getItem("#hold"));
+      const r = document.getElementById("r");
+      const s = document.getElementById("s");
+      let check = true;
+
+      if (x == 0) {
+        localStorage.setItem("#hold", 15000);
+      }
+
+      x = Number(localStorage.getItem("#hold"));
+      s.innerHTML = `${x / 1000}`;
+      function FllScrn() {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+
+      function Dsply() {
+        if (x / 1000 <= 60) {
+          s.innerHTML = `${x / 1000}`;
+        } else if ((x / 1000) % 60 < 10) {
+          s.innerHTML = `${Math.floor(x / 1000 / 60)}:0${(x / 1000) % 60}`;
+        } else {
+          s.innerHTML = `${Math.floor(x / 1000 / 60)}:${(x / 1000) % 60}`;
+        }
+      }
+      Dsply();
+
+      function Sec() {
+        Dsply();
+        x -= 1000;
+        if (x < 0) {
+          x = Number(localStorage.getItem("#hold")) + 100;
+          localStorage.setItem("#hold", x);
+          b.play();
+          clearInterval(z);
+          check = true;
+          setTimeout(function () {
+            FllScrn();
+            location.reload();
+          }, 12000);
+        }
+      }
+      function Timer() {
+        if (check) {
+          check = false;
+          FllScrn();
+          z = setInterval(Sec, 1000);
+        }
+      }
+      function Check() {
+        b.play();
+      }
+    </script>
+  </body>
+</html>
