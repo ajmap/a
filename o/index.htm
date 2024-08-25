@@ -8,7 +8,7 @@
         * {
             margin: 0;
             font-family: Arial;
-            font-size: 12vw;
+            font-size: 8vw;
             text-align: center;
         }
         #f {
@@ -16,14 +16,15 @@
             height: 100vh;
             background-color: black;
         }
-        #c {
+        #e {
             width: 100vw;
-            height: 25vh;
-            background-color: navy;
+            height: 20vh;
+            padding-top: 5vh;
+            background-color: MediumBlue;
             color: white;
             display: none;
         }
-        #b {
+        #g {
             width: 100vw;
             height: 75vh;
             display: none;
@@ -31,38 +32,21 @@
             justify-content: flex-start;
             flex-wrap: wrap;
         }
-        #b div {
+        #g div {
+            padding-top: 5vh;
             width: 33.33vw;
-            height: 25vh;
+            height: 20vh;
         }
-        #b1 {
-            background-color: LightYellow;
+        #b1, #b5, #b9 {
+            background-color: AliceBlue;
         }
-        #b2 {
-            background-color: LemonChiffon;
+        #b2, #b6, #b7 {
+            background-color: HoneyDew;
         }
-        #b3 {
-            background-color: LightCyan;
+        #b3, #b5, #b8 {
+            background-color: LavenderBlush;
         }
-        #b4 {
-            background-color: LightCyan;
-        }
-        #b5 {
-            background-color: LightYellow;
-        }
-        #b6 {
-            background-color: LemonChiffon;
-        }
-        #b7 {
-            background-color: LemonChiffon;
-        }
-        #b8 {
-            background-color: LightCyan;
-        }
-        #b9 {
-            background-color: LightYellow;
-        }
-#s, #t {
+#t {
     display: none;
 }
 
@@ -70,8 +54,8 @@
 </head>
 <body>
         <div id='f'></div>
-        <div id="c"></div>
-        <div id="b">
+        <div id="e"></div>
+        <div id="g">
             <div id='b1' class="n" d="1">1</div>
             <div id='b2' class="n" d="2">2</div>
             <div id='b3' class="n" d="3">3</div>
@@ -82,13 +66,12 @@
             <div id='b8' class="n" d="8">8</div>
             <div id='b9' class="n" d="9">9</div>
         </div>
-        <div id="s"></div>
         <div id="t"></div>
     <script>
 
                 let f = document.getElementById('f');
-                let bdiv = document.getElementById('b');
-                let cdiv = document.getElementById('c');
+                let g = document.getElementById('g');
+                let e = document.getElementById('e');
 
                 f.addEventListener("click", () => {
             if (!document.fullscreenElement) {
@@ -97,48 +80,49 @@
                 document.exitFullscreen();
             }
             f.style.display = 'none'
-            bdiv.style.display = 'flex'
-                                cdiv.style.display = 'block'
+            g.style.display = 'flex'
+            e.style.display = 'block'
                     
      });
 const c = [                                                  
     { a: 56, b: 8, operator: '/', result: 7 },                   // a  =  startTime                
     { a: 132, b: 22, operator: '/', result: 6 },                 // b  =  bestTime      #b  =  #buttons   
-    { a: 17, b: 9, operator: '-', result: 8 },                   // c  =  calculations   .c  =  .container  #c  =  #calculation
+   { a: 17, b: 9, operator: '-', result: 8 },                   // c  =  calculations   .c  =  .container  #c  =  #calculation
     { a: 27, b: 3, operator: '/', result: 9 },                   // d  =  data-num  (attribute)
-    { a: 22, b: 17, operator: '-', result: 5 },
-    { a: 140, b: 35, operator: '/', result: 4 },
-    { a: 48, b: 8, operator: '/', result: 6 },
-    { a: 23, b: 17, operator: '-', result: 6 },
+    { a: 22, b: 17, operator: '-', result: 5 },                  // e  =  div met som
+    { a: 140, b: 35, operator: '/', result: 4 },                 // f  =  start en fullscreen
+  /*   { a: 48, b: 8, operator: '/', result: 6 },                   // g  =  container met operator divs
+    { a: 23, b: 17, operator: '-', result: 6 },                  // H  =  formatCalculation
     { a: 5, b: 2, operator: '-', result: 3 },                    // i  =  calculationIndex
     { a: 28, b: 4, operator: '/', result: 7 },                   // .n  =  .num-btn
-    { a: 24, b: 17, operator: '-', result: 7 },
-    { a: 96, b: 12, operator: '/', result: 8 },
+    { a: 24, b: 17, operator: '-', result: 7 },         
+    { a: 96, b: 12, operator: '/', result: 8 },                  //  Q  =  bestTime in local storage
     { a: 36, b: 4, operator: '/', result: 9 },                   // #s  =  #status
     { a: 12, b: 7, operator: '-', result: 5 },                   //  #t  =  #best-time
-    { a: 16, b: 13, operator: '-', result: 3 },
-    { a: 85, b: 17, operator: '/', result: 5 },
+    { a: 16, b: 13, operator: '-', result: 3 },                  // u  =  userAnswer
+    { a: 85, b: 17, operator: '/', result: 5 },                   // z  =  button(in forEach)  */
 ];
 
 let i  = 0;
 let a;
-let b = localStorage.getItem('bestTime') ? parseFloat(localStorage.getItem('bestTime')) : null;
+let b = localStorage.getItem('Q') ? parseFloat(localStorage.getItem('Q')) : null;
 
-document.getElementById('s').textContent = `Calculations left: ${c.length - i}`;
 if (b) {
-    document.getElementById('t').textContent = `Best Time: ${b.toFixed(2)} seconds`;
+    document.getElementById('t').textContent = `${b.toFixed(2)} seconds`;
 }
 
-document.getElementById('c').textContent = formatCalculation(c[i]);
+e.textContent = H(c[i]);
 
-document.querySelectorAll('.n').forEach(button => {
-    button.addEventListener('click', function () {
-        const userAnswer = parseInt(this.getAttribute('d'));
-        if (userAnswer === c[i].result) {
+document.querySelectorAll('.n').forEach(z => {
+    z.addEventListener('click', function () {
+                if (!a) {
+            a = new Date().getTime(); 
+        }
+        const u = parseInt(this.getAttribute('d'));
+        if (u === c[i].result) {
             i++;
             if (i < c.length) {
-                document.getElementById('c').textContent = formatCalculation(c[i]);
-                document.getElementById('s').textContent = `Calculations left: ${c.length - i}`;
+                e.textContent = H(c[i]);
             } else {
                 const endTime = new Date().getTime();
                 const timeTaken = (endTime - a) / 1000;
@@ -146,29 +130,34 @@ document.querySelectorAll('.n').forEach(button => {
                 if (!b || timeTaken < b) {
                     b = timeTaken;
                     localStorage.setItem('bestTime', b);
-                    document.getElementById('t').textContent = `Best Time: ${bestTime.toFixed(2)} seconds`;
+                    document.getElementById('t').textContent = `Best Time: ${b.toFixed(2)} seconds`;
                     alert('Congratulations! You set a new best time!');
                 }
                 resetGame();
             }
         } else {
-            alert('Wrong answer! Try again.');
-        }
-    });
-});
+            e.style.color = 'red';
 
-function formatCalculation(calc) {
-    a = a || new Date().getTime(); 
+                setTimeout(() => {
+                    e.style.color = 'white';
+                }, 500);
+            }
+        })
+    });
+
+
+function H(calc) {
     return `${calc.a} ${calc.operator} ${calc.b}`;
 }
 
 function resetGame() {
-    calculationIndex = 0;
+    i = 0;
     a = null;
-    document.getElementById('c').textContent = formatCalculation(c[i]);
-    document.getElementById('s').textContent = `Calculations left: ${c.length - i}`;
+    document.getElementById('e').textContent = H(c[i]);
 }
 
     </script>
 </body>
 </html>
+
+
