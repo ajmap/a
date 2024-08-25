@@ -1,172 +1,166 @@
-<!DOCTYPE html>                             
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <style>
-        * {
-            margin: 0;
-            font-family: Arial;
-            text-align: center;
-        }
-        #f {
-            width: 100vw;
-            height: 55vh;
-            padding-top: 45vh;
-            background-color: MediumBlue;
-            font-size: 15vw;
-            color: HoneyDew;
-        }
-        #e {
-            width: 100vw;
-            height: 17vh;
-            font-size: 15vw;
-            padding-top: 8vh;
-            background-color: MediumBlue;
-            color: white;
-            display: none;
-        }
-        #g {
-            width: 100vw;
-            height: 75vh;
-            display: none;
-            flex-direction: row;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-        }
-        #g div {
-            padding-top: 10vh;
-            font-size: 10vw;
-            width: 33.33vw;
-            height: 15vh;
-        }
-        #b1, #b5, #b9 {
-            background-color: AliceBlue;
-        }
-        #b2, #b6, #b7 {
-            background-color: HoneyDew;
-        }
-        #b3, #b5, #b8 {
-            background-color: LavenderBlush;
-        }
-        #t {
-            background-color: MediumBlue;
-            padding-top: 40vh;
-            width: 100vw;
-            height: 60vh;
-            font-size: 12vw;
-            color: HoneyDew;
-            text-align: center;
-        }
-
-
+      * {
+        margin: 0;
+        font-family: Arial;
+        text-align: center;
+      }
+      #f {
+        width: 100vw;
+        height: 75vh;
+        padding-top: 25vh;
+        background-color: MediumBlue;
+        font-size: 15vw;
+        color: HoneyDew;
+      }
+      #e {
+        width: 100vw;
+        height: 17vh;
+        font-size: 15vw;
+        padding-top: 8vh;
+        background-color: MediumBlue;
+        color: white;
+        display: none;
+      }
+      #g {
+        width: 100vw;
+        height: 75vh;
+        display: none;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+      #g div {
+        padding-top: 3vh;
+        font-size: 10vw;
+        width: 25vw;
+        height: 12vh;
+      }
+      #b1,
+      #b5,
+      #b9 {
+        background-color: AliceBlue;
+      }
+      #b2,
+      #b6,
+      #b7 {
+        background-color: HoneyDew;
+      }
+      #b3,
+      #b5,
+      #b8 {
+        background-color: LavenderBlush;
+      }
+      #t {
+        background-color: MediumBlue;
+        width: 100vw;
+        height: 100vh;
+        font-size: 12vw;
+        color: HoneyDew;
+        text-align: center;
+      }
     </style>
-</head>
-<body>
-        <div id='f'>START</div>
-        <div id="e"></div>
-        <div id="g">
-            <div id='b1' class="n" d="1">1</div>
-            <div id='b2' class="n" d="2">2</div>
-            <div id='b3' class="n" d="3">3</div>
-            <div id='b4' class="n" d="4">4</div>
-            <div id='b5' class="n" d="5">5</div>
-            <div id='b6' class="n" d="6">6</div>
-            <div id='b7' class="n" d="7">7</div>
-            <div id='b8' class="n" d="8">8</div>
-            <div id='b9' class="n" d="9">9</div>
-        </div>
-        <div id="t">High<br>Score</div>
+  </head>
+  <body>
+    <div id="f">START</div>
+    <div id="e"></div>
+    <div id="g">
+      <div id="b3" class="n" d="3">3</div>
+      <div id="b4" class="n" d="4">4</div>
+      <div id="b5" class="n" d="5">5</div>
+      <div id="b6" class="n" d="6">6</div>
+      <div id="b7" class="n" d="7">7</div>
+      <div id="b8" class="n" d="8">8</div>
+      <div id="b9" class="n" d="9">9</div>
+      <div id="b11" class="n" d="1">11</div>
+      <div id="b12" class="n" d="2">12</div>
+      <div id="b13" class="n" d="3">13</div>
+      <div id="b14" class="n" d="4">14</div>
+      <div id="b15" class="n" d="5">15</div>
+      <div id="b16" class="n" d="6">16</div>
+      <div id="b17" class="n" d="7">17</div>
+      <div id="b18" class="n" d="8">18</div>
+      <div id="b19" class="n" d="9">19</div>
+      <div id="b21" class="n" d="1">21</div>
+      <div id="b22" class="n" d="1">22</div>
+      <div id="b23" class="n" d="2">23</div>  
+    </div>
+    <div id="t">High<br />Score</div>
 
     <script>
-            let f = document.getElementById('f');
-            let g = document.getElementById('g');
-            let e = document.getElementById('e');
-            let t = document.getElementById('t');
-            f.addEventListener("click", () => {
-                if (!document.fullscreenElement) {
-                    document.documentElement.requestFullscreen();
-                } else if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                }
-                    f.style.display = 'none'
-                    g.style.display = 'flex'
-                    e.style.display = 'block'           
-                });
-            const c = [                                                  
-                            { a: 196, b: 28, r: 7 },
-                            { a: 162, b: 81, r: 2 },
-                            { a: 105, b: 35, r: 3 },
-                            { a: 468, b: 52, r: 9 },
-                            { a: 120, b: 24, r: 5 },
-                            { a: 621, b: 69, r: 9 },
-                            { a: 108, b: 36, r: 3 },
-                            { a: 714, b: 102, r: 7 },
-                            { a: 192, b: 96, r: 2 },
-                            { a: 144, b: 48, r: 3 },
-                            { a: 186, b: 31, r: 6 },
-                            { a: 260, b: 65, r: 4 },
-                            { a: 108, b: 18, r: 6 },
-                            { a: 360, b: 45, r: 8 },
-                            { a: 440, b: 55, r: 8 },
-                            { a: 210, b: 35, r: 6 },
-                    ];
-            let i  = 0;
-            let a;
-            let b = localStorage.getItem('Q') ? parseFloat(localStorage.getItem('Q')) : null;
-            e.textContent = H(c[i]);
-            document.querySelectorAll('.n').forEach(z => {
-            z.addEventListener('click', function () {
-                if (!a) {
-            a = new Date().getTime(); 
-            }
-            const u = parseInt(this.getAttribute('d'));
-            if (u === c[i].r) {
+      let f = document.getElementById("f");
+      let g = document.getElementById("g");
+      let e = document.getElementById("e");
+      let t = document.getElementById("t");
+      f.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        f.style.display = "none";
+        g.style.display = "flex";
+        e.style.display = "block";
+      });
+      const c = [
+        { a: 4, b: 5, o: "+", r: 9 },
+        { a: 16, b: 4, o: "\u00F7", r: 4 },
+        { a: 1, b: 2, o: "+", r: 3 },
+      ];
+      let i = 0;
+      let a;
+      let b = localStorage.getItem("Q")
+        ? parseFloat(localStorage.getItem("Q"))
+        : null;
+      e.textContent = H(c[i]);
+      document.querySelectorAll(".n").forEach((z) => {
+        z.addEventListener("click", function () {
+          if (!a) {
+            a = new Date().getTime();
+          }
+          const u = parseInt(this.getAttribute("d"));
+          if (u === c[i].r) {
             i++;
             if (i < c.length) {
-                e.textContent = H(c[i]);
+              e.textContent = H(c[i]);
             } else {
-                const e = new Date().getTime();
-                const t = (e - a) / 1000;
-                if (!b || t < b) {
-                    b = t;
-                    localStorage.setItem('Q', b);
-                    document.getElementById('t').style.display = 'block';
-                    document.getElementById('e').style.display = 'none';
-                    document.getElementById('g').style.display = 'none';
-                                          setTimeout(() => {
-                                                document.getElementById('t').style.display = 'none';
-                    document.getElementById('e').style.display = 'block';
-                    document.getElementById('g').style.display = 'flex';
-                        }, 1000);
-                    } 
-                    R();
-                    }
-                } else {
-                            e.style.color = 'red';
-                            setTimeout(() => {
-                            e.style.color = 'white';
-                        }, 500);
-                    }
-                })
-            });
-            function H(calc) {
-                return `${calc.a} \u00F7  ${calc.b}`;
-                }
-            function R() {
-                i = 0;
-                a = null;
-                e.textContent = H(c[i]);
-                }
+              const e = new Date().getTime();
+              const t = (e - a) / 1000;
+              if (!b || t < b) {
+                b = t;
+                localStorage.setItem("Q", b);
+                document.getElementById("t").style.display = "block";
+                document.getElementById("e").style.display = "none";
+                document.getElementById("g").style.display = "none";
+                setTimeout(() => {
+                  document.getElementById("t").style.display = "none";
+                  document.getElementById("e").style.display = "block";
+                  document.getElementById("g").style.display = "flex";
+                }, 1000);
+              }
+              R();
+            }
+          } else {
+            e.style.color = "red";
+            setTimeout(() => {
+              e.style.color = "white";
+            }, 500);
+          }
+        });
+      });
+      function H(calc) {
+        return `${calc.a} ${calc.o}  ${calc.b}`;
+      }
+      function R() {
+        i = 0;
+        a = null;
+        e.textContent = H(c[i]);
+      }
     </script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
