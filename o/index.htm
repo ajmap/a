@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>                             
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,8 +12,11 @@
         }
         #f {
             width: 100vw;
-            height: 100vh;
-            background-color: black;
+            height: 75vh;
+            padding-top: 25vh;
+            background-color: MediumBlue;
+            font-size: 15vw;
+            color: HoneyDew;
         }
         #e {
             width: 100vw;
@@ -47,14 +50,20 @@
         #b3, #b5, #b8 {
             background-color: LavenderBlush;
         }
-#t {
-    display: none;
-}
+        #t {
+            background-color: MediumBlue;
+            width: 100vw;
+            height: 100vh;
+            font-size: 12vw;
+            color: HoneyDew;
+            text-align: center;
+        }
+
 
     </style>
 </head>
 <body>
-        <div id='f'></div>
+        <div id='f'>START</div>
         <div id="e"></div>
         <div id="g">
             <div id='b1' class="n" d="1">1</div>
@@ -67,98 +76,95 @@
             <div id='b8' class="n" d="8">8</div>
             <div id='b9' class="n" d="9">9</div>
         </div>
-        <div id="t"></div>
+        <div id="t">High<br>Score</div>
+
     <script>
-
-                let f = document.getElementById('f');
-                let g = document.getElementById('g');
-                let e = document.getElementById('e');
-
-                f.addEventListener("click", () => {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen();
-            } else if (document.exitFullscreen) {
-                document.exitFullscreen();
-            }
-            f.style.display = 'none'
-            g.style.display = 'flex'
-            e.style.display = 'block'
-                    
-     });
-const c = [                                                  
-    { a: 56, b: 8, operator: '/', result: 7 },                   // a  =  startTime                
-    { a: 132, b: 22, operator: '/', result: 6 },                 // b  =  bestTime      #b  =  #buttons   
-   { a: 17, b: 9, operator: '-', result: 8 },                   // c  =  calculations   .c  =  .container  #c  =  #calculation
-    { a: 27, b: 3, operator: '/', result: 9 },                   // d  =  data-num  (attribute)
-    { a: 22, b: 17, operator: '-', result: 5 },                  // e  =  div met som
-    { a: 140, b: 35, operator: '/', result: 4 },                 // f  =  start en fullscreen
-  /*   { a: 48, b: 8, operator: '/', result: 6 },                   // g  =  container met operator divs
-    { a: 23, b: 17, operator: '-', result: 6 },                  // H  =  formatCalculation
-    { a: 5, b: 2, operator: '-', result: 3 },                    // i  =  calculationIndex
-    { a: 28, b: 4, operator: '/', result: 7 },                   // .n  =  .num-btn
-    { a: 24, b: 17, operator: '-', result: 7 },         
-    { a: 96, b: 12, operator: '/', result: 8 },                  //  Q  =  bestTime in local storage
-    { a: 36, b: 4, operator: '/', result: 9 },                   // #s  =  #status
-    { a: 12, b: 7, operator: '-', result: 5 },                   //  #t  =  #best-time
-    { a: 16, b: 13, operator: '-', result: 3 },                  // u  =  userAnswer
-    { a: 85, b: 17, operator: '/', result: 5 },                   // z  =  button(in forEach)  */
-];
-
-let i  = 0;
-let a;
-let b = localStorage.getItem('Q') ? parseFloat(localStorage.getItem('Q')) : null;
-
-if (b) {
-    document.getElementById('t').textContent = `${b.toFixed(2)} seconds`;
-}
-
-e.textContent = H(c[i]);
-
-document.querySelectorAll('.n').forEach(z => {
-    z.addEventListener('click', function () {
+            let f = document.getElementById('f');
+            let g = document.getElementById('g');
+            let e = document.getElementById('e');
+            let t = document.getElementById('t');
+            f.addEventListener("click", () => {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+                    f.style.display = 'none'
+                    g.style.display = 'flex'
+                    e.style.display = 'block'           
+                });
+            const c = [                                                  
+                            { a: 210, b: 35, r: 6 },
+                            { a: 186, b: 31, r: 6 },
+                            { a: 621, b: 69, r: 9 },
+                            { a: 260, b: 65, r: 4 },
+                        //   { a: 196, b: 28, r: 7 },
+                        //    { a: 162, b: 81, r: 2 },
+                        //    { a: 468, b: 52, r: 9 },
+                        //    { a: 120, b: 24, r: 5 },
+                        //    { a: 108, b: 36, r: 3 },
+                        //    { a: 714, b: 102, r: 7 },
+                        //    { a: 192, b: 96, r: 2 },
+                        //    { a: 144, b: 48, r: 3 },
+                        //    { a: 108, b: 18, r: 6 },
+                        //    { a: 360, b: 45, r: 8 },
+                        //    { a: 440, b: 55, r: 8 },
+                    ];
+            let i  = 0;
+            let a;
+            let b = localStorage.getItem('Q') ? parseFloat(localStorage.getItem('Q')) : null;
+            e.textContent = H(c[i]);
+            document.querySelectorAll('.n').forEach(z => {
+            z.addEventListener('click', function () {
                 if (!a) {
             a = new Date().getTime(); 
-        }
-        const u = parseInt(this.getAttribute('d'));
-        if (u === c[i].result) {
+            }
+            const u = parseInt(this.getAttribute('d'));
+            if (u === c[i].r) {
             i++;
             if (i < c.length) {
                 e.textContent = H(c[i]);
             } else {
-                const endTime = new Date().getTime();
-                const timeTaken = (endTime - a) / 1000;
-                alert(`You completed the game in ${timeTaken.toFixed(2)} seconds!`);
-                if (!b || timeTaken < b) {
-                    b = timeTaken;
-                    localStorage.setItem('bestTime', b);
-                    document.getElementById('t').textContent = `Best Time: ${b.toFixed(2)} seconds`;
-                    alert('Congratulations! You set a new best time!');
+                const e = new Date().getTime();
+                const t = (e - a) / 1000;
+                if (!b || t < b) {
+                    b = t;
+                    localStorage.setItem('Q', b);
+                    document.getElementById('t').style.display = 'block';
+                    document.getElementById('e').style.display = 'none';
+                    document.getElementById('g').style.display = 'none';
+                                          setTimeout(() => {
+                                                document.getElementById('t').style.display = 'none';
+                    document.getElementById('e').style.display = 'block';
+                    document.getElementById('g').style.display = 'flex';
+                        }, 1000);
+                    } 
+                    R();
+                    }
+                } else {
+                            e.style.color = 'red';
+                            setTimeout(() => {
+                            e.style.color = 'white';
+                        }, 500);
+                    }
+                })
+            });
+            function H(calc) {
+                return `${calc.a} \u00F7  ${calc.b}`;
                 }
-                resetGame();
-            }
-        } else {
-            e.style.color = 'red';
-
-                setTimeout(() => {
-                    e.style.color = 'white';
-                }, 500);
-            }
-        })
-    });
-
-
-function H(calc) {
-    return `${calc.a} ${calc.operator} ${calc.b}`;
-}
-
-function resetGame() {
-    i = 0;
-    a = null;
-    document.getElementById('e').textContent = H(c[i]);
-}
-
+            function R() {
+                i = 0;
+                a = null;
+                e.textContent = H(c[i]);
+                }
     </script>
 </body>
 </html>
+
+
+
+
+
+
 
 
