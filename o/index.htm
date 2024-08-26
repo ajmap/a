@@ -12,8 +12,8 @@
       }
       #f {
         width: 100vw;
-        height: 75vh;
-        padding-top: 25vh;
+        height: 52vh;
+        padding-top: 48vh;
         background-color: MediumBlue;
         font-size: 15vw;
         color: HoneyDew;
@@ -50,8 +50,9 @@
       }
       #t {
         background-color: MediumBlue;
+        padding-top: 40vh;
         width: 100vw;
-        height: 100vh;
+        height: 60vh;
         font-size: 12vw;
         color: HoneyDew;
         text-align: center;
@@ -59,8 +60,9 @@
       }
       #x {
         background-color: MediumBlue;
+        padding-top: 40vh;
         width: 100vw;
-        height: 100vh;
+        height: 60vh;
         font-size: 12vw;
         color: HoneyDew;
         text-align: center;
@@ -97,6 +99,18 @@
     <div id="x">Game<br />Over</div>
 
     <script>
+        let c1 = [
+          { a: 51, b: 47, o: "-", r: 4 },
+          { a: 96, b: 12, o: "\u00F7", r: 8 },
+          { a: 12, b: 4, o: "+", r: 16 },
+          { a: 4, b: 6, o: "*", r: 24 },
+          { a: 38, b: 2, o: "\u00F7", r: 19 },
+          { a: 44, b: 23, o: "-", r: 21 },
+          { a: 42, b: 35, o: "-", r: 7 },
+          { a: 72, b: 4, o: "\u00F7", r: 18 },
+          { a: 11, b: 12, o: "+", r: 23 },
+        ];
+        let c = c1.sort(() => Math.random() - 0.5);
       let f = document.getElementById("f");
       let g = document.getElementById("g");
       let e = document.getElementById("e");
@@ -111,17 +125,7 @@
         g.style.display = "flex";
         e.style.display = "block";
       });
-      const c = [
-        { a: 51, b: 47, o: "-", r: 4 },
-        { a: 96, b:12 , o: "\u00F7", r: 8 },
-        { a: 12, b: 4, o: "+", r: 16 },
-        { a: 4, b: 5, o: "*", r: 20 },
-        { a: 38, b:2 , o: "\u00F7", r: 19 },
-        { a: 44, b: 23, o: "1", r: 21 },
-        { a: 42, b: 7, o: "-", r: 35 },
-        { a: 72, b: 4, o: "\u00F7", r: 18 },
-        { a: 11, b: 12, o: "+", r: 23 },
-      ];
+
       let i = 0;
       let a = null;
       let b = localStorage.getItem("Q")
