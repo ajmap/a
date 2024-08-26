@@ -12,8 +12,8 @@
       }
       #f {
         width: 100vw;
-        height: 52vh;
-        padding-top: 48vh;
+        height: 75vh;
+        padding-top: 25vh;
         background-color: MediumBlue;
         font-size: 15vw;
         color: HoneyDew;
@@ -55,8 +55,17 @@
         font-size: 12vw;
         color: HoneyDew;
         text-align: center;
-          display: none;
+        display: none;
       }
+      #x {
+        background-color: MediumBlue;
+        width: 100vw;
+        height: 100vh;
+        font-size: 12vw;
+        color: HoneyDew;
+        text-align: center;
+        display: none;
+      }  
     </style>
   </head>
   <body>
@@ -85,6 +94,7 @@
         <div id="b24" class="n" d="24">24</div>  
     </div>
     <div id="t">High<br />Score</div>
+    <div id="x">Game<br />Over</div>
 
     <script>
       let f = document.getElementById("f");
@@ -105,15 +115,15 @@
         { a: 51, b: 47, o: "-", r: 4 },
         { a: 96, b:12 , o: "\u00F7", r: 8 },
         { a: 12, b: 4, o: "+", r: 16 },
-        { a: 4, b: 6, o: "*", r: 24 },
+        { a: 4, b: 5, o: "*", r: 20 },
         { a: 38, b:2 , o: "\u00F7", r: 19 },
-        { a: 44, b: 23, o: "-", r: 21 },
-        { a: 42, b: 35, o: "-", r: 7 },
+        { a: 44, b: 23, o: "1", r: 21 },
+        { a: 42, b: 7, o: "-", r: 35 },
         { a: 72, b: 4, o: "\u00F7", r: 18 },
         { a: 11, b: 12, o: "+", r: 23 },
       ];
       let i = 0;
-      let a;
+      let a = null;
       let b = localStorage.getItem("Q")
         ? parseFloat(localStorage.getItem("Q"))
         : null;
@@ -128,9 +138,10 @@
             i++;
             if (i < c.length) {
               e.textContent = H(c[i]);
+                
             } else {
-              const e = new Date().getTime();
-              const t = (e - a) / 1000;
+              const j = new Date().getTime();
+              const t = (j - a) / 1000;
               if (!b || t < b) {
                 b = t;
                 localStorage.setItem("Q", b);
@@ -141,7 +152,16 @@
                   document.getElementById("t").style.display = "none";
                   document.getElementById("e").style.display = "block";
                   document.getElementById("g").style.display = "flex";
-                }, 1000);
+                }, 2000);
+              } else {
+                document.getElementById("x").style.display = "block";
+                document.getElementById("e").style.display = "none";
+                document.getElementById("g").style.display = "none";
+                setTimeout(() => {
+                  document.getElementById("x").style.display = "none";
+                  document.getElementById("e").style.display = "block";
+                  document.getElementById("g").style.display = "flex";
+                }, 2000);
               }
               R();
             }
