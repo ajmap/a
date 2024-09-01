@@ -133,7 +133,7 @@
               e.textContent = H(c[i]);
             } else {
               const j = new Date().getTime();
-              const t = (j - a) / 1000;
+              const t = ((j - a) / 1000)/c1.length;
               if (!b || t < b) {
                 b = t;
                 localStorage.setItem("Q", b);
