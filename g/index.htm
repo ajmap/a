@@ -1,97 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Text</title>
     <style>
-        * {
-                        margin: 0;
-        }
-        #start {
-            background-color: black;
-            width: 100vw;
-            height: 100vh;
-        }
-        #text-container {
-            display: none;
-            padding: 1vw;
-            font-family: Arial;
-        }
+      * {
+        margin: 0;
+      }
+      #start {
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+      }
+      #text-container {
+        display: none;
+        padding: 1vw;
+        font-family: Arial;
+      }
 
-.word {
-    cursor: pointer;
-    display: inline-block;
-    font-size: 5.85vw;
-}
+      .word {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 5.85vw;
+      }
 
-.word.greyed {
-    color: grey;
-}
+      .word.greyed {
+        color: grey;
+      }
 
-.word.lighter-greyed {
-    color: lightgrey;
-}
-                .word.white {
-    color: white;
-}
-
+      .word.lighter-greyed {
+        color: lightgrey;
+      }
+      .word.white {
+        color: white;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="start"></div>
     <div id="text-container">
-     <span class="word">Ik</span><span class="word">voel</span><span class="word">wat</span><span class="word">ik</span><span class="word">wil</span><span class="word">en</span><span class="word">ik</span><span class="word">weet</span><span class="word">wat</span><span class="word">ik</span><span class="word">wil</span><span class="word">en</span><span class="word">ik</span><span class="word">kan</span><span class="word">het</span><span class="word">en</span><span class="word">ik</span><span class="word">doe</span><span class="word">het.</span><span class="word">Ik</span><span class="word">ben</span><span class="word">geconcentreerd.</span><span class="word">Ik</span><span class="word">kan</span><span class="word">volledig</span><span class="word">mijn</span><span class="word">aandacht</span><span class="word">ergens</span><span class="word">op</span><span class="word">richten</span><span class="word">en</span><span class="word">me</span><span class="word">volledig</span><span class="word">daar</span><span class="word">ongestoord</span><span class="word">mee</span><span class="word">bezig</span><span class="word">houden.</span><span class="word">En</span><span class="word">ik</span><span class="word">zie</span><span class="word">het,</span><span class="word">dat</span><span class="word">is</span><span class="word">het</span><span class="word">mooie,</span><span class="word">het</span><span class="word">bijzondere</span><span class="word">van</span><span class="word">de</span><span class="word">visualisatie.</span><span class="word">Dat</span><span class="word">ik</span><span class="word">als</span><span class="word">het</span><span class="word">ware</span><span class="word">zie</span><span class="word">wat</span><span class="word">ik</span><span class="word">denk,</span><span class="word">prachtige</span><span class="word">voorstelling,</span><span class="word">de</span><span class="word">inspiratie.</span><span class="word">Ik</span><span class="word">zie</span><span class="word">wat</span><span class="word">ik</span><span class="word">denk</span><span class="word">en</span><span class="word">ik</span><span class="word">weet</span><span class="word">wat</span><span class="word">ik</span><span class="word">wil.</span><span class="word">Vanaf</span><span class="word">nu,</span><span class="word">ben</span><span class="word">ik</span><span class="word">en</span><span class="word">blijf</span><span class="word">ik</span><span class="word">geconcentreerd.</span><span class="word">Op</span><span class="word">de</span><span class="word">dingen</span><span class="word">die</span><span class="word">ik</span><span class="word">wil.</span><span class="word">Op</span><span class="word">elk</span><span class="word">moment</span><span class="word">dat</span><span class="word">het</span><span class="word">voor</span><span class="word">mij</span><span class="word">belangrijk</span><span class="word">is</span><span class="word">om</span><span class="word">geconcentreerd</span><span class="word">te</span><span class="word">zijn.</span><span class="word">En</span><span class="word">ik</span><span class="word">weet</span><span class="word">wat</span><span class="word">ik</span><span class="word">wil.</span><span class="word">Ik</span><span class="word">ontspan</span><span class="word">me,</span><span class="word">rust</span><span class="word">en</span><span class="word">kalmte,</span><span class="word">rust</span><span class="word">en</span><span class="word">kalmte,</span><span class="word">rust</span><span class="word">en</span><span class="word">kalmte.</span><span class="word">Een</span><span class="word">prettig</span><span class="word">gevoel</span><span class="word">wat</span><span class="word">in</span><span class="word">me</span><span class="word">is</span><span class="word">en</span><span class="word">ook</span><span class="word">om</span><span class="word">is.</span><span class="word">Een</span><span class="word">prettig</span><span class="word">en</span><span class="word">fijn</span><span class="word">gevoel</span><span class="word">in</span><span class="word">me</span><span class="word">en</span><span class="word">om</span><span class="word">me</span><span class="word">heen.</span><span class="word">En</span><span class="word">dat</span><span class="word">blijft</span><span class="word">zo,</span><span class="word">dat</span><span class="word">blijft</span><span class="word">zo.</span>
-
- 
+      <span class="word">Ik</span><span class="word">voel</span
+      ><span class="word">wat</span><span class="word">ik</span
+      ><span class="word">wil</span><span class="word">en</span
+      ><span class="word">ik</span><span class="word">weet</span
+      ><span class="word">wat</span><span class="word">ik</span
+      ><span class="word">wil</span><span class="word">en</span
+      ><span class="word">ik</span><span class="word">kan</span
+      ><span class="word">het</span><span class="word">en</span
+      ><span class="word">ik</span><span class="word">doe</span
+      ><span class="word">het.</span><span class="word">Ik</span
+      ><span class="word">ben</span><span class="word">geconcentreerd.</span
+      ><span class="word">Ik</span><span class="word">kan</span
+      ><span class="word">volledig</span><span class="word">mijn</span
+      ><span class="word">aandacht</span><span class="word">ergens</span
+      ><span class="word">op</span><span class="word">richten</span
+      ><span class="word">en</span><span class="word">me</span
+      ><span class="word">volledig</span><span class="word">daar</span
+      ><span class="word">ongestoord</span><span class="word">mee</span
+      ><span class="word">bezig</span><span class="word">houden.</span
+      ><span class="word">En</span><span class="word">ik</span
+      ><span class="word">zie</span><span class="word">het,</span
+      ><span class="word">dat</span><span class="word">is</span
+      ><span class="word">het</span><span class="word">mooie,</span
+      ><span class="word">het</span><span class="word">bijzondere</span
+      ><span class="word">van</span><span class="word">de</span
+      ><span class="word">visualisatie.</span><span class="word">Dat</span
+      ><span class="word">ik</span><span class="word">als</span
+      ><span class="word">het</span><span class="word">ware</span
+      ><span class="word">zie</span><span class="word">wat</span
+      ><span class="word">ik</span><span class="word">denk,</span
+      ><span class="word">prachtige</span><span class="word">voorstelling,</span
+      ><span class="word">de</span><span class="word">inspiratie.</span
+      ><span class="word">Ik</span><span class="word">zie</span
+      ><span class="word">wat</span><span class="word">ik</span
+      ><span class="word">denk</span><span class="word">en</span
+      ><span class="word">ik</span><span class="word">weet</span
+      ><span class="word">wat</span><span class="word">ik</span
+      ><span class="word">wil.</span><span class="word">Vanaf</span
+      ><span class="word">nu,</span><span class="word">ben</span
+      ><span class="word">ik</span><span class="word">en</span
+      ><span class="word">blijf</span><span class="word">ik</span
+      ><span class="word">geconcentreerd.</span><span class="word">Op</span
+      ><span class="word">de</span><span class="word">dingen</span
+      ><span class="word">die</span><span class="word">ik</span
+      ><span class="word">wil.</span><span class="word">Op</span
+      ><span class="word">elk</span><span class="word">moment</span
+      ><span class="word">dat</span><span class="word">het</span
+      ><span class="word">voor</span><span class="word">mij</span
+      ><span class="word">belangrijk</span><span class="word">is</span
+      ><span class="word">om</span><span class="word">geconcentreerd</span
+      ><span class="word">te</span><span class="word">zijn.</span
+      ><span class="word">En</span><span class="word">ik</span
+      ><span class="word">weet</span><span class="word">wat</span
+      ><span class="word">ik</span><span class="word">wil.</span
+      ><span class="word">Ik</span><span class="word">ontspan</span
+      ><span class="word">me,</span><span class="word">rust</span
+      ><span class="word">en</span><span class="word">kalmte,</span
+      ><span class="word">rust</span><span class="word">en</span
+      ><span class="word">kalmte,</span><span class="word">rust</span
+      ><span class="word">en</span><span class="word">kalmte.</span
+      ><span class="word">Een</span><span class="word">prettig</span
+      ><span class="word">gevoel</span><span class="word">wat</span
+      ><span class="word">in</span><span class="word">me</span
+      ><span class="word">is</span><span class="word">en</span
+      ><span class="word">ook</span><span class="word">om</span
+      ><span class="word">is.</span><span class="word">Een</span
+      ><span class="word">prettig</span><span class="word">en</span
+      ><span class="word">fijn</span><span class="word">gevoel</span
+      ><span class="word">in</span><span class="word">me</span
+      ><span class="word">en</span><span class="word">om</span
+      ><span class="word">me</span><span class="word">heen.</span
+      ><span class="word">En</span><span class="word">dat</span
+      ><span class="word">blijft</span><span class="word">zo,</span
+      ><span class="word">dat</span><span class="word">blijft</span
+      ><span class="word">zo.</span>
     </div>
     <script>
-        let start = document.getElementById('start');
-                let text = document.getElementById('text-container');
-                start.addEventListener("click", () => {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen();
-            } else if (document.exitFullscreen) {
-                document.exitFullscreen();
-            }
-            start.style.display = 'none'
-            text.style.display = 'block'
-     })
-document.addEventListener('DOMContentLoaded', () => {
-    const words = document.querySelectorAll('.word');
-    
-    // Load state from local storage
-    const visual = JSON.parse(localStorage.getItem('visual')) || {};
-
-    words.forEach((word, index) => {
-        // Set initial state based on local storage
-        if (visual[index] === 1) {
-            word.classList.add('greyed');
-        } else if (visual[index] === 2) {
-            word.classList.add('lighter-greyed');
-        } else if (visual[index] === 3) {
-            word.classList.add('white');
+      let start = document.getElementById("start");
+      let text = document.getElementById("text-container");
+      start.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
         }
+        start.style.display = "none";
+        text.style.display = "block";
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const words = document.querySelectorAll(".word");
 
-        word.addEventListener('click', () => {
+        // Load state from local storage
+        const visual = JSON.parse(localStorage.getItem("visual")) || {};
+
+        words.forEach((word, index) => {
+          // Set initial state based on local storage
+          if (visual[index] === 1) {
+            word.classList.add("greyed");
+          } else if (visual[index] === 2) {
+            word.classList.add("lighter-greyed");
+          } else if (visual[index] === 3) {
+            word.classList.add("white");
+          }
+
+          word.addEventListener("click", () => {
             if (!visual[index]) {
-                visual[index] = 1;
-                word.classList.add('greyed');
+              visual[index] = 1;
+              word.classList.add("greyed");
             } else if (visual[index] === 1) {
-                visual[index] = 2;
-                word.classList.remove('greyed');
-                word.classList.add('lighter-greyed');
+              visual[index] = 2;
+              word.classList.remove("greyed");
+              word.classList.add("lighter-greyed");
             } else if (visual[index] === 2) {
-                visual[index] = 3; // To mark it has been clicked three times
-                word.classList.remove('lighter-greyed');
-                word.classList.add('white');
+              visual[index] = 3; // To mark it has been clicked three times
+              word.classList.remove("lighter-greyed");
+              word.classList.add("white");
             }
-            localStorage.setItem('visual', JSON.stringify(visual));
+            localStorage.setItem("visual", JSON.stringify(visual));
+          });
         });
-    });
-});
-
-
+      });
     </script>
-</body>
+  </body>
 </html>
