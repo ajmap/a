@@ -17,24 +17,37 @@
         text-align: center;
       }
     </style>
-    <title>Frans</title>
   </head>
   <body>
       <div id='playdiv'>PLAY</div>
-      <audio id="f1" src="../f/l1.mp3"></audio>    
-      <audio id="f2" src="../f/l2.mp3"></audio>
-      <audio id="f3" src="../f/l3.mp3"></audio>    
-      <audio id="f4" src="../f/l4.mp3"></audio>
-      <audio id="f5" src="../f/l5.mp3"></audio>
+      <audio id="sd1" src="sd1.mp3"></audio>    
+      <audio id="sd2" src="sd2.mp3"></audio>
+      <audio id="sd3" src="sd3.mp3"></audio>    
+      <audio id="sd4" src="sd4.mp3"></audio>
+      <audio id="sd5" src="sd5.mp3"></audio>
+      <audio id="sd6" src="sd6.mp3"></audio>    
+      <audio id="sd7" src="sd7.mp3"></audio>
+      <audio id="sd8" src="sd8.mp3"></audio>    
+      <audio id="sd9" src="sd9.mp3"></audio>
+      <audio id="sd10" src="sd10.mp3"></audio>
+      <audio id="sd11" src="sd11.mp3"></audio>    
+      <audio id="sd12" src="sdl2.mp3"></audio>
     <script>
 
       let playdiv = document.getElementById("playdiv");  
-        let f1 = document.getElementById("f1");  
-        let f2 = document.getElementById("f2");  
-        let f3 = document.getElementById("f3");  
-        let f4 = document.getElementById("f4");  
-        let f5 = document.getElementById("f4");  
-        let fplay = [f1, f2, f3, f4, f5]
+        let sd1 = document.getElementById("sd1");  
+        let sd2 = document.getElementById("sd2");  
+        let sd3 = document.getElementById("sd3");  
+        let sd4 = document.getElementById("sd4");  
+        let sd5 = document.getElementById("sd5");  
+        let sd6 = document.getElementById("sd6");  
+        let sd7 = document.getElementById("sd7");  
+        let sd8 = document.getElementById("sd8");  
+        let sd9 = document.getElementById("sd9");  
+        let sd10 = document.getElementById("sd10"); 
+        let sd11 = document.getElementById("sd11");  
+        let sd12 = document.getElementById("sd12");  
+        let fplay = [sd1, sd2, sd3, sd4, sd5, sd6, sd7, sd8, sd9, sd10, sd11, sd12]
 
       playdiv.addEventListener("click", () => {
         if (!document.fullscreenElement) {
@@ -42,14 +55,12 @@
         } else if (document.exitFullscreen) {
           document.exitFullscreen();
         }
-        let rnd = Math.floor(Math.random() * 5);
+        let rnd = Math.floor(Math.random() * 12);
         fplay[rnd].play();
         playdiv.style.color = 'DarkSlateGray';
         playdiv.style.backgroundColor = 'Black';
         playdiv.innerHTML = 'PLAYING';
       });   
-
-
     </script>
   </body>
 </html>
