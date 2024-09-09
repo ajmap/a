@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+      * {
+        margin: 0;
+      }
+      #f {
+        width: 100vw;
+        height: 100vh;
+        background-color: Black;
+      }
+      #g {
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+      #g div {
+        width: 50vw;
+        height: 20vh;
+      }
+      #bl {
+        background-color: Blue;
+      }
+      #re {
+        background-color: Red;
+      }
+            #gr {
+        background-color: Green;
+      }
+            #br {
+        background-color: Brown ;
+      }
+            #ye {
+        background-color: Yellow;
+      }
+            #or {
+        background-color: Orange;
+      }
+            #lb {
+        background-color: LightBlue;
+      }
+            #lg {
+        background-color: LightGreen;
+      }
+            #pi {
+        background-color: Pink;
+      }
+            #vi {
+        background-color: Violet;
+      }
+
+    </style>
+</head>
+<body>
+    <div id='f'></div>
+    <div id='g'>
+      <div id='re'></div>
+      <div id='bl'></div>
+      <div id='gr'></div>
+      <div id='br'></div>
+      <div id='ye'></div>
+      <div id='or'></div>
+      <div id='lb'></div>
+      <div id='lg'></div>
+      <div id='pi'></div>
+      <div id='vi'></div>
+    </main>    
+    <script>
+        g = document.getElementById('g')
+        let f = document.getElementById("f");
+            f.addEventListener("click", () => {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            f.style.display = "none";
+            g.style.display = "flex";
+            });
+        
+    </script>
+</body>    
+</html>
+
+
+
