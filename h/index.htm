@@ -38,6 +38,11 @@
         let fplay = [f1, f2, f3, f4, f5]
 
       playdiv.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
         let rnd = Math.floor(Math.random() * 5);
         fplay[rnd].play();
         playdiv.style.color = 'DarkSlateGray';
