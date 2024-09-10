@@ -27,8 +27,8 @@
       <audio id="sd12" src="sd12.mp3"></audio>
       <audio id="sd14" src="sd14.mp3"></audio>
       <audio id="sd2" src="sd2.mp3"></audio>    
-   <!--    <audio id="sd7" src="sd7.mp3"></audio>
-      <audio id="sd8" src="sd8.mp3"></audio>    
+      <audio id="sd10" src="sd10.mp3"></audio>
+    <!--   <audio id="sd8" src="sd8.mp3"></audio>    
       <audio id="sd9" src="sd9.mp3"></audio>
       <audio id="sd10" src="sd10.mp3"></audio>
       <audio id="sd11" src="sd11.mp3"></audio>    
@@ -36,7 +36,7 @@
       <audio id="sd13" src="sd13.mp3"></audio>    
       <audio id="sd14" src="sdl4.mp3"></audio>  -->
     <script>
-
+      let check = 0;
       let playdiv = document.getElementById("playdiv");  
         let sd1 = document.getElementById("sd1");  
         let sd2 = document.getElementById("sd2");  
@@ -47,12 +47,12 @@
   //      let sd7 = document.getElementById("sd7");  
   //      let sd8 = document.getElementById("sd8");  
         let sd9 = document.getElementById("sd9");  
-   //     let sd10 = document.getElementById("sd10"); 
+        let sd10 = document.getElementById("sd10"); 
      //   let sd11 = document.getElementById("sd11");  
         let sd12 = document.getElementById("sd12");  
    //     let sd13 = document.getElementById("sd13");  
         let sd14 = document.getElementById("sd14");  
-        let fplay = [sd1, sd2, sd5, sd9, sd12, sd14]
+        let fplay = [sd1, sd2, sd5, sd9, sd10, sd12, sd14]
 
       playdiv.addEventListener("click", () => {
         if (!document.fullscreenElement) {
@@ -60,11 +60,13 @@
         } else if (document.exitFullscreen) {
           document.exitFullscreen();
         }
-        let rnd = Math.floor(Math.random() * 6);
+        let rnd = Math.floor(Math.random() * 7);
+        if (check == 0) {
         fplay[rnd].play();
+        check == 1;  
         playdiv.style.color = 'DarkSlateGray';
         playdiv.style.backgroundColor = 'Black';
-        playdiv.innerHTML = 'PLAYING';
+        playdiv.innerHTML = 'PLAYING'; }
       });   
     </script>
   </body>
