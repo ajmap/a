@@ -28,8 +28,8 @@
       <audio id="sd14" src="sd14.mp3"></audio>
       <audio id="sd2" src="sd2.mp3"></audio>    
       <audio id="sd10" src="sd10.mp3"></audio>
-    <!--   <audio id="sd8" src="sd8.mp3"></audio>    
-      <audio id="sd9" src="sd9.mp3"></audio>
+      <audio id="sd7" src="sd7.mp3"></audio>    
+    <!--  <audio id="sd9" src="sd9.mp3"></audio>
       <audio id="sd10" src="sd10.mp3"></audio>
       <audio id="sd11" src="sd11.mp3"></audio>    
       <audio id="sd12" src="sdl2.mp3"></audio>
@@ -44,7 +44,7 @@
     //    let sd4 = document.getElementById("sd4");  
         let sd5 = document.getElementById("sd5");  
   //      let sd6 = document.getElementById("sd6");  
-  //      let sd7 = document.getElementById("sd7");  
+        let sd7 = document.getElementById("sd7");  
   //      let sd8 = document.getElementById("sd8");  
         let sd9 = document.getElementById("sd9");  
         let sd10 = document.getElementById("sd10"); 
@@ -60,7 +60,7 @@
         } else if (document.exitFullscreen) {
           document.exitFullscreen();
         }
-        let rnd = Math.floor(Math.random() * 7);
+        let rnd = Math.floor(Math.random() * 8);
         if (check == 0) {
         fplay[rnd].play();
         check = 1;  
