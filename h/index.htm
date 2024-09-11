@@ -21,7 +21,7 @@
   </head>
   <body>
       <div id='playdiv'>PLAY</div>
-      <audio id="sd1" src="sd1.mp3"></audio>    
+      <audio id="sd8" src="sd8.mp3"></audio>    
       <audio id="sd5" src="sd5.mp3"></audio>
       <audio id="sd9" src="sd9.mp3"></audio>    
       <audio id="sd12" src="sd12.mp3"></audio>
@@ -38,21 +38,20 @@
     <script>
       let check = 0;
       let playdiv = document.getElementById("playdiv");  
-        let sd1 = document.getElementById("sd1");  
         let sd2 = document.getElementById("sd2");  
         let sd3 = document.getElementById("sd3");  
         let sd4 = document.getElementById("sd4");  
         let sd5 = document.getElementById("sd5");  
         let sd6 = document.getElementById("sd6");  
         let sd7 = document.getElementById("sd7");  
-  //      let sd8 = document.getElementById("sd8");  
+        let sd8 = document.getElementById("sd8");  
         let sd9 = document.getElementById("sd9");  
         let sd10 = document.getElementById("sd10"); 
      //   let sd11 = document.getElementById("sd11");  
         let sd12 = document.getElementById("sd12");  
         let sd13 = document.getElementById("sd13");  
         let sd14 = document.getElementById("sd14");  
-        let fplay = [sd1, sd2, sd3, sd4, sd5, sd6, sd7, sd9, sd10, sd12, sd13, sd14]
+        let fplay = [sd2, sd3, sd4, sd5, sd6, sd7, sd8, sd9, sd10, sd12, sd13, sd14]
 
       playdiv.addEventListener("click", () => {
         if (!document.fullscreenElement) {
@@ -67,7 +66,7 @@
         playdiv.style.color = 'DarkSlateGray';
         playdiv.style.backgroundColor = 'Black';
         playdiv.style.fontSize = '12vw';
-        playdiv.innerHTML = `PLAYING(${rnd + 1})`; }
+        playdiv.innerHTML = `PLAYING(${rnd + 2})`; }
       });   
     </script>
   </body>
