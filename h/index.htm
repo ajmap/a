@@ -33,8 +33,8 @@
       <audio id="sd3" src="sd3.mp3"></audio>
       <audio id="sd4" src="sd4.mp3"></audio>    
       <audio id="sd6" src="sd6.mp3"></audio>
-  <!--     <audio id="sd13" src="sd13.mp3"></audio>    
-      <audio id="sd14" src="sdl4.mp3"></audio>  -->
+      <audio id="sd11" src="sd11.mp3"></audio>    
+
     <script>
       let check = 0;
       let playdiv = document.getElementById("playdiv");  
@@ -47,11 +47,11 @@
         let sd8 = document.getElementById("sd8");  
         let sd9 = document.getElementById("sd9");  
         let sd10 = document.getElementById("sd10"); 
-     //   let sd11 = document.getElementById("sd11");  
+        let sd11 = document.getElementById("sd11");  
         let sd12 = document.getElementById("sd12");  
         let sd13 = document.getElementById("sd13");  
         let sd14 = document.getElementById("sd14");  
-        let fplay = [sd2, sd3, sd4, sd5, sd6, sd7, sd8, sd9, sd10, sd12, sd13, sd14]
+        let fplay = [sd2, sd3, sd4, sd5, sd6, sd7, sd8, sd9, sd10, sd11, sd12, sd13, sd14]
 
       playdiv.addEventListener("click", () => {
         if (!document.fullscreenElement) {
@@ -59,7 +59,7 @@
         } else if (document.exitFullscreen) {
           document.exitFullscreen();
         }
-        let rnd = Math.floor(Math.random() * 12);
+        let rnd = Math.floor(Math.random() * 13);
         if (check == 0) {
         fplay[rnd].play();
         check = 1;  
