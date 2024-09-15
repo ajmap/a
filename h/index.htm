@@ -26,12 +26,10 @@
       <audio id="sd2" src="sd5.mp3"></audio>
       <audio id="sd3" src="sd6.mp3"></audio>
       <audio id="sd4" src="sd7.mp3"></audio>
-      <audio id="sd5" src="sd8.mp3"></audio>  
-      <audio id="sd6" src="sd9.mp3"></audio> 
-      <audio id="sd7" src="sd10.mp3"></audio>
-      <audio id="sd8" src="sd12.mp3"></audio>
-      <audio id="sd9" src="sd13.mp3"></audio>
-      <audio id="sd10" src="sd14.mp3"></audio>
+      <audio id="sd5" src="sd9.mp3"></audio> 
+      <audio id="sd6" src="sd10.mp3"></audio>
+      <audio id="sd7" src="sd13.mp3"></audio>
+      <audio id="sd8" src="sd14.mp3"></audio>
     <script>
       // 9 = BeachSurf/Luminosity, 14 = Tjaikovski/RobvdWilk, 12 = Teardrops, 4 = RoyalClub
       // 7 = Groovin, 2 = Woodblock, 13 = Dhanvantri mantra, 8 = Air, 6 = Bolero 10 = Piano 5 = Metronome
@@ -46,9 +44,7 @@
         let sd6 = document.getElementById("sd6");  
         let sd7 = document.getElementById("sd7");  
         let sd8 = document.getElementById("sd8"); 
-        let sd9 = document.getElementById("sd9");  
-        let sd10 = document.getElementById("sd10");  
-        let fplay = [sd0, sd1, sd2, sd3, sd4, sd5, sd6, sd7, sd8, sd9, sd10]
+        let fplay = [sd0, sd1, sd2, sd3, sd4, sd5, sd6, sd7, sd8]
 
       playdiv.addEventListener("click", () => {
         if (!document.fullscreenElement) {
@@ -56,7 +52,7 @@
         } else if (document.exitFullscreen) {
           document.exitFullscreen();
         }
-        let rnd = Math.floor(Math.random() * 11);
+        let rnd = Math.floor(Math.random() * 9);
         if (check == 0) {
         fplay[rnd].play();
         check = 1;  
