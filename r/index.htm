@@ -67,13 +67,13 @@
           x = Number(localStorage.getItem("#hold")) + 1000;
           localStorage.setItem("#hold", x);
           b.play();
-          s.innerHTML = '&#9450;';
+          s.innerHTML = '0';
           clearInterval(z);
           check = true;
           setTimeout(function () {
             FllScrn();
             location.reload();
-          }, 2000);
+          }, 5000);
         }
       }
       function Timer() {
