@@ -64,16 +64,16 @@
         Dsply();
         x -= 1000;
         if (x < 0) {
-          x = Number(localStorage.getItem("#hold")) + 100;
+          x = Number(localStorage.getItem("#hold")) + 1000;
           localStorage.setItem("#hold", x);
           b.play();
-          s.innerHTML = '- -';
+          s.innerHTML = '&#9450;';
           clearInterval(z);
           check = true;
           setTimeout(function () {
             FllScrn();
             location.reload();
-          }, 12000);
+          }, 2000);
         }
       }
       function Timer() {
