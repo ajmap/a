@@ -24,8 +24,11 @@
     cursor: pointer;
     display: inline-block;
     font-size: 4.4vw;
+    color: white;
 }
-
+        .word.black {
+             color: Black;   
+        }
         .word.red {
             color: Red;
         }
@@ -1233,7 +1236,7 @@
     words.forEach((word, index) => {
         // Set initial state based on local storage
         if (wordStates1[index] === 1) {
-            word.classList.add('white');
+            word.classList.add('black');
         } else if (wordStates1[index] === 2) {
             word.classList.add('red');
         } else if (wordStates1[index] === 3) {
@@ -1255,10 +1258,10 @@
         word.addEventListener('click', () => {
             if (!wordStates1[index]) {
                 wordStates1[index] = 1;
-                word.classList.add('white');
+                word.classList.add('black');
             } else if (wordStates1[index] === 1) {
                 wordStates1[index] = 2;
-                word.classList.remove('white');
+                word.classList.remove('black');
                 word.classList.add('red');
             } else if (wordStates1[index] === 2) {
                 wordStates1[index] = 3;
