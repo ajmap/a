@@ -64,7 +64,7 @@
         Dsply();
         x -= 1000;
         if (x < 0) {
-          x = Number(localStorage.getItem("#hold")) + 1000;
+          x = Number(localStorage.getItem("#hold")) + 100;
           localStorage.setItem("#hold", x);
           b.play();
           s.innerHTML = '0';
@@ -73,7 +73,7 @@
           setTimeout(function () {
             FllScrn();
             location.reload();
-          }, 5000);
+          }, 6000);
         }
       }
       function Timer() {
