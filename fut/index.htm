@@ -1233,66 +1233,66 @@
     words.forEach((word, index) => {
         // Set initial state based on local storage
         if (wordStates1[index] === 1) {
-            word.classList.add('red');
+            word.classList.add('white');
         } else if (wordStates1[index] === 2) {
-            word.classList.add('orange');
+            word.classList.add('red');
         } else if (wordStates1[index] === 3) {
-            word.classList.add('yellow');
+            word.classList.add('orange');
         } else if (wordStates1[index] === 4) {
-            word.classList.add('green');
+            word.classList.add('yellow');
         } else if (wordStates1[index] === 5) {
-            word.classList.add('blue');
+            word.classList.add('green');
         } else if (wordStates1[index] === 6) {
-            word.classList.add('indigo');
+            word.classList.add('blue');
         } else if (wordStates1[index] === 7) {
-            word.classList.add('violet');
+            word.classList.add('indigo');
         } else if (wordStates1[index] === 8) {
+            word.classList.add('violet');
+        } else if (wordStates1[index] === 9) {
             word.classList.add('white');
         }
 
         word.addEventListener('click', () => {
             if (!wordStates1[index]) {
                 wordStates1[index] = 1;
-                word.classList.add('red');
+                word.classList.add('white');
             } else if (wordStates1[index] === 1) {
                 wordStates1[index] = 2;
-                word.classList.remove('red');
-                word.classList.add('orange');
+                word.classList.remove('white');
+                word.classList.add('red');
             } else if (wordStates1[index] === 2) {
                 wordStates1[index] = 3;
-                word.classList.remove('orange');
-                word.classList.add('yellow');
+                word.classList.remove('red');
+                word.classList.add('orange');
             } else if (wordStates1[index] === 3) {
                 wordStates1[index] = 4; 
-                word.classList.remove('yellow');
-                word.classList.add('green');
+                word.classList.remove('orange');
+                word.classList.add('yellow');
             } else if (wordStates1[index] === 4) {
                 wordStates1[index] = 5;
-                word.classList.remove('green');
-                word.classList.add('blue');
+                word.classList.remove('yellow');
+                word.classList.add('green');
             } else if (wordStates1[index] === 5) {
                 wordStates1[index] = 6;
-                word.classList.remove('blue');
-                word.classList.add('indigo');
+                word.classList.remove('green');
+                word.classList.add('blue');
             } else if (wordStates1[index] === 6) {
                 wordStates1[index] = 7; 
-                word.classList.remove('indigo');
-                word.classList.add('violet');
+                word.classList.remove('blue');
+                word.classList.add('indigo');
             } else if (wordStates1[index] === 7) {
                 wordStates1[index] = 8;
+                word.classList.remove('indigo');
+                word.classList.add('violet');
+            } else if (wordStates1[index] === 8) {
+                wordStates1[index] = 9;
                 word.classList.remove('violet');
                 word.classList.add('white');
             } 
-
-
-
-            
             localStorage.setItem('wordStates1', JSON.stringify(wordStates1));
         });
     });
 });
-
-
     </script>
 </body>
 </html>
