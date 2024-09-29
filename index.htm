@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach</title>
+    <style>
+        * {
+                        margin: 0;
+        }
+        #start {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+        }
+        #text-container {
+            display: none;
+            padding: 3vw;
+            font-family: Arial;
+            line-height: 5vw;
+        }
+
+.word {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 4.4vw;
+    color: white;
+}
+        .word.black {
+             color: Black;   
+        }
+        .word.red {
+            color: Red;
+        }
+        .word.orange {
+            color: Orange;
+        }
+        .word.yellow { 
+            color: Yellow
+        }
+        .word.green {
+            color: Green;
+        }
+        .word.blue {
+            color: Blue;
+        }
+        .word.indigo { 
+            color: Indigo;
+        }
+        .word.violet {
+            color: Violet;
+        }
+        .word.white {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="start"></div>
+    <div id="text-container">
+        <span class="word">I'm</span>
+        <span class="word">going</span>
+        <span class="word">on</span>
+        <span class="word">a</span>
+        <span class="word">pleasant</span>
+        <span class="word">walk.</span>
+        <span class="word">I'm</span>
+        <span class="word">on</span>
+        <span class="word">a</span>
+        <span class="word">flat</span>
+        <span class="word">soft</span>
+        <span class="word">path</span>
+        <span class="word">covered</span>
+        <span class="word">with</span>
+        <span class="word">soft</span>
+        <span class="word">tree</span>
+        <span class="word">bark.</span>
+        <span class="word">The</span>
+        <span class="word">path</span>
+        <span class="word">winds</span>
+        <span class="word">back</span>
+        <span class="word">and</span>
+        <span class="word">forth</span>
+        <span class="word">and</span>
+        <span class="word">ahead</span>
+        <span class="word">I</span>
+        <span class="word">see</span>
+        <span class="word">a</span>
+        <span class="word">tall</span>
+        <span class="word">hedge,</span>
+        <span class="word">there</span>
+        <span class="word">is</span>
+        <span class="word">an</span>
+        <span class="word">opening</span>
+        <span class="word">in</span>
+        <span class="word">the</span>
+        <span class="word">hedge</span>
+        <span class="word">and</span>
+        <span class="word">the</span>
+        <span class="word">path</span>
+        <span class="word">leads</span>
+        <span class="word">through</span>
+        <span class="word">this</span>
+        <span class="word">opening.</span>
+        <span class="word">As</span>
+        <span class="word">I</span>
+        <span class="word">slowly</span>
+        <span class="word">walk</span>
+        <span class="word">through</span>
+        <span class="word">the</span>
+        <span class="word">opening</span>
+        <span class="word">in</span>
+        <span class="word">the</span>
+        <span class="word">hedge,</span>
+        <span class="word">I</span>
+        <span class="word">see</span>
+        <span class="word">the</span>
+        <span class="word">most</span>
+        <span class="word">beautiful</span>
+        <span class="word">garden</span>
+        <span class="word">I</span>
+        <span class="word">have</span>
+        <span class="word">ever</span>
+        <span class="word">seen.</span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>  
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>  
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>  
+    </div>
+    <script>
+        let start = document.getElementById('start');
+                let text = document.getElementById('text-container');
+                start.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            start.style.display = 'none'
+            text.style.display = 'block'
+        })
+        document.addEventListener('DOMContentLoaded', () => {
+        const words = document.querySelectorAll('.word');
+
+        const wordStates1 = JSON.parse(localStorage.getItem('wordStates1')) || {};
+
+    words.forEach((word, index) => {
+        // Set initial state based on local storage
+        if (wordStates1[index] === 1) {
+            word.classList.add('black');
+        } else if (wordStates1[index] === 2) {
+            word.classList.add('red');
+        } else if (wordStates1[index] === 3) {
+            word.classList.add('orange');
+        } else if (wordStates1[index] === 4) {
+            word.classList.add('yellow');
+        } else if (wordStates1[index] === 5) {
+            word.classList.add('green');
+        } else if (wordStates1[index] === 6) {
+            word.classList.add('blue');
+        } else if (wordStates1[index] === 7) {
+            word.classList.add('indigo');
+        } else if (wordStates1[index] === 8) {
+            word.classList.add('violet');
+        } else if (wordStates1[index] === 10) {
+            word.classList.add('white');
+            word.innerText = "";
+        } 
+
+        word.addEventListener('click', () => {
+            if (!wordStates1[index]) {
+                wordStates1[index] = 1;
+                word.classList.add('black');
+            } else if (wordStates1[index] === 1) {
+                wordStates1[index] = 2;
+                word.classList.remove('black');
+                word.classList.add('red');
+            } else if (wordStates1[index] === 2) {
+                wordStates1[index] = 3;
+                word.classList.remove('red');
+                word.classList.add('orange');
+            } else if (wordStates1[index] === 3) {
+                wordStates1[index] = 4; 
+                word.classList.remove('orange');
+                word.classList.add('yellow');
+            } else if (wordStates1[index] === 4) {
+                wordStates1[index] = 5;
+                word.classList.remove('yellow');
+                word.classList.add('green');
+            } else if (wordStates1[index] === 5) {
+                wordStates1[index] = 6;
+                word.classList.remove('green');
+                word.classList.add('blue');
+            } else if (wordStates1[index] === 6) {
+                wordStates1[index] = 7; 
+                word.classList.remove('blue');
+                word.classList.add('indigo');
+            } else if (wordStates1[index] === 7) {
+                wordStates1[index] = 8;
+                word.classList.remove('indigo');
+                word.classList.add('violet');
+            } else if (wordStates1[index] === 8) {
+                wordStates1[index] = 9;
+                word.classList.remove('violet');
+                word.classList.add('white');
+            } else if (wordStates1[index] === 9) {
+                wordStates1[index] = 10;
+                word.innerText = ""
+            } 
+            localStorage.setItem('wordStates1', JSON.stringify(wordStates1));
+        });
+    });
+});
+    </script>
+</body>
+</html>
