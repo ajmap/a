@@ -1251,9 +1251,10 @@
             word.classList.add('indigo');
         } else if (wordStates1[index] === 8) {
             word.classList.add('violet');
-        } else if (wordStates1[index] === 9) {
+        } else if (wordStates1[index] === 10) {
             word.classList.add('white');
-        }
+            word.innerText = "";
+        } 
 
         word.addEventListener('click', () => {
             if (!wordStates1[index]) {
@@ -1291,6 +1292,9 @@
                 wordStates1[index] = 9;
                 word.classList.remove('violet');
                 word.classList.add('white');
+            } else if (wordStates1[index] === 9) {
+                wordStates1[index] = 10;
+                word.innerText = ""
             } 
             localStorage.setItem('wordStates1', JSON.stringify(wordStates1));
         });
