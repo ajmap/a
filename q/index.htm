@@ -16,7 +16,6 @@
         #m {
             width: 100vw;
             height: 100vh;
-            background-color: MidnightBlue;
             display: none;
         }
         .cntr {
@@ -54,7 +53,6 @@
         #f {
             font-size: 5.6vw;
             padding: 0 8vw;
-            color: LightPink;
             font-family: Arial;
             line-height: 3.4vh;
         }
@@ -80,6 +78,11 @@
         let f = document.getElementById('f');
         let s = document.getElementById('s');
         let m = document.getElementById('m');
+        let mclrran = Math.floor(Math.random() * 10);
+        let fclrran = Math.floor(Math.random() * 20);
+        let mclrarr = ["Indigo","MidnightBlue","RebeccaPurple","DarkRed","DarkSlateGray","Navy","DarkBlue","Maroon","SaddleBrown","DarkGreen"]
+        let fclrarr = ["Lavender","MediumSlateBlue","PaleGreen","LightCyan","AquaMarine","Cyan","HoneyDew","LightSlateGray","CornSilk","DodgerBlue","CornFlowerBlue","LightYellow","Violet","Beige","LemonChiffon","LightSteelBlue","OldLace","AntiqueWhite","MistyRose","LightPink"]
+        
         s.addEventListener("click", () => {
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen();
@@ -92,6 +95,7 @@
         let z = [
             { a: 1, b: "DOELSTELLING", c: "ik kan- ik wil", d: "WIL-MUDRA", e: "Deze mudra activeert de bloedsomloop, is goed voor alle organen en versterkt op alle niveaus. De zin van het leven is dat u telkens weer doelen stelt die bij u passen en waaraan uw vreugde beleefd. Neem telkens kleine stappen, of u nu iets wilt leren, wilt veranderen, opbouwen, genezen of sportief bezig wilt zijn. U stelt zich een groot doe (bij voorkeur schriftelijk), verdeelt het in deeldoelen, die u in kleine stappen aanpakt, en begint meteen. De kleine deel succesen versterken u wil en uw enthousiasme zal gauw de plaats van de wil innemen.", f: "Elke kleine stap geeft mij vreugde en breng mij dichter bij mijn doel.", g: "Vingers verstrengelt, behalve de middelvingers, die wijzen omhoog en de duimen wijzen naar beneden. De duimen en de middelvingers raken elkaar bij de toppen" }, { a: 2, b: "STABILITEIT", c: "ik hou vol", d: "LEVEN-MUDRA", e: "De pran mudra versterkt de ogen, geeft innerlijke rust, doorzettingsvermogen en vertrouwen, en ze maakt van u een duikelaar, die altijd weer overeind komt. Wij zijn veel sterker en kunnen veel meer dan we denken. Met een constructieve en positieve innerlijke houding brengen we dat doorzettingsvermogen tot volle ontplooiing. Stelt u zich voor dat in uw bekken een vuur brandt, dat met elke ademhaling groter en een groter wordt. Het moet uw lichaam herstellen en versterken, uw hart verwarmen en uw geest verhelderen en laten stralen.", f: "Mijn innerlijk vuur vervuld mij, versterkt mij en toont me mijn gaven en mogelijkheden.", g: "De duim raakt de pink en de ringvinger en wijzen naar boven. De wijs- en middelvinger wijzen naar voren." }
         ]
+        m.style.backgroundColor = mclrarr[mclrran]
         a.innerText = z[1].a
         b.innerText = z[1].b
         c.innerText = z[1].c
@@ -99,6 +103,7 @@
         d.style.fontWeight = "bold"
         e.innerText = z[1].e
         f.innerText = z[1].f
+        f.style.color = fclrarr[fclrran]
         f.style.fontWeight = "bold"
         
         
