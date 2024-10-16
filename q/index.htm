@@ -56,7 +56,13 @@
             font-family: Arial;
             line-height: 3.4vh;
         }
-
+        #g {
+            font-size: 4.1vw;
+            padding: 0 4vw;
+            font-family: Arial;
+            line-height: 6.5vh;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +74,7 @@
         <p id="d" class="cntr"></p>
         <p id="e"></p>
         <p id="f"></p>
+        <p id="g"></p>
     </div>  
     <script>
         let mudra = localStorage.getItem('mudra');
@@ -80,13 +87,19 @@
         let d = document.getElementById('d');
         let e = document.getElementById('e');
         let f = document.getElementById('f');
+        let g = document.getElementById('g');
         let s = document.getElementById('s');
         let m = document.getElementById('m');
         let mclrran = Math.floor(Math.random() * 10);
+        let aclrran = Math.floor(Math.random() * 20);
+        let bclrran = Math.floor(Math.random() * 20);
+        let cclrran = Math.floor(Math.random() * 20);
+        let dclrran = Math.floor(Math.random() * 20);
+        let eclrran = Math.floor(Math.random() * 20);
         let fclrran = Math.floor(Math.random() * 20);
+        let gclrran = Math.floor(Math.random() * 20);
         let mclrarr = ["Indigo","MidnightBlue","RebeccaPurple","DarkRed","DarkSlateGray","Navy","DarkBlue","Maroon","SaddleBrown","DarkGreen"]
         let fclrarr = ["Lavender","MediumSlateBlue","PaleGreen","LightCyan","AquaMarine","Cyan","HoneyDew","LightSlateGray","CornSilk","DodgerBlue","CornFlowerBlue","LightYellow","Violet","Beige","LemonChiffon","LightSteelBlue","OldLace","AntiqueWhite","MistyRose","LightPink"]
-        
         s.addEventListener("click", () => {
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen();
@@ -107,8 +120,22 @@
         d.style.fontWeight = "bold"
         e.innerText = z[mudra].e
         f.innerText = z[mudra].f
-        f.style.color = fclrarr[fclrran]
+        a.style.color = clrarr[aclrran]
+        b.style.color = clrarr[bclrran]
+        c.style.color = clrarr[cclrran]
+        d.style.color = clrarr[dclrran]
+        e.style.color = clrarr[eclrran]
+        f.style.color = clrarr[fclrran]
+        g.style.color = clrarr[gclrran]
         f.style.fontWeight = "bold"
+        f.addEventListener("click", () => {
+            f.style.display = 'none'
+            g.style.display = 'block'
+        })
+        g.addEventListener("click", () => {
+            g.style.display = 'none'
+            f.style.display = 'block'
+        })
         mudra = parseInt(mudra) + 1;
         localStorage.setItem('mudra', mudra);
     </script>
