@@ -73,6 +73,10 @@
         <p id="g"></p>
     </div>  
     <script>
+        let mudra = localStorage.getItem('mudra');
+        if (mudra === null) {
+            mudra = 0;
+        }
         let a = document.getElementById('a');
         let b = document.getElementById('b');
         let c = document.getElementById('c');
