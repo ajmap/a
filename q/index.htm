@@ -22,34 +22,34 @@
             text-align: center;
         }
         #a {
-            font-size: 5vw;
-            padding-top: 3vh;
+            font-size: 2vw;
+            padding-top: 2vh;
         }
         #b {
-            font-size: 5.1vw;
-            padding-top: 3vh;
+            font-size: 2.1vw;
+            padding-top: 2vh;
             font-family: Arial;
         }
         #c {
-            font-size: 4.9vw;
-            padding-top: 3vh;
+            font-size: 2.9vw;
+            padding-top: 2vh;
             font-family: Arial;
         }
         #d {
-            font-size: 6vw;
+            font-size: 3.5vw;
             padding-top: 3vh;
         }
         #e {
-            font-size: 4.9vw;
-            padding: 3vh 8vw;
+            font-size: 2.5vw;
+            padding: 3vh 4vw;
             font-family: Arial;
-            line-height: 3.2vh;
+            line-height: 4.5vh;
         }
         #f {
-            font-size: 5.6vw;
-            padding: 0 8vw;
+            font-size: 4.1vw;
+            padding: 0 4vw;
             font-family: Arial;
-            line-height: 3.4vh;
+            line-height: 6.5vh;
         }
         #g {
             font-size: 4.1vw;
@@ -58,6 +58,7 @@
             line-height: 6.5vh;
             display: none;
         }
+
     </style>
 </head>
 <body>
@@ -72,10 +73,6 @@
         <p id="g"></p>
     </div>  
     <script>
-        let mudra = localStorage.getItem('mudra');
-        if (mudra === null) {
-            mudra = 0;
-        }
         let a = document.getElementById('a');
         let b = document.getElementById('b');
         let c = document.getElementById('c');
@@ -95,6 +92,7 @@
         let gclrran = Math.floor(Math.random() * 20);
         let mclrarr = ["Indigo","MidnightBlue","RebeccaPurple","DarkRed","DarkSlateGray","Navy","DarkBlue","Maroon","SaddleBrown","DarkGreen"]
         let clrarr = ["Lavender","MediumSlateBlue","PaleGreen","LightCyan","AquaMarine","Cyan","HoneyDew","LightSlateGray","CornSilk","DodgerBlue","CornFlowerBlue","LightYellow","Violet","Beige","LemonChiffon","LightSteelBlue","OldLace","AntiqueWhite","MistyRose","LightPink"]
+        
         s.addEventListener("click", () => {
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen();
@@ -105,16 +103,17 @@
             m.style.display = 'block'
         })
         let z = [
-            { a: 1, b: "DOELSTELLING", c: "ik kan- ik wil", d: "WIL-MUDRA", e: "Deze mudra activeert de bloedsomloop, is goed voor alle organen en versterkt op alle niveaus. De zin van het leven is dat u telkens weer doelen stelt die bij u passen en waaraan uw vreugde beleefd. Neem telkens kleine stappen, of u nu iets wilt leren, wilt veranderen, opbouwen, genezen of sportief bezig wilt zijn. U stelt zich een groot doe (bij voorkeur schriftelijk), verdeelt het in deeldoelen, die u in kleine stappen aanpakt, en begint meteen. De kleine deel succesen versterken u wil en uw enthousiasme zal gauw de plaats van de wil innemen.", f: "Elke kleine stap geeft mij vreugde en breng mij dichter bij mijn doel.", g: "Vingers verstrengelt, behalve de middelvingers, die wijzen omhoog en de duimen wijzen naar beneden. De duimen en de middelvingers raken elkaar bij de toppen" }, { a: 2, b: "STABILITEIT", c: "ik hou vol", d: "LEVEN-MUDRA", e: "De pran mudra versterkt de ogen, geeft innerlijke rust, doorzettingsvermogen en vertrouwen, en ze maakt van u een duikelaar, die altijd weer overeind komt. Wij zijn veel sterker en kunnen veel meer dan we denken. Met een constructieve en positieve innerlijke houding brengen we dat doorzettingsvermogen tot volle ontplooiing. Stelt u zich voor dat in uw bekken een vuur brandt, dat met elke ademhaling groter en een groter wordt. Het moet uw lichaam herstellen en versterken, uw hart verwarmen en uw geest verhelderen en laten stralen.", f: "Mijn innerlijk vuur vervuld mij, versterkt mij en toont me mijn gaven en mogelijkheden.", g: "De duim raakt de pink en de ringvinger en wijzen naar boven. De wijs- en middelvinger wijzen naar voren." }, { a: 3, b: "LIEFDE", c: "Wees welwillend", d: "APAN-YAYU-MUDRA", e: "De Hart-mudra helpt bij alle soorten hartklachten. Bij acute klachten doet u de mudra zolang als nodig; bij chronische klachten doet u haar viermaal daags ongeveer 10 minuten. De kleur rood is goed voor het hart. U visualiseert een boeket met rode rozen die u allemaal weggeeft, op een na. Verdiep u nu in de pracht van deze roos en neem haar met alle uw zintuigen waar. Laat u betoveren door haar schoonheid. Misschien heeft de rozenfee een boodschap voor u - luister goed!", f: "In de schoonheid en volmaaktheid van één roos vermoed ik de wijsheid en de rijkdom van het universum.", g: "De wijsvinger raakt de bal van de hand en duim raakt de middel- en ringvinger en de pink wijst vooruit." } 
+            { a: 1, b: "DOELSTELLING", c: "ik kan- ik wil", d: "WIL-MUDRA", e: "Deze mudra activeert de bloedsomloop, is goed voor alle organen en versterkt op alle niveaus. De zin van het leven is dat u telkens weer doelen stelt die bij u passen en waaraan uw vreugde beleefd. Neem telkens kleine stappen, of u nu iets wilt leren, wilt veranderen, opbouwen, genezen of sportief bezig wilt zijn. U stelt zich een groot doe (bij voorkeur schriftelijk), verdeelt het in deeldoelen, die u in kleine stappen aanpakt, en begint meteen. De kleine deel succesen versterken u wil en uw enthousiasme zal gauw de plaats van de wil innemen.", f: "Elke kleine stap geeft mij vreugde en breng mij dichter bij mijn doel.", g: "Vingers verstrengelt, behalve de middelvingers, die wijzen omhoog en de duimen wijzen naar beneden. De duimen en de middelvingers raken elkaar bij de toppen" }, { a: 2, b: "STABILITEIT", c: "ik hou vol", d: "LEVEN-MUDRA", e: "De pran mudra versterkt de ogen, geeft innerlijke rust, doorzettingsvermogen en vertrouwen, en ze maakt van u een duikelaar, die altijd weer overeind komt. Wij zijn veel sterker en kunnen veel meer dan we denken. Met een constructieve en positieve innerlijke houding brengen we dat doorzettingsvermogen tot volle ontplooiing. Stelt u zich voor dat in uw bekken een vuur brandt, dat met elke ademhaling groter en een groter wordt. Het moet uw lichaam herstellen en versterken, uw hart verwarmen en uw geest verhelderen en laten stralen.", f: "Mijn innerlijk vuur vervuld mij, versterkt mij en toont me mijn gaven en mogelijkheden.", g: "De duim raakt de pink en de ringvinger en wijzen naar boven. De wijs- en middelvinger wijzen naar voren." }
         ]
         m.style.backgroundColor = mclrarr[mclrran]
-        a.innerText = z[mudra].a
-        b.innerText = z[mudra].b
-        c.innerText = z[mudra].c
-        d.innerText = z[mudra].d
+        a.innerText = z[1].a
+        b.innerText = z[1].b
+        c.innerText = z[1].c
+        d.innerText = z[1].d
         d.style.fontWeight = "bold"
-        e.innerText = z[mudra].e
-        f.innerText = z[mudra].f
+        e.innerText = z[1].e
+        f.innerText = z[1].f
+        g.innerText = z[1].g
         a.style.color = clrarr[aclrran]
         b.style.color = clrarr[bclrran]
         c.style.color = clrarr[cclrran]
@@ -131,8 +130,6 @@
             g.style.display = 'none'
             f.style.display = 'block'
         })
-        mudra = parseInt(mudra) + 1;
-        localStorage.setItem('mudra', mudra);
     </script>
 </body>
 </html>
