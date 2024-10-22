@@ -8,8 +8,14 @@
         * {
             margin: 0;
             }
+        #s {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            }
         body {
             font-family: Arial, sans-serif;
+            font-size: 10vw;
             color: beige;
             display: flex;
             justify-content: center;
@@ -21,10 +27,21 @@
     </style>
 </head>
 <body>
-
+    <div id="s"></div>
 <div id="word">Click me</div>
 
 <script>
+            let s = document.getElementById('s');
+    let word = document.getElementById('word');
+        s.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            s.style.display = 'none'
+            word.style.display = 'block'
+        })
     const words = ["MOOI", "STERK", "PERFECT", "LIEFDE", "KRACHT", "SUCCES"];
     let currentWordIndex = 0;
     let intervalTime = 1000; // Start with 1 second (1000 ms)
@@ -37,14 +54,14 @@
     }
 
     // Initial word display
-    document.getElementById("word").textContent = words[currentWordIndex];
+    word.textContent = words[currentWordIndex];
 
     // Set up the initial interval for word changing
     intervalId = setInterval(changeWord, intervalTime);
 
     // Function to handle click on the word
-    document.getElementById("word").addEventListener("click", function() {
-        intervalTime += 500; // Increase interval time by 1 second
+    word.addEventListener("click", function() {
+        intervalTime += 250; // Increase interval time by 1 second
         clearInterval(intervalId); // Clear the current interval
         intervalId = setInterval(changeWord, intervalTime); // Set a new interval with the updated time
     });
