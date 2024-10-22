@@ -13,9 +13,9 @@
             height: 100vh;
             background-color: black;
             }
-        body {
+        #word {
             font-family: Arial, sans-serif;
-            font-size: 10vw;
+            font-size: 25vw;
             color: beige;
             display: flex;
             justify-content: center;
@@ -61,7 +61,7 @@
 
     // Function to handle click on the word
     word.addEventListener("click", function() {
-        intervalTime += 250; // Increase interval time by 1 second
+        intervalTime += 100; // Increase interval time by 1 second
         clearInterval(intervalId); // Clear the current interval
         intervalId = setInterval(changeWord, intervalTime); // Set a new interval with the updated time
     });
