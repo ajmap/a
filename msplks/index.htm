@@ -34,6 +34,7 @@
 <script>
             let s = document.getElementById('s');
     let word = document.getElementById('word');
+    let container = document.getElementById('container');
         s.addEventListener("click", () => {
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen();
@@ -41,7 +42,7 @@
                 document.exitFullscreen();
             }
             s.style.display = 'none'
-            word.style.display = 'flex'
+            container.style.display = 'flex'
         })
     const words = ["MOOI", "STERK", "PERFECT", "LIEFDE", "KRACHT", "SUCCES"];
     let currentWordIndex = 0;
