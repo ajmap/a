@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M S P L K S</title>
+    <style>
+        * {
+            margin: 0;
+            }
+        body {
+            font-family: Arial, sans-serif;
+            color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-color: MediumBlue;
+        }
+    </style>
+</head>
+<body>
+
+<div id="word">Click me</div>
+
+<script>
+    const words = ["MOOI", "STERK", "PERFECT", "LIEFDE", "KRACHT", "SUCCES"];
+    let currentWordIndex = 0;
+    let intervalTime = 1000; // Start with 1 second (1000 ms)
+    let intervalId;
+
+    // Function to change the displayed word
+    function changeWord() {
+        currentWordIndex = (currentWordIndex + 1) % words.length;
+        document.getElementById("word").textContent = words[currentWordIndex];
+    }
+
+    // Initial word display
+    document.getElementById("word").textContent = words[currentWordIndex];
+
+    // Set up the initial interval for word changing
+    intervalId = setInterval(changeWord, intervalTime);
+
+    // Function to handle click on the word
+    document.getElementById("word").addEventListener("click", function() {
+        intervalTime += 500; // Increase interval time by 1 second
+        clearInterval(intervalId); // Clear the current interval
+        intervalId = setInterval(changeWord, intervalTime); // Set a new interval with the updated time
+    });
+</script>
+
+</body>
+</html>
