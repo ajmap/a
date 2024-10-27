@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9</title>
+    <title>Affirm</title>
     <style>
         * {
             margin: 0;
@@ -33,8 +33,7 @@
 <div id="word">Click me</div>
     </div>
 <script>
-    let clrs = ["Red","Blue","Green","Yellow","Violet"];
-    // "HotPink","Orange","Indigo", , "SaddleBrown"
+    let clrs = ["Red","Blue","Green","Yellow","Violet","HotPink","Orange","Indigo"];
             let s = document.getElementById('s');
     let word = document.getElementById('word');
     let container = document.getElementById('container');
@@ -47,16 +46,15 @@
             s.style.display = 'none'
             container.style.display = 'flex'
         })
-    const words = ["LIEFDE","KRACHT", "HARMONIE", "VREUGDE", "SUCCES"];
-    // "MOOI", "STERK", "PERFECT",  
+    const words = ["MOOI", "STERK", "PERFECT","LIEFDE","KRACHT","HARMONIE", "VREUGDE", "SUCCES"];
     let currentWordIndex = 0;
     let intervalTime = 1000;
     let intervalId;
     function changeWord() {
-        currentWordIndex = (currentWordIndex + 1) % 5;
+        currentWordIndex = (currentWordIndex + 1) % 8;
         document.getElementById("word").textContent = words[currentWordIndex];
-        let rnmr1 = Math.floor(Math.random() * 5);
-        let rnmr2 = Math.floor(Math.random() * 5);
+        let rnmr1 = Math.floor(Math.random() * 8);
+        let rnmr2 = Math.floor(Math.random() * 8);
         container.style.color = clrs[rnmr1];
         container.style.backgroundColor = clrs[rnmr2];
     }
