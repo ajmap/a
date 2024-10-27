@@ -48,7 +48,7 @@
         })
     const words = ["MOOI", "STERK", "PERFECT","LIEFDE","KRACHT","HARMONIE", "VREUGDE", "SUCCES"];
     let currentWordIndex = 0;
-    let intervalTime = 1000;
+    let intervalTime = 2000;
     let intervalId;
     function changeWord() {
         currentWordIndex = (currentWordIndex + 1) % 8;
@@ -61,7 +61,7 @@
     word.textContent = words[currentWordIndex];
     intervalId = setInterval(changeWord, intervalTime);
     word.addEventListener("click", function() {
-        intervalTime += 100;
+        intervalTime += 250;
         clearInterval(intervalId); 
         intervalId = setInterval(changeWord, intervalTime);
     });
