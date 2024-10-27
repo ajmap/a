@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Het</title>
+    <style>
+        * {
+                        margin: 0;
+        }
+        #start {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+        }
+        #text-container {
+            display: none;
+            padding: 3vw;
+            font-family: Arial;
+            line-height: 5vw;
+        }
+
+.word {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 4.4vw;
+    color: white;
+}
+        .word.black {
+             color: Black;   
+        }
+        .word.red {
+            color: Red;
+        }
+        .word.orange {
+            color: Orange;
+        }
+        .word.yellow { 
+            color: Yellow
+        }
+        .word.green {
+            color: Green;
+        }
+        .word.blue {
+            color: Blue;
+        }
+        .word.indigo { 
+            color: Indigo;
+        }
+        .word.violet {
+            color: Violet;
+        }
+        .word.aqua {
+            color: AquaMarine;
+        }
+        .word.white {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="start"></div>
+    <div id="text-container">
+        <span class="word">Het</span>
+        <span class="word">gaat</span>
+        <span class="word">werkelijk</span>
+        <span class="word">geweldig</span>
+        <span class="word">met</span>
+        <span class="word">mij.</span>
+        <span class="word">Ik</span>
+        <span class="word">heb</span>
+        <span class="word">alles</span>
+        <span class="word">wat</span>
+        <span class="word">mijn</span>
+        <span class="word">hartje</span>
+        <span class="word">begeerd.</span>
+        <span class="word">Ik</span>
+        <span class="word">ben</span>
+        <span class="word">een</span>
+        <span class="word">super</span>
+        <span class="word">succesvolle</span>
+        <span class="word">muzikant</span>
+        <span class="word">en</span>
+        <span class="word">zanger</span>
+        <span class="word">en</span>
+        <span class="word">treed</span>
+        <span class="word">op</span>
+        <span class="word">over</span>
+        <span class="word">de</span>
+        <span class="word">hele</span>
+        <span class="word">wereld.</span>
+        <span class="word">Ik</span>
+        <span class="word">voel</span>
+        <span class="word">mij</span>
+        <span class="word">echt</span>
+        <span class="word">bevoorrecht</span>
+        <span class="word">dat</span>
+        <span class="word">ik</span>
+        <span class="word">zo'n</span>
+        <span class="word">mooi</span>
+        <span class="word">en</span>
+        <span class="word">intens</span>
+        <span class="word">leven</span>
+        <span class="word">mag</span>
+        <span class="word">leiden.</span>
+        <span class="word">Het</span>
+        <span class="word">is</span>
+        <span class="word">echt</span>
+        <span class="word">te</span>
+        <span class="word">gek</span>
+        <span class="word">om</span>
+        <span class="word">met</span>
+        <span class="word">zulke</span>
+        <span class="word">professionele</span>
+        <span class="word">en</span>
+        <span class="word">fijne</span>
+        <span class="word">mensen</span>
+        <span class="word">te</span>
+        <span class="word">mogen</span>
+        <span class="word">samenwerken</span>
+        <span class="word">en</span>
+        <span class="word">iedere</span>
+        <span class="word">keer</span>
+        <span class="word">weer</span>
+        <span class="word">beter</span>
+        <span class="word">te</span>
+        <span class="word">worden.</span>
+        <span class="word">Ieder</span>
+        <span class="word">optreden</span>
+        <span class="word">is</span>
+        <span class="word">weer</span>
+        <span class="word">een</span>
+        <span class="word">feest</span>
+        <span class="word">met</span>
+        <span class="word">heerlijk</span>
+        <span class="word">uitbundige</span>
+        <span class="word">gevoelens</span>
+        <span class="word">en</span>
+        <span class="word">oprechte</span>
+        <span class="word">waardering</span>
+        <span class="word">die</span>
+        <span class="word">mij</span>
+        <span class="word">keer</span>
+        <span class="word">op</span>
+        <span class="word">keer</span>
+        <span class="word">weer</span>
+        <span class="word">diep</span>
+        <span class="word">gelukkig</span>
+        <span class="word">maakt.</span>
+        <span class="word">Ik</span>
+        <span class="word">beleef</span>
+        <span class="word">de</span>
+        <span class="word">muziek</span>
+        <span class="word">en</span>
+        <span class="word">de</span>
+        <span class="word">atmosfeer</span>
+        <span class="word">zo</span>
+        <span class="word">intens</span>
+        <span class="word">dat</span>
+        <span class="word">het</span>
+        <span class="word">voelt</span>
+        <span class="word">alsof</span>
+        <span class="word">ik</span>
+        <span class="word">in</span>
+        <span class="word">de</span>
+        <span class="word">hemel</span>
+        <span class="word">vertoef.</span>
+        <span class="word">En</span>
+        <span class="word">ik</span>
+        <span class="word">blijf</span>
+        <span class="word">ook</span>
+        <span class="word">maar</span>
+        <span class="word">groeien</span>
+        <span class="word">als</span>
+        <span class="word">muzikant.</span>
+        <span class="word">Mijn</span>
+        <span class="word">creaties</span>
+        <span class="word">en</span>
+        <span class="word">mijn</span>
+        <span class="word">performances</span>
+        <span class="word">blijven</span>
+        <span class="word">beter</span>
+        <span class="word">en</span>
+        <span class="word">beter</span>
+        <span class="word">worden.</span>
+        <span class="word">Prachtig</span>
+        <span class="word">is</span>
+        <span class="word">dat.</span>
+        <span class="word">Ik</span>
+        <span class="word">ben</span>
+        <span class="word">alles</span>
+        <span class="word">en</span>
+        <span class="word">iedereen</span>
+        <span class="word">immens</span>
+        <span class="word">dankbaar</span>
+        <span class="word">voor</span>
+        <span class="word">deze</span>
+        <span class="word">periode</span>
+        <span class="word">in</span>
+        <span class="word">mijn</span>
+        <span class="word">leven.</span>
+        <span class="word">Ik</span>
+        <span class="word">koester</span>
+        <span class="word">ieder</span>
+        <span class="word">moment</span>
+        <span class="word">weer</span>
+        <span class="word">en</span>
+        <span class="word">weet</span>
+        <span class="word">met</span>
+        <span class="word">de</span>
+        <span class="word">juiste</span>
+        <span class="word">state</span>
+        <span class="word">of</span>
+        <span class="word">mind</span>
+        <span class="word">altijd</span>
+        <span class="word">weer</span>
+        <span class="word">perfect</span>
+        <span class="word">mijn</span>
+        <span class="word">innerlijke</span>
+        <span class="word">vrede</span>
+        <span class="word">te</span>
+        <span class="word">bewaren.</span>
+        <span class="word">Leve</span>
+        <span class="word">het</span>
+        <span class="word">leven,</span>
+        <span class="word">leve</span>
+        <span class="word">de</span>
+        <span class="word">ultieme</span>
+        <span class="word">belevenis</span>
+        <span class="word">van</span>
+        <span class="word">de</span>
+        <span class="word">muziek.</span>
+    </div>
+    <script>
+        let start = document.getElementById('start');
+                let text = document.getElementById('text-container');
+                start.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            start.style.display = 'none'
+            text.style.display = 'block'
+        })
+        document.addEventListener('DOMContentLoaded', () => {
+        const words = document.querySelectorAll('.word');
+
+        const het = JSON.parse(localStorage.getItem('het')) || {};
+
+    words.forEach((word, index) => {
+        // Set initial state based on local storage
+        if (het[index] === 1) {
+            word.classList.add('black');
+        } else if (het[index] === 2) {
+            word.classList.add('red');
+        } else if (het[index] === 3) {
+            word.classList.add('orange');
+        } else if (het[index] === 4) {
+            word.classList.add('yellow');
+        } else if (het[index] === 5) {
+            word.classList.add('green');
+        } else if (het[index] === 6) {
+            word.classList.add('blue');
+        } else if (het[index] === 7) {
+            word.classList.add('indigo');
+        } else if (het[index] === 8) {
+            word.classList.add('violet');
+        } else if (het[index] === 9) {
+            word.classList.add('aqua');
+        } else if (het[index] === 10) {
+            word.classList.add('white');
+        } else if (het[index] === 11) {
+            word.innerText = "";
+        } 
+
+
+        word.addEventListener('click', () => {
+            if (!het[index]) {
+                het[index] = 1;
+                word.classList.add('black');
+            } else if (het[index] === 1) {
+                het[index] = 2;
+                word.classList.remove('black');
+                word.classList.add('red');
+            } else if (het[index] === 2) {
+                het[index] = 3;
+                word.classList.remove('red');
+                word.classList.add('orange');
+            } else if (het[index] === 3) {
+                het[index] = 4; 
+                word.classList.remove('orange');
+                word.classList.add('yellow');
+            } else if (het[index] === 4) {
+                het[index] = 5;
+                word.classList.remove('yellow');
+                word.classList.add('green');
+            } else if (het[index] === 5) {
+                het[index] = 6;
+                word.classList.remove('green');
+                word.classList.add('blue');
+            } else if (het[index] === 6) {
+                het[index] = 7; 
+                word.classList.remove('blue');
+                word.classList.add('indigo');
+            } else if (het[index] === 7) {
+                het[index] = 8;
+                word.classList.remove('indigo');
+                word.classList.add('violet');
+            } else if (het[index] === 8) {
+                het[index] = 9;
+                word.classList.remove('violet');
+                 word.classList.add('aqua');
+            } else if (het[index] === 9) {
+                het[index] = 10;
+                word.classList.remove('aqua');
+                word.classList.add('white');
+            }  else if (het[index] === 10) {
+                het[index] = 11;
+                word.innerText = ""
+            } 
+            localStorage.setItem('het', JSON.stringify(het));
+        });
+    });
+});
+    </script>
+</body>
+</html>
+
