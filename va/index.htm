@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vandaag</title>
+    <style>
+        * {
+                        margin: 0;
+        }
+        #start {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+        }
+        #text-container {
+            display: none;
+            padding: 3vw;
+            font-family: Arial;
+            line-height: 5vw;
+        }
+
+.word {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 4.4vw;
+    color: white;
+}
+        .word.black {
+             color: Black;   
+        }
+        .word.red {
+            color: Red;
+        }
+        .word.orange {
+            color: Orange;
+        }
+        .word.yellow { 
+            color: Yellow
+        }
+        .word.green {
+            color: Green;
+        }
+        .word.blue {
+            color: Blue;
+        }
+        .word.indigo { 
+            color: Indigo;
+        }
+        .word.violet {
+            color: Violet;
+        }
+        .word.aqua {
+            color: AquaMarine;
+        }
+        .word.ivory {
+            color: Ivory;
+        }
+        .word.white {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="start"></div>
+    <div id="text-container">
+        <span class="word">Vandaag</span>
+        <span class="word">en</span>
+        <span class="word">elke</span>
+        <span class="word">dag</span>
+        <span class="word">wordt</span>
+        <span class="word">mijn</span>
+        <span class="word">leven</span>
+        <span class="word">geleid</span>
+        <span class="word">door</span>
+        <span class="word">de</span>
+        <span class="word">goddelijke</span>
+        <span class="word">wil.</span>
+        <span class="word">Vandaag</span>
+        <span class="word">werkt</span>
+        <span class="word">alles</span>
+        <span class="word">samen</span>
+        <span class="word">in</span>
+        <span class="word">mijn</span>
+        <span class="word">belang.</span>
+        <span class="word">Dit</span>
+        <span class="word">is</span>
+        <span class="word">voor</span>
+        <span class="word">mij</span>
+        <span class="word">een</span>
+        <span class="word">nieuwe</span>
+        <span class="word">en</span>
+        <span class="word">heerlijke</span>
+        <span class="word">dag.</span>
+        <span class="word">Nooit</span>
+        <span class="word">komt</span>
+        <span class="word">er</span>
+        <span class="word">meer</span>
+        <span class="word">een</span>
+        <span class="word">dag</span>
+        <span class="word">als</span>
+        <span class="word">deze.</span>
+        <span class="word">De</span>
+        <span class="word">hele</span>
+        <span class="word">dag</span>
+        <span class="word">word</span>
+        <span class="word">ik</span>
+        <span class="word">door</span>
+        <span class="word">de</span>
+        <span class="word">goddelijke</span>
+        <span class="word">wijsheid</span>
+        <span class="word">geleid</span>
+        <span class="word">en</span>
+        <span class="word">op</span>
+        <span class="word">alles</span>
+        <span class="word">wat</span>
+        <span class="word">ik</span>
+        <span class="word">doe</span>
+        <span class="word">rust</span>
+        <span class="word">de</span>
+        <span class="word">zegen.</span>
+        <span class="word">De</span>
+        <span class="word">goddelijke</span>
+        <span class="word">liefde</span>
+        <span class="word">omringt,</span>
+        <span class="word">omhult</span>
+        <span class="word">en</span>
+        <span class="word">omgeeft</span>
+        <span class="word">mij</span>
+        <span class="word">en</span>
+        <span class="word">ik</span>
+        <span class="word">wandel</span>
+        <span class="word">in</span>
+        <span class="word">vrede.</span>
+        <span class="word">Telkens</span>
+        <span class="word">als</span>
+        <span class="word">mijn</span>
+        <span class="word">aandacht</span>
+        <span class="word">afdwaalt</span>
+        <span class="word">van</span>
+        <span class="word">alles</span>
+        <span class="word">wat</span>
+        <span class="word">goed</span>
+        <span class="word">en</span>
+        <span class="word">opbouwend</span>
+        <span class="word">is,</span>
+        <span class="word">zal</span>
+        <span class="word">ik</span>
+        <span class="word">onmiddelijk</span>
+        <span class="word">mijn</span>
+        <span class="word">aandacht</span>
+        <span class="word">weer</span>
+        <span class="word">richten</span>
+        <span class="word">op</span>
+        <span class="word">het</span>
+        <span class="word">overdenken</span>
+        <span class="word">van</span>
+        <span class="word">het</span>
+        <span class="word">goede</span>
+        <span class="word">en</span>
+        <span class="word">schone.</span>
+        <span class="word">Ik</span>
+        <span class="word">ben</span>
+        <span class="word">een</span>
+        <span class="word">spirituele</span>
+        <span class="word">en</span>
+        <span class="word">geestelijke</span>
+        <span class="word">magneet</span>
+        <span class="word">en</span>
+        <span class="word">trek</span>
+        <span class="word">alles</span>
+        <span class="word">aan</span>
+        <span class="word">wat</span>
+        <span class="word">zegenrijk</span>
+        <span class="word">voor</span>
+        <span class="word">mij</span>
+        <span class="word">is</span>
+        <span class="word">en</span>
+        <span class="word">mijn</span>
+        <span class="word">belangen</span>
+        <span class="word">bevorderd.</span>
+        <span class="word">Alles</span>
+        <span class="word">wat</span>
+        <span class="word">ik</span>
+        <span class="word">vandaag</span>
+        <span class="word">onderneem</span>
+        <span class="word">zal</span>
+        <span class="word">een</span>
+        <span class="word">succes</span>
+        <span class="word">zijn.</span>
+        <span class="word">Ik</span>
+        <span class="word">zal</span>
+        <span class="word">zonder</span>
+        <span class="word">enige</span>
+        <span class="word">twijfel</span>
+        <span class="word">de</span>
+        <span class="word">hele</span>
+        <span class="word">dag</span>
+        <span class="word">gelukkig</span>
+        <span class="word">zijn.</span>
+    </div>
+    <script>
+        let start = document.getElementById('start');
+                let text = document.getElementById('text-container');
+                start.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            start.style.display = 'none'
+            text.style.display = 'block'
+        })
+        document.addEventListener('DOMContentLoaded', () => {
+        const words = document.querySelectorAll('.word');
+
+        const vandaag = JSON.parse(localStorage.getItem('vandaag')) || {};
+
+    words.forEach((word, index) => {
+        // Set initial state based on local storage
+        if (vandaag[index] === 1) {
+            word.classList.add('black');
+        } else if (vandaag[index] === 2) {
+            word.classList.add('red');
+        } else if (vandaag[index] === 3) {
+            word.classList.add('orange');
+        } else if (vandaag[index] === 4) {
+            word.classList.add('yellow');
+        } else if (vandaag[index] === 5) {
+            word.classList.add('green');
+        } else if (vandaag[index] === 6) {
+            word.classList.add('blue');
+        } else if (vandaag[index] === 7) {
+            word.classList.add('indigo');
+        } else if (vandaag[index] === 8) {
+            word.classList.add('violet');
+        } else if (vandaag[index] === 9) {
+            word.classList.add('aqua');
+        } else if (vandaag[index] === 10) {
+            word.classList.add('ivory');
+        } else if (vandaag[index] === 11) {
+            word.classList.add('white');
+        } else if (vandaag[index] === 12) {
+            word.innerText = "";
+        } 
+
+
+        word.addEventListener('click', () => {
+            if (!vandaag[index]) {
+                vandaag[index] = 1;
+                word.classList.add('black');
+            } else if (vandaag[index] === 1) {
+                vandaag[index] = 2;
+                word.classList.remove('black');
+                word.classList.add('red');
+            } else if (vandaag[index] === 2) {
+                vandaag[index] = 3;
+                word.classList.remove('red');
+                word.classList.add('orange');
+            } else if (vandaag[index] === 3) {
+                vandaag[index] = 4; 
+                word.classList.remove('orange');
+                word.classList.add('yellow');
+            } else if (vandaag[index] === 4) {
+                vandaag[index] = 5;
+                word.classList.remove('yellow');
+                word.classList.add('green');
+            } else if (vandaag[index] === 5) {
+                vandaag[index] = 6;
+                word.classList.remove('green');
+                word.classList.add('blue');
+            } else if (vandaag[index] === 6) {
+                vandaag[index] = 7; 
+                word.classList.remove('blue');
+                word.classList.add('indigo');
+            } else if (vandaag[index] === 7) {
+                vandaag[index] = 8;
+                word.classList.remove('indigo');
+                word.classList.add('violet');
+            } else if (vandaag[index] === 8) {
+                vandaag[index] = 9;
+                word.classList.remove('violet');
+                 word.classList.add('aqua');
+            } else if (vandaag[index] === 9) {
+                vandaag[index] = 10;
+                word.classList.remove('aqua');
+                word.classList.add('ivory');
+            } else if (vandaag[index] === 10) {
+                vandaag[index] = 11;
+                word.classList.remove('ivory');
+                word.classList.add('white');
+            } else if (vandaag[index] === 11) {
+                vandaag[index] = 12;
+                word.innerText = ""
+            } 
+            localStorage.setItem('vandaag', JSON.stringify(vandaag));
+        });
+    });
+});
+    </script>
+</body>
+</html>
+
+
