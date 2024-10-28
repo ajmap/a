@@ -50,11 +50,11 @@
         .word.violet {
             color: Violet;
         }
+        .word.turq {
+            color: Turquoise;
+        }
         .word.aqua {
             color: AquaMarine;
-        }
-        .word.misty {
-            color: MistyRose;
         }
         .word.white {
             color: white;
@@ -236,9 +236,9 @@
         } else if (vandaag[index] === 8) {
             word.classList.add('violet');
         } else if (vandaag[index] === 9) {
-            word.classList.add('aqua');
+            word.classList.add('turq');
         } else if (vandaag[index] === 10) {
-            word.classList.add('misty');
+            word.classList.add('aqua');
         } else if (vandaag[index] === 11) {
             word.classList.add('white');
         } else if (vandaag[index] === 12) {
@@ -281,14 +281,14 @@
             } else if (vandaag[index] === 8) {
                 vandaag[index] = 9;
                 word.classList.remove('violet');
-                 word.classList.add('aqua');
+                 word.classList.add('turq');
             } else if (vandaag[index] === 9) {
                 vandaag[index] = 10;
-                word.classList.remove('aqua');
-                word.classList.add('misty');
+                word.classList.remove('turq');
+                word.classList.add('aqua');
             } else if (vandaag[index] === 10) {
                 vandaag[index] = 11;
-                word.classList.remove('misty');
+                word.classList.remove('aqua');
                 word.classList.add('white');
             } else if (vandaag[index] === 11) {
                 vandaag[index] = 12;
