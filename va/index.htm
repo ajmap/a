@@ -8,6 +8,14 @@
         * {
                         margin: 0;
         }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 10vh;
+            background-color: Gainsboro;
+        }
         #start {
             background-color: black;
             width: 100vw;
@@ -199,8 +207,11 @@
         <span class="word">dag</span>
         <span class="word">gelukkig</span>
         <span class="word">zijn.</span>
+        <footer onclick='d()'></footer>
     </div>
     <script>
+        let d = document.getElementsByTagName('footer');
+        d[0].addEventListener('click', () => { window.location.href = 'http://www.interesque.com/w'})
         let start = document.getElementById('start');
                 let text = document.getElementById('text-container');
                 start.addEventListener("click", () => {
