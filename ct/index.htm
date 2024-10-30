@@ -171,10 +171,11 @@
         c2.style.display = "block";
         c1.style.display = "none";
       });
-      c1.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("DOMContentLoaded", () => {
         const words = document.querySelectorAll(".word");
 
         const E1 = JSON.parse(localStorage.getItem("E1")) || {};
+        const T2 = JSON.parse(localStorage.getItem("T2")) || {};
 
         words.forEach((word, index) => {
           if (E1[index] === 1) {
@@ -224,6 +225,54 @@
           } else if (E1[index] === 23) {
             word.classList.add("clr23");
           } else if (E1[index] === 24) {
+            word.innerText = "";
+          } else if (T2[index] === 1) {
+            word.classList.add("clr01");
+          } else if (T2[index] === 2) {
+            word.classList.add("clr02");
+          } else if (T2[index] === 3) {
+            word.classList.add("clr03");
+          } else if (T2[index] === 4) {
+            word.classList.add("clr04");
+          } else if (T2[index] === 5) {
+            word.classList.add("clr05");
+          } else if (T2[index] === 6) {
+            word.classList.add("clr06");
+          } else if (T2[index] === 7) {
+            word.classList.add("clr07");
+          } else if (T2[index] === 8) {
+            word.classList.add("clr08");
+          } else if (T2[index] === 9) {
+            word.classList.add("clr09");
+          } else if (T2[index] === 10) {
+            word.classList.add("clr10");
+          } else if (T2[index] === 11) {
+            word.classList.add("clr11");
+          } else if (T2[index] === 12) {
+            word.classList.add("clr12");
+          } else if (T2[index] === 13) {
+            word.classList.add("clr13");
+          } else if (T2[index] === 14) {
+            word.classList.add("clr14");
+          } else if (T2[index] === 15) {
+            word.classList.add("clr15");
+          } else if (T2[index] === 16) {
+            word.classList.add("clr16");
+          } else if (T2[index] === 17) {
+            word.classList.add("clr17");
+          } else if (T2[index] === 18) {
+            word.classList.add("clr18");
+          } else if (T2[index] === 19) {
+            word.classList.add("clr19");
+          } else if (T2[index] === 20) {
+            word.classList.add("clr20");
+          } else if (T2[index] === 21) {
+            word.classList.add("clr21");
+          } else if (T2[index] === 22) {
+            word.classList.add("clr22");
+          } else if (T2[index] === 23) {
+            word.classList.add("clr23");
+          } else if (T2[index] === 24) {
             word.innerText = "";
           }
 
@@ -322,70 +371,7 @@
             } else if (E1[index] === 23) {
               E1[index] = 24;
               word.innerText = "";
-            }
-            localStorage.setItem("E1", JSON.stringify(E1));
-          });
-        });
-      });
-
-      c2.addEventListener("DOMContentLoaded", () => {
-        const words = document.querySelectorAll(".word");
-
-        const T2 = JSON.parse(localStorage.getItem("T2")) || {};
-
-        words.forEach((word, index) => {
-          if (T2[index] === 1) {
-            word.classList.add("clr01");
-          } else if (T2[index] === 2) {
-            word.classList.add("clr02");
-          } else if (T2[index] === 3) {
-            word.classList.add("clr03");
-          } else if (T2[index] === 4) {
-            word.classList.add("clr04");
-          } else if (T2[index] === 5) {
-            word.classList.add("clr05");
-          } else if (T2[index] === 6) {
-            word.classList.add("clr06");
-          } else if (T2[index] === 7) {
-            word.classList.add("clr07");
-          } else if (T2[index] === 8) {
-            word.classList.add("clr08");
-          } else if (T2[index] === 9) {
-            word.classList.add("clr09");
-          } else if (T2[index] === 10) {
-            word.classList.add("clr10");
-          } else if (T2[index] === 11) {
-            word.classList.add("clr11");
-          } else if (T2[index] === 12) {
-            word.classList.add("clr12");
-          } else if (T2[index] === 13) {
-            word.classList.add("clr13");
-          } else if (T2[index] === 14) {
-            word.classList.add("clr14");
-          } else if (T2[index] === 15) {
-            word.classList.add("clr15");
-          } else if (T2[index] === 16) {
-            word.classList.add("clr16");
-          } else if (T2[index] === 17) {
-            word.classList.add("clr17");
-          } else if (T2[index] === 18) {
-            word.classList.add("clr18");
-          } else if (T2[index] === 19) {
-            word.classList.add("clr19");
-          } else if (T2[index] === 20) {
-            word.classList.add("clr20");
-          } else if (T2[index] === 21) {
-            word.classList.add("clr21");
-          } else if (T2[index] === 22) {
-            word.classList.add("clr22");
-          } else if (T2[index] === 23) {
-            word.classList.add("clr23");
-          } else if (T2[index] === 24) {
-            word.innerText = "";
-          }
-
-          word.addEventListener("click", () => {
-            if (!T2[index]) {
+            } else if (!T2[index]) {
               T2[index] = 1;
               word.classList.add("clr01");
             } else if (T2[index] === 1) {
@@ -480,6 +466,7 @@
               T2[index] = 24;
               word.innerText = "";
             }
+            localStorage.setItem("E1", JSON.stringify(E1));
             localStorage.setItem("T2", JSON.stringify(T2));
           });
         });
