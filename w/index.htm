@@ -19,14 +19,7 @@
             font-family: Arial;
             line-height: 9.7vw;
         }
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100vw;
-            height: 5vh;
-            background-color: Teal;   <!--  BurlyWood, NavajoWhite -->
-        }
+
 
 .word {
     cursor: pointer;
@@ -154,11 +147,8 @@
         <span class="word">wat&nbsp;</span>
         <span class="word">ik&nbsp;</span>
         <span class="word">doe.&nbsp;</span>
-        <footer onclick='d()'></footer>
     </div>
     <script>
-        let d = document.getElementsByTagName('footer');
-        d[0].addEventListener('click', () => { window.location.href = 'http://www.interesque.com/va'})
         let start = document.getElementById('start');
                 let text = document.getElementById('text-container');
                 start.addEventListener("click", () => {
