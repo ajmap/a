@@ -1922,6 +1922,8 @@
       let f8 = document.getElementById("f8");
       let f9 = document.getElementById("f9");
       let f10 = document.getElementById("f10");
+      let f11 = document.getElementById("f11");
+      let f12 = document.getElementById("f12");
 
       let c1 = document.getElementById("c1");
       let c2 = document.getElementById("c2");
@@ -1942,7 +1944,7 @@
         footer.style.display = "flex";
         section.style.display = "flex";
       });
-      f8.addEventListener("click", () => {
+      f12.addEventListener("click", () => {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
         } else if (document.exitFullscreen) {
