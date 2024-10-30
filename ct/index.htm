@@ -25,6 +25,36 @@
         font-family: Arial;
         line-height: 9vw;
       }
+            #c3 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+            #c4 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+            #c5 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+            #c6 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+            #c7 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
       footer {
         display: none;
         position: fixed;
@@ -117,20 +147,47 @@
             color: White;
         }
       #f1 {
-        width: 33.33vw;
+        width: 12.5vw;
         height: 6vh;
         background-color: Fuchsia;
       }
       #f2 {
-        width: 33.33vw;
+        width: 12.5vw;
         height: 6vh;
         background-color: OrangeRed;
       }
               #f3 {
-        width: 33.33vw;
+        width: 12.5vw;
         height: 7vh;
         background-color: GreenYellow;
       }
+                    #f4 {
+        width: 12.5vw;
+        height: 7vh;
+        background-color: DeepSkyBlue;
+      }
+                          #f5 {
+        width: 12.5vw;
+        height: 7vh;
+        background-color: Navy;
+      }
+                          #f6 {
+        width: 12.5vw;
+        height: 7vh;
+        background-color: DarkGreen;
+      }
+                          #f7 {
+        width: 12.5vw;
+        height: 7vh;
+        background-color: MediumVioletRed;
+      }
+                          #f8 {
+        width: 12.5vw;
+        height: 7vh;
+        background-color: RoyalBlue;
+      }
+
+
 
     </style>
   </head>
@@ -215,12 +272,32 @@
       ><span class="word">blijft&nbsp;</span><span class="word">zo,&nbsp;</span
       ><span class="word">dat&nbsp;</span><span class="word">blijft&nbsp;</span
       ><span class="word">zo.&nbsp;</span>
+    <div id="c3">
 
+    </div>
+          <div id="c4">
+
+    </div>
+          <div id="c5">
+
+    </div>
+          <div id="c6">
+
+    </div>
+          <div id="c7">
+
+    </div>
     </div>
     <footer id="footer">
       <div id="f1"></div>
       <div id="f2"></div>
               <div id="f3"></div>
+            <div id="f4"></div>
+      <div id="f5"></div>
+              <div id="f6"></div>
+            <div id="f7"></div>
+      <div id="f8"></div>
+
     </footer>
     <script>
       let start = document.getElementById("start");
@@ -228,9 +305,21 @@
       let f1 = document.getElementById("f1");
       let f2 = document.getElementById("f2");
               let f3 = document.getElementById("f3");
+            let f4 = document.getElementById("f4");
+      let f5 = document.getElementById("f5");
+              let f6 = document.getElementById("f6");
+            let f7 = document.getElementById("f7");
+      let f8 = document.getElementById("f8");
+
 
       let c1 = document.getElementById("c1");
       let c2 = document.getElementById("c2");
+            let c3 = document.getElementById("c3");
+      let c4 = document.getElementById("c4");
+            let c5 = document.getElementById("c5");
+      let c6 = document.getElementById("c6");
+            let c7 = document.getElementById("c7");
+
       start.addEventListener("click", () => {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
@@ -241,7 +330,7 @@
         c1.style.display = "block";
         footer.style.display = "flex";
       });
-              f3.addEventListener("click", () => {
+              f8.addEventListener("click", () => {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
         } else if (document.exitFullscreen) {
@@ -252,11 +341,67 @@
       f1.addEventListener("click", () => {
         c1.style.display = "block";
         c2.style.display = "none";
+                c3.style.display = "none";
+        c4.style.display = "none";
+                c5.style.display = "none";
+        c6.style.display = "none";
+                c7.style.display = "none";
       });
       f2.addEventListener("click", () => {
-        c2.style.display = "block";
         c1.style.display = "none";
+        c2.style.display = "block";
+                c3.style.display = "none";
+        c4.style.display = "none";
+                c5.style.display = "none";
+        c6.style.display = "none";
+                c7.style.display = "none";
       });
+            f3.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+                c3.style.display = "block";
+        c4.style.display = "none";
+                c5.style.display = "none";
+        c6.style.display = "none";
+                c7.style.display = "none";
+      });
+            f4.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+                c3.style.display = "none";
+        c4.style.display = "block";
+                c5.style.display = "none";
+        c6.style.display = "none";
+                c7.style.display = "none";
+      });
+            f5.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+                c3.style.display = "none";
+        c4.style.display = "none";
+                c5.style.display = "block";
+        c6.style.display = "none";
+                c7.style.display = "none";
+      });
+            f6.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+                c3.style.display = "none";
+        c4.style.display = "none";
+                c5.style.display = "none";
+        c6.style.display = "block";
+                c7.style.display = "none";
+      });
+            f7.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+                c3.style.display = "none";
+        c4.style.display = "none";
+                c5.style.display = "none";
+        c6.style.display = "none";
+                c7.style.display = "block";
+      });
+      
       document.addEventListener("DOMContentLoaded", () => {
         const words = document.querySelectorAll(".word");
 
