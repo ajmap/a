@@ -55,6 +55,12 @@
         font-family: Arial;
         line-height: 9vw;
       }
+      #c8 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
       section {
         display: none;
         position: fixed;
@@ -1890,6 +1896,30 @@
       <span class="word">me&nbsp;</span>
       <span class="word">effortlessly.&nbsp;</span>
     </div>
+    <div id="c8">
+      <span class="word">Fuchsia&nbsp;</span>
+      <span class="word">Orange Red&nbsp;</span>
+      <span class="word">Green Yellow&nbsp;</span>
+      <span class="word">Deep Sky Blue&nbsp;</span>
+      <span class="word">Navy&nbsp;</span>
+      <span class="word">Dark Green&nbsp;</span>
+      <span class="word">Medium Violet Red&nbsp;</span>
+      <span class="word">Royal Blue&nbsp;</span>
+      <span class="word">Slate Gray&nbsp;</span>
+      <span class="word">Blue Violet&nbsp;</span>
+      <span class="word">Forest Green&nbsp;</span>
+      <span class="word">Dodger Blue&nbsp;</span>
+      <span class="word">Crimson&nbsp;</span>
+      <span class="word">Lawn Green&nbsp;</span>
+      <span class="word">Magenta&nbsp;</span>
+      <span class="word">Indian Red&nbsp;</span>
+      <span class="word">Light Sky Blue&nbsp;</span>
+      <span class="word">Lime&nbsp;</span>
+      <span class="word">Corn Flower Blue&nbsp;</span>
+      <span class="word">Aqua Marine&nbsp;</span>
+      <span class="word">Orchid&nbsp;</span>
+      <span class="word">Cyan&nbsp;</span>
+    </div>
     <section id="section">
             <div id="f1"></div>
       <div id="f2"></div>
@@ -1932,6 +1962,7 @@
       let c5 = document.getElementById("c5");
       let c6 = document.getElementById("c6");
       let c7 = document.getElementById("c7");
+      let c8 = document.getElementById("c8");
 
       start.addEventListener("click", () => {
         if (!document.fullscreenElement) {
@@ -1959,6 +1990,7 @@
         c5.style.display = "none";
         c6.style.display = "none";
         c7.style.display = "none";
+        c8.style.display = "none";
       });
       f2.addEventListener("click", () => {
         c1.style.display = "none";
@@ -1968,6 +2000,7 @@
         c5.style.display = "none";
         c6.style.display = "none";
         c7.style.display = "none";
+        c8.style.display = "none";
       });
       f3.addEventListener("click", () => {
         c1.style.display = "none";
@@ -1977,6 +2010,7 @@
         c5.style.display = "none";
         c6.style.display = "none";
         c7.style.display = "none";
+        c8.style.display = "none";
       });
       f4.addEventListener("click", () => {
         c1.style.display = "none";
@@ -1986,6 +2020,7 @@
         c5.style.display = "none";
         c6.style.display = "none";
         c7.style.display = "none";
+          c8.style.display = "none";
       });
       f5.addEventListener("click", () => {
         c1.style.display = "none";
@@ -1995,6 +2030,7 @@
         c5.style.display = "block";
         c6.style.display = "none";
         c7.style.display = "none";
+        c8.style.display = "none";
       });
       f6.addEventListener("click", () => {
         c1.style.display = "none";
@@ -2004,6 +2040,7 @@
         c5.style.display = "none";
         c6.style.display = "block";
         c7.style.display = "none";
+        c8.style.display = "none";
       });
       f7.addEventListener("click", () => {
         c1.style.display = "none";
@@ -2013,6 +2050,17 @@
         c5.style.display = "none";
         c6.style.display = "none";
         c7.style.display = "block";
+        c8.style.display = "none";
+      });
+      f8.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "block";
       });
 
       document.addEventListener("DOMContentLoaded", () => {
