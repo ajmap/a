@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colored Text</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      #start {
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+      }
+      #c1 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 5vw;
+      }
+      #c2 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 5vw;
+      }
+      footer {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 7vh;
+        background-color: Gainsboro;
+      }
+
+      .word {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 4.4vw;
+        color: white;
+      }
+      .word.clr01 {
+        color: MidnightBlue;
+      }
+      .word.clr02 {
+        color: DarkRed;
+      }
+      .word.clr03 {
+        color: DarkSlateGray;
+      }
+      .word.clr04 {
+        color: Maroon;
+      }
+      .word.clr05 {
+        color: Navy;
+      }
+      .word.clr06 {
+        color: DarkGreen;
+      }
+      .word.clr07 {
+        color: MediumVioletRed;
+      }
+      .word.clr08 {
+        color: RoyalBlue;
+      }
+      .word.clr09 {
+        color: SlateGray;
+      }
+      .word.clr10 {
+        color: BlueViolet;
+      }
+      .word.clr11 {
+        color: ForestGreen;
+      }
+      .word.clr12 {
+        color: DodgerBlue;
+      }
+      .word.clr13 {
+        color: Crimson;
+      }
+      .word.clr14 {
+        color: LawnGreen;
+      }
+      .word.clr15 {
+        color: Magenta;
+      }
+      .word.clr16 {
+        color: CornFlowerBlue;
+      }
+      .word.clr17 {
+        color: LightSkyBlue;
+      }
+      .word.clr18 {
+        color: Lime;
+      }
+      .word.clr19 {
+        color: IndianRed;
+      }
+      .word.clr20 {
+        color: AquaMarine;
+      }
+      .word.clr21 {
+        color: Orchid;
+      }
+      .word.clr22 {
+        color: Cyan;
+      }
+      .word.clr23 {
+        color: White;
+      }
+      #f1 {
+        display: none;
+        width: 50vw;
+        height: 7vh;
+        background-color: Navy;
+      }
+      #f2 {
+        display: none;
+        width: 50vw;
+        height: 7vh;
+        background-color: Yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="start"></div>
+    <div id="c1">
+      <span class="word">Dit</span>
+      <span class="word">is</span>
+      <span class="word">een</span>
+      <span class="word">test.</span>
+    </div>
+    <div id="c2">
+      <span class="word">Dit</span>
+      <span class="word">is</span>
+      <span class="word">nog</span>
+      <span class="word">een</span>
+      <span class="word">test.</span>
+    </div>
+    <footer id="footer">
+      <div id="f1"></div>
+      <div id="f2"></div>
+    </footer>
+    <script>
+      let start = document.getElementById("start");
+      let footer = document.getElementById("footer");
+      let f1 = document.getElementById("f1");
+      let f2 = document.getElementById("f2");
+
+      let c1 = document.getElementById("c1");
+      let c2 = document.getElementById("c2");
+      start.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        start.style.display = "none";
+        c1.style.display = "block";
+        footer.style.display = "block";
+          f1.style.display = "block";
+          f2.style.display = "block";
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const words = document.querySelectorAll(".word");
+
+        const E1 = JSON.parse(localStorage.getItem("E1")) || {};
+
+        words.forEach((word, index) => {
+          if (E1[index] === 1) {
+            word.classList.add("clr01");
+          } else if (E1[index] === 2) {
+            word.classList.add("clr02");
+          } else if (E1[index] === 3) {
+            word.classList.add("clr03");
+          } else if (E1[index] === 4) {
+            word.classList.add("clr04");
+          } else if (E1[index] === 5) {
+            word.classList.add("clr05");
+          } else if (E1[index] === 6) {
+            word.classList.add("clr06");
+          } else if (E1[index] === 7) {
+            word.classList.add("clr07");
+          } else if (E1[index] === 8) {
+            word.classList.add("clr08");
+          } else if (E1[index] === 9) {
+            word.classList.add("clr09");
+          } else if (E1[index] === 10) {
+            word.classList.add("clr10");
+          } else if (E1[index] === 11) {
+            word.classList.add("clr11");
+          } else if (E1[index] === 12) {
+            word.classList.add("clr12");
+          } else if (E1[index] === 13) {
+            word.classList.add("clr13");
+          } else if (E1[index] === 14) {
+            word.classList.add("clr14");
+          } else if (E1[index] === 15) {
+            word.classList.add("clr15");
+          } else if (E1[index] === 16) {
+            word.classList.add("clr16");
+          } else if (E1[index] === 17) {
+            word.classList.add("clr17");
+          } else if (E1[index] === 18) {
+            word.classList.add("clr18");
+          } else if (E1[index] === 19) {
+            word.classList.add("clr19");
+          } else if (E1[index] === 20) {
+            word.classList.add("clr20");
+          } else if (E1[index] === 21) {
+            word.classList.add("clr21");
+          } else if (E1[index] === 22) {
+            word.classList.add("clr22");
+          } else if (E1[index] === 23) {
+            word.classList.add("clr23");
+          } else if (E1[index] === 24) {
+            word.innerText = "";
+          }
+
+          word.addEventListener("click", () => {
+            if (!E1[index]) {
+              E1[index] = 1;
+              word.classList.add("clr01");
+            } else if (E1[index] === 1) {
+              E1[index] = 2;
+              word.classList.remove("clr01");
+              word.classList.add("clr02");
+            } else if (E1[index] === 2) {
+              E1[index] = 3;
+              word.classList.remove("clr02");
+              word.classList.add("clr03");
+            } else if (E1[index] === 3) {
+              E1[index] = 4;
+              word.classList.remove("clr03");
+              word.classList.add("clr04");
+            } else if (E1[index] === 4) {
+              E1[index] = 5;
+              word.classList.remove("clr04");
+              word.classList.add("clr05");
+            } else if (E1[index] === 5) {
+              E1[index] = 6;
+              word.classList.remove("clr05");
+              word.classList.add("clr06");
+            } else if (E1[index] === 6) {
+              E1[index] = 7;
+              word.classList.remove("clr06");
+              word.classList.add("clr07");
+            } else if (E1[index] === 7) {
+              E1[index] = 8;
+              word.classList.remove("clr07");
+              word.classList.add("clr08");
+            } else if (E1[index] === 8) {
+              E1[index] = 9;
+              word.classList.remove("clr08");
+              word.classList.add("clr09");
+            } else if (E1[index] === 9) {
+              E1[index] = 10;
+              word.classList.remove("clr09");
+              word.classList.add("clr10");
+            } else if (E1[index] === 10) {
+              E1[index] = 11;
+              word.classList.remove("clr10");
+              word.classList.add("clr11");
+            } else if (E1[index] === 11) {
+              E1[index] = 12;
+              word.classList.remove("clr11");
+              word.classList.add("clr12");
+            } else if (E1[index] === 12) {
+              E1[index] = 13;
+              word.classList.remove("clr12");
+              word.classList.add("clr13");
+            } else if (E1[index] === 13) {
+              E1[index] = 14;
+              word.classList.remove("clr13");
+              word.classList.add("clr14");
+            } else if (E1[index] === 14) {
+              E1[index] = 15;
+              word.classList.remove("clr14");
+              word.classList.add("clr15");
+            } else if (E1[index] === 15) {
+              E1[index] = 16;
+              word.classList.remove("clr15");
+              word.classList.add("clr16");
+            } else if (E1[index] === 16) {
+              E1[index] = 17;
+              word.classList.remove("clr16");
+              word.classList.add("clr17");
+            } else if (E1[index] === 17) {
+              E1[index] = 18;
+              word.classList.remove("clr17");
+              word.classList.add("clr18");
+            } else if (E1[index] === 18) {
+              E1[index] = 19;
+              word.classList.remove("clr18");
+              word.classList.add("clr19");
+            } else if (E1[index] === 19) {
+              E1[index] = 20;
+              word.classList.remove("clr19");
+              word.classList.add("clr20");
+            } else if (E1[index] === 20) {
+              E1[index] = 21;
+              word.classList.remove("clr20");
+              word.classList.add("clr21");
+            } else if (E1[index] === 21) {
+              E1[index] = 22;
+              word.classList.remove("clr21");
+              word.classList.add("clr22");
+            } else if (E1[index] === 22) {
+              E1[index] = 23;
+              word.classList.remove("clr22");
+              word.classList.add("clr23");
+            } else if (E1[index] === 23) {
+              E1[index] = 24;
+              word.innerText = "";
+            }
+            localStorage.setItem("E1", JSON.stringify(E1));
+          });
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const words = document.querySelectorAll(".word");
+
+        const T2 = JSON.parse(localStorage.getItem("T2")) || {};
+
+        words.forEach((word, index) => {
+          if (T2[index] === 1) {
+            word.classList.add("clr01");
+          } else if (T2[index] === 2) {
+            word.classList.add("clr02");
+          } else if (T2[index] === 3) {
+            word.classList.add("clr03");
+          } else if (T2[index] === 4) {
+            word.classList.add("clr04");
+          } else if (T2[index] === 5) {
+            word.classList.add("clr05");
+          } else if (T2[index] === 6) {
+            word.classList.add("clr06");
+          } else if (T2[index] === 7) {
+            word.classList.add("clr07");
+          } else if (T2[index] === 8) {
+            word.classList.add("clr08");
+          } else if (T2[index] === 9) {
+            word.classList.add("clr09");
+          } else if (T2[index] === 10) {
+            word.classList.add("clr10");
+          } else if (T2[index] === 11) {
+            word.classList.add("clr11");
+          } else if (T2[index] === 12) {
+            word.classList.add("clr12");
+          } else if (T2[index] === 13) {
+            word.classList.add("clr13");
+          } else if (T2[index] === 14) {
+            word.classList.add("clr14");
+          } else if (T2[index] === 15) {
+            word.classList.add("clr15");
+          } else if (T2[index] === 16) {
+            word.classList.add("clr16");
+          } else if (T2[index] === 17) {
+            word.classList.add("clr17");
+          } else if (T2[index] === 18) {
+            word.classList.add("clr18");
+          } else if (T2[index] === 19) {
+            word.classList.add("clr19");
+          } else if (T2[index] === 20) {
+            word.classList.add("clr20");
+          } else if (T2[index] === 21) {
+            word.classList.add("clr21");
+          } else if (T2[index] === 22) {
+            word.classList.add("clr22");
+          } else if (T2[index] === 23) {
+            word.classList.add("clr23");
+          } else if (T2[index] === 24) {
+            word.innerText = "";
+          }
+
+          word.addEventListener("click", () => {
+            if (!T2[index]) {
+              T2[index] = 1;
+              word.classList.add("clr01");
+            } else if (T2[index] === 1) {
+              T2[index] = 2;
+              word.classList.remove("clr01");
+              word.classList.add("clr02");
+            } else if (T2[index] === 2) {
+              T2[index] = 3;
+              word.classList.remove("clr02");
+              word.classList.add("clr03");
+            } else if (T2[index] === 3) {
+              T2[index] = 4;
+              word.classList.remove("clr03");
+              word.classList.add("clr04");
+            } else if (T2[index] === 4) {
+              T2[index] = 5;
+              word.classList.remove("clr04");
+              word.classList.add("clr05");
+            } else if (T2[index] === 5) {
+              T2[index] = 6;
+              word.classList.remove("clr05");
+              word.classList.add("clr06");
+            } else if (T2[index] === 6) {
+              T2[index] = 7;
+              word.classList.remove("clr06");
+              word.classList.add("clr07");
+            } else if (T2[index] === 7) {
+              T2[index] = 8;
+              word.classList.remove("clr07");
+              word.classList.add("clr08");
+            } else if (T2[index] === 8) {
+              T2[index] = 9;
+              word.classList.remove("clr08");
+              word.classList.add("clr09");
+            } else if (T2[index] === 9) {
+              T2[index] = 10;
+              word.classList.remove("clr09");
+              word.classList.add("clr10");
+            } else if (T2[index] === 10) {
+              T2[index] = 11;
+              word.classList.remove("clr10");
+              word.classList.add("clr11");
+            } else if (T2[index] === 11) {
+              T2[index] = 12;
+              word.classList.remove("clr11");
+              word.classList.add("clr12");
+            } else if (T2[index] === 12) {
+              T2[index] = 13;
+              word.classList.remove("clr12");
+              word.classList.add("clr13");
+            } else if (T2[index] === 13) {
+              T2[index] = 14;
+              word.classList.remove("clr13");
+              word.classList.add("clr14");
+            } else if (T2[index] === 14) {
+              T2[index] = 15;
+              word.classList.remove("clr14");
+              word.classList.add("clr15");
+            } else if (T2[index] === 15) {
+              T2[index] = 16;
+              word.classList.remove("clr15");
+              word.classList.add("clr16");
+            } else if (T2[index] === 16) {
+              T2[index] = 17;
+              word.classList.remove("clr16");
+              word.classList.add("clr17");
+            } else if (T2[index] === 17) {
+              T2[index] = 18;
+              word.classList.remove("clr17");
+              word.classList.add("clr18");
+            } else if (T2[index] === 18) {
+              T2[index] = 19;
+              word.classList.remove("clr18");
+              word.classList.add("clr19");
+            } else if (T2[index] === 19) {
+              T2[index] = 20;
+              word.classList.remove("clr19");
+              word.classList.add("clr20");
+            } else if (T2[index] === 20) {
+              T2[index] = 21;
+              word.classList.remove("clr20");
+              word.classList.add("clr21");
+            } else if (T2[index] === 21) {
+              T2[index] = 22;
+              word.classList.remove("clr21");
+              word.classList.add("clr22");
+            } else if (T2[index] === 22) {
+              T2[index] = 23;
+              word.classList.remove("clr22");
+              word.classList.add("clr23");
+            } else if (T2[index] === 23) {
+              T2[index] = 24;
+              word.innerText = "";
+            }
+            localStorage.setItem("T2", JSON.stringify(T2));
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
