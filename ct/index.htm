@@ -32,100 +32,98 @@
         left: 0;
         width: 100vw;
         height: 7vh;
-        background-color: Gainsboro;
+          justify-content: space-between;
+          
       }
 
+
+
+
+        
       .word {
         cursor: pointer;
         display: inline-block;
         font-size: 9vw;
         color: white;
       }
-        .word.clr01 {
-             color: Fuchsia;   
-        }
-        .word.clr02 {
-            color: OrangeRed;
-        }
-        .word.clr03 {
-            color: GreenYellow;
-        }
-        .word.clr04 { 
-            color: DeepSkyBlue;
-        }
-        .word.clr05 {
-            color: Navy;
-        }
-        .word.clr06 {
-            color: DarkGreen;
-        }
-        .word.clr07 { 
-            color: MediumVioletRed;
-        }
-        .word.clr08 {
-            color: RoyalBlue;
-        }
-        .word.clr09 {
-            color: SlateGray;
-        }
-        .word.clr10 {
-            color: BlueViolet;
-        }
-        .word.clr11 {
-            color: ForestGreen;
-        }
-        .word.clr12 {
-            color: DodgerBlue;
-        }
-        .word.clr13 {
-            color: Crimson;
-        }
-        .word.clr14 {
-            color: LawnGreen;
-        }
-        .word.clr15 {
-            color: Magenta;
-        }
-        .word.clr16 {
-            color: IndianRed;
-        }
-        .word.clr17 {
-            color: LightSkyBlue;
-        }
-        .word.clr18 {
-            color: Lime;
-        }
-        .word.clr19 {
-            color: CornFlowerBlue;
-        }
-        .word.clr20 {
-            color: AquaMarine;
-        }
-        .word.clr21 {
-            color: Orchid;
-        }
-        .word.clr22 {
-            color: Cyan;
-        }
-        .word.clr23 {
-            color: White;
-        }
+      .word.clr01 {
+        color: MidnightBlue;
+      }
+      .word.clr02 {
+        color: DarkRed;
+      }
+      .word.clr03 {
+        color: DarkSlateGray;
+      }
+      .word.clr04 {
+        color: Maroon;
+      }
+      .word.clr05 {
+        color: Navy;
+      }
+      .word.clr06 {
+        color: DarkGreen;
+      }
+      .word.clr07 {
+        color: MediumVioletRed;
+      }
+      .word.clr08 {
+        color: RoyalBlue;
+      }
+      .word.clr09 {
+        color: SlateGray;
+      }
+      .word.clr10 {
+        color: BlueViolet;
+      }
+      .word.clr11 {
+        color: ForestGreen;
+      }
+      .word.clr12 {
+        color: DodgerBlue;
+      }
+      .word.clr13 {
+        color: Crimson;
+      }
+      .word.clr14 {
+        color: LawnGreen;
+      }
+      .word.clr15 {
+        color: Magenta;
+      }
+      .word.clr16 {
+        color: CornFlowerBlue;
+      }
+      .word.clr17 {
+        color: LightSkyBlue;
+      }
+      .word.clr18 {
+        color: Lime;
+      }
+      .word.clr19 {
+        color: IndianRed;
+      }
+      .word.clr20 {
+        color: AquaMarine;
+      }
+      .word.clr21 {
+        color: Orchid;
+      }
+      .word.clr22 {
+        color: Cyan;
+      }
+      .word.clr23 {
+        color: White;
+      }
       #f1 {
-        display: none;
         width: 50vw;
         height: 7vh;
         background-color: Navy;
-        font-size: 10vw;
-        color: Navy;
       }
       #f2 {
-        display: none;
         width: 50vw;
         height: 7vh;
-        background-color: Blue;
-        font-size: 10vw;
-        color: Blue;
-        right: 0;
+        background-color: Yellow;
       }
     </style>
   </head>
@@ -145,8 +143,8 @@
       <span class="word">test.</span>
     </div>
     <footer id="footer">
-      <div id="f1">FOOTER1</div>
-      <div id="f2">FOOTER2</div>
+      <div id="f1"></div>
+      <div id="f2"></div>
     </footer>
     <script>
       let start = document.getElementById("start");
@@ -164,9 +162,7 @@
         }
         start.style.display = "none";
         c1.style.display = "block";
-        footer.style.display = "block";
-        f1.style.display = "inline-block";
-        f2.style.display = "inline-block";
+        footer.style.display = "flex";
       });
       f1.addEventListener("click", () => {
         c1.style.display = "block";
