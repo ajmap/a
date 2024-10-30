@@ -1911,6 +1911,7 @@
     <script>
       let start = document.getElementById("start");
       let footer = document.getElementById("footer");
+      let section = document.getElementById("section");
       let f1 = document.getElementById("f1");
       let f2 = document.getElementById("f2");
       let f3 = document.getElementById("f3");
@@ -1939,6 +1940,7 @@
         start.style.display = "none";
         c1.style.display = "block";
         footer.style.display = "flex";
+        section.style.display = "flex";
       });
       f8.addEventListener("click", () => {
         if (!document.fullscreenElement) {
