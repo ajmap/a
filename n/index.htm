@@ -55,13 +55,22 @@
         font-family: Arial;
         line-height: 9vw;
       }
+      section {
+        display: none;
+        position: fixed;
+        bottom: 5vh;
+        left: 0;
+        width: 100vw;
+        height: 5vh;
+        justify-content: space-between;
+      }
       footer {
         display: none;
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100vw;
-        height: 10vh;
+        height: 5vh;
         justify-content: space-between;
       }
 
@@ -142,49 +151,64 @@
         color: White;
       }
       #f1 {
-        width: 12.5vw;
-        height: 5vh;
+        width: 16.66vw;
+        height: 6vh;
         background-color: Fuchsia;
       }
       #f2 {
-        width: 12.5vw;
-        height: 5vh;
+        width: 16.66vw;
+        height: 6vh;
         background-color: OrangeRed;
       }
       #f3 {
-        width: 12.5vw;
-        height: 5vh;
+        width: 16.66vw;
+        height: 6vh;
         background-color: GreenYellow;
       }
       #f4 {
-        width: 12.5vw;
-        height: 5vh;
+         width: 16.66vw;
+        height: 6vh;
         background-color: DeepSkyBlue;
       }
       #f5 {
-        width: 12.5vw;
-        height: 5vh;
+        width: 16.66vw;
+        height: 6vh;
         background-color: Navy;
       }
       #f6 {
-        width: 12.5vw;
-        height: 5vh;
+        width: 16.66vw;
+        height: 6vh;
         background-color: DarkGreen;
       }
       #f7 {
-        width: 12.5vw;
-        height: 5vh;
+        width: 16.66vw;
+        height: 6vh;
         background-color: MediumVioletRed;
       }
       #f8 {
-        width: 12.5vw;
-        height: 5vh;
+        width: 16.66vw;
+        height: 6vh;
         background-color: RoyalBlue;
       }
       #f9 {
-        width: 100vw;
-        height: 5vh;
+        width: 16.66vw;
+        height: 6vh;
         background-color: AquaMarine;
+      }
+      #f10 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: Orchid;
+      }
+      #f11 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: Lime;
+      }
+      #f12 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: CornflowerBlue;
       }
     </style>
   </head>
@@ -1866,16 +1890,23 @@
       <span class="word">me&nbsp;</span>
       <span class="word">effortlessly.&nbsp;</span>
     </div>
-    <footer id="footer">
-      <div id="f1"></div>
+    <section id="section">
+            <div id="f1"></div>
       <div id="f2"></div>
       <div id="f3"></div>
       <div id="f4"></div>
       <div id="f5"></div>
       <div id="f6"></div>
+
+    </section>  
+    <footer id="footer">
+
       <div id="f7"></div>
       <div id="f8"></div>
-      <div id="f9"></div>
+                  <div id="f9"></div>
+            <div id="f10"></div>
+                  <div id="f11"></div>
+            <div id="f12"></div>
     </footer>
     <script>
       let start = document.getElementById("start");
@@ -1888,6 +1919,8 @@
       let f6 = document.getElementById("f6");
       let f7 = document.getElementById("f7");
       let f8 = document.getElementById("f8");
+      let f9 = document.getElementById("f9");
+      let f10 = document.getElementById("f10");
 
       let c1 = document.getElementById("c1");
       let c2 = document.getElementById("c2");
