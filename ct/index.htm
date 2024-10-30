@@ -116,15 +116,21 @@
             color: White;
         }
       #f1 {
-        width: 50vw;
+        width: 33.33vw;
         height: 7vh;
-        background-color: Navy;
+        background-color: Fuchsia;
       }
       #f2 {
-        width: 50vw;
+        width: 33.33vw;
         height: 7vh;
-        background-color: Yellow;
+        background-color: OrangeRed;
       }
+              #f3 {
+        width: 33.33vw;
+        height: 7vh;
+        background-color: GreenYellow;
+      }
+
     </style>
   </head>
   <body>
@@ -138,12 +144,14 @@
     <footer id="footer">
       <div id="f1"></div>
       <div id="f2"></div>
+              <div id="f3"></div>
     </footer>
     <script>
       let start = document.getElementById("start");
       let footer = document.getElementById("footer");
       let f1 = document.getElementById("f1");
       let f2 = document.getElementById("f2");
+              let f3 = document.getElementById("f3");
 
       let c1 = document.getElementById("c1");
       let c2 = document.getElementById("c2");
@@ -156,6 +164,14 @@
         start.style.display = "none";
         c1.style.display = "block";
         footer.style.display = "flex";
+      });
+              f3.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+
       });
       f1.addEventListener("click", () => {
         c1.style.display = "block";
