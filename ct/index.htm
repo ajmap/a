@@ -176,7 +176,6 @@
         const words = document.querySelectorAll(".word");
 
         const E1 = JSON.parse(localStorage.getItem("E1")) || {};
-        const T2 = JSON.parse(localStorage.getItem("T2")) || {};
 
         words.forEach((word, index) => {
           if (E1[index] === 1) {
@@ -227,55 +226,7 @@
             word.classList.add("clr23");
           } else if (E1[index] === 24) {
             word.innerText = "";
-          } else if (T2[index] === 1) {
-            word.classList.add("clr01");
-          } else if (T2[index] === 2) {
-            word.classList.add("clr02");
-          } else if (T2[index] === 3) {
-            word.classList.add("clr03");
-          } else if (T2[index] === 4) {
-            word.classList.add("clr04");
-          } else if (T2[index] === 5) {
-            word.classList.add("clr05");
-          } else if (T2[index] === 6) {
-            word.classList.add("clr06");
-          } else if (T2[index] === 7) {
-            word.classList.add("clr07");
-          } else if (T2[index] === 8) {
-            word.classList.add("clr08");
-          } else if (T2[index] === 9) {
-            word.classList.add("clr09");
-          } else if (T2[index] === 10) {
-            word.classList.add("clr10");
-          } else if (T2[index] === 11) {
-            word.classList.add("clr11");
-          } else if (T2[index] === 12) {
-            word.classList.add("clr12");
-          } else if (T2[index] === 13) {
-            word.classList.add("clr13");
-          } else if (T2[index] === 14) {
-            word.classList.add("clr14");
-          } else if (T2[index] === 15) {
-            word.classList.add("clr15");
-          } else if (T2[index] === 16) {
-            word.classList.add("clr16");
-          } else if (T2[index] === 17) {
-            word.classList.add("clr17");
-          } else if (T2[index] === 18) {
-            word.classList.add("clr18");
-          } else if (T2[index] === 19) {
-            word.classList.add("clr19");
-          } else if (T2[index] === 20) {
-            word.classList.add("clr20");
-          } else if (T2[index] === 21) {
-            word.classList.add("clr21");
-          } else if (T2[index] === 22) {
-            word.classList.add("clr22");
-          } else if (T2[index] === 23) {
-            word.classList.add("clr23");
-          } else if (T2[index] === 24) {
-            word.innerText = "";
-          }
+          } 
 
           word.addEventListener("click", () => {
             if (!E1[index]) {
@@ -372,103 +323,8 @@
             } else if (E1[index] === 23) {
               E1[index] = 24;
               word.innerText = "";
-            } else if (!T2[index]) {
-              T2[index] = 1;
-              word.classList.add("clr01");
-            } else if (T2[index] === 1) {
-              T2[index] = 2;
-              word.classList.remove("clr01");
-              word.classList.add("clr02");
-            } else if (T2[index] === 2) {
-              T2[index] = 3;
-              word.classList.remove("clr02");
-              word.classList.add("clr03");
-            } else if (T2[index] === 3) {
-              T2[index] = 4;
-              word.classList.remove("clr03");
-              word.classList.add("clr04");
-            } else if (T2[index] === 4) {
-              T2[index] = 5;
-              word.classList.remove("clr04");
-              word.classList.add("clr05");
-            } else if (T2[index] === 5) {
-              T2[index] = 6;
-              word.classList.remove("clr05");
-              word.classList.add("clr06");
-            } else if (T2[index] === 6) {
-              T2[index] = 7;
-              word.classList.remove("clr06");
-              word.classList.add("clr07");
-            } else if (T2[index] === 7) {
-              T2[index] = 8;
-              word.classList.remove("clr07");
-              word.classList.add("clr08");
-            } else if (T2[index] === 8) {
-              T2[index] = 9;
-              word.classList.remove("clr08");
-              word.classList.add("clr09");
-            } else if (T2[index] === 9) {
-              T2[index] = 10;
-              word.classList.remove("clr09");
-              word.classList.add("clr10");
-            } else if (T2[index] === 10) {
-              T2[index] = 11;
-              word.classList.remove("clr10");
-              word.classList.add("clr11");
-            } else if (T2[index] === 11) {
-              T2[index] = 12;
-              word.classList.remove("clr11");
-              word.classList.add("clr12");
-            } else if (T2[index] === 12) {
-              T2[index] = 13;
-              word.classList.remove("clr12");
-              word.classList.add("clr13");
-            } else if (T2[index] === 13) {
-              T2[index] = 14;
-              word.classList.remove("clr13");
-              word.classList.add("clr14");
-            } else if (T2[index] === 14) {
-              T2[index] = 15;
-              word.classList.remove("clr14");
-              word.classList.add("clr15");
-            } else if (T2[index] === 15) {
-              T2[index] = 16;
-              word.classList.remove("clr15");
-              word.classList.add("clr16");
-            } else if (T2[index] === 16) {
-              T2[index] = 17;
-              word.classList.remove("clr16");
-              word.classList.add("clr17");
-            } else if (T2[index] === 17) {
-              T2[index] = 18;
-              word.classList.remove("clr17");
-              word.classList.add("clr18");
-            } else if (T2[index] === 18) {
-              T2[index] = 19;
-              word.classList.remove("clr18");
-              word.classList.add("clr19");
-            } else if (T2[index] === 19) {
-              T2[index] = 20;
-              word.classList.remove("clr19");
-              word.classList.add("clr20");
-            } else if (T2[index] === 20) {
-              T2[index] = 21;
-              word.classList.remove("clr20");
-              word.classList.add("clr21");
-            } else if (T2[index] === 21) {
-              T2[index] = 22;
-              word.classList.remove("clr21");
-              word.classList.add("clr22");
-            } else if (T2[index] === 22) {
-              T2[index] = 23;
-              word.classList.remove("clr22");
-              word.classList.add("clr23");
-            } else if (T2[index] === 23) {
-              T2[index] = 24;
-              word.innerText = "";
-            }
+            } 
             localStorage.setItem("E1", JSON.stringify(E1));
-            localStorage.setItem("T2", JSON.stringify(T2));
           });
         });
       });
