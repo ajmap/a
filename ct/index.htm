@@ -17,13 +17,13 @@
         display: none;
         padding: 3vw;
         font-family: Arial;
-        line-height: 5vw;
+        line-height: 10vw;
       }
       #c2 {
         display: none;
         padding: 3vw;
         font-family: Arial;
-        line-height: 5vw;
+        line-height: 10vw;
       }
       footer {
         display: none;
@@ -38,7 +38,7 @@
       .word {
         cursor: pointer;
         display: inline-block;
-        font-size: 4.4vw;
+        font-size: 9vw;
         color: white;
       }
       .word.clr01 {
@@ -160,10 +160,18 @@
         start.style.display = "none";
         c1.style.display = "block";
         footer.style.display = "block";
-          f1.style.display = "inline-block";
-          f2.style.display = "inline-block";
+        f1.style.display = "inline-block";
+        f2.style.display = "inline-block";
       });
-      document.addEventListener("DOMContentLoaded", () => {
+      f1.addEventListener("click", () => {
+        c1.style.display = "block";
+        c2.style.display = "none";
+      });
+      f2.addEventListener("click", () => {
+        c2.style.display = "block";
+        c1.style.display = "none";
+      });
+      ment.addEventListener("DOMContentLoaded", () => {
         const words = document.querySelectorAll(".word");
 
         const E1 = JSON.parse(localStorage.getItem("E1")) || {};
