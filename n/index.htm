@@ -18,11 +18,19 @@
         height: 100vh;
       }
       .dif {         
+        display: none;
+        opacity: 0;
+        transition: opacity 3s ease;
         padding: 3vw;
         font-size: 8vw;
         line-height: 9vw;
       }
-      .colors {         
+      .dif.vis {
+          display: block;
+          opacity: 1
+      }
+      .colors {
+        display: none;
         padding: 3vw;
         font-size: 13.9vw;
         line-height: 15.5vw;
@@ -1947,7 +1955,7 @@
           document.exitFullscreen();
         }
         start.style.display = "none";
-        c1.style.display = "block";
+        c1.classList.add = "vis";
         footer.style.display = "flex";
         section.style.display = "flex";
       });
@@ -1959,105 +1967,106 @@
         }
       });
       f1.addEventListener("click", () => {
-        c1.style.display = "block";
-        c2.style.display = "none";
-        c3.style.display = "none";
-        c4.style.display = "none";
-        c5.style.display = "none";
-        c6.style.display = "none";
-        c7.style.display = "none";
-        c8.style.display = "none";
-        c9.style.display = "none";
+        c1.classList.add = "vis";
+        c2.classList.remove = "vis";
+        c3.classList.remove = "vis";
+        c4.classList.remove = "vis";
+        c5.classList.remove = "vis";
+        c6.classList.remove = "vis";
+        c7.classList.remove = "vis";
+        c8.classList.remove = "vis";
+        c9.classList.remove = "vis";
       });
       f2.addEventListener("click", () => {
-        c1.style.display = "none";
-        c2.style.display = "block";
-        c3.style.display = "none";
-        c4.style.display = "none";
-        c5.style.display = "none";
-        c6.style.display = "none";
-        c7.style.display = "none";
-        c8.style.display = "none";
-        c9.style.display = "none";
+        c1.classList.remove = "vis";
+        c2.classList.add = "vis";
+        c3.classList.remove = "vis";
+        c4.classList.remove = "vis";
+        c5.classList.remove = "vis";
+        c6.classList.remove = "vis";
+        c7.classList.remove = "vis";
+        c8.classList.remove = "vis";
+        c9.classList.remove = "vis";
       });
       f3.addEventListener("click", () => {
-        c1.style.display = "none";
-        c2.style.display = "none";
-        c3.style.display = "block";
-        c4.style.display = "none";
-        c5.style.display = "none";
-        c6.style.display = "none";
-        c7.style.display = "none";
-        c8.style.display = "none";
-        c9.style.display = "none";
+        c1.classList.remove = "vis";
+        c2.classList.remove = "vis";
+        c3.classList.add = "vis";
+        c4.classList.remove = "vis";
+        c5.classList.remove = "vis";
+        c6.classList.remove = "vis";
+        c7.classList.remove = "vis";
+        c8.classList.remove = "vis";
+        c9.classList.remove = "vis";
 
       });
       f4.addEventListener("click", () => {
-        c1.style.display = "none";
-        c2.style.display = "none";
-        c3.style.display = "none";
-        c4.style.display = "block";
-        c5.style.display = "none";
-        c6.style.display = "none";
-        c7.style.display = "none";
-        c8.style.display = "none";
-        c9.style.display = "none";
+        c1.classList.remove = "vis";
+        c2.classList.remove = "vis";
+        c3.classList.remove = "vis";
+        c4.classList.add = "vis";
+        c5.classList.remove = "vis";
+        c6.classList.remove = "vis";
+        c7.classList.remove = "vis";
+        c8.classList.remove = "vis";
+        c9.classList.remove = "vis";
       });
       f5.addEventListener("click", () => {
-        c1.style.display = "none";
-        c2.style.display = "none";
-        c3.style.display = "none";
-        c4.style.display = "none";
-        c5.style.display = "block";
-        c6.style.display = "none";
-        c7.style.display = "none";
-        c8.style.display = "none";
-        c9.style.display = "none";
+        c1.classList.remove = "vis";
+        c2.classList.remove = "vis";
+        c3.classList.remove = "vis";
+        c4.classList.remove = "vis";
+        c5.classList.add = "vis";
+        c6.classList.remove = "vis";
+        c7.classList.remove = "vis";
+        c8.classList.remove = "vis";
+        c9.classList.remove = "vis";
       });
       f6.addEventListener("click", () => {
-        c1.style.display = "none";
-        c2.style.display = "none";
-        c3.style.display = "none";
-        c4.style.display = "none";
-        c5.style.display = "none";
-        c6.style.display = "block";
-        c7.style.display = "none";
-        c8.style.display = "none";
-        c9.style.display = "none";
+        c1.classList.remove = "vis";
+        c2.classList.remove = "vis";
+        c3.classList.remove = "vis";
+        c4.classList.remove = "vis";
+        c5.classList.remove = "vis";
+        c6.classList.add = "vis";
+        c7.classList.remove = "vis";
+        c8.classList.remove = "vis";
+        c9.classList.remove = "vis";
       });
       f7.addEventListener("click", () => {
-        c1.style.display = "none";
-        c2.style.display = "none";
-        c3.style.display = "none";
-        c4.style.display = "none";
-        c5.style.display = "none";
-        c6.style.display = "none";
-        c7.style.display = "block";
-        c8.style.display = "none";
-        c9.style.display = "none";
+        c1.classList.remove = "vis";
+        c2.classList.remove = "vis";
+        c3.classList.remove = "vis";
+        c4.classList.remove = "vis";
+        c5.classList.remove = "vis";
+        c6.classList.remove = "vis";
+        c7.classList.add = "vis";
+        c8.classList.remove = "vis";
+        c9.classList.remove = "vis";
       });
       f8.addEventListener("click", () => {
-        c1.style.display = "none";
-        c2.style.display = "none";
-        c3.style.display = "none";
-        c4.style.display = "none";
-        c5.style.display = "none";
-        c6.style.display = "none";
-        c7.style.display = "none";
-        c8.style.display = "block";
-        c9.style.display = "none";
+        c1.classList.remove = "vis";
+        c2.classList.remove = "vis";
+        c3.classList.remove = "vis";
+        c4.classList.remove = "vis";
+        c5.classList.remove = "vis";
+        c6.classList.remove = "vis";
+        c7.classList.remove = "vis";
+        c8.classList.add = "vis";
+        c9.classList.remove = "vis";
       });
       f9.addEventListener("click", () => {
-        c1.style.display = "none";
-        c2.style.display = "none";
-        c3.style.display = "none";
-        c4.style.display = "none";
-        c5.style.display = "none";
-        c6.style.display = "none";
-        c7.style.display = "none";
-        c8.style.display = "none";
-        c9.style.display = "block";
+        c1.classList.remove = "vis";
+        c2.classList.remove = "vis";
+        c3.classList.remove = "vis";
+        c4.classList.remove = "vis";
+        c5.classList.remove = "vis";
+        c6.classList.remove = "vis";
+        c7.classList.remove = "vis";
+        c8.classList.remove = "vis";
+        c9.classList.add = "vis";
       });
+
       document.addEventListener("DOMContentLoaded", () => {
         const words = document.querySelectorAll(".word");
 
