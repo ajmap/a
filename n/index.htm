@@ -19,14 +19,9 @@
       }
       .dif {         
         display: none;
-        opacity: 0;
-        transition: opacity 3s ease-in-out;
         padding: 3vw;
         font-size: 8vw;
         line-height: 9vw;
-      }
-      .vis {
-        opacity: 1;
       }
       .colors {
         display: none;
@@ -1763,8 +1758,9 @@
           document.exitFullscreen();
         }
         start.style.display = "none";
-        c1.style.display = "block";
-        c1.classList.add('vis');
+        setTimeout(function() {
+          c1.style.display = "block";
+        }, 3000);
         footer.style.display = "flex";
         section.style.display = "flex";
       });
