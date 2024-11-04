@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colored Text</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      :root {
+        --a: DarkRed; --b: MediumSlateBlue; --c: Gold; --d: Orchid; --e: Khaki; --f: Plum; --g: Coral; 
+        --h: LightSalmon; --i: Lavender; --j: AquaMarine;
+      }
+      #start {
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+      }
+      .dif {         
+        display: none;
+        padding: 3vw;
+        font-size: 8vw;
+        line-height: 9vw;
+      }
+      .colors {
+        display: none;
+        padding: 3vw;
+        font-size: 13.9vw;
+        line-height: 15.5vw;
+      }
+      section {
+        display: none;
+        position: fixed;
+        bottom: 6vh;
+        left: 0;
+        width: 100vw;
+        height: 6vh;
+        justify-content: space-between;
+      }
+      footer {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 6vh;
+        justify-content: space-between;
+      }
+      .word {
+        display: inline-block;
+        font-family: Arial;
+        font-weight: bold;
+        color: white;
+      }
+      #c9 {
+        font-size: 20vw;
+        line-height: 12vw;
+      }
+      .word.clr01 {
+        color: var(--a);
+      }
+      .word.clr02 {
+        color: var(--b);
+      }
+      .word.clr03 {
+        color: var(--c);
+      }
+      .word.clr04 {
+        color: var(--d);
+      }
+      .word.clr05 {
+        color: var(--e);
+      }
+      .word.clr06 {
+        color: var(--f);
+      }
+      .word.clr07 {
+        color: var(--g);
+      }
+      .word.clr08 {
+        color: var(--h);
+      }
+      .word.clr09 {
+        color: var(--i);
+      }
+      .word.clr10 {
+        color: var(--j);
+      }
+      .word.clr11 {
+        color: White;
+      }
+      .foot {
+        width: 20vw;
+        height: 6vh;
+      }  
+      #f1 {
+        background-color: var(--a);
+      }
+      #f2 {
+        background-color: var(--b);
+      }
+      #f3 {
+        background-color: var(--c);
+      }
+      #f4 {
+        background-color: var(--d);
+      }
+      #f5 {
+        background-color: var(--e);
+      }
+      #f6 {
+        background-color: var(--f);
+      }
+      #f7 {
+        background-color: var(--g);
+      }
+      #f8 {
+        background-color: var(--h);
+      }
+      #f9 {
+        background-color: var(--i);
+      }
+      #f10 {
+        background-color: var(--j);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="start"></div>
+    <div class ="dif" id="c1">
+        <span class="word"></span>
+    </div>
+    <div class ="dif" id="c2">
+    </div>
+    <div class ="dif" id="c3">
+    </div>
+    <div class ="dif" id="c4">
+    </div>
+    <div class ="dif" id="c5">
+    </div>
+    <div class ="dif" id="c6">
+    </div>
+    <div class ="dif" id="c7">
+    </div>
+    <div class= "colors" id="c8">
+    </div>
+    <div id="c9">
+    </div>
+
+    <section id="section">
+       <div class="foot" id="f1"></div>
+      <div class="foot" id="f2"></div>
+      <div class="foot" id="f3"></div>
+      <div class="foot" id="f4"></div>
+      <div class="foot" id="f5"></div>
+    </section>  
+    <footer id="footer">
+      <div class="foot" id="f6"></div>
+      <div class="foot" id="f7"></div>
+      <div class="foot" id="f8"></div>
+        <div class="foot" id="f9"></div>
+        <div class="foot" id="f10"></div>
+
+    </footer>
+    <script>
+        let cl1 = document.getElementById('cl1');
+        let cl2 = document.getElementById('cl2');
+        let cl3 = document.getElementById('cl3');
+        let cl4 = document.getElementById('cl4');
+        let cl5 = document.getElementById('cl5');
+        let cl6 = document.getElementById('cl6');
+        let cl7 = document.getElementById('cl7');
+        let cl8 = document.getElementById('cl8');
+        let cl9 = document.getElementById('cl9');
+        let cl10 = document.getElementById('cl10');
+        let rs = getComputedStyle(document.documentElement);
+        let ca = rs.getPropertyValue('--a');
+        let cb = rs.getPropertyValue('--b');
+        let cc = rs.getPropertyValue('--c');
+        let cd = rs.getPropertyValue('--d');
+        let ce = rs.getPropertyValue('--e');
+        let cf = rs.getPropertyValue('--f');
+        let cg = rs.getPropertyValue('--g');
+        let ch = rs.getPropertyValue('--h');
+        let ci = rs.getPropertyValue('--i');
+        let cj = rs.getPropertyValue('--j');
+        cl1.textContent = `${ca}\u00A0`;
+        cl2.textContent = `${cb}\u00A0`;
+        cl3.textContent = `${cc}\u00A0`;
+        cl4.textContent = `${cd}\u00A0`;
+        cl5.textContent = `${ce}\u00A0`;
+        cl6.textContent = `${cf}\u00A0`;
+        cl7.textContent = `${cg}\u00A0`;
+        cl8.textContent = `${ch}\u00A0`;
+        cl9.textContent = `${ci}\u00A0`;
+        cl10.textContent = `${cj}\u00A0`;
+      let start = document.getElementById("start");
+      let footer = document.getElementById("footer");
+      let section = document.getElementById("section");
+      let f1 = document.getElementById("f1");
+      let f2 = document.getElementById("f2");
+      let f3 = document.getElementById("f3");
+      let f4 = document.getElementById("f4");
+      let f5 = document.getElementById("f5");
+      let f6 = document.getElementById("f6");
+      let f7 = document.getElementById("f7");
+      let f8 = document.getElementById("f8");
+      let f9 = document.getElementById("f9");
+      let f10 = document.getElementById("f10");
+
+      let c1 = document.getElementById("c1");
+      let c2 = document.getElementById("c2");
+      let c3 = document.getElementById("c3");
+      let c4 = document.getElementById("c4");
+      let c5 = document.getElementById("c5");
+      let c6 = document.getElementById("c6");
+      let c7 = document.getElementById("c7");
+      let c8 = document.getElementById("c8");
+      let c9 = document.getElementById("c9");
+
+      start.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        start.style.display = "none";
+        c1.style.display = "block";
+        footer.style.display = "flex";
+        section.style.display = "flex";
+      });
+      f10.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      });
+      f1.addEventListener("click", () => {
+        c1.style.display = "block";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f2.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "block";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f3.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "block";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+
+      });
+      f4.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "block";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f5.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "block";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f6.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "block";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f7.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "block";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f8.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "block";
+        c9.style.display = "none";
+      });
+      f9.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "block";
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const words = document.querySelectorAll(".word");
+        const locst = JSON.parse(localStorage.getItem("locst")) || {};
+        words.forEach((word, index) => {
+          if (locst[index] === 1) {
+            word.classList.add("clr01");
+          } else if (locst[index] === 2) {
+            word.classList.add("clr02");
+          } else if (locst[index] === 3) {
+            word.classList.add("clr03");
+          } else if (locst[index] === 4) {
+            word.classList.add("clr04");
+          } else if (locst[index] === 5) {
+            word.classList.add("clr05");
+          } else if (locst[index] === 6) {
+            word.classList.add("clr06");
+          } else if (locst[index] === 7) {
+            word.classList.add("clr07");
+          } else if (locst[index] === 8) {
+            word.classList.add("clr08");
+          } else if (locst[index] === 9) {
+            word.classList.add("clr09");
+          } else if (locst[index] === 10) {
+            word.classList.add("clr10");
+          } else if (locst[index] === 11) {
+            word.classList.add("clr11");
+          } else if (locst[index] === 12) {
+            word.innerText = "";
+          }
+
+          word.addEventListener("click", () => {
+            if (!locst[index]) {
+              locst[index] = 1;
+              word.classList.add("clr01");
+            } else if (locst[index] === 1) {
+              locst[index] = 2;
+              word.classList.remove("clr01");
+              word.classList.add("clr02");
+            } else if (locst[index] === 2) {
+              locst[index] = 3;
+              word.classList.remove("clr02");
+              word.classList.add("clr03");
+            } else if (locst[index] === 3) {
+              locst[index] = 4;
+              word.classList.remove("clr03");
+              word.classList.add("clr04");
+            } else if (locst[index] === 4) {
+              locst[index] = 5;
+              word.classList.remove("clr04");
+              word.classList.add("clr05");
+            } else if (locst[index] === 5) {
+              locst[index] = 6;
+              word.classList.remove("clr05");
+              word.classList.add("clr06");
+            } else if (locst[index] === 6) {
+              locst[index] = 7;
+              word.classList.remove("clr06");
+              word.classList.add("clr07");
+            } else if (locst[index] === 7) {
+              locst[index] = 8;
+              word.classList.remove("clr07");
+              word.classList.add("clr08");
+            } else if (locst[index] === 8) {
+              locst[index] = 9;
+              word.classList.remove("clr08");
+              word.classList.add("clr09");
+            } else if (locst[index] === 9) {
+              locst[index] = 10;
+              word.classList.remove("clr09");
+              word.classList.add("clr10");
+            } else if (locst[index] === 10) {
+              locst[index] = 11;
+              word.classList.remove("clr10");
+              word.classList.add("clr11");
+            }  else if (locst[index] === 11) {
+              locst[index] = 12;
+              word.innerText = "";
+            }
+            localStorage.setItem("locst", JSON.stringify(locst));
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
