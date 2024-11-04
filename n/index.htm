@@ -8,12 +8,6 @@
       * {
         margin: 0;
       }
-      body {
-          transition: transform 0.3s ease;
-      }
-      body.show {
-        transform: translateX(100vw);
-      }
       :root {
         --a: DarkRed; --b: MediumSlateBlue; --c: Gold; --d: Orchid; --e: Khaki; --f: Plum; --g: Coral; 
         --h: LightSalmon; --i: Lavender; --j: AquaMarine;
@@ -52,15 +46,6 @@
         width: 100vw;
         height: 6vh;
         justify-content: space-between;
-      }
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 100;
-        transform: translateX(-100%);
       }
       .word {
         display: inline-block;
@@ -143,8 +128,7 @@
   </head>
   <body>
     <div id="start"></div>
-    <nav>
-      <p id='navp'>Ik</p>
+    <div class ="dif" id="c1">
       <span class="word">ben perfect zoals ik ben, in volledige acceptatie en vrede met mezelf.</span>
       <span class="word">Mijn</span>
       <span class="word">hart</span>
@@ -166,8 +150,6 @@
       <span class="word">al</span>
       <span class="word">zijn</span>
       <span class="word">vormen.</span>
-    </nav>
-    <div class ="dif" id="c1">
       <span class="word">Ik</span>
       <span class="word">voel</span>
       <span class="word">de</span>
@@ -1758,7 +1740,6 @@
       let f8 = document.getElementById("f8");
       let f9 = document.getElementById("f9");
       let f10 = document.getElementById("f10");
-      let navp = document.getElementById("navp");
 
       let c1 = document.getElementById("c1");
       let c2 = document.getElementById("c2");
@@ -1777,9 +1758,7 @@
           document.exitFullscreen();
         }
         start.style.display = "none";
-        setTimeout(function() {
-          c1.style.display = "block";
-        }, 3000);
+        c1.style.display = "block";
         footer.style.display = "flex";
         section.style.display = "flex";
       });
@@ -1880,17 +1859,19 @@
         c9.style.display = "none";
       });
       f9.addEventListener("click", () => {
-          document.body.classList.add('show')
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "block";
       });
-      navp.addEventListener("click", () => {
-          document.body.classList.remove('show')
-      });
-
       document.addEventListener("DOMContentLoaded", () => {
         const words = document.querySelectorAll(".word");
-
         const E1 = JSON.parse(localStorage.getItem("E1")) || {};
-
         words.forEach((word, index) => {
           if (E1[index] === 1) {
             word.classList.add("clr01");
