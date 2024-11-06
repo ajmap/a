@@ -2369,6 +2369,10 @@
           } else if (E1[index] === 11) {
             word.classList.add("clr11");
           } else if (E1[index] === 12) {
+            word.classList.add("clr12");
+          } else if (E1[index] === 13) {
+            word.classList.add("clr13");
+          } else if (E1[index] === 14) {
             word.innerText = "";
           }
 
@@ -2416,8 +2420,16 @@
               E1[index] = 11;
               word.classList.remove("clr10");
               word.classList.add("clr11");
-            }  else if (E1[index] === 11) {
+            } else if (E1[index] === 11) {
               E1[index] = 12;
+              word.classList.remove("clr11");
+              word.classList.add("clr12");
+            }  else if (E1[index] === 12) {
+              E1[index] = 13;
+              word.classList.remove("clr12");
+              word.classList.add("clr13");
+            }  else if (E1[index] === 13) {
+              E1[index] = 14;
               word.innerText = "";
             }
             localStorage.setItem("E1", JSON.stringify(E1));
