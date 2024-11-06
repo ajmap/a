@@ -10,7 +10,7 @@
       }
       :root {
         --a: Magenta; --b: DeepPink; --c: Crimson; --d: Orange; --e: GreenYellow; --f: Green; --g: MediumBlue; 
-        --h: Purple; --i: Violet; --j: Cyan;
+        --h: Purple; --i: Violet; --j: Cyan; --k: Lavender; --l: NavajoWhie
       }
       #start {
         background-color: black;
@@ -26,10 +26,10 @@
       section {
         display: none;
         position: fixed;
-        bottom: 6vh;
+        bottom: 5vh;
         left: 0;
         width: 100vw;
-        height: 6vh;
+        height: 5vh;
         justify-content: space-between;
       }
       footer {
@@ -38,7 +38,7 @@
         bottom: 0;
         left: 0;
         width: 100vw;
-        height: 6vh;
+        height: 5vh;
         justify-content: space-between;
       }
       .word {
@@ -78,11 +78,17 @@
         color: var(--j);
       }
       .word.clr11 {
+        color: var(--k);
+      }
+      .word.clr12 {
+        color: var(--l);
+      }
+      .word.clr11 {
         color: White;
       }
       .foot {
-        width: 20vw;
-        height: 6vh;
+        width: 16.66vw;
+        height: 5vh;
       }  
       #f1 {
         background-color: var(--a);
@@ -113,6 +119,12 @@
       }
       #f10 {
         background-color: var(--j);
+      }
+      #f11 {
+        background-color: var(--k);
+      }
+      #f12 {
+        background-color: var(--l);
       }
     </style>
   </head>
@@ -2164,23 +2176,24 @@
       <span class="word">voor</span>
       <span class="word">mijn</span>
       <span class="word">gezondheid.</span>
-      <span class="word">Dit</span>
-      <span class="word">gedeelte</span>
     </div>
+     <!-- <div class= "dif" id="c10">
+    </div>  -->
     <section id="section">
       <div class="foot" id="f1"></div>
       <div class="foot" id="f2"></div>
       <div class="foot" id="f3"></div>
       <div class="foot" id="f4"></div>
       <div class="foot" id="f5"></div>
+      <div class="foot" id="f6"></div>
     </section>  
     <footer id="footer">
-      <div class="foot" id="f6"></div>
       <div class="foot" id="f7"></div>
       <div class="foot" id="f8"></div>
-        <div class="foot" id="f9"></div>
-        <div class="foot" id="f10"></div>
-
+      <div class="foot" id="f9"></div>
+      <div class="foot" id="f10"></div>
+      <div class="foot" id="f11"></div>
+      <div class="foot" id="f12"></div>
     </footer>
     <script>
       let start = document.getElementById("start");
@@ -2196,6 +2209,8 @@
       let f8 = document.getElementById("f8");
       let f9 = document.getElementById("f9");
       let f10 = document.getElementById("f10");
+      let f11 = document.getElementById("f11");
+      let f12 = document.getElementById("f12");
 
       let c1 = document.getElementById("c1");
       let c2 = document.getElementById("c2");
@@ -2206,6 +2221,8 @@
       let c7 = document.getElementById("c7");
       let c8 = document.getElementById("c8");
       let c9 = document.getElementById("c9");
+      let c10 = document.getElementById("c10");
+      let c11 = document.getElementById("c11");
 
       start.addEventListener("click", () => {
         if (!document.fullscreenElement) {
