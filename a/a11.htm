@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--    <link rel="icon" href="favicon.ico" type="image/x-icon">  -->
+    <title>Colors</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        main { position: absolute;
+            font-family: sans-serif;
+            background-color: SteelBlue;
+            top: 0;
+            display: none;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            transition: background-color 0.4s ease;
+            cursor: none 
+        }
+        #f {
+            width: 100vw;
+            height: 58vh;
+            padding-top: 42vh;
+            background-color: SteelBlue;
+            font-size: 15vw;
+            color: Lavender;
+            text-align: center;
+            font-family: Arial;
+        }
+
+    </style>
+</head>
+<body>
+    <div id='f'>START</div>
+    <main id='m'>
+    <div id='d'></div>
+    </main>    
+    <script>
+    const c = ["Lavender","ForestGreen","Tomato","SteelBlue","BlueViolet"
+      ];
+        let a;
+        main = document.getElementById('m')
+        let f = document.getElementById("f");
+            f.addEventListener("click", () => {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            f.style.display = "none";
+            main.style.display = "flex";
+            });
+        setInterval(function() { a = Math.floor(Math.random() * c.length); 
+                                 main.style.backgroundColor = c[a]; console.log(c[a]); }, 3000);
+        setInterval(function() { a = Math.floor(Math.random() * c.length); 
+                                 main.style.backgroundColor = c[a]; console.log(c[a]); }, 6000);
+        
+    </script>
+</body>    
+</html>
