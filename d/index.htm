@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colored Text</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      :root {
+        --a: Magenta; --b: DeepPink; --c: Crimson; --d: Orange; --e: GreenYellow; --f: Green; --g: MediumBlue; 
+        --h: Purple; --i: Violet; --j: Cyan; --k: Lavender; --l: MistyRose;
+      }
+      #start {
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+      }
+      .dif {         
+        display: none;
+        padding: 3vw;
+        font-size: 8vw;
+        line-height: 9vw;
+      }
+      footer {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 5vh;
+        justify-content: space-between;
+      }
+      .word {
+        display: inline-block;
+        font-family: Arial;
+        font-weight: bold;
+        color: white;
+      }
+      .word.clr01 {
+        color: var(--a);
+      }
+      .word.clr02 {
+        color: var(--b);
+      }
+      .word.clr03 {
+        color: var(--c);
+      }
+      .word.clr04 {
+        color: var(--d);
+      }
+      .word.clr05 {
+        color: var(--e);
+      }
+      .word.clr06 {
+        color: var(--f);
+      }
+      .word.clr07 {
+        color: var(--g);
+      }
+      .word.clr08 {
+        color: var(--h);
+      }
+      .word.clr09 {
+        color: var(--i);
+      }
+      .word.clr10 {
+        color: var(--j);
+      }
+      .word.clr11 {
+        color: var(--k);
+      }
+      .word.clr12 {
+        color: var(--l);
+      }
+      .word.clr13 {
+        color: White;
+      }
+      .foot {
+        width: 16.66vw;
+        height: 5vh;
+      }  
+      #f1 {
+        background-color: var(--a);
+      }
+      #f2 {
+        background-color: var(--b);
+      }
+      #f3 {
+        background-color: var(--c);
+      }
+      #f4 {
+        background-color: var(--d);
+      }
+      #f5 {
+        background-color: var(--e);
+      }
+      #f6 {
+        background-color: var(--f);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="start"></div>
+    <div class ="dif" id="c1"></div>
+    <div class ="dif" id="c2"></div>
+    <div class ="dif" id="c3"></div>
+    <div class ="dif" id="c4"></div>
+    <div class ="dif" id="c5"></div>
+    </div> 
+    <footer id="footer">
+      <div class="foot" id="f1"></div>
+      <div class="foot" id="f2"></div>
+      <div class="foot" id="f3"></div>
+      <div class="foot" id="f4"></div>
+      <div class="foot" id="f5"></div>
+      <div class="foot" id="f6"></div>
+    </footer>
+    <script>
+      let start = document.getElementById("start");
+      let footer = document.getElementById("footer");
+      let f1 = document.getElementById("f1");
+      let f2 = document.getElementById("f2");
+      let f3 = document.getElementById("f3");
+      let f4 = document.getElementById("f4");
+      let f5 = document.getElementById("f5");
+      let f6 = document.getElementById("f6");
+      let c1 = document.getElementById("c1");
+      let c2 = document.getElementById("c2");
+      let c3 = document.getElementById("c3");
+      let c4 = document.getElementById("c4");
+      let c5 = document.getElementById("c5");
+      start.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        start.style.display = "none";
+        c1.style.display = "block";
+        footer.style.display = "flex";
+        section.style.display = "flex";
+      });
+      f6.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      });
+      f1.addEventListener("click", () => {
+        c1.style.display = "block";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+      });
+      f2.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "block";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+      });
+      f3.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "block";
+        c4.style.display = "none";
+        c5.style.display = "none";
+      });
+      f4.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "block";
+        c5.style.display = "none";
+      });
+      f5.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "block";
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const words = document.querySelectorAll(".word");
+        const E1 = JSON.parse(localStorage.getItem("E1")) || {};
+        words.forEach((word, index) => {
+          if (E1[index] === 1) {
+            word.classList.add("clr01");
+          } else if (E1[index] === 2) {
+            word.classList.add("clr02");
+          } else if (E1[index] === 3) {
+            word.classList.add("clr03");
+          } else if (E1[index] === 4) {
+            word.classList.add("clr04");
+          } else if (E1[index] === 5) {
+            word.classList.add("clr05");
+          } else if (E1[index] === 6) {
+            word.classList.add("clr06");
+          } else if (E1[index] === 7) {
+            word.classList.add("clr07");
+          } else if (E1[index] === 8) {
+            word.classList.add("clr08");
+          } else if (E1[index] === 9) {
+            word.classList.add("clr09");
+          } else if (E1[index] === 10) {
+            word.classList.add("clr10");
+          } else if (E1[index] === 11) {
+            word.classList.add("clr11");
+          } else if (E1[index] === 12) {
+            word.classList.add("clr12");
+          } else if (E1[index] === 13) {
+            word.classList.add("clr13");
+          } else if (E1[index] === 14) {
+            word.innerText = "";
+          }
+          word.addEventListener("click", () => {
+            if (!E1[index]) {
+              E1[index] = 1;
+              word.classList.add("clr01");
+            } else if (E1[index] === 1) {
+              E1[index] = 2;
+              word.classList.remove("clr01");
+              word.classList.add("clr02");
+            } else if (E1[index] === 2) {
+              E1[index] = 3;
+              word.classList.remove("clr02");
+              word.classList.add("clr03");
+            } else if (E1[index] === 3) {
+              E1[index] = 4;
+              word.classList.remove("clr03");
+              word.classList.add("clr04");
+            } else if (E1[index] === 4) {
+              E1[index] = 5;
+              word.classList.remove("clr04");
+              word.classList.add("clr05");
+            } else if (E1[index] === 5) {
+              E1[index] = 6;
+              word.classList.remove("clr05");
+              word.classList.add("clr06");
+            } else if (E1[index] === 6) {
+              E1[index] = 7;
+              word.classList.remove("clr06");
+              word.classList.add("clr07");
+            } else if (E1[index] === 7) {
+              E1[index] = 8;
+              word.classList.remove("clr07");
+              word.classList.add("clr08");
+            } else if (E1[index] === 8) {
+              E1[index] = 9;
+              word.classList.remove("clr08");
+              word.classList.add("clr09");
+            } else if (E1[index] === 9) {
+              E1[index] = 10;
+              word.classList.remove("clr09");
+              word.classList.add("clr10");
+            } else if (E1[index] === 10) {
+              E1[index] = 11;
+              word.classList.remove("clr10");
+              word.classList.add("clr11");
+            } else if (E1[index] === 11) {
+              E1[index] = 12;
+              word.classList.remove("clr11");
+              word.classList.add("clr12");
+            }  else if (E1[index] === 12) {
+              E1[index] = 13;
+              word.classList.remove("clr12");
+              word.classList.add("clr13");
+            }  else if (E1[index] === 13) {
+              E1[index] = 14;
+              word.innerText = "";
+            }
+            localStorage.setItem("E1", JSON.stringify(E1));
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
