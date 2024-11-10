@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body { font-family: Arial; color: white; background-color: black }
+        span { color: #FFFF99 }
+        i { color: red }
+        #a { font-size: 400px; color: black }
+        #b { font-size: 24.2px; display: none }
+        #c { font-size: 25.8px; display: none }
+        #d { font-size: 21.7px; display: none }
+    </style>
+    <title>Lyrics</title>
+  </head>
+  <body>
+      <div id='a'>H</div>    
+      <div id='b'>
+                Don't ya love her madly?
+<span>Don't ya need her badly?</span> 
+Don't ya love her ways?
+<span>Tell me what you say</span> 
+Don't ya love her madly?
+<span>Wanna be her daddy?</span> 
+Don't ya love her face?
+<span>Don't ya love her as she's walkin' out the door?</span> 
+Like she did one thousand times before
+<span>Don't ya love her ways?</span> 
+Tell me what you say?
+<span>Don't ya love her as she's walkin' out the door?</span> 
+All your love
+<span>All your love</span> 
+All your love
+<span>All your love</span> 
+All your love is gone
+<span>So sing a lonely song</span> 
+Of a deep blue dream
+<span>Seven horses seem to be on the mark</span> 
+Yeah, don't you love her?
+<span>Don't you love her as she's walkin' out the door?</span> 
+All your love
+<span>All your love</span> 
+All your love
+<span>Yeah, all your love is gone</span> 
+So sing a lonely song
+<span>Of a deep blue dream</span> 
+Seven horses seem to be on the mark
+<span>Don't ya love her madly?</span> 
+Well, don't ya love her madly?
+<span>Yeah, don't ya love her madly?</span> 
+      </div>
+
+      <div id='c'>
+          It's really over
+<span>You made your stand</span>
+You got me crying
+<span>As was your plan</span>
+But when my loneliness is through
+<span>I'm gonna find another you</span>
+You take your sweaters
+<span>You take your time</span>
+You might have your reasons
+<span>But you will never have my rhyme</span>
+I'm gonna sing my way away from blue
+<span>I'm gonna find another you</span>
+When I was your lover
+<span>No one else would do</span>
+If I'm forced to find another
+<span>I hope she looks like you</span>
+Yeah, and she's nicer too
+<span>So go on, baby</span>
+<i>Make</i> your little getaway
+<span>My pride will keep me company</span>
+And you just gave yours all away
+<span>Oh, now I'm gonna dress myself for two</span>
+Once for me, and once for someone new
+<span>I'm gonna do some things you wouldn't let me do</span>
+I'm gonna find another you
+          <i></i>
+      </div>
+    <div id='d'>
+         I dreamed I did a good job and I got well paid 
+<span>Blew it all at the penny arcade </span>
+A hundred dollars on a kewpie doll 
+<span>I guess no white chick is gonna make me crawl </span>
+That's right 
+<span>On a T-W-A, to the promised land </span>
+Every woman, child and man 
+<span>Gets a Cadillac and a diamond ring </span>
+Don't you know we're riding with the king? 
+<span>He's on a mission of mercy to the new frontier </span>
+He's gonna check us all on out of here 
+<span>Up to that mansion on a hill </span>
+Where you can get your prescription filled 
+<span>Any kind of pill </span>
+Well, on a TWA to the promised land <span>Everybody come on and clap your hands </span>Don't you just love the way he sings 
+<span>Don't you know we're riding with the king? </span>
+We're riding with the king? 
+<span>A red cape and shiny cold 45 </span>
+I never saw his face but I saw the light Tonight everybody's getting their angel wings 
+<span>Don't you know we're riding with the king? </span>
+Well I stepped out of a mirror at ten years old 
+<span>With a suite cut sharp, as a razor and a heart full of gold </span>
+I had a guitar hanging just about waist high 
+<span>I'm gonna play that thing </span>
+until the day I die
+      </div>
+    <script>
+        let a = document.getElementById('a');
+        let b = document.getElementById('b');
+        let c = document.getElementById('c');
+        let d = document.getElementById('d');
+        a.addEventListener("click", bscrn);
+        b.addEventListener("click", cscrn);
+        c.addEventListener("click", dscrn);
+        function bscrn() {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }   
+            a.style.display = 'none'
+            b.style.display = 'block'
+        }
+        function cscrn() {
+            b.style.display = 'none';
+            c.style.display = 'block';
+        }
+      function dscrn() {
+            c.style.display = 'none';
+            d.style.display = 'block';
+        }
+    </script>
+  </body>
+</html>
