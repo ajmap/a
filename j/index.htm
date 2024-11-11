@@ -7,6 +7,14 @@
     <style>
         * { margin: 0 }
         body { background-color: Linen; }
+        #s {
+            width: 100vw;
+            height: 100vh;
+            background-color: Black;
+        }
+        #m {
+            display: none;
+        }
         .b {
             font-family: Arial;
             font-weight: bold;
@@ -24,11 +32,26 @@
     </style>
 </head>
 <body>
+    <div id="s"></div>
+        <div id="m">
         <p class='b'>BACKGROUND-BLEND-MODE</p>
         <p class='t'>This property allows you to blend multiple background images or colors together, creating interesting visual effects. You can use different blend modes like multiply, screen, overlay, and more.</p>
         <p class='c'>.abc {</br>&nbsp;&nbsp;background-image: linear-gradient(to right, red, blue);</br>&nbsp;&nbsp;background-color: yellow;</br>&nbsp;&nbsp;background-blend-mode: multiply;</br>}
         <p class='b'>TEXT-ALIGN</p>
         <p class='t'>This property aligns the text within an element. You can use values like left, right, center, and justify to control the alignment.</p>
-        <p class='c'>.abc {</br>&nbsp;&nbsp;text-align: center;</br>}</p>
+        <p class='c'>.abc {</br>&nbsp;&nbsp;text-align: center;</br>}</p></div>
+    <script>
+        let s = document.getElementById('s');
+        let m = document.getElementById('m');
+        s.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            s.style.display = 'none'
+            m.style.display = 'block'
+        })
+    </script>
 </body>
 </html>
