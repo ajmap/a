@@ -2414,95 +2414,95 @@
       });
       document.addEventListener("DOMContentLoaded", () => {
         const words = document.querySelectorAll(".word");
-        const E1 = JSON.parse(localStorage.getItem("E1")) || {};
+        const locstor = JSON.parse(localStorage.getItem("locstor")) || {};
         words.forEach((word, index) => {
-          if (E1[index] === 1) {
+          if (locstor[index] === 1) {
             word.classList.add("clr01");
-          } else if (E1[index] === 2) {
+          } else if (locstor[index] === 2) {
             word.classList.add("clr02");
-          } else if (E1[index] === 3) {
+          } else if (locstor[index] === 3) {
             word.classList.add("clr03");
-          } else if (E1[index] === 4) {
+          } else if (locstor[index] === 4) {
             word.classList.add("clr04");
-          } else if (E1[index] === 5) {
+          } else if (locstor[index] === 5) {
             word.classList.add("clr05");
-          } else if (E1[index] === 6) {
+          } else if (locstor[index] === 6) {
             word.classList.add("clr06");
-          } else if (E1[index] === 7) {
+          } else if (locstor[index] === 7) {
             word.classList.add("clr07");
-          } else if (E1[index] === 8) {
+          } else if (locstor[index] === 8) {
             word.classList.add("clr08");
-          } else if (E1[index] === 9) {
+          } else if (locstor[index] === 9) {
             word.classList.add("clr09");
-          } else if (E1[index] === 10) {
+          } else if (locstor[index] === 10) {
             word.classList.add("clr10");
-          } else if (E1[index] === 11) {
+          } else if (locstor[index] === 11) {
             word.classList.add("clr11");
-          } else if (E1[index] === 12) {
+          } else if (locstor[index] === 12) {
             word.classList.add("clr12");
-          } else if (E1[index] === 13) {
+          } else if (locstor[index] === 13) {
             word.classList.add("clr13");
-          } else if (E1[index] === 14) {
+          } else if (locstor[index] === 14) {
             word.innerText = "";
           }
 
           word.addEventListener("click", () => {
-            if (!E1[index]) {
-              E1[index] = 1;
+            if (!locstor[index]) {
+              locstor[index] = 1;
               word.classList.add("clr01");
-            } else if (E1[index] === 1) {
-              E1[index] = 2;
+            } else if (locstor[index] === 1) {
+              locstor[index] = 2;
               word.classList.remove("clr01");
               word.classList.add("clr02");
-            } else if (E1[index] === 2) {
-              E1[index] = 3;
+            } else if (locstor[index] === 2) {
+              locstor[index] = 3;
               word.classList.remove("clr02");
               word.classList.add("clr03");
-            } else if (E1[index] === 3) {
-              E1[index] = 4;
+            } else if (locstor[index] === 3) {
+              locstor[index] = 4;
               word.classList.remove("clr03");
               word.classList.add("clr04");
-            } else if (E1[index] === 4) {
-              E1[index] = 5;
+            } else if (locstor[index] === 4) {
+              locstor[index] = 5;
               word.classList.remove("clr04");
               word.classList.add("clr05");
-            } else if (E1[index] === 5) {
-              E1[index] = 6;
+            } else if (locstor[index] === 5) {
+              locstor[index] = 6;
               word.classList.remove("clr05");
               word.classList.add("clr06");
-            } else if (E1[index] === 6) {
-              E1[index] = 7;
+            } else if (locstor[index] === 6) {
+              locstor[index] = 7;
               word.classList.remove("clr06");
               word.classList.add("clr07");
-            } else if (E1[index] === 7) {
-              E1[index] = 8;
+            } else if (locstor[index] === 7) {
+              locstor[index] = 8;
               word.classList.remove("clr07");
               word.classList.add("clr08");
-            } else if (E1[index] === 8) {
-              E1[index] = 9;
+            } else if (locstor[index] === 8) {
+              locstor[index] = 9;
               word.classList.remove("clr08");
               word.classList.add("clr09");
-            } else if (E1[index] === 9) {
-              E1[index] = 10;
+            } else if (locstor[index] === 9) {
+              locstor[index] = 10;
               word.classList.remove("clr09");
               word.classList.add("clr10");
-            } else if (E1[index] === 10) {
-              E1[index] = 11;
+            } else if (locstor[index] === 10) {
+              locstor[index] = 11;
               word.classList.remove("clr10");
               word.classList.add("clr11");
-            } else if (E1[index] === 11) {
-              E1[index] = 12;
+            } else if (locstor[index] === 11) {
+              locstor[index] = 12;
               word.classList.remove("clr11");
               word.classList.add("clr12");
-            }  else if (E1[index] === 12) {
-              E1[index] = 13;
+            }  else if (locstor[index] === 12) {
+              locstor[index] = 13;
               word.classList.remove("clr12");
               word.classList.add("clr13");
-            }  else if (E1[index] === 13) {
-              E1[index] = 14;
+            }  else if (locstor[index] === 13) {
+              locstor[index] = 14;
               word.innerText = "";
             }
-            localStorage.setItem("E1", JSON.stringify(E1));
+            localStorage.setItem("locstor", JSON.stringify(locstor));
           });
         });
       });
