@@ -3,39 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HTML tags</title>
+<title>Animated Page Transitions</title>
 <style>
-    * { margin: 0 }
-    #s {
+    * {
+        margin: 0;
+
+        font-family: Arial, sans-serif;
+    }
+        #s {
         background-color: black;
         width: 100vw;
         height: 100vh;
       }
-    #m {
-        display: none;
-        margin: 1vh 2vw;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    .spn {   
-             font-family: Arial;
-             margin: 0 -0.6vw;
-             font-size: 6.55vw; 
-         }
-   .pg {
+    .p {
+        background-color: Snow;
         pointer-events: none;
         opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
         transition: opacity 0.3s ease;
     }
     .active {
         opacity: 1;
         pointer-events: auto;
     }
+    #m {
+        display: none;
+    }
 </style>
 </head>
 <body>
-    <div id="s"></div>
-    <div id="m">
+        <div id="s"></div>
+<div id="m" class="container active">
+    <div>
+        <span id="iv" class="span">&lt;div&gt;</span>
+        <span id="pan" class="span">&lt;span&gt;</span>
+    </div>
+</div>
+<div id="a" class="p">
+    <div>
+        <p class="m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+    </div>
+</div>
+<div id="b" class="p">
+    <div>
+        <p class="m">Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+    </div>
+</div>
+
+<script>
+    const m = document.getElementById("m");
+    const a = document.getElementById("a");
+    const b = document.getElementById("b");
+    const iv = document.getElementById("iv");
+    const pan = document.getElementById("pan");
+    let p = document.querySelectorAll(".p");
+
+
+    let s = document.getElementById("s");
+    s.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        s.style.display = "none";
+        m.style.display = "block";
+      });
+
+
+
+    function X(t) {
+        m.classList.remove("active");
+        p.forEach(x => {
+            x.classList.remove("active");
+        });
+        t.classList.add("active");
+    }
+    function Y() {
+        p.forEach(x => {
+            x.classList.remove("active");
+        });
+        m.classList.add("active");
+    }
+    iv.addEventListener("click", () => X(a));
+    pan.addEventListener("click", () => X(b));
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('m')) {
+            Y() ;
+        }
+    });
+/*
         <span id="" class="spn">&lt;a&gt;</span>
         <span id="" class="spn">&lt;abbr&gt;</span>
         <span id="" class="spn">&lt;address&gt;</span>
@@ -149,24 +212,7 @@
         <span id="" class="spn">&lt;ul&gt;</span>
         <span id="" class="spn">&lt;var&gt;</span>
         <span id="" class="spn">&lt;video&gt;</span>
-        <span id="" class="spn">&lt;wbr&gt;</span>
-    </div>
-    <div id="aa" class="pg">
-        <p id="m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
-    </div>
-<script>
-    let s = document.getElementById("s");
-    let m = document.getElementById("m");
-    s.addEventListener("click", () => {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
-        } else if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-        s.style.display = "none";
-        m.style.display = "block";
-        m.classList.add("active");
-      });
+        <span id="" class="spn">&lt;wbr&gt;</span> */
 </script>
 </body>
 </html>
