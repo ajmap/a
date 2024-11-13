@@ -13,13 +13,24 @@
       }
     #m {
         display: none;
-      margin: 1vh 2vw;
+        margin: 1vh 2vw;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
     .spn {   
              font-family: Arial;
              margin: 0 -0.6vw;
              font-size: 6.55vw; 
          }
+   .pg {
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .active {
+        opacity: 1;
+        pointer-events: auto;
+    }
 </style>
 </head>
 <body>
@@ -140,6 +151,9 @@
         <span id="" class="spn">&lt;video&gt;</span>
         <span id="" class="spn">&lt;wbr&gt;</span>
     </div>
+    <div id="aa" class="pg">
+        <p id="m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+    </div>
 <script>
     let s = document.getElementById("s");
     let m = document.getElementById("m");
@@ -151,6 +165,7 @@
         }
         s.style.display = "none";
         m.style.display = "block";
+        m.classList.add("active");
       });
 </script>
 </body>
