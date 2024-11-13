@@ -44,31 +44,29 @@
         <div id="s"></div>
 <div id="m" class="container active">
     <div>
-        <span id="iv" class="span">&lt;div&gt;</span>
-        <span id="pan" class="span">&lt;span&gt;</span>
+        <span id="div" class="span">&lt;div&gt;</span>
+        <span id="span" class="span">&lt;span&gt;</span>
     </div>
 </div>
-<div id="a" class="p">
+<div id="di" class="p">
     <div>
         <p class="m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
     </div>
 </div>
-<div id="b" class="p">
+<div id="sp" class="p">
     <div>
         <p class="m">Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
     </div>
 </div>
 
 <script>
-    const m = document.getElementById("m");
-    const a = document.getElementById("a");
-    const b = document.getElementById("b");
-    const iv = document.getElementById("iv");
-    const pan = document.getElementById("pan");
-    let p = document.querySelectorAll(".p");
-
-
     let s = document.getElementById("s");
+    let m = document.getElementById("m");
+    let div = document.getElementById("div");
+    let span = document.getElementById("span");
+    let di = document.getElementById("di");
+    let sp = document.getElementById("sp");
+    let p = document.querySelectorAll(".p");
     s.addEventListener("click", () => {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
@@ -94,8 +92,8 @@
         });
         m.classList.add("active");
     }
-    iv.addEventListener("click", () => X(a));
-    pan.addEventListener("click", () => X(b));
+    div.addEventListener("click", () => X(di));
+    span.addEventListener("click", () => X(sp));
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('m')) {
             Y() ;
