@@ -71,7 +71,7 @@
         <p class='b' id=''></p>
         <p class='t'></p>
         <p class='c'></p>
-        <footer id="f"></footer>
+        <footer id="f" onclick="sc()"></footer>
     </div>
     <script>
         let s = document.getElementById('s');
@@ -85,6 +85,10 @@
             s.style.display = 'none'
             m.style.display = 'block'
         })
+        function sc() {
+            const secondParagraph = document.getElementById("tr");
+            secondParagraph.scrollIntoView({ behavior: "smooth" });
+        }
     </script>
 </body>
 </html>
