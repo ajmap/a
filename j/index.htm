@@ -35,6 +35,7 @@
             font-weight: bold;
         }
         footer {
+            display: none;
             position: fixed;
             background-color: IndianRed;
             width: 100vw;
@@ -71,11 +72,12 @@
         <p class='b' id=''></p>
         <p class='t'></p>
         <p class='c'></p>
-        <footer id="f" onclick="sc()"></footer>
     </div>
+    <footer id="f" onclick="sc()"></footer>
     <script>
         let s = document.getElementById('s');
         let m = document.getElementById('m');
+        let f = document.getElementById('f');
         s.addEventListener("click", () => {
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen();
@@ -84,6 +86,7 @@
             }
             s.style.display = 'none'
             m.style.display = 'block'
+            f.style.display = 'block'
         })
         function sc() {
             const secondParagraph = document.getElementById("tr");
