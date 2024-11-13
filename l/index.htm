@@ -44,12 +44,12 @@
 </style>
 </head>
 <body>
-        <div id="s"></div>
+<div id="s"></div>
 <div id="m" class="container active">
     <div>
-        <span id="a" class="spn">&lt;a&gt;</span>
-        <span id="div" class="span">&lt;div&gt;</span>
-        <span id="span" class="span">&lt;span&gt;</span>
+        <span id="a">&lt;a&gt;</span>
+        <span id="div">&lt;div&gt;</span>
+        <span id="span">&lt;span&gt;</span>
     </div>
 </div>
 <div id="aa" class="p">
@@ -67,7 +67,6 @@
         <p class="m">Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
     </div>
 </div>
-
 <script>
     let s = document.getElementById("s");
     let m = document.getElementById("m");
@@ -96,11 +95,11 @@
     }
     function Y() {
         p.forEach(x => {
-            x.classList.remove("active");
+        x.classList.remove("active");
         });
         m.classList.add("active");
     }
-    div.addEventListener("click", () => X(aa));
+    a.addEventListener("click", () => X(aa));
     div.addEventListener("click", () => X(di));
     span.addEventListener("click", () => X(sp));
     document.addEventListener('click', function(e) {
@@ -109,7 +108,6 @@
         }
     });
 /*
-
         <span id="" class="spn">&lt;abbr&gt;</span>
         <span id="" class="spn">&lt;address&gt;</span>
         <span id="" class="spn">&lt;area&gt;</span>
