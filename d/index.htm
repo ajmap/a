@@ -15,8 +15,8 @@
       }
       -->
       :root {
-        --a: Navy; --b: FireBrick; --c: SlateGray; --d: SteelBlue; --e: LimeGreen; --f: ForestGreen; --g: DarkMagenta; 
-        --h: DarkViolet; --i: SpringGreen; --j: DeepSkyBlue; --k: Wheat; --l: Gainsboro; --m: HoneyDew; --n: Ivory;
+        --a: RebeccaPurple; --b: MediumPurple; --c: MediumOrchid; --d: Magenta; --e: Fuchsia; --f: MediumVioletRed; --g: DeepPink; 
+        --h: HotPink; --i: LightPink; --j: Pink; --k: Moccasin; --l: PapayaWhip; --m: LightGoldenrodYellow; --n: LemonChiffon; --o: LightYellow;
       }
       #start {
         background-color: black;
@@ -87,6 +87,9 @@
         color: var(--l);
       }
       .word.clr15 {
+        color: var(--n);  
+      }
+      .word.clr16 {
         color: White;
       }
       .foot {
@@ -607,6 +610,8 @@
           } else if (E1[index] === 15) {
             word.classList.add("clr15");
           } else if (E1[index] === 16) {
+            word.classList.add("clr16");
+          } else if (E1[index] === 17) {
             word.innerText = "";
           }
           word.addEventListener("click", () => {
@@ -671,6 +676,10 @@
               word.classList.add("clr15");
             } else if (E1[index] === 15) {
               E1[index] = 16;
+              word.classList.remove("clr15");
+              word.classList.add("clr16");
+            } else if (E1[index] === 16) {
+              E1[index] = 17;
               word.innerText = "";
             }
             localStorage.setItem("E1", JSON.stringify(E1));
