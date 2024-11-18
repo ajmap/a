@@ -9,8 +9,8 @@
         margin: 0;
       }
       :root {
-        --a: RoyalBlue; --b: DeepPink; --c: Peru; --d: Magenta; --e: Chartreuse; --f: DarkGreen; --g: MediumBlue; 
-        --h: Purple; --i: Violet; --j: Cyan; --k: Lavender; --l: AquaMarine; --m: Linen;
+        --a: MidnightBlue; --b: DarkBlue; --c: RebeccaPurple; --d: Purple; --e: MediumBlue; --f: MediumOrchid; --g: Blue; 
+        --h: RoyalBlue; --i: MediumSlateBlue; --j: CornFlowerBlue; --k: DeepSkyBlue; --l: LightSkyBlue; --m: Cyan; --n: LavenderBlush;
       }
       #start {
         background-color: black;
@@ -78,6 +78,9 @@
         color: var(--m);
       }
       .word.clr14 {
+        color: var(--l);
+      }
+      .word.clr15 {
         color: White;
       }
       .foot {
@@ -85,26 +88,22 @@
         height: 5vh;
       }  
       #f1 {
-        background-color: var(--h);
+        background-color: var(--a);
       }
       #f2 {
-        background-color: var(--i);
+        background-color: var(--b);
       }
       #f3 {
-        background-color: var(--j);
+        background-color: var(--c);
       }
       #f4 {
-        background-color: var(--k);
+        background-color: var(--d);
       }
       #f5 {
-        background-color: var(--l);
+        background-color: var(--e);
       }
       #f6 {
-        background-color: var(--m);
-      }
-      #c5 {
-        font-size: 19vw;
-        font-weight: bold;
+        background-color: var(--f);
       }
     </style>
   </head>
@@ -491,7 +490,6 @@
       <span class="word">muziek.&nbsp;</span>
     </div>
     <div class ="dif" id="c5">
-       Royal Blue Deep Pink Peru Magenta Chartreuse Dark Green Medium Blue Purple Violet Cyan Lavender Aqua Marine Linen
     </div> 
     <footer id="footer">
       <div class="foot" id="f1"></div>
@@ -601,6 +599,8 @@
           } else if (E1[index] === 14) {
             word.classList.add("clr14");
           } else if (E1[index] === 15) {
+            word.classList.add("clr15");
+          } else if (E1[index] === 16) {
             word.innerText = "";
           }
           word.addEventListener("click", () => {
@@ -659,9 +659,12 @@
               E1[index] = 14;
               word.classList.remove("clr13");
               word.classList.add("clr14");
-            }  
-            else if (E1[index] === 14) {
+            } else if (E1[index] === 14) {
               E1[index] = 15;
+              word.classList.remove("clr14");
+              word.classList.add("clr15");
+            } else if (E1[index] === 15) {
+              E1[index] = 16;
               word.innerText = "";
             }
             localStorage.setItem("E1", JSON.stringify(E1));
