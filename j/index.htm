@@ -85,7 +85,10 @@
         <p class='t'></p>
         <p class='c'></p>
     </div>
-    <footer id="f" onclick="sc()"></footer>
+    <footer id="f" onclick="sc()">
+        <div id="f1" onclick="sc1()"></div>
+        <div id="f2" onclick="sc2()"></div>
+    </footer>
     <script>
         let s = document.getElementById('s');
         let m = document.getElementById('m');
@@ -100,7 +103,11 @@
             m.style.display = 'block'
             f.style.display = 'block'
         })
-        function sc() {
+        function sc1() {
+            let tr = document.getElementById("tr");
+            tr.scrollIntoView({ behavior: "smooth" });
+        }
+        function sc2() {
             let tr = document.getElementById("tr");
             tr.scrollIntoView({ behavior: "smooth" });
         }
