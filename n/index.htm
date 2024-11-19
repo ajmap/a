@@ -9,6 +9,7 @@
             margin: 0;
         }
       main {
+          display: none;
         width: 100vw;
         height: 100vh;
         background-color: Yellow;
@@ -21,10 +22,18 @@
     </style>
 </head>
 <body>
-  <main>
+    <div id='s'></div>
+  <main id='m'>
     <div></div>
   <main>  
    <script>
+        let s = document.getElementById('s');
+        let m = document.getElementById('m';)
+        s.addEventListener("click", () => {
+            document.documentElement.requestFullscreen();
+            s.style.display = 'none'
+            m.style.display = 'block'
+        })
     </script>
 </body>
 </html>
