@@ -15,8 +15,8 @@
       }
       -->
       :root {
-        --a: Red; --b: DarkOrange; --c: Yellow; --d: Green; --e: RoyalBlue; --f: Indigo; --g: Violet; 
-        --h: Tomato; --i: Orange; --j: GreenYellow; --k: SpringGreen; --l: SlateBlue; --m: RebeccaPurple; --n: LightSkyBlue; --o: AquaMarine;
+        --a: DarkRed; --b: Red; --c: DarkOrange; --d: Orange; --e: Yellow; --f: GreenYellow; --g: SpringGreem; 
+        --h: RoyalBlue; --i: CornFlowerBlue; --j: Indigo; --k: RebeccaPurple; --l: Violet; --m: LightSkyBlue; --n: AquaMarine; --o: PapayaWhip;
       }
       #start {
         background-color: black;
@@ -502,8 +502,7 @@
       <span class="word">muziek.&nbsp;</span>
     </div>
     <div class ="dif" id="c5">
-           Red DarkOrange Yellow Green RoyalBlue Indigo Violet 
-         Tomato Orange GreenYellow SpringGreen SlateBlue RebeccaPurple LightSkyBlue AquaMarine
+
 
     </div> 
     <footer id="footer">
@@ -618,6 +617,8 @@
           } else if (E1[index] === 16) {
             word.classList.add("clr16");
           } else if (E1[index] === 17) {
+            word.classList.add("clr17");
+          } else if (E1[index] === 18) {
             word.innerText = "";
           }
           word.addEventListener("click", () => {
@@ -686,6 +687,10 @@
               word.classList.add("clr16");
             } else if (E1[index] === 16) {
               E1[index] = 17;
+              word.classList.remove("clr16");
+              word.classList.add("clr17");
+            } else if (E1[index] === 17) {
+              E1[index] = 18;
               word.innerText = "";
             }
             localStorage.setItem("E1", JSON.stringify(E1));
