@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Choice</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      .span {
+        font-size: 7vw;
+        background: lightsteelblue;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 3vw 4vw;
+        margin: 1vw;
+        border-radius: 2vw;
+      }
+      .s {
+        color: blue;
+        background-color: orange;
+      }
+      main {
+        display: flex;
+        background-color: mediumpurple;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        padding: 12vw 0 0 0;
+      }
+      .e {
+        color: yellow;
+        background: navy;
+        font-size: 8vw;
+      }
+      #v {
+        position: absolute;
+        width: 10vw;
+        height: 10vw;
+        top: 0;
+        left: 0;
+        background: mediumpurple;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="m">
+      <div id="v"></div>
+      <span class="span">1</span><br />
+      <span class="span">2</span><br />
+      <span class="span">3</span><br />
+      <span class="span">4</span><br />
+      <span class="span">5</span><br />
+      <span class="span">6</span><br />
+      <span class="span">7</span><br />
+      <span class="span">8</span><br />
+      <span class="span"> . . . . </span>
+    </main>
+    <script>
+      let v = document.getElementById("v");
+      v.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      });
+      let x = document.getElementById("x");
+      let m = document.getElementById("m");
+      let s = document.getElementsByClassName("span");
+      let ch = false;
+      for (let i = 0; i < s.length; i++) {
+        s[i].addEventListener("click", () => {
+          if (ch == false) {
+            S();
+          }
+        });
+      }
+      function S() {
+        ch = true;
+        if (ch == true) {
+          for (let i = 0; i < s.length; i++) {
+            if (s[i].classList.contains("e")) {
+              s[i].parentNode.removeChild(s[i]);
+            }
+          }
+          let t = 50;
+          let i = setInterval(() => {
+            let r = A();
+            H(r);
+            setTimeout(() => {
+              U(r);
+            }, 100);
+          }, 90);
+          setTimeout(() => {
+            clearInterval(i);
+
+            setTimeout(() => {
+              let r = A();
+              ch = false;
+              E(r);
+            }, 100);
+          }, t * 100);
+        }
+      }
+      function A() {
+        return s[Math.floor(Math.random() * s.length)];
+      }
+      function H(c) {
+        c.classList.add("s");
+      }
+      function U(c) {
+        c.classList.remove("s");
+      }
+      function E(c) {
+        c.classList.add("e");
+      }
+    </script>
+  </body>
+</html>
