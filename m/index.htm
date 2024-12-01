@@ -281,6 +281,114 @@
             p4 = a4.currentTime / a4.duration;
             m4.style.background = `linear-gradient(to right, MediumBlue ${p4 * 100}%, DarkOrange ${p4 * 100}%)`;
         });
+        m5.addEventListener('click', () => {
+            if (i) {
+                a5.pause();
+                p5 = a5.currentTime / a5.duration;
+                m5.style.height = '10vh';
+                m5.style.filter = 'brightness(1)';
+                m1.classList.remove('z');
+                m2.classList.remove('z');
+                m3.classList.remove('z');
+                m4.classList.remove('z');
+                m6.classList.remove('z');
+                m7.classList.remove('z');
+                m8.classList.remove('z');
+                m9.classList.remove('z');
+                m10.classList.remove('z');
+            } else {
+                a5.play();
+                m5.style.height = '100vh'
+                m5.style.filter = 'brightness(0.1)';
+                m1.classList.add('z');
+                m2.classList.add('z');
+                m3.classList.add('z');
+                m4.classList.add('z');
+                m6.classList.add('z');
+                m7.classList.add('z');
+                m8.classList.add('z');
+                m9.classList.add('z');
+                m10.classList.add('z');
+            }
+            i = !i;
+            m5.style.background = `linear-gradient(to right, DodgerBlue ${p5 * 100}%, OrangeRed ${p5 * 100}%)`;
+        });
+        a5.addEventListener('timeupdate', () => {
+            p5 = a5.currentTime / a5.duration;
+            m5.style.background = `linear-gradient(to right, DodgerBlue ${p5 * 100}%, OrangeRed ${p5 * 100}%)`;
+        });
+        m6.addEventListener('click', () => {
+            if (i) {
+                a6.pause();
+                p6 = a6.currentTime / a6.duration;
+                m6.style.height = '10vh';
+                m6.style.filter = 'brightness(1)';
+                m1.classList.remove('z');
+                m2.classList.remove('z');
+                m3.classList.remove('z');
+                m4.classList.remove('z');
+                m5.classList.remove('z');
+                m7.classList.remove('z');
+                m8.classList.remove('z');
+                m9.classList.remove('z');
+                m10.classList.remove('z');
+            } else {
+                a6.play();
+                m6.style.height = '100vh'
+                m6.style.filter = 'brightness(0.1)';
+                m1.classList.add('z');
+                m2.classList.add('z');
+                m3.classList.add('z');
+                m4.classList.add('z');
+                m5.classList.add('z');
+                m7.classList.add('z');
+                m8.classList.add('z');
+                m9.classList.add('z');
+                m10.classList.add('z');
+            }
+            i = !i;
+            m6.style.background = `linear-gradient(to right, RoyalBlue ${p6 * 100}%, Tomato ${p6 * 100}%)`;
+        });
+        a6.addEventListener('timeupdate', () => {
+            p6 = a6.currentTime / a6.duration;
+            m6.style.background = `linear-gradient(to right, RoyalBlue ${p6 * 100}%, Tomato ${p6 * 100}%)`;
+        });
+        m7.addEventListener('click', () => {
+            if (i) {
+                a7.pause();
+                p7 = a7.currentTime / a7.duration;
+                m7.style.height = '10vh';
+                m7.style.filter = 'brightness(1)';
+                m1.classList.remove('z');
+                m2.classList.remove('z');
+                m3.classList.remove('z');
+                m4.classList.remove('z');
+                m5.classList.remove('z');
+                m6.classList.remove('z');
+                m8.classList.remove('z');
+                m9.classList.remove('z');
+                m10.classList.remove('z');
+            } else {
+                a7.play();
+                m7.style.height = '100vh'
+                m7.style.filter = 'brightness(0.1)';
+                m1.classList.add('z');
+                m2.classList.add('z');
+                m3.classList.add('z');
+                m4.classList.add('z');
+                m5.classList.add('z');
+                m6.classList.add('z');
+                m8.classList.add('z');
+                m9.classList.add('z');
+                m10.classList.add('z');
+            }
+            i = !i;
+            m7.style.background = `linear-gradient(to right, DeepSkyBlue ${p7 * 100}%, Coral ${p7 * 100}%)`;
+        });
+        a7.addEventListener('timeupdate', () => {
+            p7 = a7.currentTime / a7.duration;
+            m7.style.background = `linear-gradient(to right, DeepSkyBlue ${p7 * 100}%, Coral ${p7 * 100}%)`;
+        });
     </script>
 </body>
 </html>
