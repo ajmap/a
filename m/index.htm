@@ -6,6 +6,14 @@
         * {
             margin: 0;
         }
+        #st {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+          }
+        #mn {
+            display: block;
+          }
         #m1 {
             background-color: Yellow;
             height: 10vh;
@@ -65,18 +73,19 @@
     </style>
 </head>
 <body>
-    <div id='s'></div>
-    <div id='mn'></div>
-    <div id='m1'></div>
-    <div id='m2'></div>
-    <div id='m3'></div>
-    <div id='m4'></div>
-    <div id='m5'></div>
-    <div id='m6'></div>
-    <div id='m7'></div>
-    <div id='m8'></div>
-    <div id='m9'></div>
-    <div id='m10'></div>
+    <div id='st'></div>
+    <div id='mn'>
+        <div id='m1'></div>
+        <div id='m2'></div>
+        <div id='m3'></div>
+        <div id='m4'></div>
+        <div id='m5'></div>
+        <div id='m6'></div>
+        <div id='m7'></div>
+        <div id='m8'></div>
+        <div id='m9'></div>
+        <div id='m10'></div>
+    </div>
     <audio id="a1" src="1.mp3"></audio>
     <audio id="a2" src="2.mp3"></audio>
     <audio id="a3" src="3.mp3"></audio>
@@ -87,6 +96,8 @@
     <audio id="a6" src="8.mp3"></audio>
     <audio id="a7" src="9.mp3"></audio>
     <script>
+        const st = document.getElementById('st');
+        const mn = document.getElementById('mn');
         const m1 = document.getElementById('m1');
         const m2 = document.getElementById('m2');
         const m3 = document.getElementById('m3');
@@ -117,6 +128,15 @@
         let p8 = 0;
         let p9 = 0;
         let p10 = 0;
+        st.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+              document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+              document.exitFullscreen();
+            }
+            st.style.display = "none";
+            mn.style.display = "block";
+          });
         m1.addEventListener('click', () => {
             if (i) {
                 a1.pause();
