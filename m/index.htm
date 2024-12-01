@@ -1,3 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>9 Golden Mantra's</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        #st {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+          }
+        #mn {
+            display: block;
+          }
+        #m1 {
+            background-color: Yellow;
+            height: 10vh;
+            width: 100vw;
+        }
+        #m2 {
+            background-color: Gold;
+            height: 10vh;
+            width: 100vw;
+        }
+        #m3 {
+            background-color: Orange;
+            height: 10vh;
+            width: 100vw;
+        }
+        #m4 {
+            background-color: DarkOrange;
+            height: 10vh;
+            width: 100vw;
+        }
+        #m5 {
+            background-color: OrangeRed;
+            height: 10vh;
+            width: 100vw;
+        }
+        #m6 {
+            background-color: Tomato;
+            height: 10vh;
+            width: 100vw;
+        }
+        #m7 {
+            background-color: Coral;
+            height: 10vh;
+            width: 100vw;
+        }
+        #m8 {
+            background-color: LightSalmon;
+            height: 10vh;
+            width: 100vw;
+        }   
+        #m9 {
+            background-color: Khaki;
+            height: 10vh;
+            width: 100vw;
+        }
+        #m10 {
+            background-color: PeachPuff;
+            height: 10vh;
+            width: 100vw;
+        }
+        .y {
+            height: 100vh;
+        }
+        .z {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id='st'></div>
+    <div id='mn'>
+        <div id='m1'></div>
+        <div id='m2'></div>
+        <div id='m3'></div>
+        <div id='m4'></div>
+        <div id='m5'></div>
+        <div id='m6'></div>
+        <div id='m7'></div>
+        <div id='m8'></div>
+        <div id='m9'></div>
+        <div id='m10'></div>
+    </div>
+    <audio id="a1" src="1.mp3"></audio>
+    <audio id="a2" src="2.mp3"></audio>
+    <audio id="a3" src="3.mp3"></audio>
+    <audio id="a4" src="4.mp3"></audio>
+    <audio id="a5" src="5.mp3"></audio>
+    <audio id="a6" src="6.mp3"></audio>
+    <audio id="a7" src="7.mp3"></audio>
+    <audio id="a6" src="8.mp3"></audio>
+    <audio id="a7" src="9.mp3"></audio>
+    <script>
+        const st = document.getElementById('st');
+        const mn = document.getElementById('mn');
+        const m1 = document.getElementById('m1');
+        const m2 = document.getElementById('m2');
+        const m3 = document.getElementById('m3');
+        const m4 = document.getElementById('m4');
+        const m5 = document.getElementById('m5');
+        const m6 = document.getElementById('m6');
+        const m7 = document.getElementById('m7');
+        const m8 = document.getElementById('m8');
+        const m9 = document.getElementById('m9');
+        const m10 = document.getElementById('m10');
+        const a1 = document.getElementById('a1');
+        const a2 = document.getElementById('a2');
+        const a3 = document.getElementById('a3');
+        const a4 = document.getElementById('a4');
+        const a5 = document.getElementById('a5');
+        const a6 = document.getElementById('a6');
+        const a7 = document.getElementById('a7');
+        const a8 = document.getElementById('a6');
+        const a9 = document.getElementById('a7');
+        let i = false;
+        let p1 = 0;
+        let p2 = 0;
+        let p3 = 0;
+        let p4 = 0;
+        let p5 = 0;
+        let p6 = 0;
+        let p7 = 0;
+        let p8 = 0;
+        let p9 = 0;
+        let p10 = 0;
+        st.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+              document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+              document.exitFullscreen();
+            }
+            st.style.display = "none";
+            mn.style.display = "block";
+          });
+        m1.addEventListener('click', () => {
+            if (i) {
+                a1.pause();
+                p1 = a1.currentTime / a1.duration;
+                m1.style.height = '10vh';
+                m1.style.filter = 'brightness(1)';
+                m2.classList.remove('z');
+                m3.classList.remove('z');
+                m4.classList.remove('z');
+                m5.classList.remove('z');
+                m6.classList.remove('z');
+                m7.classList.remove('z');
+                m8.classList.remove('z');
+                m9.classList.remove('z');
+                m10.classList.remove('z');
+            } else {
+                a1.play();
+                m1.style.height = '100vh'
+                m1.style.filter = 'brightness(0.1)';
+                m2.classList.add('z');
+                m3.classList.add('z');
+                m4.classList.add('z');
+                m5.classList.add('z');
+                m6.classList.add('z');
+                m7.classList.add('z');
+                m8.classList.add('z');
+                m9.classList.add('z');
+                m10.classList.add('z');
+            }
+            i = !i;
+            m1.style.background = `linear-gradient(to right, Indigo ${p1 * 100}%, Yellow ${p1 * 100}%)`;
+        });
+        a1.addEventListener('timeupdate', () => {
+            p1 = a1.currentTime / a1.duration;
+            m1.style.background = `linear-gradient(to right, Indigo ${p1 * 100}%, Yellow ${p1 * 100}%)`;
+        });
+        m2.addEventListener('click', () => {
+            if (i) {
+                a2.pause();
+                p2 = a2.currentTime / a2.duration;
+                m2.style.height = '10vh';
+                m2.style.filter = 'brightness(1)';
+                m1.classList.remove('z');
+                m3.classList.remove('z');
+                m4.classList.remove('z');
+                m5.classList.remove('z');
+                m6.classList.remove('z');
+                m7.classList.remove('z');
+                m8.classList.remove('z');
+                m9.classList.remove('z');
+                m10.classList.remove('z');
+            } else {
+                a2.play();
+                m2.style.height = '100vh'
+                m2.style.filter = 'brightness(0.1)';
+                m1.classList.add('z');
+                m3.classList.add('z');
+                m4.classList.add('z');
+                m5.classList.add('z');
+                m6.classList.add('z');
+                m7.classList.add('z');
+                m8.classList.add('z');
+                m9.classList.add('z');
+                m10.classList.add('z');
+            }
+            i = !i;
+            m2.style.background = `linear-gradient(to right, Blue ${p2 * 100}%, Gold ${p2 * 100}%)`;
+        });
+        a2.addEventListener('timeupdate', () => {
+            p2 = a2.currentTime / a2.duration;
+            m2.style.background = `linear-gradient(to right, Blue ${p2 * 100}%, Gold ${p2 * 100}%)`;
+        });
         m3.addEventListener('click', () => {
             if (i) {
                 a3.pause();
@@ -34,3 +245,42 @@
             p3 = a3.currentTime / a3.duration;
             m3.style.background = `linear-gradient(to right, SlateBlue ${p3 * 100}%, Orange ${p3 * 100}%)`;
         });
+        m4.addEventListener('click', () => {
+            if (i) {
+                a4.pause();
+                p4 = a4.currentTime / a4.duration;
+                m4.style.height = '10vh';
+                m4.style.filter = 'brightness(1)';
+                m1.classList.remove('z');
+                m2.classList.remove('z');
+                m3.classList.remove('z');
+                m5.classList.remove('z');
+                m6.classList.remove('z');
+                m7.classList.remove('z');
+                m8.classList.remove('z');
+                m9.classList.remove('z');
+                m10.classList.remove('z');
+            } else {
+                a4.play();
+                m4.style.height = '100vh'
+                m4.style.filter = 'brightness(0.1)';
+                m1.classList.add('z');
+                m2.classList.add('z');
+                m3.classList.add('z');
+                m5.classList.add('z');
+                m6.classList.add('z');
+                m7.classList.add('z');
+                m8.classList.add('z');
+                m9.classList.add('z');
+                m10.classList.add('z');
+            }
+            i = !i;
+            m4.style.background = `linear-gradient(to right, MediumBlue ${p4 * 100}%, DarkOrange ${p4 * 100}%)`;
+        });
+        a4.addEventListener('timeupdate', () => {
+            p4 = a4.currentTime / a4.duration;
+            m4.style.background = `linear-gradient(to right, MediumBlue ${p4 * 100}%, DarkOrange ${p4 * 100}%)`;
+        });
+    </script>
+</body>
+</html>
