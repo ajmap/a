@@ -464,10 +464,9 @@
         m10.addEventListener('click', () => {
             let arr = [a1, a2, a3, a4, a5, a6, a7, a8, a9];
             let rnd = Math.floor(Math.random() * 9);
-            let a10 = arr[rnd];
             if (i) {
-                a10.pause();
-                p10 = a10.currentTime / a10.duration;
+                arr[rnd].pause();
+                p10 = arr[rnd].currentTime / arr[rnd].duration;
                 m10.style.height = '10vh';
                 m10.style.filter = 'brightness(1)';
                 m1.classList.remove('z');
@@ -480,7 +479,7 @@
                 m8.classList.remove('z');
                 m9.classList.remove('z');
             } else {
-                a10.play();
+                arr[rnd].play();
                 m10.style.height = '100vh'
                 m10.style.filter = 'brightness(0.1)';
                 m1.classList.add('z');
@@ -497,7 +496,7 @@
             m10.style.background = `linear-gradient(to right, CornFlowerBlue ${p10 * 100}%, PaleGoldenRod ${p10 * 100}%)`;
         });
         a10.addEventListener('timeupdate', () => {
-            p10 = a10.currentTime / a10.duration;
+            p10 = arr[rnd].currentTime / arr[rnd].duration;
             m10.style.background = `linear-gradient(to right, CornFlowerBlue ${p10 * 100}%, PaleGoldenRod ${p10 * 100}%)`;
         });
     </script>
