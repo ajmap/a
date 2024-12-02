@@ -60,7 +60,7 @@
             width: 100vw;
         }
         #m10 {
-            background-color: PeachPuff;
+            background-color: PaleGoldenRod;
             height: 10vh;
             width: 100vw;
         }
@@ -460,6 +460,45 @@
         a9.addEventListener('timeupdate', () => {
             p9 = a9.currentTime / a9.duration;
             m9.style.background = `linear-gradient(to right, Navy ${p9 * 100}%, Khaki ${p9 * 100}%)`;
+        });
+        m10.addEventListener('click', () => {
+            let arr = [a1, a2, a3, a4, a5, a6, a7, a8, a9];
+            let rnd = Math.floor(Math.random() * 9);
+            let a10 = arr[rnd];
+            if (i) {
+                a10.pause();
+                p10 = a10.currentTime / a10.duration;
+                m10.style.height = '10vh';
+                m10.style.filter = 'brightness(1)';
+                m1.classList.remove('z');
+                m2.classList.remove('z');
+                m3.classList.remove('z');
+                m4.classList.remove('z');
+                m5.classList.remove('z');
+                m6.classList.remove('z');
+                m7.classList.remove('z');
+                m8.classList.remove('z');
+                m9.classList.remove('z');
+            } else {
+                a10.play();
+                m10.style.height = '100vh'
+                m10.style.filter = 'brightness(0.1)';
+                m1.classList.add('z');
+                m2.classList.add('z');
+                m3.classList.add('z');
+                m4.classList.add('z');
+                m5.classList.add('z');
+                m6.classList.add('z');
+                m7.classList.add('z');
+                m8.classList.add('z');
+                m9.classList.add('z');
+            }
+            i = !i;
+            m10.style.background = `linear-gradient(to right, CornFlowerBlue ${p10 * 100}%, PaleGoldenRod ${p10 * 100}%)`;
+        });
+        a10.addEventListener('timeupdate', () => {
+            p10 = a10.currentTime / a10.duration;
+            m10.style.background = `linear-gradient(to right, CornFlowerBlue ${p10 * 100}%, PaleGoldenRod ${p10 * 100}%)`;
         });
     </script>
 </body>
