@@ -389,6 +389,78 @@
             p7 = a7.currentTime / a7.duration;
             m7.style.background = `linear-gradient(to right, DeepSkyBlue ${p7 * 100}%, Coral ${p7 * 100}%)`;
         });
+        m8.addEventListener('click', () => {
+            if (i) {
+                a8.pause();
+                p8 = a8.currentTime / a8.duration;
+                m8.style.height = '10vh';
+                m8.style.filter = 'brightness(1)';
+                m1.classList.remove('z');
+                m2.classList.remove('z');
+                m3.classList.remove('z');
+                m4.classList.remove('z');
+                m5.classList.remove('z');
+                m6.classList.remove('z');
+                m7.classList.remove('z');
+                m9.classList.remove('z');
+                m10.classList.remove('z');
+            } else {
+                a8.play();
+                m8.style.height = '100vh'
+                m8.style.filter = 'brightness(0.1)';
+                m1.classList.add('z');
+                m2.classList.add('z');
+                m3.classList.add('z');
+                m4.classList.add('z');
+                m5.classList.add('z');
+                m6.classList.add('z');
+                m7.classList.add('z');
+                m9.classList.add('z');
+                m10.classList.add('z');
+            }
+            i = !i;
+            m8.style.background = `linear-gradient(to right, SteelBlue ${p8 * 100}%, LightSalmon ${p8 * 100}%)`;
+        });
+        a8.addEventListener('timeupdate', () => {
+            p8 = a8.currentTime / a8.duration;
+            m8.style.background = `linear-gradient(to right, SteelBlue ${p8 * 100}%, LightSalmon ${p8 * 100}%)`;
+        });
+        m9.addEventListener('click', () => {
+            if (i) {
+                a9.pause();
+                p9 = a9.currentTime / a9.duration;
+                m9.style.height = '10vh';
+                m9.style.filter = 'brightness(1)';
+                m1.classList.remove('z');
+                m2.classList.remove('z');
+                m3.classList.remove('z');
+                m4.classList.remove('z');
+                m5.classList.remove('z');
+                m6.classList.remove('z');
+                m7.classList.remove('z');
+                m8.classList.remove('z');
+                m10.classList.remove('z');
+            } else {
+                a9.play();
+                m9.style.height = '100vh'
+                m9.style.filter = 'brightness(0.1)';
+                m1.classList.add('z');
+                m2.classList.add('z');
+                m3.classList.add('z');
+                m4.classList.add('z');
+                m5.classList.add('z');
+                m6.classList.add('z');
+                m7.classList.add('z');
+                m8.classList.add('z');
+                m10.classList.add('z');
+            }
+            i = !i;
+            m9.style.background = `linear-gradient(to right, Navy ${p9 * 100}%, Khaki ${p9 * 100}%)`;
+        });
+        a9.addEventListener('timeupdate', () => {
+            p9 = a9.currentTime / a9.duration;
+            m9.style.background = `linear-gradient(to right, Navy ${p9 * 100}%, Khaki ${p9 * 100}%)`;
+        });
     </script>
 </body>
 </html>
