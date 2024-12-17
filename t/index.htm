@@ -25,7 +25,7 @@
       }
 
       // Function to play a specific section of the audio with fade-in and fade-out
-      function playAudioSection(startTime, duration, fadeInTime = 2, fadeOutTime = 2) {
+      function playAudioSection(startTime, duration, fadeInTime = 3, fadeOutTime = 3) {
         if (!audioBuffer) return;
 
         const source = audioContext.createBufferSource();
@@ -52,13 +52,13 @@
       // Add event listeners to buttons
       document.getElementById("playSection1").addEventListener("click", () => {
         loadAudio().then(() => {
-          playAudioSection(10, 5); // Play section starting at 10 seconds, duration 5 seconds
+          playAudioSection(80, 10); // Play section starting at 10 seconds, duration 5 seconds
         });
       });
 
       document.getElementById("playSection2").addEventListener("click", () => {
         loadAudio().then(() => {
-          playAudioSection(30, 6); // Play section starting at 30 seconds, duration 6 seconds
+          playAudioSection(90, 10); // Play section starting at 30 seconds, duration 6 seconds
         });
       });
     });
