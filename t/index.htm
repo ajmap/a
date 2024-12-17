@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Fade-In and Fade-Out</title>
+</head>
+<body>
+  <h1>Play Audio with Fade In and Fade Out</h1>
+  <button id="playSection1">Play Section 1</button>
+  <button id="playSection2">Play Section 2</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const gainNode = audioContext.createGain();
+      let audioBuffer;
+
+      // Load the audio file once
+      async function loadAudio() {
+        if (audioBuffer) return; // Avoid loading multiple times
+        const response = await fetch("2.mp3"); // Replace with your MP3 file path
+        const arrayBuffer = await response.arrayBuffer();
+        audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+      }
+
+      // Function to play a specific section of the audio with fade-in and fade-out
+      function playAudioSection(startTime, duration, fadeInTime = 2, fadeOutTime = 2) {
+        if (!audioBuffer) return;
+
+        const source = audioContext.createBufferSource();
+        source.buffer = audioBuffer;
+
+        // Connect source to gain node and audio context destination
+        source.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+
+        // Set gain for fade-in
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime); // Start at 0 volume
+        gainNode.gain.linearRampToValueAtTime(1, audioContext.currentTime + fadeInTime); // Fade in to full volume
+
+        // Set gain for fade-out
+        const fadeOutStartTime = audioContext.currentTime + (duration - fadeOutTime);
+        gainNode.gain.setValueAtTime(1, fadeOutStartTime); // Stay at full volume
+        gainNode.gain.linearRampToValueAtTime(0, fadeOutStartTime + fadeOutTime); // Fade out to 0 volume
+
+        // Start and stop the audio
+        source.start(audioContext.currentTime, startTime, duration);
+        source.stop(audioContext.currentTime + duration);
+      }
+
+      // Add event listeners to buttons
+      document.getElementById("playSection1").addEventListener("click", () => {
+        loadAudio().then(() => {
+          playAudioSection(10, 5); // Play section starting at 10 seconds, duration 5 seconds
+        });
+      });
+
+      document.getElementById("playSection2").addEventListener("click", () => {
+        loadAudio().then(() => {
+          playAudioSection(30, 6); // Play section starting at 30 seconds, duration 6 seconds
+        });
+      });
+    });
+  </script>
+</body>
+</html>
