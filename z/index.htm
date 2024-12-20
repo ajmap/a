@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>9 Golden Mantra's</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        #st {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+          }
+        #mn {
+            display: none;
+            background-color: Gold;
+            height: 100vh;
+            width: 100vw;
+            filter: brightness(0.2);
+          }
+    </style>
+</head>
+<body>
+    <div id='st'></div>
+    <div id='mn'>
+    </div>
+    <audio id="a1" src="../m/1.mp3"></audio>
+    <audio id="a2" src="../m/2.mp3"></audio>
+    <audio id="a3" src="../m/3.mp3"></audio>
+    <audio id="a4" src="../m/4.mp3"></audio>
+    <audio id="a5" src="../m/5.mp3"></audio>
+    <audio id="a6" src="../m/6.mp3"></audio>
+    <audio id="a7" src="../m/7.mp3"></audio>
+    <audio id="a8" src="../m/8.mp3"></audio>
+    <audio id="a9" src="../m/9.mp3"></audio>
+    <script>
+        const st = document.getElementById('st');
+        const mn = document.getElementById('mn');
+        const a1 = document.getElementById('a1');
+        const a2 = document.getElementById('a2');
+        const a3 = document.getElementById('a3');
+        const a4 = document.getElementById('a4');
+        const a5 = document.getElementById('a5');
+        const a6 = document.getElementById('a6');
+        const a7 = document.getElementById('a7');
+        const a8 = document.getElementById('a8');
+        const a9 = document.getElementById('a9');
+        const arr = [a1, a2, a3, a4, a5, a6, a7, a8, a9];
+        const rnd = Math.floor(Math.random() * 9);
+        let a = arr[rnd];
+        let i = false;
+        let p = 0;
+        st.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+              document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+              document.exitFullscreen();
+            }
+            st.style.display = "none";
+            mn.style.display = "block";
+            a.play();
+            mn.style.background = `linear-gradient(to right, Silver ${p * 100}%, Gold ${p * 100}%)`;
+            a1.addEventListener('timeupdate', () => {
+            p = a.currentTime / a.duration;
+            m1.style.background = `linear-gradient(to right, Indigo ${p1 * 100}%, Yellow ${p1 * 100}%)`;
+          });
+         })
+
+    </script>
+</body>
+</html>
