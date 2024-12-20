@@ -16,7 +16,6 @@
             background-color: Gold;
             height: 100vh;
             width: 100vw;
-            filter: brightness(0.2);
           }
     </style>
 </head>
@@ -59,10 +58,9 @@
             st.style.display = "none";
             mn.style.display = "block";
             a.play();
-            mn.style.background = `linear-gradient(to right, Silver ${p * 100}%, Gold ${p * 100}%)`;
-            a1.addEventListener('timeupdate', () => {
+            a.addEventListener('timeupdate', () => {
             p = a.currentTime / a.duration;
-            m1.style.background = `linear-gradient(to right, Indigo ${p1 * 100}%, Yellow ${p1 * 100}%)`;
+            mn.style.background = `linear-gradient(to right, Silver ${p1 * 100}%, Gold ${p1 * 100}%)`;
           });
          })
 
