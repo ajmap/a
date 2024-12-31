@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach</title>
+    <style>
+        * {
+                        margin: 0;
+        }
+        #start {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+        }
+        #text-container {
+            display: none;
+            padding: 3vw;
+            font-family: Arial;
+            line-height: 5vw;
+        }
+
+.word {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 4.4vw;
+    color: white;
+}
+        .word.black {
+             color: Black;   
+        }
+        .word.red {
+            color: IndianRed;
+        }
+        .word.orange {
+            color: DarkOrange;
+        }
+        .word.yellow { 
+            color: GreenYellow
+        }
+        .word.green {
+            color: AquaMarine;
+        }
+        .word.blue {
+            color: RoyalBlue;
+        }
+        .word.indigo { 
+            color: DarkMagenta;
+        }
+        .word.violet {
+            color: Fuchsia;
+        }
+        .word.white {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="start"></div>
+    <div id="text-container">
+        <span class="word">My</span>
+        <span class="word">nerves</span>
+        <span class="word">are</span>
+        <span class="word">in</span>
+        <span class="word">perfect</span>
+        <span class="word">order</span>
+        <span class="word">all</span>
+        <span class="word">my</span>
+        <span class="word">body.</span>
+        <span class="word">They</span>
+        <span class="word">obey</span>
+        <span class="word">my</span>
+        <span class="word">will</span>
+        <span class="word">and</span>
+        <span class="word">I</span>
+        <span class="word">have</span>
+        <span class="word">great</span>
+        <span class="word">nerve</span>
+        <span class="word">force.</span>
+        <span class="word">I</span>
+        <span class="word">am</span>
+        <span class="word">breathing</span>
+        <span class="word">deeply</span>
+        <span class="word">and</span>
+        <span class="word">quietly,</span>
+        <span class="word">and</span>
+        <span class="word">the</span>
+        <span class="word">air</span>
+        <span class="word">goes</span>
+        <span class="word">into</span>
+        <span class="word">every</span>
+        <span class="word">cell</span>
+        <span class="word">of</span>
+        <span class="word">my</span>
+        <span class="word">lungs,</span>
+        <span class="word">which</span>
+        <span class="word">are</span>
+        <span class="word">in</span>
+        <span class="word">perfect</span>
+        <span class="word">condition.</span>
+        <span class="word">My</span>
+        <span class="word">blood</span>
+        <span class="word">is</span>
+        <span class="word">purified</span>
+        <span class="word">and</span>
+        <span class="word">made</span>
+        <span class="word">clean.</span>
+  <!--      <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span> -->
+
+    </div>
+    <script>
+        let start = document.getElementById('start');
+                let text = document.getElementById('text-container');
+                start.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            start.style.display = 'none'
+            text.style.display = 'block'
+        })
+        document.addEventListener('DOMContentLoaded', () => {
+        const words = document.querySelectorAll('.word');
+
+        const wordStates1 = JSON.parse(localStorage.getItem('wordStates1')) || {};
+
+    words.forEach((word, index) => {
+        // Set initial state based on local storage
+        if (wordStates1[index] === 1) {
+            word.classList.add('black');
+        } else if (wordStates1[index] === 2) {
+            word.classList.add('red');
+        } else if (wordStates1[index] === 3) {
+            word.classList.add('orange');
+        } else if (wordStates1[index] === 4) {
+            word.classList.add('yellow');
+        } else if (wordStates1[index] === 5) {
+            word.classList.add('green');
+        } else if (wordStates1[index] === 6) {
+            word.classList.add('blue');
+        } else if (wordStates1[index] === 7) {
+            word.classList.add('indigo');
+        } else if (wordStates1[index] === 8) {
+            word.classList.add('violet');
+        } else if (wordStates1[index] === 10) {
+            word.classList.add('white');
+            word.innerText = "";
+        } 
+
+        word.addEventListener('click', () => {
+            if (!wordStates1[index]) {
+                wordStates1[index] = 1;
+                word.classList.add('black');
+            } else if (wordStates1[index] === 1) {
+                wordStates1[index] = 2;
+                word.classList.remove('black');
+                word.classList.add('red');
+            } else if (wordStates1[index] === 2) {
+                wordStates1[index] = 3;
+                word.classList.remove('red');
+                word.classList.add('orange');
+            } else if (wordStates1[index] === 3) {
+                wordStates1[index] = 4; 
+                word.classList.remove('orange');
+                word.classList.add('yellow');
+            } else if (wordStates1[index] === 4) {
+                wordStates1[index] = 5;
+                word.classList.remove('yellow');
+                word.classList.add('green');
+            } else if (wordStates1[index] === 5) {
+                wordStates1[index] = 6;
+                word.classList.remove('green');
+                word.classList.add('blue');
+            } else if (wordStates1[index] === 6) {
+                wordStates1[index] = 7; 
+                word.classList.remove('blue');
+                word.classList.add('indigo');
+            } else if (wordStates1[index] === 7) {
+                wordStates1[index] = 8;
+                word.classList.remove('indigo');
+                word.classList.add('violet');
+            } else if (wordStates1[index] === 8) {
+                wordStates1[index] = 9;
+                word.classList.remove('violet');
+                word.classList.add('white');
+            } else if (wordStates1[index] === 9) {
+                wordStates1[index] = 10;
+                word.innerText = ""
+            } 
+            localStorage.setItem('wordStates1', JSON.stringify(wordStates1));
+        });
+    });
+});
+    </script>
+</body>
+</html>
