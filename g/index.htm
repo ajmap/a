@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Songtext</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      #start {
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+      }
+      #c1, #c2, #c3, #c4, #c5, #c6, #c7 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+      #c2 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+      #c3 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+      #c4 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+      #c5 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+      #c6 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+      #c7 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+     #c9 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+      section {
+        display: none;
+        position: fixed;
+        bottom: 5vh;
+        left: 0;
+        width: 100vw;
+        height: 5vh;
+        justify-content: space-between;
+      }
+      footer {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 5vh;
+        justify-content: space-between;
+      }
+      .word {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 8.5vw;
+        font-weight: bold;
+        color: white;
+      }
+        #c8 {
+        display: none;
+        padding: 2.3vw;
+        font-family: Arial;
+        line-height: 8.8vw;
+        font-size: 10vw;
+      }
+      .word.clr01 {
+        color: Navy;
+      }
+      .word.clr02 {
+        color: DarkRed;
+      }
+      .word.clr03 {
+        color: DarkGreen;
+      }
+      .word.clr04 {
+        color: Blue;
+      }
+      .word.clr05 {
+        color: DarkGoldenRod;
+      }
+      .word.clr06 {
+        color: RosyBrown;
+      }
+      .word.clr07 {
+        color: Tomato;
+      }
+      .word.clr08 {
+        color: SlateBlue;
+      }
+      .word.clr09 {
+        color: SlateGray;
+      }
+      .word.clr10 {
+        color: Aqua;
+      }
+      .word.clr11 {
+        color: CornSilk;
+      }
+      .word.clr12 {
+        color: Yellow;
+      }
+      .word.clr13 {
+        color: Crimson;
+      }
+      .word.clr14 {
+        color: LawnGreen;
+      }
+      .word.clr15 {
+        color: Magenta;
+      }
+      .word.clr16 {
+        color: IndianRed;
+      }
+      .word.clr17 {
+        color: LightSkyBlue;
+      }
+      .word.clr18 {
+        color: Lime;
+      }
+      .word.clr19 {
+        color: CornFlowerBlue;
+      }
+      .word.clr20 {
+        color: AquaMarine;
+      }
+      .word.clr21 {
+        color: Orchid;
+      }
+      .word.clr22 {
+        color: Cyan;
+      }
+      .word.clr23 {
+        color: White;
+      }
+      #f1 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: NavajoWhite;
+      }
+      #f2 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: Teal;
+      }
+      #f3 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: BurlyWood;
+      }
+      #f4 {
+         width: 16.66vw;
+        height: 6vh;
+        background-color: Blue;
+      }
+      #f5 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: DarkGoldenRod;
+      }
+      #f6 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: RosyBrown;
+      }
+      #f7 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: Tomato;
+      }
+      #f8 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: SlateBlue;
+      }
+      #f9 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: SlateGray;
+      }
+      #f10 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: Aqua;
+      }
+      #f11 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: CornSilk;
+      }
+      #f12 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: Yellow;
+      } 
+    </style>
+  </head>
+  <body>
+    <div id="start"></div>
+    <div id="c1">
+    </div>
+    <div id="c2">
+    </div>
+    <div id="c3">
+    </div>
+    <div id="c4">
+    </div>
+    <div id="c5">
+    </div>
+    <div id="c6">
+    </div>
+    <div id="c7">
+    </div>
+    <div id="c8">
+    </div>
+    <div id="c9">
+    </div>
+<!--    <div id="c10">
+    </div>
+    <div id="c11">
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+    </div>
+    -->
+    <section id="section">
+      <div id="f1"></div>
+      <div id="f2"></div>
+      <div id="f3"></div>
+      <div id="f4"></div>
+      <div id="f5"></div>
+      <div id="f6"></div>
+    </section>  
+    <footer id="footer">
+      <div id="f7"></div>
+      <div id="f8"></div>
+      <div id="f9"></div>
+      <div id="f10"></div>
+      <div id="f11"></div>
+      <div id="f12"></div>
+    </footer>
+    <script>
+      let start = document.getElementById("start");
+      let footer = document.getElementById("footer");
+      let section = document.getElementById("section");
+      let f1 = document.getElementById("f1");
+      let f2 = document.getElementById("f2");
+      let f3 = document.getElementById("f3");
+      let f4 = document.getElementById("f4");
+      let f5 = document.getElementById("f5");
+      let f6 = document.getElementById("f6");
+      let f7 = document.getElementById("f7");
+      let f8 = document.getElementById("f8");
+      let f9 = document.getElementById("f9");
+      let f10 = document.getElementById("f10");
+      let f11 = document.getElementById("f11");
+      let f12 = document.getElementById("f12");
+
+      let c1 = document.getElementById("c1");
+      let c2 = document.getElementById("c2");
+      let c3 = document.getElementById("c3");
+      let c4 = document.getElementById("c4");
+      let c5 = document.getElementById("c5");
+      let c6 = document.getElementById("c6");
+      let c7 = document.getElementById("c7");
+      let c8 = document.getElementById("c8");
+      let c9 = document.getElementById("c9");
+
+      start.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        start.style.display = "none";
+        c1.style.display = "block";
+        footer.style.display = "flex";
+        section.style.display = "flex";
+      });
+      f12.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      });
+      f1.addEventListener("click", () => {
+        c1.style.display = "block";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f2.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "block";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f3.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "block";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+
+      });
+      f4.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "block";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f5.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "block";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f6.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "block";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f7.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "block";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f8.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "block";
+        c9.style.display = "none";
+      });
+      f9.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "block";
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const words = document.querySelectorAll(".word");
+
+        const E1 = JSON.parse(localStorage.getItem("E1")) || {};
+
+        words.forEach((word, index) => {
+          if (E1[index] === 1) {
+            word.classList.add("clr01");
+          } else if (E1[index] === 2) {
+            word.classList.add("clr02");
+          } else if (E1[index] === 3) {
+            word.classList.add("clr03");
+          } else if (E1[index] === 4) {
+            word.classList.add("clr04");
+          } else if (E1[index] === 5) {
+            word.classList.add("clr05");
+          } else if (E1[index] === 6) {
+            word.classList.add("clr06");
+          } else if (E1[index] === 7) {
+            word.classList.add("clr07");
+          } else if (E1[index] === 8) {
+            word.classList.add("clr08");
+          } else if (E1[index] === 9) {
+            word.classList.add("clr09");
+          } else if (E1[index] === 10) {
+            word.classList.add("clr10");
+          } else if (E1[index] === 11) {
+            word.classList.add("clr11");
+          } else if (E1[index] === 12) {
+            word.classList.add("clr12");
+          } else if (E1[index] === 13) {
+            word.classList.add("clr13");
+          } else if (E1[index] === 14) {
+            word.classList.add("clr14");
+          } else if (E1[index] === 15) {
+            word.classList.add("clr15");
+          } else if (E1[index] === 16) {
+            word.classList.add("clr16");
+          } else if (E1[index] === 17) {
+            word.classList.add("clr17");
+          } else if (E1[index] === 18) {
+            word.classList.add("clr18");
+          } else if (E1[index] === 19) {
+            word.classList.add("clr19");
+          } else if (E1[index] === 20) {
+            word.classList.add("clr20");
+          } else if (E1[index] === 21) {
+            word.classList.add("clr21");
+          } else if (E1[index] === 22) {
+            word.classList.add("clr22");
+          } else if (E1[index] === 23) {
+            word.classList.add("clr23");
+          } else if (E1[index] === 24) {
+            word.innerText = "";
+          }
+
+          word.addEventListener("click", () => {
+            if (!E1[index]) {
+              E1[index] = 1;
+              word.classList.add("clr01");
+            } else if (E1[index] === 1) {
+              E1[index] = 2;
+              word.classList.remove("clr01");
+              word.classList.add("clr02");
+            } else if (E1[index] === 2) {
+              E1[index] = 3;
+              word.classList.remove("clr02");
+              word.classList.add("clr03");
+            } else if (E1[index] === 3) {
+              E1[index] = 4;
+              word.classList.remove("clr03");
+              word.classList.add("clr04");
+            } else if (E1[index] === 4) {
+              E1[index] = 5;
+              word.classList.remove("clr04");
+              word.classList.add("clr05");
+            } else if (E1[index] === 5) {
+              E1[index] = 6;
+              word.classList.remove("clr05");
+              word.classList.add("clr06");
+            } else if (E1[index] === 6) {
+              E1[index] = 7;
+              word.classList.remove("clr06");
+              word.classList.add("clr07");
+            } else if (E1[index] === 7) {
+              E1[index] = 8;
+              word.classList.remove("clr07");
+              word.classList.add("clr08");
+            } else if (E1[index] === 8) {
+              E1[index] = 9;
+              word.classList.remove("clr08");
+              word.classList.add("clr09");
+            } else if (E1[index] === 9) {
+              E1[index] = 10;
+              word.classList.remove("clr09");
+              word.classList.add("clr10");
+            } else if (E1[index] === 10) {
+              E1[index] = 11;
+              word.classList.remove("clr10");
+              word.classList.add("clr11");
+            } else if (E1[index] === 11) {
+              E1[index] = 12;
+              word.classList.remove("clr11");
+              word.classList.add("clr12");
+            } else if (E1[index] === 12) {
+              E1[index] = 13;
+              word.classList.remove("clr12");
+              word.classList.add("clr13");
+            } else if (E1[index] === 13) {
+              E1[index] = 14;
+              word.classList.remove("clr13");
+              word.classList.add("clr14");
+            } else if (E1[index] === 14) {
+              E1[index] = 15;
+              word.classList.remove("clr14");
+              word.classList.add("clr15");
+            } else if (E1[index] === 15) {
+              E1[index] = 16;
+              word.classList.remove("clr15");
+              word.classList.add("clr16");
+            } else if (E1[index] === 16) {
+              E1[index] = 17;
+              word.classList.remove("clr16");
+              word.classList.add("clr17");
+            } else if (E1[index] === 17) {
+              E1[index] = 18;
+              word.classList.remove("clr17");
+              word.classList.add("clr18");
+            } else if (E1[index] === 18) {
+              E1[index] = 19;
+              word.classList.remove("clr18");
+              word.classList.add("clr19");
+            } else if (E1[index] === 19) {
+              E1[index] = 20;
+              word.classList.remove("clr19");
+              word.classList.add("clr20");
+            } else if (E1[index] === 20) {
+              E1[index] = 21;
+              word.classList.remove("clr20");
+              word.classList.add("clr21");
+            } else if (E1[index] === 21) {
+              E1[index] = 22;
+              word.classList.remove("clr21");
+              word.classList.add("clr22");
+            } else if (E1[index] === 22) {
+              E1[index] = 23;
+              word.classList.remove("clr22");
+              word.classList.add("clr23");
+            } else if (E1[index] === 23) {
+              E1[index] = 24;
+              word.innerText = "";
+            }
+            localStorage.setItem("E1", JSON.stringify(E1));
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
