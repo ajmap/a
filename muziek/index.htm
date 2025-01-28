@@ -156,7 +156,15 @@
     const progressBar = document.getElementById('progress-bar');
     const progress = document.getElementById('progress');
     const playlistButtons = document.querySelectorAll('.playlist button');
+    const playlist = document.querySelector('.playlist');
 
+    if (window.outerWidth < window.outerHeight) {
+      const buttons = playlist.querySelectorAll('button'); 
+      buttons.forEach(button => {
+        button.style.width = '100vw';
+      });
+    }
+    
     let currentSongIndex = 0;
     // Start
     start.addEventListener("click", () => {
@@ -202,7 +210,7 @@
       audio.pause();
       audio.currentTime = 0;  
     });
-
+    
     // Update progress bar
     audio.addEventListener('timeupdate', () => {
       const progressPercent = (audio.currentTime / audio.duration) * 100;
