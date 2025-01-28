@@ -96,6 +96,7 @@
     footer {
         position: absolute;
         display: flex;
+          flex-wrap: wrap;
         left: 0;
         bottom: 0;
         width: 100vw;
@@ -162,9 +163,10 @@
       const buttons = playlist.querySelectorAll('button'); 
       buttons.forEach(button => {
         button.style.width = '100vw';
-        button.style.fontSize = '5vw';
-        button.style.padding = '5vw';
+        button.style.fontSize = '4.5vw';
+        button.style.padding = '4vw';
       });
+
       progressBar.style.height = '7vh';
       playButton.style.fontSize = '7vw';
       playButton.style.padding = '15px 15px';
@@ -172,8 +174,11 @@
       pauseButton.style.padding = '15px 15px';
       stopButton.style.fontSize = '7vw';
       stopButton.style.padding = '15px 15px';
-      bck.style.fontSize = '3.5vw';
-      fls.style.fontSize = '3.5vw';
+      bck.style.fontSize = '5vw';
+      fls.style.fontSize = '5vw';
+            bck.style.width = '100vw';
+      fls.style.fontSize = '100vw';
+      
     }
     
     let currentSongIndex = 0;
