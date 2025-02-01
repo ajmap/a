@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Sandbox</title>
+
+  </head>
+  <body>
+    // Log number
+    console.log(100);
+    
+    // Log string
+    console.log('Hello World');
+    
+    // Log multiple values
+    console.log(20, 'Hello', true);
+    
+    // Log a variable
+    const x = 100;
+    console.log(x);
+    
+    // Console error & warning
+    console.error('Alert');
+    console.warn('Warning');
+    
+    // Log object as table
+    console.table({ name: 'Brad', email: 'brad@gmail.com' });
+    
+    // Group console commands
+    console.group('simple');
+    console.log(x);
+    console.error('Alert');
+    console.warn('Warning');
+    console.groupEnd();
+    
+    // Add CSS to logs
+    const styles = 'padding: 10px; background-color: white; color: green';
+    console.log('%cHello World', styles);
+    <script>
+      // Log number
+      console.log(100);
+      
+      // Log string
+      console.log('Hello World');
+      
+      // Log multiple values
+      console.log(20, 'Hello', true);
+      
+      // Log a variable
+      const x = 100;
+      console.log(x);
+      
+      // Console error & warning
+      console.error('Alert');
+      console.warn('Warning');
+      
+      // Log object as table
+      console.table({ name: 'Brad', email: 'brad@gmail.com' });
+      
+      // Group console commands
+      console.group('simple');
+      console.log(x);
+      console.error('Alert');
+      console.warn('Warning');
+      console.groupEnd();
+      
+      // Add CSS to logs
+      const styles = 'padding: 10px; background-color: white; color: green';
+      console.log('%cHello World', styles);
+    </script>
+  </body>
+</html>
