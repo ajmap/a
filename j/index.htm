@@ -155,6 +155,55 @@
     
     //  More info on the "function object" type
     // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+    <!--  LET OP! -->
+    // Step 1
+    const library = [
+      {
+        title: 'The Road Ahead',
+        author: 'Bill Gates',
+        status: {
+          own: true,
+          reading: false,
+          read: false,
+        },
+      },
+      {
+        title: 'Steve Jobs',
+        author: 'Walter Isaacson',
+        status: {
+          own: true,
+          reading: false,
+          read: false,
+        },
+      },
+      {
+        title: 'Mockingjay',
+        author: 'Suzanne Collins',
+        status: {
+          own: true,
+          reading: false,
+          read: false,
+        },
+      },
+    ];
+    
+    // Step 2
+    library[0].status.read = true;
+    library[1].status.read = true;
+    library[2].status.read = true;
+    
+    // Step 3
+    const { title: firstBook } = library[0];
+    
+    console.log(firstBook);
+    
+    // Step 4
+    const libraryJSON = JSON.stringify(library);
+    
+    console.log(libraryJSON);
+
+    
     <script>
       // Log number
       console.log(100);
@@ -303,6 +352,53 @@
       
       //  More info on the "function object" type
       // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+      // LET OP!
+      // Step 1
+      const library = [
+        {
+          title: 'The Road Ahead',
+          author: 'Bill Gates',
+          status: {
+            own: true,
+            reading: false,
+            read: false,
+          },
+        },
+        {
+          title: 'Steve Jobs',
+          author: 'Walter Isaacson',
+          status: {
+            own: true,
+            reading: false,
+            read: false,
+          },
+        },
+        {
+          title: 'Mockingjay',
+          author: 'Suzanne Collins',
+          status: {
+            own: true,
+            reading: false,
+            read: false,
+          },
+        },
+      ];
+      
+      // Step 2
+      library[0].status.read = true;
+      library[1].status.read = true;
+      library[2].status.read = true;
+      
+      // Step 3
+      const { title: firstBook } = library[0];
+      
+      console.log(firstBook);
+      
+      // Step 4
+      const libraryJSON = JSON.stringify(library);
+      
+      console.log(libraryJSON);
     </script>
   </body>
 </html>
