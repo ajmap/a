@@ -324,8 +324,8 @@
       // https://262.ecma-international.org/5.1/#sec-11.4.3
 
       // Value is stored in the stack
-      const name = 'John';
-      const age = 30;
+      const nam = 'John';
+      const ge = 30;
       
       // Reference is stored in the heap
       const person = {
@@ -339,7 +339,7 @@
       let newPerson = person;
       newPerson.name = 'Bradley';
       
-      console.log(name, newName); // John, Jonathan
+      console.log(nam, newName); // John, Jonathan
       console.log(person, newPerson); // { name: 'Bradley', age: 40 }, { name: 'Bradley', age: 40 }
     </script>
   </body>
