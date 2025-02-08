@@ -328,7 +328,7 @@
       const ge = 30;
       
       // Reference is stored in the heap
-      const person = {
+      const prson = {
         name: 'Brad',
         age: 40,
       };
@@ -336,11 +336,11 @@
       let newName = name;
       newName = 'Jonathan';
       
-      let newPerson = person;
+      let newPerson = prson;
       newPerson.name = 'Bradley';
       
       console.log(nam, newName); // John, Jonathan
-      console.log(person, newPerson); // { name: 'Bradley', age: 40 }, { name: 'Bradley', age: 40 }
+      console.log(prson, newPerson); // { name: 'Bradley', age: 40 }, { name: 'Bradley', age: 40 }
     </script>
   </body>
 </html>
