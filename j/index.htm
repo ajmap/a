@@ -492,45 +492,45 @@
     
     console.log(d);
 
-    let xd;
-    let dt = new Date();
+    let x;
+    let d = new Date();
     
     // Date methods
     
-    xd = dt.toString();
+    x = d.toString();
     
-    xd = dt.getTime();
-    xd = dt.valueOf();
+    x = d.getTime();
+    x = d.valueOf();
     
-    xd = dt.getFullYear();
+    x = d.getFullYear();
     
-    xd = dt.getMonth();
-    xd = dt.getMonth() + 1;
+    x = d.getMonth();
+    x = d.getMonth() + 1;
     
-    xd = dt.getDate();
+    x = d.getDate();
     
-    xd = dt.getDay();
+    x = d.getDay();
     
-    xd = dt.getHours();
+    x = d.getHours();
     
-    xd = dt.getMinutes();
+    x = d.getMinutes();
     
-    xd = dt.getSeconds();
+    x = d.getSeconds();
     
-    xd = dt.getMilliseconds();
+    x = d.getMilliseconds();
     
-    xd = `${dt.getFullYear()}-${dt.getMonth() + 1}-${dt.getDate()}`;
+    x = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
     
     // Intl.DateTimeFormat API (locale specific)
-    xd = Intl.DateTimeFormat('en-US').format(dt);
-    xd = Intl.DateTimeFormat('en-GB').format(dt);
-    xd = Intl.DateTimeFormat('default').format(dt);
+    x = Intl.DateTimeFormat('en-US').format(d);
+    x = Intl.DateTimeFormat('en-GB').format(d);
+    x = Intl.DateTimeFormat('default').format(d);
     
-    xd = Intl.DateTimeFormat('default', { month: 'long' }).format(dt);
+    x = Intl.DateTimeFormat('default', { month: 'long' }).format(dt);
     
-    xd = dt.toLocaleString('default', { month: 'short' });
+    x = d.toLocaleString('default', { month: 'short' });
     
-    xd = dt.toLocaleString('default', {
+    x = d.toLocaleString('default', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
@@ -541,7 +541,7 @@
       timeZone: 'America/New_York',
     });
     
-    console.log(xd);
+    console.log(x);
       
     <script>
       // Log number
@@ -1019,6 +1019,57 @@
       d = Math.floor(Date.now() / 1000);
       
       console.log(d);
+
+          let xd;
+    let dt = new Date();
+    
+    // Date methods
+    
+    xd = dt.toString();
+    
+    xd = dt.getTime();
+    xd = dt.valueOf();
+    
+    xd = dt.getFullYear();
+    
+    xd = dt.getMonth();
+    xd = dt.getMonth() + 1;
+    
+    xd = dt.getDate();
+    
+    xd = dt.getDay();
+    
+    xd = dt.getHours();
+    
+    xd = dt.getMinutes();
+    
+    xd = dt.getSeconds();
+    
+    xd = dt.getMilliseconds();
+    
+    xd = `${dt.getFullYear()}-${dt.getMonth() + 1}-${dt.getDate()}`;
+    
+    // Intl.DateTimeFormat API (locale specific)
+    xd = Intl.DateTimeFormat('en-US').format(dt);
+    xd = Intl.DateTimeFormat('en-GB').format(dt);
+    xd = Intl.DateTimeFormat('default').format(dt);
+    
+    xd = Intl.DateTimeFormat('default', { month: 'long' }).format(dt);
+    
+    xd = dt.toLocaleString('default', { month: 'short' });
+    
+    xd = dt.toLocaleString('default', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      timeZone: 'America/New_York',
+    });
+    
+    console.log(xd);
     </script>
   </body>
 </html>
