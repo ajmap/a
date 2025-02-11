@@ -9,7 +9,7 @@
   </head>
   <body>
     // Log number
-    console.log(100);
+    console.log(100);F
     
     // Log string
     console.log('Hello World');
@@ -492,6 +492,56 @@
     
     console.log(d);
 
+    let xd;
+    let dt = new Date();
+    
+    // Date methods
+    
+    xd = dt.toString();
+    
+    xd = dt.getTime();
+    xd = dt.valueOf();
+    
+    xd = dt.getFullYear();
+    
+    xd = dt.getMonth();
+    xd = dt.getMonth() + 1;
+    
+    xd = dt.getDate();
+    
+    xd = dt.getDay();
+    
+    xd = dt.getHours();
+    
+    xd = dt.getMinutes();
+    
+    xd = dt.getSeconds();
+    
+    xd = dt.getMilliseconds();
+    
+    xd = `${dt.getFullYear()}-${dt.getMonth() + 1}-${dt.getDate()}`;
+    
+    // Intl.DateTimeFormat API (locale specific)
+    xd = Intl.DateTimeFormat('en-US').format(dt);
+    xd = Intl.DateTimeFormat('en-GB').format(dt);
+    xd = Intl.DateTimeFormat('default').format(dt);
+    
+    xd = Intl.DateTimeFormat('default', { month: 'long' }).format(dt);
+    
+    xd = dt.toLocaleString('default', { month: 'short' });
+    
+    xd = dt.toLocaleString('default', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      timeZone: 'America/New_York',
+    });
+    
+    console.log(xd);
       
     <script>
       // Log number
