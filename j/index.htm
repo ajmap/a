@@ -1413,7 +1413,7 @@
     console.log(arr4);  
 
     // Creating an object
-    const prson = {
+    const persona = {
       name: 'John Doe',
       age: 30,
       isAdmin: true,
@@ -1426,27 +1426,27 @@
     };
     
     // Accessing object properties
-    x = prson.name; // Dot notation
-    x = prson['age']; // Bracket notation
-    x = prson.address.state;
-    x = prson.hobbies[0];
+    x = persona.name; // Dot notation
+    x = persona['age']; // Bracket notation
+    x = persona.address.state;
+    x = persona.hobbies[0];
     
     // Updating properties
-    prson.name = 'Jane Doe';
-    prson['isAdmin'] = false;
+    persona.name = 'Jane Doe';
+    persona['isAdmin'] = false;
     
     // Deleting properties
-    delete prson.age;
+    delete persona.age;
     
     // Create new properties
-    prson.hasChildren = true;
+    persona.hasChildren = true;
     
     // Add functions
-    prson.greet = function () {
+    persona.greet = function () {
       console.log(`Hello, my name is ${this.name}`);
     };
     
-    prson.greet();
+    persona.greet();
     
     // Keys with multiple words
     const person2 = {
