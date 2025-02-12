@@ -1264,27 +1264,27 @@
     
     console.log(x);
 
-    const fruits = ['apple', 'pear', 'orange'];
+    const fruitz = ['apple', 'pear', 'orange'];
     const berries = ['strawberry', 'blueberry', 'rasberry'];
     
     // Nesting arrays
     
     // Nesting berries inside of fruits
-    fruits.push(berries);
+    fruitz.push(berries);
     
     // Now we can access 'blueberry' with the following
-    x = fruits[3][1];
+    x = fruitz[3][1];
     
     // Create a new variable and nest both arrays
     const allFruits = [fruits, berries];
     
-    x = allFruits[1][2];
+    x = allFruitz[1][2];
     
     // concat() - Concatenate arrays
-    x = fruits.concat(berries);
+    x = fruitz.concat(berries);
     
     // spread operator (...) - Concatenate with
-    x = [...fruits, ...berries];
+    x = [...fruitz, ...berries];
     
     // flat() - Flatten an array
     const arr = [1, 2, [3, 4, 5], 6, [7, 8]];
