@@ -1076,6 +1076,33 @@
     
     const foo = 1;
     var bar = 2; // Put on the window object
+
+    function first() {
+      const x = 100;
+    
+      function second() {
+        const y = 200;
+        console.log(x + y);
+      }
+    
+      // console.log(y);
+    
+      second();
+    }
+    
+    first();
+    
+    if (true) {
+      const x = 100;
+    
+      if (x === 100) {
+        const y = 200;
+        console.log(x + y);
+      }
+    
+      console.log(y);
+    }
+  
     <script>
       // Log number
       console.log(100);
@@ -2127,6 +2154,33 @@
     
     const foo = 1;
     var bar = 2; // Put on the window object  
+
+    function first() {
+      const x = 100;
+    
+      function second() {
+        const y = 200;
+        console.log(x + y);
+      }
+    
+      // console.log(y);
+    
+      second();
+    }
+    
+    first();
+    
+    if (true) {
+      const x = 100;
+    
+      if (x === 100) {
+        const y = 200;
+        console.log(x + y);
+      }
+    
+      console.log(y);
+    }
+
     </script>
   </body>
 </html>
