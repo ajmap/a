@@ -1,1 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner Conversation</title>
+    <style>
+        * {
+                        margin: 0;
+        }
+     #start {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+        }
 
+#text-container {
+            display: none;
+            padding: 2vw;
+            font-family: Arial;
+            line-height: 4.6vw;
+        }
+
+.word {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 4.7vw;
+    font-weight: bold;
+    color: white;
+}
+        .word.black {
+             color: Black;   
+        }
+        .word.dark {
+            color: DarkOrange;
+        }
+        .word.medium {
+            color: MediumBlue;
+        }
+        .word.blue { 
+            color: DodgerBlue;
+        }
+        .word.royal {
+            color: RoyalBlue;
+        }
+        .word.sky {
+            color: SkyBlue;
+        }
+        .word.light { 
+            color: LightBlue;
+        }
+        .word.aqua {
+            color: AquaMarine;
+        }
+        .word.white {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="start"></div>
+    <div id="text-container">
+      <span class="word">My</span>
+      <span class="word">inner</span>
+      <span class="word">conversation</span>
+      <span class="word">is</span>
+      <span class="word">my</span>
+      <span class="word">constant</span>
+      <span class="word">companion;</span>
+      <span class="word">it</span>
+      <span class="word">is</span>
+      <span class="word">the</span>
+      <span class="word">lens</span>
+      <span class="word">through</span>
+      <span class="word">which</span>
+      <span class="word">I</span>
+      <span class="word">experience</span>
+      <span class="word">every</span>
+      <span class="word">event,</span>
+      <span class="word">the</span>
+      <span class="word">filter</span>
+      <span class="word">through</span>
+      <span class="word">which</span>
+      <span class="word">I</span>
+      <span class="word">interpret</span>
+      <span class="word">every</span>
+      <span class="word">circumstance,</span>
+      <span class="word">the</span>
+      <span class="word">standard</span>
+      <span class="word">by</span>
+      <span class="word">which</span>
+      <span class="word">I</span>
+      <span class="word">measure</span>
+      <span class="word">every</span>
+      <span class="word">possibility.</span>
+      <span class="word">My</span>
+      <span class="word">inner</span>
+      <span class="word">conversation</span>
+      <span class="word">creates</span>
+      <span class="word">my</span>
+      <span class="word">belief</span>
+      <span class="word">system,</span>
+      <span class="word">and</span>
+      <span class="word">my</span>
+      <span class="word">belief</span>
+      <span class="word">system</span>
+      <span class="word">creates</span>
+      <span class="word">my</span>
+      <span class="word">reality.</span>
+      <span class="word">Therefore,</span>
+      <span class="word">my</span>
+      <span class="word">inner</span>
+      <span class="word">conversation</span>
+      <span class="word">will</span>
+      <span class="word">consistently</span>
+      <span class="word">reinforce</span>
+      <span class="word">the</span>
+      <span class="word">beliefs</span>
+      <span class="word">that</span>
+      <span class="word">support</span>
+      <span class="word">my</span>
+      <span class="word">desired</span>
+      <span class="word">state.</span>
+        <!--
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>
+        <span class="word"></span>  -->
+    </div>
+    <script>
+        let start = document.getElementById('start');
+                let text = document.getElementById('text-container');
+                start.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            start.style.display = 'none'
+            text.style.display = 'block'
+        })
+        document.addEventListener('DOMContentLoaded', () => {
+        const words = document.querySelectorAll('.word');
+        const wordStates1 = JSON.parse(localStorage.getItem('wordStates1')) || {};
+    words.forEach((word, index) => {
+        // Set initial state based on local storage
+        if (wordStates1[index] === 1) {
+            word.classList.add('black');
+        } else if (wordStates1[index] === 2) {
+            word.classList.add('dark');
+        } else if (wordStates1[index] === 3) {
+            word.classList.add('medium');
+        } else if (wordStates1[index] === 4) {
+            word.classList.add('blue');
+        } else if (wordStates1[index] === 5) {
+            word.classList.add('royal');
+        } else if (wordStates1[index] === 6) {
+            word.classList.add('sky');
+        } else if (wordStates1[index] === 7) {
+            word.classList.add('light');
+        } else if (wordStates1[index] === 8) {
+            word.classList.add('aqua');
+        } else if (wordStates1[index] === 10) {
+            word.classList.add('white');
+            word.innerText = "";
+        } 
+        word.addEventListener('click', () => {
+            if (!wordStates1[index]) {
+                wordStates1[index] = 1;
+                word.classList.add('black');
+            } else if (wordStates1[index] === 1) {
+                wordStates1[index] = 2;
+                word.classList.remove('black');
+                word.classList.add('dark');
+            } else if (wordStates1[index] === 2) {
+                wordStates1[index] = 3;
+                word.classList.remove('dark');
+                word.classList.add('medium');
+            } else if (wordStates1[index] === 3) {
+                wordStates1[index] = 4; 
+                word.classList.remove('medium');
+                word.classList.add('blue');
+            } else if (wordStates1[index] === 4) {
+                wordStates1[index] = 5;
+                word.classList.remove('blue');
+                word.classList.add('royal');
+            } else if (wordStates1[index] === 5) {
+                wordStates1[index] = 6;
+                word.classList.remove('royal');
+                word.classList.add('sky');
+            } else if (wordStates1[index] === 6) {
+                wordStates1[index] = 7; 
+                word.classList.remove('sky');
+                word.classList.add('light');
+            } else if (wordStates1[index] === 7) {
+                wordStates1[index] = 8;
+                word.classList.remove('light');
+                word.classList.add('aqua');
+            } else if (wordStates1[index] === 8) {
+                wordStates1[index] = 9;
+                word.classList.remove('aqua');
+                word.classList.add('white');
+            } else if (wordStates1[index] === 9) {
+                wordStates1[index] = 10;
+                word.innerText = ""
+            } 
+            localStorage.setItem('wordStates1', JSON.stringify(wordStates1));
+        });
+    });
+});
+    </script>
+</body>
+</html>
