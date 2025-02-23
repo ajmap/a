@@ -1,0 +1,114 @@
+<html>
+<head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+        }
+        #A {
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+        #B {
+            display: none;
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        #sq {
+            font-size: 18vw;
+            color: white
+        }
+        #D {
+            display: none;
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        #st {
+            font-size: 15vw;
+            color: white
+        }
+        #E {
+            display: none;
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+        #ci {
+            font-size: 26vw;
+            color: #0047AB;
+        }
+        #F {
+            display: none;
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        #xy {
+            font-size: 26vw;
+            color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id='A'></div>
+    <div id='B'><div id='sq'>&#x25a0;</div></div>
+    <div id='D'><div id='st'>&#9733;</div></div>
+    <div id='E'><div id='ci'>&#9679;</div></div>
+    <div id='F'><div id='xy'>xy</div></div>
+
+    
+
+    </div>    
+    </main>    
+    <script>
+        let T = Number(localStorage.getItem("#super"))
+        let A = document.getElementById('A')
+        let B = document.getElementById('B')
+        let D = document.getElementById('D')
+        let E = document.getElementById('E')
+        let F = document.getElementById('F')
+        A.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            A.style.display = 'none'
+            B.style.display = 'flex'
+            setInterval(function() {B.style.display = 'none'}, 1 * T)
+            setInterval(function() {D.style.display = 'flex'}, 2 * T)
+            setInterval(function() {D.style.display = 'none'}, 3 * T)
+            setInterval(function() {E.style.display = 'flex'}, 4 * T)
+            setInterval(function() {E.style.display = 'none'}, 5 * T)
+            setInterval(function() {D.style.display = 'none'}, 5 * T)
+            setInterval(function() {A.style.display = 'flex'}, 6 * T)
+            setInterval(function() {F.style.display = 'flex'}, 7 * T)
+            T -= 100
+            localStorage.setItem("#super", T);
+     })
+
+    </script>
+</body>    
+</html>
