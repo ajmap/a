@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day</title>
+      <style>
+        * {
+                       margin: 0;
+        }  
+        section {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+        }
+        main {
+            display: none;
+            font-family: Arial
+        }
+      </style>    
+  </head>
+  <body>
+      <section></section>
+      <main></main>
+    <script>
+        const main = document.getElementsByTagName('main');
+        const date = new Date();
+        const hour = date.getHours();
+        const rndmNmbr = Math.floor(Math.random() * 3);
+        const morning = ['<p style="font-size: 16px;">This is a paragraph.</p>']
+        const day = []
+        const studio = []
+        const stage = []
+        const night = []
+        const start = document.getElementsByTagName('section')[0];
+        start.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            start.style.display = 'none'
+            main[0].style.display = 'block'
+        })
+        if (hour < 25) {
+            main[0].innerHTML = morning[0]
+        } else if (hour < 13) {
+            main[0].innerHTML = day[0]
+        } else if (hour < 16) {
+            main[0].innerHTML = studio[0]
+        } else if (t < 19) {
+            main[0].innerHTML = stage[0]
+        } else {
+            main.innerHTML = night[0]
+        }
+        
+    </script>  
+  </body>
+</html>
+
