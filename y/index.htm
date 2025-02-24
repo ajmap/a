@@ -26,6 +26,7 @@
       <main></main>
     <script>
         const main = document.getElementsByTagName('main');
+        const p = document.getElementsByTagName('p');
         const date = new Date();
         const hours = date.getHours();
         const rndmNmbr = Math.floor(Math.random() * 10);
@@ -58,7 +59,7 @@
             main[0].innerHTML = night[rndmNmbr]
         }
         if (window.outerWidth > window.outerHeight) {
-          main[0].style.fontSize = '4vw';
+          p[0].style.fontSize = '4vw';
         };
     </script>  
   </body>
