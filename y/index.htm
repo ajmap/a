@@ -61,7 +61,7 @@
         if (window.outerWidth > window.outerHeight) {
           p[0].style.fontSize = '4vw';
         };
-        main.addEventListener('click', () => { rndmNmbr = Math.floor(Math.random() * 10);        
+        main[0].addEventListener('click', () => { rndmNmbr = Math.floor(Math.random() * 10);        
         if (hour < 9) {
             main[0].innerHTML = morning[rndmNmbr]
         } else if (hour < 13) {
