@@ -3886,7 +3886,7 @@
             text.style.display = 'block'
         })
         text.addEventListener("dblclick", () => {
-            localStorage.clearItem('WordStates1')
+            localStorage.removeItem('WordStates1')
         })
         document.addEventListener('DOMContentLoaded', () => {
         const words = document.querySelectorAll('.word');
