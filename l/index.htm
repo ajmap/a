@@ -57,31 +57,31 @@
             let fontSize; 
 
             if (textLength > 60) {
-                fontSize = 8;
+                fontSize = 7;
             } else if (textLength > 55) {
-                fontSize = 8.5;
+                fontSize = 8;
             } else if (textLength > 50) {
-                fontSize = 10;
+                fontSize = 9;
             } else if (textLength > 45) {
-                fontSize = 12;
+                fontSize = 10;
             } else if (textLength > 40) {
-                fontSize = 13;
+                fontSize = 11;
             } else if (textLength > 35) {
-                fontSize = 14;
+                fontSize = 12;
             } else if (textLength > 30) {
-                fontSize = 15;
+                fontSize = 13;
             } else if (textLength > 25) {
-                fontSize = 16;
+                fontSize = 14;
             } else if (textLength > 20) {
-                fontSize = 17;
+                fontSize = 15;
             } else if (textLength > 15) {
-                fontSize = 18;
+                fontSize = 16;
             } else if (textLength > 10) {
-                fontSize = 19;
+                fontSize = 17;
             } else if (textLength > 5) {
-                fontSize = 20;
+                fontSize = 18;
             } else if (textLength > 0) {
-                fontSize = 30;
+                fontSize = 19;
             }
 
             displayedTextElement.style.fontSize = fontSize + "vw";
@@ -101,6 +101,7 @@
 
         setInterval(() => {
             modifyText();
+            time += 1000;
         }, time); 
 
     </script>
