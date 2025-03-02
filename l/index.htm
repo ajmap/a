@@ -2,16 +2,10 @@
 <head>
     <title>Text Memorization</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: sans-serif;
-        }
+
         #text-container {
-            text-align: center;
+            margin: 2vw;
+            font-family: sans-serif;
         }
     </style>
 </head>
@@ -22,22 +16,16 @@
 
     <script>
         const texts = [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-            "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "A very short sentence.",
-            "This is a medium length sentence that has some words.",
-            "A long, long, long, long, long, long, long, long, long, long sentence with many words.",
-            "Another example of a medium sized sentence with a few words.",
-            "Finally, the last sentence in this collection of example sentences."
+            'Morning comes whether I like it or not. Best to greet it like an old friend. I’ve walked through the dark. I know what’s waiting there. That’s why I don’t waste the light. Coffee. Black. No sugar, no nonsense. Ain’t no need to sweeten something that does its job just fine the way it is. Got music to write, songs to sing, roads to walk. Sooner I start, sooner I get somewhere worth being.', 'Some folks talk about what they’re gonna do. Me? I just do it. A man’s only as good as his word, and his word’s only as good as his work. So I work. I don’t sing to be famous. I sing because there’s something inside that don’t let me stop. The road don’t care who you are. It don’t bend for you, don’t make it easy. You learn to walk it anyway.', 'They didn’t come to see a man pretend. They came to see a man mean every damn word he sings. Music ain’t about being perfect. It’s about being real. And real ain’t always pretty. Some artists try to be larger than life. I just try to be exactly my size and let the music do the rest. I don’t beg ‘em to clap. I just stand there, tell the truth, and let ‘em feel it. And when they do? It’s like thunder.', 'You don’t write a song. You live it first, and then you tell it. A good song don’t come easy. You gotta fight for it. And when you do? It’ll fight for you. Mistakes? Keep ‘em in. That’s where the life is. That’s where you hear a man’s soul, not just his voice. A song’s gotta mean somethin’, or it ain’t worth the breath it takes to sing it.', 'I did my job today. Sang it like I meant it, played it like I had to, walked my miles honest. That’s enough. Tomorrow? More miles, more music, more truth to tell. But for now? Just the quiet. Just the dark. Just me and the road waiting outside.', 'Ain’t afraid of sleep. Ain’t afraid of what comes after, either. When a man’s done his work, he don’t need to be afraid of much at all.'
         ];
 
         let currentIndex = Math.floor(Math.random() * texts.length);
         let currentText = texts[currentIndex];
-        let originalText = currentText; // Store the original text
+        let originalText = currentText; 
         const displayedTextElement = document.getElementById("displayed-text");
+        let time = 20000;
+        displayedTextElement.addEventListener('click', () => time += 2000)
+        
 
         function updateTextDisplay() {
             displayedTextElement.textContent = currentText;
@@ -46,40 +34,38 @@
 
         function adjustFontSize() {
             const textLength = currentText.length;
-            let fontSize = 40; // Default font size
+            let fontSize; 
 
-            if (textLength > 100) {
-                fontSize = 16;
-            } else if (textLength > 50) {
-                fontSize = 24;
-            } else if (textLength > 25) {
-                fontSize = 32;
+            if (textLength > 50) {
+                fontSize = 4;
+            } else if (textLength > 40) {
+                fontSize = 5;
+            } else if (textLength > 30) {
+                fontSize = 6;
+            } else if (textLength > 20) {
+                fontSize = 7;
+            } else if (textLength > 10) {
+                fontSize = 8;
             }
 
-            displayedTextElement.style.fontSize = fontSize + "px";
+            displayedTextElement.style.fontSize = fontSize + "vw";
         }
 
         function modifyText() {
             const words = currentText.split(" ");
             if (words.length > 2) {
-                words.shift(); // Remove first word
-                words.pop();   // Remove last word
+                words.shift(); 
+                words.pop();  
                 currentText = words.join(" ");
             }
             updateTextDisplay();
         }
 
-        updateTextDisplay(); // Initial display
+        updateTextDisplay(); 
 
         setInterval(() => {
             modifyText();
-        }, 10000); // Modify text every 10 seconds
-
-        //Optional: Reset to original text after a long period.
-        // setInterval(() => {
-        //   currentText = originalText;
-        //   updateTextDisplay();
-        // }, 120000); //Reset every 2 minutes.
+        }, time); 
 
     </script>
 </body>
