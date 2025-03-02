@@ -34,8 +34,8 @@
         let originalText = currentText; 
         const displayedTextElement = document.getElementById("displayed-text");
         const textContainer = document.getElementById("text-container");
-        let time = 20000;
-        displayedTextElement.addEventListener('click', () => time += 2000)
+        let time = 5000;
+        displayedTextElement.addEventListener('click', () => time += 1000)
             s.addEventListener("click", () => {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
