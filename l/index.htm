@@ -64,7 +64,7 @@
         updateTextDisplay(); 
 
         let intervalId;
-        let dynamicDelay = 5000;
+        let dynamicDelay = 4000;
         
         function startDynamicInterval() {
           intervalId = setInterval(myFunction, dynamicDelay);
@@ -73,7 +73,7 @@
         function myFunction() {
           modifyText();
         
-          dynamicDelay += 1000;
+          dynamicDelay += 500;
         
           clearInterval(intervalId);
           startDynamicInterval();
