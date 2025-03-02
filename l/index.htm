@@ -61,13 +61,13 @@
                 currentText = words.join(" ");
             }
             updateTextDisplay();
+            time += 1000;
         }
 
         updateTextDisplay(); 
 
         setInterval(() => {
             modifyText();
-            time += 1000;
         }, time); 
 
     </script>
