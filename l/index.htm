@@ -36,7 +36,7 @@
         let originalText = currentText; 
         const displayedTextElement = document.getElementById("displayed-text");
         const textContainer = document.getElementById("text-container");
-        let time = 5000;
+        var time = 5000;
         displayedTextElement.addEventListener('click', () => time += 1000)
             s.addEventListener("click", () => {
         if (!document.fullscreenElement) {
@@ -61,7 +61,7 @@
                 currentText = words.join(" ");
             }
             updateTextDisplay();
-            time += 1000;
+            time += 10000;
         }
 
         updateTextDisplay(); 
