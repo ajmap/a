@@ -36,8 +36,6 @@
         let originalText = currentText; 
         const displayedTextElement = document.getElementById("displayed-text");
         const textContainer = document.getElementById("text-container");
-        var time = 5000;
-        displayedTextElement.addEventListener('click', () => time += 1000)
             s.addEventListener("click", () => {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
@@ -61,15 +59,34 @@
                 currentText = words.join(" ");
             }
             updateTextDisplay();
-            time += 10000;
         }
 
         updateTextDisplay(); 
 
-        setInterval(() => {
-            modifyText();
-        }, time); 
-
+        let intervalId;
+        let dynamicDelay = 1000;
+        
+        function startDynamicInterval() {
+          intervalId = setInterval(myFunction, dynamicDelay);
+        }
+        
+        function myFunction() {
+          modifyText();
+        
+          dynamicDelay += 500;
+        
+          clearInterval(intervalId);
+          startDynamicInterval();
+        }
+        
+        startDynamicInterval();
+        
+        // Simulating some external event that might alter the delay.
+        setTimeout(function(){
+            dynamicDelay = 200;
+            clearInterval(intervalId);
+            startDynamicInterval();
+        }, 5000);
     </script>
 </body>
 </html>
