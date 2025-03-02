@@ -37,15 +37,15 @@
             let fontSize; 
 
             if (textLength > 50) {
-                fontSize = 4;
-            } else if (textLength > 40) {
-                fontSize = 5;
-            } else if (textLength > 30) {
-                fontSize = 6;
-            } else if (textLength > 20) {
-                fontSize = 7;
-            } else if (textLength > 10) {
                 fontSize = 8;
+            } else if (textLength > 40) {
+                fontSize = 10;
+            } else if (textLength > 30) {
+                fontSize = 12;
+            } else if (textLength > 20) {
+                fontSize = 14;
+            } else if (textLength > 10) {
+                fontSize = 16;
             }
 
             displayedTextElement.style.fontSize = fontSize + "vw";
