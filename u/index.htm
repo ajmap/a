@@ -3603,66 +3603,61 @@
     words.forEach((word, index) => {
         // Set initial state based on local storage
         if (wordStates1[index] === 1) {
-            word.classList.add('black');
-        } else if (wordStates1[index] === 2) {
             word.classList.add('dark');
-        } else if (wordStates1[index] === 3) {
+        } else if (wordStates1[index] === 2) {
             word.classList.add('medium');
-        } else if (wordStates1[index] === 4) {
+        } else if (wordStates1[index] === 3) {
             word.classList.add('blue');
-        } else if (wordStates1[index] === 5) {
+        } else if (wordStates1[index] === 4) {
             word.classList.add('royal');
-        } else if (wordStates1[index] === 6) {
+        } else if (wordStates1[index] === 5) {
             word.classList.add('sky');
-        } else if (wordStates1[index] === 7) {
+        } else if (wordStates1[index] === 6) {
             word.classList.add('light');
-        } else if (wordStates1[index] === 8) {
+        } else if (wordStates1[index] === 7) {
             word.classList.add('aqua');
-        } else if (wordStates1[index] === 9) {
+        } else if (wordStates1[index] === 8) {
             word.classList.add('white');
-        } else if (wordStates1[index] === 10) {
+        } else if (wordStates1[index] === 9) {
             word.innerText = "";
         } 
         word.addEventListener('click', () => {
             if (!wordStates1[index]) {
                 wordStates1[index] = 1;
-                word.classList.add('black');
+                word.classList.add('dark');
             } else if (wordStates1[index] === 1) {
                 wordStates1[index] = 2;
-                word.classList.remove('black');
-                word.classList.add('dark');
-            } else if (wordStates1[index] === 2) {
-                wordStates1[index] = 3;
                 word.classList.remove('dark');
                 word.classList.add('medium');
-            } else if (wordStates1[index] === 3) {
-                wordStates1[index] = 4; 
+            } else if (wordStates1[index] === 2) {
+                wordStates1[index] = 3;
                 word.classList.remove('medium');
                 word.classList.add('blue');
-            } else if (wordStates1[index] === 4) {
-                wordStates1[index] = 5;
+            } else if (wordStates1[index] === 3) {
+                wordStates1[index] = 4; 
                 word.classList.remove('blue');
                 word.classList.add('royal');
-            } else if (wordStates1[index] === 5) {
-                wordStates1[index] = 6;
+            } else if (wordStates1[index] === 4) {
+                wordStates1[index] = 5;
                 word.classList.remove('royal');
                 word.classList.add('sky');
-            } else if (wordStates1[index] === 6) {
-                wordStates1[index] = 7; 
+            } else if (wordStates1[index] === 5) {
+                wordStates1[index] = 6;
                 word.classList.remove('sky');
                 word.classList.add('light');
-            } else if (wordStates1[index] === 7) {
-                wordStates1[index] = 8;
+            } else if (wordStates1[index] === 6) {
+                wordStates1[index] = 7; 
                 word.classList.remove('light');
                 word.classList.add('aqua');
-            } else if (wordStates1[index] === 8) {
-                wordStates1[index] = 9;
+            } else if (wordStates1[index] === 7) {
+                wordStates1[index] = 8;
                 word.classList.remove('aqua');
                 word.classList.add('white');
-            } else if (wordStates1[index] === 9) {
-                wordStates1[index] = 10;
+            } else if (wordStates1[index] === 8) {
+                wordStates1[index] = 9;
+                word.classList.remove('white');
                 word.innerText = ""
-            } 
+           }
             localStorage.setItem('wordStates1', JSON.stringify(wordStates1));
         });
     });
