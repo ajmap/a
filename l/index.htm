@@ -35,7 +35,7 @@
         let originalText = currentText; 
         const displayedTextElement = document.getElementById("displayed-text");
         const textContainer = document.getElementById("text-container");
-        let time = 5000;
+        let time = 500;
         displayedTextElement.addEventListener('click', () => time += 1000)
             s.addEventListener("click", () => {
         if (!document.fullscreenElement) {
@@ -101,7 +101,7 @@
 
         setInterval(() => {
             modifyText();
-            time += 1000;
+            time += 100;
         }, time); 
 
     </script>
