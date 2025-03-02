@@ -33,6 +33,7 @@
         let currentText = texts[currentIndex];
         let originalText = currentText; 
         const displayedTextElement = document.getElementById("displayed-text");
+        const textContainer = document.getElementById("text-container");
         let time = 20000;
         displayedTextElement.addEventListener('click', () => time += 2000)
             s.addEventListener("click", () => {
@@ -42,7 +43,7 @@
           document.exitFullscreen();
         }
         s.style.display = "none";
-        displayedTextElement.style.display = "block";
+        textContainer.style.display = "block";
       });
 
         function updateTextDisplay() {
