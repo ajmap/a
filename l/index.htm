@@ -9,6 +9,7 @@
             display: none;
             margin: 6vw;
             font-family: sans-serif;
+            font-size: 8vw;
             word-spacing: 0.8vw;
         }
         #s {
@@ -49,21 +50,8 @@
 
         function updateTextDisplay() {
             displayedTextElement.textContent = currentText;
-            adjustFontSize();
         }
 
-        function adjustFontSize() {
-            const textLength = currentText.length;
-            let fontSize; 
-
-            if (textLength > 50) {
-                fontSize = 8;
-            } else if (textLength > 25) {
-                fontSize = 14;
-            }
-
-            displayedTextElement.style.fontSize = fontSize + "vw";
-        }
 
         function modifyText() {
             const words = currentText.split(" ");
