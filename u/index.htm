@@ -3885,9 +3885,6 @@
             start.style.display = 'none'
             text.style.display = 'block'
         })
-        text.addEventListener("dblclick", () => {
-            localStorage.removeItem('WordStates1')
-        })
         document.addEventListener('DOMContentLoaded', () => {
         const words = document.querySelectorAll('.word');
         const wordStates1 = JSON.parse(localStorage.getItem('wordStates1')) || {};
