@@ -64,7 +64,7 @@
         updateTextDisplay(); 
 
         let intervalId;
-        let dynamicDelay = 1000;
+        let dynamicDelay = 5000;
         
         function startDynamicInterval() {
           intervalId = setInterval(myFunction, dynamicDelay);
@@ -73,7 +73,7 @@
         function myFunction() {
           modifyText();
         
-          dynamicDelay += 500;
+          dynamicDelay += 1000;
         
           clearInterval(intervalId);
           startDynamicInterval();
@@ -81,12 +81,6 @@
         
         startDynamicInterval();
         
-        // Simulating some external event that might alter the delay.
-        setTimeout(function(){
-            dynamicDelay = 200;
-            clearInterval(intervalId);
-            startDynamicInterval();
-        }, 5000);
     </script>
 </body>
 </html>
