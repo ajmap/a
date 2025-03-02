@@ -55,6 +55,7 @@
 <body>
     <div id="start"></div>
     <div id="text-container">  
+        <!--
         <span class="word"> Another</span>
         <span class="word"> day</span>
         <span class="word"> to</span>
@@ -3494,12 +3495,12 @@
         <span class="word"> dream</span>
         <span class="word"> it</span>
         <span class="word"> instead.</span>
-
+        -->
     </div>
     <script>
         let start = document.getElementById('start');
-                let text = document.getElementById('text-container');
-                start.addEventListener("click", () => {
+        let text = document.getElementById('text-container');
+        start.addEventListener("click", () => {
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen();
             } else if (document.exitFullscreen) {
@@ -3507,6 +3508,9 @@
             }
             start.style.display = 'none'
             text.style.display = 'block'
+        })
+        text.addEventListener("dblclick", () => {
+            localStorage.clearItem('WordStates1')
         })
         document.addEventListener('DOMContentLoaded', () => {
         const words = document.querySelectorAll('.word');
