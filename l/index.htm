@@ -27,7 +27,8 @@
 
     <script>
 
-        const texts = ["Another day of making history. Some people dream of being great, but I do not need to dream, I am living it. The music is not something I do. It is what I am. And tomorrow? It is going to be even better."];
+        const texts = ["Music is not just sound, it is a feeling. You have to let it move through you, let it take you where it wants to go. Right now, this song, man, it is something special. I can feel it. When it is done, people are going to play this one over and over. It has got soul, it has got truth. And that is what makes a song last forever."];
+       //     "Another day of making history. Some people dream of being great, but I do not need to dream, I am living it. The music is not something I do. It is what I am. And tomorrow? It is going to be even better.",
        //     "Alright now, here we go. They are out there waiting, expecting something special and that is exactly what they are going to get. The lights, the crowd, the music, this is where I come alive. I am not going to try, I am just going to be. The music takes over, and the rest is history.", 
        //     "Morning comes whether I like it or not. Best to greet it like an old friend. I’ve walked through the dark. I know what’s waiting there. That’s why I don’t waste the light. Coffee. Black. No sugar, no nonsense. Ain’t no need to sweeten something that does its job just fine the way it is. Got music to write, songs to sing, roads to walk. Sooner I start, sooner I get somewhere worth being.", "Some folks talk about what they’re gonna do. Me? I just do it. A man’s only as good as his word, and his word’s only as good as his work. So I work. I don’t sing to be famous. I sing because there’s something inside that don’t let me stop. The road don’t care who you are. It don’t bend for you, don’t make it easy. You learn to walk it anyway.", "They didn’t come to see a man pretend. They came to see a man mean every damn word he sings. Music ain’t about being perfect. It’s about being real. And real ain’t always pretty. Some artists try to be larger than life. I just try to be exactly my size and let the music do the rest. I don’t beg ‘em to clap. I just stand there, tell the truth, and let ‘em feel it. And when they do? It’s like thunder.", "You don’t write a song. You live it first, and then you tell it. A good song don’t come easy. You gotta fight for it. And when you do? It’ll fight for you. Mistakes? Keep ‘em in. That’s where the life is. That’s where you hear a man’s soul, not just his voice. A song’s gotta mean somethin’, or it ain’t worth the breath it takes to sing it.", "I did my job today. Sang it like I meant it, played it like I had to, walked my miles honest. That’s enough. Tomorrow? More miles, more music, more truth to tell. But for now? Just the quiet. Just the dark. Just me and the road waiting outside. Ain’t afraid of sleep. Ain’t afraid of what comes after, either. When a man’s done his work, he don’t need to be afraid of much at all.", " Night is when the doors open. When masks slip. When the spirits start whispering again. The city is different after dark. The neon signs hum like ghosts, the air is thick with secrets, and every street is a poem waiting to be written. Maybe there’s no such thing as time. Maybe we’re all just echoes of something that’s already happened, playing out the same strange dream again and again. Tomorrow, maybe I’ll be gone. Or maybe I’ll wake up and start it all over again. Who knows? Who cares? The only thing that matters is right now.", "Morning, if you can call it that. The sun is up, but my mind is still swimming somewhere between dream and reality. Maybe I should write it down before it fades, those strange images, half formed thoughts, fragments of something bigger than me. The body is a cage, but the mind is a universe. And today, I will find another door to open.", "This new track is something special. It is crazy how ideas just flow effortlessly now. Every session feels like magic and the music is writing itself. My album is shaping up to be something legendary. People are going to feel every note, every lyric. I am not just making songs, I am creating anthems that will live forever."
       
@@ -65,7 +66,7 @@
         updateTextDisplay(); 
 
         let intervalId;
-        let dynamicDelay = 4100;
+        let dynamicDelay = 4200;
         
         function startDynamicInterval() {
           intervalId = setInterval(myFunction, dynamicDelay);
@@ -74,7 +75,7 @@
         function myFunction() {
           modifyText();
         
-          dynamicDelay += 600;
+          dynamicDelay += 700;
         
           clearInterval(intervalId);
           startDynamicInterval();
