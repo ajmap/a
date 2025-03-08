@@ -1,141 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mudra</title>
+    <title>Tekst Leren</title>
     <style>
-        * {
-            margin: 0;                          
-        }
-        #s {
-            width: 100vw;
-            height: 100vh;
-            background-color: black;
-            }
-        #m {
-            width: 100vw;
-            height: 100vh;
-            display: none;
-        }
-        .cntr {
-            text-align: center;
-        }
-        #a {
-            font-size: 5vw;
-            padding-top: 3vh;
-        }
-        #b {
-            font-size: 5.1vw;
-            padding-top: 3vh;
-            font-family: Arial;
-        }
-        #c {
-            font-size: 4.9vw;
-            padding-top: 3vh;
-            font-family: Arial;
-        }
-        #d {
-            font-size: 6vw;
-            padding-top: 3vh;
-        }
-        #e {
-            font-size: 4.8vw;
-            padding: 3vh 8vw;
-            font-family: Arial;
-            line-height: 3vh;
-        }
-        #f {
-            font-size: 5.5vw;
-            padding: 0 8vw;
-            font-family: Arial;
-            line-height: 3.4vh;
-        }
-        #g {
-            font-size: 4.9vw;
-            padding: 0 8vw;
-            font-family: Arial;
-            line-height: 3.2vh;
-            display: none;
-        }
+     #s {
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+      }
+        #m { display: none;}
+        * { margin: 0 }
+        body { font-family: courier new}
+        #txt { position: absolute;
+            font-size: 2.9vw; 
+            top: 5vh;
+             left: 5vw;
+             width: 85vw;
+             height: 30vw; 
+             margin: 50px auto 25px }
+        .rem { position: absolute;
+              text-align: center; 
+              width: 20vw;
+                height: 5vw;
+              bottom: 0;
+                }
+        #but { position: absolute;
+               display: flex;
+               justify-content: space-between;
+                width: 50vw;
+               left: 25vw;
+              font-size: 1.9vw; 
+              top: 85vh; }
+        button { border }
 
+        #dv1 { left: 0; background-color: Ivory; font-size: 3vw; height: 4vw; padding: 1vw 0 0 0 }
+        #dv2 { left: 20vw; background-color: AntiqueWhite; font-size: 4vw  }
+        #dv3 { left: 40vw; background-color: Linen; font-size: 4vw }
+        #dv4 { left: 60vw; background-color: LavenderBlush; font-size: 4vw }
+        #dv5 { left: 80vw; background-color: MistyRose; font-size: 3vw; height: 4vw; padding: 1vw 0 0 0}
     </style>
 </head>
 <body>
     <div id="s"></div>
-    <div id="m">
-        <p id="a" class="cntr"></p>
-        <p id="b" class="cntr"></p>
-        <p id="c" class="cntr"></p>
-        <p id="d" class="cntr"></p>
-        <p id="e"></p>
-        <p id="f"></p>
-        <p id="g"></p>
-    </div>  
-    <script>
-        let mudra = localStorage.getItem('mudra');
-        if (mudra === null) {
-            mudra = 0;
-        }
-        let a = document.getElementById('a');
-        let b = document.getElementById('b');
-        let c = document.getElementById('c');
-        let d = document.getElementById('d');
-        let e = document.getElementById('e');
-        let f = document.getElementById('f');
-        let g = document.getElementById('g');
-        let s = document.getElementById('s');
-        let m = document.getElementById('m');
-        let mclrran = Math.floor(Math.random() * 10);
-        let aclrran = Math.floor(Math.random() * 20);
-        let bclrran = Math.floor(Math.random() * 20);
-        let cclrran = Math.floor(Math.random() * 20);
-        let dclrran = Math.floor(Math.random() * 20);
-        let eclrran = Math.floor(Math.random() * 20);
-        let fclrran = Math.floor(Math.random() * 20);
-        let gclrran = Math.floor(Math.random() * 20);
-        let mclrarr = ["Indigo","MidnightBlue","RebeccaPurple","DarkRed","DarkSlateGray","Navy","DarkBlue","Maroon","SaddleBrown","DarkGreen"]
-        let clrarr = ["Lavender","MediumSlateBlue","PaleGreen","LightCyan","AquaMarine","Cyan","HoneyDew","LightSlateGray","CornSilk","DodgerBlue","CornFlowerBlue","LightYellow","Violet","Beige","LemonChiffon","LightSteelBlue","OldLace","AntiqueWhite","MistyRose","LightPink"]
-        
+    <main id='m'>
+    <div id='txt'></div>
+    <div id='dv1' class='rem' onclick="shift()">/</div>
+    <div id='dv2' class='rem' onclick="point1()">.</div>
+        <div id='dv3' class='rem' onclick="point2()">..</div>
+        <div id='dv4' class='rem' onclick="point3()">...</div>
+        <div id='dv5' class='rem' onclick="pop()">\</div>
+
+    </main>
+<script>
+            let s = document.getElementById("s");
+    let m = document.getElementById("m");
         s.addEventListener("click", () => {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen();
-            } else if (document.exitFullscreen) {
-                document.exitFullscreen();
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        s.style.display = "none";
+        m.style.display = "block";
+      });
+        document.getElementById('txt').innerHTML = "This is where I belong. The stage, the audience, the music, it all feels natural. I don not have to force anything. I just step out there and let the music do the work. Every show is a chance to share something real. I feel calm, present, and ready."
+
+    
+        function point() {
+            se = document.getElementById('txt')
+            be = se.innerHTML
+            nw = ''
+            arr = be.split('')
+            rndm=Math.floor(Math.random()*be.length)
+            if ((arr[rndm] == '.') || (arr[rndm] === ' ') || (arr[rndm] === ',') ) { point() }
+            else { arr[rndm] = '.'; nw = arr.join(''); se.innerHTML = nw }
             }
-            s.style.display = 'none'
-            m.style.display = 'block'
-        })
-        let z = [
-            { a: 1, b: "DOELSTELLING", c: "ik kan- ik wil", d: "WIL-MUDRA", e: "Deze mudra activeert de bloedsomloop, is goed voor alle organen en versterkt op alle niveaus. De zin van het leven is dat u telkens weer doelen stelt die bij u passen en waaraan uw vreugde beleefd. Neem telkens kleine stappen, of u nu iets wilt leren, wilt veranderen, opbouwen, genezen of sportief bezig wilt zijn. U stelt zich een groot doe (bij voorkeur schriftelijk), verdeelt het in deeldoelen, die u in kleine stappen aanpakt, en begint meteen. De kleine deel succesen versterken u wil en uw enthousiasme zal gauw de plaats van de wil innemen.", f: "Elke kleine stap geeft mij vreugde en breng mij dichter bij mijn doel.", g: "Vingers verstrengelt, behalve de middelvingers, die wijzen omhoog en de duimen wijzen naar beneden. De duimen en de middelvingers raken elkaar bij de toppen" }, { a: 2, b: "STABILITEIT", c: "ik hou vol", d: "LEVEN-MUDRA", e: "De pran mudra versterkt de ogen, geeft innerlijke rust, doorzettingsvermogen en vertrouwen, en ze maakt van u een duikelaar, die altijd weer overeind komt. Wij zijn veel sterker en kunnen veel meer dan we denken. Met een constructieve en positieve innerlijke houding brengen we dat doorzettingsvermogen tot volle ontplooiing. Stelt u zich voor dat in uw bekken een vuur brandt, dat met elke ademhaling groter en een groter wordt. Het moet uw lichaam herstellen en versterken, uw hart verwarmen en uw geest verhelderen en laten stralen.", f: "Mijn innerlijk vuur vervuld mij, versterkt mij en toont me mijn gaven en mogelijkheden.", g: "De duim raakt de pink en de ringvinger. De wijs- en middelvinger recht" }, { a: 3, b: "LIEFDE", c: "Wees welwillend", d: "APAN-YAYU-MUDRA", e: "De Hart-mudra helpt bij alle soorten hartklachten. Bij acute klachten doet u de mudra zolang als nodig; bij chronische klachten doet u haar viermaal daags ongeveer 10 minuten. De kleur rood is goed voor het hart. U visualiseert een boeket met rode rozen die u allemaal weggeeft, op een na. Verdiep u nu in de pracht van deze roos en neem haar met alle uw zintuigen waar. Laat u betoveren door haar schoonheid. Misschien heeft de rozenfee een boodschap voor u - luister goed!", f: "In de schoonheid en volmaaktheid van één roos vermoed ik de wijsheid en de rijkdom van het universum.", g: "De wijsvinger raakt de bal van de hand en duim raakt de middel- en ringvinger, de pink recht" }, { a: 4, b: "MOED", c: "laat haar zien", d: "DURGA-MUDRA", e: "Deze antipaniet-mudra is gewijd aan de onoverwinnelijke godin Durga. Ze rijdt op een brillende leeuw, heeft veel armen en houdt het elke hand in wapen, dat ze met veel vuur inzet om maar vijanden te doden of op de vlucht te jagen. Het is belangrijk dat u bij een paniekaanval het inademen onderdrukt, het uitademen forceert, uw handen stevig tegen elkaar drukt, met licht gebogen knieën staat en u op uw voetzolen concentreert. Zie uzelf als wapenzwaaiende en krijsende Durga. Alleen al door uw verschijnings zult u respect afdwingen. Misschien lacht u nu om dit beeld - prima!", f: "Elke schrik is maar een spook, dat ik triomfantelijk op de vlucht jaag.", g: "De middel-, ringvinger en pink tegen bal van de hand, de duim tegen de onderkant van de middelvinger en de wijsvinger over het kootje van de duim" },  { a: 5, b: "RUGGENGRAAT", c: "sta rechtop", d: "VIS-MUDRA", e: "De Matsayam-mudra stimuleert en versterkt de rug, reguliert de bloeddruk, activeert de bloedsomloop en verwarmt. Voordat u de mudra doet, masseert u krachtig met de ene hand de rug van de andere. Eerst rechts, dan links. U versterkt bovendien de rug door recht op een stoel zonder leuning te zitten. U laat zich tussendoor in elkaar zakken en richt zich weer op. Daarmee stimuleert u de tussenwervelschijven en slappe gewrichtsbanden en spieren. Zie uzelf verliefd, enthousiast en luchtig op iets moois afgaan.", f: "Rechtop en enthousiast, levendig en soepel ga ik door het leven.", g: "De linkerhand op de rechterhand, met de vingers tegen elkaar aan en de duim negentig graden opzij" }, { a: 6, b: "LUCHTIGHEID", c: "Vat het luchtig op", d: "VAJRA-MUDRA<br> (gebaar van de vurige donderbeitel)", e: "De bloedsomloopmutraal activeert en reguliert de bloedsomloop, en stimuleert alles zintuigen. U gaat staan met de voeten naar voren gericht. Nu versnelt u de ademhaling en gooit u bij elke inademing u armen krachtig omhoog (geen holle rug maken), zes tot twaalf keer. Dan doet u de mudra ongeveer 10 seconden met naar boven gestrekte armen en ademt u weer diep en krachtig in en uit. Tot slot gaat u nog 3 tot 5 minuten rustig zitten, doet u weer de mudra en denkt u aan een situatie die u grappig vindt.", f: "Moedig stap ik op de wereld af, pluk de dag en breng elan en enthousiasme in het spel.", g: "De duim raakt de toppen van de wijs-, middel en ringvinger en de pink recht" } 
-        ]
-        m.style.backgroundColor = mclrarr[mclrran]
-        a.innerText = z[mudra].a
-        b.innerText = z[mudra].b
-        c.innerText = z[mudra].c
-        d.innerText = z[mudra].d
-        d.style.fontWeight = "bold"
-        e.innerText = z[mudra].e
-        f.innerText = z[mudra].f
-        g.innerText = z[mudra].g
-        a.style.color = clrarr[aclrran]
-        b.style.color = clrarr[bclrran]
-        c.style.color = clrarr[cclrran]
-        d.style.color = clrarr[dclrran]
-        e.style.color = clrarr[eclrran]
-        f.style.color = clrarr[fclrran]
-        g.style.color = clrarr[gclrran]
-        f.style.fontWeight = "bold"
-        f.addEventListener("click", () => {
-            f.style.display = 'none'
-            g.style.display = 'block'
-        })
-        g.addEventListener("click", () => {
-            g.style.display = 'none'
-            f.style.display = 'block'
-        })
-        mudra = parseInt(mudra) + 1;
-        localStorage.setItem('mudra', mudra);
-    </script>
-</body>
+        function point1() {
+                point()
+        }
+            function point2() {
+                point()
+                point()
+        }
+            function point3() {
+                point()
+                point()
+                point()
+        }
+    
+        function shift() {
+            se = document.getElementById('txt')
+            be = se.innerHTML
+            nw = ''
+            arr = be.split(' ')
+            arr.shift()
+            nw = arr.join(' ')
+            se.innerHTML = nw
+        }
+    
+        function pop() {
+            se = document.getElementById('txt')
+            be = se.innerHTML
+            nw = ''
+            arr = be.split(' ')
+            arr.pop()
+            nw = arr.join(' ')
+            se.innerHTML = nw
+        }
+</script>
+</body>    
 </html>
