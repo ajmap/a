@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner Conversation</title>
+    <style>
+        * {
+                        margin: 0;
+        }
+     #start {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+        }
+
+#text-container {
+            display: none;
+            padding: 3vw;
+            font-family: Arial;
+        }
+
+.word {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 9vw;
+    font-weight: bold;
+    color: Indigo;
+}
+        .word.dark {
+            color: Crimson;
+        }
+        .word.medium {
+            color: Gold;
+        }
+        .word.blue { 
+            color: LemonChiffon;
+        }
+        .word.royal {
+            color: Chartreuse;
+        }
+        .word.sky {
+            color: RoyalBlue;
+        }
+        .word.light { 
+            color: Orchid;
+        }
+        .word.aqua {
+            color: NavajoWhite;
+        }
+        .word.white {
+            color: White;
+        }
+    </style>
+</head>
+<body>
+    <div id="start"></div>
+    <div id="text-container">
+      <span class="word">&nbsp;They</span>
+      <span class="word">&nbsp;do</span>
+      <span class="word">&nbsp;not</span>
+      <span class="word">&nbsp;know</span>
+      <span class="word">&nbsp;what</span>
+      <span class="word">&nbsp;is</span>
+      <span class="word">&nbsp;about</span>
+      <span class="word">&nbsp;to</span>
+      <span class="word">&nbsp;hit</span>
+      <span class="word">&nbsp;them.</span>
+      <span class="word">&nbsp;The</span>
+      <span class="word">&nbsp;crowd</span>
+      <span class="word">&nbsp;thinks</span>
+      <span class="word">&nbsp;they</span>
+      <span class="word">&nbsp;came</span>
+      <span class="word">&nbsp;to</span>
+      <span class="word">&nbsp;a</span>
+      <span class="word">&nbsp;concert,</span>
+      <span class="word">&nbsp;but</span>
+      <span class="word">&nbsp;what</span>
+      <span class="word">&nbsp;they</span>
+      <span class="word">&nbsp;are</span>
+      <span class="word">&nbsp;about</span>
+      <span class="word">&nbsp;to</span>
+      <span class="word">&nbsp;experience?</span>
+      <span class="word">&nbsp;It</span>
+      <span class="word">&nbsp;is</span>
+      <span class="word">&nbsp;something</span>
+      <span class="word">&nbsp;else</span>
+      <span class="word">&nbsp;entirely.</span>
+      <span class="word">&nbsp;When</span>
+      <span class="word">&nbsp;I</span>
+      <span class="word">&nbsp;step</span>
+      <span class="word">&nbsp;on</span>
+      <span class="word">&nbsp;that</span>
+      <span class="word">&nbsp;stage,</span>
+      <span class="word">&nbsp;I</span>
+      <span class="word">&nbsp;do</span>
+      <span class="word">&nbsp;not</span>
+      <span class="word">&nbsp;perform,</span>
+      <span class="word">&nbsp;I</span>
+      <span class="word">&nbsp;take</span>
+      <span class="word">&nbsp;them</span>
+      <span class="word">&nbsp;somewhere</span>
+      <span class="word">&nbsp;else.</span>
+      <span class="word">&nbsp;Every</span>
+      <span class="word">&nbsp;movement,</span>
+      <span class="word">&nbsp;every</span>
+      <span class="word">&nbsp;glance,</span>
+      <span class="word">&nbsp;every</span>
+      <span class="word">&nbsp;breath</span>
+      <span class="word">&nbsp;between</span>
+      <span class="word">&nbsp;lyrics,</span>
+      <span class="word">&nbsp;it</span>
+      <span class="word">&nbsp;is</span>
+      <span class="word">&nbsp;all</span>
+      <span class="word">&nbsp;part</span>
+      <span class="word">&nbsp;of</span>
+      <span class="word">&nbsp;the</span>
+      <span class="word">&nbsp;magic.</span>
+      <span class="word">&nbsp;I</span>
+      <span class="word">&nbsp;do</span>
+      <span class="word">&nbsp;not</span>
+      <span class="word">&nbsp;have</span>
+      <span class="word">&nbsp;to</span>
+      <span class="word">&nbsp;prove</span>
+      <span class="word">&nbsp;anything.</span>
+      <span class="word">&nbsp;I</span>
+      <span class="word">&nbsp;just</span>
+      <span class="word">&nbsp;do</span>
+      <span class="word">&nbsp;what</span>
+      <span class="word">&nbsp;I</span>
+      <span class="word">&nbsp;was</span>
+      <span class="word">&nbsp;born</span>
+      <span class="word">&nbsp;to</span>
+      <span class="word">&nbsp;do.</span>
+    </div>
+    <script>
+        let start = document.getElementById('start');
+        let text = document.getElementById('text-container');
+        start.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            start.style.display = 'none'
+            text.style.display = 'block'
+        })
+        document.addEventListener('DOMContentLoaded', () => {
+        const words = document.querySelectorAll('.word');
+        const locstor = JSON.parse(localStorage.getItem('locstor')) || {};
+    words.forEach((word, index) => {
+        // Set initial state based on local storage
+        if (locstor[index] === 1) {
+            word.classList.add('dark');
+        } else if (locstor[index] === 2) {
+            word.classList.add('medium');
+        } else if (locstor[index] === 3) {
+            word.classList.add('blue');
+        } else if (locstor[index] === 4) {
+            word.classList.add('royal');
+        } else if (locstor[index] === 5) {
+            word.classList.add('sky');
+        } else if (locstor[index] === 6) {
+            word.classList.add('light');
+        } else if (locstor[index] === 7) {
+            word.classList.add('aqua');
+        } else if (locstor[index] === 8) {
+            word.classList.add('white');
+        } else if (locstor[index] === 9) {
+            word.innerText = "";
+        } 
+        word.addEventListener('click', () => {
+            if (!locstor[index]) {
+                locstor[index] = 1;
+                word.classList.add('dark');
+            } else if (locstor[index] === 1) {
+                locstor[index] = 2;
+                word.classList.remove('dark');
+                word.classList.add('medium');
+            } else if (locstor[index] === 2) {
+                locstor[index] = 3;
+                word.classList.remove('medium');
+                word.classList.add('blue');
+            } else if (locstor[index] === 3) {
+                locstor[index] = 4; 
+                word.classList.remove('blue');
+                word.classList.add('royal');
+            } else if (locstor[index] === 4) {
+                locstor[index] = 5;
+                word.classList.remove('royal');
+                word.classList.add('sky');
+            } else if (locstor[index] === 5) {
+                locstor[index] = 6;
+                word.classList.remove('sky');
+                word.classList.add('light');
+            } else if (locstor[index] === 6) {
+                locstor[index] = 7; 
+                word.classList.remove('light');
+                word.classList.add('aqua');
+            } else if (locstor[index] === 7) {
+                locstor[index] = 8;
+                word.classList.remove('aqua');
+                word.classList.add('white');
+            } else if (locstor[index] === 8) {
+                locstor[index] = 9;
+                word.classList.remove('white');
+                word.innerText = ""
+           }
+            localStorage.setItem('locstor', JSON.stringify(locstor));
+        });
+    });
+});
+    </script>
+</body>
+</html>
