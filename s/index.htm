@@ -9,23 +9,46 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  font-size: 10vw;
+  font-size: 12vw;
   font-family: Arial;
   user-select: none; /* Prevent text selection */
 }
+  #wordDisplay {
+    display: none;
+  }
+
+
+         #start {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+        }
 </style>
 </head>
 <body>
+              <div id="start"></div>
 <div id="wordDisplay"></div>
 
 <script>
+  const wordDisplay = document.getElementById("wordDisplay");
+            let start = document.getElementById('start');
+
+        start.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            start.style.display = 'none'
+            wordDisplay.style.display = 'block'
+        })
 const sentence = "The world does not start in a hurry, so why should I? A deep breath, a soft melody in my head, ah, yes, that is a fine way to begin. People think elegance is something you wear. No man. Elegance is something I carry. It is in the way I talk, the way I move, the way I make folks feel when I walk in the room. Music is already playing somewhere out there. I just gotta find the notes that belong to me.";
 let words = sentence.split(" ");
 let currentWordIndex = words.length - 1;
 let currentWord = words[currentWordIndex];
 let currentLetterIndex = currentWord.length - 1;
 
-const wordDisplay = document.getElementById("wordDisplay");
+
 
 function displayWord() {
   wordDisplay.textContent = currentWord;
