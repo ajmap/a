@@ -1,4 +1,78 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Shift Story</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 2em;
+            text-align: center;
+            font-family: Arial;
+        }
+                #s {
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+      }
+        #story-display {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+           <div id="s"></div>
+    <div id="story-display"></div>
+    
+    <script>
+                const displayElement = document.getElementById("story-display");
+            let s = document.getElementById("s");
+    s.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        s.style.display = "none";
+        displayElement.style.display = "inline-block";
+      });
+        const story = "The pulse, the rhythm—it moves through me. The band locks in, the words spill out, and suddenly, we’re somewhere else. Somewhere beyond the ordinary. You don’t do music. You become it. Every note, every breath, a doorway to something unseen. And the people? They feel it. They need it. Just like I do.";
+        const words = story.split(" ");
+        let displayWords = words.slice(-5); // Start with last 5 words
+        let index = words.length - 6; // Start shifting from the end
+
+        
+        function updateDisplay() {
+            displayElement.textContent = displayWords.join(" ");
+        }
+        
+        function shiftWords() {
+            if (index >= 0) {
+                displayWords.pop(); // Remove last word
+                displayWords.unshift(words[index]); // Add new word at front
+                index--;
+            } else if (displayWords.length > 0) {
+                displayWords.pop(); // Start removing words from display
+            } else {
+                return; // Stop when blank
+            }
+            updateDisplay();
+            setTimeout(shiftWords, 5000);
+        }
+        
+        updateDisplay(); // Show initial 5 words
+        setTimeout(shiftWords, 5000);
+    </script>
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
 <html>
 <head>
 <title>Letter Click</title>
@@ -78,4 +152,4 @@ displayWord(); // Initial display
 document.addEventListener("click", eraseLetter);
 </script>
 </body>
-</html>
+</html> -->
