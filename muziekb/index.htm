@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muzikantenbank</title>
+  <style>
+    * {
+        margin: 0;
+    }
+      #start {
+          background-color: white;
+          font-size: 15vw;
+          font-weight: Bold;
+          font-family: Arial;
+          padding: 35vh 28vw;
+          position: absolute;
+          width: 44vw;
+          height: 100vh;
+          opacity: 0.5;
+          z-index: 2;
+      }
+      body {
+                background-color: AquaMarine;
+      }
+    #play {
+        background-color: Navy;
+        font-size: 5vw;
+        color: Gold;
+    }
+    #pause {
+        background-color: Silver;
+        font-size: 5vw;
+        color: Navy;
+    }
+    #stop {
+        background-color: SteelBlue;
+        font-size: 5vw;
+        color: Silver;
+    }
+    .player {
+      background: #fff;
+      text-align: center;
+      width: 100vw;
+        z-index: 1;
+    }
+    .controls {
+      display: flex;
+      justify-content: center;
+    }
+    button {
+      width: 33.33vw;  
+      background-color: #007bff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button.active {
+      background-color: Green;
+    }
+    .progress-bar {
+      width: 100vw;
+      height: 12vh;
+      background: Gold;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .progress {
+      height: 100%;
+      background: Orange;
+      width: 0;
+    }
+
+    .playlist {
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .playlist button {
+      display: block;
+      width: 50vw;
+      background-color: AquaMarine;
+      color: #333;
+      text-align: left;
+      padding: 2vw;
+        font-size: 3vw;
+        
+    }
+
+    .playlist button.active {
+      background-color: #28a745;
+      color: #fff;
+    }
+    footer {
+        position: absolute;
+        display: flex;
+          flex-wrap: wrap;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 10vh;
+              background-color: AquaMarine;
+    }
+      #bck {
+        color: Navy;
+      }
+            #fls {
+        color: SteelBlue;
+      }
+    #bck, #fls {
+        padding: 0.9vw;
+        font-size: 2.5vw;
+        font-weight: Bold;
+        font-family: Arial;
+        width: 48vw;
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id='start'>PLAY</div>  
+  <div class="player">
+    <div class="controls">
+      <button id="play">PLAY</button>
+      <button id="pause">PAUSE</button>
+      <button id="stop">STOP</button>
+    </div>
+    <div class="progress-bar" id="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+    <div class="playlist">
+      <button data-src="demoymmfsy.mp3">You make me feel so young</button>
+      <button data-src="demotcs.mp3">The Chrystal Ship</button>
+      <button data-src="demoss.mp3">Something Stupid</button>
+      <button data-src="demoygtbahwm.mp3">Getting to be a habit</button>
+    </div>
+    <audio id="audio"></audio>
+    <footer><div id='bck'>Terug Naar Muzikantenbank</div><div id='fls'>Full Screen Aan/Uit</div></footer>  
+  </div>
+
+  <script>
+    const start = document.getElementById('start'); 
+    const fls = document.getElementById('fls');
+    const bck = document.getElementById('bck');
+    const audio = document.getElementById('audio');
+    const playButton = document.getElementById('play');
+    const pauseButton = document.getElementById('pause');
+    const stopButton = document.getElementById('stop');
+    const progressBar = document.getElementById('progress-bar');
+    const progress = document.getElementById('progress');
+    const playlistButtons = document.querySelectorAll('.playlist button');
+    const playlist = document.querySelector('.playlist');
+
+    if (window.outerWidth < window.outerHeight) {
+      const buttons = playlist.querySelectorAll('button'); 
+      buttons.forEach(button => {
+        button.style.width = '100vw';
+        button.style.fontSize = '7vw';
+        button.style.padding = '4vw';
+      });
+      const footer = document.querySelector('footer'); 
+      progressBar.style.height = '7vh';
+      playButton.style.fontSize = '7vw';
+      playButton.style.padding = '15px 15px';
+      pauseButton.style.fontSize = '7vw';
+      pauseButton.style.padding = '15px 15px';
+      stopButton.style.fontSize = '7vw';
+      stopButton.style.padding = '15px 15px';
+      bck.style.fontSize = '6vw';
+      fls.style.fontSize = '6vw';
+      bck.style.width = '100vw';
+      fls.style.width = '100vw';
+      bck.style.padding = '1vh 0';
+      fls.style.padding = '1vh 0';
+      footer.style.height = '15vh';
+    }
+    
+    let currentSongIndex = 0;
+    // Start
+    start.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        start.style.display = "none";
+              if (!audio.src) {
+        loadSong(currentSongIndex);
+      }
+      audio.play(); 
+ 
+      });
+    fls.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      });
+    bck.addEventListener("click", () => {
+        window.location.href = "https://www.muzikantenbank.net"
+      });
+
+      
+    // Play button
+    playButton.addEventListener('click', () => {
+      if (!audio.src) {
+        loadSong(currentSongIndex);
+      }
+      audio.play(); 
+    });
+
+    // Pause button
+    pauseButton.addEventListener('click', () => {
+      audio.pause();   
+    });
+
+    // Stop button
+    stopButton.addEventListener('click', () => {
+      audio.pause();
+      audio.currentTime = 0;  
+    });
+    
+    // Update progress bar
+    audio.addEventListener('timeupdate', () => {
+      const progressPercent = (audio.currentTime / audio.duration) * 100;
+      progress.style.width = `${progressPercent}%`;
+    });
+
+    // Seek through progress bar
+    progressBar.addEventListener('click', (e) => {
+      const width = progressBar.clientWidth;
+      const clickX = e.offsetX;
+      const duration = audio.duration;
+
+      audio.currentTime = (clickX / width) * duration;
+    });
+
+    // Playlist selection
+    playlistButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        currentSongIndex = index;
+        loadSong(currentSongIndex);
+        audio.play();
+        playButton.classList.add('active');
+        pauseButton.classList.remove('active');
+        stopButton.classList.remove('active');    
+      });
+    });
+
+    // Play next song when the current song ends
+    audio.addEventListener('ended', () => {
+      currentSongIndex = (currentSongIndex + 1) % playlistButtons.length;
+      loadSong(currentSongIndex);
+      audio.play();
+    });
+
+    // Load song and update active button
+    function loadSong(index) {
+      const selectedButton = playlistButtons[index];
+      playlistButtons.forEach(button => button.classList.remove('active'));
+      selectedButton.classList.add('active');
+      audio.src = selectedButton.dataset.src;
+    }
+  </script>
+</body>
+</html>
