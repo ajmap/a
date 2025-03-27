@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner Conversation</title>
+    <style>
+      * {
+                        margin: 0;
+        }
+       #start {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+        }
+      #text-container {
+            display: none;
+            padding: 3vw;
+            font-family: Arial;
+            line-height: 1.1;
+        }
+      .word {
+          cursor: pointer;
+          display: inline-block;
+          font-size: 6vw;
+          font-weight: bold;
+          color: Black;
+      }
+        .word.one {
+            color: DarkRed;
+        }
+        .word.two {
+            color: FireBrick;
+        }
+        .word.three { 
+            color: Crimson;
+        }
+        .word.four {
+            color: Red;
+        }
+        .word.five {
+            color: MediumVioletRed;
+        }
+        .word.six { 
+            color: DeepPink;
+        }
+        .word.seven {
+            color: HotPink;
+        }
+        .word.eight {
+            color: LightPink;
+        }
+        .word.white {
+            color: White;
+        }
+    </style>
+</head>
+<body>
+    <div id="start"></div>
+    <div id="text-container">
+      <span class="word">Yesterday,</span>
+        <span class="word">it</span>
+        <span class="word">was</span>
+        <span class="word">as</span>
+        <span class="word">if</span>
+        <span class="word">all</span>
+        <span class="word">my</span>
+        <span class="word">joy</span>
+        <span class="word">and</span>
+        <span class="word">longing</span>
+        <span class="word">had</span>
+        <span class="word">gathered</span>
+        <span class="word">into</span>
+        <span class="word">a</span>
+        <span class="word">shimmering,</span>
+        <span class="word">golden</span>
+        <span class="word">cloud,</span>
+        <span class="word">floating</span>
+        <span class="word">just</span>
+        <span class="word">beyond</span>
+        <span class="word">my</span>
+        <span class="word">fingertips.</span>
+        <span class="word">Oh,</span>
+        <span class="word">how</span>
+        <span class="word">I</span>
+        <span class="word">love</span>
+        <span class="word">music,</span>
+        <span class="word">not</span>
+        <span class="word">just</span>
+        <span class="word">to</span>
+        <span class="word">hear</span>
+        <span class="word">it,</span>
+        <span class="word">but</span>
+        <span class="word">to</span>
+        <span class="word">live</span>
+        <span class="word">it,</span>
+        <span class="word">to</span>
+        <span class="word">become</span>
+        <span class="word">it,</span>
+        <span class="word">to</span>
+        <span class="word">let</span>
+        <span class="word">it</span>
+        <span class="word">course</span>
+        <span class="word">through</span>
+        <span class="word">me</span>
+        <span class="word">like</span>
+        <span class="word">a</span>
+        <span class="word">storm</span>
+        <span class="word">and</span>
+        <span class="word">a</span>
+        <span class="word">whisper</span>
+        <span class="word">all</span>
+        <span class="word">at</span>
+        <span class="word">once.</span>
+        <span class="word">And</span>
+        <span class="word">the</span>
+        <span class="word">people,</span>
+        <span class="word">their</span>
+        <span class="word">energy,</span>
+        <span class="word">their</span>
+        <span class="word">spirits,</span>
+        <span class="word">they</span>
+        <span class="word">turn</span>
+        <span class="word">each</span>
+        <span class="word">note</span>
+        <span class="word">into</span>
+        <span class="word">something</span>
+        <span class="word">alive,</span>
+        <span class="word">something</span>
+        <span class="word">breathing.</span>
+        <span class="word">Let</span>
+        <span class="word">me</span>
+        <span class="word">dance</span>
+        <span class="word">with</span>
+        <span class="word">this</span>
+        <span class="word">feeling</span>
+        <span class="word">until</span>
+        <span class="word">my</span>
+        <span class="word">very</span>
+        <span class="word">last</span>
+        <span class="word">breath.</span>
+        <span class="word">And</span>
+        <span class="word">after?</span>
+        <span class="word">A</span>
+        <span class="word">feast</span>
+        <span class="word">for</span>
+        <span class="word">the</span>
+        <span class="word">senses,</span>
+        <span class="word">rich</span>
+        <span class="word">food,</span>
+        <span class="word">deep</span>
+        <span class="word">laughter,</span>
+        <span class="word">and</span>
+        <span class="word">the</span>
+        <span class="word">warmth</span>
+        <span class="word">of</span>
+        <span class="word">beautiful</span>
+        <span class="word">souls</span>
+        <span class="word">around</span>
+        <span class="word">me.</span>
+
+    </div>
+    <script>
+        let start = document.getElementById('start');
+        let text = document.getElementById('text-container');
+        start.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            start.style.display = 'none'
+            text.style.display = 'block'
+        })
+        document.addEventListener('DOMContentLoaded', () => {
+        const words = document.querySelectorAll('.word');
+        const locstor = JSON.parse(localStorage.getItem('locstor')) || {};
+    words.forEach((word, index) => {
+        // Set initial state based on local storage
+        if (locstor[index] === 1) {
+            word.classList.add('one');
+        } else if (locstor[index] === 2) {
+            word.classList.add('two');
+        } else if (locstor[index] === 3) {
+            word.classList.add('three');
+        } else if (locstor[index] === 4) {
+            word.classList.add('four');
+        } else if (locstor[index] === 5) {
+            word.classList.add('five');
+        } else if (locstor[index] === 6) {
+            word.classList.add('six');
+        } else if (locstor[index] === 7) {
+            word.classList.add('seven');
+        } else if (locstor[index] === 8) {
+            word.classList.add('eight');
+        } else if (locstor[index] === 9) {
+            word.classList.add('white');
+        } else if (locstor[index] === 10) {
+            word.innerText = "";
+        } 
+        word.addEventListener('click', () => {
+            if (!locstor[index]) {
+                locstor[index] = 1;
+                word.classList.add('one');
+            } else if (locstor[index] === 1) {
+                locstor[index] = 2;
+                word.classList.remove('one');
+                word.classList.add('two');
+            } else if (locstor[index] === 2) {
+                locstor[index] = 3;
+                word.classList.remove('two');
+                word.classList.add('three');
+            } else if (locstor[index] === 3) {
+                locstor[index] = 4; 
+                word.classList.remove('three');
+                word.classList.add('four');
+            } else if (locstor[index] === 4) {
+                locstor[index] = 5;
+                word.classList.remove('four');
+                word.classList.add('five');
+            } else if (locstor[index] === 5) {
+                locstor[index] = 6;
+                word.classList.remove('five');
+                word.classList.add('six');
+            } else if (locstor[index] === 6) {
+                locstor[index] = 7; 
+                word.classList.remove('six');
+                word.classList.add('seven');
+            } else if (locstor[index] === 7) {
+                locstor[index] = 8;
+                word.classList.remove('seven');
+                word.classList.add('eight');
+            } else if (locstor[index] === 8) {
+                locstor[index] = 9;
+                word.classList.remove('eight');
+                word.classList.add('white');
+            } else if (locstor[index] === 9) {
+                locstor[index] = 10;
+                word.classList.remove('white');
+                word.innerText = ""
+           }
+            localStorage.setItem('locstor', JSON.stringify(locstor));
+        });
+    });
+});
+    </script>
+</body>
+</html>
