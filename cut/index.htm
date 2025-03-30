@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Transformation App</title>
+    <style>
+        #displayText {
+            margin: 5vw;
+            font-size: 2vw;
+            font-family: Arial;
+            letter-spacing: 0.15vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="displayText"></p>
+    </div>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const displayTextElement = document.getElementById('displayText');
+    const originalText = "I am atoms, constantly vibrating. I am rhythm, my heartbeat, my breath, my thoughts, all pulsing in time. I am music, but trapped inside this fragile, physical form. So I push beyond the limits of my body, I let go completely, I transcend into pure sound. It happens in those perfect moment when the music overtakes me, when I close my eyes and feel my body dissolve into the beat, when time and space collapse into nothing but harmony. Just for an instant I touch that place where I am the song, where I am nothing but a note sustained forever in the great cosmic symphony.";    
+    const openCountKey = 'openCount';
+
+    let openCount = localStorage.getItem(openCountKey);
+    openCount = openCount ? parseInt(openCount) : 0;
+    openCount++;
+    localStorage.setItem(openCountKey, openCount);
+
+    let currentText = originalText;
+
+    switch (openCount) {
+        case 2:
+            currentText = removePunctuation(currentText);
+            break;
+        default:
+            if (openCount >= 3) {
+                for (let i = 3; i <= openCount; i++) {
+                    currentText = shortenLongestWords(currentText);
+                    if (currentText.split(' ').every(word => word.length <= 1)) {
+                        currentText = removeSpaces(currentText);
+                        break;
+                    }
+                }
+            }
+            break;
+    }
+
+    displayTextElement.textContent = currentText;
+    displayTextElement.addEventListener('click', () => {
+    localStorage.removeItem(openCountKey);
+    location.reload(); // Refresh the page to reset the count
+});
+});
+
+function removePunctuation(text) {
+    return text.replace(/[.,!?]/g, '');
+}
+
+function shortenLongestWords(text) {
+    const words = text.split(' ');
+    let maxLength = 0;
+    words.forEach(word => {
+        maxLength = Math.max(maxLength, word.length);
+    });
+
+    const newWords = words.map(word => {
+        if (word.length === maxLength && word.length > 1) {
+            return word.slice(0, -1);
+        }
+        return word;
+    });
+    return newWords.join(' ');
+}
+
+function removeSpaces(text) {
+    return text.replace(/\s/g, '');
+}
+    </script>
+</body>
+</html>
