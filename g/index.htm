@@ -63,10 +63,10 @@
 <body>
     <div id="s"></div>
     <div class="nav-button" id="navButton"></div>
-    <div class="scrn" id="S1"></div>
-    <div class="scrn" id="S2"></div>
-    <div class="scrn" id="S3"></div>
-    <div class="scrn" id="S4"></div>
+    <div class="scrn" id="S1">SCREEN ONE</div>
+    <div class="scrn" id="S2">SCREEN TWO</div>
+    <div class="scrn" id="S3">SCREEN THREE</div>
+    <div class="scrn" id="S4">SCREEN FOUR</div>
     <div class="scrn" id="S5"></div>
     <div class="scrn" id="S6"></div>
     <div class="scrn" id="S7"></div>
@@ -76,6 +76,10 @@
         const button = document.getElementById('navButton');
         let expanded = false;
             let s = document.getElementById("s");
+      let S1 = document.getElementById("S1");
+      let S2 = document.getElementById("S2");
+      let S3 = document.getElementById("S3");
+      let S4 = document.getElementById("S4");
     s.addEventListener("click", () => {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
@@ -102,17 +106,42 @@
             event.stopPropagation();
         });
 
-        function changeColor(event, color) {
-            event.stopPropagation(); // Prevents click from propagating to parent
-            document.body.style.backgroundColor = color;
-            resetButton();
-        }
         function changeColor1(event, color) {
             event.stopPropagation(); // Prevents click from propagating to parent
             document.body.style.backgroundColor = color;
             resetButton();
+            S1.style.display = "block";
+            S2.style.display = "none";
+            S3.style.display = "none";
+            S4.style.display = "none";
         }
-
+        function changeColor2(event, color) {
+            event.stopPropagation(); // Prevents click from propagating to parent
+            document.body.style.backgroundColor = color;
+            resetButton();
+            S2.style.display = "block";
+            S1.style.display = "none";
+            S3.style.display = "none";
+            S4.style.display = "none";
+        }
+        function changeColor3(event, color) {
+            event.stopPropagation(); // Prevents click from propagating to parent
+            document.body.style.backgroundColor = color;
+            resetButton();
+            S3.style.display = "block";
+            S1.style.display = "none";
+            S2.style.display = "none";
+            S4.style.display = "none";
+        }
+        function changeColor4(event, color) {
+            event.stopPropagation(); // Prevents click from propagating to parent
+            document.body.style.backgroundColor = color;
+            resetButton();
+            S4.style.display = "block";
+            S1.style.display = "none";
+            S2.style.display = "none";
+            S3.style.display = "none";
+        }
         function resetButton() {
             button.classList.remove('expanded');
             button.innerHTML = '';
