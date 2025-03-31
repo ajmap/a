@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Quarter Navigation</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        
+        body {
+            transition: background-color 0.3s;
+        }
+        .nav-button {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background-color: gray;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .expanded {
+            transform: scale(1.5);
+            bottom: 30px;
+            right: 30px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: conic-gradient(
+                blue 0deg 90deg,
+                yellow 90deg 180deg,
+                red 180deg 270deg,
+                green 270deg 360deg
+            );
+            position: absolute;
+        }
+        .expanded div {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            cursor: pointer;
+        }
+        .blue { top: 0; left: 0; background-color: blue; border-top-left-radius: 100%; }
+        .yellow { top: 0; right: 0; background-color: yellow; border-top-right-radius: 100%; }
+        .red { bottom: 0; left: 0; background-color: red; border-bottom-left-radius: 100%; }
+        .green { bottom: 0; right: 0; background-color: green; border-bottom-right-radius: 100%; }
+    </style>
+</head>
+<body>
+    <div class="nav-button" id="navButton"></div>
 
+    <script>
+        const button = document.getElementById('navButton');
+        let expanded = false;
+
+        button.addEventListener('click', (event) => {
+            if (!expanded) {
+                button.classList.add('expanded');
+                button.innerHTML = `
+                    <div class='blue' onclick='changeColor(event, "blue")'></div>
+                    <div class='yellow' onclick='changeColor(event, "yellow")'></div>
+                    <div class='red' onclick='changeColor(event, "red")'></div>
+                    <div class='green' onclick='changeColor(event, "green")'></div>
+                `;
+                expanded = true;
+            } else {
+                resetButton();
+            }
+            event.stopPropagation();
+        });
+
+        function changeColor(event, color) {
+            event.stopPropagation(); // Prevents click from propagating to parent
+            document.body.style.backgroundColor = color;
+            resetButton();
+        }
+
+        function resetButton() {
+            button.classList.remove('expanded');
+            button.innerHTML = '';
+            expanded = false;
+        }
+
+        document.body.addEventListener('click', () => {
+            if (expanded) {
+                resetButton();
+            }
+        });
+    </script>
+</body>
+</html>
