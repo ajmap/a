@@ -104,7 +104,7 @@
 
         function changeColor(event, color) {
             event.stopPropagation(); // Prevents click from propagating to parent
-            document.body.innerHTML = color;
+            document.body.style.backgroundColor = color;
             resetButton();
         }
 
