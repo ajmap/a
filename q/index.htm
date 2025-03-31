@@ -65,52 +65,47 @@
             rndm=Math.floor(Math.random()*be.length)
             if ((arr[rndm] == '.') || (arr[rndm] === ' ') || (arr[rndm] === ',') ) { point() }
             else { arr[rndm] = '.'; nw = arr.join(''); se.innerHTML = nw }
-            
-        function point1() {
-                point()
-        }
-            function point2() {
-                point()
-                point()
-        }
-            function point3() {
-                point()
-                point()
-                point()
-        }
     
       function point() {
-        se = document.getElementById("s");
-        be = se.innerHTML;
-        nw = "";
-        arr = be.split("");
-        rndm = Math.floor(Math.random() * be.length);
-        if (arr[rndm] == "." || arr[rndm] === " " || arr[rndm] === ",") {
-          point();
-        } else {
-          arr[rndm] = ".";
-          nw = arr.join("");
-          se.innerHTML = nw;
-        }
-      }
-      function shift() {
-        se = document.getElementById("s");
-        be = se.innerHTML;
-        nw = "";
-        arr = be.split(" ");
-        arr.shift();
-        nw = arr.join(" ");
-        se.innerHTML = nw;
-      }
-      function pop() {
-        se = document.getElementById("s");
-        be = se.innerHTML;
-        nw = "";
-        arr = be.split(" ");
-        arr.pop();
-        nw = arr.join(" ");
-        se.innerHTML = nw;
-      }
+             se = document.getElementById('txt')
+             be = se.innerHTML
+             nw = ''
+             arr = be.split('')
+             rndm=Math.floor(Math.random()*be.length)
+             if ((arr[rndm] == '.') || (arr[rndm] === ' ') || (arr[rndm] === ',') ) { point() }
+             else { arr[rndm] = '.'; nw = arr.join(''); se.innerHTML = nw }
+             }
+         function point1() {
+                 point()
+         }
+             function point2() {
+                 point()
+                 point()
+         }
+             function point3() {
+                 point()
+                 point()
+                 point()
+         }
+         function shift() {
+             se = document.getElementById('txt')
+             be = se.innerHTML
+             nw = ''
+             arr = be.split(' ')
+             arr.shift()
+             nw = arr.join(' ')
+             se.innerHTML = nw
+         }
+ 
+         function pop() {
+             se = document.getElementById('txt')
+             be = se.innerHTML
+             nw = ''
+             arr = be.split(' ')
+             arr.pop()
+             nw = arr.join(' ')
+             se.innerHTML = nw
+         }
 </script>
 </body>    
 </html>
