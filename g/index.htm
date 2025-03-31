@@ -90,10 +90,10 @@
             if (!expanded) {
                 button.classList.add('expanded');
                 button.innerHTML = `
-                    <div class='blue' onclick='changeColor(event, "blue")'></div>
-                    <div class='yellow' onclick='changeColor(event, "yellow")'></div>
-                    <div class='red' onclick='changeColor(event, "red")'></div>
-                    <div class='green' onclick='changeColor(event, "green")'></div>
+                    <div class='blue' onclick='changeColor(event, "white")'></div>
+                    <div class='yellow' onclick='changeColor1(event, "white")'></div>
+                    <div class='red' onclick='changeColor(event, "white")'></div>
+                    <div class='green' onclick='changeColor(event, "white")'></div>
                 `;
                 expanded = true;
             } else {
@@ -103,6 +103,11 @@
         });
 
         function changeColor(event, color) {
+            event.stopPropagation(); // Prevents click from propagating to parent
+            document.body.style.backgroundColor = color;
+            resetButton();
+        }
+        function changeColor1(event, color) {
             event.stopPropagation(); // Prevents click from propagating to parent
             document.body.style.backgroundColor = color;
             resetButton();
