@@ -1,5 +1,922 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Songtext</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      #start {
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+      }
+      #c1 {
+        display: none;
+        font-size: 6.7vw;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 7.4vw;
+      }
+      #c2 {
+        display: none;
+        font-size: 7vw;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 8.1vw;
+      }
+      #c3 {
+        display: none;
+        font-size: 7.7vw;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 8.8vw;
+      }
+      #c4 {
+        display: none;
+        font-size: 6vw;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 7vw;
+      }
+      #c5 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+      #c6 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+      #c7 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+     #c9 {
+        display: none;
+        padding: 3vw;
+        font-family: Arial;
+        line-height: 9vw;
+      }
+      section {
+        display: none;
+        position: fixed;
+        bottom: 5vh;
+        left: 0;
+        width: 100vw;
+        height: 5vh;
+        justify-content: space-between;
+      }
+      footer {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 5vh;
+        justify-content: space-between;
+      }
+      .word {
+        cursor: pointer;
+        display: inline-block;
+        font-weight: bold;
+        color: white;
+      }
+      .word.clr01 {
+        color: Navy;
+      }
+      .word.clr02 {
+        color: Crimson;
+      }
+      .word.clr03 {
+        color: Gold;
+      }
+      .word.clr04 {
+        color: DarkGreen;
+      }
+      .word.clr05 {
+        color: DarkMagenta;
+      }
+      .word.clr06 {
+        color: Magenta;
+      }
+      .word.clr07 {
+        color: LawnGreen;
+      }
+      .word.clr08 {
+        color: Blue;
+      }
+      .word.clr09 {
+        color: AquaMarine;
+      }
+      .word.clr10 {
+        color: Aqua;
+      }
+      .word.clr11 {
+        color: CornSilk;
+      }
+      .word.clr12 {
+        color: Yellow;
+      }
+      .word.clr13 {
+        color: White;
+      }
+      #f1 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: Navy;
+      }
+      #f2 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: Crimson;
+      }
+      #f3 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: Gold;
+      }
+      #f4 {
+         width: 16.66vw;
+        height: 6vh;
+        background-color: DarkGreen;
+      }
+      #f5 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: DarkMagenta;
+      }
+      #f6 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: Magenta;
+      }
+      #f7 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: LawnGreen;
+      }
+      #f8 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: Blue;
+      }
+      #f9 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: AquaMarine;
+      }
+      #f10 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: Aqua;
+      }
+      #f11 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: CornSilk;
+      }
+      #f12 {
+        width: 16.66vw;
+        height: 6vh;
+        background-color: Yellow;
+      } 
+    </style>
+  </head>
+  <body>
+    <div id="start"></div>
+    <div id="c1">
+      <span class="word">Lullaby&nbsp;</span>
+      <span class="word">of&nbsp;</span>
+      <span class="word">Birdland,&nbsp;</span>
+      <span class="word">that's&nbsp;</span>
+      <span class="word">what&nbsp;</span>
+      <span class="word">I&nbsp;</span>
+      <span class="word">always&nbsp;</span>
+      <span class="word">hear&nbsp;</span>
+      <span class="word">when&nbsp;</span>
+      <span class="word">you&nbsp;</span>
+      <span class="word">sigh.&nbsp;</span>
+      <span class="word">Never&nbsp;</span>
+      <span class="word">in&nbsp;</span>
+      <span class="word">my&nbsp;</span>
+      <span class="word">wordland&nbsp;</span>
+      <span class="word">could&nbsp;</span>
+      <span class="word">there&nbsp;</span>
+      <span class="word">be&nbsp;</span>
+      <span class="word">ways&nbsp;</span>
+      <span class="word">to&nbsp;</span>
+      <span class="word">reveal&nbsp;</span>
+      <span class="word">in&nbsp;</span>
+      <span class="word">a&nbsp;</span>
+      <span class="word">phrase&nbsp;</span>
+      <span class="word">how&nbsp;</span>
+      <span class="word">I&nbsp;</span>
+      <span class="word">feel.&nbsp;</span>
+      <span class="word">Have&nbsp;</span>
+      <span class="word">you&nbsp;</span>
+      <span class="word">ever&nbsp;</span>
+      <span class="word">heard&nbsp;</span>
+      <span class="word">two&nbsp;</span>
+      <span class="word">turtle&nbsp;</span>
+      <span class="word">doves&nbsp;</span>
+      <span class="word">bill&nbsp;</span>
+      <span class="word">and&nbsp;</span>
+      <span class="word">coo&nbsp;</span>
+      <span class="word">when&nbsp;</span>
+      <span class="word">they&nbsp;</span>
+      <span class="word">love?&nbsp;</span>
+      <span class="word">That's&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">kind&nbsp;</span>
+      <span class="word">of&nbsp;</span>
+      <span class="word">magic&nbsp;</span>
+      <span class="word">music&nbsp;</span>
+      <span class="word">we'll&nbsp;</span>
+      <span class="word">make&nbsp;</span>
+      <span class="word">with&nbsp;</span>
+      <span class="word">our&nbsp;</span>
+      <span class="word">lips&nbsp;</span>
+      <span class="word">when&nbsp;</span>
+      <span class="word">we&nbsp;</span>
+      <span class="word">kiss.&nbsp;</span>
+      <span class="word">And&nbsp;</span>
+      <span class="word">there's&nbsp;</span>
+      <span class="word">a&nbsp;</span>
+      <span class="word">weepy&nbsp;</span>
+      <span class="word">old&nbsp;</span>
+      <span class="word">willow,&nbsp;</span>
+      <span class="word">he&nbsp;</span>
+      <span class="word">really&nbsp;</span>
+      <span class="word">knows&nbsp;</span>
+      <span class="word">how&nbsp;</span>
+      <span class="word">to&nbsp;</span>
+      <span class="word">cry.&nbsp;</span>
+      <span class="word">That's&nbsp;</span>
+      <span class="word">how&nbsp;</span>
+      <span class="word">I'd&nbsp;</span>
+      <span class="word">cry&nbsp;</span>
+      <span class="word">on&nbsp;</span>
+      <span class="word">my&nbsp;</span>
+      <span class="word">pillow&nbsp;</span>
+      <span class="word">if&nbsp;</span>
+      <span class="word">you&nbsp;</span>
+      <span class="word">should&nbsp;</span>
+      <span class="word">tell&nbsp;</span>
+      <span class="word">me&nbsp;</span>
+      <span class="word">farewell&nbsp;</span>
+      <span class="word">and&nbsp;</span>
+      <span class="word">goodbye.&nbsp;</span>
+      <span class="word">Lullaby&nbsp;</span>
+      <span class="word">of&nbsp;</span>
+      <span class="word">Birdland,&nbsp;</span>
+      <span class="word">whisper&nbsp;</span>
+      <span class="word">low,&nbsp;</span>
+      <span class="word">kiss&nbsp;</span>
+      <span class="word">me&nbsp;</span>
+      <span class="word">sweet,&nbsp;</span>
+      <span class="word">and&nbsp;</span>
+      <span class="word">we'll&nbsp;</span>
+      <span class="word">go&nbsp;</span>
+      <span class="word">flying&nbsp;</span>
+      <span class="word">high&nbsp;</span>
+      <span class="word">on&nbsp;</span>
+      <span class="word">Birdland,&nbsp;</span>
+      <span class="word">high&nbsp;</span>
+      <span class="word">in&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">sky&nbsp;</span>
+      <span class="word">up&nbsp;</span>
+      <span class="word">above,&nbsp;</span>
+      <span class="word">all&nbsp;</span>
+      <span class="word">because&nbsp;</span>
+      <span class="word">we're&nbsp;</span>
+      <span class="word">in&nbsp;</span>
+      <span class="word">love.&nbsp;</span>
+    </div>
+    <div id="c2">
+      <span class="word">I&nbsp;</span>
+      <span class="word">see&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">bad&nbsp;</span>
+      <span class="word">moon&nbsp;</span>
+      <span class="word">a-risin'&nbsp;</span>
+      <span class="word">I&nbsp;</span>
+      <span class="word">see&nbsp;</span>
+      <span class="word">trouble&nbsp;</span>
+      <span class="word">on&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">way&nbsp;</span>
+      <span class="word">I&nbsp;</span>
+      <span class="word">see&nbsp;</span>
+      <span class="word">earthquakes&nbsp;</span>
+      <span class="word">and&nbsp;</span>
+      <span class="word">lightnin'&nbsp;</span>
+      <span class="word">I&nbsp;</span>
+      <span class="word">see&nbsp;</span>
+      <span class="word">bad&nbsp;</span>
+      <span class="word">times&nbsp;</span>
+      <span class="word">today&nbsp;</span>
+      <span class="word">Don't&nbsp;</span>
+      <span class="word">go&nbsp;</span>
+      <span class="word">around&nbsp;</span>
+      <span class="word">tonight&nbsp;</span>
+      <span class="word">Well&nbsp;</span>
+      <span class="word">it's&nbsp;</span>
+      <span class="word">bound&nbsp;</span>
+      <span class="word">to&nbsp;</span>
+      <span class="word">take&nbsp;</span>
+      <span class="word">your&nbsp;</span>
+      <span class="word">life&nbsp;</span>
+      <span class="word">There's&nbsp;</span>
+      <span class="word">a&nbsp;</span>
+      <span class="word">bad&nbsp;</span>
+      <span class="word">moon&nbsp;</span>
+      <span class="word">on&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">rise&nbsp;</span>
+      <span class="word">I&nbsp;</span>
+      <span class="word">hear&nbsp;</span>
+      <span class="word">hurricanes&nbsp;</span>
+      <span class="word">a-blowin'&nbsp;</span>
+      <span class="word">I&nbsp;</span>
+      <span class="word">know&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">end&nbsp;</span>
+      <span class="word">is&nbsp;</span>
+      <span class="word">comin'&nbsp;</span>
+      <span class="word">soon&nbsp;</span>
+      <span class="word">I&nbsp;</span>
+      <span class="word">fear&nbsp;</span>
+      <span class="word">rivers&nbsp;</span>
+      <span class="word">over&nbsp;</span>
+      <span class="word">flowin'&nbsp;</span>
+      <span class="word">I&nbsp;</span>
+      <span class="word">hear&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">voice&nbsp;</span>
+      <span class="word">of&nbsp;</span>
+      <span class="word">rage&nbsp;</span>
+      <span class="word">and&nbsp;</span>
+      <span class="word">ruin&nbsp;</span>
+      <span class="word">Hope&nbsp;</span>
+      <span class="word">you&nbsp;</span>
+      <span class="word">got&nbsp;</span>
+      <span class="word">your&nbsp;</span>
+      <span class="word">things&nbsp;</span>
+      <span class="word">together&nbsp;</span>
+      <span class="word">Hope&nbsp;</span>
+      <span class="word">you&nbsp;</span>
+      <span class="word">are&nbsp;</span>
+      <span class="word">quite&nbsp;</span>
+      <span class="word">prepare&nbsp;</span>
+      <span class="word">to&nbsp;</span>
+      <span class="word">die&nbsp;</span>
+      <span class="word">Looks&nbsp;</span>
+      <span class="word">like&nbsp;</span>
+      <span class="word">we're&nbsp;</span>
+      <span class="word">in&nbsp;</span>
+      <span class="word">for&nbsp;</span>
+      <span class="word">nasty&nbsp;</span>
+      <span class="word">weather&nbsp;</span>
+      <span class="word">One&nbsp;</span>
+      <span class="word">eye&nbsp;</span>
+      <span class="word">is&nbsp;</span>
+      <span class="word">taken&nbsp;</span>
+      <span class="word">for&nbsp;</span>
+      <span class="word">an&nbsp;</span>
+      <span class="word">eye&nbsp;</span>
+      <span class="word">Well&nbsp;</span>
+      <span class="word">...&nbsp;</span>
+    </div>
+    <div id="c3">
+      <span class="word">Softly&nbsp;</span>
+      <span class="word">as&nbsp;</span>
+      <span class="word">in&nbsp;</span>
+      <span class="word">a&nbsp;</span>
+      <span class="word">morning&nbsp;</span>
+      <span class="word">sunrise,&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">light&nbsp;</span>
+      <span class="word">of&nbsp;</span>
+      <span class="word">love&nbsp;</span>
+      <span class="word">comes&nbsp;</span>
+      <span class="word">stealing&nbsp;</span>
+      <span class="word">into&nbsp;</span>
+      <span class="word">a&nbsp;</span>
+      <span class="word">newborn&nbsp;</span>
+      <span class="word">day&nbsp;</span>
+      <span class="word">Flaming&nbsp;</span>
+      <span class="word">with&nbsp;</span>
+      <span class="word">all&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">glow&nbsp;</span>
+      <span class="word">of&nbsp;</span>
+      <span class="word">sunrise,&nbsp;</span>
+      <span class="word">a&nbsp;</span>
+      <span class="word">burning&nbsp;</span>
+      <span class="word">kiss&nbsp;</span>
+      <span class="word">is&nbsp;</span>
+      <span class="word">sealing&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">vow&nbsp;</span>
+      <span class="word">that&nbsp;</span>
+      <span class="word">all&nbsp;</span>
+      <span class="word">betray&nbsp;</span>
+      <span class="word">For&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">passions&nbsp;</span>
+      <span class="word">that&nbsp;</span>
+      <span class="word">thrill&nbsp;</span>
+      <span class="word">love&nbsp;</span>
+      <span class="word">and&nbsp;</span>
+      <span class="word">lift&nbsp;</span>
+      <span class="word">you&nbsp;</span>
+      <span class="word">high&nbsp;</span>
+      <span class="word">to&nbsp;</span>
+      <span class="word">heaven,&nbsp;</span>
+      <span class="word">are&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">passions&nbsp;</span>
+      <span class="word">that&nbsp;</span>
+      <span class="word">kill&nbsp;</span>
+      <span class="word">love&nbsp;</span>
+      <span class="word">and&nbsp;</span>
+      <span class="word">let&nbsp;</span>
+      <span class="word">you&nbsp;</span>
+      <span class="word">fall&nbsp;</span>
+      <span class="word">to&nbsp;</span>
+      <span class="word">hell,&nbsp;</span>
+      <span class="word">so&nbsp;</span>
+      <span class="word">ends&nbsp;</span>
+      <span class="word">each&nbsp;</span>
+      <span class="word">story&nbsp;</span>
+      <span class="word">Softly,&nbsp;</span>
+      <span class="word">as&nbsp;</span>
+      <span class="word">in&nbsp;</span>
+      <span class="word">an&nbsp;</span>
+      <span class="word">evening&nbsp;</span>
+      <span class="word">sunset,&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">light&nbsp;</span>
+      <span class="word">that&nbsp;</span>
+      <span class="word">gave&nbsp;</span>
+      <span class="word">you&nbsp;</span>
+      <span class="word">glory,&nbsp;</span>
+      <span class="word">will&nbsp;</span>
+      <span class="word">take&nbsp;</span>
+      <span class="word">it&nbsp;</span>
+      <span class="word">all&nbsp;</span>
+      <span class="word">away&nbsp;</span>
+    </div>
+    <div id="c4">
+      <span class="word">So&nbsp;</span>
+      <span class="word">close&nbsp;</span>
+      <span class="word">your&nbsp;</span>
+      <span class="word">eyes,&nbsp;</span>
+      <span class="word">for&nbsp;</span>
+      <span class="word">that's&nbsp;</span>
+      <span class="word">a&nbsp;</span>
+      <span class="word">lovely&nbsp;</span>
+      <span class="word">way&nbsp;</span>
+      <span class="word">to&nbsp;</span>
+      <span class="word">be,&nbsp;</span>
+      <span class="word">aware&nbsp;</span>
+      <span class="word">of&nbsp;</span>
+      <span class="word">things&nbsp;</span>
+      <span class="word">your&nbsp;</span>
+      <span class="word">heart&nbsp;</span>
+      <span class="word">alone&nbsp;</span>
+      <span class="word">was&nbsp;</span>
+      <span class="word">meant&nbsp;</span>
+      <span class="word">to&nbsp;</span>
+      <span class="word">see.&nbsp;</span>
+      <span class="word">The&nbsp;</span>
+      <span class="word">fundamental&nbsp;</span>
+      <span class="word">loneliness&nbsp;</span>
+      <span class="word">goes&nbsp;</span>
+      <span class="word">whenever&nbsp;</span>
+      <span class="word">two&nbsp;</span>
+      <span class="word">can&nbsp;</span>
+      <span class="word">dream&nbsp;</span>
+      <span class="word">a&nbsp;</span>
+      <span class="word">dream&nbsp;</span>
+      <span class="word">together.&nbsp;</span>
+      <span class="word">You&nbsp;</span>
+      <span class="word">can't&nbsp;</span>
+      <span class="word">deny,&nbsp;</span>
+      <span class="word">don't&nbsp;</span>
+      <span class="word">try&nbsp;</span>
+      <span class="word">to&nbsp;</span>
+      <span class="word">fight&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">rising&nbsp;</span>
+      <span class="word">sea.&nbsp;</span>
+      <span class="word">Don't&nbsp;</span>
+      <span class="word">fight&nbsp;</span>      
+      <span class="word">the&nbsp;</span>
+      <span class="word">moon,&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">stars&nbsp;</span>
+      <span class="word">above&nbsp;</span>
+      <span class="word">and&nbsp;</span>
+      <span class="word">don't&nbsp;</span>
+      <span class="word">fight&nbsp;</span>
+      <span class="word">me.&nbsp;</span>
+      <span class="word">The&nbsp;</span>
+      <span class="word">fundamental&nbsp;</span>
+      <span class="word">loneliness&nbsp;</span>
+      <span class="word">goes&nbsp;</span>
+      <span class="word">whenever&nbsp;</span>
+      <span class="word">two&nbsp;</span>
+      <span class="word">can&nbsp;</span>
+      <span class="word">dream&nbsp;</span>
+      <span class="word">a&nbsp;</span>
+      <span class="word">dream&nbsp;</span>
+      <span class="word">together.&nbsp;</span>
+      <span class="word">When&nbsp;</span>
+      <span class="word">I&nbsp;</span>
+      <span class="word">say&nbsp;</span>
+      <span class="word">you&nbsp;</span>
+      <span class="word">first,&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">time&nbsp;</span>
+      <span class="word">was&nbsp;</span>
+      <span class="word">half&nbsp;</span>
+      <span class="word">past&nbsp;</span>
+      <span class="word">three.&nbsp;</span>
+      <span class="word">When&nbsp;</span>
+      <span class="word">your&nbsp;</span>
+      <span class="word">eyes&nbsp;</span>
+      <span class="word">met&nbsp;</span>
+      <span class="word">mine,&nbsp;</span>
+      <span class="word">it&nbsp;</span>
+      <span class="word">was&nbsp;</span>
+      <span class="word">eternity.&nbsp;</span>
+      <span class="word">By&nbsp;</span>
+      <span class="word">now&nbsp;</span>
+      <span class="word">we&nbsp;</span>
+      <span class="word">know&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">wave&nbsp;</span>
+      <span class="word">is&nbsp;</span>
+      <span class="word">on&nbsp;</span>
+      <span class="word">his&nbsp;</span>
+      <span class="word">way&nbsp;</span>
+      <span class="word">to&nbsp;</span>
+      <span class="word">be.&nbsp;</span>
+      <span class="word">Come&nbsp;</span>
+      <span class="word">catch&nbsp;</span>
+      <span class="word">the&nbsp;</span>
+      <span class="word">wave&nbsp;</span>
+      <span class="word">don't&nbsp;</span>
+      <span class="word">be&nbsp;</span>
+      <span class="word">afraid&nbsp;</span>
+      <span class="word">of&nbsp;</span>
+      <span class="word">loving&nbsp;</span>
+      <span class="word">me.&nbsp;</span>
+      <span class="word">The&nbsp;</span>
+      <span class="word">fundamental&nbsp;</span>
+      <span class="word">loneliness&nbsp;</span>
+      <span class="word">goes&nbsp;</span>
+      <span class="word">whenever&nbsp;</span>
+      <span class="word">two&nbsp;</span>
+      <span class="word">can&nbsp;</span>
+      <span class="word">dream&nbsp;</span>
+      <span class="word">a&nbsp;</span>
+      <span class="word">dream&nbsp;</span>
+      <span class="word">together.&nbsp;</span>
+    </div>
+    <div id="c5">
+    </div>
+    <div id="c6">
+    </div>
+    <div id="c7">
+    </div>
+    <div id="c8">
+    </div>
+    <div id="c9">
+    </div>
+<!--    <div id="c10">
+    </div>
+    <div id="c11">
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+      <span class="word">&nbsp;</span>
+    </div>
+    -->
+    <section id="section">
+      <div id="f1"></div>
+      <div id="f2"></div>
+      <div id="f3"></div>
+      <div id="f4"></div>
+      <div id="f5"></div>
+      <div id="f6"></div>
+    </section>  
+    <footer id="footer">
+      <div id="f7"></div>
+      <div id="f8"></div>
+      <div id="f9"></div>
+      <div id="f10"></div>
+      <div id="f11"></div>
+      <div id="f12"></div>
+    </footer>
+    <script>
+      let start = document.getElementById("start");
+      let footer = document.getElementById("footer");
+      let section = document.getElementById("section");
+      let f1 = document.getElementById("f1");
+      let f2 = document.getElementById("f2");
+      let f3 = document.getElementById("f3");
+      let f4 = document.getElementById("f4");
+      let f5 = document.getElementById("f5");
+      let f6 = document.getElementById("f6");
+      let f7 = document.getElementById("f7");
+      let f8 = document.getElementById("f8");
+      let f9 = document.getElementById("f9");
+      let f10 = document.getElementById("f10");
+      let f11 = document.getElementById("f11");
+      let f12 = document.getElementById("f12");
+
+      let c1 = document.getElementById("c1");
+      let c2 = document.getElementById("c2");
+      let c3 = document.getElementById("c3");
+      let c4 = document.getElementById("c4");
+      let c5 = document.getElementById("c5");
+      let c6 = document.getElementById("c6");
+      let c7 = document.getElementById("c7");
+      let c8 = document.getElementById("c8");
+      let c9 = document.getElementById("c9");
+
+      start.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        start.style.display = "none";
+        c1.style.display = "block";
+        footer.style.display = "flex";
+        section.style.display = "flex";
+      });
+      f12.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      });
+      f1.addEventListener("click", () => {
+        c1.style.display = "block";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f2.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "block";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f3.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "block";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+
+      });
+      f4.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "block";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f5.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "block";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f6.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "block";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f7.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "block";
+        c8.style.display = "none";
+        c9.style.display = "none";
+      });
+      f8.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "block";
+        c9.style.display = "none";
+      });
+      f9.addEventListener("click", () => {
+        c1.style.display = "none";
+        c2.style.display = "none";
+        c3.style.display = "none";
+        c4.style.display = "none";
+        c5.style.display = "none";
+        c6.style.display = "none";
+        c7.style.display = "none";
+        c8.style.display = "none";
+        c9.style.display = "block";
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const words = document.querySelectorAll(".word");
+
+        const E1 = JSON.parse(localStorage.getItem("E1")) || {};
+
+        words.forEach((word, index) => {
+          if (E1[index] === 1) {
+            word.classList.add("clr01");
+          } else if (E1[index] === 2) {
+            word.classList.add("clr02");
+          } else if (E1[index] === 3) {
+            word.classList.add("clr03");
+          } else if (E1[index] === 4) {
+            word.classList.add("clr04");
+          } else if (E1[index] === 5) {
+            word.classList.add("clr05");
+          } else if (E1[index] === 6) {
+            word.classList.add("clr06");
+          } else if (E1[index] === 7) {
+            word.classList.add("clr07");
+          } else if (E1[index] === 8) {
+            word.classList.add("clr08");
+          } else if (E1[index] === 9) {
+            word.classList.add("clr09");
+          } else if (E1[index] === 10) {
+            word.classList.add("clr10");
+          } else if (E1[index] === 11) {
+            word.classList.add("clr11");
+          } else if (E1[index] === 12) {
+            word.classList.add("clr12");
+          } else if (E1[index] === 13) {
+            word.classList.add("clr13");
+          } else if (E1[index] === 14) {
+            word.innerText = "";
+          }
+          word.addEventListener("click", () => {
+            if (!E1[index]) {
+              E1[index] = 1;
+              word.classList.add("clr01");
+            } else if (E1[index] === 1) {
+              E1[index] = 2;
+              word.classList.remove("clr01");
+              word.classList.add("clr02");
+            } else if (E1[index] === 2) {
+              E1[index] = 3;
+              word.classList.remove("clr02");
+              word.classList.add("clr03");
+            } else if (E1[index] === 3) {
+              E1[index] = 4;
+              word.classList.remove("clr03");
+              word.classList.add("clr04");
+            } else if (E1[index] === 4) {
+              E1[index] = 5;
+              word.classList.remove("clr04");
+              word.classList.add("clr05");
+            } else if (E1[index] === 5) {
+              E1[index] = 6;
+              word.classList.remove("clr05");
+              word.classList.add("clr06");
+            } else if (E1[index] === 6) {
+              E1[index] = 7;
+              word.classList.remove("clr06");
+              word.classList.add("clr07");
+            } else if (E1[index] === 7) {
+              E1[index] = 8;
+              word.classList.remove("clr07");
+              word.classList.add("clr08");
+            } else if (E1[index] === 8) {
+              E1[index] = 9;
+              word.classList.remove("clr08");
+              word.classList.add("clr09");
+            } else if (E1[index] === 9) {
+              E1[index] = 10;
+              word.classList.remove("clr09");
+              word.classList.add("clr10");
+            } else if (E1[index] === 10) {
+              E1[index] = 11;
+              word.classList.remove("clr10");
+              word.classList.add("clr11");
+            } else if (E1[index] === 11) {
+              E1[index] = 12;
+              word.classList.remove("clr11");
+              word.classList.add("clr12");
+            } else if (E1[index] === 12) {
+              E1[index] = 13;
+              word.classList.remove("clr12");
+              word.classList.add("clr13");
+            } else if (E1[index] === 13) {
+              E1[index] = 14;
+              word.innerText = "";
+            }
+            localStorage.setItem("E1", JSON.stringify(E1));
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
