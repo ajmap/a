@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Quarter Navigation</title>
-    <style>
+<!DOCTYPE html>                                                             <!-- a -->
+<html lang="en">                                                            <!-- b -->  
+<head>                                                                      <!-- c -->
+    <meta charset="UTF-8">                                                  <!-- d -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- e -->
+    <title>Color Quarter Navigation</title>                                 <!-- f -->
+    <style>                                                                 <!-- g -->   
         * {
             margin: 0;
         }
@@ -51,17 +51,27 @@
             height: 50%;
             cursor: pointer;
         }
-        .blue { top: 0; left: 0; background-color: Pink; border-top-left-radius: 100%; }
-        .yellow { top: 0; right: 0; background-color: DeepPink; border-top-right-radius: 100%; }
-        .red { bottom: 0; left: 0; background-color: HotPink; border-bottom-left-radius: 100%; }
-        .green { bottom: 0; right: 0; background-color: LightPink; border-bottom-right-radius: 100%; }
+        .blue { top: 0; left: 0; background-color: Linen; border-top-left-radius: 100%; }
+        .yellow { top: 0; right: 0; background-color: Snow; border-top-right-radius: 100%; }
+        .red { bottom: 0; left: 0; background-color: Linen; border-bottom-left-radius: 100%; }
+        .green { bottom: 0; right: 0; background-color: Snow; border-bottom-right-radius: 100%; }
+        .scrn {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div id="s"></div>
     <div class="nav-button" id="navButton"></div>
-
-    <script>
+    <div class="scrn" id="S1"></div>
+    <div class="scrn" id="S2"></div>
+    <div class="scrn" id="S3"></div>
+    <div class="scrn" id="S4"></div>
+    <div class="scrn" id="S5"></div>
+    <div class="scrn" id="S6"></div>
+    <div class="scrn" id="S7"></div>
+    <div class="scrn" id="S8"></div>
+  <script>
         
         const button = document.getElementById('navButton');
         let expanded = false;
