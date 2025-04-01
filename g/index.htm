@@ -13,7 +13,7 @@
         width: 100vw;
         height: 100vh;
         }
-        .nav-button {
+        .b {
             position: fixed;
             bottom: 0;
             right: 0;
@@ -59,7 +59,7 @@
 </head>
 <body>
     <div id="a"></div>
-    <div class="nav-button" id="navButton"></div>
+    <div class="b" id="b"></div>
     <div class="scrn" id="S1">SCREEN ONE</div>
     <div class="scrn" id="S2">SCREEN TWO</div>
     <div class="scrn" id="S3">SCREEN THREE</div>
@@ -70,7 +70,7 @@
     <div class="scrn" id="S8"></div>
   <script>
         
-        const button = document.getElementById('navButton');
+        const b = document.getElementById('b');
         let expanded = false;
             let a = document.getElementById("a");
       let S1 = document.getElementById("S1");
@@ -84,13 +84,13 @@
           document.exitFullscreen();
         }
         a.style.display = "none";
-        button.style.display = "flex";
+        b.style.display = "flex";
       });
 
-        button.addEventListener('click', (event) => {
+        b.addEventListener('click', (event) => {
             if (!expanded) {
-                button.classList.add('expanded');
-                button.innerHTML = `
+                b.classList.add('expanded');
+                b.innerHTML = `
                     <div class='blue' onclick='changeColor1(event, "white")'></div>
                     <div class='yellow' onclick='changeColor2(event, "white")'></div>
                     <div class='red' onclick='changeColor3(event, "white")'></div>
@@ -140,8 +140,8 @@
             S3.style.display = "none";
         }
         function resetButton() {
-            button.classList.remove('expanded');
-            button.innerHTML = '';
+            b.classList.remove('expanded');
+            b.innerHTML = '';
             expanded = false;
         }
 
