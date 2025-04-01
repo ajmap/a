@@ -27,7 +27,7 @@
             justify-content: center;
             align-items: center;
         }
-        .expanded {
+        .c {
             transform: scale(1.5);
             bottom: 4vw;
             right: 4vw;
@@ -42,7 +42,7 @@
             );
             position: absolute;
         }
-        .expanded div {
+        .c div {
             position: absolute;
             width: 50%;
             height: 50%;
@@ -71,7 +71,7 @@
   <script>
       let a = document.getElementById("a");        // startscherm
       let b = document.getElementById('b');        // button
-      let expanded = false;                          
+      let c = false;                               // expanded              
       let S1 = document.getElementById("S1");
       let S2 = document.getElementById("S2");
       let S3 = document.getElementById("S3");
@@ -87,15 +87,15 @@
       });
 
         b.addEventListener('click', (event) => {
-            if (!expanded) {
-                b.classList.add('expanded');
+            if (!c) {
+                b.classList.add('c');
                 b.innerHTML = `
                     <div class='blue' onclick='changeColor1(event, "white")'></div>
                     <div class='yellow' onclick='changeColor2(event, "white")'></div>
                     <div class='red' onclick='changeColor3(event, "white")'></div>
                     <div class='green' onclick='changeColor4(event, "white")'></div>
                 `;
-                expanded = true;
+                c = true;
             } else {
                 resetButton();
             }
@@ -139,13 +139,13 @@
             S3.style.display = "none";
         }
         function resetButton() {
-            b.classList.remove('expanded');
+            b.classList.remove('c');
             b.innerHTML = '';
             expanded = false;
         }
 
         document.body.addEventListener('click', () => {
-            if (expanded) {
+            if (c) {
                 resetButton();
             }
         });
