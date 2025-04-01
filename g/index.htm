@@ -86,14 +86,14 @@
         b.style.display = "flex";
       });
 
-        b.addEventListener('click', (event) => {
+        b.addEventListener('click', (e) => {
             if (!c) {
                 b.classList.add('c');
                 b.innerHTML = `
-                    <div class='blue' onclick='changeColor1(event, "white")'></div>
-                    <div class='yellow' onclick='changeColor2(event, "white")'></div>
-                    <div class='red' onclick='changeColor3(event, "white")'></div>
-                    <div class='green' onclick='changeColor4(event, "white")'></div>
+                    <div class='blue' onclick='changeColor1(e, "white")'></div>
+                    <div class='yellow' onclick='changeColor2(e, "white")'></div>
+                    <div class='red' onclick='changeColor3(e, "white")'></div>
+                    <div class='green' onclick='changeColor4(e, "white")'></div>
                 `;
                 c = true;
             } else {
@@ -102,8 +102,8 @@
             event.stopPropagation();
         });
 
-        function changeColor1(event, color) {
-            event.stopPropagation(); // Prevents click from propagating to parent
+        function changeColor1(e, color) {
+            e.stopPropagation(); // Prevents click from propagating to parent
             document.body.style.backgroundColor = color;
             resetButton();
             S1.style.display = "block";
@@ -111,8 +111,8 @@
             S3.style.display = "none";
             S4.style.display = "none";
         }
-        function changeColor2(event, color) {
-            event.stopPropagation(); // Prevents click from propagating to parent
+        function changeColor2(e, color) {
+            e.stopPropagation(); // Prevents click from propagating to parent
             document.body.style.backgroundColor = color;
             resetButton();
             S2.style.display = "block";
@@ -120,8 +120,8 @@
             S3.style.display = "none";
             S4.style.display = "none";
         }
-        function changeColor3(event, color) {
-            event.stopPropagation(); // Prevents click from propagating to parent
+        function changeColor3(e, color) {
+            e.stopPropagation();
             document.body.style.backgroundColor = color;
             resetButton();
             S3.style.display = "block";
@@ -129,8 +129,8 @@
             S2.style.display = "none";
             S4.style.display = "none";
         }
-        function changeColor4(event, color) {
-            event.stopPropagation(); // Prevents click from propagating to parent
+        function changeColor4(e, color) {
+            e.stopPropagation(); 
             document.body.style.backgroundColor = color;
             resetButton();
             S4.style.display = "block";
