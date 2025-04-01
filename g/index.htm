@@ -8,13 +8,10 @@
         * {
             margin: 0;
         }
-        #s {
+        #a {
         background-color: black;
         width: 100vw;
         height: 100vh;
-      }
-        body {
-            transition: background-color 0.3s;
         }
         .nav-button {
             position: fixed;
@@ -61,7 +58,7 @@
     </style>
 </head>
 <body>
-    <div id="s"></div>
+    <div id="a"></div>
     <div class="nav-button" id="navButton"></div>
     <div class="scrn" id="S1">SCREEN ONE</div>
     <div class="scrn" id="S2">SCREEN TWO</div>
@@ -75,7 +72,7 @@
         
         const button = document.getElementById('navButton');
         let expanded = false;
-            let s = document.getElementById("s");
+            let a = document.getElementById("a");
       let S1 = document.getElementById("S1");
       let S2 = document.getElementById("S2");
       let S3 = document.getElementById("S3");
@@ -86,7 +83,7 @@
         } else if (document.exitFullscreen) {
           document.exitFullscreen();
         }
-        s.style.display = "none";
+        a.style.display = "none";
         button.style.display = "flex";
       });
 
