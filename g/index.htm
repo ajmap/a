@@ -48,10 +48,10 @@
             height: 50%;
             cursor: pointer;
         }
-        .blue { top: 0; left: 0; background-color: LightPink; border-top-left-radius: 100%; }
-        .yellow { top: 0; right: 0; background-color: Pink; border-top-right-radius: 100%; }
-        .red { bottom: 0; left: 0; background-color: Pink; border-bottom-left-radius: 100%; }
-        .green { bottom: 0; right: 0; background-color: LightPink; border-bottom-right-radius: 100%; }
+        .d { top: 0; left: 0; background-color: Aqua; border-top-left-radius: 100%; }
+        .e { top: 0; right: 0; background-color: Pink; border-top-right-radius: 100%; }
+        .f { bottom: 0; left: 0; background-color: Pink; border-bottom-left-radius: 100%; }
+        .g { bottom: 0; right: 0; background-color: Aqua; border-bottom-right-radius: 100%; }
         .scrn {
             display: none;
         }
@@ -60,10 +60,10 @@
 <body>
     <div id="a"></div>
     <div class="b" id="b"></div>
-    <div class="scrn" id="S1">SCREEN ONE</div>
-    <div class="scrn" id="S2">SCREEN TWO</div>
-    <div class="scrn" id="S3">SCREEN THREE</div>
-    <div class="scrn" id="S4">SCREEN FOUR</div>
+    <div class="scrn" id="h">SCREEN ONE</div>
+    <div class="scrn" id="i">SCREEN TWO</div>
+    <div class="scrn" id="j">SCREEN THREE</div>
+    <div class="scrn" id="k">SCREEN FOUR</div>
     <div class="scrn" id="S5"></div>
     <div class="scrn" id="S6"></div>
     <div class="scrn" id="S7"></div>
@@ -72,10 +72,10 @@
       let a = document.getElementById("a");        // startscherm
       let b = document.getElementById('b');        // button
       let c = false;                               // expanded              
-      let S1 = document.getElementById("S1");
-      let S2 = document.getElementById("S2");
-      let S3 = document.getElementById("S3");
-      let S4 = document.getElementById("S4");
+      let h = document.getElementById("h");
+      let i = document.getElementById("i");
+      let j = document.getElementById("j");
+      let k = document.getElementById("k");
     a.addEventListener("click", () => {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
@@ -90,10 +90,10 @@
             if (!c) {
                 b.classList.add('c');
                 b.innerHTML = `
-                    <div class='blue' onclick='changeColor1(e, "white")'></div>
-                    <div class='yellow' onclick='changeColor2(e, "white")'></div>
-                    <div class='red' onclick='changeColor3(e, "white")'></div>
-                    <div class='green' onclick='changeColor4(e, "white")'></div>
+                    <div class='d' onclick='changeColor1(e, "white")'></div>
+                    <div class='e' onclick='changeColor2(e, "white")'></div>
+                    <div class='f' onclick='changeColor3(e, "white")'></div>
+                    <div class='g' onclick='changeColor4(e, "white")'></div>
                 `;
                 c = true;
             } else {
@@ -102,43 +102,43 @@
             e.stopPropagation();
         });
 
-        function changeColor1(e, color) {
+        function m(e, l) {
             e.stopPropagation(); // Prevents click from propagating to parent
-            document.body.style.backgroundColor = color;
-            resetButton();
-            S1.style.display = "block";
-            S2.style.display = "none";
-            S3.style.display = "none";
-            S4.style.display = "none";
+            document.body.style.backgroundColor = l;
+            q();
+            h.style.display = "block";
+            i.style.display = "none";
+            j.style.display = "none";
+            k.style.display = "none";
         }
-        function changeColor2(e, color) {
+        function n(e, l) {
             e.stopPropagation(); // Prevents click from propagating to parent
-            document.body.style.backgroundColor = color;
-            resetButton();
-            S2.style.display = "block";
-            S1.style.display = "none";
-            S3.style.display = "none";
-            S4.style.display = "none";
+            document.body.style.backgroundColor = l;
+            q();
+            Si.style.display = "block";
+            Sh.style.display = "none";
+            Sj.style.display = "none";
+            Sk.style.display = "none";
         }
-        function changeColor3(e, color) {
+        function o(e, l) {
             e.stopPropagation();
-            document.body.style.backgroundColor = color;
-            resetButton();
-            S3.style.display = "block";
-            S1.style.display = "none";
-            S2.style.display = "none";
-            S4.style.display = "none";
+            document.body.style.backgroundColor = l;
+            q();
+            j.style.display = "block";
+            h.style.display = "none";
+            i.style.display = "none";
+            k.style.display = "none";
         }
-        function changeColor4(e, color) {
+        function p(e, l) {
             e.stopPropagation(); 
-            document.body.style.backgroundColor = color;
-            resetButton();
-            S4.style.display = "block";
-            S1.style.display = "none";
-            S2.style.display = "none";
-            S3.style.display = "none";
+            document.body.style.backgroundColor = l;
+            q();
+            k.style.display = "block";
+            h.style.display = "none";
+            i.style.display = "none";
+            j.style.display = "none";
         }
-        function resetButton() {
+        function q() {
             b.classList.remove('c');
             b.innerHTML = '';
             c = false;
