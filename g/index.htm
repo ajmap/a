@@ -86,7 +86,7 @@
          b.style.display = "flex";
        });
  
-         b.addEventListener('click', (e) => {
+         b.addEventListener('click', (event) => {
              if (!c) {
                  b.classList.add('c');
                  b.innerHTML = `
@@ -100,11 +100,10 @@
                  resetButton();
              }
              event.stopPropagation();
-             e.stopPropagation();
          });
  
-         function changeColor1(e, color) {
-             e.stopPropagation(); // Prevents click from propagating to parent
+         function changeColor1(event, color) {
+             event.stopPropagation(); // Prevents click from propagating to parent
              document.body.style.backgroundColor = color;
              resetButton();
              S1.style.display = "block";
@@ -112,8 +111,8 @@
              S3.style.display = "none";
              S4.style.display = "none";
          }
-         function changeColor2(e, color) {
-             e.stopPropagation(); // Prevents click from propagating to parent
+         function changeColor2(event, color) {
+             event.stopPropagation(); // Prevents click from propagating to parent
              document.body.style.backgroundColor = color;
              resetButton();
              S2.style.display = "block";
@@ -121,8 +120,8 @@
              S3.style.display = "none";
              S4.style.display = "none";
          }
-         function changeColor3(e, color) {
-             e.stopPropagation();
+         function changeColor3(event, color) {
+             event.stopPropagation();
              document.body.style.backgroundColor = color;
              resetButton();
              S3.style.display = "block";
@@ -130,8 +129,8 @@
              S2.style.display = "none";
              S4.style.display = "none";
          }
-         function changeColor4(e, color) {
-             e.stopPropagation(); 
+         function changeColor4(event, color) {
+             event.stopPropagation(); 
              document.body.style.backgroundColor = color;
              resetButton();
              S4.style.display = "block";
