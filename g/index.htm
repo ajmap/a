@@ -1,150 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">                             
-<head>                               
-    <meta charset="UTF-8">                                                 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Color Quarter Navigation</title>                                
-    <style>                                                                   
-        * {
-            margin: 0;
-        }
-        #a {
-        background-color: black;
-        width: 100vw;
-        height: 100vh;
-        }
-        .b {
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            width: 10vw;
-            height: 10vw;
-            background-color: white;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.3s, background 0.3s;
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-        .c {
-            transform: scale(1.5);
-            bottom: 4vw;
-            right: 4vw;
-            width: 15vw;
-            height: 15vw;
-            border-radius: 50%;
-            background: conic-gradient(
-                Aqua 0deg 90deg,
-                Pink 90deg 180deg,
-                Pink 180deg 270deg,
-                Aqua 270deg 360deg
-            );
-            position: absolute;
-        }
-        .c div {
-            position: absolute;
-            width: 50%;
-            height: 50%;
-            cursor: pointer;
-        }
-        .d { top: 0; left: 0; background-color: Aqua; border-top-left-radius: 100%; }
-        .e { top: 0; right: 0; background-color: Pink; border-top-right-radius: 100%; }
-        .f { bottom: 0; left: 0; background-color: Pink; border-bottom-left-radius: 100%; }
-        .g { bottom: 0; right: 0; background-color: Aqua; border-bottom-right-radius: 100%; }
-        .r {
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <div id="a"></div>
-    <div class="b" id="b"></div>
-    <div class="r" id="h">SCREEN ONE</div>
-    <div class="r" id="i">SCREEN TWO</div>
-    <div class="r" id="j">SCREEN THREE</div>
-    <div class="r" id="k">SCREEN FOUR</div>
-  <script>
-      let a = document.getElementById("a");        // startscherm
-      let b = document.getElementById('b');        // button
-      let c = false;                               // expanded              
-      let h = document.getElementById("h");
-      let i = document.getElementById("i");
-      let j = document.getElementById("j");
-      let k = document.getElementById("k");
-    a.addEventListener("click", () => {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
-        } else if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-        a.style.display = "none";
-        b.style.display = "flex";
-      });
-
-        b.addEventListener('click', (s) => {
-            if (!c) {
-                b.classList.add('c');
-                b.innerHTML = `
-                    <div class='d' onclick='m(s, "white")'></div>
-                    <div class='e' onclick='n(s, "white")'></div>
-                    <div class='f' onclick='o(s, "white")'></div>
-                    <div class='g' onclick='p(s, "white")'></div>
-                `;
-                c = true;
-            } else {
-                q();
-            }
-            s.stopPropagation();
-        });
-
-        function m(e, l) {
-            e.stopPropagation(); // Prevents click from propagating to parent
-            document.body.style.backgroundColor = l;
-            q();
-            h.style.display = "block";
-            i.style.display = "none";
-            j.style.display = "none";
-            k.style.display = "none";
-        }
-        function n(e, l) {
-            e.stopPropagation(); // Prevents click from propagating to parent
-            document.body.style.backgroundColor = l;
-            q();
-            i.style.display = "block";
-            h.style.display = "none";
-            j.style.display = "none";
-            k.style.display = "none";
-        }
-        function o(e, l) {
-            e.stopPropagation();
-            document.body.style.backgroundColor = l;
-            q();
-            j.style.display = "block";
-            h.style.display = "none";
-            i.style.display = "none";
-            k.style.display = "none";
-        }
-        function p(e, l) {
-            e.stopPropagation(); 
-            document.body.style.backgroundColor = l;
-            q();
-            k.style.display = "block";
-            h.style.display = "none";
-            i.style.display = "none";
-            j.style.display = "none";
-        }
-        function q() {
-            b.classList.remove('c');
-            b.innerHTML = '';
-            c = false;
-        }
-
-        document.body.addEventListener('click', () => {
-            if (c) {
-                resetButton();
-            }
-        });
-    </script>
-</body>
-</html>
+ <html lang="en">                             
+ <head>                               
+     <meta charset="UTF-8">                                                 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+     <title>Color Quarter Navigation</title>                                
+     <style>                                                                   
+         * {
+             margin: 0;
+         }
+         #a {
+         background-color: black;
+         width: 100vw;
+         height: 100vh;
+         }
+         .b {
+             position: fixed;
+             bottom: 0;
+             right: 0;
+             width: 10vw;
+             height: 10vw;
+             background-color: white;
+             border-radius: 50%;
+             cursor: pointer;
+             transition: transform 0.3s, background 0.3s;
+             display: none;
+             justify-content: center;
+             align-items: center;
+         }
+         .c {
+             transform: scale(1.5);
+             bottom: 4vw;
+             right: 4vw;
+             width: 15vw;
+             height: 15vw;
+             border-radius: 50%;
+             background: conic-gradient(
+                 blue 0deg 90deg,
+                 yellow 90deg 180deg,
+                 red 180deg 270deg,
+                 green 270deg 360deg
+             );
+             position: absolute;
+         }
+         .c div {
+             position: absolute;
+             width: 50%;
+             height: 50%;
+             cursor: pointer;
+         }
+         .blue { top: 0; left: 0; background-color: LightPink; border-top-left-radius: 100%; }
+         .yellow { top: 0; right: 0; background-color: Pink; border-top-right-radius: 100%; }
+         .red { bottom: 0; left: 0; background-color: Pink; border-bottom-left-radius: 100%; }
+         .green { bottom: 0; right: 0; background-color: LightPink; border-bottom-right-radius: 100%; }
+         .scrn {
+             display: none;
+         }
+     </style>
+ </head>
+ <body>
+     <div id="a"></div>
+     <div class="b" id="b"></div>
+     <div class="scrn" id="S1">SCREEN ONE</div>
+     <div class="scrn" id="S2">SCREEN TWO</div>
+     <div class="scrn" id="S3">SCREEN THREE</div>
+     <div class="scrn" id="S4">SCREEN FOUR</div>
+     <div class="scrn" id="S5"></div>
+     <div class="scrn" id="S6"></div>
+     <div class="scrn" id="S7"></div>
+     <div class="scrn" id="S8"></div>
+   <script>
+       let a = document.getElementById("a");        // startscherm
+       let b = document.getElementById('b');        // button
+       let c = false;                               // expanded              
+       let S1 = document.getElementById("S1");
+       let S2 = document.getElementById("S2");
+       let S3 = document.getElementById("S3");
+       let S4 = document.getElementById("S4");
+     a.addEventListener("click", () => {
+         if (!document.fullscreenElement) {
+           document.documentElement.requestFullscreen();
+         } else if (document.exitFullscreen) {
+           document.exitFullscreen();
+         }
+         a.style.display = "none";
+         b.style.display = "flex";
+       });
+ 
+         b.addEventListener('click', (e) => {
+             if (!c) {
+                 b.classList.add('c');
+                 b.innerHTML = `
+                     <div class='blue' onclick='changeColor1(e, "white")'></div>
+                     <div class='yellow' onclick='changeColor2(e, "white")'></div>
+                     <div class='red' onclick='changeColor3(e, "white")'></div>
+                     <div class='green' onclick='changeColor4(e, "white")'></div>
+                 `;
+                 c = true;
+             } else {
+                 resetButton();
+             }
+             event.stopPropagation();
+             e.stopPropagation();
+         });
+ 
+         function changeColor1(e, color) {
+             e.stopPropagation(); // Prevents click from propagating to parent
+             document.body.style.backgroundColor = color;
+             resetButton();
+             S1.style.display = "block";
+             S2.style.display = "none";
+             S3.style.display = "none";
+             S4.style.display = "none";
+         }
+         function changeColor2(e, color) {
+             e.stopPropagation(); // Prevents click from propagating to parent
+             document.body.style.backgroundColor = color;
+             resetButton();
+             S2.style.display = "block";
+             S1.style.display = "none";
+             S3.style.display = "none";
+             S4.style.display = "none";
+         }
+         function changeColor3(e, color) {
+             e.stopPropagation();
+             document.body.style.backgroundColor = color;
+             resetButton();
+             S3.style.display = "block";
+             S1.style.display = "none";
+             S2.style.display = "none";
+             S4.style.display = "none";
+         }
+         function changeColor4(e, color) {
+             e.stopPropagation(); 
+             document.body.style.backgroundColor = color;
+             resetButton();
+             S4.style.display = "block";
+             S1.style.display = "none";
+             S2.style.display = "none";
+             S3.style.display = "none";
+         }
+         function resetButton() {
+             b.classList.remove('c');
+             b.innerHTML = '';
+             c = false;
+         }
+ 
+         document.body.addEventListener('click', () => {
+             if (c) {
+                 resetButton();
+             }
+         });
+     </script>
+ </body>
+ </html>
