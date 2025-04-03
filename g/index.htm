@@ -35,10 +35,10 @@
              height: 15vw;
              border-radius: 50%;
              background: conic-gradient(
-                 blue 0deg 90deg,
-                 yellow 90deg 180deg,
-                 red 180deg 270deg,
-                 green 270deg 360deg
+                 Aqua 0deg 90deg,
+                 Pink 90deg 180deg,
+                 Pink 180deg 270deg,
+                 Aqua 270deg 360deg
              );
              position: absolute;
          }
@@ -48,10 +48,10 @@
              height: 50%;
              cursor: pointer;
          }
-         .blue { top: 0; left: 0; background-color: LightPink; border-top-left-radius: 100%; }
-         .yellow { top: 0; right: 0; background-color: Pink; border-top-right-radius: 100%; }
-         .red { bottom: 0; left: 0; background-color: Pink; border-bottom-left-radius: 100%; }
-         .green { bottom: 0; right: 0; background-color: LightPink; border-bottom-right-radius: 100%; }
+         .d { top: 0; left: 0; background-color: Aqua; border-top-left-radius: 100%; }
+         .e { top: 0; right: 0; background-color: Pink; border-top-right-radius: 100%; }
+         .f { bottom: 0; left: 0; background-color: Pink; border-bottom-left-radius: 100%; }
+         .g { bottom: 0; right: 0; background-color: Aqua; border-bottom-right-radius: 100%; }
          .scrn {
              display: none;
          }
@@ -90,10 +90,10 @@
              if (!c) {
                  b.classList.add('c');
                  b.innerHTML = `
-                     <div class='blue' onclick='changeColor1(event, "white")'></div>
-                     <div class='yellow' onclick='changeColor2(event, "white")'></div>
-                     <div class='red' onclick='changeColor3(event, "white")'></div>
-                     <div class='green' onclick='changeColor4(event, "white")'></div>
+                     <div class='d' onclick='changeColor1(event, "white")'></div>
+                     <div class='e' onclick='changeColor2(event, "white")'></div>
+                     <div class='f' onclick='changeColor3(event, "white")'></div>
+                     <div class='g' onclick='changeColor4(event, "white")'></div>
                  `;
                  c = true;
              } else {
