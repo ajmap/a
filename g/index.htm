@@ -842,6 +842,71 @@
       textContainer2.textContent = currentText;
       saveTextToStorage(currentText);
     });
+            document.addEventListener('DOMContentLoaded', () => {
+        const words = document.querySelectorAll('.word');
+        const locstor = JSON.parse(localStorage.getItem('locstor')) || {};
+    words.forEach((word, index) => {
+        // Set initial state based on local storage
+        if (locstor[index] === 1) {
+            word.classList.add('dark');
+        } else if (locstor[index] === 2) {
+            word.classList.add('medium');
+        } else if (locstor[index] === 3) {
+            word.classList.add('blue');
+        } else if (locstor[index] === 4) {
+            word.classList.add('royal');
+        } else if (locstor[index] === 5) {
+            word.classList.add('sky');
+        } else if (locstor[index] === 6) {
+            word.classList.add('light');
+        } else if (locstor[index] === 7) {
+            word.classList.add('aqua');
+        } else if (locstor[index] === 8) {
+            word.classList.add('white');
+        } else if (locstor[index] === 9) {
+            word.innerText = "";
+        } 
+        word.addEventListener('click', () => {
+            if (!locstor[index]) {
+                locstor[index] = 1;
+                word.classList.add('dark');
+            } else if (locstor[index] === 1) {
+                locstor[index] = 2;
+                word.classList.remove('dark');
+                word.classList.add('medium');
+            } else if (locstor[index] === 2) {
+                locstor[index] = 3;
+                word.classList.remove('medium');
+                word.classList.add('blue');
+            } else if (locstor[index] === 3) {
+                locstor[index] = 4; 
+                word.classList.remove('blue');
+                word.classList.add('royal');
+            } else if (locstor[index] === 4) {
+                locstor[index] = 5;
+                word.classList.remove('royal');
+                word.classList.add('sky');
+            } else if (locstor[index] === 5) {
+                locstor[index] = 6;
+                word.classList.remove('sky');
+                word.classList.add('light');
+            } else if (locstor[index] === 6) {
+                locstor[index] = 7; 
+                word.classList.remove('light');
+                word.classList.add('aqua');
+            } else if (locstor[index] === 7) {
+                locstor[index] = 8;
+                word.classList.remove('aqua');
+                word.classList.add('white');
+            } else if (locstor[index] === 8) {
+                locstor[index] = 9;
+                word.classList.remove('white');
+                word.innerText = ""
+           }
+            localStorage.setItem('locstor', JSON.stringify(locstor));
+        });
+    });
+});
      </script>
  </body>
  </html>
