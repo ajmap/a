@@ -609,6 +609,7 @@
      <div class="scrn" id="S7"></div>
      <div class="scrn" id="S8"></div>
    <script>
+       let spans = document.getElementById("spans");
        let a = document.getElementById("a");        // startscherm
        let b = document.getElementById('b');        // button
        let c = false;                               // expanded              
@@ -650,6 +651,7 @@
              S2.style.display = "none";
              S3.style.display = "none";
              S4.style.display = "none";
+             spans.style.display = "none";
          }
          function changeColor2(event, color) {
              event.stopPropagation(); // Prevents click from propagating to parent
@@ -659,6 +661,7 @@
              S1.style.display = "none";
              S3.style.display = "none";
              S4.style.display = "none";
+          spans.style.display = "none";
          }
          function changeColor3(event, color) {
              event.stopPropagation();
