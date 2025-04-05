@@ -73,6 +73,9 @@
       cursor: pointer;
       font-size: 4vw;
     }
+      #spans {
+       display: block
+      }
       .word {
     cursor: pointer;
     display: inline-block;
@@ -108,7 +111,7 @@
  </head>
  <body>
      <div id="a"></div>
-     <div class="b" id="b"><span class="word">I</span>
+     <div class="b" id="b"><div id='spans'><span class="word">I</span>
 <span class="word">go</span>
 <span class="word">higher.</span>
 <span class="word">I</span>
@@ -592,7 +595,7 @@
 <span class="word">is</span>
 <span class="word">all</span>
 <span class="word">turned</span>
-<span class="word">on.</span></div>
+<span class="word">on.</span></div></div>
      <div class="scrn" id="S1"><div id="text-container"></div></div>
      <div class="scrn" id="S2"><div class="text-container2" id="text"></div></div>
      <div class="scrn" id="S3">SCREEN THREE</div>
