@@ -845,7 +845,7 @@
     });
             document.addEventListener('DOMContentLoaded', () => {
         const words = document.querySelectorAll('.word');
-        const locstor = JSON.parse(localStorage.getItem('locstor')) || {};
+        const locstor = JSON.parse(localStorage.getItem('locstor1')) || {};
     words.forEach((word, index) => {
         // Set initial state based on local storage
         if (locstor[index] === 1) {
@@ -904,7 +904,7 @@
                 word.classList.remove('white');
                 word.innerText = ""
            }
-            localStorage.setItem('locstor', JSON.stringify(locstor));
+            localStorage.setItem('locstor1', JSON.stringify(locstor));
         });
     });
 });
