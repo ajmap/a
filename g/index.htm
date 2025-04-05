@@ -55,12 +55,25 @@
          .scrn {
              display: none;
          }
+        #text-container {
+    font-family: monospace;
+    font-size: 4.3vw;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer; /* Indicate it's clickable */
+    font-family: monospace; /* Ensure consistent spacing */
+    white-space: pre-wrap; /* Preserve line breaks and spaces */
+  }
+  .hidden {
+    visibility: hidden;
+  }
      </style>
  </head>
  <body>
      <div id="a"></div>
      <div class="b" id="b"></div>
-     <div class="scrn" id="S1">SCREEN ONE</div>
+     <div class="scrn" id="S1"><div id="text-container"></div></div>
      <div class="scrn" id="S2">SCREEN TWO</div>
      <div class="scrn" id="S3">SCREEN THREE</div>
      <div class="scrn" id="S4">SCREEN FOUR</div>
@@ -149,6 +162,114 @@
                  resetButton();
              }
          });
+      const textContainer = document.getElementById('text-container');
+  const originalText = "Did I give ‘em something they’ve never seen before? Yeah. Good. That’s what they came for. Tomorrow? New sound. New look. New universe to invent. You think I’m gonna repeat myself? Please. I ain’t here forever. But long after I’m gone, the music will still be playing. That’s how you know you did it right. Close your eyes, breathe deep. If you dream in color, baby, you’re doing it right.";
+  const localStorageKey = 'erasedTextData2';
+  let nextCharToRemove = 'a';
+
+  function getTextToDisplay() {
+    let savedData = localStorage.getItem(localStorageKey);
+    let currentText = originalText;
+    let charsToHide = [];
+
+    if (savedData) {
+      const parsedData = JSON.parse(savedData);
+      currentText = parsedData.originalText; // Keep the original text for reference
+      nextCharToRemove = parsedData.nextChar;
+      charsToHide = parsedData.hiddenChars || [];
+    }
+
+    let displayText = '';
+    for (let i = 0; i < currentText.length; i++) {
+      const char = currentText[i];
+      const lowerChar = char.toLowerCase();
+      if (charsToHide.includes(lowerChar)) {
+        displayText += `<span class="hidden">${char}</span>`;
+      } else {
+        displayText += char;
+      }
+    }
+
+    return displayText;
+  }
+
+  function updateTextOnScreen() {
+    textContainer.innerHTML = getTextToDisplay();
+  }
+
+  function saveProgress(hiddenChars, nextChar) {
+    localStorage.setItem(localStorageKey, JSON.stringify({ originalText: originalText, hiddenChars: hiddenChars, nextChar: nextChar }));
+  }
+
+  function eraseNextCharacter(hiddenChars) {
+    if (nextCharToRemove > 'z') {
+      return hiddenChars; // All lowercase letters have been removed
+    }
+
+    if (!hiddenChars.includes(nextCharToRemove)) {
+      hiddenChars.push(nextCharToRemove);
+    }
+
+    // Move to the next character
+    let nextCharCode = nextCharToRemove.charCodeAt(0) + 1;
+    while (nextCharCode <= 'z'.charCodeAt(0)) {
+      const potentialNextChar = String.fromCharCode(nextCharCode);
+      let found = false;
+      for (let i = 0; i < originalText.length; i++) {
+        if (originalText[i].toLowerCase() === potentialNextChar && !hiddenChars.includes(potentialNextChar)) {
+          nextCharToRemove = potentialNextChar;
+          found = true;
+          break;
+        }
+      }
+      if (found) {
+        break;
+      }
+      nextCharCode++;
+    }
+    if (nextCharCode > 'z'.charCodeAt(0)) {
+      nextCharToRemove = 'z' + 1; // Mark as done
+    }
+
+    return hiddenChars;
+  }
+
+  // Initial load
+  updateTextOnScreen();
+
+  // Event listener for clicking the text
+  textContainer.addEventListener('click', () => {
+    localStorage.removeItem(localStorageKey);
+    updateTextOnScreen(); // Reset to original text
+    nextCharToRemove = 'a'; // Reset the character removal progress
+  });
+
+  // Before the page is loaded, apply the next erasure
+  window.addEventListener('beforeunload', () => {
+    let savedData = localStorage.getItem(localStorageKey);
+    let currentHiddenChars = [];
+    if (savedData) {
+      currentHiddenChars = JSON.parse(savedData).hiddenChars || [];
+    }
+
+    if (nextCharToRemove <= 'z') {
+      const newHiddenChars = eraseNextCharacter(currentHiddenChars);
+      saveProgress(newHiddenChars, nextCharToRemove);
+    }
+  });
+
+  // Alternative approach to ensure erasure happens even if beforeunload doesn't always fire reliably
+  window.addEventListener('load', () => {
+    let savedData = localStorage.getItem(localStorageKey);
+    if (!savedData) { // Only do this if it's the very first load or after a reset
+      let currentHiddenChars = [];
+      if (nextCharToRemove <= 'z') {
+        const newHiddenChars = eraseNextCharacter(currentHiddenChars);
+        saveProgress(newHiddenChars, nextCharToRemove);
+        updateTextOnScreen();
+      }
+    }
+  });
      </script>
  </body>
  </html>
