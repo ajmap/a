@@ -512,19 +512,10 @@
       
 
         let currentIndex = Math.floor(Math.random() * texts.length);
-        let currentText = texts[currentIndex];
+        let currentText3 = texts[currentIndex];
         let originalText = currentText; 
         const displayedTextElement = document.getElementById("displayed-text");
         const textContainer3 = document.getElementById("text-container3");
-            s.addEventListener("click", () => {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
-        } else if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-        s.style.display = "none";
-        textContainer3.style.display = "block";
-      });
 
         function updateTextDisplay() {
             displayedTextElement.textContent = currentText;
@@ -536,7 +527,7 @@
             if (words.length > 0) {
                 words.shift(); 
                 words.pop();  
-                currentText = words.join(" ");
+                currentText3 = words.join(" ");
             }
             updateTextDisplay();
         }
