@@ -278,11 +278,12 @@
              event.stopPropagation(); 
              document.body.style.backgroundColor = color;
              resetButton();
-             S4.style.display = "block";
-             S1.style.display = "none";
-             S2.style.display = "none";
-             S3.style.display = "none";
-                    spans.style.display = "none";
+                   if (!document.fullscreenElement) {
+           document.documentElement.requestFullscreen();
+         } else if (document.exitFullscreen) {
+           document.exitFullscreen();
+         }
+             
          }
          function resetButton() {
              b.classList.remove('c');
