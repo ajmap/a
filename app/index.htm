@@ -109,7 +109,13 @@
         .word.white {
             color: White;
         }
-
+        #text-container3 {
+            display: none;
+            margin: 9vw 4vw 1vw 6vw;
+            font-family: sans-serif;
+            font-size: 6.9vw;
+            word-spacing: 0.8vw;
+        }
      </style>
  </head>
  <body>
@@ -195,7 +201,9 @@
 </div>
      <div class="scrn" id="S1"><div id="text-container"></div></div>
      <div class="scrn" id="S2"><div class="text-container2" id="text"></div></div>
-     <div class="scrn" id="S3">SCREEN THREE</div>
+     <div class="scrn" id="S3">    <div id="text-container3">
+        <p id="displayed-text"></p>
+    </div></div>
      <div class="scrn" id="S4">SCREEN FOUR</div>
      <div class="scrn" id="S5"></div>
      <div class="scrn" id="S6"></div>
@@ -500,6 +508,58 @@
         });
     });
 });
+            const texts = ["I am atoms, constantly vibrating."]; 
+      
+
+        let currentIndex = Math.floor(Math.random() * texts.length);
+        let currentText = texts[currentIndex];
+        let originalText = currentText; 
+        const displayedTextElement = document.getElementById("displayed-text");
+        const textContainer3 = document.getElementById("text-container3");
+            s.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        s.style.display = "none";
+        textContainer3.style.display = "block";
+      });
+
+        function updateTextDisplay() {
+            displayedTextElement.textContent = currentText;
+        }
+
+
+        function modifyText() {
+            const words = currentText.split(" ");
+            if (words.length > 0) {
+                words.shift(); 
+                words.pop();  
+                currentText = words.join(" ");
+            }
+            updateTextDisplay();
+        }
+
+        updateTextDisplay(); 
+
+        let intervalId;
+        let dynamicDelay = 4200;
+        
+        function startDynamicInterval() {
+          intervalId = setInterval(myFunction, dynamicDelay);
+        }
+        
+        function myFunction() {
+          modifyText();
+        
+          dynamicDelay += 700;
+        
+          clearInterval(intervalId);
+          startDynamicInterval();
+        }
+        
+        startDynamicInterval();
      </script>
  </body>
  </html>
