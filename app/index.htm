@@ -1,645 +1,508 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Color Quarter Navigation</title>
-    <style>
-      * {
-        margin: 0;
-      }
-      #a {
-        background-color: black;
-        width: 100vw;
-        height: 100vh;
-      }
-      .b {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 10vw;
-        height: 10vw;
-        background-color: white;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: transform 0.3s, background 0.3s;
-        display: none;
-        justify-content: center;
-        align-items: center;
-      }
-      .c {
-        transform: scale(1.5);
-        bottom: 4vw;
-        right: 4vw;
-        width: 15vw;
-        height: 15vw;
-        border-radius: 50%;
-        background: conic-gradient(
-          Aqua 0deg 90deg,
-          Pink 90deg 180deg,
-          Pink 180deg 270deg,
-          Aqua 270deg 360deg
-        );
-        position: absolute;
-      }
-      .c div {
-        position: absolute;
-        width: 50%;
-        height: 50%;
-        cursor: pointer;
-      }
-      .d {
-        top: 0;
-        left: 0;
-        background-color: Aqua;
-        border-top-left-radius: 100%;
-      }
-      .e {
-        top: 0;
-        right: 0;
-        background-color: Pink;
-        border-top-right-radius: 100%;
-      }
-      .f {
-        bottom: 0;
-        left: 0;
-        background-color: Pink;
-        border-bottom-left-radius: 100%;
-      }
-      .g {
-        bottom: 0;
-        right: 0;
-        background-color: Aqua;
-        border-bottom-right-radius: 100%;
-      }
-      .scrn {
-        display: none;
-      }
-      #text-container {
-        font-family: monospace;
-        font-size: 8vw;
-        padding: 10px;
-        margin-bottom: 20px;
-        cursor: pointer; /* Indicate it's clickable */
-        font-family: monospace; /* Ensure consistent spacing */
-        white-space: pre-wrap; /* Preserve line breaks and spaces */
-      }
-      .hidden {
-        visibility: hidden;
-      }
-      .text-container2 {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        cursor: pointer;
-        font-size: 9.1vw;
-      }
+ <html lang="en">                             
+ <head>                               
+     <meta charset="UTF-8">                                                 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+     <title>Color Quarter Navigation</title>                                
+     <style>                                                                   
+         * {
+             margin: 0;
+         }
+         #a {
+         background-color: black;
+         width: 100vw;
+         height: 100vh;
+         }
+         .b {
+             position: fixed;
+             bottom: 0;
+             right: 0;
+             width: 10vw;
+             height: 10vw;
+             background-color: white;
+             border-radius: 50%;
+             cursor: pointer;
+             transition: transform 0.3s, background 0.3s;
+             display: none;
+             justify-content: center;
+             align-items: center;
+         }
+         .c {
+             transform: scale(1.5);
+             bottom: 4vw;
+             right: 4vw;
+             width: 15vw;
+             height: 15vw;
+             border-radius: 50%;
+             background: conic-gradient(
+                 Aqua 0deg 90deg,
+                 Pink 90deg 180deg,
+                 Pink 180deg 270deg,
+                 Aqua 270deg 360deg
+             );
+             position: absolute;
+         }
+         .c div {
+             position: absolute;
+             width: 50%;
+             height: 50%;
+             cursor: pointer;
+         }
+         .d { top: 0; left: 0; background-color: Aqua; border-top-left-radius: 100%; }
+         .e { top: 0; right: 0; background-color: Pink; border-top-right-radius: 100%; }
+         .f { bottom: 0; left: 0; background-color: Pink; border-bottom-left-radius: 100%; }
+         .g { bottom: 0; right: 0; background-color: Aqua; border-bottom-right-radius: 100%; }
+         .scrn {
+             display: none;
+         }
+        #text-container {
+    font-family: monospace;
+    font-size: 8vw;
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer; /* Indicate it's clickable */
+    font-family: monospace; /* Ensure consistent spacing */
+    white-space: pre-wrap; /* Preserve line breaks and spaces */
+  }
+  .hidden {
+    visibility: hidden;
+  }
+          .text-container2 {
+      font-family: Arial, sans-serif;  
+      padding: 20px;
+      cursor: pointer;
+      font-size: 9.1vw;
+    }
       #spans {
-        display: none;
-        margin: 3vw;
+       display: none;
+       margin: 3vw;
       }
       .word {
-        cursor: pointer;
-        display: inline-block;
-        font-size: 9vw;
-        font-weight: bold;
-        font-family: Arial;
-        color: Black;
-      }
-      .word.dark {
-        color: Red;
-      }
-      .word.medium {
-        color: Orange;
-      }
-      .word.blue {
-        color: Yellow;
-      }
-      .word.royal {
-        color: SpringGreen;
-      }
-      .word.sky {
-        color: RoyalBlue;
-      }
-      .word.light {
-        color: Violet;
-      }
-      .word.aqua {
-        color: AquaMarine;
-      }
-      .word.white {
-        color: White;
-      }
-          #word-container3 {
-        font-family: Arial, sans-serif;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      max-width: 800px;
-      margin-bottom: 20px;
-      font-size: 7.5vw;
-    margin: 5vw;
-    }
-    .word3 {
-      cursor: grab;
-      user-select: none;
-    }
-    .word3.dragging {
-      opacity: 0.5;
-    }
-    #check-button {
-        position: fixed;
-        border: none;
-        bottom: 0;
-        left 0;
-        width: 76vw;
-        height: 8vh;
-        background-color: white
-    }
-
-    </style>
-  </head>
-  <body>
-    <div id="a"></div>
-    <div id="spans">
-      <span class="word">&nbsp;The</span>
-      <span class="word">&nbsp;more</span>
-      <span class="word">&nbsp;I</span>
-      <span class="word">&nbsp;believe</span>
-      <span class="word">&nbsp;the</span>
-      <span class="word">&nbsp;impossible,</span>
-      <span class="word">&nbsp;the</span>
-      <span class="word">&nbsp;more</span>
-      <span class="word">&nbsp;it</span>
-      <span class="word">&nbsp;nods</span>
-      <span class="word">&nbsp;back</span>
-      <span class="word">&nbsp;and</span>
-      <span class="word">&nbsp;makes</span>
-      <span class="word">&nbsp;room</span>
-      <span class="word">&nbsp;for</span>
-      <span class="word">&nbsp;me.</span>
-      <span class="word">&nbsp;Every</span>
-      <span class="word">&nbsp;time</span>
-      <span class="word">&nbsp;I</span>
-      <span class="word">&nbsp;close</span>
-      <span class="word">&nbsp;my</span>
-      <span class="word">&nbsp;eyes,</span>
-      <span class="word">&nbsp;a</span>
-      <span class="word">&nbsp;new</span>
-      <span class="word">&nbsp;world</span>
-      <span class="word">&nbsp;signs</span>
-      <span class="word">&nbsp;its</span>
-      <span class="word">&nbsp;name</span>
-      <span class="word">&nbsp;inside</span>
-      <span class="word">&nbsp;me.</span>
-      <span class="word">&nbsp;They</span>
-      <span class="word">&nbsp;said</span>
-      <span class="word">&nbsp;be</span>
-      <span class="word">&nbsp;realistic,</span>
-      <span class="word">&nbsp;but</span>
-      <span class="word">&nbsp;that</span>
-      <span class="word">&nbsp;was</span>
-      <span class="word">&nbsp;just</span>
-      <span class="word">&nbsp;code</span>
-      <span class="word">&nbsp;for</span>
-      <span class="word">&nbsp;stay</span>
-      <span class="word">&nbsp;asleep.</span>
-      <span class="word">&nbsp;I</span>
-      <span class="word">&nbsp;leave</span>
-      <span class="word">&nbsp;breadcrumbs</span>
-      <span class="word">&nbsp;in</span>
-      <span class="word">&nbsp;my</span>
-      <span class="word">&nbsp;imagination.</span>
-      <span class="word">&nbsp;And</span>
-      <span class="word">&nbsp;my</span>
-      <span class="word">&nbsp;future</span>
-      <span class="word">&nbsp;self</span>
-      <span class="word">&nbsp;follows</span>
-      <span class="word">&nbsp;them</span>
-      <span class="word">&nbsp;home.</span>
-      <span class="word">&nbsp;Time</span>
-      <span class="word">&nbsp;does</span>
-      <span class="word">&nbsp;not</span>
-      <span class="word">&nbsp;pass</span>
-      <span class="word">&nbsp;me</span>
-      <span class="word">&nbsp;by,</span>
-      <span class="word">&nbsp;I</span>
-      <span class="word">&nbsp;paint</span>
-      <span class="word">&nbsp;it</span>
-      <span class="word">&nbsp;into</span>
-      <span class="word">&nbsp;loops,</span>
-      <span class="word">&nbsp;like</span>
-      <span class="word">&nbsp;melodies.</span>
-      <span class="word">&nbsp;And</span>
-      <span class="word">&nbsp;I</span>
-      <span class="word">&nbsp;always</span>
-      <span class="word">&nbsp;return</span>
-      <span class="word">&nbsp;to</span>
-      <span class="word">&nbsp;the</span>
-      <span class="word">&nbsp;sweetest</span>
-      <span class="word">&nbsp;part.</span>
-    </div>
-    <div class="b" id="b"></div>
-    <div class="scrn" id="S1"><div id="text-container"></div></div>
-    <div class="scrn" id="S2">
-      <div class="text-container2" id="text"></div>
-    </div>
-    <div class="scrn" id="S3">  <div id="word-container3"></div>
-  <button id="check-button"></button></div>
-    <div class="scrn" id="S4">SCREEN FOUR</div>
-    <div class="scrn" id="S5"></div>
-    <div class="scrn" id="S6"></div>
-    <div class="scrn" id="S7"></div>
-    <div class="scrn" id="S8"></div>
-    <script>
-      let spans = document.getElementById("spans");
-      let a = document.getElementById("a"); // startscherm
-      let b = document.getElementById("b"); // button
-      let c = false; // expanded
-      let S1 = document.getElementById("S1");
-      let S2 = document.getElementById("S2");
-      let S3 = document.getElementById("S3");
-      let S4 = document.getElementById("S4");
-      a.addEventListener("click", () => {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
-        } else if (document.exitFullscreen) {
-          document.exitFullscreen();
+    cursor: pointer;
+    display: inline-block;
+    font-size: 9vw;
+    font-weight: bold;
+       font-family: Arial;
+    color: Black;
+}
+        .word.dark {
+            color: Red;
         }
-        a.style.display = "none";
-        b.style.display = "flex";
-        spans.style.display = "block";
-      });
+        .word.medium {
+            color: Orange;
+        }
+        .word.blue { 
+            color: Yellow;
+        }
+        .word.royal {
+            color: SpringGreen;
+        }
+        .word.sky {
+            color: RoyalBlue;
+        }
+        .word.light { 
+            color: Violet;
+        }
+        .word.aqua {
+            color: AquaMarine;
+        }
+        .word.white {
+            color: White;
+        }
 
-      b.addEventListener("click", (event) => {
-        if (!c) {
-          b.classList.add("c");
-          b.innerHTML = `
+     </style>
+ </head>
+ <body>
+     <div id="a"></div>
+  <div id='spans'><span class="word">&nbsp;The</span>
+<span class="word">&nbsp;more</span>
+<span class="word">&nbsp;I</span>
+<span class="word">&nbsp;believe</span>
+<span class="word">&nbsp;the</span>
+<span class="word">&nbsp;impossible,</span>
+<span class="word">&nbsp;the</span>
+<span class="word">&nbsp;more</span>
+<span class="word">&nbsp;it</span>
+<span class="word">&nbsp;nods</span>
+<span class="word">&nbsp;back</span>
+<span class="word">&nbsp;and</span>
+<span class="word">&nbsp;makes</span>
+<span class="word">&nbsp;room</span>
+<span class="word">&nbsp;for</span>
+<span class="word">&nbsp;me.</span>
+<span class="word">&nbsp;Every</span>
+<span class="word">&nbsp;time</span>
+<span class="word">&nbsp;I</span>
+<span class="word">&nbsp;close</span>
+<span class="word">&nbsp;my</span>
+<span class="word">&nbsp;eyes,</span>
+<span class="word">&nbsp;a</span>
+<span class="word">&nbsp;new</span>
+<span class="word">&nbsp;world</span>
+<span class="word">&nbsp;signs</span>
+<span class="word">&nbsp;its</span>
+<span class="word">&nbsp;name</span>
+<span class="word">&nbsp;inside</span>
+<span class="word">&nbsp;me.</span>
+<span class="word">&nbsp;They</span>
+<span class="word">&nbsp;said</span>
+<span class="word">&nbsp;be</span>
+<span class="word">&nbsp;realistic,</span>
+<span class="word">&nbsp;but</span>
+<span class="word">&nbsp;that</span>
+<span class="word">&nbsp;was</span>
+<span class="word">&nbsp;just</span>
+<span class="word">&nbsp;code</span>
+<span class="word">&nbsp;for</span>
+<span class="word">&nbsp;stay</span>
+<span class="word">&nbsp;asleep.</span>
+<span class="word">&nbsp;I</span>
+<span class="word">&nbsp;leave</span>
+<span class="word">&nbsp;breadcrumbs</span>
+<span class="word">&nbsp;in</span>
+<span class="word">&nbsp;my</span>
+<span class="word">&nbsp;imagination.</span>
+<span class="word">&nbsp;And</span>
+<span class="word">&nbsp;my</span>
+<span class="word">&nbsp;future</span>
+<span class="word">&nbsp;self</span>
+<span class="word">&nbsp;follows</span>
+<span class="word">&nbsp;them</span>
+<span class="word">&nbsp;home.</span>
+<span class="word">&nbsp;Time</span>
+<span class="word">&nbsp;does</span>
+<span class="word">&nbsp;not</span>
+<span class="word">&nbsp;pass</span>
+<span class="word">&nbsp;me</span>
+<span class="word">&nbsp;by,</span>
+<span class="word">&nbsp;I</span>
+<span class="word">&nbsp;paint</span>
+<span class="word">&nbsp;it</span>
+<span class="word">&nbsp;into</span>
+<span class="word">&nbsp;loops,</span>
+<span class="word">&nbsp;like</span>
+<span class="word">&nbsp;melodies.</span>
+<span class="word">&nbsp;And</span>
+<span class="word">&nbsp;I</span>
+<span class="word">&nbsp;always</span>
+<span class="word">&nbsp;return</span>
+<span class="word">&nbsp;to</span>
+<span class="word">&nbsp;the</span>
+<span class="word">&nbsp;sweetest</span>
+<span class="word">&nbsp;part.</span></div>
+     <div class="b" id="b">
+
+</div>
+     <div class="scrn" id="S1"><div id="text-container"></div></div>
+     <div class="scrn" id="S2"><div class="text-container2" id="text"></div></div>
+     <div class="scrn" id="S3">SCREEN THREE</div>
+     <div class="scrn" id="S4">SCREEN FOUR</div>
+     <div class="scrn" id="S5"></div>
+     <div class="scrn" id="S6"></div>
+     <div class="scrn" id="S7"></div>
+     <div class="scrn" id="S8"></div>
+   <script>
+       let spans = document.getElementById("spans");
+       let a = document.getElementById("a");        // startscherm
+       let b = document.getElementById('b');        // button
+       let c = false;                               // expanded              
+       let S1 = document.getElementById("S1");
+       let S2 = document.getElementById("S2");
+       let S3 = document.getElementById("S3");
+       let S4 = document.getElementById("S4");
+     a.addEventListener("click", () => {
+         if (!document.fullscreenElement) {
+           document.documentElement.requestFullscreen();
+         } else if (document.exitFullscreen) {
+           document.exitFullscreen();
+         }
+         a.style.display = "none";
+         b.style.display = "flex";
+         spans.style.display = "block"
+       });
+ 
+         b.addEventListener('click', (event) => {
+             if (!c) {
+                 b.classList.add('c');
+                 b.innerHTML = `
                      <div class='d' onclick='changeColor1(event, "white")'></div>
                      <div class='e' onclick='changeColor2(event, "white")'></div>
                      <div class='f' onclick='changeColor3(event, "white")'></div>
                      <div class='g' onclick='changeColor4(event, "white")'></div>
                  `;
-          c = true;
-        } else {
-          resetButton();
+                 c = true;
+             } else {
+                 resetButton();
+             }
+             event.stopPropagation();
+         });
+ 
+         function changeColor1(event, color) {
+             event.stopPropagation(); // Prevents click from propagating to parent
+             document.body.style.backgroundColor = color;
+             resetButton();
+             S1.style.display = "block";
+             S2.style.display = "none";
+             S3.style.display = "none";
+             S4.style.display = "none";
+             spans.style.display = "none";
+         }
+         function changeColor2(event, color) {
+             event.stopPropagation(); // Prevents click from propagating to parent
+             document.body.style.backgroundColor = color;
+             resetButton();
+             S2.style.display = "block";
+             S1.style.display = "none";
+             S3.style.display = "none";
+             S4.style.display = "none";
+          spans.style.display = "none";
+         }
+         function changeColor3(event, color) {
+             event.stopPropagation();
+             document.body.style.backgroundColor = color;
+             resetButton();
+             S3.style.display = "block";
+             S1.style.display = "none";
+             S2.style.display = "none";
+             S4.style.display = "none";
+         }
+         function changeColor4(event, color) {
+             event.stopPropagation(); 
+             document.body.style.backgroundColor = color;
+             resetButton();
+             S4.style.display = "block";
+             S1.style.display = "none";
+             S2.style.display = "none";
+             S3.style.display = "none";
+         }
+         function resetButton() {
+             b.classList.remove('c');
+             b.innerHTML = '';
+             c = false;
+         }
+ 
+         document.body.addEventListener('click', () => {
+             if (c) {
+                 resetButton();
+             }
+         });
+      const textContainer = document.getElementById('text-container');
+  const originalText = "The more I believe the impossible, the more it nods back and makes room for me. Every time I close my eyes, a new world signs its name inside me. They said be realistic, but that was just code for stay asleep. I leave breadcrumbs in my imagination. And my future self follows them home. Time does not pass me by, I paint it into loops, like melodies. And I always return to the sweetest part.";
+  const localStorageKey = 'erasedTextData2';
+  let nextCharToRemove = 'a';
+
+  function getTextToDisplay() {
+    let savedData = localStorage.getItem(localStorageKey);
+    let currentText = originalText;
+    let charsToHide = [];
+
+    if (savedData) {
+      const parsedData = JSON.parse(savedData);
+      currentText = parsedData.originalText; // Keep the original text for reference
+      nextCharToRemove = parsedData.nextChar;
+      charsToHide = parsedData.hiddenChars || [];
+    }
+
+    let displayText = '';
+    for (let i = 0; i < currentText.length; i++) {
+      const char = currentText[i];
+      const lowerChar = char.toLowerCase();
+      if (charsToHide.includes(lowerChar)) {
+        displayText += `<span class="hidden">${char}</span>`;
+      } else {
+        displayText += char;
+      }
+    }
+
+    return displayText;
+  }
+
+  function updateTextOnScreen() {
+    textContainer.innerHTML = getTextToDisplay();
+  }
+
+  function saveProgress(hiddenChars, nextChar) {
+    localStorage.setItem(localStorageKey, JSON.stringify({ originalText: originalText, hiddenChars: hiddenChars, nextChar: nextChar }));
+  }
+
+  function eraseNextCharacter(hiddenChars) {
+    if (nextCharToRemove > 'z') {
+      return hiddenChars; // All lowercase letters have been removed
+    }
+
+    if (!hiddenChars.includes(nextCharToRemove)) {
+      hiddenChars.push(nextCharToRemove);
+    }
+
+    // Move to the next character
+    let nextCharCode = nextCharToRemove.charCodeAt(0) + 1;
+    while (nextCharCode <= 'z'.charCodeAt(0)) {
+      const potentialNextChar = String.fromCharCode(nextCharCode);
+      let found = false;
+      for (let i = 0; i < originalText.length; i++) {
+        if (originalText[i].toLowerCase() === potentialNextChar && !hiddenChars.includes(potentialNextChar)) {
+          nextCharToRemove = potentialNextChar;
+          found = true;
+          break;
         }
-        event.stopPropagation();
-      });
-
-      function changeColor1(event, color) {
-        event.stopPropagation(); // Prevents click from propagating to parent
-        document.body.style.backgroundColor = color;
-        resetButton();
-        S1.style.display = "block";
-        S2.style.display = "none";
-        S3.style.display = "none";
-        S4.style.display = "none";
-        spans.style.display = "none";
       }
-      function changeColor2(event, color) {
-        event.stopPropagation(); // Prevents click from propagating to parent
-        document.body.style.backgroundColor = color;
-        resetButton();
-        S2.style.display = "block";
-        S1.style.display = "none";
-        S3.style.display = "none";
-        S4.style.display = "none";
-        spans.style.display = "none";
+      if (found) {
+        break;
       }
-      function changeColor3(event, color) {
-        event.stopPropagation();
-        document.body.style.backgroundColor = color;
-        resetButton();
-        S3.style.display = "block";
-        S1.style.display = "none";
-        S2.style.display = "none";
-        S4.style.display = "none";
-        spans.style.display = "none";
+      nextCharCode++;
+    }
+    if (nextCharCode > 'z'.charCodeAt(0)) {
+      nextCharToRemove = 'z' + 1; // Mark as done
+    }
+
+    return hiddenChars;
+  }
+
+  // Initial load
+  updateTextOnScreen();
+
+  // Event listener for clicking the text
+  textContainer.addEventListener('click', () => {
+    localStorage.removeItem(localStorageKey);
+    updateTextOnScreen(); // Reset to original text
+    nextCharToRemove = 'a'; // Reset the character removal progress
+  });
+
+  // Before the page is loaded, apply the next erasure
+  window.addEventListener('beforeunload', () => {
+    let savedData = localStorage.getItem(localStorageKey);
+    let currentHiddenChars = [];
+    if (savedData) {
+      currentHiddenChars = JSON.parse(savedData).hiddenChars || [];
+    }
+
+    if (nextCharToRemove <= 'z') {
+      const newHiddenChars = eraseNextCharacter(currentHiddenChars);
+      saveProgress(newHiddenChars, nextCharToRemove);
+    }
+  });
+
+  // Alternative approach to ensure erasure happens even if beforeunload doesn't always fire reliably
+  window.addEventListener('load', () => {
+    let savedData = localStorage.getItem(localStorageKey);
+    if (!savedData) { // Only do this if it's the very first load or after a reset
+      let currentHiddenChars = [];
+      if (nextCharToRemove <= 'z') {
+        const newHiddenChars = eraseNextCharacter(currentHiddenChars);
+        saveProgress(newHiddenChars, nextCharToRemove);
+        updateTextOnScreen();
       }
-      function changeColor4(event, color) {
-        event.stopPropagation();
-        document.body.style.backgroundColor = color;
-        resetButton();
-        S4.style.display = "block";
-        S1.style.display = "none";
-        S2.style.display = "none";
-        S3.style.display = "none";
-        spans.style.display = "none";
+    }
+  });
+        const defaultText = "The more I believe the impossible, the more it nods back and makes room for me. Every time I close my eyes, a new world signs its name inside me. They said be realistic, but that was just code for stay asleep. I leave breadcrumbs in my imagination. And my future self follows them home. Time does not pass me by, I paint it into loops, like melodies. And I always return to the sweetest part.";
+
+    function getTextFromStorage() {
+      return localStorage.getItem('shrunkText') || defaultText;
+    }
+
+    function saveTextToStorage(text) {
+      localStorage.setItem('shrunkText', text);
+    }
+
+    function shrinkText(text) {
+      // Split into words keeping punctuation with words
+      let words = text.match(/\b\w+[^\s\w]*|[^\s\w]+/g);
+      if (!words) return text;
+
+      let maxLength = Math.max(...words.map(w => w.length));
+      let newWords = words.map(w => (w.length === maxLength ? w.slice(0, -1) : w));
+
+      let result = newWords.join(' ');
+      result = result.replace(/ (?=[.,!?])/g, '');
+      return result;
+    }
+
+    function stripToCharactersOnly(text) {
+      return text.replace(/[^a-zA-Z]/g, '').toUpperCase();
+    }
+
+    const textContainer2 = document.getElementById('text');
+    let currentText = getTextFromStorage();
+    textContainer2.textContent = currentText;
+
+    textContainer2.addEventListener('click', () => {
+      let wordArray = currentText.match(/\b\w+[^\s\w]*|[^\s\w]+/g) || [];
+      if (wordArray.every(w => w.length === 1) || currentText.match(/^\w+$/)) {
+        currentText = stripToCharactersOnly(currentText);
+      } else {
+        currentText = shrinkText(currentText);
       }
-      function resetButton() {
-        b.classList.remove("c");
-        b.innerHTML = "";
-        c = false;
-      }
-
-      document.body.addEventListener("click", () => {
-        if (c) {
-          resetButton();
-        }
-      });
-      const textContainer = document.getElementById("text-container");
-      const originalText =
-        "The more I believe the impossible, the more it nods back and makes room for me. Every time I close my eyes, a new world signs its name inside me. They said be realistic, but that was just code for stay asleep. I leave breadcrumbs in my imagination. And my future self follows them home. Time does not pass me by, I paint it into loops, like melodies. And I always return to the sweetest part.";
-      const localStorageKey = "erasedTextData2";
-      let nextCharToRemove = "a";
-
-      function getTextToDisplay() {
-        let savedData = localStorage.getItem(localStorageKey);
-        let currentText = originalText;
-        let charsToHide = [];
-
-        if (savedData) {
-          const parsedData = JSON.parse(savedData);
-          currentText = parsedData.originalText; // Keep the original text for reference
-          nextCharToRemove = parsedData.nextChar;
-          charsToHide = parsedData.hiddenChars || [];
-        }
-
-        let displayText = "";
-        for (let i = 0; i < currentText.length; i++) {
-          const char = currentText[i];
-          const lowerChar = char.toLowerCase();
-          if (charsToHide.includes(lowerChar)) {
-            displayText += `<span class="hidden">${char}</span>`;
-          } else {
-            displayText += char;
-          }
-        }
-
-        return displayText;
-      }
-
-      function updateTextOnScreen() {
-        textContainer.innerHTML = getTextToDisplay();
-      }
-
-      function saveProgress(hiddenChars, nextChar) {
-        localStorage.setItem(
-          localStorageKey,
-          JSON.stringify({
-            originalText: originalText,
-            hiddenChars: hiddenChars,
-            nextChar: nextChar,
-          })
-        );
-      }
-
-      function eraseNextCharacter(hiddenChars) {
-        if (nextCharToRemove > "z") {
-          return hiddenChars; // All lowercase letters have been removed
-        }
-
-        if (!hiddenChars.includes(nextCharToRemove)) {
-          hiddenChars.push(nextCharToRemove);
-        }
-
-        // Move to the next character
-        let nextCharCode = nextCharToRemove.charCodeAt(0) + 1;
-        while (nextCharCode <= "z".charCodeAt(0)) {
-          const potentialNextChar = String.fromCharCode(nextCharCode);
-          let found = false;
-          for (let i = 0; i < originalText.length; i++) {
-            if (
-              originalText[i].toLowerCase() === potentialNextChar &&
-              !hiddenChars.includes(potentialNextChar)
-            ) {
-              nextCharToRemove = potentialNextChar;
-              found = true;
-              break;
-            }
-          }
-          if (found) {
-            break;
-          }
-          nextCharCode++;
-        }
-        if (nextCharCode > "z".charCodeAt(0)) {
-          nextCharToRemove = "z" + 1; // Mark as done
-        }
-
-        return hiddenChars;
-      }
-
-      // Initial load
-      updateTextOnScreen();
-
-      // Event listener for clicking the text
-      textContainer.addEventListener("click", () => {
-        localStorage.removeItem(localStorageKey);
-        updateTextOnScreen(); // Reset to original text
-        nextCharToRemove = "a"; // Reset the character removal progress
-      });
-
-      // Before the page is loaded, apply the next erasure
-      window.addEventListener("beforeunload", () => {
-        let savedData = localStorage.getItem(localStorageKey);
-        let currentHiddenChars = [];
-        if (savedData) {
-          currentHiddenChars = JSON.parse(savedData).hiddenChars || [];
-        }
-
-        if (nextCharToRemove <= "z") {
-          const newHiddenChars = eraseNextCharacter(currentHiddenChars);
-          saveProgress(newHiddenChars, nextCharToRemove);
-        }
-      });
-
-      // Alternative approach to ensure erasure happens even if beforeunload doesn't always fire reliably
-      window.addEventListener("load", () => {
-        let savedData = localStorage.getItem(localStorageKey);
-        if (!savedData) {
-          // Only do this if it's the very first load or after a reset
-          let currentHiddenChars = [];
-          if (nextCharToRemove <= "z") {
-            const newHiddenChars = eraseNextCharacter(currentHiddenChars);
-            saveProgress(newHiddenChars, nextCharToRemove);
-            updateTextOnScreen();
-          }
-        }
-      });
-      const defaultText =
-        "The more I believe the impossible, the more it nods back and makes room for me. Every time I close my eyes, a new world signs its name inside me. They said be realistic, but that was just code for stay asleep. I leave breadcrumbs in my imagination. And my future self follows them home. Time does not pass me by, I paint it into loops, like melodies. And I always return to the sweetest part.";
-
-      function getTextFromStorage() {
-        return localStorage.getItem("shrunkText") || defaultText;
-      }
-
-      function saveTextToStorage(text) {
-        localStorage.setItem("shrunkText", text);
-      }
-
-      function shrinkText(text) {
-        // Split into words keeping punctuation with words
-        let words = text.match(/\b\w+[^\s\w]*|[^\s\w]+/g);
-        if (!words) return text;
-
-        let maxLength = Math.max(...words.map((w) => w.length));
-        let newWords = words.map((w) =>
-          w.length === maxLength ? w.slice(0, -1) : w
-        );
-
-        let result = newWords.join(" ");
-        result = result.replace(/ (?=[.,!?])/g, "");
-        return result;
-      }
-
-      function stripToCharactersOnly(text) {
-        return text.replace(/[^a-zA-Z]/g, "").toUpperCase();
-      }
-
-      const textContainer2 = document.getElementById("text");
-      let currentText = getTextFromStorage();
       textContainer2.textContent = currentText;
-
-      textContainer2.addEventListener("click", () => {
-        let wordArray = currentText.match(/\b\w+[^\s\w]*|[^\s\w]+/g) || [];
-        if (
-          wordArray.every((w) => w.length === 1) ||
-          currentText.match(/^\w+$/)
-        ) {
-          currentText = stripToCharactersOnly(currentText);
-        } else {
-          currentText = shrinkText(currentText);
-        }
-        textContainer2.textContent = currentText;
-        saveTextToStorage(currentText);
-      });
-      document.addEventListener("DOMContentLoaded", () => {
-        const words = document.querySelectorAll(".word");
-        const locstor = JSON.parse(localStorage.getItem("locstor1")) || {};
-        words.forEach((word, index) => {
-          // Set initial state based on local storage
-          if (locstor[index] === 1) {
-            word.classList.add("dark");
-          } else if (locstor[index] === 2) {
-            word.classList.add("medium");
-          } else if (locstor[index] === 3) {
-            word.classList.add("blue");
-          } else if (locstor[index] === 4) {
-            word.classList.add("royal");
-          } else if (locstor[index] === 5) {
-            word.classList.add("sky");
-          } else if (locstor[index] === 6) {
-            word.classList.add("light");
-          } else if (locstor[index] === 7) {
-            word.classList.add("aqua");
-          } else if (locstor[index] === 8) {
-            word.classList.add("white");
-          } else if (locstor[index] === 9) {
+      saveTextToStorage(currentText);
+    });
+            document.addEventListener('DOMContentLoaded', () => {
+        const words = document.querySelectorAll('.word');
+        const locstor = JSON.parse(localStorage.getItem('locstor1')) || {};
+    words.forEach((word, index) => {
+        // Set initial state based on local storage
+        if (locstor[index] === 1) {
+            word.classList.add('dark');
+        } else if (locstor[index] === 2) {
+            word.classList.add('medium');
+        } else if (locstor[index] === 3) {
+            word.classList.add('blue');
+        } else if (locstor[index] === 4) {
+            word.classList.add('royal');
+        } else if (locstor[index] === 5) {
+            word.classList.add('sky');
+        } else if (locstor[index] === 6) {
+            word.classList.add('light');
+        } else if (locstor[index] === 7) {
+            word.classList.add('aqua');
+        } else if (locstor[index] === 8) {
+            word.classList.add('white');
+        } else if (locstor[index] === 9) {
             word.innerText = "";
-          }
-          word.addEventListener("click", () => {
+        } 
+        word.addEventListener('click', () => {
             if (!locstor[index]) {
-              locstor[index] = 1;
-              word.classList.add("dark");
+                locstor[index] = 1;
+                word.classList.add('dark');
             } else if (locstor[index] === 1) {
-              locstor[index] = 2;
-              word.classList.remove("dark");
-              word.classList.add("medium");
+                locstor[index] = 2;
+                word.classList.remove('dark');
+                word.classList.add('medium');
             } else if (locstor[index] === 2) {
-              locstor[index] = 3;
-              word.classList.remove("medium");
-              word.classList.add("blue");
+                locstor[index] = 3;
+                word.classList.remove('medium');
+                word.classList.add('blue');
             } else if (locstor[index] === 3) {
-              locstor[index] = 4;
-              word.classList.remove("blue");
-              word.classList.add("royal");
+                locstor[index] = 4; 
+                word.classList.remove('blue');
+                word.classList.add('royal');
             } else if (locstor[index] === 4) {
-              locstor[index] = 5;
-              word.classList.remove("royal");
-              word.classList.add("sky");
+                locstor[index] = 5;
+                word.classList.remove('royal');
+                word.classList.add('sky');
             } else if (locstor[index] === 5) {
-              locstor[index] = 6;
-              word.classList.remove("sky");
-              word.classList.add("light");
+                locstor[index] = 6;
+                word.classList.remove('sky');
+                word.classList.add('light');
             } else if (locstor[index] === 6) {
-              locstor[index] = 7;
-              word.classList.remove("light");
-              word.classList.add("aqua");
+                locstor[index] = 7; 
+                word.classList.remove('light');
+                word.classList.add('aqua');
             } else if (locstor[index] === 7) {
-              locstor[index] = 8;
-              word.classList.remove("aqua");
-              word.classList.add("white");
+                locstor[index] = 8;
+                word.classList.remove('aqua');
+                word.classList.add('white');
             } else if (locstor[index] === 8) {
-              locstor[index] = 9;
-              word.classList.remove("white");
-              word.innerText = "";
-            }
-            localStorage.setItem("locstor1", JSON.stringify(locstor));
-          });
+                locstor[index] = 9;
+                word.classList.remove('white');
+                word.innerText = ""
+           }
+            localStorage.setItem('locstor1', JSON.stringify(locstor));
         });
-      });
-          const originalText3 = "The more I believe the impossible, the more it nods back and makes room for me. Every time I close my eyes, a new world signs its name inside me. They said be realistic, but that was just code for stay asleep. I leave breadcrumbs in my imagination. And my future self follows them home. Time does not pass me by, I paint it into loops, like melodies. And I always return to the sweetest part.";
-    const correctWords3 = originalText3.split(" ");
-    const shuffledWords = [...correctWords3].sort(() => Math.random() - 0.5);
-
-    const container3 = document.getElementById("word-container3");
-
-    function createWordElement(word3) {
-      const span = document.createElement("span");
-      span.className = "word3";
-      span.draggable = true;
-      span.textContent = word3;
-
-      span.addEventListener("dragstart", (e) => {
-        span.classList.add("dragging");
-        e.dataTransfer.setData("text/plain", word3);
-        e.dataTransfer.setData("text/index", Array.from(container3.children).indexOf(span));
-      });
-
-      span.addEventListener("dragend", () => {
-        span.classList.remove("dragging");
-      });
-
-      return span;
-    }
-
-    function setupWords() {
-      container3.innerHTML = "";
-      shuffledWords.forEach((word3) => {
-        container3.appendChild(createWordElement(word3));
-      });
-    }
-
-    container3.addEventListener("dragover", (e) => {
-      e.preventDefault();
-      const afterElement = getDragAfterElement(container3, e.clientX);
-      const dragging = document.querySelector(".dragging");
-      if (afterElement == null) {
-        container.appendChild(dragging);
-      } else {
-        container3.insertBefore(dragging, afterElement);
-      }
     });
-
-    function getDragAfterElement(container, x) {
-      const elements = [...container3.querySelectorAll(".word3:not(.dragging)")];
-
-      return elements.reduce((closest, child) => {
-        const box = child.getBoundingClientRect();
-        const offset = x - box.left - box.width / 2;
-        if (offset < 0 && offset > closest.offset) {
-          return { offset: offset, element: child };
-        } else {
-          return closest;
-        }
-      }, { offset: Number.NEGATIVE_INFINITY }).element;
-    }
-
-    document.getElementById("check-button").addEventListener("click", () => {
-      const currentWords = Array.from(container3.children).map(el => el.textContent);
-      const message = document.getElementById("message");
-      if (currentWords.join(" ") === correctWords3.join(" ")) {
-          container3.style.color = "Blue";
-      } else {
-          container3.style.color = "Red";
-      }
-    });
-
-    setupWords();
-    </script>
-  </body>
-</html>
+});
+     </script>
+ </body>
+ </html>
 <!--
 abcdefg
 -->
