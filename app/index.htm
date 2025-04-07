@@ -243,7 +243,8 @@
     <div class="scrn" id="S2">
       <div class="text-container2" id="text"></div>
     </div>
-    <div class="scrn" id="S3">SCREEN THREE</div>
+    <div class="scrn" id="S3">  <div id="word-container3"></div>
+  <button id="check-button"></button></div>
     <div class="scrn" id="S4">SCREEN FOUR</div>
     <div class="scrn" id="S5"></div>
     <div class="scrn" id="S6"></div>
@@ -566,6 +567,74 @@
           });
         });
       });
+          const originalText3 = "This is a great example, isn't it?";
+    const correctWords3 = originalText3.split(" ");
+    const shuffledWords = [...correctWords3].sort(() => Math.random() - 0.5);
+
+    const container3 = document.getElementById("word-container3");
+
+    function createWordElement(word3) {
+      const span = document.createElement("span");
+      span.className = "word3";
+      span.draggable = true;
+      span.textContent = word3;
+
+      span.addEventListener("dragstart", (e) => {
+        span.classList.add("dragging");
+        e.dataTransfer.setData("text/plain", word3);
+        e.dataTransfer.setData("text/index", Array.from(container3.children).indexOf(span));
+      });
+
+      span.addEventListener("dragend", () => {
+        span.classList.remove("dragging");
+      });
+
+      return span;
+    }
+
+    function setupWords() {
+      container3.innerHTML = "";
+      shuffledWords.forEach((word3) => {
+        container3.appendChild(createWordElement(word3));
+      });
+    }
+
+    container3.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      const afterElement = getDragAfterElement(container3, e.clientX);
+      const dragging = document.querySelector(".dragging");
+      if (afterElement == null) {
+        container.appendChild(dragging);
+      } else {
+        container3.insertBefore(dragging, afterElement);
+      }
+    });
+
+    function getDragAfterElement(container, x) {
+      const elements = [...container3.querySelectorAll(".word3:not(.dragging)")];
+
+      return elements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = x - box.left - box.width / 2;
+        if (offset < 0 && offset > closest.offset) {
+          return { offset: offset, element: child };
+        } else {
+          return closest;
+        }
+      }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }
+
+    document.getElementById("check-button").addEventListener("click", () => {
+      const currentWords = Array.from(container3.children).map(el => el.textContent);
+      const message = document.getElementById("message");
+      if (currentWords.join(" ") === correctWords3.join(" ")) {
+          container3.style.color = "Blue";
+      } else {
+          container3.style.color = "Red";
+      }
+    });
+
+    setupWords();
     </script>
   </body>
 </html>
