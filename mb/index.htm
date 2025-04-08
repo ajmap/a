@@ -22,16 +22,12 @@
         bottom: 0;
         left: 0;
         height: 6vh;
-        transition: height 0.7s ease-in-out;
-      }
-      footer.h {
-        height: 21vh;
       }
       button {
-        padding: 0 0 5vw 4.9vw;
+        padding: 0 0 5vw 4.8vw;
         border: none;
         background-color: White;
-        font-size: 61vw;
+        font-size: 62vw;
       }
       #i {
         display: none;
@@ -59,7 +55,6 @@
       let c = document.getElementById("c"); // Button 1
       let d = document.getElementById("d"); // Button 2
       let f = document.getElementById("f"); // Button 4, (stop) Full Screen
-      let g = document.getElementById("g"); // footer (groter)
       let i = document.getElementById("i"); // Scherm 1
       let j = document.getElementById("j"); // Scherm 2
       a.addEventListener("click", () => {
@@ -74,16 +69,10 @@
       c.addEventListener("click", () => {
         i.style.display = "block";
         j.style.display = "none";
-        g.classList.remove("h");
       });
       d.addEventListener("click", () => {
         i.style.display = "none";
         j.style.display = "block";
-        g.classList.remove("h");
-      });
-      g.addEventListener("click", (event) => {
-        event.stopPropagation();
-        g.classList.add("h");
       });
       f.addEventListener("click", () => {
         if (!document.fullscreenElement) {
