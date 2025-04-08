@@ -60,7 +60,8 @@
         a.style.display = "none";
         b.style.display = "block";
       });
-      g.addEventListener("click", () => {
+      g.addEventListener("click", (event) => { 
+        event.stopPropagation();
         g.classList.add("h");
       });
       f.addEventListener("click", () => {
