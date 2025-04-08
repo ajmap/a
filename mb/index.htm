@@ -21,11 +21,14 @@
         position: fixed;
         bottom: 0;
         left: 0;
-        height: 19vh;
+        height: 18vh;
         transition: height 0.7s ease-in-out;
       }
+      footer.h {
+        
+      }
       button {
-        padding: 4vw;
+        padding: 5vw;
         border: none;
         background-color: White;
         font-size: 47vw;
@@ -36,7 +39,7 @@
     <p id="a"></p>
     <main id="b">
       H
-      <footer>
+      <footer id='g'>
         <button id='c'>-</button>
         <button id='d'>-</button>
         <button id='e'>-</button>
@@ -46,6 +49,7 @@
     <script>
       let a = document.getElementById("a");
       let b = document.getElementById("b");
+      let g = document.getElementById("g");
       a.addEventListener("click", () => {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
@@ -54,6 +58,9 @@
         }
         a.style.display = "none";
         b.style.display = "block";
+      });
+      g.addEventListener("click", () => {
+        
       });
     </script>
   </body>
