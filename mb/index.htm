@@ -49,6 +49,7 @@
     <script>
       let a = document.getElementById("a");
       let b = document.getElementById("b");
+      let f = document.getElementById("f");
       let g = document.getElementById("g");
       a.addEventListener("click", () => {
         if (!document.fullscreenElement) {
@@ -61,6 +62,13 @@
       });
       g.addEventListener("click", () => {
         g.classList.add("h");
+      });
+      f.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
       });
     </script>
   </body>
