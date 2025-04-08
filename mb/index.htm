@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop memorization App</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      #_ {
+                  background-color: Black;
+          height: 100vh;
+          width: 100vw;
+      }
+        header {
+
+        }
+        footer {
+            position: fixed;
+            height: 100vh;
+            width: 0.1vw;
+            top: 0;
+            right: 0;
+            transition: width 0.7s ease-in-out;
+            font-size: 12vw;
+        }
+        aside:hover {
+            width: 1.6vw;
+        }
+        #d {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p id='_'></p>
+    <main>
+    <footer>
+        <button id='a'>-</button>
+        <button id='b'>-</buttonp>
+        <button id='c'>-</buttonp>
+        <button id='e'>-</buttonp>  
+    </footer>
+    <p id='d'>
+        Hallo
+    </p>
+    </main>
+    <script>
+        let s = document.getElementById("s");
+        let m = document.getElementById("m");
+        let p = document.querySelectorAll(".p");
+        s.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        s.style.display = "none";
+        m.style.display = "block";
+      });
+        let a = document.getElementById('a')
+        let d = document.getElementById('d')
+        a.addEventListener('click', () => d.style.display = 'block')
+    </script>
+</body>
+</html>
