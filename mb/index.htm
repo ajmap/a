@@ -33,12 +33,19 @@
         background-color: White;
         font-size: 61vw;
       }
+      #i {
+        display: none;
+      }
+      #j {
+        display: none;
+      }
     </style>
   </head>
   <body>
     <p id="a"></p>
     <main id="b">
-      Hallo
+      <p id="i">i i i i</p>
+      <p id="j">j j j j</p>
       <footer id="g">
         <button id="c">-</button>
         <button id="d">-</button>
@@ -47,10 +54,14 @@
       </footer>
     </main>
     <script>
-      let a = document.getElementById("a");
-      let b = document.getElementById("b");
-      let f = document.getElementById("f");
-      let g = document.getElementById("g");
+      let a = document.getElementById("a"); // Startscherm
+      let b = document.getElementById("b"); // Main
+      let c = document.getElementById("c"); // Button 1
+      let d = document.getElementById("d"); // Button 2
+      let f = document.getElementById("f"); // Button 4, (stop) Full Screen
+      let g = document.getElementById("g"); // footer (groter)
+      let i = document.getElementById("i"); // Scherm 1
+      let j = document.getElementById("j"); // Scherm 2
       a.addEventListener("click", () => {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
@@ -60,7 +71,17 @@
         a.style.display = "none";
         b.style.display = "block";
       });
-      g.addEventListener("click", (event) => { 
+      c.addEventListener("click", () => {
+        i.style.display = "block";
+        j.style.display = "none";
+        g.classList.remove("h");
+      });
+      d.addEventListener("click", () => {
+        i.style.display = "none";
+        j.style.display = "block";
+        g.classList.remove("h");
+      });
+      g.addEventListener("click", (event) => {
         event.stopPropagation();
         g.classList.add("h");
       });
