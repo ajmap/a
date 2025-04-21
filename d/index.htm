@@ -46,6 +46,7 @@
     <p id="message"></p>
   </div>
   <div id = "button"></div>
+  <div class="next-button" onclick="nextMessage()">Next Message</div>
 
   <script>
     let start = document.getElementById("start");
@@ -64,7 +65,7 @@
 
     
     const messages = [ "I feel love’s joy like a primal scream in my body, glowing and glittering like fireworks as it moves through me, becomes me, and weaves itself into this moment.", "I feel love’s ecstasy surge through me like a wild song, igniting fireworks in my cells, becoming my breath, my being, and this radiant now."];
-   
+    let msgIndex = 0;
 
     const getSavedWords = (key) => {
       const saved = localStorage.getItem(key);
@@ -75,30 +76,37 @@
       localStorage.setItem(key, JSON.stringify(words));
     };
 
-    const renderMessage = (words, msgIndex) => {
+    const renderMessage = (words, index) => {
       const container = document.getElementById('message');
       container.innerHTML = '';
-      words.forEach((word, index) => {
+      words.forEach((word, i) => {
         const span = document.createElement('span');
         span.textContent = word;
         span.classList.add('word');
         span.onclick = () => {
           if (word.length > 0) {
-            words[index] = word.slice(0, -1);
-            saveWords(`message-${msgIndex}`, words);
-            renderMessage(words, msgIndex);
+            words[i] = word.slice(0, -1);
+            saveWords(`message-${index}`, words);
+            renderMessage(words, index);
           }
         };
         container.appendChild(span);
       });
     };
-    let msgIndex = 0;
-    const storedWords = getSavedWords(`message-${msgIndex}`);
-    const initialWords = storedWords || messages[msgIndex].split(' ');
 
-    renderMessage(initialWords, msgIndex);
+    const loadMessage = (index) => {
+      const saved = getSavedWords(`message-${index}`);
+      const words = saved || messages[index].split(' ');
+      renderMessage(words, index);
+    };
 
-    button.addEventListener("click", () => { msgIndex++; renderMessage(initialWords, msgIndex); } )
+    const nextMessage = () => {
+      msgIndex = (msgIndex + 1) % messages.length;
+      loadMessage(msgIndex);
+    };
+
+    // Initial load
+    loadMessage(msgIndex);
   </script>
 </body>
 </html>
