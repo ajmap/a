@@ -5,10 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Word Trimmer App</title>
   <style>
-
+    * {
+      margin: 0;
+    }
+    #start {
+      text-align: center;
+      padding-top: 45vh;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10vw;
+      width: 100vw;
+      height: 55vh;
+      color: lightblue;
+      background-color: rgb(50, 50, 50);
+    }
     .container {
+        display: none;
         font-family: Arial, sans-serif;
-        font-size: 4vw;
+        font-size: 9vw;
         margin: 15vh 10vw;
     }
     .word {
@@ -19,11 +32,25 @@
   </style>
 </head>
 <body>
+  <div id="start">START</div>
   <div class="container">
     <p id="message"></p>
   </div>
 
   <script>
+    let start = document.getElementById("start");
+    let container = document.getElementById("container");
+    start.addEventListener("click", () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+      start.style.display = "none";
+      container.style.display = "block";
+    });
+
+    
     const messages = [ "I feel love’s joy like a primal scream in my body, glowing and glittering like fireworks as it moves through me, becomes me, and weaves itself into this moment.", "I feel love’s ecstasy surge through me like a wild song, igniting fireworks in my cells, becoming my breath, my being, and this radiant now."];
    
 
