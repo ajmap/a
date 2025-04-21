@@ -39,7 +39,7 @@
 
   <script>
     let start = document.getElementById("start");
-    let container = document.getElementById("container");
+    let container = document.querySelector(".container");
     start.addEventListener("click", () => {
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
