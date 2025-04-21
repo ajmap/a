@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Word Trimmer App</title>
+  <style>
 
+    .container {
+        font-family: Arial, sans-serif;
+        font-size: 4vw;
+        margin: 15vh 10vw;
+    }
+    .word {
+      cursor: pointer;
+      margin: 0 1vw;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p id="message"></p>
+  </div>
+
+  <script>
+    const messages = [ "I feel love’s joy like a primal scream in my body, glowing and glittering like fireworks as it moves through me, becomes me, and weaves itself into this moment.", "I feel love’s ecstasy surge through me like a wild song, igniting fireworks in my cells, becoming my breath, my being, and this radiant now."];
+   
+
+    const getSavedWords = (key) => {
+      const saved = localStorage.getItem(key);
+      return saved ? JSON.parse(saved) : null;
+    };
+
+    const saveWords = (key, words) => {
+      localStorage.setItem(key, JSON.stringify(words));
+    };
+
+    const renderMessage = (words, msgIndex) => {
+      const container = document.getElementById('message');
+      container.innerHTML = '';
+      words.forEach((word, index) => {
+        const span = document.createElement('span');
+        span.textContent = word;
+        span.classList.add('word');
+        span.onclick = () => {
+          if (word.length > 0) {
+            words[index] = word.slice(0, -1);
+            saveWords(`message-${msgIndex}`, words);
+            renderMessage(words, msgIndex);
+          }
+        };
+        container.appendChild(span);
+      });
+    };
+    const msgIndex = Math.floor(Math.random() * messages.length);
+    const storedWords = getSavedWords(`message-${msgIndex}`);
+    const initialWords = storedWords || messages[msgIndex].split(' ');
+
+    renderMessage(initialWords, msgIndex);
+  </script>
+</body>
+</html>
