@@ -30,6 +30,14 @@
       display: inline-block;
       letter-spacing: 0.7vw;
     }
+    #button {
+      display: none;
+      posistion: fixed;
+      width: 100vw;
+      height: 15vh;
+      bottom: 0;
+      left: 0;
+    }
   </style>
 </head>
 <body>
@@ -37,10 +45,12 @@
   <div class="container">
     <p id="message"></p>
   </div>
+  <div id = "button">
 
   <script>
     let start = document.getElementById("start");
     let container = document.querySelector(".container");
+    let button = document.getElementById("button");
     start.addEventListener("click", () => {
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
@@ -49,6 +59,7 @@
       }
       start.style.display = "none";
       container.style.display = "block";
+      button.style.display = "block";
     });
 
     
@@ -81,11 +92,13 @@
         container.appendChild(span);
       });
     };
-    const msgIndex = Math.floor(Math.random() * messages.length);
+    let msgIndex = 0;
     const storedWords = getSavedWords(`message-${msgIndex}`);
     const initialWords = storedWords || messages[msgIndex].split(' ');
 
     renderMessage(initialWords, msgIndex);
+
+    button.addEventListener("click", () => { msgIndex++; renderMessage(initialWords, msgIndex); } )
   </script>
 </body>
 </html>
