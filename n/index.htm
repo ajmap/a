@@ -1,348 +1,84 @@
-)<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eloquence</title>
-<style>
-    * {
-        margin: 0;
-        font-family: Arial, sans-serif;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Word Trimmer Timed</title>
+  <style>
+    body {
+      font-family: monospace;
+      font-size: 4.3vw;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
-        #s {
-        background-color: black;
-        width: 100vw;
-        height: 100vh;
-      }
-    .p {
-        background-color: Snow;
-        pointer-events: none;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: opacity 0.3s ease;
+    .container {
+      text-align: center;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
-    .active {
-        opacity: 1;
-        pointer-events: auto;
-    }
-    #m {
-        display: none;
-    }
-   span {
-      font-size: 4vw;
-        margin: 4.5vw 0.8vw;
-   }
-   .m {
-       margin: 2vw;
-      font-size: 7vw;
-   }
-</style>
+  </style>
 </head>
 <body>
-        <div id="s"></div>
-<div id="m" class="container active">
-    <div>
-    <span id="adequate" class="span">adequate</span>
-    <span id="affect" class="span">affect</span>
-    <span id="annoy" class="span">annoy</span>
-    <span id="asked" class="span">asked</span>
-    <span id="asking" class="span">asking</span>
-    <span id="bad" class="span">bad</span>
-    <span id="big" class="span">big</span>
-    <span id="bland" class="span">bland</span>
-    <span id="bright" class="span">bright</span>
-    <span id="calm" class="span">calm</span>
-    <span id="careless" class="span">careless</span>
-    <span id="clean" class="span">clean</span>
-    <span id="clear" class="span">clear</span>
-    <span id="cold" class="span">cold</span>
-    <span id="confused" class="span">confused</span>
-    <span id="criticize" class="span">criticize</span>
-    <span id="cute" class="span">cute</span>
-    <span id="deep" class="span">deep</span>
-    <span id="dislike" class="span">dislike</span>
-    <span id="dislikd" class="span">disliked</span>
-    <span id="dirty" class="span">dirty</span>
-    <span id="dry" class="span">dry</span>
-    <span id="end" class="span">end</span>
-    <span id="fancy" class="span">fancy</span>
-    <span id="fast" class="span">fast</span>
-    <span id="fine" class="span">fine</span>
-    <span id="formal" class="span">formal</span>
-    <span id="fun" class="span">fun</span>
-    <span id="funny" class="span">funny</span>
-    <span id="happy" class="span">happy</span>
-    <span id="good" class="span">good</span>
-    <span id="hard" class="span">hard</span>
-    <span id="hidden" class="span">hidden</span>
-    <span id="hot" class="span">hot</span>
-    <span id="imaginarary" class="span">imaginary</span>
-    <span id="important" class="span">important</span>
-    <span id="improve" class="span">improve</span>
-    <span id="irritated" class="span">irritated</span>
-    <span id="kind" class="span">kind</span>
-    <span id="known" class="span">known</span>
-    <span id="lasting" class="span">lasting</span>    
-    <span id="like" class="span">like</span>
-    <span id="long" class="span">long</span>
-    <span id="loud" class="span">loud</span>
-    <span id="neat" class="span">neat</span>
-    <span id="odd" class="span">odd</span>
-    <span id="often" class="span">often</span>
-    <span id="okay" class="span">okay</span>
-    <span id="pale" class="span">pale</span>
-    <span id="pause" class="span">pause</span>
-    <span id="pleasant" class="span">pleasant</span>
-    <span id="pleased" class="span">pleased</span>
-    <span id="plentiful" class="span">plentiful</span>
-    <span id="predictable" class="span">predictable</span>
-    <span id="poor" class="span">poor</span>
-    <span id="question" class="span">question</span>
-    <span id="quiet" class="span">quiet</span>
-    <span id="recognized" class="span">recognized</span>
-    <span id="run" class="span">run</span>
-    <span id="rude" class="span">rude</span>
-    <span id="sad" class="span">sad</span>
-    <span id="said" class="span">said</span>
-    <span id="scary" class="span">scary</span>
-    <span id="selfish" class="span">selfish</span>
-    <span id="short" class="span">short</span>
-    <span id="short2" class="span">short (more extreme)</span>    
-    <span id="shy" class="span">shy</span>
-    <span id="small" class="span">small</span>
-    <span id="smart" class="span">smart</span>
-    <span id="sometimes" class="span">sometimes</span>
-    <span id="soon" class="span">soon</span>
-    <span id="tasty" class="span">tasty</span>
-    <span id="tired" class="span">tired</span>
-    <span id="think" class="span">think</span>
-    <span id="tough" class="span">tough</span>
-    <span id="tricky" class="span">tricky</span>
-    <span id="unethical" class="span">unethical</span>
-    <span id="unfaithful" class="span">unfaithful</span>
-    <span id="unlikely" class="span">unlikely</span>    
-    <span id="unsatisfactory" class="span">unsatifactory</span>
-    <span id="upset" class="span">upset</span>
-    <span id="warm" class="span">warm</span>
-    <span id="weird" class="span">weird</span>
-    <span id="wordy" class="span">wordy</span>
-    <span id="worried" class="span">worried</span>
-    <span id="wild" class="span">wild</span>
-    </div>
-</div>
-<div id="adequat" class="p">
-    <div>
-        <p class="m">inimitable, exemplary, brilliant, commendable, matchless, inspiring, exceptional, impressive, remarkable, admirable</p>
-    </div>
-</div>
-<div id="anno" class="p">
-    <div>
-        <p class="m">exasperate, infuriate, irk, pique, vex, aggravate</p>
-    </div>
-</div>
-<div id="askd" class="p">
-    <div>
-        <p class="m">pressed, required, commanded, instructed, demanded, stipulated, ordered, directed, coerced, forceful, implored, insisted, mandaded</p>
-    </div>
-</div>    
-<div id="askin" class="p"><div><p class="m">urging, requiring, imploring, instructing, ordering, compelling, pressing, forcing	</p></div></div>
-<div id="ba" class="p"><div><p class="m">anguised, distraught, sullen, worthless, devastated,melancholic, crushed, dejected, heartbroken, disconsolate	</p></div></div>
-<div id="bi" class="p"><div><p class="m">grand, huge, immense, enormous, massive, towering, monumental, colossal, palatial, gigantic, gargantuan</p></div></div>
-<div id="blan" class="p"><div><p class="m">uninteresting, dull, boring, tedious, onotonous, dry, drab, dreary, wearisome, unexciting, unimaginative, uninspiring, uninspired, insipid, tasteless, characterless, tepid, inedible	</p></div></div>
-<div id="brigh" class="p"><div><p class="m">dazzling, coruscating, sizzling, blazing, gilded, boiling, glittering, lambent	</p></div></div>
-<div id="cal" class="p"><div><p class="m">	recharged, refreshed, serene, relaxed, grounded, languid, placid, balanced, sedate, unruffled	</p></div></div>
-<div id="careles" class="p"><div><p class="m">inattentive, incautious, negligent, remiss, forgetful, heedless, irresponsible, impetuous, reckless, sloppy, slothful, apathetic, incapable</p></div></div>
-<div id="clen" class="p"><div><p class="m">flawless, immaculate, umblemished	</p></div></div>
-<div id="cler" class="p"><div><p class="m">sound, cogent, factual, lucid, composed, accesible	</p></div></div>
-<div id="col" class="p"><div><p class="m">arctic, glacial, frigid, biting, freezing, subzero</p></div></div>
-<div id="confuse" class="p"><div><p class="m">maddened, exasperated, stumped, disoriented, befuddled, flummoxed</p></div></div>
-<div id="criticiz" class="p"><div><p class="m">condemn, denounce, lambaste, castigate, excoriate, vilify</p></div></div>  
-<div id="cut" class="p"><div><p class="m">beautiful, breathtaking, adorable, lovely, endearing, cherubic, gorgeous</p></div></div>
-<div id="dee" class="p"><div><p class="m">	vast, leviathan, gigantic, depthless, expansive, bottomless	</p></div></div>
-<div id="dislik" class="p"><div><p class="m">hate, disgust, deplore, detest, despise	</p></div></div>
-<div id="dislid" class="p"><div><p class="m">loathed, aborred, hated, disgusted, detested, despised	</p></div></div>
-<div id="dirt" class="p"><div><p class="m">dingy, grimy, slimy, squalid, repugnant, grungy, vile, defiled, filthy, repulsive, putrid</p></div></div>
-<div id="dr" class="p"><div><p class="m">denuded, dehydrated, scorched, searing, cracked, infertile, exhausted, baking, sere</p></div></div>
-<div id="en" class="p"><div><p class="m">crush, quell, squelch, extinguish, eradicate, annihilate</p></div></div>
-    
-<div id="fas" class="p"><div><p class="m">unimaginable, staggering, inconceivable, astonishing, unbelievable, alacritous</p></div></div>
-<div id="fanc" class="p"><div><p class="m">garish, decadent, wanton</p></div></div>
-<div id="fin" class="p"><div><p class="m">magnificent, unforgettable, joyous, impressive, exceptional, phenomenal, fabulous, extraordinary, memorable, outstanding, distinguished, spectacular, wonderful	</p></div></div>
-<div id="fu" class="p"><div><p class="m">invigorating, entrancing, intriguing, engrossing, captivating, exhilarating, enchanting, uproarious</p></div></div>
-<div id="funn" class="p"><div><p class="m">maniacal, hilarious, hysterical,	</p></div></div>
-<div id="happ" class="p"><div><p class="m">ebullient, rapturous, exuberant, delighted, jubilant, excited, elated, exhilarated, euphoric, overjoyed, gleeful	</p></div></div>
-<div id="goo" class="p"><div><p class="m">great, beautiful, super, clear, faultless, amenable, sound, superlative, perfect</p></div></div>
-<div id="hidde" class="p"><div><p class="m">impenetrable, lost, indistinct, mysterious, enigmatic, indecipherable, invisible, cryptic, obfuscated, arcane, unstudied</p></div></div>
-<div id="ho" class="p"><div><p class="m">sizzling, fiery, blistering, scorching, sweltering, incandescent</p></div></div>
-<div id="imaginar" class="p"><div><p class="m"></p></div></div>
-<div id="importan" class="p"><div><p class="m">substantial, mandatory, critical, cardinal, key, requisite</p></div></div>
-<div id="improv" class="p"><div><p class="m">treat, heal, mend, sustain, assuage, cure, nourish, aid, revive</p></div></div>
-<div id="irritate" class="p"><div><p class="m">outraged, furious, bitter,  livid, cantankerous, surly, irate, incensed, aggravated, enraged	</p></div></div>
-<div id="kin" class="p"><div><p class="m">generous, altruistic, benevolent</p></div></div>
-<div id="lastin" class="p"><div><p class="m">irrevocable, chronic, continuous</p></div></div>
-<div id="lik" class="p"><div><p class="m">love, adore, admire, appreciate, respect, support, laud, applaud	</p></div></div>
-<div id="lon" class="p"><div><p class="m">lengthy, ceaseless, endless, interminable, bloated, tiring, winding, rambling, interminable, discursive	</p></div></div>
-<div id="lou" class="p"><div><p class="m">resounding, explosive, deafening, strident, thunderous, cacophonous, booming, grating	</p></div></div>
-<div id="loyal" class="p"><div><p class="m"></p></div></div>
-<div id="nea" class="p"><div><p class="m">sparkling, flawless, impeccable, gleaming, pristine, immaculate, spotless, composed	</p></div></div>
-<div id="od" class="p"><div><p class="m">strange, weird, preposterous, irrational, dubious, befuddling, careless, myopic, foolish	</p></div></div>
-<div id="ofte" class="p"><div><p class="m">frequently, repeatedly, regularly, routinely, incessantly, constantly, consistently, habitually	</p></div></div>
-<div id="oka" class="p"><div><p class="m">majestic, exquisite, considerate, gorgeous, superlative, appealing, delightful, priceless, ideal, exceptional, distinctive	</p></div></div>
-<div id="pal" class="p"><div><p class="m">pallid, feeble, exhausted, drained, enervated, lifeless	</p></div></div>
-<div id="paus" class="p"><div><p class="m">deadlock, stop, standstill, impasse, gridlock, freeze, halt	</p></div></div>
-<div id="pleasan" class="p"><div><p class="m">beautiful, breathtaking, touching, jubilant, unforgettable, delightful	</p></div></div>
-<div id="please" class="p"><div><p class="m">excited, enthused, thrilled, elated, delighted, inspired, proud, eager, ecstatic	</p></div></div>
-<div id="poo" class="p"><div><p class="m">horrible, unacceptable, miserable, atrocious, disastrous, terrible, horrendous, uninspired, appaling, dreadful, underwhelming, awful	</p></div></div>
-<div id="questio" class="p"><div><p class="m">doubt, quiz, confront, probe, vex, hound interrogate</p></div></div>
-<div id="quie" class="p"><div><p class="m">silenced, hushed, silent, mellow	</p></div></div>
-<div id="recognize" class="p"><div><p class="m">celebrated, revered, admired, distinguished, acclaimed, cherished, legendary, renowned, exalted, treasured, prominent, lauded</p></div></div>
-<div id="restless" class="p"><div><p class="m"></p></div></div>
-<div id="ru" class="p"><div><p class="m">gallop, dash, bolt, scurry, withdraw, scamper, retreat, sprint, jet, flee, stampede	</p></div></div>
-<div id="rud" class="p"><div><p class="m">abusive, blunt, boorish, coarse, crude, ignorant, impolite, insulting, intrusive, obscene, surly, vulgar	</p></div></div>
-<div id="sa" class="p"><div><p class="m">sullen, devastated, crushed, morose, disconsolate, inconsolable, depressed, ashamed	</p></div></div>
-<div id="sai" class="p"><div><p class="m">screamed, yelled, howled, cried, yelped, shouted, exclaimed, growled, roared, bellowed	</p></div></div>
-<div id="scar" class="p"><div><p class="m">diabolical, abhorrent, macabre, repulsive, depraved, monstrous, petrifying, horrific, chilling, brutal, terrifying	</p></div></div>
-<div id="smar" class="p"><div><p class="m">sagacious, erudite, enlightened, inventive, innovative, cultured, creative, astute, clever, educated	</p></div></div>
-<div id="selfis" class="p"><div><p class="m">depraved, debauched, egotistical, egocentric, corrupt, amoral, greedy, beastly, avaricious, unethical	</p></div></div>
-<div id="shor" class="p"><div><p class="m">stunted, compact, microscopic, rapid, brief, truncated, cramped, diminutive, limited	</p></div></div>
-<div id="sho" class="p"><div><p class="m">compressed, abbreviated, brief</p></div></div>
-<div id="sh" class="p"><div><p class="m">coy, hesitant, reserved, guarded, cautious, bashful, tense, uncertain, taciturn	</p></div></div>
-<div id="smal" class="p"><div><p class="m">warm, quaint, modest, compact, intimate, petite, cozy, cute, charming, comfortable</p></div></div>
-<div id="sneaky" class="p"><div><p class="m">	</p></div></div>
-<div id="soo" class="p"><div><p class="m">straightaway, quickly, promptly, hastily, instantaneously, instantly, directly, immediately, now, shortly, expeditiously	</p></div></div>
-<div id="suggest" class="p"><div><p class="m"></p></div></div>    
-<div id="tast" class="p"><div><p class="m">mouthwatering, delectable, scrumptious,  gustable, delicious, flavourful,succulent	</p></div></div>
-<div id="tire" class="p"><div><p class="m">sluggish, drained, haggard, groggy, exhausted, weary, depleted, fatigued, lethargic, drowsy	</p></div></div>
-<div id="toug" class="p"><div><p class="m">grouchy, confounding, rigid, cruel, tyrannical, harsh, malicious, punitive	</p></div></div>
-<div id="trick" class="p"><div><p class="m">punishing, thorny, hazardous, dangerous	</p></div></div>
-<div id="unethica" class="p"><div><p class="m">immoral, wrongful, dishonest, corrupt, reprehensible</p></div></div>
-<div id="unfaithfu" class="p"><div><p class="m">disloyal, treacherous, infidelious, duplicitous</p></div></div>
-<div id="unlikel" class="p"><div><p class="m">incomprehensible, absurd, unimaginable</p></div></div>
-<div id="unsatisfactor" class="p"><div><p class="m">underwhelmed, appalling, negligent, dismaying, subpar, slipshod, inadequate, insufficient, poor, deficient, dreadful	</p></div></div>
-<div id="upse" class="p"><div><p class="m">aggravated, bitter, livid, anguished, forlorn, doleful, seething, heartbroken, despondent, inconsolable, indignant, seething, distressed, downcast, dejected	</p></div></div>
-<div id="war" class="p"><div><p class="m">sweltering, scorching, infernal	</p></div></div>
-<div id="weir" class="p"><div><p class="m">bold, memorable, creative, imaginative, noticeable, original, distinctive, unique, unconventional	</p></div></div>
-<div id="word" class="p"><div><p class="m">lengthy, redundant, rambling, tedious	</p></div></div>
-<div id="worrie" class="p"><div><p class="m">flustered, skittish, agitated, shaky, distressed, frantic, excitable, tremulous, antsy, overwrought, apprehensive	</p></div></div>
-<div id="wil" class="p"><div><p class="m">riotous, perilous, barbaric, crazy, menacing, combative, clamorous, frenzied, quarrelsome, hazardous	</p></div></div>
-<script>
-    let s = document.getElementById("s");
-    let m = document.getElementById("m");
-    let p = document.querySelectorAll(".p");
-    s.addEventListener("click", () => {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
-        } else if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-        s.style.display = "none";
-        m.style.display = "block";
-      });
-    function X(t) {
-        m.classList.remove("active");
-        p.forEach(x => {
-            x.classList.remove("active");
-        });
-        t.classList.add("active");
+  <div class="container">
+    <p id="message">Loading...</p>
+  </div>
+
+  <script>
+    const messages = [
+      "The quick brown fox jumps over the lazy dog",
+      "Every moment is a fresh beginning",
+      "Turn your wounds into wisdom"
+    ];
+
+    const localStoragePrefix = 'shrunkText-';
+    let msgIndex = 0;
+
+    function getTextFromStorage(index) {
+      return localStorage.getItem(localStoragePrefix + index) || messages[index];
     }
-    function Y() {
-        p.forEach(x => {
-            x.classList.remove("active");
-        });
-        m.classList.add("active");
+
+    function saveTextToStorage(index, text) {
+      localStorage.setItem(localStoragePrefix + index, text);
     }
-    adequate.addEventListener("click", () => X(adequat));
-    annoy.addEventListener("click", () => X(anno));
-    asked.addEventListener("click", () => X(askd));
-    asking	.addEventListener("click", () => X(askin));
-    bad	.addEventListener("click", () => X(ba));
-    big	.addEventListener("click", () => X(bi));
-    bland.addEventListener("click", () => X(blan));
-    bright.addEventListener("click", () => X(brigh));
-    calm.addEventListener("click", () => X(cal));
-    careless.addEventListener("click", () => X(careles));
-    clean.addEventListener("click", () => X(clen));
-    clear.addEventListener("click", () => X(cler));
-    cold.addEventListener("click", () => X(col));
-    confused.addEventListener("click", () => X(confuse));
-    criticize.addEventListener("click", () => X(criticiz));
-    cute.addEventListener("click", () => X(cut));
-    deep.addEventListener("click", () => X(dee));
-    dislike.addEventListener("click", () => X(dislik));
-    dislikd.addEventListener("click", () => X(dislid));
-    dirty.addEventListener("click", () => X(dirt));
-    dry.addEventListener("click", () => X(dr));
-    end.addEventListener("click", () => X(en));
-    fancy.addEventListener("click", () => X(fanc));
-    fast.addEventListener("click", () => X(fas));
-    fine.addEventListener("click", () => X(fin));
-    formal.addEventListener("click", () => X(forma));
-    fun.addEventListener("click", () => X(fu));
-    funny.addEventListener("click", () => X(funn));
-    happy.addEventListener("click", () => X(happ));
-    good.addEventListener("click", () => X(goo));
-    hard.addEventListener("click", () => X(har));
-    hidden.addEventListener("click", () => X(hidde));
-    hot.addEventListener("click", () => X(ho));
-    important.addEventListener("click", () => X(importan));
-    improve.addEventListener("click", () => X(improv));
-    irritated.addEventListener("click", () => X(irritate));
-    kind.addEventListener("click", () => X(kin));
-    known.addEventListener("click", () => X(know));
-    lasting.addEventListener("click", () => X(lastin));
-    like.addEventListener("click", () => X(lik));
-    long.addEventListener("click", () => X(lon));
-    loud.addEventListener("click", () => X(lou));
-    neat.addEventListener("click", () => X(nea));
-    odd.addEventListener("click", () => X(od));
-    often.addEventListener("click", () => X(ofte));
-    okay.addEventListener("click", () => X(oka));
-    pale.addEventListener("click", () => X(pal));
-    pause.addEventListener("click", () => X(paus));
-    pleasant.addEventListener("click", () => X(pleasan));
-    pleased.addEventListener("click", () => X(please));
-    plentiful.addEventListener("click", () => X(plentifu));
-    predictable.addEventListener("click", () => X(predictabl));
-    poor.addEventListener("click", () => X(poo));
-    question.addEventListener("click", () => X(questio));
-    quiet.addEventListener("click", () => X(quie));
-    recognized.addEventListener("click", () => X(recognize));
-    run.addEventListener("click", () => X(ru));
-    rude.addEventListener("click", () => X(rud));
-    sad.addEventListener("click", () => X(sa));
-    said.addEventListener("click", () => X(sai));
-    scary.addEventListener("click", () => X(scar));
-    small.addEventListener("click", () => X(smal));
-    smart.addEventListener("click", () => X(smar));
-    selfish.addEventListener("click", () => X(selfis));
-    short.addEventListener("click", () => X(shor));
-    short2.addEventListener("click", () => X(sho));
-    shy.addEventListener("click", () => X(sh));
-    sometimes.addEventListener("click", () => X(sometime));
-    soon.addEventListener("click", () => X(soo));
-    tasty.addEventListener("click", () => X(tast));
-    tired.addEventListener("click", () => X(tire));
-    think.addEventListener("click", () => X(thin));
-    tough.addEventListener("click", () => X(toug));
-    tricky.addEventListener("click", () => X(trick));
-    unethical.addEventListener("click", () => X(unethica));
-    unfaithful.addEventListener("click", () => X(unfaithfu));
-    unlikely.addEventListener("click", () => X(unlikel));
-    unsatisfactory	.addEventListener("click", () => X(unsatisfactor));
-    upset.addEventListener("click", () => X(upse));
-    warm.addEventListener("click", () => X(war));
-    weird.addEventListener("click", () => X(weir));
-    wordy.addEventListener("click", () => X(word));
-    worried.addEventListener("click", () => X(worrie));
-    wild.addEventListener("click", () => X(wil));
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('m')) {
-            Y() ;
-        }
-    });
-</script>
+
+    function shrinkText(text) {
+      let words = text.match(/\b\w+[^\s\w]*|[^\s\w]+/g);
+      if (!words) return text;
+
+      let maxLength = Math.max(...words.map(w => w.length));
+      let newWords = words.map(w => (w.length === maxLength ? w.slice(0, -1) : w));
+
+      let result = newWords.join(' ');
+      return result.replace(/ (?=[.,!?])/g, '');
+    }
+
+    function renderMessage(index) {
+      const textContainer = document.getElementById('message');
+      let currentText = getTextFromStorage(index);
+      textContainer.textContent = currentText;
+      currentText = shrinkText(currentText);
+      saveTextToStorage(index, currentText);
+    }
+
+    function cycleMessages() {
+      if (msgIndex >= messages.length) {
+        document.getElementById('message').innerHTML = '';
+        return;
+      }
+      renderMessage(msgIndex);
+      msgIndex++;
+      setTimeout(cycleMessages, 10000);
+    }
+
+    window.onload = () => {
+      cycleMessages();
+    };
+  </script>
 </body>
 </html>
