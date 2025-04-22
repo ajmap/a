@@ -372,11 +372,11 @@
   updateTextOnScreen();
 
   // Event listener for clicking the text
-  textContainer.addEventListener('click', () => {
-    localStorage.removeItem(localStorageKey);
-    updateTextOnScreen(); // Reset to original text
-    nextCharToRemove = 'a'; // Reset the character removal progress
-  });
+//  textContainer.addEventListener('click', () => {
+  //  localStorage.removeItem(localStorageKey);
+  //  updateTextOnScreen(); // Reset to original text
+   // nextCharToRemove = 'a'; // Reset the character removal progress
+ // });
 
   // Before the page is loaded, apply the next erasure
   window.addEventListener('beforeunload', () => {
