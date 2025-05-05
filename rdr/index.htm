@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reader</title>
+    <style>
+        * {
+                        margin: 0;
+        }
+        #start {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+        }
+        #text-container {
+            display: none;
+            padding: 3vw;
+            font-family: Arial;
+            line-height: 5vw;
+        }
+
+.word {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 4.4vw;
+    color: white;
+}
+        
+    </style>
+</head>
+<body>
+    <div id="start"></div>
+    <div id="text-container">
+        <span class="word">I</span>
+        <span class="word">see</span>
+        <span class="word">myself</span>
+        <span class="word">on</span>
+        <span class="word">the</span>
+        <span class="word">beach</span>
+        <span class="word">of</span>
+        <span class="word">a</span>
+        <span class="word">beautiful</span>
+        <span class="word">tropical</span>
+        <span class="word">island.</span>
+    </div>
+    <script>
+        let start = document.getElementById('start');
+                let text = document.getElementById('text-container');
+                start.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            start.style.display = 'none'
+            text.style.display = 'block'
+        })
+        document.addEventListener('DOMContentLoaded', () => {
+        const words = document.querySelectorAll('.word');
+
+        const rdr1 = JSON.parse(localStorage.getItem('rdr1')) || {};
+
+    words.forEach((word, index) => {
+         if (rdr1[index] === 1) {
+            word.innerText = "";
+        } 
+
+        word.addEventListener('click', () => {
+            if (!rdr1[index]) {
+                rdr1[index] = 1;
+                word.innerText = "";
+            } 
+            localStorage.setItem('rdr1', JSON.stringify(rdr1));
+        });
+    });
+});
+    </script>
+</body>
+</html>
