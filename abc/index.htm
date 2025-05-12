@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smooth Text Fade</title>
+  <style>
+
+    #textContainer {
+        margin: 48vh 0 0 2vw;
+        font-family: Arial;
+        font-size: 2.3vw;
+    }
+    .letter {
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+    .fade-out {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="textContainer"></div>
+
+  <script>
+      const txtCntnr = document.getElementById("textContainer"); 
+      const texts = ["I breath in the divine rhythm of the infinite intelligence and feel the sacred presence of the superior in every inch of my body. ", "I flow like a wave in the divine ocean, moving in harmony with the pulse of infinite creation. ", "With every breath, a hush of warmth rolls in, soft as velvet, sweet as love, and it lingers deep in my soul. ", "Each inhale brings a wave of silken warmth, and love permeates my being, a sweet and tender presence. ", "With every inhale, silken warmth caresses my skin, love flowing like honey through my veins. ", "I inhale the divine flow of infinite wisdom and feel sacred presence throughout my being. "];
+      const rndm = Math.floor(Math.random() * texts.length)
+      const text = texts[rndm];
+      const lngth = text.length;
+      if (lngth > 110) {
+          txtCntnr.style.fontSize = "1.75vw"
+      } else if (lngth > 100)
+          {
+          txtCntnr.style.fontSize = "2.1vw"
+      }
+        
+
+    const container = document.getElementById("textContainer");
+
+    let letters = [];
+
+    text.split(/(\s+)/).forEach(word => {
+      const wordSpan = document.createElement("span");
+      wordSpan.className = "word";
+      for (let char of word) {
+        const span = document.createElement("span");
+        span.textContent = char === ' ' ? '\u00A0' : char;
+        span.setAttribute("data-char", char);
+        span.className = "letter";
+        wordSpan.appendChild(span);
+        letters.push(span);
+      }
+      container.appendChild(wordSpan);
+    });
+
+    function removeLastVisibleChar() {
+      for (let i = letters.length - 1; i >= 0; i--) {
+        const span = letters[i];
+        const char = span.getAttribute("data-char");
+        if (char !== ' ') {
+          span.classList.add("fade-out");
+          letters.splice(i, 1);
+          setTimeout(() => {
+            span.remove();
+          }, 500);
+          break;
+        }
+      }
+    }
+
+
+ 
+        let intervalId;
+        let dynamicDelay = 500;
+        
+        function startDynamicInterval() {
+          intervalId = setInterval(myFunction, dynamicDelay);
+        }
+        
+        function myFunction() {
+          removeLastVisibleChar();
+        
+          dynamicDelay += 100;
+        
+          clearInterval(intervalId);
+          startDynamicInterval();
+        }
+        
+        startDynamicInterval();
+
+  </script>
+</body>
+</html>
