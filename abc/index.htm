@@ -50,12 +50,21 @@
       const rndm = Math.floor(Math.random() * texts.length)
       const text = texts[rndm];
       const lngth = text.length;
-      if (lngth > 110) {
+      if (lngth > 130) {
+          txtCntnr.style.fontSize = "1.7vw"
+      } else if (lngth > 120) {
           txtCntnr.style.fontSize = "1.8vw"
-      } else if (lngth > 100)
-          {
+      } else if (lngth > 110) {
+          txtCntnr.style.fontSize = "1.9vw"
+      } else if (lngth > 100) {
+          txtCntnr.style.fontSize = "2vw"
+      } else if (lngth > 90) {
+          txtCntnr.style.fontSize = "2.1vw"
+      } else if (lngth > 80) {
           txtCntnr.style.fontSize = "2.2vw"
-      }
+      } else if (lngth > 70) {
+          txtCntnr.style.fontSize = "2.3vw"
+      } 
         
 
     const container = document.getElementById("textContainer");
