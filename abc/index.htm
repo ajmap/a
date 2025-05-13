@@ -111,7 +111,7 @@
 
  
         let intervalId;
-        let dynamicDelay = 600;
+        let dynamicDelay = 599;
         
         function startDynamicInterval() {
           intervalId = setInterval(myFunction, dynamicDelay);
@@ -120,7 +120,7 @@
         function myFunction() {
           removeLastVisibleChar();
         
-          dynamicDelay += 150;
+          dynamicDelay += 149;
         
           clearInterval(intervalId);
           startDynamicInterval();
