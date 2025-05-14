@@ -1,5 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smooth</title>
+  <style>
+    * { margin: 0 }
+    #start {
+      background-color: DeepPink;
+      width: 100vw;
+      height: 100vh;
+    }
+    #textContainer {
+      display: none;
+      color: MediumVioletRed;
+        margin: 48vh 0 0 5vw;
+        font-family: Arial;
+        font-size: 2.5vw;
+    }
+    .letter {
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+    .fade-out {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="start"></div>
+  <div id="textContainer"></div>
+
+  <script>
+    
+      const txtCntnr = document.getElementById("textContainer"); 
+
+    let s = document.getElementById("start");
+
+    s.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        s.style.display = "none";
+        txtCntnr.style.display = "block";
+      });
+      const texts = ["I let go of the need to understand or control, I surrender fully to the divine presence within me. . "
+                     , "I am an endless bloom of love, unfurling across the cosmos of my heart. . "];
+        
+        /* "With every breath, I feel the sacred pulse of life awaken in every inch of my body. . ",
+                      "Each breath drapes me in the velvet warmth of the essence within me and I melt into the divine pleasure of my presence. . ",
+                      "In a place of quietude my inner thoughts and feelings emerge, echoing softly until they finally converge.",
+                     "Love smolders in me like molten stars, spilling pleasure through every curve of my soul. . ", 
+                     "My touch is celestial fire, and love bursts from me with the hunger of creation itself. . ", 
+                     "Desire dances through me in cosmic rhythm, each pulse a universe, each sigh a birth of stars. . ", 
+                     "I am the sacred hunger of love, wet with light and wild with pleasure. . ", 
+                     "I am the tender heat of love, flowing like warm honey through every inch of me. . ", 
+                     "Breathing in, I feel the pulse of life kissing my skin from within. . ", 
+                     "I am a verse of the cosmos, written in the ink of love and sung in a language of stars. . ", 
+                     "Like rivers drawn to the sea, wisdom flows through me, sacred and eternal, in every breath. . ",
+                    "I am the soft sigh of passion, glowing with the warm pulse of starlit ecstasy. . "]; */ 
+
+
+
+
+
+    const rndm = Math.floor(Math.random() * texts.length)
+    
+      const text = texts[rndm];
+      const lngth = text.length;
+      if (lngth > 130) {
+          txtCntnr.style.fontSize = "1.5vw"
+      } else if (lngth > 120) {
+          txtCntnr.style.fontSize = "1.7vw"
+      } else if (lngth > 110) {
+          txtCntnr.style.fontSize = "2vw"
+      } else if (lngth > 100) {
+          txtCntnr.style.fontSize = "2.05vw"
+      } else if (lngth > 90) {
+          txtCntnr.style.fontSize = "2.2vw"
+      } else if (lngth > 80) {
+          txtCntnr.style.fontSize = "2.4vw"
+      } else if (lngth > 70) {
+          txtCntnr.style.fontSize = "2.7vw"
+      } 
+        
+
+    const container = document.getElementById("textContainer");
+
+    let letters = [];
+
+    text.split(/(\s+)/).forEach(word => {
+      const wordSpan = document.createElement("span");
+      wordSpan.className = "word";
+      for (let char of word) {
+        const span = document.createElement("span");
+        span.textContent = char === ' ' ? '\u00A0' : char;
+        span.setAttribute("data-char", char);
+        span.className = "letter";
+        wordSpan.appendChild(span);
+        letters.push(span);
+      }
+      container.appendChild(wordSpan);
+    });
+
+    function removeLastVisibleChar() {
+      for (let i = letters.length - 1; i >= 0; i--) {
+        const span = letters[i];
+        const char = span.getAttribute("data-char");
+        if (char !== ' ') {
+          span.classList.add("fade-out");
+          letters.splice(i, 1);
+          setTimeout(() => {
+            span.remove();
+          }, 500);
+          break;
+        }
+      }
+    }
+
+
+ 
+        let intervalId;
+        let dynamicDelay = 599;
+        
+        function startDynamicInterval() {
+          intervalId = setInterval(myFunction, dynamicDelay);
+        }
+        
+        function myFunction() {
+          removeLastVisibleChar();
+        
+          dynamicDelay += 149;
+        
+          clearInterval(intervalId);
+          startDynamicInterval();
+        }
+        
+        startDynamicInterval();
+
+  </script>
+</body>
+</html>
+
+---------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
