@@ -1,156 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <style>
-      * {
-        margin: 0;
-        font-family: Arial;
-        text-align: center;
-      }
-      #f {
-        width: 100vw;
-        height: 75vh;
-        padding-top: 25vh;
-        background-color: MediumBlue;
-        font-size: 15vw;
-        color: HoneyDew;
-      }
-      #e {
-        width: 100vw;
-        height: 17vh;
-        font-size: 15vw;
-        padding-top: 8vh;
-        background-color: MediumBlue;
-        color: white;
-        display: none;
-      }
-      #g {
-        width: 100vw;
-        height: 75vh;
-        display: none;
-        flex-direction: row;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-      }
-      #g div {
-        padding-top: 10vh;
-        font-size: 10vw;
-        width: 33.33vw;
-        height: 15vh;
-      }
-      #b1,
-      #b5,
-      #b9 {
-        background-color: AliceBlue;
-      }
-      #b2,
-      #b6,
-      #b7 {
-        background-color: HoneyDew;
-      }
-      #b3,
-      #b5,
-      #b8 {
-        background-color: LavenderBlush;
-      }
-      #t {
-        background-color: MediumBlue;
-        width: 100vw;
-        height: 100vh;
-        font-size: 12vw;
-        color: HoneyDew;
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="f">START</div>
-    <div id="e"></div>
-    <div id="g">
-      <div id="b2" class="n" d="2">2</div>
-      <div id="b3" class="n" d="3">3</div>
-      <div id="b4" class="n" d="4">4</div>
-      <div id="b5" class="n" d="5">5</div>
-      <div id="b6" class="n" d="6">6</div>
-      <div id="b7" class="n" d="7">7</div>
-      <div id="b8" class="n" d="8">8</div>
-      <div id="b9" class="n" d="9">9</div>
-      <div id="b1" class="n" d="1">10</div>
-    </div>
-    <div id="t">High<br />Score</div>
+<html>
+<head>
+<title>Word Eraser</title>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-size: 3em;
+  user-select: none; /* Prevent text selection */
+}
+</style>
+</head>
+<body>
+<div id="wordDisplay"></div>
 
-    <script>
-      let f = document.getElementById("f");
-      let g = document.getElementById("g");
-      let e = document.getElementById("e");
-      let t = document.getElementById("t");
-      f.addEventListener("click", () => {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
-        } else if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-        f.style.display = "none";
-        g.style.display = "flex";
-        e.style.display = "block";
-      });
-      const c = [
-        { a: 4, b: 5, o: '+', r: 9 },
-          { a: 16, b: 4, o: '\u00F7', r: 4 },
-          
-      ];
-      let i = 0;
-      let a;
-      let b = localStorage.getItem("Q")
-        ? parseFloat(localStorage.getItem("Q"))
-        : null;
-      e.textContent = H(c[i]);
-      document.querySelectorAll(".n").forEach((z) => {
-        z.addEventListener("click", function () {
-          if (!a) {
-            a = new Date().getTime();
-          }
-          const u = parseInt(this.getAttribute("d"));
-          if (u === c[i].r) {
-            i++;
-            if (i < c.length) {
-              e.textContent = H(c[i]);
-            } else {
-              const e = new Date().getTime();
-              const t = (e - a) / 1000;
-              if (!b || t < b) {
-                b = t;
-                localStorage.setItem("Q", b);
-                document.getElementById("t").style.display = "block";
-                document.getElementById("e").style.display = "none";
-                document.getElementById("g").style.display = "none";
-                setTimeout(() => {
-                  document.getElementById("t").style.display = "none";
-                  document.getElementById("e").style.display = "block";
-                  document.getElementById("g").style.display = "flex";
-                }, 1000);
-              }
-              R();
-            }
-          } else {
-            e.style.color = "red";
-            setTimeout(() => {
-              e.style.color = "white";
-            }, 500);
-          }
-        });
-      });
-      function H(calc) {
-        return `${calc.a} ${calc.o}  ${calc.b}`;
-      }
-      function R() {
-        i = 0;
-        a = null;
-        e.textContent = H(c[i]);
-      }
-    </script>
-  </body>
+<script>
+const sentence = "I am embraced by a wave of love that moves through me, deeply touching my heart and filling me with bliss.";
+let words = sentence.split(" ");
+let currentWordIndex = words.length - 1;
+let currentWord = words[currentWordIndex];
+let currentLetterIndex = currentWord.length - 1;
+
+const wordDisplay = document.getElementById("wordDisplay");
+
+function displayWord() {
+  wordDisplay.textContent = currentWord;
+}
+
+function eraseLetter() {
+  if (currentLetterIndex >= 0) {
+    currentWord = currentWord.substring(0, currentLetterIndex);
+    currentLetterIndex--;
+    displayWord();
+  } else {
+    currentWordIndex--;
+    if (currentWordIndex >= 0) {
+      currentWord = words[currentWordIndex];
+      currentLetterIndex = currentWord.length - 1;
+      displayWord();
+    } else {
+      wordDisplay.textContent = "";
+    }
+  }
+}
+
+displayWord(); // Initial display
+
+document.addEventListener("click", eraseLetter);
+</script>
+</body>
 </html>
