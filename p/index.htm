@@ -3,6 +3,12 @@
 <head>
 <title>Word Eraser</title>
 <style>
+          #s {
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+      }
+
 body {
   display: flex;
   justify-content: center;
@@ -12,12 +18,29 @@ body {
   font-size: 3em;
   user-select: none; /* Prevent text selection */
 }
+  #wordDisplay { display: none; }
 </style>
 </head>
 <body>
+      <div id="s"></div>
 <div id="wordDisplay"></div>
 
 <script>
+  
+
+
+let s = document.getElementById("s");
+       let wordDisplay = document.getElementById("wordDisplay");
+            s.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        s.style.display = "none";
+        wordDisplay.style.display = "block";
+      });
+
 const sentence = "I am embraced by a wave of love that moves through me, deeply touching my heart and filling me with bliss.";
 let words = sentence.split(" ");
 let currentWordIndex = words.length - 1;
