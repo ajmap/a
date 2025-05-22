@@ -41,7 +41,22 @@ let s = document.getElementById("s");
         wordDisplay.style.display = "block";
       });
 
-const sentence = "I am the soft sigh of passion, glowing with the warm pulse of starlit ecstasy..";
+const sentences = ["I welcome all the good and abundance the Universe has for me..",
+"I open my heart and mind to infinite blessings..",
+"I am grateful for the abundance flowing into my life..",
+"I open my arms wide to welcome joy and prosperity..",
+"The Universe showers me with infinite blessings..",
+"I am constantly attracting positive energy and success..",
+"I allow abundance to pour into my life effortlessly..",
+"I open myself to endless opportunities and blessings..",
+"I receive the good that life has to offer with open arms..",
+"I attract blessings with a grateful and open heart..",
+"I am open to receiving wealth in unexpected ways..",
+"I say yes to abundance and yes to life..",
+"I am open to the magic and wonder of life..",
+"My life is overflowing with prosperity and joy."];
+const rndm = Math.floor(Math.random() * sentences.length)          
+const sentence = sentences[rndm];
 let words = sentence.split(" ");
 let currentWordIndex = words.length - 1;
 let currentWord = words[currentWordIndex];
