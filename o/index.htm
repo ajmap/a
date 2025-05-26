@@ -41,36 +41,36 @@ let s = document.getElementById("s");
         wordDisplay.style.display = "block";
       });
 
-const sentences = ["Love and bliss flow through every part of my being, lighting up my soul....", 
-                   "I am a beacon of love, radiating joy from the core of my existence....", 
-                   "Every cell in my body glows with the pure bliss of unconditional love....",  
-                   "I emanate love and happiness from deep within my soul....", 
-                   "The essence of my soul shines with the radiant energy of love and bliss....", 
-                   "With each breath, I express the boundless joy and warmth of love....",
-                  "Divine love flows through me, illuminating my soul with eternal bliss....", 
-"I am a vessel of sacred light, radiating the infinite joy of divine love....",
-"Through every breath, I channel the pure essence of cosmic love and serenity....",
-"My soul is a temple of divine bliss, glowing with the sacred fire of love....",
-"I merge with the universal heart, radiating love as my highest truth....",
-"In alignment with Spirit, I shine the bliss of divine love from the depths of my soul....",
-"Like dawn's first light, love spills from my soul, painting the world in bliss....",
-"My heart sings in silent hymns, weaving love through the threads of my spirit....",
-"In the quiet bloom of my being, joy unfurls like petals kissed by divine light....",
-"I am the soft echo of love in the wind, the radiant hush between heartbeats....",
-"Bliss dances through me like starlight on still waters, serene and infinite....",
-"Every breath I take is a verse of love, every beat of my soul a poem of joy....",
-                  "Love lives in me, and I carry it into everything I do....",
-"I feel joy in my heart, and I share it naturally with the world around me....",
-"Every part of me is tuned to kindness, warmth, and connection....",
-"I bring love into the world just by being present and true to myself....",
-"Peace and joy are part of who I am, and they guide my words and actions....",
-"I show up with love, and it shines through in how I live each day....",
-"Love flows through me like warm honey, touching every inch of my being with bliss....",
-"I feel love in my skin, my breath, my heartbeat — it moves through me like a tender rhythm....",
-"Every fiber of my body pulses with the sweet, living energy of love and pleasure....",
-"I savor the bliss of love as it blooms within me, soft, electric, and alive....",
-"My soul sings through touch, through breath, through every warm wave of loving presence....",
-"Love is a sensation I wear like silk, felt in every curve, every breath, every sigh of my spirit...."];
+const sentences = ["Love and bliss flow through every part of my being, lighting up my soul. .", 
+                   "I am a beacon of love, radiating joy from the core of my existence. .", 
+                   "Every cell in my body glows with the pure bliss of unconditional love. .",  
+                   "I emanate love and happiness from deep within my soul. .", 
+                   "The essence of my soul shines with the radiant energy of love and bliss. .", 
+                   "With each breath, I express the boundless joy and warmth of love. .",
+                  "Divine love flows through me, illuminating my soul with eternal bliss. .", 
+"I am a vessel of sacred light, radiating the infinite joy of divine love. .",
+"Through every breath, I channel the pure essence of cosmic love and serenity. .",
+"My soul is a temple of divine bliss, glowing with the sacred fire of love. .",
+"I merge with the universal heart, radiating love as my highest truth. .",
+"In alignment with Spirit, I shine the bliss of divine love from the depths of my soul. .",
+"Like dawn's first light, love spills from my soul, painting the world in bliss. .",
+"My heart sings in silent hymns, weaving love through the threads of my spirit. .",
+"In the quiet bloom of my being, joy unfurls like petals kissed by divine light. .",
+"I am the soft echo of love in the wind, the radiant hush between heartbeats. .",
+"Bliss dances through me like starlight on still waters, serene and infinite. .",
+"Every breath I take is a verse of love, every beat of my soul a poem of joy. .",
+                  "Love lives in me, and I carry it into everything I do. .",
+"I feel joy in my heart, and I share it naturally with the world around me. .",
+"Every part of me is tuned to kindness, warmth, and connection. .",
+"I bring love into the world just by being present and true to myself. .",
+"Peace and joy are part of who I am, and they guide my words and actions. .",
+"I show up with love, and it shines through in how I live each day. .",
+"Love flows through me like warm honey, touching every inch of my being with bliss. .",
+"I feel love in my skin, my breath, my heartbeat — it moves through me like a tender rhythm. .",
+"Every fiber of my body pulses with the sweet, living energy of love and pleasure. .",
+"I savor the bliss of love as it blooms within me, soft, electric, and alive. .",
+"My soul sings through touch, through breath, through every warm wave of loving presence. .",
+"Love is a sensation I wear like silk, felt in every curve, every breath, every sigh of my spirit. ."];
 const rndm = Math.floor(Math.random() * sentences.length)          
 const sentence = sentences[rndm];
 let words = sentence.split(" ");
@@ -105,7 +105,7 @@ displayWord(); // Initial display
 
 
         let intervalId;
-        let dynamicDelay = 600;
+        let dynamicDelay = 500;
         
         function startDynamicInterval() {
           intervalId = setInterval(myFunction, dynamicDelay);
@@ -114,7 +114,7 @@ displayWord(); // Initial display
         function myFunction() {
           eraseLetter();
         
-          dynamicDelay += 100;
+          dynamicDelay += 50;
         
           clearInterval(intervalId);
           startDynamicInterval();
