@@ -86,7 +86,23 @@ function eraseLetter() {
 
 displayWord(); // Initial display
 
-document.addEventListener("click", eraseLetter);
+        let intervalId;
+        let dynamicDelay = 501;
+        
+        function startDynamicInterval() {
+          intervalId = setInterval(myFunction, dynamicDelay);
+        }
+        
+        function myFunction() {
+          eraseLetter();
+        
+          dynamicDelay += 51;
+        
+          clearInterval(intervalId);
+          startDynamicInterval();
+        }
+        
+        startDynamicInterval();       
 </script>
 </body>
 </html>
