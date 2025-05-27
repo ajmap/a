@@ -39,14 +39,18 @@ s.addEventListener("click", () => {
   wordDisplay.style.display = "block";
 });
 
-const sentences = ["Here is an example."];
+const sentences = [
+  "Sigo la sabiduría de mi corazón con atención y confianza, dejando que me guíe con suavidad en mi camino.",
+  "Here is an example."
+];
 const rndm = Math.floor(Math.random() * sentences.length);          
 const sentence = sentences[rndm];
 let words = sentence.split(" ");
-let originalWord = words[currentWordIndex];
+
 let currentWordIndex = 0;
-let currentWord = words[currentWordIndex];
+let originalWord = words[currentWordIndex];
 let currentLetterIndex = 0;
+let currentWord = originalWord;
 
 function displayWord() {
   wordDisplay.textContent = currentWord;
@@ -71,8 +75,7 @@ function eraseLetter() {
   }
 }
 
-currentWord = originalWord;
-displayWord();
+displayWord(); // Initial display
 
 let intervalId;
 let dynamicDelay = 500;
@@ -90,6 +93,7 @@ function myFunction() {
 
 startDynamicInterval();
 </script>
+
 </body>
 </html>
 
