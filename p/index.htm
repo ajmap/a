@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>TYO</title>
+<title>Español</title>
 <style>
           #s {
         background-color: black;
@@ -41,7 +41,9 @@ let s = document.getElementById("s");
         wordDisplay.style.display = "block";
       });
 
-const sentence = "I carry the warmth of love’s touch, a golden glow that wraps around my heart and soul..";
+const sentences = ["Sigo la sabiduría de mi corazón con atención y confianza, dejando que me guíe con suavidad en mi camino. ."];
+const rndm = Math.floor(Math.random() * sentences.length)          
+const sentence = sentences[rndm];
 let words = sentence.split(" ");
 let currentWordIndex = words.length - 1;
 let currentWord = words[currentWordIndex];
@@ -72,7 +74,24 @@ function eraseLetter() {
 
 displayWord(); // Initial display
 
-document.addEventListener("click", eraseLetter);
+
+        let intervalId;
+        let dynamicDelay = 500;
+        
+        function startDynamicInterval() {
+          intervalId = setInterval(myFunction, dynamicDelay);
+        }
+        
+        function myFunction() {
+          eraseLetter();
+        
+          dynamicDelay += 50;
+        
+          clearInterval(intervalId);
+          startDynamicInterval();
+        }
+        
+        startDynamicInterval();          
 </script>
 </body>
 </html>
