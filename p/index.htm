@@ -26,30 +26,26 @@ body {
 <div id="wordDisplay"></div>
 
 <script>
-  
-
-
 let s = document.getElementById("s");
-       let wordDisplay = document.getElementById("wordDisplay");
-            s.addEventListener("click", () => {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
-        } else if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-        s.style.display = "none";
-        wordDisplay.style.display = "block";
-      });
+let wordDisplay = document.getElementById("wordDisplay");
 
-const sentences = ["Sigo la sabiduría de mi corazón con atención y confianza, dejando que me guíe con suavidad en mi camino. ."];
-const rndm = Math.floor(Math.random() * sentences.length)          
+s.addEventListener("click", () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else if (document.exitFullscreen) {
+    document.exitFullscreen();
+  }
+  s.style.display = "none";
+  wordDisplay.style.display = "block";
+});
+
+const sentences = ["Here is an example."];
+const rndm = Math.floor(Math.random() * sentences.length);          
 const sentence = sentences[rndm];
 let words = sentence.split(" ");
-let currentWordIndex = words.length - 1;
+let currentWordIndex = 0;
 let currentWord = words[currentWordIndex];
 let currentLetterIndex = 0;
-
-
 
 function displayWord() {
   wordDisplay.textContent = currentWord;
@@ -61,38 +57,35 @@ function eraseLetter() {
     currentLetterIndex++;
     displayWord();
   } else {
-    currentWordIndex--;
-    if (currentWordIndex >= 0) {
+    currentWordIndex++;
+    if (currentWordIndex < words.length) {
       currentWord = words[currentWordIndex];
       currentLetterIndex = 0;
       displayWord();
     } else {
       wordDisplay.textContent = "";
+      clearInterval(intervalId); // Stop when done
     }
   }
 }
 
-
 displayWord(); // Initial display
 
+let intervalId;
+let dynamicDelay = 500;
 
-        let intervalId;
-        let dynamicDelay = 500;
-        
-        function startDynamicInterval() {
-          intervalId = setInterval(myFunction, dynamicDelay);
-        }
-        
-        function myFunction() {
-          eraseLetter();
-        
-          dynamicDelay += 50;
-        
-          clearInterval(intervalId);
-          startDynamicInterval();
-        }
-        
-        startDynamicInterval();          
+function startDynamicInterval() {
+  intervalId = setInterval(myFunction, dynamicDelay);
+}
+
+function myFunction() {
+  eraseLetter();
+  dynamicDelay += 50;
+  clearInterval(intervalId);
+  startDynamicInterval();
+}
+
+startDynamicInterval();
 </script>
 </body>
 </html>
