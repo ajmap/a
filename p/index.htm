@@ -43,6 +43,7 @@ const sentences = ["Here is an example."];
 const rndm = Math.floor(Math.random() * sentences.length);          
 const sentence = sentences[rndm];
 let words = sentence.split(" ");
+let originalWord = words[currentWordIndex];
 let currentWordIndex = 0;
 let currentWord = words[currentWordIndex];
 let currentLetterIndex = 0;
@@ -52,24 +53,26 @@ function displayWord() {
 }
 
 function eraseLetter() {
-  if (currentLetterIndex < currentWord.length) {
-    currentWord = currentWord.substring(currentLetterIndex + 1);
+  if (currentLetterIndex < originalWord.length) {
+    currentWord = originalWord.substring(currentLetterIndex + 1);
     currentLetterIndex++;
     displayWord();
   } else {
     currentWordIndex++;
     if (currentWordIndex < words.length) {
-      currentWord = words[currentWordIndex];
+      originalWord = words[currentWordIndex];
       currentLetterIndex = 0;
+      currentWord = originalWord;
       displayWord();
     } else {
       wordDisplay.textContent = "";
-      clearInterval(intervalId); // Stop when done
+      clearInterval(intervalId); // Done
     }
   }
 }
 
-displayWord(); // Initial display
+currentWord = originalWord;
+displayWord();
 
 let intervalId;
 let dynamicDelay = 500;
