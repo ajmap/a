@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Welcome</title>
+<title>Start</title>
 <style>
           #s {
         background-color: black;
@@ -103,55 +103,56 @@ const sentences = [ "L Love flows through me in radiant waves, illuminating ever
 "L Love is a sensation I wear like silk, felt in every curve, every breath, every sigh of my spirit.",
                   "D Divine love flows through me like a golden river of light, illuminating my soul with eternal bliss."
                   ];
-const rndm = Math.floor(Math.random() * sentences.length)          
+   
+const rndm = Math.floor(Math.random() * sentences.length);          
 const sentence = sentences[rndm];
 let words = sentence.split(" ");
-let currentWordIndex = words.length - 1;
-let currentWord = words[currentWordIndex];
-let currentLetterIndex = currentWord.length - 1;
 
-
+let currentWordIndex = 0;
+let originalWord = words[currentWordIndex];
+let currentLetterIndex = 0;
+let currentWord = originalWord;
 
 function displayWord() {
   wordDisplay.textContent = currentWord;
 }
 
 function eraseLetter() {
-  if (currentLetterIndex >= 0) {
-    currentWord = currentWord.substring(0, currentLetterIndex);
-    currentLetterIndex--;
+  if (currentLetterIndex < originalWord.length) {
+    currentWord = originalWord.substring(currentLetterIndex + 1);
+    currentLetterIndex++;
     displayWord();
   } else {
-    currentWordIndex--;
-    if (currentWordIndex >= 0) {
-      currentWord = words[currentWordIndex];
-      currentLetterIndex = currentWord.length - 1;
+    currentWordIndex++;
+    if (currentWordIndex < words.length) {
+      originalWord = words[currentWordIndex];
+      currentLetterIndex = 0;
+      currentWord = originalWord;
       displayWord();
     } else {
       wordDisplay.textContent = "";
+      clearInterval(intervalId); // Done
     }
   }
 }
 
 displayWord(); // Initial display
 
-        let intervalId;
-        let dynamicDelay = 501;
-        
-        function startDynamicInterval() {
-          intervalId = setInterval(myFunction, dynamicDelay);
-        }
-        
-        function myFunction() {
-          eraseLetter();
-        
-          dynamicDelay += 51;
-        
-          clearInterval(intervalId);
-          startDynamicInterval();
-        }
-        
-        startDynamicInterval();       
+let intervalId;
+let dynamicDelay = 500;
+
+function startDynamicInterval() {
+  intervalId = setInterval(myFunction, dynamicDelay);
+}
+
+function myFunction() {
+  eraseLetter();
+  dynamicDelay += 50;
+  clearInterval(intervalId);
+  startDynamicInterval();
+}
+
+startDynamicInterval();
 </script>
 </body>
 </html>
