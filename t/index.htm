@@ -36,22 +36,10 @@ body {
 <div id="wordDisplay"></div>
 
 <script>
-  
-
-
-let s = document.getElementById("s");
-let e = document.getElementById("e");
-       let wordDisplay = document.getElementById("wordDisplay");
-            e.addEventListener("click", () => {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
-        } else if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-        e.style.display = "none";
-        s.style.display = "none";
-        wordDisplay.style.display = "block";
-        const sentences = [ "Love flows through me in radiant waves, illuminating every part of my being with pure bliss.", 
+let s = document.getElementById("s")
+let e = document.getElementById("e")
+let wordDisplay = document.getElementById("wordDisplay")
+          const sentences = ["Love flows through me in radiant waves, illuminating every part of my being with pure bliss.", 
                     "Every fiber of my soul vibrates with the ecstatic energy of love and light.", 
                     "I am a vessel of love’s joy, overflowing with bliss that shines from deep within.",
                     "Love surrounds and fills me, washing through my body with a golden warmth that awakens deep happiness.", 
@@ -63,53 +51,62 @@ let e = document.getElementById("e");
                     "My soul sings with the voices of old, love bursting forth like rain on thirsty soil.",
                     "Every cell in my body vibrates in harmony with the sacred song sung by angels.",
                     "I cherish the gift of every sunrise that brings me closer to my soul’s purpose. .",
-                   "Divine love flows through me like a golden river of light, illuminating my soul with eternal bliss.",
-                   "Cosmic waves of love spiral through my essence, syncing me with the heartbeat of the universe. ",
-                   "I listen closely to the wisdom of my heart, trusting it to guide me gently forward.",
-"I honor the desires of my heart and give myself permission to follow them with courage.",
-"My heart beats in harmony with the universe, drawing joy and connection into my experience.",
-"I lead with my heart, trusting that love and truth will shape the way I live.",
-"My heart is resilient, strong, and capable of healing from any pain or disappointment.",
-"I carry a heart full of purpose and passion, ready to share my gifts with the world.",
-"My heart knows the way, and I follow its rhythm with trust and quiet determination.",
-"I release fear and allow my heart to lead me toward experiences of joy and growth.",
-"My heart is a sanctuary of peace, and I return to its calm center whenever I need.",
-"I feel deeply connected to the truth and wisdom that lives inside my open heart.",
-"My heart speaks clearly when I quiet my mind and listen with patience and presence.",
-"I offer my heart freely to the world, knowing its light will return to me multiplied.",
-"My heart is a magnet for kindness, connection, and experiences that honor my true essence.",
-"My heart holds the wisdom of generations, and I carry that love with reverence and pride. .",
-"Gentle ocean swirls are in rhythm with my breathing, love saturates my heart, I am seriously glowing.",
-                   "Love and bliss flow through every part of my being, lighting up my soul.", 
-                   "I am a beacon of love, radiating joy from the core of my existence.", 
-                   "I emanate love and happiness from deep within my soul.", 
-                   "The essence of my soul shines with the radiant energy of love and bliss.", 
-                   "With each breath, I express the boundless joy and warmth of love.",
-                  "Divine love flows through me, illuminating my soul with eternal bliss.", 
-"I am a vessel of sacred light, radiating the infinite joy of divine love.",
-"Through every breath, I channel the pure essence of cosmic love and serenity.",
-"My soul is a temple of divine bliss, glowing with the sacred fire of love.",
-"I merge with the universal heart, radiating love as my highest truth.",
-"In alignment with Spirit, I shine the bliss of divine love from the depths of my soul.",
-"Like dawn's first light, love spills from my soul, painting the world in bliss.",
-"My heart sings in silent hymns, weaving love through the threads of my spirit.",
-"In the quiet bloom of my being, joy unfurls like petals kissed by divine light.",
-"I am the soft echo of love in the wind, the radiant hush between heartbeats.",
-"Bliss dances through me like starlight on still waters, serene and infinite.",
-"Every breath I take is a verse of love, every beat of my soul a poem of joy.",
-                  "Love lives in me, and I carry it into everything I do.",
-"I feel joy in my heart, and I share it naturally with the world around me.",
-"Every part of me is tuned to kindness, warmth, and connection.",
-"I bring love into the world just by being present and true to myself.",
-"I show up with love, and it shines through in how I live each day.",
-"Love flows through me like warm honey, touching every inch of my being with bliss.",
-"I feel love in my skin, my breath, my heartbeat — it moves through me like a tender rhythm.",
-"Every fiber of my body pulses with the sweet, living energy of love and pleasure.",
-"I savor the bliss of love as it blooms within me, soft, electric, and alive. .",
-"My soul sings through touch, through breath, through every warm wave of loving presence.",
-"Love is a sensation I wear like silk, felt in every curve, every breath, every sigh of my spirit.",
-                  "Divine love flows through me like a golden river of light, illuminating my soul with eternal bliss."
-                  ];
+                    "Divine love flows through me like a golden river of light, illuminating my soul with eternal bliss.",
+                    "Cosmic waves of love spiral through my essence, syncing me with the heartbeat of the universe. ",
+                    "I listen closely to the wisdom of my heart, trusting it to guide me gently forward.",
+                    "I honor the desires of my heart and give myself permission to follow them with courage.",
+                    "My heart beats in harmony with the universe, drawing joy and connection into my experience.",
+                    "I lead with my heart, trusting that love and truth will shape the way I live.",
+                    "My heart is resilient, strong, and capable of healing from any pain or disappointment.",
+                    "I carry a heart full of purpose and passion, ready to share my gifts with the world.",
+                    "My heart knows the way, and I follow its rhythm with trust and quiet determination.",
+                    "I release fear and allow my heart to lead me toward experiences of joy and growth.",
+                    "My heart is a sanctuary of peace, and I return to its calm center whenever I need.",
+                    "I feel deeply connected to the truth and wisdom that lives inside my open heart.",
+                    "My heart speaks clearly when I quiet my mind and listen with patience and presence.",
+                    "I offer my heart freely to the world, knowing its light will return to me multiplied.",
+                    "My heart is a magnet for kindness, connection, and experiences that honor my true essence.",
+                    "My heart holds the wisdom of generations, and I carry that love with reverence and pride. .",
+                    "Gentle ocean swirls are in rhythm with my breathing, love saturates my heart, I am seriously glowing.",
+                    "Love and bliss flow through every part of my being, lighting up my soul.", 
+                    "I am a beacon of love, radiating joy from the core of my existence.", 
+                    "I emanate love and happiness from deep within my soul.", 
+                    "The essence of my soul shines with the radiant energy of love and bliss.", 
+                    "With each breath, I express the boundless joy and warmth of love.",
+                    "Divine love flows through me, illuminating my soul with eternal bliss.", 
+                    "I am a vessel of sacred light, radiating the infinite joy of divine love.",
+                    "Through every breath, I channel the pure essence of cosmic love and serenity.",
+                    "My soul is a temple of divine bliss, glowing with the sacred fire of love.",
+                    "I merge with the universal heart, radiating love as my highest truth.",
+                    "In alignment with Spirit, I shine the bliss of divine love from the depths of my soul.",
+                    "Like dawn's first light, love spills from my soul, painting the world in bliss.",
+                    "My heart sings in silent hymns, weaving love through the threads of my spirit.",
+                    "In the quiet bloom of my being, joy unfurls like petals kissed by divine light.",
+                    "I am the soft echo of love in the wind, the radiant hush between heartbeats.",
+                    "Bliss dances through me like starlight on still waters, serene and infinite.",
+                    "Every breath I take is a verse of love, every beat of my soul a poem of joy.",
+                    "Love lives in me, and I carry it into everything I do.",
+                    "I feel joy in my heart, and I share it naturally with the world around me.",
+                    "Every part of me is tuned to kindness, warmth, and connection.",
+                    "I bring love into the world just by being present and true to myself.",
+                    "I embrace the blessing of each sunrise, guiding me toward the path of my soul’s true calling.",
+                    "Love flows through me like warm honey, touching every inch of my being with bliss.",
+                    "I feel love in my skin, my breath, my heartbeat — it moves through me like a tender rhythm.",
+                    "Every fiber of my body pulses with the sweet, living energy of love and pleasure.",
+                    "I savor the bliss of love as it blooms within me, soft, electric, and alive. .",
+                    "My soul sings through touch, through breath, through every warm wave of loving presence.",
+                    "Love is a sensation I wear like silk, felt in every curve, every breath, every sigh of my spirit.",
+                    "Divine love flows through me like a golden river of light, illuminating my soul with eternal bliss."];
+e.addEventListener("click", () => {
+          if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen() } 
+          else if (document.exitFullscreen) {
+          document.exitFullscreen();
+          }
+          e.style.display = "none";
+          s.style.display = "none";
+          wordDisplay.style.display = "block";
+
 const rndm = Math.floor(Math.random() * sentences.length)          
 const sentence = sentences[rndm];
 let words = sentence.split(" ");
@@ -170,65 +167,6 @@ displayWord(); // Initial display
         s.style.display = "none";
         e.style.display = "none";
         wordDisplay.style.display = "block";
-        const sentences = [ "Love flows through me in radiant waves, illuminating every part of my being with pure bliss.", 
-                    "Every fiber of my soul vibrates with the ecstatic energy of love and light.", 
-                    "I am a vessel of love’s joy, overflowing with bliss that shines from deep within.",
-                    "Love surrounds and fills me, washing through my body with a golden warmth that awakens deep happiness.", 
-                    "The bliss of unconditional love erupts from within, filling my spirit with radiant energy.",
-                    "Love bursts from my core, wrapping my entire being in waves of shimmering bliss.",
-                    "I am the drumbeat of love, echoing through the land, bliss rising from the roots of my spirit.",
-                    "The sun of my ancestors warms my heart; love dances through my veins like a sacred river.",
-                    "With every breath, my body flows like the ocean. Love fuels me, and my power radiates from the inside out.",
-                    "My soul sings with the voices of old, love bursting forth like rain on thirsty soil.",
-                    "Every cell in my body vibrates in harmony with the sacred song sung by angels.",
-                    "I cherish the gift of every sunrise that brings me closer to my soul’s purpose.",
-                   "Divine love flows through me like a golden river of light, illuminating my soul with eternal bliss.",
-                   "Cosmic waves of love spiral through my essence, syncing me with the heartbeat of the universe.",
-                   "I listen closely to the wisdom of my heart, trusting it to guide me gently forward.",
-"I honor the desires of my heart and give myself permission to follow them with courage.",
-"My heart beats in harmony with the universe, drawing joy and connection into my experience.",
-"I lead with my heart, trusting that love and truth will shape the way I live.",
-"My heart is resilient, strong, and capable of healing from any pain or disappointment.",
-"I carry a heart full of purpose and passion, ready to share my gifts with the world.",
-"My heart knows the way, and I follow its rhythm with trust and quiet determination.",
-"I release fear and allow my heart to lead me toward experiences of joy and growth.",
-"My heart is a sanctuary of peace, and I return to its calm center whenever I need.",
-"I feel deeply connected to the truth and wisdom that lives inside my open heart.",
-"My heart speaks clearly when I quiet my mind and listen with patience and presence.",
-"I offer my heart freely to the world, knowing its light will return to me multiplied.",
-"My heart is a magnet for kindness, connection, and experiences that honor my true essence.",
-"My heart holds the wisdom of generations, and I carry that love with reverence and pride.",
-"Gentle ocean swirls are in rhythm with my breathing, love saturates my heart, I am seriously glowing.",
-                   "Love and bliss flow through every part of my being, lighting up my soul.", 
-                   "I am a beacon of love, radiating joy from the core of my existence.",
-                   "I emanate love and happiness from deep within my soul.", 
-                   "The essence of my soul shines with the radiant energy of love and bliss.", 
-                   "With each breath, I express the boundless joy and warmth of love.",
-                  "Divine love flows through me, illuminating my soul with eternal bliss.", 
-"I am a vessel of sacred light, radiating the infinite joy of divine love.",
-"Through every breath, I channel the pure essence of cosmic love and serenity.",
-"My soul is a temple of divine bliss, glowing with the sacred fire of love.",
-"I merge with the universal heart, radiating love as my highest truth.",
-"In alignment with Spirit, I shine the bliss of divine love from the depths of my soul.",
-"Like dawn's first light, love spills from my soul, painting the world in bliss.",
-"My heart sings in silent hymns, weaving love through the threads of my spirit.",
-"In the quiet bloom of my being, joy unfurls like petals kissed by divine light.",
-"I am the soft echo of love in the wind, the radiant hush between heartbeats.",
-"Bliss dances through me like starlight on still waters, serene and infinite",
-"Every breath I take is a verse of love, every beat of my soul a poem of joy.",
-                  "Love lives in me, and I carry it into everything I do.",
-"I feel joy in my heart, and I share it naturally with the world around me.",
-"Every part of me is tuned to kindness, warmth, and connection.",
-"I bring love into the world just by being present and true to myself.",
-"I show up with love, and it shines through in how I live each day.",
-"Love flows through me like warm honey, touching every inch of my being with bliss.",
-"I feel love in my skin, my breath, my heartbeat — it moves through me like a tender rhythm.",
-"Every fiber of my body pulses with the sweet, living energy of love and pleasure.",
-"I savor the bliss of love as it blooms within me, soft, electric, and alive.",
-"My soul sings through touch, through breath, through every warm wave of loving presence.",
-"Love is a sensation I wear like silk, felt in every curve, every breath, every sigh of my spirit.",
-                  "Divine love flows through me like a golden river of light, illuminating my soul with eternal bliss."
-                  ];
    
 const rndm = Math.floor(Math.random() * sentences.length);          
 const sentence = sentences[rndm];
