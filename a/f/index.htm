@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          background-color: #efedd6;
+          font-family: 'Roboto', sans-serif;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin: 0;
+          overflow-x: hidden;
+        }
+        
+        h1 {
+          margin: 10px;
+        }
+        
+        .box {
+          background-color: steelblue;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 400px;
+          height: 200px;
+          margin: 10px;
+          border-radius: 10px;
+          box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+          transform: translateX(400%);
+          transition: transform 0.4s ease;
+        }
+        
+        .box:nth-of-type(even) {
+          transform: translateX(-400%);
+        }
+        
+        .box.show {
+          transform: translateX(0);
+        }
+        
+        .box h2 {
+          font-size: 45px;
+        }
+    </style>
+    <title>Scroll Animation</title>
+  </head>
+  <body>
+    <h1>Scroll to see the animation</h1>
+    <div class="box"><h2>Content</h2></div>
+    <div class="box"><h2>Content</h2></div>
+    <div class="box"><h2>Content</h2></div>
+    <div class="box"><h2>Content</h2></div>
+    <div class="box"><h2>Content</h2></div>
+    <div class="box"><h2>Content</h2></div>
+    <div class="box"><h2>Content</h2></div>
+    <div class="box"><h2>Content</h2></div>
+    <div class="box"><h2>Content</h2></div>
+    <div class="box"><h2>Content</h2></div>
+    <div class="box"><h2>Content</h2></div>
+    <div class="box"><h2>Content</h2></div>
+    <div class="box"><h2>Content</h2></div>
+    <script>
+        const loadText = document.querySelector('.loading-text')
+        const bg = document.querySelector('.bg')
+        
+        let load = 0
+        
+        let int = setInterval(blurring, 30)
+        
+        function blurring() {
+          load++
+        
+          if (load > 99) {
+            clearInterval(int)
+          }
+        
+          loadText.innerText = `${load}%`
+          loadText.style.opacity = scale(load, 0, 100, 1, 0)
+          bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
+        }
+        
+        // https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
+        const scale = (num, in_min, in_max, out_min, out_max) => {
+          return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
+        }
+    </script>
+  </body>
+</html>
 
