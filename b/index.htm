@@ -30,6 +30,7 @@
       padding: 1rem;
       line-height: 1.6;
     }
+    .cm { color: Gainsboro }
   </style>
 </head>
 <body>
@@ -37,7 +38,39 @@
   <div id="start-screen">START</div>
 
   <div id="reader">
-
+        <p class="cm">// Log number</p>
+    <p class="cd">console.log(100);</p>
+<br>
+    <p class="cm">// Log string</p>
+    <p class="cd">console.log('Hello World');</p>
+<br>
+    <p class="cm">// Log multiple values</p>
+    <p class="cd">console.log(20, 'Hello', true);</p>
+<br>
+    <p class="cm">// Log a variable</p>
+    <p class="cd">const x = 100;</p>
+    <p class="cd">console.log(x);</p>
+<br>
+    <p class="cm">// Console error & warning</p>
+    <p class="cd">console.error('Alert');</p>
+    <p class="cd">console.warn('Warning');</p>
+<br>
+    <p class="cm">// Log object as table</p>
+    <p class="cd">console.table({ name: 'Brad', email: 'brad@gmail.com' });</p>
+<br>
+    <p class="cm">// Group console commands</p>
+    <p class="cd">console.group('simple');</p>
+    <p class="cd">console.log(x);</p>
+    <p class="cd">console.error('Alert');</p>
+    <p class="cd">console.warn('Warning');</p>
+    <p class="cd">console.groupEnd();</p>
+<br>
+    <p class="cm">// Add CSS to logs</p>
+    <p class="cd">
+      const styles = 'padding: 10px; background-color: white; color: green';
+    </p>
+    <p class="cd">console.log('%cHello World', styles);</p>
+<br>
   </div>
 
   <script>
