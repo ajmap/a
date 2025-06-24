@@ -78,7 +78,7 @@
     <p class="cm">console.log(20, 'Hello', true);</p>
     <p class="cm">*/</p>
     <br />
-        <p class="cm">// Ways to declare a variable</p>
+    <p class="cm">// Ways to declare a variable</p>
     <p class="cm">// `var`, `let`, & `const`</p>
     <br />
     <p class="cd">let firstName = 'John';</p>
@@ -97,15 +97,12 @@
     <p class="cm">// FirstName = PascalCase</p>
     <p class="cm">// firstname = lowercase</p>
     <br />
-    <p class="cm">
-      // We can re-assign `let` variables. If you change `age` to use `const`,
-      you will get an error
+    <p class="cm">// We can re-assign `let` variables. If you change `age` to use `const`, you will get an error
     </p>
     <p class="cd">age = 31;</p>
     <p class="cd">console.log(age);</p>
     <br />
-    <p class="cm">
-      // With let, we can declare a value without assigning a value
+    <p class="cm">// With let, we can declare a value without assigning a value
     </p>
     <p class="cd">let score;</p>
     <p class="cd">score = 1;</p>
@@ -144,7 +141,7 @@
     <p class="cd">console.log(d);</p>
     <p class="cd">console.log(a);</p>
     <br />
-        <p class="cm">// String</p>
+    <p class="cm">// String</p>
     <p class="cd">const firstName = 'Sara';</p>
     <br />
     <p class="cm">// Number</p>
@@ -188,6 +185,26 @@
     <br />
     <p class="cm">// More info on the "function object" type</p>
     <p class="cm">// https://262.ecma-international.org/5.1/#sec-11.4.3</p>
+    <br />
+    <p class="cm">// Value is stored in the stack</p>
+    <p class="cd">const name = 'John';</p>
+    <p class="cd">const age = 30;</p>
+    <br />
+    <p class="cm">// Reference is stored in the heap</p>
+    <p class="cd">const person = {</p>
+    <p class="cd">&nbsp;&nbsp;name: 'Brad',</p>
+    <p class="cd">age: 40,</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">let newName = name;</p>
+    <p class="cd">newName = 'Jonathan';</p>
+    <br />
+    <p class="cd">let newPerson = person;</p>
+    <p class="cd">newPerson.name = 'Bradley';</p>
+    <br />
+    <p class="cd">console.log(name, newName); <span class="cm">// John, Jonathan</span></p>
+    <p class="cd">console.log(person, newPerson); <span class="cm">// { name: 'Bradley', age: 40 }, { name: 'Bradley', age: 40 }</span>
+    </p>
     <br />
   </div>
 
