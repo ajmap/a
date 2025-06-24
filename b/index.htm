@@ -203,8 +203,32 @@
     <p class="cd">newPerson.name = 'Bradley';</p>
     <br />
     <p class="cd">console.log(name, newName); <span class="cm">// John, Jonathan</span></p>
-    <p class="cd">console.log(person, newPerson); <span class="cm">// { name: 'Bradley', age: 40 }, { name: 'Bradley', age: 40 }</span>
-    </p>
+    <p class="cd">console.log(person, newPerson); <span class="cm">// { name: 'Bradley', age: 40 }, { name: 'Bradley', age: 40 }</span</p>
+    <br />
+    <p class="cd">let amount = 'hello';</p>
+    <br />
+    <p class="cm">// Convert string to number</p>
+    <p class="cd">amount = parseInt(amount);</p>
+    <p class="cd">amount = +amount;</p>
+    <p class="cd">amount = Number(amount);</p>
+    <br />
+    <p class="cm">// Convert number to string</p>
+    <p class="cd">amount = amount.toString();</p>
+    <p class="cd">amount = String(amount);</p>
+    <br />
+    <p class="cm">// Convert string to decimal</p>
+    <p class="cd">amount = parseFloat(amount);</p>
+    <br />
+    <p class="cm">// Convert number to boolean</p>
+    <p class="cd">amount = Boolean(amount);</p>
+    <br />
+    <p class="cm">// Ways to get NaN</p>
+    <p class="cd">console.log(Math.sqrt(-1));</p>
+    <p class="cd">console.log(1 + NaN);</p>
+    <p class="cd">console.log(undefined + undefined);</p>
+    <p class="cd">console.log('foo' / 3);</p>
+    <br />
+    <p class="cd">console.log(amount, typeof amount);</p>
     <br />
   </div>
 
