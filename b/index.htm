@@ -1,1 +1,164 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lees App</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+      background: #fff;
+      color: #111;
+    }
+
+    #start-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #111;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    #reader {
+      display: none;
+      padding: 1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="start-screen">START</div>
+
+  <div id="reader">
+    ‘There is always a touch of the fairy-tale in Sir Walter Besant’s
+romances.... He steeps the workaday world in a transfigurating
+medium, and eerie incidents, impossible coincidences, fine and subtle
+sentiments, beautiful love stories of pure passion, all appear in
+keeping.... In “The Master Craftsman” Sir Walter Besant’s admirers
+will find no cause for disappointment.... It is charming, it is
+informed with the healthiest spirit, and it is optimistic, chivalrous,
+picturesque.’--_Daily News._
+
+‘“The Master Craftsman” opens with a brilliant prologue, not the
+less enjoyable because it recalls the opening chapter of “Treasure
+Island.”... The story contains romance, a sort of ethical adaptability
+to the social conditions of the present time, a ripe humour in the
+delineation of character, and a pervading poetry or eloquence that
+makes the prose of the book seem modulated by the inflections of a
+living voice. The book reveals no new development of its author’s
+powers, but shows them undiminished and fresh; and it will be read with
+enjoyment and admiration by everyone who takes it up.’--_Scotsman._
+
+‘What we ask of Sir Walter Besant are pleasant and inspiriting hours
+of wholesome entertainment. These he never fails to provide. He has
+provided them once again in “The Master Craftsman,” and we are grateful
+accordingly, and know that his book will have all the success of its
+predecessors.’--_Daily Chronicle._
+
+‘In “The Master Craftsman” Sir Walter Besant has a subject to his
+heart’s desire.... He has a bit of old London to describe, and he does
+it in a very lifelike and workmanlike fashion. Here the permanent value
+of the book comes in.... To write a novel like “The Master Craftsman”
+must be to enjoy oneself. It fairly beams on its readers.’--_Sketch._
+
+‘Sir Walter Besant is, in one respect at least, a worthy successor
+to Charles Dickens, for he knows London in all its picturesque nooks
+and corners, and how to invest tales of mean streets with romantic
+interest. He knows human nature also--the wholesome, sweet, sturdy
+human nature which is not troubled with neurotic moods, or intent on
+the solution of doubtful problems in morals.... This well-written,
+quite improbable, but not on that account less fascinating,
+romance.’--_Leeds Mercury._
+
+‘... This sense of a living and kindly voice addressing you doubles
+the charm of the story. This charm you feel particularly in Sir Walter
+Besant’s last delightful romance, where only the living voice could
+hold you hypnotically spell-bound till you accept unquestioningly the
+wonderful Wapping idyll.’--_Illustrated London News._
+
+‘Life in the East End among the working bees and life in the West
+among the drones and butterflies of Society are pictured with equal
+skill, the characters are vigorously drawn, the incidents are always
+interesting and occasionally exciting. In a word, “The Master
+Craftsman” is a fresh, picturesque, wholesome bit of fiction, full of
+interest.’--_Court Journal._
+
+‘In “The Master Craftsman” Sir Walter Besant is revealed in his very
+sunniest mood.... The story is throughout a delightful one, rich in
+character-drawing.’--_Lady._
+
+‘In Sir Walter Besant’s pleasant romance of Wapping-on-the-Wall, the
+hundred-year old mystery of the bag of jewels makes a delightful
+background of fairy-tale to a plot and motive thoroughly modern and
+realistic.’--_Spectator._
+
+‘Sir Walter Besant has not been able to resist the attraction of the
+jewel-treasure story, and we are glad he has succumbed to it, for he
+has written one of the very best of the many romances whose hearts are
+the sparkling futile things.’--_World._
+
+‘There is about the story a touch of quixotism and romance which gives
+it a charm of its own, and in the hands of an experienced writer the
+tale is plausibly and agreeably told.’--_Westminster Gazette._
+
+‘“The Master Craftsman” is certainly as pleasant a story as any Sir
+Walter Besant has yet given to the world, and pleasantness is a quality
+none too common in the fiction of the day.... Sir Walter Besant’s
+optimism is always enjoyable, and often, as we know, truly beneficent
+to a world over-given to pessimism.’--_Queen._
+  </div>
+
+  <script>
+    const startScreen = document.getElementById('start-screen');
+    const reader = document.getElementById('reader');
+
+    // Ga naar opgeslagen positie bij openen
+    window.onload = () => {
+      const savedScroll = localStorage.getItem('leesapp-scroll');
+      if (savedScroll) {
+        window.scrollTo(0, parseInt(savedScroll));
+      }
+    };
+
+    // Startknop
+    startScreen.onclick = async () => {
+      startScreen.style.display = 'none';
+      reader.style.display = 'block';
+
+      // Volledig scherm activeren (indien ondersteund)
+      if (document.documentElement.requestFullscreen) {
+        await document.documentElement.requestFullscreen();
+      }
+
+      // Scroll naar opgeslagen positie
+      const savedScroll = localStorage.getItem('leesapp-scroll');
+      if (savedScroll) {
+        window.scrollTo(0, parseInt(savedScroll));
+      }
+    };
+
+    // Klik = scroll 1 schermhoogte naar beneden
+    document.addEventListener('click', () => {
+      window.scrollBy({
+        top: window.innerHeight,
+        left: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Scrollpositie opslaan
+    window.addEventListener('scroll', () => {
+      localStorage.setItem('leesapp-scroll', window.scrollY);
+    });
+  </script>
+
+</body>
+</html>
 
