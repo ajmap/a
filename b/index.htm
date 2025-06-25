@@ -317,6 +317,72 @@
     <br />
     <p class="cd">console.log(x, typeof x);</p>
     <br />
+    <p class="cd">let x;</p>
+    <p class="cd">x = s.slice(-11, -6);</p>
+    <br />
+    <br />
+    <p class="cd">const name = 'John';</p>
+    <p class="cd">const age = 31;</p>
+    <br />
+    <p class="cm">// Concatenation</p>
+    <p class="cd">x = 'Hello, my name is ' + name + ' and I am ' + age + ' years old';
+    </p>
+    <p class="cm">// trim() - remove whitespace from beginning and end of string
+    </p>
+    <br />
+    <p class="cm">// Template Literals</p>
+    <p class="cd">x = ' Hello World';</p>
+    <p class="cd">x = `Hello, my name is ${name} and I am ${age} years old`;</p>
+    <br />
+    <p class="cd">x = x.trim();</p>
+    <p class="cm">// String Properties and Methods</p>
+    <br />
+    <p class="cm">// Creating a "string object" (JS does this automatically when using apropery or method on a primitive string)
+    </p>
+    <p class="cd">const s = new String('Hello World');</p>
+    <br />
+    <br />
+    <p class="cd">x = typeof s;</p>
+    <br />
+    <p class="cm">// replace() - replace all instances of a string</p>
+    <p class="cd">x = s.length;</p>
+    <p class="cd">x = s.replace('World', 'John');</p>
+    <br />
+    <br />
+    <p class="cm">// Access value by key</p>
+    <p class="cd">x = s[0];</p>
+    <br />
+    <p class="cm">// Shows the prototype of the string object. Shows the properties and methods
+    </p>
+    <p class="cd">x = s.__proto__;</p>
+    <br />
+    <p class="cm">// includes() - returns true if the string is found</p>
+    <p class="cm">// Change case</p>
+    <p class="cd">x = s.includes('Hell');</p>
+    <p class="cd">x = s.toUpperCase();</p>
+    <p class="cd">x = s.toLowerCase();</p>
+    <br />
+    <br />
+    <p class="cm">// charAt() - returns the character at the specified index</p>
+    <p class="cm">// valueOf() - returns the primitive value of a variable</p>
+    <p class="cd">x = s.charAt(0);</p>
+    <br />
+    <p class="cd">x = s.valueOf();</p>
+    <p class="cm">// indexOf - returns the index of the first occurrence of a specified value in a string</p>
+    <p class="cd">x = s.indexOf('d');</p>
+    <br />
+    <br />
+    <p class="cm">// substring() - search a string for a specified value</p>
+    <p class="cd">x = s.substring(2, 5);</p>
+    <p class="cd">x = s.substring(7);</p>
+    <br />
+    <p class="cm">// split() - returns an array of strings</p>
+    <p class="cm">// slice() - extracts a part of a string and returns a new string
+    </p>
+    <p class="cd">x = s.split('');</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
   </div>
 
   <script>
