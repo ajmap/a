@@ -288,6 +288,35 @@
     <br />
     <p class="cd">console.log(x);</p>
     <br />
+    <p class="cd">let x;</p>
+    <br />
+    <p class="cd">// Coerced to a string</p>
+    <p class="cd">x = 5 + '5';</p>
+    <br />
+    <p class="cd">x = 5 + Number('5');</p>
+    <br />
+    <p class="cd">// Coerced to a number</p>
+    <p class="cd">x = 5 * '5';</p>
+    <br />
+    <p class="cd">// null is coerced to 0 as it is a `falsy` value</p>
+    <p class="cd">x = 5 + null;</p>
+    <br />
+    <p class="cd">x = Number(null);</p>
+    <br />
+    <p class="cd">x = Number(true);</p>
+    <p class="cd">x = Number(false);</p>
+    <br />
+    <p class="cd">// true is coerced to a 1</p>
+    <p class="cd">x = 5 + true;</p>
+    <br />
+    <p class="cd">// false is coerced to 0 (falsy)</p>
+    <p class="cd">x = 5 + false;</p>
+    <br />
+    <p class="cd">// Undefined is coerced to 0 (falsy)</p>
+    <p class="cd">x = 5 + undefined;</p>
+    <br />
+    <p class="cd">console.log(x, typeof x);</p>
+    <br />
   </div>
 
   <script>
