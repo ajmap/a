@@ -1,1 +1,60 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>9 Golden Mantra's</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        #st {
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+          }
+        #mn {
+            font-family: Arial;
+            padding: 15vw;
+            font-size: 5vw;
+            
+          }
+    </style>
+</head>
+<body>
+    <div id='st'></div>
+    <div id='mn'>
+    </div>
+    <script>
+        const st = document.getElementById('st');
+        const mn = document.getElementById('mn');
+        const affirmations = ["=In silence I surrender to the wisdom of my heart, quieting the noise of the world to truly listen.",
+                              -"In silence I surrender to the wisdom of my heart, quieting the noise of the world to truly listen.",
+                             "0In silence I surrender to the wisdom of my heart, quieting the noise of the world to truly listen.",
+                             "9In silence I surrender to the wisdom of my heart, quieting the noise of the world to truly listen.",
+                             "8In silence I surrender to the wisdom of my heart, quieting the noise of the world to truly listen.",
+                             "7In silence I surrender to the wisdom of my heart, quieting the noise of the world to truly listen.",
+                             "6In silence I surrender to the wisdom of my heart, quieting the noise of the world to truly listen.",
+                             "5In silence I surrender to the wisdom of my heart, quieting the noise of the world to truly listen.",
+                             "4In silence I surrender to the wisdom of my heart, quieting the noise of the world to truly listen.",
+                             "3In silence I surrender to the wisdom of my heart, quieting the noise of the world to truly listen.",
+                             "2In silence I surrender to the wisdom of my heart, quieting the noise of the world to truly listen.",
+                             "1In silence I surrender to the wisdom of my heart, quieting the noise of the world to truly listen."]
+        rnd = Math.floor(Math.random() * affirmations.length);
+        let affirm = affirmations[rnd];
+        st.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+              document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+              document.exitFullscreen();
+            }
+            st.style.display = "none";
+            mn.style.display = "block";
+            mn.textContent = affirm;
+         })
+         mn.addEventListener('click', () => {
+                rnd = Math.floor(Math.random() * affirmations.length);
+                affirm = affirmations[rnd];
+                mn.textContent = affirm;
+            });   
+    </script>
+</body>
+</html>
