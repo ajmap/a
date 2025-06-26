@@ -110,6 +110,110 @@
     <p class="cd">num_2 = "2"</p>
     <p class="cd">print("1 + 2 =", (int(num_1) + int(num_2)))</p>
     <br />
+    <p class="cm"># Request user input and print a hello message</p>
+    <p class="cd">name = input('What is your name : ')</p>
+    <p class="cd">print('Hello', name)</p>
+    <br />
+    <p class="cm"># Assign 2 values by splitting user input at the whitespace</p>
+    <p class="cd">num_1, num_2 = input('Enter 2 Numbers : ').split()</p>
+    <p class="cm"># Convert strings into regular numbers (integers)</p>
+    <p class="cd">num_1 = int(num_1)</p>
+    <p class="cd">num_2 = int(num_2)</p>
+    <p class="cm"># Add the values entered and store in sum</p>
+    <p class="cd">sum_1 = num_1 + num_2</p>
+    <br />
+    <p class="cm"># Subtract the values and store in difference</p>
+    <p class="cd">difference = num_1 - num_2</p>
+    <br />
+    <p class="cm"># Multiply the values and store in product</p>
+    <p class="cd">product = num_1 * num_2</p>
+    <br />
+    <p class="cm"># Divide the values and store in quotient</p>
+    <p class="cd">quotient = num_1 / num_2</p>
+    <br />
+    <p class="cm"># Use modulus on the values to find the remainder</p>
+    <p class="cd">remainder = num_1 % num_2</p>
+    <br />
+    <p class="cm"># format() loads the variable values in order into the {} placeholders</p>
+    <p class="cd">print("{} + {} = {}".format(num_1, num_2, sum_1))</p>
+    <p class="cd">print("{} - {} = {}".format(num_1, num_2, difference))</p>
+    <p class="cd">print("{} * {} = {}".format(num_1, num_2, product))</p>
+    <p class="cd">print("{} / {} = {}".format(num_1, num_2, quotient))</p>
+    <p class="cd">print("{} % {} = {}".format(num_1, num_2, remainder))</p>
+    <br />
+    <p class="cm"># Python Problem</p>
+    <p class="cd">''</p>
+    <p class="cd">I want you to write a program that:</p>
+    <br />
+    <p class="cd">Asks the user to input the number of miles</p>
+    <p class="cd">You’ll convert miles to kilometers (kilometers = miles * 1.60934)</p>
+    <p class="cd">Then print this for example 5 miles equals 8.0467 kilomete</p>
+    <p class="cd">''</p>
+    <br />
+    <p class="cm"># Solution</p>
+    <p class="cm"># Ask the user to input miles and assign it to the miles variable</p>
+    <p class="cd">miles = input('Enter Miles ')</p>
+    <br />
+    <p class="cm"># Convert from string to integer</p>
+    <p class="cd">miles = int(miles)</p>
+    <br />
+    <p class="cm"># Perform calculation by multiplying 1.60934 times miles</p>
+    <p class="cd">kilometers = miles * 1.60934</p>
+    <br />
+    <p class="cm"># Print results using format()</p>
+    <p class="cd">print("{} miles equals {} kilometers".format(miles, kilometers))</p>
+    <br />
+    <p class="cm"># The Math Module contains many useful functions</p>
+    <p class="cm"># Import the math module</p>
+    <p class="cd">import math</p>
+    <br />
+    <p class="cm"># Because you used import you access methods by referencing the module</p>
+    <p class="cd">print("ceil(4.4) = ", math.ceil(4.4))</p>
+    <p class="cd">print("floor(4.4) = ", math.floor(4.4))</p>
+    <p class="cd">print("fabs(-4.4) = ", math.fabs(-4.4))</p>
+    <br />
+    <p class="cm"># Factorial = 1 * 2 * 3 * 4</p>
+    <p class="cd">print("factorial(4) = ", math.factorial(4))</p>
+    <br />
+    <p class="cm"># Return remainder of division</p>
+    <p class="cd">print("fmod(5,4) = ", math.fmod(5,4))</p>
+    <br />
+    <p class="cm"># Receive a float and return an int</p>
+    <p class="cd">print("trunc(4.2) = ", math.trunc(4.2))</p>
+    <br />
+    <p class="cm"># Return x^y</p>
+    <p class="cd">print("pow(2,2) = ", math.pow(2,2))</p>
+    <br />
+    <p class="cm"># Return the square root</p>
+    <p class="cd">print("sqrt(4) = ", math.sqrt(4))</p>
+    <br />
+    <p class="cm"># Special values</p>
+    <p class="cd">print("math.e = ", math.e)</p>
+    <p class="cd">print("math.pi = ", math.pi)</p>
+    <br />
+    <p class="cm"># Return e^x</p>
+    <p class="cd">print("exp(4) = ", math.factorial(4))</p>
+    <br />
+    <p class="cm"># Return the natural logarithm e * e * e ~= 20 so log(20) tells</p>
+    <p class="cm"># you that e^3 ~= 20</p>
+    <p class="cd">print("log(20) = ", math.log(20))</p>
+    <br />
+    <p class="cm"># You can define the base and 10^3 = 1000</p>
+    <p class="cd">print("log(1000,10) = ", math.log(1000,10))</p>
+    <br />
+    <p class="cm"># You can also use base 10 like this</p>
+    <p class="cd">print("log10(1000) = ", math.log10(1000))</p>
+    <br />
+    <p class="cm"># We have the following trig functions</p>
+    <p class="cm"># sin, cos, tan, asin, acos, atan, atan2, asinh, acosh,</p>
+    <p class="cm"># atanh, sinh, cosh, tanh</p>
+    <p class="cm"># They follow this format</p>
+    <p class="cd">print("sin(0) ", math.sin(0))</p>
+    <br />
+    <p class="cm"># Convert radians to degrees and vice versa</p>
+    <p class="cd">print("degrees(1.5708) = ", math.degrees(1.5708))</p>
+    <p class="cd">print("radians(90) = ", math.radians(90))</p>
+    <br />  
   </div>
   <script>
     const startScreen = document.getElementById('start-screen');
