@@ -380,6 +380,20 @@
     <br />
     <p class="cd">console.log(x);</p>
     <br />  
+    <p class="cm">// Create a new string called "myNewString" that holds the value of "Developer", using the lowercase value from "myString"</p>
+    <p class="cd">const myString = 'developer';</p>
+    <br />
+    <p class="cd">let myNewString;</p>
+    <br />
+    <p class="cm">// Solution 1:</p>
+    <p class="cd">myNewString = myString.charAt(0).toUpperCase() + myString.substring(1);</p>
+    <p class="cm">// Solution 2:</p>
+    <p class="cd">myNewString = myString[0].toUpperCase() + myString.substring(1);</p>
+    <p class="cm">// Solution 3:</p>
+    <p class="cd">myNewString = `${myString[0].toUpperCase()}${myString.slice(1)}`;</p>
+    <br />
+    <p class="cd">console.log(myNewString);</p>
+    <br />  
   </div>
   <script>
     const startScreen = document.getElementById('start-screen');
