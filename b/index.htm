@@ -393,6 +393,35 @@
     <p class="cd">myNewString = `${myString[0].toUpperCase()}${myString.slice(1)}`;</p>
     <br />
     <p class="cd">console.log(myNewString);</p>
+    <br />
+    - - - - - - - - - -
+    <p class="cm">// Loop through arrays</p>
+    <p class="cd">const items = ['book', 'table', 'chair', 'kite'];</p>
+    <p class="cd">const users = [{ name: 'Brad' }, { name: 'Kate' }, { name: 'Steve' }];</p>
+    <br />
+    <p class="cm">// for (const item of items) {</p>
+    <p class="cm">// console.log(item);</p>
+    <p class="cm">// }</p>
+    <br />
+    <p class="cd">for (const user of users) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(user.name);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Loop over strings</p>
+    <p class="cd">const str = 'Hello World';</p>
+    <br />
+    <p class="cd">for (const letter of str) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(letter);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Loop over Maps</p>
+    <p class="cd">const map = new Map();</p>
+    <p class="cd">map.set('name', 'John');</p>
+    <p class="cd">map.set('age', 30);</p>
+    <br />
+    <p class="cd">for (const [key, value] of map) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(key, value);</p>
+    <p class="cd">}</p>
     <br />  
   </div>
   <script>
