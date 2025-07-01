@@ -445,6 +445,34 @@
     <br />
     <p class="cd">console.log(x);</p>
     <br />  
+    <p class="cd">const x = Math.floor(Math.random() * 100 + 1);</p>
+    <p class="cd">const y = Math.floor(Math.random() * 50 + 1);</p>
+    <br />
+    <p class="cd">// Get the sum</p>
+    <p class="cd">const sum = x + y;</p>
+    <p class="cd">const sumOutput = `${x} + ${y} = ${sum}`;</p>
+    <p class="cd">console.log(sumOutput);</p>
+    <br />
+    <p class="cd">// Get the difference</p>
+    <p class="cd">const diff = x - y;</p>
+    <p class="cd">const diffOutput = `${x} - ${y} = ${diff}`;</p>
+    <p class="cd">console.log(diffOutput);</p>
+    <br />
+    <p class="cd">// Get the product</p>
+    <p class="cd">const prod = x * y;</p>
+    <p class="cd">const prodOutput = `${x} * ${y} = ${prod}`;</p>
+    <p class="cd">console.log(prodOutput);</p>
+    <br />
+    <p class="cd">// Get the quotient</p>
+    <p class="cd">const quot = x / y;</p>
+    <p class="cd">const quotOutput = `${x} / ${y} = ${quot}`;</p>
+    <p class="cd">console.log(quotOutput);</p>
+    <br />
+    <p class="cd">// Get the remainder</p>
+    <p class="cd">const rm = x % y;</p>
+    <p class="cd">const rmOutput = `${x} % ${y} = ${rm}`;</p>
+    <p class="cd">console.log(rmOutput);</p>
+    <br />  
     = = = = = = = = 
     <p class="cm">// Loop through arrays</p>
     <p class="cd">const items = ['book', 'table', 'chair', 'kite'];</p>
@@ -472,6 +500,25 @@
     <br />
     <p class="cd">for (const [key, value] of map) {</p>
     <p class="cd">&nbsp;&nbsp;console.log(key, value);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">// Loop through objects</p>
+    <p class="cd">const colorObj = {</p>
+    <p class="cd">color1: 'red',</p>
+    <p class="cd">color2: 'blue',</p>
+    <p class="cd">color3: 'orange',</p>
+    <p class="cd">color4: 'green',</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">for (const key in colorObj) {</p>
+    <p class="cd">console.log(key, colorObj[key]);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">// Loop through arrays</p>
+    <p class="cd">const colorArr = ['red', 'green', 'blue', 'yellow'];</p>
+    <br />
+    <p class="cd">for (const key in colorArr) {</p>
+    <p class="cd">console.log(colorArr[key]);</p>
     <p class="cd">}</p>
     <br />  
   </div>
