@@ -520,6 +520,39 @@
     <p class="cd">for (const key in colorArr) {</p>
     <p class="cd">console.log(colorArr[key]);</p>
     <p class="cd">}</p>
+    <br />
+    <p class="cd">const socials = ['Twitter', 'LinkedIn', 'Facebook', 'Instagram'];</p>
+    <br />
+    <p class="cd">// View prototype chain</p>
+    <p class="cd">console.log(socials.__proto__);</p>
+    <br />
+    <p class="cd">// Long form</p>
+    <p class="cd">socials.forEach(function (item) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(item);</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">// Short form</p>
+    <p class="cd">socials.forEach((item) => console.log(item));</p>
+    <br />
+    <p class="cd">// We can also pass in the index and original array</p>
+    <p class="cd">socials.forEach((item, index, arr) => console.log(`${index} - ${item}`,arr));</p>
+    <br />
+    <p class="cd">// Using a named function</p>
+    <p class="cd">function logSocials(social) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(social);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">socials.forEach(logSocials);</p>
+    <br />
+    <p class="cd">// Array of objects</p>
+    <p class="cd">const socialObjs = [</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Twitter', url: 'https://twitter.com' },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Facebook', url: 'https://facebook.com' },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Linkedin', url: 'https://linkedin.com' },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Instagram', url: 'https://instagram.com' },</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cd">socialObjs.forEach((item) => console.log(item.url));</p>
     <br />  
   </div>
   <script>
