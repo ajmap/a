@@ -509,6 +509,137 @@
     <br />
     <p class="cd"></p>
     <p class="cd">console.log(d);</p>
+    <br />
+    <p class="cd">let x;</p>
+    <p class="cd">let d = new Date();</p>
+    <br />
+    <p class="cd">// Date methods</p>
+    <br />
+    <p class="cd">x = d.toString();</p>
+    <br />
+    <p class="cd">x = d.getTime();</p>
+    <p class="cd">x = d.valueOf();</p>
+    <br />
+    <p class="cd">x = d.getFullYear();</p>
+    <br />
+    <p class="cd">x = d.getMonth();</p>
+    <p class="cd">x = d.getMonth() + 1;</p>
+    <br />
+    <p class="cd">x = d.getDate();</p>
+    <br />
+    <p class="cd">x = d.getDay();</p>
+    <br />
+    <p class="cd">x = d.getHours();</p>
+    <br />
+    <p class="cd">x = d.getMinutes();</p>
+    <br />
+    <p class="cd">x = d.getSeconds();</p>
+    <br />
+    <p class="cd">x = d.getMilliseconds();</p>
+    <br />
+    <p class="cd">x = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;</p>
+    <br />
+    <p class="cd">// Intl.DateTimeFormat API (locale specific)</p>
+    <p class="cd">x = Intl.DateTimeFormat('en-US').format(d);</p>
+    <p class="cd">x = Intl.DateTimeFormat('en-GB').format(d);</p>
+    <p class="cd">x = Intl.DateTimeFormat('default').format(d);</p>
+    <br />
+    <p class="cd">x = Intl.DateTimeFormat('default', { month: 'long' }).format(d);</p>
+    <br />
+    <p class="cd">x = d.toLocaleString('default', { month: 'short' });</p>
+    <br />
+    <p class="cd">x = d.toLocaleString('default', {</p>
+    <p class="cd">&nbsp;&nbsp;weekday: 'long',</p>
+    <p class="cd">&nbsp;&nbsp;year: 'numeric',</p>
+    <p class="cd">&nbsp;&nbsp;month: 'long',</p>
+    <p class="cd">&nbsp;&nbsp;day: 'numeric',</p>
+    <p class="cd">&nbsp;&nbsp;hour: 'numeric',</p>
+    <p class="cd">&nbsp;&nbsp;minute: 'numeric',</p>
+    <p class="cd">&nbsp;&nbsp;second: 'numeric',</p>
+    <p class="cd">&nbsp;&nbsp;timeZone: 'America/New_York',</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cd">let x;</p>
+    <br />
+    <p class="cd">// Array Literal</p>
+    <p class="cd">const numbers = [12, 45, 33, 29, 39, 102];</p>
+    <p class="cd">const mixed = [12, 'Hello', true, null];</p>
+    <br />
+    <p class="cd">// Array Constructor</p>
+    <p class="cd">const fruits = new Array('apple', 'grape', 'orange');</p>
+    <br />
+    <p class="cd">// Get value by index</p>
+    <p class="cd">x = numbers[0];</p>
+    <br />
+    <p class="cd">x = numbers[0] + numbers[3];</p>
+    <br />
+    <p class="cd">x = `My favorite fruit is an ${fruits[2]}`;</p>
+    <br />
+    <p class="cd">x = numbers.length;</p>
+    <br />
+    <p class="cd">fruits[2] = 'pear';</p>
+    <br />
+    <p class="cd">// length is not read-only</p>
+    <p class="cd">// fruits.length = 2;</p>
+    <br />
+    <p class="cd">fruits[3] = 'strawberry';</p>
+    <br />
+    <p class="cd">// Using the length as the index will always add on the the end</p>
+    <p class="cd">fruits[fruits.length] = 'blueberry';</p>
+    <p class="cd">fruits[fruits.length] = 'peach';</p>
+    <br />
+    <p class="cd">x = fruits;</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cd">let x;</p>
+    <br />
+    <p class="cd">const arr = [28, 38, 44, 29, 109];</p>
+    <br />
+    <p class="cd">// push() - Push a value on to the end of the array</p>
+    <p class="cd">arr.push(100);</p>
+    <br />
+    <p class="cd">// pop() - Take the last value off</p>
+    <p class="cd">arr.pop();</p>
+    <br />
+    <p class="cd">// unshift() - Add a value to the beginning of the array</p>
+    <p class="cd">arr.unshift(99);</p>
+    <br />
+    <p class="cd">// shift() - Remove first value</p>
+    <p class="cd">arr.shift();</p>
+    <br />
+    <p class="cd">// reverse() - Reverse an array</p>
+    <p class="cd">arr.reverse();</p>
+    <br />
+    <p class="cd">// includes() - Check to see if something is in the array</p>
+    <p class="cd">x = arr.includes(445);</p>
+    <br />
+    <p class="cd">// indexOf() - Return the index of the first match</p>
+    <p class="cd">x = arr.indexOf(28);</p>
+    <br />
+    <p class="cd">// Return array as a string</p>
+    <p class="cd">x = arr.toString();</p>
+    <p class="cd">x = arr.join();</p>
+    <br />
+    <p class="cd">// slice() returns selected elements in an array, as a new array. Slice takes in the index of the first element and the index of the last element to be included in the new array.
+    </p>
+    <p class="cd">x = arr.slice(1, 4);</p>
+    <br />
+    <p class="cd">// splice() works like slice() except it takes the index of the first element and the number of elements after that as a second argument. it also mutates the original array where slice() does not
+    </p>
+    <p class="cd">x = arr.splice(1, 4);</p>
+    <br />
+    <p class="cd">// Remove a single element/value - The following will mutate the original array by taking out the element with the index of 4. x will be equal to a new array with that plucked out value.
+    </p>
+    <p class="cd">x = arr.splice(4, 1);</p>
+    <br />
+    <p class="cd">// Chaining methods - Some methods can be chained depending on the return value.
+    </p>
+    <p class="cd">x = arr.slice(1, 4).reverse().toString().charAt(0);</p>
+    <br />
+    <p class="cd">console.log(x);</p>
     <br />  
     = = = = = = = = 
     <p class="cm">// Loop through arrays</p>
