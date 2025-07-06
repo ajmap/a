@@ -762,6 +762,135 @@
     <p class="cd">x = person2['first name'];</p>
     <br />
     <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cd">let x;</p>
+    <br />
+    <p class="cm">// Create object using the object constructor</p>
+    <p class="cd">const todo = new Object();</p>
+    <br />
+    <p class="cd">todo.id = 1;</p>
+    <p class="cd">todo.name = 'Buy Milk';</p>
+    <p class="cd">todo.completed = false;</p>
+    <br />
+    <p class="cd">x = todo;</p>
+    <br />
+    <p class="cm">// Object Nesting</p>
+    <p class="cd">const person = {</p>
+    <p class="cd">&nbsp;&nbsp;address: {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;coords: {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lat: 42.9384,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lng: -71.3232,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">x = person.address.coords.lat;</p>
+    <br />
+    <p class="cd">const obj1 = { a: 1, b: 2 };</p>
+    <p class="cd">const obj2 = { c: 3, d: 4 };</p>
+    <br />
+    <p class="cm">// Spread operator</p>
+    <p class="cd">const obj3 = { ...obj1, ...obj2 };</p>
+    <p class="cm">// Same as using ...</p>
+    <p class="cd">const obj4 = Object.assign({}, obj1, obj2);</p>
+    <br />
+    <p class="cm">// Array of objects</p>
+    <p class="cd">const todos = [</p>
+    <p class="cd">&nbsp;&nbsp;{ id: 1, name: 'Buy Milk' },</p>
+    <p class="cd">&nbsp;&nbsp;{ id: 2, name: 'Pickup kids from school' },</p>
+    <p class="cd">&nbsp;&nbsp;{ id: 3, name: 'Take out trash' },</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cd">x = todos[0].name;</p>
+    <br />
+    <p class="cm">// Get array of object keys</p>
+    <p class="cd">x = Object.keys(todo);</p>
+    <br />
+    <p class="cm">// Get length of an object</p>
+    <p class="cd">x = Object.keys(todo).length;</p>
+    <br />
+    <p class="cm">// Get array of object values</p>
+    <p class="cd">x = Object.values(todo);</p>
+    <br />
+    <p class="cm">// Get array of object key/value pairs</p>
+    <p class="cd">x = Object.entries(todo);</p>
+    <br />
+    <p class="cm">// Check if object has a property</p>
+    <p class="cd">x = todo.hasOwnProperty('age');</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cm">// Setting object properties with the same name as a variable</p>
+    <p class="cd">const firstName = 'John';</p>
+    <p class="cd">const lastName = 'Doe';</p>
+    <p class="cd">const age = 30;</p>
+    <br />
+    <p class="cd">const person = {</p>
+    <p class="cd">&nbsp;&nbsp;firstName,</p>
+    <p class="cd">&nbsp;&nbsp;lastName,</p>
+    <p class="cd">&nbsp;&nbsp;age,</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">console.log(person.age);</p>
+    <br />
+    <p class="cm">// Destructuring object properties</p>
+    <br />
+    <p class="cd">const todo = {</p>
+    <p class="cd">&nbsp;&nbsp;id: 1,</p>
+    <p class="cd">&nbsp;&nbsp;title: 'Take out trash',</p>
+    <p class="cd">&nbsp;&nbsp;user: {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;name: 'John',</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">const {</p>
+    <p class="cd">&nbsp;&nbsp;id: todoId, // rename id to todoId</p>
+    <p class="cd">&nbsp;&nbsp;title,</p>
+    <p class="cd">&nbsp;&nbsp;user: { name }, // destructuring multiple levels</p>
+    <p class="cd">} = todo;</p>
+    <br />
+    <p class="cd">console.log(todoId);</p>
+    <br />
+    <p class="cm">// Destructuring arrays & using the rest/spread operator</p>
+    <p class="cd">const numbers = [23, 67, 33, 49, 52];</p>
+    <br />
+    <p class="cd">const [first, second, ...rest] = numbers;</p>
+    <br />
+    <p class="cd">console.log(first, second, rest);</p>
+    <br />
+    <p class="cd">const post = {</p>
+    <p class="cd">&nbsp;&nbsp;id: 1,</p>
+    <p class="cd">&nbsp;&nbsp;title: 'Post One',</p>
+    <p class="cd">&nbsp;&nbsp;body: 'This is the body',</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cm">// Convert to JSON string</p>
+    <p class="cd">const str = JSON.stringify(post);</p>
+    <br />
+    <p class="cd">console.log(str.id);</p>
+    <br />
+    <p class="cm">// Parse JSON</p>
+    <p class="cd">const obj = JSON.parse(str);</p>
+    <br />
+    <p class="cd">console.log(obj.id);</p>
+    <br />
+    <p class="cm">// JSON & arrays</p>
+    <p class="cd">const posts = [</p>
+    <p class="cd">&nbsp;&nbsp;{</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;id: 1,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'Post One',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;body: 'This is the body',</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;{</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;id: 2,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'Post Two',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;body: 'This is the body',</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cd">const str2 = JSON.stringify(posts);</p>
+    <br />
+    <p class="cd">console.log(str2);</p>
     <br />  
     = = = = = = = = 
     <p class="cm">// Loop through arrays</p>
