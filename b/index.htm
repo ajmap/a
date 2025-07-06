@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Javascript</title>
+  <title>JS1</title>
   <style>
     * {
       margin: 0;
@@ -892,7 +892,7 @@
     <br />
     <p class="cd">console.log(str2);</p>
     <br />
-    <p class="cd">// Step 1</p>
+    <p class="cm">// Step 1</p>
     <p class="cd">const library = [</p>
     <p class="cd">&nbsp;&nbsp;{</p>
     <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'The Road Ahead',</p>
@@ -923,102 +923,21 @@
     <p class="cd">&nbsp;&nbsp;},</p>
     <p class="cd">];</p>
     <br />
-    <p class="cd">// Step 2</p>
+    <p class="cm">// Step 2</p>
     <p class="cd">library[0].status.read = true;</p>
     <p class="cd">library[1].status.read = true;</p>
     <p class="cd">library[2].status.read = true;</p>
     <br />
-    <p class="cd">// Step 3</p>
+    <p class="cm">// Step 3</p>
     <p class="cd">const { title: firstBook } = library[0];</p>
     <br />
     <p class="cd">console.log(firstBook);</p>
     <br />
-    <p class="cd">// Step 4</p>
+    <p class="cm">// Step 4</p>
     <p class="cd">const libraryJSON = JSON.stringify(library);</p>
     <br />
     <p class="cd">console.log(libraryJSON);</p>
     <br />
-    = = = = = = = = 
-    <p class="cm">// Loop through arrays</p>
-    <p class="cd">const items = ['book', 'table', 'chair', 'kite'];</p>
-    <p class="cd">const users = [{ name: 'Brad' }, { name: 'Kate' }, { name: 'Steve' }];</p>
-    <br />
-    <p class="cm">// for (const item of items) {</p>
-    <p class="cm">// console.log(item);</p>
-    <p class="cm">// }</p>
-    <br />
-    <p class="cd">for (const user of users) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log(user.name);</p>
-    <p class="cd">}</p>
-    <br />
-    <p class="cm">// Loop over strings</p>
-    <p class="cd">const str = 'Hello World';</p>
-    <br />
-    <p class="cd">for (const letter of str) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log(letter);</p>
-    <p class="cd">}</p>
-    <br />
-    <p class="cm">// Loop over Maps</p>
-    <p class="cd">const map = new Map();</p>
-    <p class="cd">map.set('name', 'John');</p>
-    <p class="cd">map.set('age', 30);</p>
-    <br />
-    <p class="cd">for (const [key, value] of map) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log(key, value);</p>
-    <p class="cd">}</p>
-    <br />
-    <p class="cm">// Loop through objects</p>
-    <p class="cd">const colorObj = {</p>
-    <p class="cd">color1: 'red',</p>
-    <p class="cd">color2: 'blue',</p>
-    <p class="cd">color3: 'orange',</p>
-    <p class="cd">color4: 'green',</p>
-    <p class="cd">};</p>
-    <br />
-    <p class="cd">for (const key in colorObj) {</p>
-    <p class="cd">console.log(key, colorObj[key]);</p>
-    <p class="cd">}</p>
-    <br />
-    <p class="cm">// Loop through arrays</p>
-    <p class="cd">const colorArr = ['red', 'green', 'blue', 'yellow'];</p>
-    <br />
-    <p class="cd">for (const key in colorArr) {</p>
-    <p class="cd">console.log(colorArr[key]);</p>
-    <p class="cd">}</p>
-    <br />
-    <p class="cd">const socials = ['Twitter', 'LinkedIn', 'Facebook', 'Instagram'];</p>
-    <br />
-    <p class="cm">// View prototype chain</p>
-    <p class="cd">console.log(socials.__proto__);</p>
-    <br />
-    <p class="cm">// Long form</p>
-    <p class="cd">socials.forEach(function (item) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log(item);</p>
-    <p class="cd">});</p>
-    <br />
-    <p class="cm">// Short form</p>
-    <p class="cd">socials.forEach((item) => console.log(item));</p>
-    <br />
-    <p class="cm">// We can also pass in the index and original array</p>
-    <p class="cd">socials.forEach((item, index, arr) => console.log(`${index} - ${item}`,arr));</p>
-    <br />
-    <p class="cm">// Using a named function</p>
-    <p class="cd">function logSocials(social) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log(social);</p>
-    <p class="cd">}</p>
-    <br />
-    <p class="cd">socials.forEach(logSocials);</p>
-    <br />
-    <p class="cm">// Array of objects</p>
-    <p class="cd">const socialObjs = [</p>
-    <p class="cd">&nbsp;&nbsp;{ name: 'Twitter', url: 'https://twitter.com' },</p>
-    <p class="cd">&nbsp;&nbsp;{ name: 'Facebook', url: 'https://facebook.com' },</p>
-    <p class="cd">&nbsp;&nbsp;{ name: 'Linkedin', url: 'https://linkedin.com' },</p>
-    <p class="cd">&nbsp;&nbsp;{ name: 'Instagram', url: 'https://instagram.com' },</p>
-    <p class="cd">];</p>
-    <br />
-    <p class="cd">socialObjs.forEach((item) => console.log(item.url));</p>
-    <br />  
   </div>
   <script>
     const startScreen = document.getElementById('start-screen');
