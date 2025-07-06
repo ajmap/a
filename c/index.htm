@@ -111,6 +111,54 @@
     <p class="cd">];</p>
     <br />
     <p class="cd">socialObjs.forEach((item) => console.log(item.url));</p>
+    <br />
+    <p class="cd">const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];</p>
+    <br />
+    <p class="cd">const evenNumbers = numbers.filter(function (number) {</p>
+    <p class="cd">&nbsp;&nbsp;return number % 2 === 0;</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cm">// Short version</p>
+    <p class="cd">const evenNumbers2 = numbers.filter((number) => number % 2 === 0);</p>
+    <br />
+    <p class="cm">// Same with forEach</p>
+    <p class="cd">const evenNumbers3 = [];</p>
+    <p class="cd">numbers.forEach((number) => {</p>
+    <p class="cd">&nbsp;&nbsp;if (number % 2 === 0) {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;evenNumbers.push(number);</p>
+    <p class="cd">&nbsp;&nbsp;}</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">const companies = [</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company One', category: 'Finance', start: 1981, end: 2004 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Two', category: 'Retail', start: 1992, end: 2008 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Three', category: 'Auto', start: 1999, end: 2007 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Four', category: 'Retail', start: 1989, end: 2010 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Five', category: 'Technology', start: 2009, end: 2014 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Six', category: 'Finance', start: 1987, end: 2010 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Seven', category: 'Auto', start: 1986, end: 1996 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Eight', category: 'Technology', start: 2011, end: 2016 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Nine', category: 'Retail', start: 1981, end: 1989 },</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cm">// Get only retail companies</p>
+    <p class="cd">const retailCompanies = companies.filter(</p>
+    <p class="cd">&nbsp;&nbsp;(company) => company.category === 'Retail'</p>
+    <p class="cd">);</p>
+    <p class="cm">// console.log(retailCompanies);</p>
+    <br />
+    <p class="cm">// Get companies that started in or after 1980 and ended in or before 2005</p>
+    <p class="cd">const earlyCompanies = companies.filter(</p>
+    <p class="cd">&nbsp;&nbsp;(company) => company.start >= 1980 && company.end <= 2005</p>
+    <p class="cd">);</p>
+    <p class="cm">// console.log(earlyCompanies);</p>
+    <br />
+    <p class="cm">// Get companies that lasted 10 years or more</p>
+    <p class="cd">const longCompanies = companies.filter(</p>
+    <p class="cd">&nbsp;&nbsp;(company) => company.end - company.start >= 10</p>
+    <p class="cd">);</p>
+    <br />
+    <p class="cd">console.log(longCompanies);</p>
     <br />  
   </div>
   <script>
