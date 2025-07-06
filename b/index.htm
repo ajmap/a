@@ -891,7 +891,53 @@
     <p class="cd">const str2 = JSON.stringify(posts);</p>
     <br />
     <p class="cd">console.log(str2);</p>
-    <br />  
+    <br />
+    <p class="cd">// Step 1</p>
+    <p class="cd">const library = [</p>
+    <p class="cd">&nbsp;&nbsp;{</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'The Road Ahead',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;author: 'Bill Gates',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;status: {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;own: true,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reading: false,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read: false,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;{</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'Steve Jobs',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;author: 'Walter Isaacson',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;status: {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;own: true,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reading: false,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read: false,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;{</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'Mockingjay',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;author: 'Suzanne Collins',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;status: {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;own: true,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reading: false,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read: false,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cd">// Step 2</p>
+    <p class="cd">library[0].status.read = true;</p>
+    <p class="cd">library[1].status.read = true;</p>
+    <p class="cd">library[2].status.read = true;</p>
+    <br />
+    <p class="cd">// Step 3</p>
+    <p class="cd">const { title: firstBook } = library[0];</p>
+    <br />
+    <p class="cd">console.log(firstBook);</p>
+    <br />
+    <p class="cd">// Step 4</p>
+    <p class="cd">const libraryJSON = JSON.stringify(library);</p>
+    <br />
+    <p class="cd">console.log(libraryJSON);</p>
+    <br />
     = = = = = = = = 
     <p class="cm">// Loop through arrays</p>
     <p class="cd">const items = ['book', 'table', 'chair', 'kite'];</p>
