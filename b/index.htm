@@ -938,6 +938,93 @@
     <br />
     <p class="cd">console.log(libraryJSON);</p>
     <br />
+    <p class="cm">// Define a function</p>
+    <p class="cd">function sayHello() {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Hello World');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Invoke, execute or call a function</p>
+    <p class="cd">sayHello();</p>
+    <br />
+    <p class="cm">// Define a function with parameters</p>
+    <p class="cd">function add(num1, num2) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(num1 + num2);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Invoke function with arguments</p>
+    <p class="cd">add(5, 10);</p>
+    <br />
+    <p class="cm">// Parameters vs. Arguments</p>
+    <p class="cm">// Parameters are the names of the variables that are used to pass data into a function.
+    </p>
+    <p class="cm">// Arguments are the values that are passed into the function</p>
+    <br />
+    <p class="cm">// Returning a value</p>
+    <p class="cd">function subtract(num1, num2) {</p>
+    <p class="cd">&nbsp;&nbsp;return num1 - num2;</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;console.log('After the return');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Assign the returned value to a variable</p>
+    <p class="cd">const result = subtract(10, 2);</p>
+    <br />
+    <p class="cd">console.log(result, subtract(20, 5));</p>
+    <br />
+    <p class="cm">// Default Params</p>
+    <p class="cd">function registerUser(user = 'Bot') {</p>
+    <p class="cm">&nbsp;&nbsp;// Old way - before using `=`</p>
+    <p class="cm">&nbsp;&nbsp;// if (!user) {</p>
+    <p class="cm">&nbsp;&nbsp;// user = 'Bot';</p>
+    <p class="cm">&nbsp;&nbsp;// }</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;return user + ' is registered';</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">console.log(registerUser());</p>
+    <br />
+    <p class="cm">// Rest Params</p>
+    <p class="cd">function sum(...numbers) {</p>
+    <p class="cd">&nbsp;&nbsp;let total = 0;</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;for (const num of numbers) {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;total += num;</p>
+    <p class="cd">&nbsp;&nbsp;}</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;return total;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">console.log(sum(1, 2, 3, 4, 5, 6, 100));</p>
+    <br />
+    <p class="cm">// Objects as params</p>
+    <p class="cd">function loginUser(user) {</p>
+    <p class="cd">&nbsp;&nbsp;return `The user ${user.name} with the id of ${user.id} is logged in`;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">const user = {</p>
+    <p class="cd">&nbsp;&nbsp;id: 1,</p>
+    <p class="cd">&nbsp;&nbsp;name: 'John',</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">console.log(loginUser(user));</p>
+    <p class="cd">console.log(</p>
+    <p class="cd">&nbsp;&nbsp;loginUser({</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;id: 2,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;name: 'Sara',</p>
+    <p class="cd">&nbsp;&nbsp;})</p>
+    <p class="cd">);</p>
+    <br />
+    <p class="cm">// Arrays as params</p>
+    <p class="cd">function getRandom(arr) {</p>
+    <p class="cd">&nbsp;&nbsp;const randomIndex = Math.floor(Math.random() * arr.length);</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;const item = arr[randomIndex];</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;console.log(item);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">getRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);</p>
+    <br />  
   </div>
   <script>
     const startScreen = document.getElementById('start-screen');
