@@ -167,7 +167,7 @@
     </p>
     <p class="cd">console.log(doubledNumbers);</p>
     <br />
-    <p class="cd">// Same with forEach</p>
+    <p class="cm">// Same with forEach</p>
     <p class="cd">const doubledNumbers2 = [];</p>
     <p class="cd">numbers.forEach((number) => {</p>
     <p class="cd">&nbsp;&nbsp;doubledNumbers2.push(number * 2);</p>
@@ -203,11 +203,11 @@
     <p class="cd">&nbsp;&nbsp;{ name: 'Company Nine', category: 'Retail', start: 1981, end:1989 },</p>
     <p class="cd">];</p>
     <br />
-    <p class="cd">// Create an array of company names</p>
+    <p class="cm">// Create an array of company names</p>
     <p class="cd">const companyNames = companies.map((company) => company.name);</p>
-    <p class="cd">// console.log(companyNames);</p>
+    <p class="cm">// console.log(companyNames);</p>
     <br />
-    <p class="cd">// Create an array with just company and category</p>
+    <p class="cm">// Create an array with just company and category</p>
     <p class="cd">const companyInfo = companies.map((company) => {</p>
     <p class="cd">&nbsp;&nbsp;return {</p>
     <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;name: company.name,</p>
@@ -215,7 +215,7 @@
     <p class="cd">&nbsp;&nbsp;};</p>
     <p class="cd">});</p>
     <br />
-    <p class="cd">// Create an array of objects with the name and the length of each company in years</p>
+    <p class="cm">// Create an array of objects with the name and the length of each company in years</p>
     <p class="cd">const companyYears = companies.map((company) => {</p>
     <p class="cd">&nbsp;&nbsp;return {</p>
     <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;name: company.name,</p>
@@ -225,7 +225,7 @@
     <br />
     <p class="cd">console.log(companyYears);</p>
     <br />
-    <p class="cd">// Chain map methods</p>
+    <p class="cm">// Chain map methods</p>
     <p class="cd">const squareAndDouble = numbers</p>
     <p class="cd">&nbsp;&nbsp;.map((number) => Math.sqrt(number))</p>
     <p class="cd">&nbsp;&nbsp;.map((sqrt) => sqrt * 2);</p>
@@ -241,7 +241,7 @@
     <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;return sqrtDoubled * 3;</p>
     <p class="cd">&nbsp;&nbsp;});</p>
     <br />
-    <p class="cd">// Chaining different methods</p>
+    <p class="cm">// Chaining different methods</p>
     <p class="cd">const evenDouble = numbers</p>
     <p class="cd">&nbsp;&nbsp;.filter((number) => number % 2 === 0)</p>
     <p class="cd">&nbsp;&nbsp;.map((number) => number * 2);</p>
