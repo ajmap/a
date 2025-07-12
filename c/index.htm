@@ -247,6 +247,37 @@
     <p class="cd">&nbsp;&nbsp;.map((number) => number * 2);</p>
     <br />
     <p class="cd">console.log(evenDouble);</p>
+    <br /> 
+    <p class="cd">const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];</p>
+    <br />
+    <p class="cd">// Add all numbers together</p>
+    <p class="cd">const sum = numbers.reduce(function (accumulator, currentValue) {</p>
+    <p class="cd">&nbsp;&nbsp;return accumulator + currentValue;</p>
+    <p class="cd">}, 0);</p>
+    <br />
+    <p class="cd">const sum2 = numbers.reduce((acc, cur) => acc + cur, 0);</p>
+    <br />
+    <p class="cd">// Using a for loop</p>
+    <p class="cd">const sum3 = () => {</p>
+    <p class="cd">&nbsp;&nbsp;let acc = 0;</p>
+    <p class="cd">&nbsp;&nbsp;for (const cur of numbers) {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;acc += cur;</p>
+    <p class="cd">&nbsp;&nbsp;}</p>
+    <p class="cd">&nbsp;&nbsp;return acc;</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">// Shopping cart example (objects)</p>
+    <p class="cd">const cart = [</p>
+    <p class="cd">&nbsp;&nbsp;{ id: 1, name: 'Product 1', price: 130 },</p>
+    <p class="cd">&nbsp;&nbsp;{ id: 2, name: 'Product 2', price: 150 },</p>
+    <p class="cd">&nbsp;&nbsp;{ id: 3, name: 'Product 3', price: 200 },</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cd">const total = cart.reduce(function (acc, product) {</p>
+    <p class="cd">&nbsp;&nbsp;return acc + product.price;</p>
+    <p class="cd">}, 0);</p>
+    <br />
+    <p class="cd">console.log(total);</p>
     <br />  
   </div>
   <script>
