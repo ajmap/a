@@ -94,6 +94,15 @@
             st.style.display = "none";
             mn.style.display = "block";
          })
+          mn.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+              document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+              document.exitFullscreen();
+            }
+            st.style.display = "none";
+            mn.style.display = "block";
+         })
 
   </script>
 </body>
