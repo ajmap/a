@@ -59,11 +59,17 @@
 
   </div>
   <script>
-    const startScreen = document.getElementById('start-screen');
-    const reader = document.getElementById('reader');
-    startScreen.onclick = async () => {
-      startScreen.style.display = 'none';
-      reader.style.display = 'block';
+        const st = document.getElementById('s');
+        const mn = document.getElementById('m');
+        st.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+              document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+              document.exitFullscreen();
+            }
+            st.style.display = "none";
+            mn.style.display = "block";
+         })
 
   </script>
 </body>
