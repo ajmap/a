@@ -9,22 +9,11 @@
       margin: 0;
     }
 
-    #s {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background: #111;
-      color: #fff;
-      font-size: 2rem;
-      cursor: pointer;
-    }
-
     #m {
       margin: 2vh 0 0 2vw;
       display: none;
-      font-size: 5.5vw;
-      line-height: 8.5vw;
+      font-size: 5w;
+      line-height: 8vw;
     }
     span {
       color: white;
@@ -32,7 +21,6 @@
   </style>
 </head>
 <body>
-    <div id="s">START</div>
     <div id="m">
         <p>1. Lady Madonna </p>
         <p>2. Blauw</p>
@@ -57,31 +45,6 @@
         <p><i>Opties</i></p>
         <p>Island In The Sun - Weezer</p>
         <p>Sweet Jane - The Velvet Underground</p>
-            
-
   </div>
-  <script>
-        const st = document.getElementById('s');
-        const mn = document.getElementById('m');
-        st.addEventListener("click", () => {
-            if (!document.fullscreenElement) {
-              document.documentElement.requestFullscreen();
-            } else if (document.exitFullscreen) {
-              document.exitFullscreen();
-            }
-            st.style.display = "none";
-            mn.style.display = "block";
-         })
-          mn.addEventListener("click", () => {
-            if (!document.fullscreenElement) {
-              document.documentElement.requestFullscreen();
-            } else if (document.exitFullscreen) {
-              document.exitFullscreen();
-            }
-            st.style.display = "none";
-            mn.style.display = "block";
-         })
-
-  </script>
 </body>
 </html>
