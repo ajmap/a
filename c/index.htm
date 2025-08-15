@@ -250,14 +250,14 @@
     <br /> 
     <p class="cd">const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];</p>
     <br />
-    <p class="cd">// Add all numbers together</p>
+    <p class="cm">// Add all numbers together</p>
     <p class="cd">const sum = numbers.reduce(function (accumulator, currentValue) {</p>
     <p class="cd">&nbsp;&nbsp;return accumulator + currentValue;</p>
     <p class="cd">}, 0);</p>
     <br />
     <p class="cd">const sum2 = numbers.reduce((acc, cur) => acc + cur, 0);</p>
     <br />
-    <p class="cd">// Using a for loop</p>
+    <p class="cm">// Using a for loop</p>
     <p class="cd">const sum3 = () => {</p>
     <p class="cd">&nbsp;&nbsp;let acc = 0;</p>
     <p class="cd">&nbsp;&nbsp;for (const cur of numbers) {</p>
@@ -266,7 +266,7 @@
     <p class="cd">&nbsp;&nbsp;return acc;</p>
     <p class="cd">};</p>
     <br />
-    <p class="cd">// Shopping cart example (objects)</p>
+    <p class="cm">// Shopping cart example (objects)</p>
     <p class="cd">const cart = [</p>
     <p class="cd">&nbsp;&nbsp;{ id: 1, name: 'Product 1', price: 130 },</p>
     <p class="cd">&nbsp;&nbsp;{ id: 2, name: 'Product 2', price: 150 },</p>
@@ -278,6 +278,73 @@
     <p class="cd">}, 0);</p>
     <br />
     <p class="cd">console.log(total);</p>
+    <br />
+    <p class="cd">11-array-method-challenges</p>  
+    <p class="cm">// Challenge 1</p>
+    <p class="cd">const people = [</p>
+    <p class="cd">&nbsp;&nbsp;{</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; firstName: 'John',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; lastName: 'Doe',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; email: 'john@gmail.com',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; phone: '111-111-1111',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; age: 30,</p>
+    <p class="cd">&nbsp;&nbsp; },</p>
+    <p class="cd">&nbsp;&nbsp; {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; firstName: 'Jane',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; lastName: 'Poe',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; email: 'jane@gmail.com',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; phone: '222-222-2222',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; age: 25,</p>
+    <p class="cd">&nbsp;&nbsp; },</p>
+    <p class="cd">&nbsp;&nbsp; {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; firstName: 'Bob',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; lastName: 'Foe',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; email: 'bob@gmail.com',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; phone: '333-333-3333',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; age: 45,</p>
+    <p class="cd">&nbsp;&nbsp; },</p>
+    <p class="cd">&nbsp;&nbsp; {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; firstName: 'Sara',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; lastName: 'Soe',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; email: 'Sara@gmail.com',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; phone: '444-444-4444',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; age: 19,</p>
+    <p class="cd">&nbsp;&nbsp; },</p>
+    <p class="cd">&nbsp;&nbsp; {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; firstName: 'Jose',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; lastName: 'Koe',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; email: 'jose@gmail.com',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; phone: '555-555-5555',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; age: 23,</p>
+    <p class="cd">&nbsp;&nbsp; },</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cd">const youngPeople = people</p>
+    <p class="cd">&nbsp;&nbsp; .filter((person) => person.age <= 25)</p>
+    <p class="cd">&nbsp;&nbsp; .map((person) => ({</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; name: person.firstName + ' ' + person.lastName,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; email: person.email,</p>
+    <p class="cd">&nbsp;&nbsp; }));</p>
+    <br />
+    <p class="cd">console.log(youngPeople);</p>
+    <br />
+    <p class="cm">// Challenge 2</p>
+    <p class="cd">const numbers = [2, -30, 50, 20, -12, -9, 7];</p>
+    <br />
+    <p class="cd">const positiveSum = numbers</p>
+    <p class="cd">&nbsp;&nbsp; .filter((number) => number > 0)</p>
+    <p class="cd">&nbsp;&nbsp; .reduce((acc, cur) => acc + cur, 0);</p>
+    <br />
+    <p class="cd">console.log(positiveSum);</p>
+    <br />
+    <p class="cm">// Challenge 3</p>
+    <p class="cd">const words = ['coder', 'programmer', 'developer'];</p>
+    <br />
+    <p class="cd">const cWords = words.map((word) => {</p>
+    <p class="cd">&nbsp;&nbsp; return word[0].toUpperCase() + word.slice(1, word.length);</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">console.log(cWords);</p>
     <br />  
   </div>
   <script>
@@ -293,6 +360,7 @@
         window.scrollTo(0, document.body.scrollHeight);
       }, 100); // even wachten tot layout klaar is
     };
+    
   </script>
 </body>
 </html>
