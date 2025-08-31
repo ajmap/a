@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lyrics App</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: #000;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #lyric {
+      font-size: 8vw; /* responsive large text */
+      text-align: center;
+      padding: 2rem;
+      z-index: 1;
+    }
+
+    .grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      z-index: 2;
+    }
+
+    .cell {
+      background: transparent;
+      cursor: pointer;
+    }
+
+    /* (Optional) debug: see grid */
+    /* .cell { border: 1px solid rgba(255,255,255,0.1); } */
+  </style>
+</head>
+<body>
+
+  <div id="lyric"></div>
+
+  <div class="grid">
+    <div class="cell" data-action="fullscreen"></div>
+    <div class="cell" data-action="group1-next"></div>
+    <div class="cell" data-action="group1-prev"></div>
+    <div class="cell" data-action="group2"></div>
+    <div class="cell" data-action="group2-next"></div>
+    <div class="cell" data-action="group2-prev"></div>
+    <div class="cell" data-action="group3"></div>
+    <div class="cell" data-action="group3-next"></div>
+    <div class="cell" data-action="group3-prev"></div>
+  </div>
+
+  <script>
+    const lyrics = [
+      // Group 1
+      "Lorem ipsum dolor sit amet, Group 1 - Lyric 1",
+      "Consectetur adipiscing elit, Group 1 - Lyric 2",
+      "Sed do eiusmod tempor, Group 1 - Lyric 3",
+      "Incididunt ut labore, Group 1 - Lyric 4",
+      // Group 2
+      "Dolore magna aliqua, Group 2 - Lyric 1",
+      "Ut enim ad minim veniam, Group 2 - Lyric 2",
+      "Quis nostrud exercitation, Group 2 - Lyric 3",
+      "Ullamco laboris nisi, Group 2 - Lyric 4",
+      // Group 3
+      "Ut aliquip ex ea, Group 3 - Lyric 1",
+      "Commodo consequat, Group 3 - Lyric 2",
+      "Duis aute irure dolor, Group 3 - Lyric 3",
+      "In reprehenderit, Group 3 - Lyric 4"
+    ];
+
+    const lyricEl = document.getElementById("lyric");
+
+    let currentGroup = 1;
+    let indices = {1: 0, 2: 0, 3: 0};
+
+    function showLyric() {
+      const index = (currentGroup - 1) * 4 + indices[currentGroup];
+      lyricEl.textContent = lyrics[index];
+    }
+
+    function nextLyric(group) {
+      if (indices[group] < 3) indices[group]++;
+      showLyric();
+    }
+
+    function prevLyric(group) {
+      if (indices[group] > 0) indices[group]--;
+      showLyric();
+    }
+
+    function switchGroup(group) {
+      currentGroup = group;
+      showLyric();
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.warn(`Error attempting fullscreen: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    document.querySelectorAll(".cell").forEach(cell => {
+      cell.addEventListener("click", () => {
+        const action = cell.dataset.action;
+        switch (action) {
+          case "fullscreen": toggleFullscreen(); break;
+          case "group1-next": switchGroup(1); nextLyric(1); break;
+          case "group1-prev": switchGroup(1); prevLyric(1); break;
+          case "group2": switchGroup(2); break;
+          case "group2-next": switchGroup(2); nextLyric(2); break;
+          case "group2-prev": switchGroup(2); prevLyric(2); break;
+          case "group3": switchGroup(3); break;
+          case "group3-next": switchGroup(3); nextLyric(3); break;
+          case "group3-prev": switchGroup(3); prevLyric(3); break;
+        }
+      });
+    });
+
+    // Show first lyric
+    showLyric();
+  </script>
+</body>
+</html>
