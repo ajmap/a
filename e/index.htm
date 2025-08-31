@@ -19,9 +19,11 @@
     }
 
     #lyric {
-      font-size: 8vw;
+      font-size: 8vw; /* default responsive large text */
+      text-align: center;
       padding: 2rem;
       z-index: 1;
+      white-space: pre-line; /* so \n works if used */
     }
 
     .grid {
@@ -40,12 +42,9 @@
       background: transparent;
       cursor: pointer;
     }
-    #a {
-      font-size: 12vw;
-    }
 
-    /* (Optional) debug: see grid */
-    /* .cell { border: 1px solid rgba(255,255,255,0.1); } */
+    /* Debugging (optional): 
+    .cell { border: 1px solid rgba(255,255,255,0.1); } */
   </style>
 </head>
 <body>
@@ -56,52 +55,57 @@
     <div class="cell" data-action="fullscreen"></div>
     <div class="cell" data-action="group1-next"></div>
     <div class="cell" data-action="group1-prev"></div>
-    <div class="cell" data-action="group2"></div>
+    <div class="cell" data-action="group4-next"></div>
     <div class="cell" data-action="group2-next"></div>
     <div class="cell" data-action="group2-prev"></div>
-    <div class="cell" data-action="group3"></div>
+    <div class="cell" data-action="group4-prev"></div>
     <div class="cell" data-action="group3-next"></div>
     <div class="cell" data-action="group3-prev"></div>
   </div>
 
   <script>
     const lyrics = [
-      "<span id='a'>Lorem<br> ipsum<br> dolor sit amet, Group 1 - Lyric 1</span>",
+      // Group 1
+      "Lorem ipsum dolor sit amet, Group 1 - Lyric 1",
       "Consectetur adipiscing elit, Group 1 - Lyric 2",
       "Sed do eiusmod tempor, Group 1 - Lyric 3",
-      "Incididunt ut labore, Group 1 - Lyric 4",
+      "<span style='font-size:12vw; line-height:1.2;'>Incididunt<br>ut labore</span>",
+      // Group 2
       "Dolore magna aliqua, Group 2 - Lyric 1",
       "Ut enim ad minim veniam, Group 2 - Lyric 2",
       "Quis nostrud exercitation, Group 2 - Lyric 3",
       "Ullamco laboris nisi, Group 2 - Lyric 4",
+      // Group 3
       "Ut aliquip ex ea, Group 3 - Lyric 1",
       "Commodo consequat, Group 3 - Lyric 2",
       "Duis aute irure dolor, Group 3 - Lyric 3",
-      "In reprehenderit, Group 3 - Lyric 4"
+      "In reprehenderit, Group 3 - Lyric 4",
+      // Group 4
+      "Velit esse cillum, Group 4 - Lyric 1",
+      "Dolore eu fugiat nulla, Group 4 - Lyric 2",
+      "Excepteur sint occaecat, Group 4 - Lyric 3",
+      "Cupidatat non proident, Group 4 - Lyric 4"
     ];
 
     const lyricEl = document.getElementById("lyric");
 
+    let indices = {1: 0, 2: 0, 3: 0, 4: 0};
     let currentGroup = 1;
-    let indices = {1: 0, 2: 0, 3: 0};
 
     function showLyric() {
       const index = (currentGroup - 1) * 4 + indices[currentGroup];
-      lyricEl.innerHTML = lyrics[index];
+      lyricEl.innerHTML = lyrics[index]; // use innerHTML
     }
 
     function nextLyric(group) {
+      currentGroup = group;
       if (indices[group] < 3) indices[group]++;
       showLyric();
     }
 
     function prevLyric(group) {
-      if (indices[group] > 0) indices[group]--;
-      showLyric();
-    }
-
-    function switchGroup(group) {
       currentGroup = group;
+      if (indices[group] > 0) indices[group]--;
       showLyric();
     }
 
@@ -120,14 +124,14 @@
         const action = cell.dataset.action;
         switch (action) {
           case "fullscreen": toggleFullscreen(); break;
-          case "group1-next": switchGroup(1); nextLyric(1); break;
-          case "group1-prev": switchGroup(1); prevLyric(1); break;
-          case "group2": switchGroup(2); break;
-          case "group2-next": switchGroup(2); nextLyric(2); break;
-          case "group2-prev": switchGroup(2); prevLyric(2); break;
-          case "group3": switchGroup(3); break;
-          case "group3-next": switchGroup(3); nextLyric(3); break;
-          case "group3-prev": switchGroup(3); prevLyric(3); break;
+          case "group1-next": nextLyric(1); break;
+          case "group1-prev": prevLyric(1); break;
+          case "group2-next": nextLyric(2); break;
+          case "group2-prev": prevLyric(2); break;
+          case "group3-next": nextLyric(3); break;
+          case "group3-prev": prevLyric(3); break;
+          case "group4-next": nextLyric(4); break;
+          case "group4-prev": prevLyric(4); break;
         }
       });
     });
