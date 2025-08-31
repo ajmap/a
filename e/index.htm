@@ -41,6 +41,9 @@
       background: transparent;
       cursor: pointer;
     }
+    #a {
+      font-size: 20px;
+    }
 
     /* (Optional) debug: see grid */
     /* .cell { border: 1px solid rgba(255,255,255,0.1); } */
@@ -64,7 +67,7 @@
 
   <script>
     const lyrics = [
-      "Lorem<br> ipsum<br> dolor sit amet, Group 1 - Lyric 1",
+      "<span id='a'>Lorem<br> ipsum<br> dolor sit amet, Group 1 - Lyric 1</span>",
       "Consectetur adipiscing elit, Group 1 - Lyric 2",
       "Sed do eiusmod tempor, Group 1 - Lyric 3",
       "Incididunt ut labore, Group 1 - Lyric 4",
@@ -85,7 +88,7 @@
 
     function showLyric() {
       const index = (currentGroup - 1) * 4 + indices[currentGroup];
-      lyricEl.textContent = lyrics[index];
+      lyricEl.innerHTML = lyrics[index];
     }
 
     function nextLyric(group) {
