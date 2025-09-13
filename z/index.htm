@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>End</title>
+<style>
+
+          #e {
+                    width: 100vw;
+              height: 100vh;
+              background-color: black;
+      }
+body {
+          font-family: Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-size: 3em;
+  user-select: none; /* Prevent text selection */
+}
+  #wordDisplay { display: none; }
+</style>
+</head>
+<body>
+
+      <div id="e"></div>
+<div id="wordDisplay"></div>
+
+<script>
+
+let e = document.getElementById("e")
+let wordDisplay = document.getElementById("wordDisplay")
+          const sentences = [
+     
+
+              
+    
+              
+              
+              
+              "Elke dag, op alle vlakken, gaat het steeds beter met mij.",
+
+"Dag na dag, in elk opzicht, voel ik me beter en beter.",
+
+"Iedere dag opnieuw verbeter ik me in alles.",
+
+"Elke dag gaat het op alle fronten steeds beter.",
+
+"Dagelijks ervaar ik vooruitgang in elk aspect van mijn leven.",
+
+"Met elke dag die voorbijgaat, gaat het beter met mij in alle opzichten.",
+
+"Stap voor stap, dag na dag, verbeter ik me in alles.",
+
+"Ik ga elke dag, in elk opzicht, vooruit.",
+
+"Elke dag weer word ik beter in alle opzichten.",
+
+"Dagelijks merk ik dat alles beter gaat met mij.",
+
+"Op elk gebied groei ik elke dag een beetje meer.",
+
+"Iedere dag voel ik vooruitgang in elk aspect van mijn bestaan.",
+
+"Ik ervaar elke dag verbetering, in alles wat ik doe.",
+
+"Dag voor dag gaat het in elk opzicht beter met mij.",
+
+"Elke nieuwe dag brengt me verbetering in alle aspecten van mijn leven.",
+
+"Dagelijks gaat alles met mij beter en beter.",
+
+"In elk opzicht groei en verbeter ik elke dag.",
+
+"Elke dag opnieuw gaat het met mij in alle opzichten vooruit.",
+
+"Ik word iedere dag beter, op alle fronten.",
+
+"Alles gaat met mij elke dag beter, in elk opzicht."
+
+];
+                             
+          e.addEventListener("click", () => {
+          if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen() } 
+          else if (document.exitFullscreen) {
+          document.exitFullscreen();
+          }
+          e.style.display = "none";
+          wordDisplay.style.display = "block";
+
+const rndm = Math.floor(Math.random() * sentences.length)          
+const sentence = sentences[rndm];
+let words = sentence.split(" ");
+let currentWordIndex = words.length - 1;
+let currentWord = words[currentWordIndex];
+let currentLetterIndex = currentWord.length - 1;
+
+
+
+function displayWord() {
+  wordDisplay.textContent = currentWord;
+}
+
+function eraseLetter() {
+  if (currentLetterIndex >= 0) {
+    currentWord = currentWord.substring(0, currentLetterIndex);
+    currentLetterIndex--;
+    displayWord();
+  } else {
+    currentWordIndex--;
+    if (currentWordIndex >= 0) {
+      currentWord = words[currentWordIndex];
+      currentLetterIndex = currentWord.length - 1;
+      displayWord();
+    } else {
+      wordDisplay.textContent = "";
+    }
+  }
+}
+
+displayWord(); // Initial display
+
+        let intervalId;
+        let dynamicDelay = 501;
+        
+        function startDynamicInterval() {
+          intervalId = setInterval(myFunction, dynamicDelay);
+        }
+        
+        function myFunction() {
+          eraseLetter();
+        
+          dynamicDelay += 51;
+        
+          clearInterval(intervalId);
+          startDynamicInterval();
+        }
+        
+        startDynamicInterval();   
+      });
+
+
+
+
+
+</script>
+</body>
+</html>
+
