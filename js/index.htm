@@ -1156,6 +1156,24 @@
     
     //  More info on the "function object" type
     // https://262.ecma-international.org/5.1/#sec-11.4.3
+    // Value is stored in the stack
+    const name5 = 'John';
+    const age5 = 30;
+    
+    // Reference is stored in the heap
+    const person5 = {
+      name: 'Brad',
+      age: 40,
+    };
+    
+    let newName5 = name5;
+    newName5 = 'Jonathan';
+    
+    let newPerson5 = person5;
+    newPerson5.name = 'Bradley';
+    
+    console.log(name5, newName5); // John, Jonathan
+    console.log(person5, newPerson5); // { name: 'Bradley', age: 40 }, { name: 'Bradley', age: 40 }
   </script>
 </body>
 </html>
