@@ -1263,6 +1263,35 @@
     
     console.log(x7);
 
+    let x8;
+    
+    // Coerced to a string
+    x8 = 5 + '5';
+    
+    x8 = 5 + Number('5');
+    
+    // Coerced to a number
+    x8 = 5 * '5';
+    
+    // null is coerced to 0 as it is a `falsy` value
+    x8 = 5 + null;
+    
+    x8 = Number(null);
+    
+    x8 = Number(true);
+    x8 = Number(false);
+    
+    // true is coerced to a 1
+    x8 = 5 + true;
+    
+    // false is coerced to 0 (falsy)
+    x8 = 5 + false;
+    
+    // Undefined is coerced to 0 (falsy)
+    x8 = 5 + undefined;
+    
+    console.log(x8, typeof x8);
+
   </script>
 </body>
 </html>
