@@ -335,6 +335,7 @@
     <br />
     <p class="cd">let x;</p>
     <br />
+    <p class="cd"><i>17. Working With Strings</i></p>
     <p class="cd">const name = 'John';</p>
     <p class="cd">const age = 31;</p>
     <br />
@@ -1292,6 +1293,67 @@
     x8 = 5 + undefined;
     
     console.log(x8, typeof x8);
+    
+    let x9;
+    
+    const name9 = 'John';
+    const age9 = 31;
+    
+    // Concatenation
+    x9 = 'Hello, my name9 is ' + name9 + ' and I am ' + age9 + ' years old';
+    
+    // Template Literals
+    x9 = `Hello, my name9 is ${name9} and I am ${age9} years old`;
+    
+    // String Properties and Methods
+    
+    // Creating a "string object" (JS does this automatically when using a propery or method on a primitive string)
+    const s = new String('Hello World');
+    
+    x9 = typeof s;
+    
+    x9 = s.length;
+    
+    // Access value by key
+    x9 = s[0];
+    
+    // Shows the prototype of the string object. Shows the properties and methods
+    x9 = s.__proto__;
+    
+    // Change case
+    x9 = s.toUpperCase();
+    x9 = s.toLowerCase();
+    
+    // charAt() - returns the character at the specified index9
+    x9 = s.charAt(0);
+    
+    // index9Of - returns the index9 of the first occurrence of a specified value in a string
+    x9 = s.index9Of('d');
+    
+    // substring() - search a string for a specified value
+    x9 = s.substring(2, 5);
+    x9 = s.substring(7);
+    
+    // slice() - ex9tracts a part of a string and returns a new string
+    x9 = s.slice(-11, -6);
+    
+    // trim() - remove whitespace from beginning and end of string
+    x9 = '         Hello World';
+    x9 = x9.trim();
+    
+    // replace() - replace all instances of a string
+    x9 = s.replace('World', 'John');
+    
+    // includes() - returns true if the string is found
+    x9 = s.includes('Hell');
+    
+    // valueOf() - returns the primitive value of a variable
+    x9 = s.valueOf();
+    
+    // split() - returns an array of strings
+    x9 = s.split('');
+    
+    console.log(x9);
 
   </script>
 </body>
