@@ -420,7 +420,21 @@
     <p class="cd">console.log(myNewString);</p>
     <br />
     <p class="cd"><i>19. Working With Numbers</i></p>
-    <br>  
+    <br>
+    <p class="cd">let x;</p>
+    <br>
+    <p class="cd">const num = new Number(5);</p>
+    <br>
+    <p class="cm">// toString() - returns a string representation of the number</p>
+    <p class="cd">x = num.toString();</p>
+    <p class="cm">// To get the length</p>
+    <p class="cd">x = num.toString().length;</p>
+    <br>
+    <p class="cm">// toFixed() - returns a string representation of the number with a specified number of decimals</p>
+    <p class="cd">x = num.toFixed(2);</p>
+    <br>
+    <p class="cm">// toPrecision() - returns a number with the specified length</p>
+    <p class="cd">x = num.toPrecision(3);</p>
     <p class="cm">// toExponential() - convert a number to exponential notation and return its value as a string</p>
     <p class="cd">x = num.toExponential(2);</p>
     <br />
@@ -1375,6 +1389,39 @@
     myNewString = `${myString[0].toUpperCase()}${myString.slice(1)}`;
     
     console.log(myNewString);
+
+    let x11;
+
+    const num11 = new Number(5);
+    
+    // toString() - returns a string representation of the number
+    x11 = num11.toString();
+    // To get the length
+    x11 = num11.toString().length;
+    
+    // toFix11ed() - returns a string representation of the number with a specified number of decimals
+    x11 = num11.toFix11ed(2);
+    
+    // toPrecision() - returns a number with the specified length
+    x11 = num11.toPrecision(3);
+    
+    // toEx11ponential() -  convert a number to ex11ponential notation and return its value as a string
+    x11 = num11.toEx11ponential(2);
+    
+    // toLocaleString() - returns a string representation of the number, using the current locale
+    x11 = num11.toLocaleString('en-US');
+    
+    // valueOf - Get value
+    x11 = num11.valueOf();
+    
+    // The Number object itself has some properties and methods
+    
+    // Largest and smallest possible number
+    x11 = Number.MAx11_VALUE;
+    x11 = Number.MIN_VALUE;
+    
+    console.log(x11);
+
   </script>
 </body>
 </html>
