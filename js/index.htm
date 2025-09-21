@@ -1528,6 +1528,57 @@
     
     console.log(d14);
 
+    let x15;
+    let d15 = new Date();
+    
+    // Date methods
+    
+    x15 = d15.toString();
+    
+    x15 = d15.getTime();
+    x15 = d15.valueOf();
+    
+    x15 = d15.getFullYear();
+    
+    x15 = d15.getMonth();
+    x15 = d15.getMonth() + 1;
+    
+    x15 = d15.getDate();
+    
+    x15 = d15.getDay();
+    
+    x15 = d15.getHours();
+    
+    x15 = d15.getMinutes();
+    
+    x15 = d15.getSeconds();
+    
+    x15 = d15.getMilliseconds();
+    
+    x15 = `${d15.getFullYear()}-${d15.getMonth() + 1}-${d15.getDate()}`;
+    
+    // Intl.DateTimeFormat API (locale specific)
+    x15 = Intl.DateTimeFormat('en-US').format(d15);
+    x15 = Intl.DateTimeFormat('en-GB').format(d15);
+    x15 = Intl.DateTimeFormat('default').format(d15);
+    
+    x15 = Intl.DateTimeFormat('default', { month: 'long' }).format(d15);
+    
+    x15 = d15.toLocaleString('default', { month: 'short' });
+    
+    x15 = d15.toLocaleString('default', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      timeZone: 'America/New_York',
+    });
+    
+    console.log(x15);
+
   </script>
 </body>
 </html>
