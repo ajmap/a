@@ -1581,6 +1581,39 @@
     
     console.log(x15);
 
+    let x26;
+
+    // Array Literal
+    const numbers26 = [12, 45, 33, 29, 39, 102];
+    const mixed = [12, 'Hello', true, null];
+    
+    // Array Constructor
+    const fruits = new Array('apple', 'grape', 'orange');
+    
+    // Get value by index26
+    x26 = numbers26[0];
+    
+    x26 = numbers26[0] + numbers26[3];
+    
+    x26 = `My favorite fruit is an ${fruits[2]}`;
+    
+    x26 = numbers26.length;
+    
+    fruits[2] = 'pear';
+    
+    // length is not read-only
+    // fruits.length = 2;
+    
+    fruits[3] = 'strawberry';
+    
+    // Using the length as the index will always add on the the end
+    fruits[fruits.length] = 'blueberry';
+    fruits[fruits.length] = 'peach';
+    
+    x26 = fruits;
+    
+    console.log(x26);
+
   </script>
 </body>
 </html>
