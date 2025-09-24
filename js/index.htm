@@ -695,6 +695,8 @@
     <p class="cd">console.log(x);</p>
     <br />
     <p class="cd">let x;</p>
+    <br>
+    <p class="cd"><i>27. Nesting, Concat & Spread Operator</i></p>  
     <br />
     <p class="cd">const fruits = ['apple', 'pear', 'orange'];</p>
     <p class="cd">const berries = ['strawberry', 'blueberry', 'rasberry'];</p>
@@ -1658,6 +1660,51 @@
     x26 = arr26.slice(1, 4).reverse().toString().charAt(0);
     
     console.log(x26);
+
+    let x27;
+
+    const fruits27 = ['apple', 'pear', 'orange'];
+    const berries = ['strawberry', 'blueberry', 'rasberry'];
+    
+    // Nesting arrays
+    
+    // Nesting berries inside of fruits
+    fruits27.push(berries);
+    
+    // Now we can access 'blueberry' with the following
+    x27 = fruits27[3][1];
+    
+    // Create a new variable and nest both arrays
+    const allfruits27 = [fruits27, berries];
+    
+    x27 = allfruits27[1][2];
+    
+    // concat() - Concatenate arrays
+    x27 = fruits27.concat(berries);
+    
+    // spread operator (...) - Concatenate with
+    x27 = [...fruits27, ...berries];
+    
+    // flat() - Flatten an array
+    const arr = [1, 2, [3, 4, 5], 6, [7, 8]];
+    x27 = arr.flat();
+    
+    // Static methods of Array object
+    
+    // isArray() - Check is is an array
+    x27 = Array.isArray(fruits27);
+    
+    // from() - Create an array from an array like value
+    x27 = Array.from('12345');
+    
+    // of() - Create an array from a set of values
+    const a = 1;
+    const b = 2;
+    const c = 3;
+    
+    x27 = Array.of(a, b, c);
+    
+    console.log(x27);
 
   </script>
 </body>
