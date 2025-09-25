@@ -772,6 +772,7 @@
     <br />
     <p class="cd">console.log(arr4);</p>
     <br />
+    <p class="cd"><i>29. Object Literals</i></p>  
     <p class="cd">let x;</p>
     <br />
     <p class="cm">// Creating an object</p>
@@ -1736,6 +1737,55 @@
     arr4.splice(4, 1);
     
     console.log(arr4);
+
+    let x29;
+    
+    // Creating an object
+    const person29 = {
+      name: 'John Doe',
+      age: 30,
+      isAdmin: true,
+      address: {
+        street: '123 Main st',
+        city: 'Boston',
+        state: 'MA',
+      },
+      hobbies: ['music', 'sports'],
+    };
+    
+    // Accessing object properties
+    x29 = person29.name; // Dot notation
+    x29 = person29['age']; // Bracket notation
+    x29 = person29.address.state;
+    x29 = person29.hobbies[0];
+    
+    // Updating properties
+    person29.name = 'Jane Doe';
+    person29['isAdmin'] = false;
+    
+    // Deleting properties
+    delete person29.age;
+    
+    // Create new properties
+    person29.hasChildren = true;
+    
+    // Add functions
+    person29.greet = function () {
+      console.log(`Hello, my name is ${this.name}`);
+    };
+    
+    person29.greet();
+    
+    // Keys with multiple words
+    const person29a = {
+      'first name': 'Brad',
+      'last name': 'Traversy',
+    };
+    
+    x29 = person29a['first name'];
+    
+    console.log(x29);
+
   </script>
 </body>
 </html>
