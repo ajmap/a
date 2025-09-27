@@ -822,6 +822,8 @@
     <br />
     <p class="cd">console.log(x);</p>
     <br />
+    <p class="cd"><i>30. Object Spread Operator & Methods  </i></p>
+    <br>  
     <p class="cd">let x;</p>
     <br />
     <p class="cm">// Create object using the object constructor</p>
@@ -1786,6 +1788,63 @@
     x29 = person29a['first name'];
     
     console.log(x29);
+
+    let x30;
+
+    // Create object using the object constructor
+    const todo30 = new Object();
+    
+    todo30.id = 1;
+    todo30.name = 'Buy Milk';
+    todo30.completed = false;
+    
+    x30 = todo30;
+    
+    // Object Nesting
+    const person = {
+      address: {
+        coords: {
+          lat: 42.9384,
+          lng: -71.3232,
+        },
+      },
+    };
+    
+    x30 = person.address.coords.lat;
+    
+    const obj1 = { a: 1, b: 2 };
+    const obj2 = { c: 3, d: 4 };
+    
+    // Spread operator
+    const obj3 = { ...obj1, ...obj2 };
+    // Same as using ...
+    const obj4 = Object.assign({}, obj1, obj2);
+    
+    // Array of objects
+    const todo30s = [
+      { id: 1, name: 'Buy Milk' },
+      { id: 2, name: 'Pickup kids from school' },
+      { id: 3, name: 'Take out trash' },
+    ];
+    
+    x30 = todo30s[0].name;
+    
+    // Get array of object keys
+    x30 = Object.keys(todo30);
+    
+    // Get length of an object
+    x30 = Object.keys(todo30).length;
+    
+    // Get array of object values
+    x30 = Object.values(todo30);
+    
+    // Get array of object key/value pairs
+    x30 = Object.entries(todo30);
+    
+    // Check if object has a property
+    x30 = todo30.hasOwnProperty('age');
+    
+    console.log(x30);
 
   </script>
 </body>
