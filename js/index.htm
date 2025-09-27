@@ -1846,6 +1846,45 @@
     
     console.log(x30);
 
+    // Setting object properties with the same name as a variable
+    const firstName31 = 'John';
+    const lastName31 = 'Doe';
+    const age31 = 30;
+    
+    const person31 = {
+      firstName,
+      lastName,
+      age,
+    };
+    
+    console.log(person31.age);
+    
+    // Destructuring object properties
+    
+    const todo31 = {
+      id: 1,
+      title: 'Take out trash',
+      user: {
+        name: 'John',
+      },
+    };
+    
+    const {
+      id: todoId, // rename id to todoId
+      title,
+      user: { name }, // destructuring multiple levels
+    } = todo31;
+    
+    console.log(todoId);
+    
+    // Destructuring arrays & using the rest/spread operator
+    const numbers31 = [23, 67, 33, 49, 52];
+    
+    const [first31, second31, ...rest] = numbers31;
+    
+    console.log(first, second, rest);
+
+
   </script>
 </body>
 </html>
