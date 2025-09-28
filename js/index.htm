@@ -36,7 +36,7 @@
 <body>
     <div id="start-screen">START</div>
     <div id="reader">
-    <p class="cd"><i>9. Using The Console</i></p>
+    <p class="cd"><i>9. Using The Console</i></p>33. Object Challenge
     <br>  
     <p class="cm">// Log number</p>
     <p class="cd">console.log(100);</p>
@@ -937,7 +937,8 @@
     <br />
     <p class="cd">console.log(obj.id);</p>
     <br />
-    <p class="cd"><i>32. JSON Intro</i></p>  
+    <p class="cd"><i>32. JSON Intro</i></p>
+    <br>  
     <p class="cm">// JSON & arrays</p>
     <p class="cd">const posts = [</p>
     <p class="cd">&nbsp;&nbsp;{</p>
@@ -956,6 +957,7 @@
     <br />
     <p class="cd">console.log(str2);</p>
     <br />
+    <p class="cd"><i>33. Object Challenge</i></p>  
     <p class="cm">// Step 1</p>
     <p class="cd">const library = [</p>
     <p class="cd">&nbsp;&nbsp;{</p>
@@ -1920,6 +1922,52 @@
     const str2 = JSON.stringify(posts);
     
     console.log(str2);
+
+    // Step 1
+    const library = [
+      {
+        title: 'The Road Ahead',
+        author: 'Bill Gates',
+        status: {
+          own: true,
+          reading: false,
+          read: false,
+        },
+      },
+      {
+        title: 'Steve Jobs',
+        author: 'Walter Isaacson',
+        status: {
+          own: true,
+          reading: false,
+          read: false,
+        },
+      },
+      {
+        title: 'Mockingjay',
+        author: 'Suzanne Collins',
+        status: {
+          own: true,
+          reading: false,
+          read: false,
+        },
+      },
+    ];
+    
+    // Step 2
+    library[0].status.read = true;
+    library[1].status.read = true;
+    library[2].status.read = true;
+    
+    // Step 3
+    const { title: firstBook } = library[0];
+    
+    console.log(firstBook);
+    
+    // Step 4
+    const libraryJSON = JSON.stringify(library);
+    
+    console.log(libraryJSON);
 
   </script>
 </body>
