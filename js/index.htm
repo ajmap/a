@@ -937,6 +937,7 @@
     <br />
     <p class="cd">console.log(obj.id);</p>
     <br />
+    <p class="cd"><i>32. JSON Intro</i></p>  
     <p class="cm">// JSON & arrays</p>
     <p class="cd">const posts = [</p>
     <p class="cd">&nbsp;&nbsp;{</p>
@@ -1886,6 +1887,39 @@
     
     console.log(first31, second31, rest);
 
+    const post = {
+      id: 1,
+      title: 'Post One',
+      body: 'This is the body',
+    };
+    
+    // Convert to JSON string
+    const str = JSON.stringify(post);
+    
+    console.log(str.id);
+    
+    // Parse JSON
+    const obj32 = JSON.parse(str);
+    
+    console.log(obj32.id);
+    
+    // JSON & arrays
+    const posts = [
+      {
+        id: 1,
+        title: 'Post One',
+        body: 'This is the body',
+      },
+      {
+        id: 2,
+        title: 'Post Two',
+        body: 'This is the body',
+      },
+    ];
+    
+    const str2 = JSON.stringify(posts);
+    
+    console.log(str2);
 
   </script>
 </body>
