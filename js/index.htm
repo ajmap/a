@@ -1095,7 +1095,9 @@
     <p class="cd">}</p>
     <br />
     <p class="cd">getRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);</p>
-    <br />  
+    <br />
+    <p class="cd"><i>37. Global & Function Scope</i></p>37. Global & Function Scope  
+    <br>  
     <p class="cm">// 'window' is globally scoped</p>
     <p class="cm">// alert('Hello');</p>
     <p class="cm">// console.log(innerWidth);</p>
@@ -2104,6 +2106,40 @@
     }
     
     getRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+    // 'window' is globally scoped
+    // alert('Hello');
+    // console.log(innerWidth);
+    
+    // Global scope variable
+    const x37 = 100;
+    
+    console.log(x37, 'in global');
+    
+    function run() {
+      // Access global vars in functions
+      console.log(window.innerHeight);
+      console.log(x, 'in function');
+    }
+    
+    run();
+    
+    // Access global vars in blocks
+    if (true) {
+      console.log(x37, 'in block');
+    }
+    
+    function add() {
+      // Overwriting global x (variable shadowing)
+      const x37 = 1;
+      const y37 = 50;
+      console.log(x37 + y);
+    }
+    
+    // Can not access a function scoped variable in global scope
+    console.log(y37);
+    
+    add();
 
   </script>
 </body>
