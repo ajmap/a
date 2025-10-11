@@ -1096,6 +1096,51 @@
     <br />
     <p class="cd">getRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);</p>
     <br />  
+    <p class="cm">// 'window' is globally scoped</p>
+    <p class="cm">// alert('Hello');</p>
+    <p class="cm">// console.log(innerWidth);</p>
+    <p class="cd"><br /></p>
+    <p class="cm">// Global scope variable</p>
+    <p class="cd">const x = 100;</p>
+    <p class="cd"><br /></p>
+    <p class="cd">console.log(x, 'in global');</p>
+    <p class="cd"><br /></p>
+    <p class="cd">function run() {</p>
+    <p class="cm">&nbsp;&nbsp;// Access global vars in functions</p>
+    <p class="cd">&nbsp;&nbsp;console.log(window.innerHeight);</p>
+    <p class="cd">&nbsp;&nbsp;console.log(x, 'in function');</p>
+    <p class="cd">}</p>
+    <p class="cd"><br /></p>
+    <p class="cd">run();</p>
+    <p class="cd"><br /></p>
+    <p class="cm">// Access global vars in blocks</p>
+    <p class="cd">if (true) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(x, 'in block');</p>
+    <p class="cd">}</p>
+    <p class="cd"><br /></p>
+    <p class="cd">function add() {</p>
+    <p class="cm">&nbsp;&nbsp;// Overwriting global x (variable shadowing)</p>
+    <p class="cd">&nbsp;&nbsp;const x = 1;</p>
+    <p class="cd">&nbsp;&nbsp;const y = 50;</p>
+    <p class="cd">&nbsp;&nbsp;console.log(x + y);</p>
+    <p class="cd">}</p>
+    <p class="cd"><br /></p>
+    <p class="cm">// Can not access a function scoped variable in global scope</p>
+    <p class="cd">console.log(y);</p>
+    <p class="cd"><br /></p>
+    <p class="cd">add();</p>
+    <p class="cd"><br /></p>
+      
+    <br>
+    <p class="cd">INTEESQUE C (JS2)</p>
+    <p class="cm">// Loop through arrays</p>
+    <p class="cd">const items = ['book', 'table', 'chair', 'kite'];</p>
+    <p class="cd">const users = [{ name: 'Brad' }, { name: 'Kate' }, { name: 'Steve' }];</p>
+    <br />
+    <p class="cm">// for (const item of items) {</p>
+    <p class="cm">// console.log(item);</p>
+    <p class="cm">// }</p>
+    <br />  
   </div>
   <script>
     const startScreen = document.getElementById('start-screen');
