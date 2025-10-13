@@ -1102,108 +1102,108 @@
     <p class="cm">// 'window' is globally scoped</p>
     <p class="cm">// alert('Hello');</p>
     <p class="cm">// console.log(innerWidth);</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">// Global scope variable</p>
     <p class="cd">const x = 100;</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">console.log(x, 'in global');</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">function run() {</p>
     <p class="cm">&nbsp;&nbsp;// Access global vars in functions</p>
     <p class="cd">&nbsp;&nbsp;console.log(window.innerHeight);</p>
     <p class="cd">&nbsp;&nbsp;console.log(x, 'in function');</p>
     <p class="cd">}</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">run();</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">// Access global vars in blocks</p>
     <p class="cd">if (true) {</p>
     <p class="cd">&nbsp;&nbsp;console.log(x, 'in block');</p>
     <p class="cd">}</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">function add() {</p>
     <p class="cm">&nbsp;&nbsp;// Overwriting global x (variable shadowing)</p>
     <p class="cd">&nbsp;&nbsp;const x = 1;</p>
     <p class="cd">&nbsp;&nbsp;const y = 50;</p>
     <p class="cd">&nbsp;&nbsp;console.log(x + y);</p>
     <p class="cd">}</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">// Can not access a function scoped variable in global scope</p>
     <p class="cd">console.log(y);</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">add();</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd"><i>38. Block Scope</i></p>
     <br> 
     <p class="cd">const x = 100;</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">// An If statement is a block</p>
     <p class="cd">if (true) {</p>
     <p class="cd">&nbsp;&nbsp;console.log(x);</p>
     <p class="cd">&nbsp;&nbsp;const y = 200;</p>
     <p class="cd">&nbsp;&nbsp;console.log(x + y);</p>
     <p class="cd">}</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">// console.log(y); // ReferenceError: y is not defined</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">// A loop is a block</p>
     <p class="cd">for (let i = 0; i <= 10; i++) {</p>
     <p class="cd">&nbsp;&nbsp;console.log(i);</p>
     <p class="cd">}</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">// console.log(i); // ReferenceError: i is not defined</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">// Using var</p>
     <p class="cd">if (true) {</p>
     <p class="cd">&nbsp;&nbsp;const a = 500;</p>
     <p class="cd">&nbsp;&nbsp;let b = 600;</p>
     <p class="cd">&nbsp;&nbsp;var c = 700;</p>
     <p class="cd">}</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">console.log(c);</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">// var IS function scoped</p>
     <p class="cd">function run() {</p>
     <p class="cd">&nbsp;&nbsp;var d = 100;</p>
     <p class="cd">&nbsp;&nbsp;console.log(d);</p>
     <p class="cd">}</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">run();</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">// console.log(d);</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">const foo = 1;</p>
     <p class="cd">var bar = 2; // Put on the window object</p>
-    <p class="cd"><br /></p>  
+    <br>  
     <br>
     <p class="cd"><i>39. Nested Scope</i></p>
     <br>  
     <p class="cd">function first() {</p>
     <p class="cd">&nbsp;&nbsp;const x = 100;</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">&nbsp;&nbsp;function second() {</p>
     <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;const y = 200;</p>
     <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;console.log(x + y);</p>
     <p class="cd">&nbsp;&nbsp;}</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">&nbsp;&nbsp;// console.log(y);</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">&nbsp;&nbsp;second();</p>
     <p class="cd">}</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">first();</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">if (true) {</p>
     <p class="cd">&nbsp;&nbsp;const x = 100;</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">&nbsp;&nbsp;if (x === 100) {</p>
     <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;const y = 200;</p>
     <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;console.log(x + y);</p>
     <p class="cd">&nbsp;&nbsp;}</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">&nbsp;&nbsp;// console.log(y);</p>
     <p class="cd">}</p>
-    <p class="cd"><br /></p>
+    <br>
     <br>
     <p class="cd"><i>40. Declaration vs Expression</i></p>
     <br>
@@ -1211,17 +1211,17 @@
     <p class="cd">function addDollarSign(value) {</p>
     <p class="cd">&nbsp;&nbsp;return '$' + value;</p>
     <p class="cd">}</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">// When using declarations, you can invoke the function before the declaration. With expressions, you can not</p>
     <p class="cd">console.log(addDollarSign(100));</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cm">// Function Expression</p>
     <p class="cd">const addPlusSign = function (value) {</p>
     <p class="cd">&nbsp;&nbsp;return '+' + value;</p>
     <p class="cd">};</p>
-    <p class="cd"><br /></p>
+    <br>
     <p class="cd">console.log(addPlusSign(200));</p>
-    <p class="cd"><br /></p>  
+    <br>  
     <br>  
     <p class="cd">INTEESQUE C (JS2)</p>
     <p class="cm">// Loop through arrays</p>
