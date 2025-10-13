@@ -1204,6 +1204,24 @@
     <p class="cm">&nbsp;&nbsp;// console.log(y);</p>
     <p class="cd">}</p>
     <p class="cd"><br /></p>
+    <br>
+    <p class="cd"><i>40. Declaration vs Expression</i></p>
+    <br>
+    <p class="cm">// Function Declaration</p>
+    <p class="cd">function addDollarSign(value) {</p>
+    <p class="cd">&nbsp;&nbsp;return '$' + value;</p>
+    <p class="cd">}</p>
+    <p class="cd"><br /></p>
+    <p class="cm">// When using declarations, you can invoke the function before the declaration. With expressions, you can not</p>
+    <p class="cd">console.log(addDollarSign(100));</p>
+    <p class="cd"><br /></p>
+    <p class="cm">// Function Expression</p>
+    <p class="cd">const addPlusSign = function (value) {</p>
+    <p class="cd">&nbsp;&nbsp;return '+' + value;</p>
+    <p class="cd">};</p>
+    <p class="cd"><br /></p>
+    <p class="cd">console.log(addPlusSign(200));</p>
+    <p class="cd"><br /></p>  
     <br>  
     <p class="cd">INTEESQUE C (JS2)</p>
     <p class="cm">// Loop through arrays</p>
