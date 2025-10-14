@@ -1221,7 +1221,43 @@
     <br>
     <p class="cd">console.log(addPlusSign(200));</p>
     <br>  
+    <p class="cd"><i>41. Arrow Functions</i></p>  
     <br>  
+    <p class="cd">// Normal function declaration</p>
+    <p class="cd">// function add(a, b) {</p>
+    <p class="cd">// &nbsp;&nbsp;return a + b;</p>
+    <p class="cd">// }</p>
+    <br />
+    <p class="cd">// Arrow function syntax</p>
+    <p class="cd">const add = (a, b) => {</p>
+    <p class="cd">&nbsp;&nbsp;return a + b;</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">// Implicit Return</p>
+    <p class="cd">const subtract = (a, b) => a - b;</p>
+    <br />
+    <p class="cd">// Can leave off () with a single param</p>
+    <p class="cd">const double = (a) => a * 2;</p>
+    <br />
+    <p class="cd">// Returning an object</p>
+    <p class="cd">const createObj = () => ({</p>
+    <p class="cd">&nbsp;&nbsp;name: 'Brad',</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">const numbers = [1, 2, 3, 4, 5];</p>
+    <br />
+    <p class="cd">numbers.forEach(function (n) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(n);</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">// Arrow function in a callback</p>
+    <p class="cd">numbers.forEach((n) => console.log(n));</p>
+    <br />
+    <p class="cd">console.log(add(1, 2));</p>
+    <p class="cd">console.log(subtract(10, 5));</p>
+    <p class="cd">console.log(double(10));</p>
+    <p class="cd">console.log(createObj());</p>
+    <br />  
     <p class="cd">INTEESQUE C (JS2)</p>
     <p class="cm">// Loop through arrays</p>
     <p class="cd">const items = ['book', 'table', 'chair', 'kite'];</p>
@@ -2309,6 +2345,41 @@
     };
     
     console.log(addPlusSign(200));
+
+    //  Normal function declaration
+    // function add(a, b) {
+    //   return a + b;
+    // }
+    
+    // Arrow function syntax
+    const add = (a, b) => {
+      return a + b;
+    };
+    
+    // Implicit Return
+    const subtract = (a, b) => a - b;
+    
+    // Can leave off () with a single param
+    const double = (a) => a * 2;
+    
+    // Returning an object
+    const createObj = () => ({
+      name: 'Brad',
+    });
+    
+    const numbers = [1, 2, 3, 4, 5];
+    
+    numbers.forEach(function (n) {
+      console.log(n);
+    });
+    
+    // Arrow function in a callback
+    numbers.forEach((n) => console.log(n));
+    
+    console.log(add(1, 2));
+    console.log(subtract(10, 5));
+    console.log(double(10));
+    console.log(createObj());  
   </script>
 </body>
 </html>
