@@ -1260,16 +1260,14 @@
     <br />
     <p class="cd"><i>42. Immediately Invoked Function Expressions</i></p>
     <br>
-        <p class="cd">const user42 = 'Brad';</p>
-    <p class="cd">console.log(user42);</p>
+    <p class="cd">const user = 'Brad';</p>
+    <p class="cd">console.log(user);</p>
     <br />
     <p class="cd">// IFFE Syntax (Has it's own scope and runs right away)</p>
     <p class="cd">(function () {</p>
     <p class="cd">&nbsp;&nbsp;const user = 'John';</p>
     <p class="cd">&nbsp;&nbsp;console.log(user);</p>
-    <p class="cd">
-      &nbsp;&nbsp;const hello = () => console.log('Hello from the IIFE');
-    </p>
+    <p class="cd">&nbsp;&nbsp;const hello = () => console.log('Hello from the IIFE');</p>
     <p class="cd">&nbsp;&nbsp;hello();</p>
     <p class="cd">})();</p>
     <br />
@@ -2405,7 +2403,29 @@
     console.log(add41(1, 2));
     console.log(subtract41(10, 5));
     console.log(double(10));
-    console.log(createObj());  
+    console.log(createObj());
+
+    const user42 = 'Brad';
+    console.log(user42);
+    
+    // IFFE Syntax (Has it's own scope and runs right away)
+    (function () {
+      const user = 'John';
+      console.log(user);
+      const hello = () => console.log('Hello from the IIFE');
+      hello();
+    })();
+    
+    // Params
+    (function (name) {
+      console.log('Hello ' + name);
+    })('Shawn');
+    
+    // Named IIFE (Can only be called recursively)
+    (function hello() {
+      console.log('Hello');
+    })();
+    
   </script>
 </body>
 </html>
