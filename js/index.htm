@@ -37,7 +37,7 @@
 <body>
     <div id="start-screen">START</div>
     <div id="reader">
-    <p class="cd"><i>9. Using The Console</i></p>
+    <p class="cd"><i>9. Using The Console</i></p>42. Immediately Invoked Function Expressions
     <br>  
     <p class="cm">// Log number</p>
     <p class="cd">console.log(100);</p>
@@ -1257,7 +1257,33 @@
     <p class="cd">console.log(subtract(10, 5));</p>
     <p class="cd">console.log(double(10));</p>
     <p class="cd">console.log(createObj());</p>
-    <br />  
+    <br />
+    <p class="cd"><i>42. Immediately Invoked Function Expressions</i></p>
+    <br>
+        <p class="cd">const user42 = 'Brad';</p>
+    <p class="cd">console.log(user42);</p>
+    <br />
+    <p class="cd">// IFFE Syntax (Has it's own scope and runs right away)</p>
+    <p class="cd">(function () {</p>
+    <p class="cd">&nbsp;&nbsp;const user = 'John';</p>
+    <p class="cd">&nbsp;&nbsp;console.log(user);</p>
+    <p class="cd">
+      &nbsp;&nbsp;const hello = () => console.log('Hello from the IIFE');
+    </p>
+    <p class="cd">&nbsp;&nbsp;hello();</p>
+    <p class="cd">})();</p>
+    <br />
+    <p class="cd">// Params</p>
+    <p class="cd">(function (name) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Hello ' + name);</p>
+    <p class="cd">})('Shawn');</p>
+    <br />
+    <p class="cd">// Named IIFE (Can only be called recursively)</p>
+    <p class="cd">(function hello() {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Hello');</p>
+    <p class="cd">})();</p>
+    <br />
+      
     <p class="cd">INTEESQUE C (JS2)</p>
     <p class="cm">// Loop through arrays</p>
     <p class="cd">const items = ['book', 'table', 'chair', 'kite'];</p>
