@@ -1263,7 +1263,7 @@
     <p class="cd">const user = 'Brad';</p>
     <p class="cd">console.log(user);</p>
     <br />
-    <p class="cd">// IFFE Syntax (Has it's own scope and runs right away)</p>
+    <p class="cm">// IFFE Syntax (Has it's own scope and runs right away)</p>
     <p class="cd">(function () {</p>
     <p class="cd">&nbsp;&nbsp;const user = 'John';</p>
     <p class="cd">&nbsp;&nbsp;console.log(user);</p>
@@ -1271,29 +1271,29 @@
     <p class="cd">&nbsp;&nbsp;hello();</p>
     <p class="cd">})();</p>
     <br />
-    <p class="cd">// Params</p>
+    <p class="cm">// Params</p>
     <p class="cd">(function (name) {</p>
     <p class="cd">&nbsp;&nbsp;console.log('Hello ' + name);</p>
     <p class="cd">})('Shawn');</p>
     <br />
-    <p class="cd">// Named IIFE (Can only be called recursively)</p>
+    <p class="cm">// Named IIFE (Can only be called recursively)</p>
     <p class="cd">(function hello() {</p>
     <p class="cd">&nbsp;&nbsp;console.log('Hello');</p>
     <p class="cd">})();</p>
     <br />
     <p class="cd"><i>43. Function Challenges</i></p>
     <br>
-    <p class="cd">// Challenge 1</p>
-    <p class="cd">// function getCelsius(f) {</p>
-    <p class="cd">//&nbsp;&nbsp; const celsius = ((f - 32) * 5) / 9;</p>
-    <p class="cd">//&nbsp;&nbsp; return celsius;</p>
-    <p class="cd">// }</p>
+    <p class="cm">// Challenge 1</p>
+    <p class="cm">// function getCelsius(f) {</p>
+    <p class="cm">//&nbsp;&nbsp; const celsius = ((f - 32) * 5) / 9;</p>
+    <p class="cm">//&nbsp;&nbsp; return celsius;</p>
+    <p class="cm">// }</p>
     <br />
     <p class="cd">const getCelsius = (f) => ((f - 32) * 5) / 9;</p>
     <br />
     <p class="cd">console.log(`The temp is ${getCelsius(35)} \xB0C `);</p>
     <br />
-    <p class="cd">// Challenge 2</p>
+    <p class="cm">// Challenge 2</p>
     <p class="cd">function minMax(arr) {</p>
     <p class="cd">&nbsp;&nbsp;const min = Math.min(...arr);</p>
     <p class="cd">&nbsp;&nbsp;const max = Math.max(...arr);</p>
@@ -1306,7 +1306,7 @@
     <br />
     <p class="cd">console.log(minMax([2, 31, 4, 5, 6]));</p>
     <br />
-    <p class="cd">// Challenge 3</p>
+    <p class="cm">// Challenge 3</p>
     <p class="cd">((length, width) => {</p>
     <p class="cd">&nbsp;&nbsp;const area = length * width;</p>
     <br />
@@ -1315,6 +1315,21 @@
     <br />
     <p class="cd">&nbsp;&nbsp;console.log(output);</p>
     <p class="cd">})(20, 10);</p>
+    <br />  
+    <p class="cd"><i>44. Execution Context</i></p>
+    <p class="cm">// Go to 'sources' tab and add a breakpoint at the first line and step through to see the execution phase in action</p>
+    <p class="cd">const x = 100;</p>
+    <p class="cd">const y = 50;</p>
+    <br />
+    <p class="cd">function getSum(n1, n2) {</p>
+    <p class="cd">&nbsp;&nbsp;const sum = n1 + n2;</p>
+    <p class="cd">&nbsp;&nbsp;return sum;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">const sum1 = getSum(x, y);</p>
+    <p class="cd">const sum2 = getSum(10, 5);</p>
+    <br />
+    <p class="cd">console.log(sum1, sum2);</p>
     <br />  
       
     <p class="cd">INTEESQUE C (JS2)</p>
@@ -2492,6 +2507,20 @@
     
       console.log(output);
     })(20, 10);
+
+    //  Go to 'sources' tab and add a breakpoint at the first line and step through to see the execution phase in action
+    const x44 = 100;
+    const y44 = 50;
+    
+    function getSum(n1, n2) {
+      const sum = n1 + n2;
+      return sum;
+    }
+    
+    const sum1 = getSum(x44, y44);
+    const sum2 = getSum(10, 5);
+    
+    console.log(sum1, sum2);
   </script>
 </body>
 </html>
