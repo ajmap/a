@@ -1281,6 +1281,41 @@
     <p class="cd">&nbsp;&nbsp;console.log('Hello');</p>
     <p class="cd">})();</p>
     <br />
+    <p class="cd"><i>43. Function Challenges</i></p>
+    <br>
+    <p class="cd">// Challenge 1</p>
+    <p class="cd">// function getCelsius(f) {</p>
+    <p class="cd">//&nbsp;&nbsp; const celsius = ((f - 32) * 5) / 9;</p>
+    <p class="cd">//&nbsp;&nbsp; return celsius;</p>
+    <p class="cd">// }</p>
+    <br />
+    <p class="cd">const getCelsius = (f) => ((f - 32) * 5) / 9;</p>
+    <br />
+    <p class="cd">console.log(`The temp is ${getCelsius(35)} \xB0C `);</p>
+    <br />
+    <p class="cd">// Challenge 2</p>
+    <p class="cd">function minMax(arr) {</p>
+    <p class="cd">&nbsp;&nbsp;const min = Math.min(...arr);</p>
+    <p class="cd">&nbsp;&nbsp;const max = Math.max(...arr);</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;return {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;min,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;max,</p>
+    <p class="cd">&nbsp;&nbsp;};</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">console.log(minMax([2, 31, 4, 5, 6]));</p>
+    <br />
+    <p class="cd">// Challenge 3</p>
+    <p class="cd">((length, width) => {</p>
+    <p class="cd">&nbsp;&nbsp;const area = length * width;</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;const output = `The area of a rectangle with a length of ${length} and a width of ${width} is ${area}.`;
+    </p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;console.log(output);</p>
+    <p class="cd">})(20, 10);</p>
+    <br />  
       
     <p class="cd">INTEESQUE C (JS2)</p>
     <p class="cm">// Loop through arrays</p>
@@ -2425,7 +2460,38 @@
     (function hello() {
       console.log('Hello');
     })();
+
+    // Challenge 1
+    // function getCelsius(f) {
+    //   const celsius = ((f - 32) * 5) / 9;
+    //   return celsius;
+    // }
     
+    const getCelsius = (f) => ((f - 32) * 5) / 9;
+    
+    console.log(`The temp is ${getCelsius(35)} \xB0C `);
+    
+    // Challenge 2
+    function minMax(arr) {
+      const min = Math.min(...arr);
+      const max = Math.max(...arr);
+    
+      return {
+        min,
+        max,
+      };
+    }
+    
+    console.log(minMax([2, 31, 4, 5, 6]));
+    
+    // Challenge 3
+    ((length, width) => {
+      const area = length * width;
+    
+      const output = `The area of a rectangle with a length of ${length} and a width of ${width} is ${area}.`;
+    
+      console.log(output);
+    })(20, 10);
   </script>
 </body>
 </html>
