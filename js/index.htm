@@ -2639,6 +2639,43 @@
     // }
     
     // first();
+
+    // If Statement Syntax
+    if (true) {
+      console.log('This is true');
+    }
+    
+    if (false) {
+      console.log('This is NOT true');
+    }
+    
+    // Evaluation expressions
+    const x48 = 10;
+    const y48 = 5;
+    
+    if (x >= y) {
+      console.log(`${x48} is greater than or equal to ${y48}`);
+    }
+    
+    if (x48 === y48) {
+      console.log(`${x48} is equal to ${y48}`);
+    } else {
+      console.log(`${x48} is NOT equal to ${y48}`);
+    }
+    
+    // Block scope
+    if (x48 !== y48) {
+      const z = 20;
+      console.log(`${z} is 20`);
+    }
+    
+    // Throw error console.log(z); 
+    
+    // Shorthand If/Else
+    if (x >= y)
+      console.log(`${x} is greater than or equal to ${y}`),
+        console.log('This is true');
+    else console.log('This is false');
   </script>
 </body>
 </html>
