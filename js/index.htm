@@ -117,7 +117,7 @@
     <p class="cd">console.log(score);</p>
     <br />
     <p class="cd">if (true) {</p>
-    <p class="cd">&nbsp;&nbsp;score = score + 1;</p>
+    <p class="cd">&emsp;&emsp;score = score + 1;</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">console.log(score);</p>
@@ -133,7 +133,7 @@
     <p class="cd">console.log(arr);</p>
     <br />
     <p class="cd">const person = {</p>
-    <p class="cd">&nbsp;&nbsp;name: 'Brad',</p>
+    <p class="cd">&emsp;&emsp;name: 'Brad',</p>
     <p class="cd">};</p>
     <p class="cd">person.name = 'John';</p>
     <p class="cd">person.email = 'brad@gmail.com';</p>
@@ -143,8 +143,8 @@
     <p class="cd">let a, b, c;</p>
     <br />
     <p class="cd">const d = 10,</p>
-    <p class="cd">&nbsp;&nbsp;e = 20,</p>
-    <p class="cd">&nbsp;&nbsp;f = 30;</p>
+    <p class="cd">&emsp;&emsp;e = 20,</p>
+    <p class="cd">&emsp;&emsp;f = 30;</p>
     <br />
     <p class="cd">console.log(d);</p>
     <p class="cd">console.log(a);</p>
@@ -179,11 +179,11 @@
     <p class="cd">const numbers = [1, 2, 3, 4];</p>
     <br />
     <p class="cd">const person = {</p>
-    <p class="cd">&nbsp;&nbsp;name: 'Brad',</p>
+    <p class="cd">&emsp;&emsp;name: 'Brad',</p>
     <p class="cd">};</p>
     <br />
     <p class="cd">function sayHello() {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('Hello');</p>
+    <p class="cd">&emsp;&emsp;console.log('Hello');</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">const output = sayHello;</p>
@@ -204,8 +204,8 @@
     <br />
     <p class="cm">// Reference is stored in the heap</p>
     <p class="cd">const person = {</p>
-    <p class="cd">&nbsp;&nbsp;name: 'Brad',</p>
-    <p class="cd">&nbsp;&nbsp;age: 40,</p>
+    <p class="cd">&emsp;&emsp;name: 'Brad',</p>
+    <p class="cd">&emsp;&emsp;age: 40,</p>
     <p class="cd">};</p>
     <br />
     <p class="cd">let newName = name;</p>
@@ -599,14 +599,14 @@
     <p class="cd">x = d.toLocaleString('default', { month: 'short' });</p>
     <br />
     <p class="cd">x = d.toLocaleString('default', {</p>
-    <p class="cd">&nbsp;&nbsp;weekday: 'long',</p>
-    <p class="cd">&nbsp;&nbsp;year: 'numeric',</p>
-    <p class="cd">&nbsp;&nbsp;month: 'long',</p>
-    <p class="cd">&nbsp;&nbsp;day: 'numeric',</p>
-    <p class="cd">&nbsp;&nbsp;hour: 'numeric',</p>
-    <p class="cd">&nbsp;&nbsp;minute: 'numeric',</p>
-    <p class="cd">&nbsp;&nbsp;second: 'numeric',</p>
-    <p class="cd">&nbsp;&nbsp;timeZone: 'America/New_York',</p>
+    <p class="cd">&emsp;&emsp;weekday: 'long',</p>
+    <p class="cd">&emsp;&emsp;year: 'numeric',</p>
+    <p class="cd">&emsp;&emsp;month: 'long',</p>
+    <p class="cd">&emsp;&emsp;day: 'numeric',</p>
+    <p class="cd">&emsp;&emsp;hour: 'numeric',</p>
+    <p class="cd">&emsp;&emsp;minute: 'numeric',</p>
+    <p class="cd">&emsp;&emsp;second: 'numeric',</p>
+    <p class="cd">&emsp;&emsp;timeZone: 'America/New_York',</p>
     <p class="cd">});</p>
     <br />
     <p class="cd">console.log(x);</p>
@@ -838,12 +838,12 @@
     <br />
     <p class="cm">// Object Nesting</p>
     <p class="cd">const person = {</p>
-    <p class="cd">&nbsp;&nbsp;address: {</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;coords: {</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lat: 42.9384,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lng: -71.3232,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;},</p>
-    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">&emsp;&emsp;address: {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;coords: {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;lat: 42.9384,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;lng: -71.3232,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;},</p>
+    <p class="cd">&emsp;&emsp;},</p>
     <p class="cd">};</p>
     <br />
     <p class="cd">x = person.address.coords.lat;</p>
@@ -858,9 +858,9 @@
     <br />
     <p class="cm">// Array of objects</p>
     <p class="cd">const todos = [</p>
-    <p class="cd">&nbsp;&nbsp;{ id: 1, name: 'Buy Milk' },</p>
-    <p class="cd">&nbsp;&nbsp;{ id: 2, name: 'Pickup kids from school' },</p>
-    <p class="cd">&nbsp;&nbsp;{ id: 3, name: 'Take out trash' },</p>
+    <p class="cd">&emsp;&emsp;{ id: 1, name: 'Buy Milk' },</p>
+    <p class="cd">&emsp;&emsp;{ id: 2, name: 'Pickup kids from school' },</p>
+    <p class="cd">&emsp;&emsp;{ id: 3, name: 'Take out trash' },</p>
     <p class="cd">];</p>
     <br />
     <p class="cd">x = todos[0].name;</p>
@@ -890,9 +890,9 @@
     <p class="cd">const age = 30;</p>
     <br />
     <p class="cd">const person = {</p>
-    <p class="cd">&nbsp;&nbsp;firstName,</p>
-    <p class="cd">&nbsp;&nbsp;lastName,</p>
-    <p class="cd">&nbsp;&nbsp;age,</p>
+    <p class="cd">&emsp;&emsp;firstName,</p>
+    <p class="cd">&emsp;&emsp;lastName,</p>
+    <p class="cd">&emsp;&emsp;age,</p>
     <p class="cd">};</p>
     <br />
     <p class="cd">console.log(person.age);</p>
@@ -900,17 +900,17 @@
     <p class="cm">// Destructuring object properties</p>
     <br />
     <p class="cd">const todo = {</p>
-    <p class="cd">&nbsp;&nbsp;id: 1,</p>
-    <p class="cd">&nbsp;&nbsp;title: 'Take out trash',</p>
-    <p class="cd">&nbsp;&nbsp;user: {</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;name: 'John',</p>
-    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">&emsp;&emsp;id: 1,</p>
+    <p class="cd">&emsp;&emsp;title: 'Take out trash',</p>
+    <p class="cd">&emsp;&emsp;user: {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;name: 'John',</p>
+    <p class="cd">&emsp;&emsp;},</p>
     <p class="cd">};</p>
     <br />
     <p class="cd">const {</p>
-    <p class="cd">&nbsp;&nbsp;id: todoId, // rename id to todoId</p>
-    <p class="cd">&nbsp;&nbsp;title,</p>
-    <p class="cd">&nbsp;&nbsp;user: { name }, // destructuring multiple levels</p>
+    <p class="cd">&emsp;&emsp;id: todoId, // rename id to todoId</p>
+    <p class="cd">&emsp;&emsp;title,</p>
+    <p class="cd">&emsp;&emsp;user: { name }, // destructuring multiple levels</p>
     <p class="cd">} = todo;</p>
     <br />
     <p class="cd">console.log(todoId);</p>
@@ -923,9 +923,9 @@
     <p class="cd">console.log(first, second, rest);</p>
     <br />
     <p class="cd">const post = {</p>
-    <p class="cd">&nbsp;&nbsp;id: 1,</p>
-    <p class="cd">&nbsp;&nbsp;title: 'Post One',</p>
-    <p class="cd">&nbsp;&nbsp;body: 'This is the body',</p>
+    <p class="cd">&emsp;&emsp;id: 1,</p>
+    <p class="cd">&emsp;&emsp;title: 'Post One',</p>
+    <p class="cd">&emsp;&emsp;body: 'This is the body',</p>
     <p class="cd">};</p>
     <br />
     <p class="cm">// Convert to JSON string</p>
@@ -942,16 +942,16 @@
     <br>  
     <p class="cm">// JSON & arrays</p>
     <p class="cd">const posts = [</p>
-    <p class="cd">&nbsp;&nbsp;{</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;id: 1,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'Post One',</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;body: 'This is the body',</p>
-    <p class="cd">&nbsp;&nbsp;},</p>
-    <p class="cd">&nbsp;&nbsp;{</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;id: 2,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'Post Two',</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;body: 'This is the body',</p>
-    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">&emsp;&emsp;{</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;id: 1,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;title: 'Post One',</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;body: 'This is the body',</p>
+    <p class="cd">&emsp;&emsp;},</p>
+    <p class="cd">&emsp;&emsp;{</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;id: 2,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;title: 'Post Two',</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;body: 'This is the body',</p>
+    <p class="cd">&emsp;&emsp;},</p>
     <p class="cd">];</p>
     <br />
     <p class="cd">const str2 = JSON.stringify(posts);</p>
@@ -962,33 +962,33 @@
     <br>  
     <p class="cm">// Step 1</p>
     <p class="cd">const library = [</p>
-    <p class="cd">&nbsp;&nbsp;{</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'The Road Ahead',</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;author: 'Bill Gates',</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;status: {</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;own: true,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reading: false,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read: false,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;},</p>
-    <p class="cd">&nbsp;&nbsp;},</p>
-    <p class="cd">&nbsp;&nbsp;{</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'Steve Jobs',</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;author: 'Walter Isaacson',</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;status: {</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;own: true,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reading: false,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read: false,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;},</p>
-    <p class="cd">&nbsp;&nbsp;},</p>
-    <p class="cd">&nbsp;&nbsp;{</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'Mockingjay',</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;author: 'Suzanne Collins',</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;status: {</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;own: true,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reading: false,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read: false,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;},</p>
-    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">&emsp;&emsp;{</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;title: 'The Road Ahead',</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;author: 'Bill Gates',</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;status: {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;own: true,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;reading: false,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;read: false,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;},</p>
+    <p class="cd">&emsp;&emsp;},</p>
+    <p class="cd">&emsp;&emsp;{</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;title: 'Steve Jobs',</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;author: 'Walter Isaacson',</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;status: {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;own: true,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;reading: false,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;read: false,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;},</p>
+    <p class="cd">&emsp;&emsp;},</p>
+    <p class="cd">&emsp;&emsp;{</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;title: 'Mockingjay',</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;author: 'Suzanne Collins',</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;status: {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;own: true,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;reading: false,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;read: false,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;},</p>
+    <p class="cd">&emsp;&emsp;},</p>
     <p class="cd">];</p>
     <br />
     <p class="cm">// Step 2</p>
@@ -1010,7 +1010,7 @@
     <br>  
     <p class="cm">// Define a function</p>
     <p class="cd">function sayHello() {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('Hello World');</p>
+    <p class="cd">&emsp;&emsp;console.log('Hello World');</p>
     <p class="cd">}</p>
     <br />
     <p class="cm">// Invoke, execute or call a function</p>
@@ -1018,7 +1018,7 @@
     <br />
     <p class="cm">// Define a function with parameters</p>
     <p class="cd">function add(num1, num2) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log(num1 + num2);</p>
+    <p class="cd">&emsp;&emsp;console.log(num1 + num2);</p>
     <p class="cd">}</p>
     <br />
     <p class="cm">// Invoke function with arguments</p>
@@ -1031,9 +1031,9 @@
     <br />
     <p class="cm">// Returning a value</p>
     <p class="cd">function subtract(num1, num2) {</p>
-    <p class="cd">&nbsp;&nbsp;return num1 - num2;</p>
+    <p class="cd">&emsp;&emsp;return num1 - num2;</p>
     <br />
-    <p class="cd">&nbsp;&nbsp;console.log('After the return');</p>
+    <p class="cd">&emsp;&emsp;console.log('After the return');</p>
     <p class="cd">}</p>
     <br />
     <p class="cm">// Assign the returned value to a variable</p>
@@ -1045,54 +1045,54 @@
     <br>  
     <p class="cm">// Default Params</p>
     <p class="cd">function registerUser(user = 'Bot') {</p>
-    <p class="cm">&nbsp;&nbsp;// Old way - before using `=`</p>
-    <p class="cm">&nbsp;&nbsp;// if (!user) {</p>
-    <p class="cm">&nbsp;&nbsp;// user = 'Bot';</p>
-    <p class="cm">&nbsp;&nbsp;// }</p>
+    <p class="cm">&emsp;&emsp;// Old way - before using `=`</p>
+    <p class="cm">&emsp;&emsp;// if (!user) {</p>
+    <p class="cm">&emsp;&emsp;// user = 'Bot';</p>
+    <p class="cm">&emsp;&emsp;// }</p>
     <br />
-    <p class="cd">&nbsp;&nbsp;return user + ' is registered';</p>
+    <p class="cd">&emsp;&emsp;return user + ' is registered';</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">console.log(registerUser());</p>
     <br />
     <p class="cm">// Rest Params</p>
     <p class="cd">function sum(...numbers) {</p>
-    <p class="cd">&nbsp;&nbsp;let total = 0;</p>
+    <p class="cd">&emsp;&emsp;let total = 0;</p>
     <br />
-    <p class="cd">&nbsp;&nbsp;for (const num of numbers) {</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;total += num;</p>
-    <p class="cd">&nbsp;&nbsp;}</p>
+    <p class="cd">&emsp;&emsp;for (const num of numbers) {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;total += num;</p>
+    <p class="cd">&emsp;&emsp;}</p>
     <br />
-    <p class="cd">&nbsp;&nbsp;return total;</p>
+    <p class="cd">&emsp;&emsp;return total;</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">console.log(sum(1, 2, 3, 4, 5, 6, 100));</p>
     <br />
     <p class="cm">// Objects as params</p>
     <p class="cd">function loginUser(user) {</p>
-    <p class="cd">&nbsp;&nbsp;return `The user ${user.name} with the id of ${user.id} is logged in`;</p>
+    <p class="cd">&emsp;&emsp;return `The user ${user.name} with the id of ${user.id} is logged in`;</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">const user = {</p>
-    <p class="cd">&nbsp;&nbsp;id: 1,</p>
-    <p class="cd">&nbsp;&nbsp;name: 'John',</p>
+    <p class="cd">&emsp;&emsp;id: 1,</p>
+    <p class="cd">&emsp;&emsp;name: 'John',</p>
     <p class="cd">};</p>
     <br />
     <p class="cd">console.log(loginUser(user));</p>
     <p class="cd">console.log(</p>
-    <p class="cd">&nbsp;&nbsp;loginUser({</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;id: 2,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;name: 'Sara',</p>
-    <p class="cd">&nbsp;&nbsp;})</p>
+    <p class="cd">&emsp;&emsp;loginUser({</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;id: 2,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;name: 'Sara',</p>
+    <p class="cd">&emsp;&emsp;})</p>
     <p class="cd">);</p>
     <br />
     <p class="cm">// Arrays as params</p>
     <p class="cd">function getRandom(arr) {</p>
-    <p class="cd">&nbsp;&nbsp;const randomIndex = Math.floor(Math.random() * arr.length);</p>
+    <p class="cd">&emsp;&emsp;const randomIndex = Math.floor(Math.random() * arr.length);</p>
     <br />
-    <p class="cd">&nbsp;&nbsp;const item = arr[randomIndex];</p>
+    <p class="cd">&emsp;&emsp;const item = arr[randomIndex];</p>
     <br />
-    <p class="cd">&nbsp;&nbsp;console.log(item);</p>
+    <p class="cd">&emsp;&emsp;console.log(item);</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">getRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);</p>
@@ -1109,23 +1109,23 @@
     <p class="cd">console.log(x, 'in global');</p>
     <br>
     <p class="cd">function run() {</p>
-    <p class="cm">&nbsp;&nbsp;// Access global vars in functions</p>
-    <p class="cd">&nbsp;&nbsp;console.log(window.innerHeight);</p>
-    <p class="cd">&nbsp;&nbsp;console.log(x, 'in function');</p>
+    <p class="cm">&emsp;&emsp;// Access global vars in functions</p>
+    <p class="cd">&emsp;&emsp;console.log(window.innerHeight);</p>
+    <p class="cd">&emsp;&emsp;console.log(x, 'in function');</p>
     <p class="cd">}</p>
     <br>
     <p class="cd">run();</p>
     <br>
     <p class="cm">// Access global vars in blocks</p>
     <p class="cd">if (true) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log(x, 'in block');</p>
+    <p class="cd">&emsp;&emsp;console.log(x, 'in block');</p>
     <p class="cd">}</p>
     <br>
     <p class="cd">function add() {</p>
-    <p class="cm">&nbsp;&nbsp;// Overwriting global x (variable shadowing)</p>
-    <p class="cd">&nbsp;&nbsp;const x = 1;</p>
-    <p class="cd">&nbsp;&nbsp;const y = 50;</p>
-    <p class="cd">&nbsp;&nbsp;console.log(x + y);</p>
+    <p class="cm">&emsp;&emsp;// Overwriting global x (variable shadowing)</p>
+    <p class="cd">&emsp;&emsp;const x = 1;</p>
+    <p class="cd">&emsp;&emsp;const y = 50;</p>
+    <p class="cd">&emsp;&emsp;console.log(x + y);</p>
     <p class="cd">}</p>
     <br>
     <p class="cm">// Can not access a function scoped variable in global scope</p>
@@ -1139,33 +1139,33 @@
     <br>
     <p class="cm">// An If statement is a block</p>
     <p class="cd">if (true) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log(x);</p>
-    <p class="cd">&nbsp;&nbsp;const y = 200;</p>
-    <p class="cd">&nbsp;&nbsp;console.log(x + y);</p>
+    <p class="cd">&emsp;&emsp;console.log(x);</p>
+    <p class="cd">&emsp;&emsp;const y = 200;</p>
+    <p class="cd">&emsp;&emsp;console.log(x + y);</p>
     <p class="cd">}</p>
     <br>
     <p class="cm">// console.log(y); // ReferenceError: y is not defined</p>
     <br>
     <p class="cm">// A loop is a block</p>
     <p class="cd">for (let i = 0; i <= 10; i++) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log(i);</p>
+    <p class="cd">&emsp;&emsp;console.log(i);</p>
     <p class="cd">}</p>
     <br>
     <p class="cm">// console.log(i); // ReferenceError: i is not defined</p>
     <br>
     <p class="cm">// Using var</p>
     <p class="cd">if (true) {</p>
-    <p class="cd">&nbsp;&nbsp;const a = 500;</p>
-    <p class="cd">&nbsp;&nbsp;let b = 600;</p>
-    <p class="cd">&nbsp;&nbsp;var c = 700;</p>
+    <p class="cd">&emsp;&emsp;const a = 500;</p>
+    <p class="cd">&emsp;&emsp;let b = 600;</p>
+    <p class="cd">&emsp;&emsp;var c = 700;</p>
     <p class="cd">}</p>
     <br>
     <p class="cd">console.log(c);</p>
     <br>
     <p class="cm">// var IS function scoped</p>
     <p class="cd">function run() {</p>
-    <p class="cd">&nbsp;&nbsp;var d = 100;</p>
-    <p class="cd">&nbsp;&nbsp;console.log(d);</p>
+    <p class="cd">&emsp;&emsp;var d = 100;</p>
+    <p class="cd">&emsp;&emsp;console.log(d);</p>
     <p class="cd">}</p>
     <br>
     <p class="cd">run();</p>
@@ -1179,36 +1179,36 @@
     <p class="cd"><i>39. Nested Scope</i></p>
     <br>  
     <p class="cd">function first() {</p>
-    <p class="cd">&nbsp;&nbsp;const x = 100;</p>
+    <p class="cd">&emsp;&emsp;const x = 100;</p>
     <br>
-    <p class="cd">&nbsp;&nbsp;function second() {</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;const y = 200;</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;console.log(x + y);</p>
-    <p class="cd">&nbsp;&nbsp;}</p>
+    <p class="cd">&emsp;&emsp;function second() {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;const y = 200;</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log(x + y);</p>
+    <p class="cd">&emsp;&emsp;}</p>
     <br>
-    <p class="cm">&nbsp;&nbsp;// console.log(y);</p>
+    <p class="cm">&emsp;&emsp;// console.log(y);</p>
     <br>
-    <p class="cd">&nbsp;&nbsp;second();</p>
+    <p class="cd">&emsp;&emsp;second();</p>
     <p class="cd">}</p>
     <br>
     <p class="cd">first();</p>
     <br>
     <p class="cd">if (true) {</p>
-    <p class="cd">&nbsp;&nbsp;const x = 100;</p>
+    <p class="cd">&emsp;&emsp;const x = 100;</p>
     <br>
-    <p class="cd">&nbsp;&nbsp;if (x === 100) {</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;const y = 200;</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;console.log(x + y);</p>
-    <p class="cd">&nbsp;&nbsp;}</p>
+    <p class="cd">&emsp;&emsp;if (x === 100) {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;const y = 200;</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log(x + y);</p>
+    <p class="cd">&emsp;&emsp;}</p>
     <br>
-    <p class="cm">&nbsp;&nbsp;// console.log(y);</p>
+    <p class="cm">&emsp;&emsp;// console.log(y);</p>
     <p class="cd">}</p>
     <br>
     <p class="cd"><i>40. Declaration vs Expression</i></p>
     <br>
     <p class="cm">// Function Declaration</p>
     <p class="cd">function addDollarSign(value) {</p>
-    <p class="cd">&nbsp;&nbsp;return '$' + value;</p>
+    <p class="cd">&emsp;&emsp;return '$' + value;</p>
     <p class="cd">}</p>
     <br>
     <p class="cm">// When using declarations, you can invoke the function before the declaration. With expressions, you can not</p>
@@ -1216,7 +1216,7 @@
     <br>
     <p class="cm">// Function Expression</p>
     <p class="cd">const addPlusSign = function (value) {</p>
-    <p class="cd">&nbsp;&nbsp;return '+' + value;</p>
+    <p class="cd">&emsp;&emsp;return '+' + value;</p>
     <p class="cd">};</p>
     <br>
     <p class="cd">console.log(addPlusSign(200));</p>
@@ -1225,12 +1225,12 @@
     <br>  
     <p class="cm">// Normal function declaration</p>
     <p class="cm">// function add(a, b) {</p>
-    <p class="cm">// &nbsp;&nbsp;return a + b;</p>
+    <p class="cm">// &emsp;&emsp;return a + b;</p>
     <p class="cm">// }</p>
     <br />
     <p class="cm">// Arrow function syntax</p>
     <p class="cd">const add = (a, b) => {</p>
-    <p class="cd">&nbsp;&nbsp;return a + b;</p>
+    <p class="cd">&emsp;&emsp;return a + b;</p>
     <p class="cd">};</p>
     <br />
     <p class="cm">// Implicit Return</p>
@@ -1241,13 +1241,13 @@
     <br />
     <p class="cm">// Returning an object</p>
     <p class="cd">const createObj = () => ({</p>
-    <p class="cd">&nbsp;&nbsp;name: 'Brad',</p>
+    <p class="cd">&emsp;&emsp;name: 'Brad',</p>
     <p class="cd">});</p>
     <br />
     <p class="cd">const numbers = [1, 2, 3, 4, 5];</p>
     <br />
     <p class="cd">numbers.forEach(function (n) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log(n);</p>
+    <p class="cd">&emsp;&emsp;console.log(n);</p>
     <p class="cd">});</p>
     <br />
     <p class="cm">// Arrow function in a callback</p>
@@ -1265,28 +1265,28 @@
     <br />
     <p class="cm">// IFFE Syntax (Has it's own scope and runs right away)</p>
     <p class="cd">(function () {</p>
-    <p class="cd">&nbsp;&nbsp;const user = 'John';</p>
-    <p class="cd">&nbsp;&nbsp;console.log(user);</p>
-    <p class="cd">&nbsp;&nbsp;const hello = () => console.log('Hello from the IIFE');</p>
-    <p class="cd">&nbsp;&nbsp;hello();</p>
+    <p class="cd">&emsp;&emsp;const user = 'John';</p>
+    <p class="cd">&emsp;&emsp;console.log(user);</p>
+    <p class="cd">&emsp;&emsp;const hello = () => console.log('Hello from the IIFE');</p>
+    <p class="cd">&emsp;&emsp;hello();</p>
     <p class="cd">})();</p>
     <br />
     <p class="cm">// Params</p>
     <p class="cd">(function (name) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('Hello ' + name);</p>
+    <p class="cd">&emsp;&emsp;console.log('Hello ' + name);</p>
     <p class="cd">})('Shawn');</p>
     <br />
     <p class="cm">// Named IIFE (Can only be called recursively)</p>
     <p class="cd">(function hello() {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('Hello');</p>
+    <p class="cd">&emsp;&emsp;console.log('Hello');</p>
     <p class="cd">})();</p>
     <br />
     <p class="cd"><i>43. Function Challenges</i></p>
     <br>
     <p class="cm">// Challenge 1</p>
     <p class="cm">// function getCelsius(f) {</p>
-    <p class="cm">//&nbsp;&nbsp; const celsius = ((f - 32) * 5) / 9;</p>
-    <p class="cm">//&nbsp;&nbsp; return celsius;</p>
+    <p class="cm">//&emsp;&emsp; const celsius = ((f - 32) * 5) / 9;</p>
+    <p class="cm">//&emsp;&emsp; return celsius;</p>
     <p class="cm">// }</p>
     <br />
     <p class="cd">const getCelsius = (f) => ((f - 32) * 5) / 9;</p>
@@ -1295,25 +1295,25 @@
     <br />
     <p class="cm">// Challenge 2</p>
     <p class="cd">function minMax(arr) {</p>
-    <p class="cd">&nbsp;&nbsp;const min = Math.min(...arr);</p>
-    <p class="cd">&nbsp;&nbsp;const max = Math.max(...arr);</p>
+    <p class="cd">&emsp;&emsp;const min = Math.min(...arr);</p>
+    <p class="cd">&emsp;&emsp;const max = Math.max(...arr);</p>
     <br />
-    <p class="cd">&nbsp;&nbsp;return {</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;min,</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;max,</p>
-    <p class="cd">&nbsp;&nbsp;};</p>
+    <p class="cd">&emsp;&emsp;return {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;min,</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;max,</p>
+    <p class="cd">&emsp;&emsp;};</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">console.log(minMax([2, 31, 4, 5, 6]));</p>
     <br />
     <p class="cm">// Challenge 3</p>
     <p class="cd">((length, width) => {</p>
-    <p class="cd">&nbsp;&nbsp;const area = length * width;</p>
+    <p class="cd">&emsp;&emsp;const area = length * width;</p>
     <br />
-    <p class="cd">&nbsp;&nbsp;const output = `The area of a rectangle with a length of ${length} and a width of ${width} is ${area}.`;
+    <p class="cd">&emsp;&emsp;const output = `The area of a rectangle with a length of ${length} and a width of ${width} is ${area}.`;
     </p>
     <br />
-    <p class="cd">&nbsp;&nbsp;console.log(output);</p>
+    <p class="cd">&emsp;&emsp;console.log(output);</p>
     <p class="cd">})(20, 10);</p>
     <br />  
     <p class="cd"><i>44. Execution Context</i></p>
@@ -1323,8 +1323,8 @@
     <p class="cd">const y = 50;</p>
     <br />
     <p class="cd">function getSum(n1, n2) {</p>
-    <p class="cd">&nbsp;&nbsp;const sum = n1 + n2;</p>
-    <p class="cd">&nbsp;&nbsp;return sum;</p>
+    <p class="cd">&emsp;&emsp;const sum = n1 + n2;</p>
+    <p class="cd">&emsp;&emsp;return sum;</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">const sum1 = getSum(x, y);</p>
@@ -1339,15 +1339,15 @@
     <p class="cm">// First Example</p>
     <br />
     <p class="cd">function first() {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('first...');</p>
+    <p class="cd">&emsp;&emsp;console.log('first...');</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">function second() {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('second...');</p>
+    <p class="cd">&emsp;&emsp;console.log('second...');</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">function third() {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('third...');</p>
+    <p class="cd">&emsp;&emsp;console.log('third...');</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">first();</p>
@@ -1357,17 +1357,17 @@
     <p class="cm">// Second Example</p>
     <br />
     <p class="cm">// function first() {</p>
-    <p class="cm">// &nbsp;&nbsp;console.log('first...');</p>
-    <p class="cm">// &nbsp;&nbsp;second();</p>
+    <p class="cm">// &emsp;&emsp;console.log('first...');</p>
+    <p class="cm">// &emsp;&emsp;second();</p>
     <p class="cm">// }</p>
     <br />
     <p class="cm">// function second() {</p>
-    <p class="cm">// &nbsp;&nbsp;console.log('second...');</p>
-    <p class="cm">// &nbsp;&nbsp;third();</p>
+    <p class="cm">// &emsp;&emsp;console.log('second...');</p>
+    <p class="cm">// &emsp;&emsp;third();</p>
     <p class="cm">// }</p>
     <br />
     <p class="cm">// function third() {</p>
-    <p class="cm">// &nbsp;&nbsp;console.log('third...');</p>
+    <p class="cm">// &emsp;&emsp;console.log('third...');</p>
     <p class="cm">// }</p>
     <br />
     <p class="cm">// first();</p>
@@ -1376,11 +1376,11 @@
     <br>
     <p class="cm">// If Statement Syntax</p>
     <p class="cd">if (true) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('This is true');</p>
+    <p class="cd">&emsp;&emsp;console.log('This is true');</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">if (false) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('This is NOT true');</p>
+    <p class="cd">&emsp;&emsp;console.log('This is NOT true');</p>
     <p class="cd">}</p>
     <br />
     <p class="cm">// Evaluation expressions</p>
@@ -1388,27 +1388,27 @@
     <p class="cd">const y = 5;</p>
     <br />
     <p class="cd">if (x >= y) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log(`${x} is greater than or equal to ${y}`);</p>
+    <p class="cd">&emsp;&emsp;console.log(`${x} is greater than or equal to ${y}`);</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">if (x === y) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log(`${x} is equal to ${y}`);</p>
+    <p class="cd">&emsp;&emsp;console.log(`${x} is equal to ${y}`);</p>
     <p class="cd">} else {</p>
-    <p class="cd">&nbsp;&nbsp;console.log(`${x} is NOT equal to ${y}`);</p>
+    <p class="cd">&emsp;&emsp;console.log(`${x} is NOT equal to ${y}`);</p>
     <p class="cd">}</p>
     <br />
     <p class="cm">// Block scope</p>
     <p class="cd">if (x !== y) {</p>
-    <p class="cd">&nbsp;&nbsp;const z = 20;</p>
-    <p class="cd">&nbsp;&nbsp;console.log(`${z} is 20`);</p>
+    <p class="cd">&emsp;&emsp;const z = 20;</p>
+    <p class="cd">&emsp;&emsp;console.log(`${z} is 20`);</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">console.log(z); // Throw error</p>
     <br />
     <p class="cm">// Shorthand If/Else</p>
     <p class="cd">if (x >= y)</p>
-    <p class="cd">&nbsp;&nbsp;console.log(`${x} is greater than or equal to ${y}`),</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;console.log('This is true');</p>
+    <p class="cd">&emsp;&emsp;console.log(`${x} is greater than or equal to ${y}`),</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log('This is true');</p>
     <p class="cd">else console.log('This is false');</p>
     <br />
     <p class="cd"><i>49. If Else & Nesting</i></p>
@@ -1417,36 +1417,36 @@
     <p class="cd">const hour = d.getHours();</p>
     <br />
     <p class="cd">if (hour < 12) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('Good Morning');</p>
+    <p class="cd">&emsp;&emsp;console.log('Good Morning');</p>
     <p class="cd">} else if (hour < 18) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('Good Afternoon');</p>
+    <p class="cd">&emsp;&emsp;console.log('Good Afternoon');</p>
     <p class="cd">} else {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('Good Night');</p>
+    <p class="cd">&emsp;&emsp;console.log('Good Night');</p>
     <p class="cd">}</p>
     <br />
     <p class="cm">// Nested If</p>
     <p class="cd">if (hour < 12) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('Good Morning');</p>
+    <p class="cd">&emsp;&emsp;console.log('Good Morning');</p>
     <br />
-    <p class="cd">&nbsp;&nbsp;if (hour === 6) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('Wake Up!');</p>
-    <p class="cd">&nbsp;&nbsp;}</p>
+    <p class="cd">&emsp;&emsp;if (hour === 6) {</p>
+    <p class="cd">&emsp;&emsp;console.log('Wake Up!');</p>
+    <p class="cd">&emsp;&emsp;}</p>
     <p class="cd">} else if (hour < 18) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('Good Afternoon');</p>
+    <p class="cd">&emsp;&emsp;console.log('Good Afternoon');</p>
     <p class="cd">} else {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('Good Night');</p>
+    <p class="cd">&emsp;&emsp;console.log('Good Night');</p>
     <br />
-    <p class="cd">&nbsp;&nbsp;if (hour >= 20) {</p>
-    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;console.log('zzzzzzzz');</p>
-    <p class="cd">&nbsp;&nbsp;}</p>
+    <p class="cd">&emsp;&emsp;if (hour >= 20) {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log('zzzzzzzz');</p>
+    <p class="cd">&emsp;&emsp;}</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">if (hour >= 7 && hour < 15) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('It is work time!');</p>
+    <p class="cd">&emsp;&emsp;console.log('It is work time!');</p>
     <p class="cd">}</p>
     <br />
     <p class="cd">if (hour === 6 || hour === 20) {</p>
-    <p class="cd">&nbsp;&nbsp;console.log('Brush your teeth!');</p>
+    <p class="cd">&emsp;&emsp;console.log('Brush your teeth!');</p>
     <p class="cd">}</p>
     <br />
 
