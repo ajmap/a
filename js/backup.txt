@@ -1,0 +1,2761 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JS1</title>
+  <style>
+    * {
+      margin: 0;
+    }
+
+    #start-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #111;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    #reader {
+      margin: 2vh 0 0 2vw;F11
+      display: none;
+      font-size: 1.1rem;
+      line-height: 1.15rem;
+      display: none;
+    }
+    .cm { color: #aaa }
+    i {
+      color: IndianRed
+    }
+  </style>
+</head>
+<body>
+    <div id="start-screen">START</div>
+    <div id="reader">
+    <p class="cd"><i>9. Using The Console</i></p>42. Immediately Invoked Function Expressions
+    <br>  
+    <p class="cm">// Log number</p>
+    <p class="cd">console.log(100);</p>
+    <br>
+    <p class="cm">// Log string</p>
+    <p class="cd">console.log('Hello World');</p>
+    <br>
+    <p class="cm">// Log multiple values</p>
+    <p class="cd">console.log(20, 'Hello', true);</p>
+    <br>
+    <p class="cm">// Log a variable</p>
+    <p class="cd">const x = 100;</p>
+    <p class="cd">console.log(x);</p>
+    <br>
+    <p class="cm">// Console error & warning</p>
+    <p class="cd">console.error('Alert');</p>
+    <p class="cd">console.warn('Warning');</p>
+    <br>
+    <p class="cm">// Log object as table</p>
+    <p class="cd">console.table({ name: 'Brad', email: 'brad@gmail.com' });</p>
+    <br>
+    <p class="cm">// Group console commands</p>
+    <p class="cd">console.group('simple');</p>
+    <p class="cd">console.log(x);</p>
+    <p class="cd">console.error('Alert');</p>
+    <p class="cd">console.warn('Warning');</p>
+    <p class="cd">console.groupEnd();</p>
+    <br>
+    <p class="cm">// Add CSS to logs</p>
+    <p class="cd">const styles = 'padding: 10px; background-color: white; color: green';
+    </p>
+    <p class="cd">console.log('%cHello World', styles);</p>
+    <br>
+    <p class="cd"><i>10. Comments & Shortcuts</i></p>
+    <br>  
+    <p class="cm">// This is a single line of code</p>
+    <br />
+    <p class="cm">/*</p>
+    <p class="cm">Multi-line comment</p>
+    <p class="cm">console.log(100);</p>
+    <br />
+    <p class="cm">console.log('Hello World');</p>
+    <br />
+    <p class="cm">console.log(20, 'Hello', true);</p>
+    <p class="cm">*/</p>
+    <br />
+    <p class="cd"><i>11. Variables & Constants</i></p>
+    <br>
+    <p class="cm">// Ways to declare a variable</p>
+    <p class="cm">// `var`, `let`, & `const`</p>
+    <br />
+    <p class="cd">let firstName = 'John';</p>
+    <p class="cd">const lastName = 'Doe';</p>
+    <p class="cd">let age = 30;</p>
+    <br />
+    <p class="cd">console.log(age);</p>
+    <br />
+    <p class="cm">// Naming Conventions</p>
+    <p class="cm">// - Only letters, numbers, underscores and dollar signs</p>
+    <p class="cm">// - Can't start with a number</p>
+    <br />
+    <p class="cm">// Multi-Word Formatting</p>
+    <p class="cm">// firstName = camelCase</p>
+    <p class="cm">// first_name = underscore</p>
+    <p class="cm">// FirstName = PascalCase</p>
+    <p class="cm">// firstname = lowercase</p>
+    <br />
+    <p class="cm">// We can re-assign `let` variables. If you change `age` to use `const`, you will get an error
+    </p>
+    <p class="cd">age = 31;</p>
+    <p class="cd">console.log(age);</p>
+    <br />
+    <p class="cm">// With let, we can declare a value without assigning a value
+    </p>
+    <p class="cd">let score;</p>
+    <p class="cd">score = 1;</p>
+    <p class="cd">console.log(score);</p>
+    <br />
+    <p class="cd">if (true) {</p>
+    <p class="cd">&nbsp;&nbsp;score = score + 1;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">console.log(score);</p>
+    <br />
+    <p class="cd">const x = 100;</p>
+    <br />
+    <p class="cm">// We can not re-assign a const variable</p>
+    <p class="cm">// x = 200 // Will result in an error</p>
+    <br />
+    <p class="cm">// We can still manipulate arrays and objects using const</p>
+    <p class="cd">const arr = [1, 2, 3, 4];</p>
+    <p class="cd">arr.push(5);</p>
+    <p class="cd">console.log(arr);</p>
+    <br />
+    <p class="cd">const person = {</p>
+    <p class="cd">&nbsp;&nbsp;name: 'Brad',</p>
+    <p class="cd">};</p>
+    <p class="cd">person.name = 'John';</p>
+    <p class="cd">person.email = 'brad@gmail.com';</p>
+    <p class="cd">console.log(person);</p>
+    <br />
+    <p class="cm">// Declare multiple values at once</p>
+    <p class="cd">let a, b, c;</p>
+    <br />
+    <p class="cd">const d = 10,</p>
+    <p class="cd">&nbsp;&nbsp;e = 20,</p>
+    <p class="cd">&nbsp;&nbsp;f = 30;</p>
+    <br />
+    <p class="cd">console.log(d);</p>
+    <p class="cd">console.log(a);</p>
+    <br>
+    <p class="cd"><i>12. Data Types</i></p>
+    <br />
+    <p class="cm">// String</p>
+    <p class="cd">const firstName = 'Sara';</p>
+    <br />
+    <p class="cm">// Number</p>
+    <p class="cd">const age = 30;</p>
+    <p class="cd">const temp = 98.9;</p>
+    <br />
+    <p class="cm">// Boolean</p>
+    <p class="cd">const hasKids = true;</p>
+    <br />
+    <p class="cm">// Null</p>
+    <p class="cd">const aptNumber = null;</p>
+    <br />
+    <p class="cm">// Undefined</p>
+    <p class="cm">// let score;</p>
+    <p class="cd">const score = undefined;</p>
+    <br />
+    <p class="cm">// Symbol</p>
+    <p class="cd">const id = Symbol('id');</p>
+    <br />
+    <p class="cm">// BigInt</p>
+    <p class="cd">const n = 9007199254740991n;</p>
+    <br />
+    <p class="cm">// Reference Types</p>
+    <br />
+    <p class="cd">const numbers = [1, 2, 3, 4];</p>
+    <br />
+    <p class="cd">const person = {</p>
+    <p class="cd">&nbsp;&nbsp;name: 'Brad',</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">function sayHello() {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Hello');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">const output = sayHello;</p>
+    <br />
+    <p class="cd">console.log(output, typeof output);</p>
+    <br />
+    <p class="cm">// More info on why typeof null == object</p>
+    <p class="cm">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof#typeof_null</p>
+    <br />
+    <p class="cm">// More info on the "function object" type</p>
+    <p class="cm">// https://262.ecma-international.org/5.1/#sec-11.4.3</p>
+    <br />
+    <p class="cd"><i>13. Primitive vs Reference Types </i></p>
+    <br>
+    <p class="cm">// Value is stored in the stack</p>
+    <p class="cd">const name = 'John';</p>
+    <p class="cd">const age = 30;</p>
+    <br />
+    <p class="cm">// Reference is stored in the heap</p>
+    <p class="cd">const person = {</p>
+    <p class="cd">&nbsp;&nbsp;name: 'Brad',</p>
+    <p class="cd">&nbsp;&nbsp;age: 40,</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">let newName = name;</p>
+    <p class="cd">newName = 'Jonathan';</p>
+    <br />
+    <p class="cd">let newPerson = person;</p>
+    <p class="cd">newPerson.name = 'Bradley';</p>
+    <br />
+    <p class="cd">console.log(name, newName); <span class="cm">// John, Jonathan</span></p>
+    <p class="cd">console.log(person, newPerson); <span class="cm">// { name: 'Bradley', age: 40 }, { name: 'Bradley', age: 40 }</span</p>
+    <br>
+    <br>  
+    <p class="cd"><i>14. Type Conversion </i></p> 
+    <br>  
+    <p class="cd">let amount = 'hello';</p>
+    <br />
+    <p class="cm">// Convert string to number</p>
+    <p class="cd">amount = parseInt(amount);</p>
+    <p class="cd">amount = +amount;</p>
+    <p class="cd">amount = Number(amount);</p>
+    <br />
+    <p class="cm">// Convert number to string</p>
+    <p class="cd">amount = amount.toString();</p>
+    <p class="cd">amount = String(amount);</p>
+    <br />
+    <p class="cm">// Convert string to decimal</p>
+    <p class="cd">amount = parseFloat(amount);</p>
+    <br />
+    <p class="cm">// Convert number to boolean</p>
+    <p class="cd">amount = Boolean(amount);</p>
+    <br />
+    <p class="cm">// Ways to get NaN</p>
+    <p class="cd">console.log(Math.sqrt(-1));</p>
+    <p class="cd">console.log(1 + NaN);</p>
+    <p class="cd">console.log(undefined + undefined);</p>
+    <p class="cd">console.log('foo' / 3);</p>
+    <br />
+    <p class="cd">console.log(amount, typeof amount);</p>
+    <br />
+    <p class="cd"><i>15. Operators</i></p> 
+    <br>  
+    <p class="cm">// 1. Arithmetic Operators</p>
+    <br />
+    <p class="cd">let x;</p>
+    <br />
+    <p class="cd">x = 5 + 5;</p>
+    <p class="cd">x = 5 - 5;</p>
+    <p class="cd">x = 5 * 5;</p>
+    <p class="cd">x = 5 / 5;</p>
+    <p class="cd">x = 7 % 5;</p>
+    <br />
+    <p class="cm">// Concatenation</p>
+    <p class="cd">x = 'Hello' + ' ' + 'World';</p>
+    <br />
+    <p class="cm">// Exponent</p>
+    <p class="cd">x = 2 ** 3;</p>
+    <br />
+    <p class="cm">// Increment</p>
+    <p class="cd">x = 1;</p>
+    <p class="cm">// x = x + 1;</p>
+    <p class="cd">x++;</p>
+    <br />
+    <p class="cm">// Decrement</p>
+    <p class="cm">// x = x - 1;</p>
+    <p class="cd">x--;</p>
+    <br />
+    <p class="cm">// 2. Assignment Operators</p>
+    <br />
+    <p class="cd">x = 10;</p>
+    <br />
+    <p class="cd">x += 5;</p>
+    <p class="cd">x -= 5;</p>
+    <p class="cd">x *= 5;</p>
+    <p class="cd">x /= 5;</p>
+    <p class="cd">x %= 5;</p>
+    <p class="cd">x **= 5;</p>
+    <br />
+    <p class="cm">// 3. Comparison Operators</p>
+    <br />
+    <p class="cm">// Equal to (Just the value, not the type)</p>
+    <p class="cd">x = 2 == '2';</p>
+    <br />
+    <p class="cm">// Equal to (Type and value)</p>
+    <p class="cd">x = 2 === '2';</p>
+    <br />
+    <p class="cm">// Not equal to (Just the value, not the type)</p>
+    <p class="cd">x = 2 != '2';</p>
+    <br />
+    <p class="cm">// Not equal to (Type and value)</p>
+    <p class="cd">x = 2 !== 2;</p>
+    <br />
+    <p class="cm">// Greater than and less than</p>
+    <p class="cd">x = 10 > 5;</p>
+    <p class="cd">x = 10 < 5;</p>
+    <p class="cd">x = 10 <= 5;</p>
+    <p class="cd">x = 10 >= 5;</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cd"><i>16. Type Coercion</i></p>
+    <br>  
+    <p class="cd">let x;</p>
+    <br />
+    <p class="cm">// Coerced to a string</p>
+    <p class="cd">x = 5 + '5';</p>
+    <br />
+    <p class="cd">x = 5 + Number('5');</p>
+    <br />
+    <p class="cm">// Coerced to a number</p>
+    <p class="cd">x = 5 * '5';</p>
+    <br />
+    <p class="cm">// null is coerced to 0 as it is a `falsy` value</p>
+    <p class="cd">x = 5 + null;</p>
+    <br />
+    <p class="cd">x = Number(null);</p>
+    <br />
+    <p class="cd">x = Number(true);</p>
+    <p class="cd">x = Number(false);</p>
+    <br />
+    <p class="cm">// true is coerced to a 1</p>
+    <p class="cd">x = 5 + true;</p>
+    <br />
+    <p class="cm">// false is coerced to 0 (falsy)</p>
+    <p class="cd">x = 5 + false;</p>
+    <br />
+    <p class="cm">// Undefined is coerced to 0 (falsy)</p>
+    <p class="cd">x = 5 + undefined;</p>
+    <br />
+    <p class="cd">console.log(x, typeof x);</p>
+    <br />
+    <p class="cd">let x;</p>
+    <br />
+    <p class="cd"><i>17. Working With Strings</i></p>
+    <br>  
+    <p class="cd">const name = 'John';</p>
+    <p class="cd">const age = 31;</p>
+    <br />
+    <p class="cm">// Concatenation</p>
+    <p class="cd">x = 'Hello, my name is ' + name + ' and I am ' + age + ' years old';
+    </p>
+    <br />
+    <p class="cm">// Template Literals</p>
+    <p class="cd">x = `Hello, my name is ${name} and I am ${age} years old`;</p>
+    <br />
+    <p class="cm">// String Properties and Methods</p>
+    <br />
+    <p class="cm">// Creating a "string object" (JS does this automatically when using property or method on a primitive string)
+    </p>
+    <p class="cd">const s = new String('Hello World');</p>
+    <br />
+    <p class="cd">x = typeof s;</p>
+    <br />
+    <p class="cd">x = s.length;</p>
+    <br />
+    <p class="cm">// Access value by key</p>
+    <p class="cd">x = s[0];</p>
+    <br />
+    <p class="cm">// Shows the prototype of the string object. Shows the properties and methods
+    </p>
+    <p class="cd">x = s.__proto__;</p>
+    <br />
+    <p class="cm">// Change case</p>
+    <p class="cd">x = s.toUpperCase();</p>
+    <p class="cd">x = s.toLowerCase();</p>
+    <br />
+    <p class="cm">// charAt() - returns the character at the specified index</p>
+    <p class="cd">x = s.charAt(0);</p>
+    <br />
+    <p class="cm">// indexOf - returns the index of the first occurrence of a specified value in a string
+    </p>
+    <p class="cd">x = s.indexOf('d');</p>
+    <br />
+    <p class="cm">// substring() - search a string for a specified value</p>
+    <p class="cd">x = s.substring(2, 5);</p>
+    <p class="cd">x = s.substring(7);</p>
+    <br />
+    <p class="cm">// slice() - extracts a part of a string and returns a new string
+    </p>
+    <p class="cd">x = s.slice(-11, -6);</p>
+    <br />
+    <p class="cm">// trim() - remove whitespace from beginning and end of string</p>
+    <p class="cd">x = ' Hello World';</p>
+    <p class="cd">x = x.trim();</p>
+    <br />
+    <p class="cm">// replace() - replace all instances of a string</p>
+    <p class="cd">x = s.replace('World', 'John');</p>
+    <br />
+    <p class="cm">// includes() - returns true if the string is found</p>
+    <p class="cd">x = s.includes('Hell');</p>
+    <br />
+    <p class="cm">// valueOf() - returns the primitive value of a variable</p>
+    <p class="cd">x = s.valueOf();</p>
+    <br />
+    <p class="cm">// split() - returns an array of strings</p>
+    <p class="cd">x = s.split('');</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cd"><i>18. Capitalize Challenge  </i></p>
+    <br>  
+    <p class="cm">// Create a new string called "myNewString" that holds the value of "Developer", using the lowercase value from "myString"</p>
+    <p class="cd">const myString = 'developer';</p>
+    <br />
+    <p class="cd">let myNewString;</p>
+    <br />
+    <p class="cm">// Solution 1:</p>
+    <p class="cd">myNewString = myString.charAt(0).toUpperCase() + myString.substring(1);</p>
+    <p class="cm">// Solution 2:</p>
+    <p class="cd">myNewString = myString[0].toUpperCase() + myString.substring(1);</p>
+    <p class="cm">// Solution 3:</p>
+    <p class="cd">myNewString = `${myString[0].toUpperCase()}${myString.slice(1)}`;</p>
+    <br />
+    <p class="cd">console.log(myNewString);</p>
+    <br />
+    <p class="cd"><i>19. Working With Numbers</i></p>
+    <br>
+    <p class="cd">let x;</p>
+    <br>
+    <p class="cd">const num = new Number(5);</p>
+    <br>
+    <p class="cm">// toString() - returns a string representation of the number</p>
+    <p class="cd">x = num.toString();</p>
+    <p class="cm">// To get the length</p>
+    <p class="cd">x = num.toString().length;</p>
+    <br>
+    <p class="cm">// toFixed() - returns a string representation of the number with a specified number of decimals</p>
+    <p class="cd">x = num.toFixed(2);</p>
+    <br>
+    <p class="cm">// toPrecision() - returns a number with the specified length</p>
+    <p class="cd">x = num.toPrecision(3);</p>
+    <p class="cm">// toExponential() - convert a number to exponential notation and return its value as a string</p>
+    <p class="cd">x = num.toExponential(2);</p>
+    <br />
+    <p class="cm">// toLocaleString() - returns a string representation of the number, using the current locale</p>
+    <p class="cd">x = num.toLocaleString('en-US');</p>
+    <br />
+    <p class="cm">// valueOf - Get value</p>
+    <p class="cd">x = num.valueOf();</p>
+    <br />
+    <p class="cm">// The Number object itself has some properties and methods</p>
+    <br />
+    <p class="cm">// Largest and smallest possible number</p>
+    <p class="cd">x = Number.MAX_VALUE;</p>
+    <p class="cd">x = Number.MIN_VALUE;</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cd"><i>20. The Math Object</i></p>
+    <br>  
+    <p class="cd">let x;</p>
+    <br />
+    <p class="cm">// Square root</p>
+    <p class="cd">x = Math.sqrt(9);</p>
+    <br />
+    <p class="cm">// Absolute value</p>
+    <p class="cd">x = Math.abs(-5);</p>
+    <br />
+    <p class="cm">// Round</p>
+    <p class="cd">x = Math.round(4.2);</p>
+    <br />
+    <p class="cm">// Round up</p>
+    <p class="cd">x = Math.ceil(4.2);</p>
+    <br />
+    <p class="cm">// Round down</p>
+    <p class="cd">x = Math.floor(4.9);</p>
+    <br />
+    <p class="cm">// Exponent</p>
+    <p class="cd">x = Math.pow(2, 3);</p>
+    <br />
+    <p class="cm">// Minimum number</p>
+    <p class="cd">x = Math.min(4, 5, 3);</p>
+    <br />
+    <p class="cm">// Maximum number</p>
+    <p class="cd">x = Math.max(4, 5, 3);</p>
+    <br />
+    <p class="cm">// Get a random number/decimal between 0 and 1</p>
+    <p class="cd">x = Math.random();</p>
+    <br />
+    <p class="cm">// Get a random number between 1 and 100</p>
+    <p class="cd">x = Math.floor(Math.random() * 100 + 1);</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cd"><i>21. Number Challenge</i></p>
+    <br>  
+    <p class="cd">const x = Math.floor(Math.random() * 100 + 1);</p>
+    <p class="cd">const y = Math.floor(Math.random() * 50 + 1);</p>
+    <br />
+    <p class="cm">// Get the sum</p>
+    <p class="cd">const sum = x + y;</p>
+    <p class="cd">const sumOutput = `${x} + ${y} = ${sum}`;</p>
+    <p class="cd">console.log(sumOutput);</p>
+    <br />
+    <p class="cm">// Get the difference</p>
+    <p class="cd">const diff = x - y;</p>
+    <p class="cd">const diffOutput = `${x} - ${y} = ${diff}`;</p>
+    <p class="cd">console.log(diffOutput);</p>
+    <br />
+    <p class="cm">// Get the product</p>
+    <p class="cd">const prod = x * y;</p>
+    <p class="cd">const prodOutput = `${x} * ${y} = ${prod}`;</p>
+    <p class="cd">console.log(prodOutput);</p>
+    <br />
+    <p class="cm">// Get the quotient</p>
+    <p class="cd">const quot = x / y;</p>
+    <p class="cd">const quotOutput = `${x} / ${y} = ${quot}`;</p>
+    <p class="cd">console.log(quotOutput);</p>
+    <br />
+    <p class="cm">// Get the remainder</p>
+    <p class="cd">const rm = x % y;</p>
+    <p class="cd">const rmOutput = `${x} % ${y} = ${rm}`;</p>
+    <p class="cd">console.log(rmOutput);</p>
+    <br />
+    <p class="cd"><i>22. Dates & Times</i></p>
+    <br> 
+    <p class="cd">let d;</p>
+    <br />
+    <p class="cm">// Get today's date and time</p>
+    <p class="cd">d = new Date();</p>
+    <br />
+    <p class="cm">// Set to a string</p>
+    <p class="cd">d = d.toString();</p>
+    <br />
+    <p class="cm">// Get a specific date</p>
+    <p class="cm">// Important: the month is 0-based, so 0 is January and 11 is December</p>
+    <p class="cd">d = new Date(2021, 0, 10, 12, 30, 0);</p>
+    <br />
+    <p class="cm">// Pass in a string</p>
+    <p class="cd">d = new Date('2021-07-10T12:30:00');</p>
+    <p class="cd">d = new Date('07/10/2021 12:30:00');</p>
+    <p class="cd">d = new Date('2022-07-10');</p>
+    <p class="cd">d = new Date('07-10-2022');</p>
+    <br />
+    <p class="cm">// https://stackoverflow.com/questions/7556591/is-the-javascript-date-object-always-one-day-off</p>
+    <br />
+    <p class="cm">// Get current timestamp</p>
+    <p class="cd">d = Date.now();</p>
+    <br />
+    <p class="cm">// Get the timestamp of a specific date</p>
+    <p class="cd">d = new Date();</p>
+    <p class="cd">d = d.getTime();</p>
+    <p class="cd">d = d.valueOf();</p>
+    <br />
+    <p class="cm">// Create a date from a timestamp</p>
+    <p class="cd">d = new Date(1666962049745);</p>
+    <br />
+    <p class="cm">// Convert from milliseconds to seconds</p>
+    <p class="cd">d = Math.floor(Date.now() / 1000);</p>
+    <br />
+    <p class="cd"></p>
+    <p class="cd">console.log(d);</p>
+    <br />
+    <p class="cd"><i>23. Date Methods & DateTimeFormat API</i></p>
+    <br>  
+    <p class="cd">let x;</p>
+    <p class="cd">let d = new Date();</p>
+    <br />
+    <p class="cm">// Date methods</p>
+    <br />
+    <p class="cd">x = d.toString();</p>
+    <br />
+    <p class="cd">x = d.getTime();</p>
+    <p class="cd">x = d.valueOf();</p>
+    <br />
+    <p class="cd">x = d.getFullYear();</p>
+    <br />
+    <p class="cd">x = d.getMonth();</p>
+    <p class="cd">x = d.getMonth() + 1;</p>
+    <br />
+    <p class="cd">x = d.getDate();</p>
+    <br />
+    <p class="cd">x = d.getDay();</p>
+    <br />
+    <p class="cd">x = d.getHours();</p>
+    <br />
+    <p class="cd">x = d.getMinutes();</p>
+    <br />
+    <p class="cd">x = d.getSeconds();</p>
+    <br />
+    <p class="cd">x = d.getMilliseconds();</p>
+    <br />
+    <p class="cd">x = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;</p>
+    <br />
+    <p class="cm">// Intl.DateTimeFormat API (locale specific)</p>
+    <p class="cd">x = Intl.DateTimeFormat('en-US').format(d);</p>
+    <p class="cd">x = Intl.DateTimeFormat('en-GB').format(d);</p>
+    <p class="cd">x = Intl.DateTimeFormat('default').format(d);</p>
+    <br />
+    <p class="cd">x = Intl.DateTimeFormat('default', { month: 'long' }).format(d);</p>
+    <br />
+    <p class="cd">x = d.toLocaleString('default', { month: 'short' });</p>
+    <br />
+    <p class="cd">x = d.toLocaleString('default', {</p>
+    <p class="cd">&nbsp;&nbsp;weekday: 'long',</p>
+    <p class="cd">&nbsp;&nbsp;year: 'numeric',</p>
+    <p class="cd">&nbsp;&nbsp;month: 'long',</p>
+    <p class="cd">&nbsp;&nbsp;day: 'numeric',</p>
+    <p class="cd">&nbsp;&nbsp;hour: 'numeric',</p>
+    <p class="cd">&nbsp;&nbsp;minute: 'numeric',</p>
+    <p class="cd">&nbsp;&nbsp;second: 'numeric',</p>
+    <p class="cd">&nbsp;&nbsp;timeZone: 'America/New_York',</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cd"><i>25. Creating Arrays</i></p>
+    <br>  
+    <p class="cd">let x;</p>
+    <br />
+    <p class="cm">// Array Literal</p>
+    <p class="cd">const numbers = [12, 45, 33, 29, 39, 102];</p>
+    <p class="cd">const mixed = [12, 'Hello', true, null];</p>
+    <br />
+    <p class="cm">// Array Constructor</p>
+    <p class="cd">const fruits = new Array('apple', 'grape', 'orange');</p>
+    <br />
+    <p class="cm">// Get value by index</p>
+    <p class="cd">x = numbers[0];</p>
+    <br />
+    <p class="cd">x = numbers[0] + numbers[3];</p>
+    <br />
+    <p class="cd">x = `My favorite fruit is an ${fruits[2]}`;</p>
+    <br />
+    <p class="cd">x = numbers.length;</p>
+    <br />
+    <p class="cd">fruits[2] = 'pear';</p>
+    <br />
+    <p class="cm">// length is not read-only</p>
+    <p class="cm">// fruits.length = 2;</p>
+    <br />
+    <p class="cd">fruits[3] = 'strawberry';</p>
+    <br />
+    <p class="cm">// Using the length as the index will always add on the the end</p>
+    <p class="cd">fruits[fruits.length] = 'blueberry';</p>
+    <p class="cd">fruits[fruits.length] = 'peach';</p>
+    <br />
+    <p class="cd">x = fruits;</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cd"><i>26. Basic Array Methods</i></p>  
+    <br>  
+    <p class="cd">let x;</p>
+    <br />
+    <p class="cd">const arr = [28, 38, 44, 29, 109];</p>
+    <br />
+    <p class="cm">// push() - Push a value on to the end of the array</p>
+    <p class="cd">arr.push(100);</p>
+    <br />
+    <p class="cm">// pop() - Take the last value off</p>
+    <p class="cd">arr.pop();</p>
+    <br />
+    <p class="cm">// unshift() - Add a value to the beginning of the array</p>
+    <p class="cd">arr.unshift(99);</p>
+    <br />
+    <p class="cm">// shift() - Remove first value</p>
+    <p class="cd">arr.shift();</p>
+    <br />
+    <p class="cm">// reverse() - Reverse an array</p>
+    <p class="cd">arr.reverse();</p>
+    <br />
+    <p class="cm">// includes() - Check to see if something is in the array</p>
+    <p class="cd">x = arr.includes(445);</p>
+    <br />
+    <p class="cm">// indexOf() - Return the index of the first match</p>
+    <p class="cd">x = arr.indexOf(28);</p>
+    <br />
+    <p class="cm">// Return array as a string</p>
+    <p class="cd">x = arr.toString();</p>
+    <p class="cd">x = arr.join();</p>
+    <br />
+    <p class="cm">// slice() returns selected elements in an array, as a new array. Slice takes in the index of the first element and the index of the last element to be included in the new array.
+    </p>
+    <p class="cd">x = arr.slice(1, 4);</p>
+    <br />
+    <p class="cm">// splice() works like slice() except it takes the index of the first element and the number of elements after that as a second argument. it also mutates the original array where slice() does not
+    </p>
+    <p class="cd">x = arr.splice(1, 4);</p>
+    <br />
+    <p class="cm">// Remove a single element/value - The following will mutate the original array by taking out the element with the index of 4. x will be equal to a new array with that plucked out value.
+    </p>
+    <p class="cd">x = arr.splice(4, 1);</p>
+    <br />
+    <p class="cm">// Chaining methods - Some methods can be chained depending on the return value.
+    </p>
+    <p class="cd">x = arr.slice(1, 4).reverse().toString().charAt(0);</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cd">let x;</p>
+    <br>
+    <p class="cd"><i>27. Nesting, Concat & Spread Operator</i></p>  
+    <br />
+    <p class="cd">const fruits = ['apple', 'pear', 'orange'];</p>
+    <p class="cd">const berries = ['strawberry', 'blueberry', 'rasberry'];</p>
+    <br />
+    <p class="cm">// Nesting arrays</p>
+    <br />
+    <p class="cm">// Nesting berries inside of fruits</p>
+    <p class="cd">fruits.push(berries);</p>
+    <br />
+    <p class="cm">// Now we can access 'blueberry' with the following</p>
+    <p class="cd">x = fruits[3][1];</p>
+    <br />
+    <p class="cm">// Create a new variable and nest both arrays</p>
+    <p class="cd">const allFruits = [fruits, berries];</p>
+    <br />
+    <p class="cd">x = allFruits[1][2];</p>
+    <br />
+    <p class="cm">// concat() - Concatenate arrays</p>
+    <p class="cd">x = fruits.concat(berries);</p>
+    <br />
+    <p class="cm">// spread operator (...) - Concatenate with</p>
+    <p class="cd">x = [...fruits, ...berries];</p>
+    <br />
+    <p class="cm">// flat() - Flatten an array</p>
+    <p class="cd">const arr = [1, 2, [3, 4, 5], 6, [7, 8]];</p>
+    <p class="cd">x = arr.flat();</p>
+    <br />
+    <p class="cm">// Static methods of Array object</p>
+    <br />
+    <p class="cm">// isArray() - Check is is an array</p>
+    <p class="cd">x = Array.isArray(fruits);</p>
+    <br />
+    <p class="cm">// from() - Create an array from an array like value</p>
+    <p class="cd">x = Array.from('12345');</p>
+    <br />
+    <p class="cm">// of() - Create an array from a set of values</p>
+    <p class="cd">const a = 1;</p>
+    <p class="cd">const b = 2;</p>
+    <p class="cd">const c = 3;</p>
+    <br />
+    <p class="cd">x = Array.of(a, b, c);</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cd"><i>28. Array Challenge</i></p>
+    <br>  
+    <p class="cm">// Challenge 1</p>
+    <br />
+    <p class="cd">const arr = [1, 2, 3, 4, 5];</p>
+    <br />
+    <p class="cm">// arr.reverse();</p>
+    <p class="cm">// arr.push(0);</p>
+    <p class="cm">// arr.unshift(6);</p>
+    <br />
+    <p class="cm">// Same result as above</p>
+    <p class="cd">arr.push(6);</p>
+    <p class="cd">arr.unshift(0);</p>
+    <p class="cd">arr.reverse();</p>
+    <br />
+    <p class="cd">console.log(arr);</p>
+    <br />
+    <p class="cm">// Challenge 2</p>
+    <br />
+    <p class="cd">const arr1 = [1, 2, 3, 4, 5];</p>
+    <p class="cd">const arr2 = [5, 6, 7, 8, 9, 10];</p>
+    <br />
+    <p class="cm">// Solution 1</p>
+    <p class="cd">const arr3 = arr1.slice(0, 4).concat(arr2);</p>
+    <br />
+    <p class="cm">// Solution 2</p>
+    <p class="cd">const arr4 = [...arr1, ...arr2];</p>
+    <p class="cd">arr4.splice(4, 1);</p>
+    <br />
+    <p class="cd">console.log(arr4);</p>
+    <br />
+    <p class="cd"><i>29. Object Literals</i></p>
+    <br>  
+    <p class="cd">let x;</p>
+    <br />
+    <p class="cm">// Creating an object</p>
+    <p class="cd">const person = {</p>
+    <p class="cd">name: 'John Doe',</p>
+    <p class="cd">age: 30,</p>
+    <p class="cd">isAdmin: true,</p>
+    <p class="cd">address: {</p>
+    <p class="cd">street: '123 Main st',</p>
+    <p class="cd">city: 'Boston',</p>
+    <p class="cd">state: 'MA',</p>
+    <p class="cd">},</p>
+    <p class="cd">hobbies: ['music', 'sports'],</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cm">// Accessing object properties</p>
+    <p class="cd">x = person.name; // Dot notation</p>
+    <p class="cd">x = person['age']; // Bracket notation</p>
+    <p class="cd">x = person.address.state;</p>
+    <p class="cd">x = person.hobbies[0];</p>
+    <br />
+    <p class="cm">// Updating properties</p>
+    <p class="cd">person.name = 'Jane Doe';</p>
+    <p class="cd">person['isAdmin'] = false;</p>
+    <br />
+    <p class="cm">// Deleting properties</p>
+    <p class="cd">delete person.age;</p>
+    <br />
+    <p class="cm">// Create new properties</p>
+    <p class="cd">person.hasChildren = true;</p>
+    <br />
+    <p class="cm">// Add functions</p>
+    <p class="cd">person.greet = function () {</p>
+    <p class="cd">console.log(`Hello, my name is ${this.name}`);</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">person.greet();</p>
+    <br />
+    <p class="cm">// Keys with multiple words</p>
+    <p class="cd">const person2 = {</p>
+    <p class="cd">first name': 'Brad',</p>
+    <p class="cd">last name': 'Traversy',</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">x = person2['first name'];</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cd"><i>30. Object Spread Operator & Methods  </i></p>
+    <br>  
+    <p class="cd">let x;</p>
+    <br />
+    <p class="cm">// Create object using the object constructor</p>
+    <p class="cd">const todo = new Object();</p>
+    <br />
+    <p class="cd">todo.id = 1;</p>
+    <p class="cd">todo.name = 'Buy Milk';</p>
+    <p class="cd">todo.completed = false;</p>
+    <br />
+    <p class="cd">x = todo;</p>
+    <br />
+    <p class="cm">// Object Nesting</p>
+    <p class="cd">const person = {</p>
+    <p class="cd">&nbsp;&nbsp;address: {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;coords: {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lat: 42.9384,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lng: -71.3232,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">x = person.address.coords.lat;</p>
+    <br />
+    <p class="cd">const obj1 = { a: 1, b: 2 };</p>
+    <p class="cd">const obj2 = { c: 3, d: 4 };</p>
+    <br />
+    <p class="cm">// Spread operator</p>
+    <p class="cd">const obj3 = { ...obj1, ...obj2 };</p>
+    <p class="cm">// Same as using ...</p>
+    <p class="cd">const obj4 = Object.assign({}, obj1, obj2);</p>
+    <br />
+    <p class="cm">// Array of objects</p>
+    <p class="cd">const todos = [</p>
+    <p class="cd">&nbsp;&nbsp;{ id: 1, name: 'Buy Milk' },</p>
+    <p class="cd">&nbsp;&nbsp;{ id: 2, name: 'Pickup kids from school' },</p>
+    <p class="cd">&nbsp;&nbsp;{ id: 3, name: 'Take out trash' },</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cd">x = todos[0].name;</p>
+    <br />
+    <p class="cm">// Get array of object keys</p>
+    <p class="cd">x = Object.keys(todo);</p>
+    <br />
+    <p class="cm">// Get length of an object</p>
+    <p class="cd">x = Object.keys(todo).length;</p>
+    <br />
+    <p class="cm">// Get array of object values</p>
+    <p class="cd">x = Object.values(todo);</p>
+    <br />
+    <p class="cm">// Get array of object key/value pairs</p>
+    <p class="cd">x = Object.entries(todo);</p>
+    <br />
+    <p class="cm">// Check if object has a property</p>
+    <p class="cd">x = todo.hasOwnProperty('age');</p>
+    <br />
+    <p class="cd">console.log(x);</p>
+    <br />
+    <p class="cd"><i>31. Destructuring & Naming</i></p>
+    <br>  
+    <p class="cm">// Setting object properties with the same name as a variable</p>
+    <p class="cd">const firstName = 'John';</p>
+    <p class="cd">const lastName = 'Doe';</p>
+    <p class="cd">const age = 30;</p>
+    <br />
+    <p class="cd">const person = {</p>
+    <p class="cd">&nbsp;&nbsp;firstName,</p>
+    <p class="cd">&nbsp;&nbsp;lastName,</p>
+    <p class="cd">&nbsp;&nbsp;age,</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">console.log(person.age);</p>
+    <br />
+    <p class="cm">// Destructuring object properties</p>
+    <br />
+    <p class="cd">const todo = {</p>
+    <p class="cd">&nbsp;&nbsp;id: 1,</p>
+    <p class="cd">&nbsp;&nbsp;title: 'Take out trash',</p>
+    <p class="cd">&nbsp;&nbsp;user: {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;name: 'John',</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">const {</p>
+    <p class="cd">&nbsp;&nbsp;id: todoId, // rename id to todoId</p>
+    <p class="cd">&nbsp;&nbsp;title,</p>
+    <p class="cd">&nbsp;&nbsp;user: { name }, // destructuring multiple levels</p>
+    <p class="cd">} = todo;</p>
+    <br />
+    <p class="cd">console.log(todoId);</p>
+    <br />
+    <p class="cm">// Destructuring arrays & using the rest/spread operator</p>
+    <p class="cd">const numbers = [23, 67, 33, 49, 52];</p>
+    <br />
+    <p class="cd">const [first, second, ...rest] = numbers;</p>
+    <br />
+    <p class="cd">console.log(first, second, rest);</p>
+    <br />
+    <p class="cd">const post = {</p>
+    <p class="cd">&nbsp;&nbsp;id: 1,</p>
+    <p class="cd">&nbsp;&nbsp;title: 'Post One',</p>
+    <p class="cd">&nbsp;&nbsp;body: 'This is the body',</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cm">// Convert to JSON string</p>
+    <p class="cd">const str = JSON.stringify(post);</p>
+    <br />
+    <p class="cd">console.log(str.id);</p>
+    <br />
+    <p class="cm">// Parse JSON</p>
+    <p class="cd">const obj = JSON.parse(str);</p>
+    <br />
+    <p class="cd">console.log(obj.id);</p>
+    <br />
+    <p class="cd"><i>32. JSON Intro</i></p>
+    <br>  
+    <p class="cm">// JSON & arrays</p>
+    <p class="cd">const posts = [</p>
+    <p class="cd">&nbsp;&nbsp;{</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;id: 1,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'Post One',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;body: 'This is the body',</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;{</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;id: 2,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'Post Two',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;body: 'This is the body',</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cd">const str2 = JSON.stringify(posts);</p>
+    <br />
+    <p class="cd">console.log(str2);</p>
+    <br />
+    <p class="cd"><i>33. Object Challenge</i></p>  
+    <br>  
+    <p class="cm">// Step 1</p>
+    <p class="cd">const library = [</p>
+    <p class="cd">&nbsp;&nbsp;{</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'The Road Ahead',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;author: 'Bill Gates',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;status: {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;own: true,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reading: false,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read: false,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;{</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'Steve Jobs',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;author: 'Walter Isaacson',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;status: {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;own: true,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reading: false,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read: false,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;{</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;title: 'Mockingjay',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;author: 'Suzanne Collins',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;status: {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;own: true,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reading: false,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read: false,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;},</p>
+    <p class="cd">&nbsp;&nbsp;},</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cm">// Step 2</p>
+    <p class="cd">library[0].status.read = true;</p>
+    <p class="cd">library[1].status.read = true;</p>
+    <p class="cd">library[2].status.read = true;</p>
+    <br />
+    <p class="cm">// Step 3</p>
+    <p class="cd">const { title: firstBook } = library[0];</p>
+    <br />
+    <p class="cd">console.log(firstBook);</p>
+    <br />
+    <p class="cm">// Step 4</p>
+    <p class="cd">const libraryJSON = JSON.stringify(library);</p>
+    <br />
+    <p class="cd">console.log(libraryJSON);</p>
+    <br />
+    <p class="cd"><i>35. Function Basics</i></p>
+    <br>  
+    <p class="cm">// Define a function</p>
+    <p class="cd">function sayHello() {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Hello World');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Invoke, execute or call a function</p>
+    <p class="cd">sayHello();</p>
+    <br />
+    <p class="cm">// Define a function with parameters</p>
+    <p class="cd">function add(num1, num2) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(num1 + num2);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Invoke function with arguments</p>
+    <p class="cd">add(5, 10);</p>
+    <br />
+    <p class="cm">// Parameters vs. Arguments</p>
+    <p class="cm">// Parameters are the names of the variables that are used to pass data into a function.
+    </p>
+    <p class="cm">// Arguments are the values that are passed into the function</p>
+    <br />
+    <p class="cm">// Returning a value</p>
+    <p class="cd">function subtract(num1, num2) {</p>
+    <p class="cd">&nbsp;&nbsp;return num1 - num2;</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;console.log('After the return');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Assign the returned value to a variable</p>
+    <p class="cd">const result = subtract(10, 2);</p>
+    <br />
+    <p class="cd">console.log(result, subtract(20, 5));</p>
+    <br />
+    <p class="cd"><i>36. More on Params & Arguments</i></p>
+    <br>  
+    <p class="cm">// Default Params</p>
+    <p class="cd">function registerUser(user = 'Bot') {</p>
+    <p class="cm">&nbsp;&nbsp;// Old way - before using `=`</p>
+    <p class="cm">&nbsp;&nbsp;// if (!user) {</p>
+    <p class="cm">&nbsp;&nbsp;// user = 'Bot';</p>
+    <p class="cm">&nbsp;&nbsp;// }</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;return user + ' is registered';</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">console.log(registerUser());</p>
+    <br />
+    <p class="cm">// Rest Params</p>
+    <p class="cd">function sum(...numbers) {</p>
+    <p class="cd">&nbsp;&nbsp;let total = 0;</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;for (const num of numbers) {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;total += num;</p>
+    <p class="cd">&nbsp;&nbsp;}</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;return total;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">console.log(sum(1, 2, 3, 4, 5, 6, 100));</p>
+    <br />
+    <p class="cm">// Objects as params</p>
+    <p class="cd">function loginUser(user) {</p>
+    <p class="cd">&nbsp;&nbsp;return `The user ${user.name} with the id of ${user.id} is logged in`;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">const user = {</p>
+    <p class="cd">&nbsp;&nbsp;id: 1,</p>
+    <p class="cd">&nbsp;&nbsp;name: 'John',</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">console.log(loginUser(user));</p>
+    <p class="cd">console.log(</p>
+    <p class="cd">&nbsp;&nbsp;loginUser({</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;id: 2,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;name: 'Sara',</p>
+    <p class="cd">&nbsp;&nbsp;})</p>
+    <p class="cd">);</p>
+    <br />
+    <p class="cm">// Arrays as params</p>
+    <p class="cd">function getRandom(arr) {</p>
+    <p class="cd">&nbsp;&nbsp;const randomIndex = Math.floor(Math.random() * arr.length);</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;const item = arr[randomIndex];</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;console.log(item);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">getRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);</p>
+    <br />
+    <p class="cd"><i>37. Global & Function Scope</i></p>
+    <br>  
+    <p class="cm">// 'window' is globally scoped</p>
+    <p class="cm">// alert('Hello');</p>
+    <p class="cm">// console.log(innerWidth);</p>
+    <br>
+    <p class="cm">// Global scope variable</p>
+    <p class="cd">const x = 100;</p>
+    <br>
+    <p class="cd">console.log(x, 'in global');</p>
+    <br>
+    <p class="cd">function run() {</p>
+    <p class="cm">&nbsp;&nbsp;// Access global vars in functions</p>
+    <p class="cd">&nbsp;&nbsp;console.log(window.innerHeight);</p>
+    <p class="cd">&nbsp;&nbsp;console.log(x, 'in function');</p>
+    <p class="cd">}</p>
+    <br>
+    <p class="cd">run();</p>
+    <br>
+    <p class="cm">// Access global vars in blocks</p>
+    <p class="cd">if (true) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(x, 'in block');</p>
+    <p class="cd">}</p>
+    <br>
+    <p class="cd">function add() {</p>
+    <p class="cm">&nbsp;&nbsp;// Overwriting global x (variable shadowing)</p>
+    <p class="cd">&nbsp;&nbsp;const x = 1;</p>
+    <p class="cd">&nbsp;&nbsp;const y = 50;</p>
+    <p class="cd">&nbsp;&nbsp;console.log(x + y);</p>
+    <p class="cd">}</p>
+    <br>
+    <p class="cm">// Can not access a function scoped variable in global scope</p>
+    <p class="cd">console.log(y);</p>
+    <br>
+    <p class="cd">add();</p>
+    <br>
+    <p class="cd"><i>38. Block Scope</i></p>
+    <br> 
+    <p class="cd">const x = 100;</p>
+    <br>
+    <p class="cm">// An If statement is a block</p>
+    <p class="cd">if (true) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(x);</p>
+    <p class="cd">&nbsp;&nbsp;const y = 200;</p>
+    <p class="cd">&nbsp;&nbsp;console.log(x + y);</p>
+    <p class="cd">}</p>
+    <br>
+    <p class="cm">// console.log(y); // ReferenceError: y is not defined</p>
+    <br>
+    <p class="cm">// A loop is a block</p>
+    <p class="cd">for (let i = 0; i <= 10; i++) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(i);</p>
+    <p class="cd">}</p>
+    <br>
+    <p class="cm">// console.log(i); // ReferenceError: i is not defined</p>
+    <br>
+    <p class="cm">// Using var</p>
+    <p class="cd">if (true) {</p>
+    <p class="cd">&nbsp;&nbsp;const a = 500;</p>
+    <p class="cd">&nbsp;&nbsp;let b = 600;</p>
+    <p class="cd">&nbsp;&nbsp;var c = 700;</p>
+    <p class="cd">}</p>
+    <br>
+    <p class="cd">console.log(c);</p>
+    <br>
+    <p class="cm">// var IS function scoped</p>
+    <p class="cd">function run() {</p>
+    <p class="cd">&nbsp;&nbsp;var d = 100;</p>
+    <p class="cd">&nbsp;&nbsp;console.log(d);</p>
+    <p class="cd">}</p>
+    <br>
+    <p class="cd">run();</p>
+    <br>
+    <p class="cm">// console.log(d);</p>
+    <br>
+    <p class="cd">const foo = 1;</p>
+    <p class="cd">var bar = 2; // Put on the window object</p>
+    <br>  
+    <br>
+    <p class="cd"><i>39. Nested Scope</i></p>
+    <br>  
+    <p class="cd">function first() {</p>
+    <p class="cd">&nbsp;&nbsp;const x = 100;</p>
+    <br>
+    <p class="cd">&nbsp;&nbsp;function second() {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;const y = 200;</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;console.log(x + y);</p>
+    <p class="cd">&nbsp;&nbsp;}</p>
+    <br>
+    <p class="cm">&nbsp;&nbsp;// console.log(y);</p>
+    <br>
+    <p class="cd">&nbsp;&nbsp;second();</p>
+    <p class="cd">}</p>
+    <br>
+    <p class="cd">first();</p>
+    <br>
+    <p class="cd">if (true) {</p>
+    <p class="cd">&nbsp;&nbsp;const x = 100;</p>
+    <br>
+    <p class="cd">&nbsp;&nbsp;if (x === 100) {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;const y = 200;</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;console.log(x + y);</p>
+    <p class="cd">&nbsp;&nbsp;}</p>
+    <br>
+    <p class="cm">&nbsp;&nbsp;// console.log(y);</p>
+    <p class="cd">}</p>
+    <br>
+    <p class="cd"><i>40. Declaration vs Expression</i></p>
+    <br>
+    <p class="cm">// Function Declaration</p>
+    <p class="cd">function addDollarSign(value) {</p>
+    <p class="cd">&nbsp;&nbsp;return '$' + value;</p>
+    <p class="cd">}</p>
+    <br>
+    <p class="cm">// When using declarations, you can invoke the function before the declaration. With expressions, you can not</p>
+    <p class="cd">console.log(addDollarSign(100));</p>
+    <br>
+    <p class="cm">// Function Expression</p>
+    <p class="cd">const addPlusSign = function (value) {</p>
+    <p class="cd">&nbsp;&nbsp;return '+' + value;</p>
+    <p class="cd">};</p>
+    <br>
+    <p class="cd">console.log(addPlusSign(200));</p>
+    <br>  
+    <p class="cd"><i>41. Arrow Functions</i></p>  
+    <br>  
+    <p class="cm">// Normal function declaration</p>
+    <p class="cm">// function add(a, b) {</p>
+    <p class="cm">// &nbsp;&nbsp;return a + b;</p>
+    <p class="cm">// }</p>
+    <br />
+    <p class="cm">// Arrow function syntax</p>
+    <p class="cd">const add = (a, b) => {</p>
+    <p class="cd">&nbsp;&nbsp;return a + b;</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cm">// Implicit Return</p>
+    <p class="cd">const subtract = (a, b) => a - b;</p>
+    <br />
+    <p class="cm">// Can leave off () with a single param</p>
+    <p class="cd">const double = (a) => a * 2;</p>
+    <br />
+    <p class="cm">// Returning an object</p>
+    <p class="cd">const createObj = () => ({</p>
+    <p class="cd">&nbsp;&nbsp;name: 'Brad',</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">const numbers = [1, 2, 3, 4, 5];</p>
+    <br />
+    <p class="cd">numbers.forEach(function (n) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(n);</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cm">// Arrow function in a callback</p>
+    <p class="cd">numbers.forEach((n) => console.log(n));</p>
+    <br />
+    <p class="cd">console.log(add(1, 2));</p>
+    <p class="cd">console.log(subtract(10, 5));</p>
+    <p class="cd">console.log(double(10));</p>
+    <p class="cd">console.log(createObj());</p>
+    <br />
+    <p class="cd"><i>42. Immediately Invoked Function Expressions</i></p>
+    <br>
+    <p class="cd">const user = 'Brad';</p>
+    <p class="cd">console.log(user);</p>
+    <br />
+    <p class="cm">// IFFE Syntax (Has it's own scope and runs right away)</p>
+    <p class="cd">(function () {</p>
+    <p class="cd">&nbsp;&nbsp;const user = 'John';</p>
+    <p class="cd">&nbsp;&nbsp;console.log(user);</p>
+    <p class="cd">&nbsp;&nbsp;const hello = () => console.log('Hello from the IIFE');</p>
+    <p class="cd">&nbsp;&nbsp;hello();</p>
+    <p class="cd">})();</p>
+    <br />
+    <p class="cm">// Params</p>
+    <p class="cd">(function (name) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Hello ' + name);</p>
+    <p class="cd">})('Shawn');</p>
+    <br />
+    <p class="cm">// Named IIFE (Can only be called recursively)</p>
+    <p class="cd">(function hello() {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Hello');</p>
+    <p class="cd">})();</p>
+    <br />
+    <p class="cd"><i>43. Function Challenges</i></p>
+    <br>
+    <p class="cm">// Challenge 1</p>
+    <p class="cm">// function getCelsius(f) {</p>
+    <p class="cm">//&nbsp;&nbsp; const celsius = ((f - 32) * 5) / 9;</p>
+    <p class="cm">//&nbsp;&nbsp; return celsius;</p>
+    <p class="cm">// }</p>
+    <br />
+    <p class="cd">const getCelsius = (f) => ((f - 32) * 5) / 9;</p>
+    <br />
+    <p class="cd">console.log(`The temp is ${getCelsius(35)} \xB0C `);</p>
+    <br />
+    <p class="cm">// Challenge 2</p>
+    <p class="cd">function minMax(arr) {</p>
+    <p class="cd">&nbsp;&nbsp;const min = Math.min(...arr);</p>
+    <p class="cd">&nbsp;&nbsp;const max = Math.max(...arr);</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;return {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;min,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;max,</p>
+    <p class="cd">&nbsp;&nbsp;};</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">console.log(minMax([2, 31, 4, 5, 6]));</p>
+    <br />
+    <p class="cm">// Challenge 3</p>
+    <p class="cd">((length, width) => {</p>
+    <p class="cd">&nbsp;&nbsp;const area = length * width;</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;const output = `The area of a rectangle with a length of ${length} and a width of ${width} is ${area}.`;
+    </p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;console.log(output);</p>
+    <p class="cd">})(20, 10);</p>
+    <br />  
+    <p class="cd"><i>44. Execution Context</i></p>
+    <br>  
+    <p class="cm">// Go to 'sources' tab and add a breakpoint at the first line and step through to see the execution phase in action</p>
+    <p class="cd">const x = 100;</p>
+    <p class="cd">const y = 50;</p>
+    <br />
+    <p class="cd">function getSum(n1, n2) {</p>
+    <p class="cd">&nbsp;&nbsp;const sum = n1 + n2;</p>
+    <p class="cd">&nbsp;&nbsp;return sum;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">const sum1 = getSum(x, y);</p>
+    <p class="cd">const sum2 = getSum(10, 5);</p>
+    <br />
+    <p class="cd">console.log(sum1, sum2);</p>
+    <br /> 
+    <p class="cd"><i>46. The Call Stack</i></p>
+    <br>  
+    <p class="cm">// Open 'sources' tab and put a breakpoint at the first() function</p>
+    <br />
+    <p class="cm">// First Example</p>
+    <br />
+    <p class="cd">function first() {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('first...');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">function second() {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('second...');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">function third() {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('third...');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">first();</p>
+    <p class="cd">second();</p>
+    <p class="cd">third();</p>
+    <br />
+    <p class="cm">// Second Example</p>
+    <br />
+    <p class="cm">// function first() {</p>
+    <p class="cm">// &nbsp;&nbsp;console.log('first...');</p>
+    <p class="cm">// &nbsp;&nbsp;second();</p>
+    <p class="cm">// }</p>
+    <br />
+    <p class="cm">// function second() {</p>
+    <p class="cm">// &nbsp;&nbsp;console.log('second...');</p>
+    <p class="cm">// &nbsp;&nbsp;third();</p>
+    <p class="cm">// }</p>
+    <br />
+    <p class="cm">// function third() {</p>
+    <p class="cm">// &nbsp;&nbsp;console.log('third...');</p>
+    <p class="cm">// }</p>
+    <br />
+    <p class="cm">// first();</p>
+    <br />
+    <p class="cd"><i>48. If Statements</i></p>
+    <br>
+    <p class="cm">// If Statement Syntax</p>
+    <p class="cd">if (true) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('This is true');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">if (false) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('This is NOT true');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Evaluation expressions</p>
+    <p class="cd">const x = 10;</p>
+    <p class="cd">const y = 5;</p>
+    <br />
+    <p class="cd">if (x >= y) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(`${x} is greater than or equal to ${y}`);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">if (x === y) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(`${x} is equal to ${y}`);</p>
+    <p class="cd">} else {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(`${x} is NOT equal to ${y}`);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Block scope</p>
+    <p class="cd">if (x !== y) {</p>
+    <p class="cd">&nbsp;&nbsp;const z = 20;</p>
+    <p class="cd">&nbsp;&nbsp;console.log(`${z} is 20`);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">console.log(z); // Throw error</p>
+    <br />
+    <p class="cm">// Shorthand If/Else</p>
+    <p class="cd">if (x >= y)</p>
+    <p class="cd">&nbsp;&nbsp;console.log(`${x} is greater than or equal to ${y}`),</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;console.log('This is true');</p>
+    <p class="cd">else console.log('This is false');</p>
+    <br />
+    <p class="cd"><i>49. If Else & Nesting</i></p>
+    <br>
+    <p class="cd">const d = new Date(10, 30, 2022, 6, 0, 0);</p>
+    <p class="cd">const hour = d.getHours();</p>
+    <br />
+    <p class="cd">if (hour < 12) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Good Morning');</p>
+    <p class="cd">} else if (hour < 18) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Good Afternoon');</p>
+    <p class="cd">} else {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Good Night');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Nested If</p>
+    <p class="cd">if (hour < 12) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Good Morning');</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;if (hour === 6) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Wake Up!');</p>
+    <p class="cd">&nbsp;&nbsp;}</p>
+    <p class="cd">} else if (hour < 18) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Good Afternoon');</p>
+    <p class="cd">} else {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Good Night');</p>
+    <br />
+    <p class="cd">&nbsp;&nbsp;if (hour >= 20) {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;console.log('zzzzzzzz');</p>
+    <p class="cd">&nbsp;&nbsp;}</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">if (hour >= 7 && hour < 15) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('It is work time!');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">if (hour === 6 || hour === 20) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log('Brush your teeth!');</p>
+    <p class="cd">}</p>
+    <br />
+
+
+
+      
+    <p class="cd">INTEESQUE C (JS2)</p>
+    <p class="cm">// Loop through arrays</p>
+    <p class="cd">const items = ['book', 'table', 'chair', 'kite'];</p>
+    <p class="cd">const users = [{ name: 'Brad' }, { name: 'Kate' }, { name: 'Steve' }];</p>
+    <br />
+    <p class="cm">// for (const item of items) {</p>
+    <p class="cm">// console.log(item);</p>
+    <p class="cm">// }</p>
+    <br />  
+  </div>
+  <script>
+    const startScreen = document.getElementById('start-screen');
+    const reader = document.getElementById('reader');
+    startScreen.onclick = async () => {
+      startScreen.style.display = 'none';
+      reader.style.display = 'block';
+      if (document.documentElement.requestFullscreen) {
+        await document.documentElement.requestFullscreen();
+      }
+      setTimeout(() => {
+        window.scrollTo(0, document.body.scrollHeight);
+      }, 100); // even wachten tot layout klaar is
+    };
+    // Ways to declare a variable
+    // `var`, `let`, & `const`
+    
+    let firstName = 'John';
+    const lastName = 'Doe';
+    let age = 30;
+    
+    console.log(age);
+    
+    // Naming Conventions
+    // - Only letters, numbers, underscores and dollar signs
+    // - Can't start with a number
+    
+    // Multi-Word Formatting
+    // firstName = camelCase
+    // first_name = underscore
+    // FirstName = PascalCase
+    // firstname = lowercase
+    
+    // We can re-assign `let` variables. If you change `age` to use `const`, you will get an error
+    age = 31;
+    console.log(age);
+    
+    // With let, we can declare a value without assigning a value
+    let score;
+    score = 1;
+    console.log(score);
+    
+    if (true) {
+      score = score + 1;
+    }
+    
+    console.log(score);
+    
+    const x = 100;
+    
+    // We can not re-assign a const variable
+    // x = 200 // Will result in an error
+    
+    // We can still manipulate arrays and objects using const
+    const arr = [1, 2, 3, 4];
+    arr.push(5);
+    console.log(arr);
+    
+    const person = {
+      name: 'Brad',
+    };
+    person.name = 'John';
+    person.email = 'brad@gmail.com';
+    console.log(person);
+    
+    // Declare multiple values at once
+    let a, b, c;
+    
+    const d = 10,
+      e = 20,
+      f = 30;
+    
+    console.log(d);
+    console.log(a);
+    // String
+    const firstName2 = 'Sara';
+    
+    // Number
+    const age2 = 30;
+    const temp = 98.9;
+    
+    // Boolean
+    const hasKids = true;
+    
+    // Null
+    const aptNumber = null;
+    
+    // Undefined
+    // let score;
+    const score2 = undefined;
+    
+    // Symbol
+    const id = Symbol('id');
+    
+    // BigInt
+    const n = 9007199254740991n;
+    
+    // Reference Types
+    
+    const numbers = [1, 2, 3, 4];
+    
+    const person2 = {
+      name: 'Brad',
+    };
+    
+    function sayHello() {
+      console.log('Hello');
+    }
+    
+    const output = sayHello;
+    
+    console.log(output, typeof output);
+    
+    // More info on why typeof null == object
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof#typeof_null
+    
+    //  More info on the "function object" type
+    // https://262.ecma-international.org/5.1/#sec-11.4.3
+    // Value is stored in the stack
+    const name5 = 'John';
+    const age5 = 30;
+    
+    // Reference is stored in the heap
+    const person5 = {
+      name: 'Brad',
+      age: 40,
+    };
+    
+    let newName5 = name5;
+    newName5 = 'Jonathan';
+    
+    let newPerson5 = person5;
+    newPerson5.name = 'Bradley';
+    
+    console.log(name5, newName5); // John, Jonathan
+    console.log(person5, newPerson5); // { name: 'Bradley', age: 40 }, { name: 'Bradley', age: 40 }
+
+    let amount = 'hello';
+
+    // Convert string to number
+    amount = parseInt(amount);
+    amount = +amount;
+    amount = Number(amount);
+    
+    // Convert number to string
+    amount = amount.toString();
+    amount = String(amount);
+    
+    // Convert string to decimal
+    amount = parseFloat(amount);
+    
+    // Convert number to boolean
+    amount = Boolean(amount);
+    
+    // Ways to get NaN
+    console.log(Math.sqrt(-1));
+    console.log(1 + NaN);
+    console.log(undefined + undefined);
+    console.log('foo' / 3);
+    
+    console.log(amount, typeof amount);
+
+    // 1. Arithmetic Operators
+
+    let x7;
+    
+    x7 = 5 + 5;
+    x7 = 5 - 5;
+    x7 = 5 * 5;
+    x7 = 5 / 5;
+    x7 = 7 % 5;
+    
+    // Concatenation
+    x7 = 'Hello' + ' ' + 'World';
+    
+    // Ex7ponent
+    x7 = 2 ** 3;
+    
+    // Increment
+    x7 = 1;
+    // x7 = x7 + 1;
+    x7++;
+    
+    // Decrement
+    // x7 = x7 - 1;
+    x7--;
+    
+    // 2. Assignment Operators
+    
+    x7 = 10;
+    
+    x7 += 5;
+    x7 -= 5;
+    x7 *= 5;
+    x7 /= 5;
+    x7 %= 5;
+    x7 **= 5;
+    
+    // 3. Comparison Operators
+    
+    // Equal to (Just the value, not the type)
+    x7 = 2 == '2';
+    
+    // Equal to (Type and value)
+    x7 = 2 === '2';
+    
+    // Not equal to (Just the value, not the type)
+    x7 = 2 != '2';
+    
+    // Not equal to (Type and value)
+    x7 = 2 !== 2;
+    
+    // Greater than and less than
+    x7 = 10 > 5;
+    x7 = 10 < 5;
+    x7 = 10 <= 5;
+    x7 = 10 >= 5;
+    
+    console.log(x7);
+
+    let x8;
+    
+    // Coerced to a string
+    x8 = 5 + '5';
+    
+    x8 = 5 + Number('5');
+    
+    // Coerced to a number
+    x8 = 5 * '5';
+    
+    // null is coerced to 0 as it is a `falsy` value
+    x8 = 5 + null;
+    
+    x8 = Number(null);
+    
+    x8 = Number(true);
+    x8 = Number(false);
+    
+    // true is coerced to a 1
+    x8 = 5 + true;
+    
+    // false is coerced to 0 (falsy)
+    x8 = 5 + false;
+    
+    // Undefined is coerced to 0 (falsy)
+    x8 = 5 + undefined;
+    
+    console.log(x8, typeof x8);
+    
+    let x9;
+    
+    const name9 = 'John';
+    const age9 = 31;
+    
+    // Concatenation
+    x9 = 'Hello, my name9 is ' + name9 + ' and I am ' + age9 + ' years old';
+    
+    // Template Literals
+    x9 = `Hello, my name9 is ${name9} and I am ${age9} years old`;
+    
+    // String Properties and Methods
+    
+    // Creating a "string object" (JS does this automatically when using a propery or method on a primitive string)
+    const s = new String('Hello World');
+    
+    x9 = typeof s;
+    
+    x9 = s.length;
+    
+    // Access value by key
+    x9 = s[0];
+    
+    // Shows the prototype of the string object. Shows the properties and methods
+    x9 = s.__proto__;
+    
+    // Change case
+    x9 = s.toUpperCase();
+    x9 = s.toLowerCase();
+    
+    // charAt() - returns the character at the specified index9
+    x9 = s.charAt(0);
+    
+    // index9Of - returns the index9 of the first occurrence of a specified value in a string
+    x9 = s.indexOf('d');
+    
+    // substring() - search a string for a specified value
+    x9 = s.substring(2, 5);
+    x9 = s.substring(7);
+    
+    // slice() - ex9tracts a part of a string and returns a new string
+    x9 = s.slice(-11, -6);
+    
+    // trim() - remove whitespace from beginning and end of string
+    x9 = '         Hello World';
+    x9 = x9.trim();
+    
+    // replace() - replace all instances of a string
+    x9 = s.replace('World', 'John');
+    
+    // includes() - returns true if the string is found
+    x9 = s.includes('Hell');
+    
+    // valueOf() - returns the primitive value of a variable
+    x9 = s.valueOf();
+    
+    // split() - returns an array of strings
+    x9 = s.split('');
+    
+    console.log(x9);
+
+    // Create a new string called "myNewString" that holds the value of "Developer", using the lowercase value from "myString"
+    const myString = 'developer';
+    
+    let myNewString;
+    
+    // Solution 1:
+    myNewString = myString.charAt(0).toUpperCase() + myString.substring(1);
+    // Solution 2:
+    myNewString = myString[0].toUpperCase() + myString.substring(1);
+    // Solution 3:
+    myNewString = `${myString[0].toUpperCase()}${myString.slice(1)}`;
+    
+    console.log(myNewString);
+
+    let x11;
+
+    const num11 = new Number(5);
+    
+    // toString() - returns a string representation of the number
+    x11 = num11.toString();
+    // To get the length
+    x11 = num11.toString().length;
+    
+    // toFix11ed() - returns a string representation of the number with a specified number of decimals
+    x11 = num11.toFixed(2);
+    
+    // toPrecision() - returns a number with the specified length
+    x11 = num11.toPrecision(3);
+    
+    // toEx11ponential() -  convert a number to ex11ponential notation and return its value as a string
+    x11 = num11.toExponential(2);
+    
+    // toLocaleString() - returns a string representation of the number, using the current locale
+    x11 = num11.toLocaleString('en-US');
+    
+    // valueOf - Get value
+    x11 = num11.valueOf();
+    
+    // The Number object itself has some properties and methods
+    
+    // Largest and smallest possible number
+    x11 = Number.MAx11_VALUE;
+    x11 = Number.MIN_VALUE;
+    
+    console.log(x11);
+
+    let x12;
+
+    // Square root
+    x12 = Math.sqrt(9);
+    
+    // Absolute value
+    x12 = Math.abs(-5);
+    
+    // Round
+    x12 = Math.round(4.2);
+    
+    // Round up
+    x12 = Math.ceil(4.2);
+    
+    // Round down
+    x12 = Math.floor(4.9);
+    
+    // Ex12ponent
+    x12 = Math.pow(2, 3);
+    
+    // Minimum number
+    x12 = Math.min(4, 5, 3);
+    
+    // Max12imum number
+    x12 = Math.max(4, 5, 3);
+    
+    // Get a random number/decimal between 0 and 1
+    x12 = Math.random();
+    
+    // Get a random number between 1 and 100
+    x12 = Math.floor(Math.random() * 100 + 1);
+    
+    console.log(x12);
+
+    const x13 = Math.floor(Math.random() * 100 + 1);
+    const y13 = Math.floor(Math.random() * 50 + 1);
+    
+    // Get the sum
+    const sum = x13 + y13;
+    const sumOutput = `${x13} + ${y13} = ${sum}`;
+    console.log(sumOutput);
+    
+    // Get the difference
+    const diff = x13 - y13;
+    const diffOutput = `${x13} - ${y13} = ${diff}`;
+    console.log(diffOutput);
+    
+    // Get the product
+    const prod = x13 * y13;
+    const prodOutput = `${x13} * ${y13} = ${prod}`;
+    console.log(prodOutput);
+    
+    // Get the quotient
+    const quot = x13 / y13;
+    const quotOutput = `${x13} / ${y13} = ${quot}`;
+    console.log(quotOutput);
+    
+    // Get the remainder
+    const rm = x13 % y13;
+    const rmOutput = `${x13} % ${y13} = ${rm}`;
+    console.log(rmOutput);
+
+    let d14;
+    
+    // Get today's date and time
+    d14 = new Date();
+    
+    // Set to a string
+    d14 = d14.toString();
+    
+    // Get a specific d14ate
+    // Important: the month is 0-based, so 0 is January and 11 is December
+    d14 = new Date(2021, 0, 10, 12, 30, 0);
+    
+    // Pass in a string
+    d14 = new Date('2021-07-10T12:30:00');
+    d14 = new Date('07/10/2021 12:30:00');
+    d14 = new Date('2022-07-10');
+    d14 = new Date('07-10-2022');
+    
+    // https://stackoverflow.com/questions/7556591/is-the-javascript-date-object-always-one-day-off
+    
+    // Get current timestamp
+    d14 = Date.now();
+    
+    // Get the timestamp of a specific date
+    d14 = new Date();
+    d14 = d14.getTime();
+    d14 = d14.valueOf();
+    
+    // Create a date from a timestamp
+    d14 = new Date(1666962049745);
+    
+    // Convert from milliseconds to seconds
+    d14 = Math.floor(Date.now() / 1000);
+    
+    console.log(d14);
+
+    let x15;
+    let d15 = new Date();
+    
+    // Date methods
+    
+    x15 = d15.toString();
+    
+    x15 = d15.getTime();
+    x15 = d15.valueOf();
+    
+    x15 = d15.getFullYear();
+    
+    x15 = d15.getMonth();
+    x15 = d15.getMonth() + 1;
+    
+    x15 = d15.getDate();
+    
+    x15 = d15.getDay();
+    
+    x15 = d15.getHours();
+    
+    x15 = d15.getMinutes();
+    
+    x15 = d15.getSeconds();
+    
+    x15 = d15.getMilliseconds();
+    
+    x15 = `${d15.getFullYear()}-${d15.getMonth() + 1}-${d15.getDate()}`;
+    
+    // Intl.DateTimeFormat API (locale specific)
+    x15 = Intl.DateTimeFormat('en-US').format(d15);
+    x15 = Intl.DateTimeFormat('en-GB').format(d15);
+    x15 = Intl.DateTimeFormat('default').format(d15);
+    
+    x15 = Intl.DateTimeFormat('default', { month: 'long' }).format(d15);
+    
+    x15 = d15.toLocaleString('default', { month: 'short' });
+    
+    x15 = d15.toLocaleString('default', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      timeZone: 'America/New_York',
+    });
+    
+    console.log(x15);
+
+    let x25;
+
+    // Array Literal
+    const numbers25 = [12, 45, 33, 29, 39, 102];
+    const mixed = [12, 'Hello', true, null];
+    
+    // Array Constructor
+    const fruits = new Array('apple', 'grape', 'orange');
+    
+    // Get value by index26
+    x25 = numbers25[0];
+    
+    x25 = numbers25[0] + numbers25[3];
+    
+    x25 = `My favorite fruit is an ${fruits[2]}`;
+    
+    x25 = numbers25.length;
+    
+    fruits[2] = 'pear';
+    
+    // length is not read-only
+    // fruits.length = 2;
+    
+    fruits[3] = 'strawberry';
+    
+    // Using the length as the index will always add on the the end
+    fruits[fruits.length] = 'blueberry';
+    fruits[fruits.length] = 'peach';
+    
+    x25 = fruits;
+    
+    console.log(x25);
+
+    let x26;
+
+    const arr26 = [28, 38, 44, 29, 109];
+    
+    // push() - Push a value on to the end of the array
+    arr26.push(100);
+    
+    // pop() - Take the last value off
+    arr26.pop();
+    
+    // unshift() - Add a value to the beginning of the array
+    arr26.unshift(99);
+    
+    // shift() - Remove first value
+    arr26.shift();
+    
+    // reverse() - Reverse an array
+    arr26.reverse();
+    
+    // includes() - Check to see if something is in the array
+    x26 = arr26.includes(445);
+    
+    // indexOf() - Return the index of the first match
+    x26 = arr26.indexOf(28);
+    
+    // Return array as a string
+    x26 = arr26.toString();
+    x26 = arr26.join();
+    
+    // slice() returns selected elements in an array, as a new array. Slice takes in the index of the first element and the index of the last element to be included in the new array.
+    x26 = arr26.slice(1, 4);
+    
+    // splice() works like slice() except it takes the index2of the first element and the number of elements after that as a second argument. it also mutates the original array where slice() does not
+    x26 = arr26.splice(1, 4);
+    
+    // Remove a single element/value - The following will mutate the original array by taking out the element with the index of 4. x will be equal to a new array with that plucked out value.
+    x26 = arr26.splice(4, 1);
+    
+    // Chaining methods - Some methods can be chained depending on the return value.
+    x26 = arr26.slice(1, 4).reverse().toString().charAt(0);
+    
+    console.log(x26);
+
+    let x27;
+
+    const fruits27 = ['apple', 'pear', 'orange'];
+    const berries = ['strawberry', 'blueberry', 'rasberry'];
+    
+    // Nesting arrays
+    
+    // Nesting berries inside of fruits
+    fruits27.push(berries);
+    
+    // Now we can access 'blueberry' with the following
+    x27 = fruits27[3][1];
+    
+    // Create a new variable and nest both arrays
+    const allfruits27 = [fruits27, berries];
+    
+    x27 = allfruits27[1][2];
+    
+    // concat() - Concatenate arrays
+    x27 = fruits27.concat(berries);
+    
+    // spread operator (...) - Concatenate with
+    x27 = [...fruits27, ...berries];
+    
+    // flat() - Flatten an array
+    const arr27 = [1, 2, [3, 4, 5], 6, [7, 8]];
+    x27 = arr27.flat();
+    
+    // Static methods of Array object
+    
+    // isArray() - Check is is an array
+    x27 = Array.isArray(fruits27);
+    
+    // from() - Create an array from an array like value
+    x27 = Array.from('12345');
+    
+    // of() - Create an array from a set of values
+    const a27 = 1;
+    const b27 = 2;
+    const c27 = 3;
+    
+    x27 = Array.of(a27, b27, c27);
+    
+    console.log(x27);
+
+    // Challenge 1
+
+    const arr28 = [1, 2, 3, 4, 5];
+    
+    // arr.reverse();
+    // arr.push(0);
+    // arr.unshift(6);
+    
+    // Same result as above
+    arr28.push(6);
+    arr28.unshift(0);
+    arr28.reverse();
+    
+    console.log(arr28);
+    
+    // Challenge 2
+    
+    const arr1 = [1, 2, 3, 4, 5];
+    const arr2 = [5, 6, 7, 8, 9, 10];
+    
+    // Solution 1
+    const arr3 = arr1.slice(0, 4).concat(arr2);
+    
+    // Solution 2
+    const arr4 = [...arr1, ...arr2];
+    arr4.splice(4, 1);
+    
+    console.log(arr4);
+
+    let x29;
+    
+    // Creating an object
+    const person29 = {
+      name: 'John Doe',
+      age: 30,
+      isAdmin: true,
+      address: {
+        street: '123 Main st',
+        city: 'Boston',
+        state: 'MA',
+      },
+      hobbies: ['music', 'sports'],
+    };
+    
+    // Accessing object properties
+    x29 = person29.name; // Dot notation
+    x29 = person29['age']; // Bracket notation
+    x29 = person29.address.state;
+    x29 = person29.hobbies[0];
+    
+    // Updating properties
+    person29.name = 'Jane Doe';
+    person29['isAdmin'] = false;
+    
+    // Deleting properties
+    delete person29.age;
+    
+    // Create new properties
+    person29.hasChildren = true;
+    
+    // Add functions
+    person29.greet = function () {
+      console.log(`Hello, my name is ${this.name}`);
+    };
+    
+    person29.greet();
+    
+    // Keys with multiple words
+    const person29a = {
+      'first name': 'Brad',
+      'last name': 'Traversy',
+    };
+    
+    x29 = person29a['first name'];
+    
+    console.log(x29);
+
+    let x30;
+
+    // Create object using the object constructor
+    const todo30 = new Object();
+    
+    todo30.id = 1;
+    todo30.name = 'Buy Milk';
+    todo30.completed = false;
+    
+    x30 = todo30;
+    
+    // Object Nesting
+    const person30 = {
+      address: {
+        coords: {
+          lat: 42.9384,
+          lng: -71.3232,
+        },
+      },
+    };
+    
+    x30 = person30.address.coords.lat;
+    
+    const obj1 = { a: 1, b: 2 };
+    const obj2 = { c: 3, d: 4 };
+    
+    // Spread operator
+    const obj3 = { ...obj1, ...obj2 };
+    // Same as using ...
+    const obj4 = Object.assign({}, obj1, obj2);
+    
+    // Array of objects
+    const todo30s = [
+      { id: 1, name: 'Buy Milk' },
+      { id: 2, name: 'Pickup kids from school' },
+      { id: 3, name: 'Take out trash' },
+    ];
+    
+    x30 = todo30s[0].name;
+    
+    // Get array of object keys
+    x30 = Object.keys(todo30);
+    
+    // Get length of an object
+    x30 = Object.keys(todo30).length;
+    
+    // Get array of object values
+    x30 = Object.values(todo30);
+    
+    // Get array of object key/value pairs
+    x30 = Object.entries(todo30);
+    
+    // Check if object has a property
+    x30 = todo30.hasOwnProperty('age');
+    
+    console.log(x30);
+
+    // Setting object properties with the same name as a variable
+    const firstName31 = 'John';
+    const lastName31 = 'Doe';
+    const age31 = 30;
+    
+    const person31 = {
+      firstName31,
+      lastName31,
+      age31,
+    };
+    
+    console.log(person31.age);
+    
+    // Destructuring object properties
+    
+    const todo31 = {
+      id: 1,
+      title: 'Take out trash',
+      user: {
+        name: 'John',
+      },
+    };
+    
+    const {
+      id: todoId, // rename id to todoId
+      title,
+      user: { name }, // destructuring multiple levels
+    } = todo31;
+    
+    console.log(todoId);
+    
+    // Destructuring arrays & using the rest/spread operator
+    const numbers31 = [23, 67, 33, 49, 52];
+    
+    const [first31, second31, ...rest] = numbers31;
+    
+    console.log(first31, second31, rest);
+
+    const post = {
+      id: 1,
+      title: 'Post One',
+      body: 'This is the body',
+    };
+    
+    // Convert to JSON string
+    const str = JSON.stringify(post);
+    
+    console.log(str.id);
+    
+    // Parse JSON
+    const obj32 = JSON.parse(str);
+    
+    console.log(obj32.id);
+    
+    // JSON & arrays
+    const posts = [
+      {
+        id: 1,
+        title: 'Post One',
+        body: 'This is the body',
+      },
+      {
+        id: 2,
+        title: 'Post Two',
+        body: 'This is the body',
+      },
+    ];
+    
+    const str2 = JSON.stringify(posts);
+    
+    console.log(str2);
+
+    // Step 1
+    const library = [
+      {
+        title: 'The Road Ahead',
+        author: 'Bill Gates',
+        status: {
+          own: true,
+          reading: false,
+          read: false,
+        },
+      },
+      {
+        title: 'Steve Jobs',
+        author: 'Walter Isaacson',
+        status: {
+          own: true,
+          reading: false,
+          read: false,
+        },
+      },
+      {
+        title: 'Mockingjay',
+        author: 'Suzanne Collins',
+        status: {
+          own: true,
+          reading: false,
+          read: false,
+        },
+      },
+    ];
+    
+    // Step 2
+    library[0].status.read = true;
+    library[1].status.read = true;
+    library[2].status.read = true;
+    
+    // Step 3
+    const { title: firstBook } = library[0];
+    
+    console.log(firstBook);
+    
+    // Step 4
+    const libraryJSON = JSON.stringify(library);
+    
+    console.log(libraryJSON);
+
+    // Define a function
+    function sayHello() {
+      console.log('Hello World');
+    }
+    
+    // Invoke, execute or call a function
+    sayHello();
+    
+    // Define a function with parameters
+    function add(num1, num2) {
+      console.log(num1 + num2);
+    }
+    
+    // Invoke function with arguments
+    add(5, 10);
+    
+    // Parameters vs. Arguments
+    // Parameters are the names of the variables that are used to pass data into a function.
+    // Arguments are the values that are passed into the function
+    
+    // Returning a value
+    function subtract(num1, num2) {
+      return num1 - num2;
+    
+      console.log('After the return');
+    }
+    
+    // Assign the returned value to a variable
+    const result = subtract(10, 2);
+    
+    console.log(result, subtract(20, 5));
+
+    // Default Params
+    function registerUser(user = 'Bot') {
+      // Old way - before using `=`
+      // if (!user) {
+      //   user = 'Bot';
+      // }
+    
+      return user + ' is registered';
+    }
+    
+    console.log(registerUser());
+    
+    // Rest Params
+    function sum36(...numbers) {
+      let total = 0;
+    
+      for (const num of numbers) {
+        total += num;
+      }
+    
+      return total;
+    }
+    
+    console.log(sum36(1, 2, 3, 4, 5, 6, 100));
+    
+    // Objects as params
+    function loginUser(user) {
+      return `The user ${user.name} with the id of ${user.id} is logged in`;
+    }
+    
+    const user = {
+      id: 1,
+      name: 'John',
+    };
+    
+    console.log(loginUser(user));
+    console.log(
+      loginUser({
+        id: 2,
+        name: 'Sara',
+      })
+    );
+    
+    // Arrays as params
+    function getRandom(arr) {
+      const randomIndex = Math.floor(Math.random() * arr.length);
+    
+      const item = arr[randomIndex];
+    
+      console.log(item);
+    }
+    
+    getRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+    // 'window' is globally scoped
+    // alert('Hello');
+    // console.log(innerWidth);
+    
+    // Global scope variable
+    const x37 = 100;
+    
+    console.log(x37, 'in global');
+    
+    function run() {
+      // Access global vars in functions
+      console.log(window.innerHeight);
+      console.log(x, 'in function');
+    }
+    
+    run();
+    
+    // Access global vars in blocks
+    if (true) {
+      console.log(x37, 'in block');
+    }
+    
+    function add() {
+      // Overwriting global x (variable shadowing)
+      const x37 = 1;
+      const y37 = 50;
+      console.log(x37 + y37);
+    }
+    
+    // Can not access a function scoped variable in global scope
+    // console.log(y37);
+    
+    add();
+
+    const x38 = 100;
+
+    // An If statement is a block
+    if (true) {
+      console.log(x38);
+      const y38 = 200;
+      console.log(x38 + y38);
+    }
+    
+    // console.log(y); // ReferenceError: y is not defined
+    
+    // A loop is a block
+    for (let i = 0; i <= 10; i++) {
+      console.log(i);
+    }
+    
+    // console.log(i); // ReferenceError: i is not defined
+    
+    // Using var
+    if (true) {
+      const a = 500;
+      let b = 600;
+      var c38 = 700;
+    }
+    
+    console.log(c38);
+    
+    // var IS function scoped
+    function run() {
+      var d = 100;
+      console.log(d);
+    }
+    
+    run();
+    
+    // console.log(d);
+    
+    const foo = 1;
+    var bar = 2; // Put on the window object
+
+    function first() {
+      const x = 100;
+    
+      function second() {
+        const y = 200;
+        console.log(x + y);
+      }
+    
+      // console.log(y);
+    
+      second();
+    }
+    
+    first();
+    
+    if (true) {
+      const x = 100;
+    
+      if (x === 100) {
+        const y = 200;
+        console.log(x + y);
+      }
+    
+     // console.log(y);
+    }
+
+    // Function Declaration
+    function addDollarSign(value) {
+      return '$' + value;
+    }
+    
+    // When using declarations, you can invoke the function before the declaration. With expressions, you can not
+    console.log(addDollarSign(100));
+    
+    // Function Expression
+    const addPlusSign = function (value) {
+      return '+' + value;
+    };
+    
+    console.log(addPlusSign(200));
+
+    //  Normal function declaration
+    // function add(a, b) {
+    //   return a + b;
+    // }
+    
+    // Arrow function syntax
+    const add41 = (a, b) => {
+      return a + b;
+    };
+    
+    // Implicit Return
+    const subtract41 = (a, b) => a - b;
+    
+    // Can leave off () with a single param
+    const double = (a) => a * 2;
+    
+    // Returning an object
+    const createObj = () => ({
+      name: 'Brad',
+    });
+    
+    const numbers41 = [1, 2, 3, 4, 5];
+    
+    numbers41.forEach(function (n) {
+      console.log(n);
+    });
+    
+    // Arrow function in a callback
+    numbers41.forEach((n) => console.log(n));
+    
+    console.log(add41(1, 2));
+    console.log(subtract41(10, 5));
+    console.log(double(10));
+    console.log(createObj());
+
+    const user42 = 'Brad';
+    console.log(user42);
+    
+    // IFFE Syntax (Has it's own scope and runs right away)
+    (function () {
+      const user = 'John';
+      console.log(user);
+      const hello = () => console.log('Hello from the IIFE');
+      hello();
+    })();
+    
+    // Params
+    (function (name) {
+      console.log('Hello ' + name);
+    })('Shawn');
+    
+    // Named IIFE (Can only be called recursively)
+    (function hello() {
+      console.log('Hello');
+    })();
+
+    // Challenge 1
+    // function getCelsius(f) {
+    //   const celsius = ((f - 32) * 5) / 9;
+    //   return celsius;
+    // }
+    
+    const getCelsius = (f) => ((f - 32) * 5) / 9;
+    
+    console.log(`The temp is ${getCelsius(35)} \xB0C `);
+    
+    // Challenge 2
+    function minMax(arr) {
+      const min = Math.min(...arr);
+      const max = Math.max(...arr);
+    
+      return {
+        min,
+        max,
+      };
+    }
+    
+    console.log(minMax([2, 31, 4, 5, 6]));
+    
+    // Challenge 3
+    ((length, width) => {
+      const area = length * width;
+    
+      const output = `The area of a rectangle with a length of ${length} and a width of ${width} is ${area}.`;
+    
+      console.log(output);
+    })(20, 10);
+
+    //  Go to 'sources' tab and add a breakpoint at the first line and step through to see the execution phase in action
+    const x44 = 100;
+    const y44 = 50;
+    
+    function getSum(n1, n2) {
+      const sum = n1 + n2;
+      return sum;
+    }
+    
+    const sum1 = getSum(x44, y44);
+    const sum2 = getSum(10, 5);
+    
+    console.log(sum1, sum2);
+
+    // Open 'sources' tab and put a breakpoint at the first() function
+
+    // First Example
+    
+    function first() {
+      console.log('first...');
+    }
+    
+    function second() {
+      console.log('second...');
+    }
+    
+    function third() {
+      console.log('third...');
+    }
+    
+    first();
+    second();
+    third();
+    
+    // Second Example
+    
+    // function first() {
+    //   console.log('first...');
+    //   second();
+    // }
+    
+    // function second() {
+    //   console.log('second...');
+    //   third();
+    // }
+    
+    // function third() {
+    //   console.log('third...');
+    // }
+    
+    // first();
+
+    // If Statement Syntax
+    if (true) {
+      console.log('This is true');
+    }
+    
+    if (false) {
+      console.log('This is NOT true');
+    }
+    
+    // Evaluation expressions
+    const x48 = 10;
+    const y48 = 5;
+    
+    if (x48 >= y48) {
+      console.log(`${x48} is greater than or equal to ${y48}`);
+    }
+    
+    if (x48 === y48) {
+      console.log(`${x48} is equal to ${y48}`);
+    } else {
+      console.log(`${x48} is NOT equal to ${y48}`);
+    }
+    
+    // Block scope
+    if (x48 !== y48) {
+      const z = 20;
+      console.log(`${z} is 20`);
+    }
+    
+    // Throw error console.log(z); 
+    
+    // Shorthand If/Else
+    if (x48 >= y48)
+      console.log(`${x48} is greater than or equal to ${y48}`),
+        console.log('This is true');
+    else console.log('This is false');
+
+    function f49() {
+      const d = new Date(10, 30, 2022, 6, 0, 0);
+      const hour = d.getHours();
+      
+      if (hour < 12) {
+        console.log('Good Morning');
+      } else if (hour < 18) {
+        console.log('Good Afternoon');
+      } else {
+        console.log('Good Night');
+      }
+      
+      // Nested If
+      if (hour < 12) {
+        console.log('Good Morning');
+      
+        if (hour === 6) {
+          console.log('Wake Up!');
+        }
+      } else if (hour < 18) {
+        console.log('Good Afternoon');
+      } else {
+        console.log('Good Night');
+      
+        if (hour >= 20) {
+          console.log('zzzzzzzz');
+        }
+      }
+      
+      if (hour >= 7 && hour < 15) {
+        console.log('It is work time!');
+      }
+      
+      if (hour === 6 || hour === 20) {
+        console.log('Brush your teeth!');
+      }
+    }
+    f49();
+  </script>
+</body>
+</html>
