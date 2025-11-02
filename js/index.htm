@@ -1449,6 +1449,44 @@
     <p class="cd">&emsp;&emsp;console.log('Brush your teeth!');</p>
     <p class="cd">}</p>
     <br />
+    <p class="cd"><i>50. Switches</i></p>
+    <br>
+        <p class="cd">const d = new Date(10, 30, 2022, 6, 0, 0);</p>
+    <p class="cd">const hour = d.getHours();</p>
+    <br />
+    <p class="cd">if (hour < 12) {</p>
+    <p class="cd">&emsp;&emsp;console.log('Good Morning');</p>
+    <p class="cd">} else if (hour < 18) {</p>
+    <p class="cd">&emsp;&emsp;console.log('Good Afternoon');</p>
+    <p class="cd">} else {</p>
+    <p class="cd">&emsp;&emsp;console.log('Good Night');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Nested If</p>
+    <p class="cd">if (hour < 12) {</p>
+    <p class="cd">&emsp;&emsp;console.log('Good Morning');</p>
+    <br />
+    <p class="cd">&emsp;&emsp;if (hour === 6) {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log('Wake Up!');</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <p class="cd">} else if (hour < 18) {</p>
+    <p class="cd">&emsp;&emsp;console.log('Good Afternoon');</p>
+    <p class="cd">} else {</p>
+    <p class="cd">&emsp;&emsp;console.log('Good Night');</p>
+    <br />
+    <p class="cd">&emsp;&emsp;if (hour >= 20) {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log('zzzzzzzz');</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">if (hour >= 7 && hour < 15) {</p>
+    <p class="cd">&emsp;&emsp;console.log('It is work time!');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">if (hour === 6 || hour === 20) {</p>
+    <p class="cd">&emsp;&emsp;console.log('Brush your teeth!');</p>
+    <p class="cd">}</p>
+    <br />  
 
 
 
@@ -2756,6 +2794,44 @@
       }
     }
     f49();
+    function switches50() {
+      const d = new Date(10, 30, 2022, 6, 0, 0);
+      const hour = d.getHours();
+      
+      if (hour < 12) {
+        console.log('Good Morning');
+      } else if (hour < 18) {
+        console.log('Good Afternoon');
+      } else {
+        console.log('Good Night');
+      }
+      
+      // Nested If
+      if (hour < 12) {
+        console.log('Good Morning');
+      
+        if (hour === 6) {
+          console.log('Wake Up!');
+        }
+      } else if (hour < 18) {
+        console.log('Good Afternoon');
+      } else {
+        console.log('Good Night');
+      
+        if (hour >= 20) {
+          console.log('zzzzzzzz');
+        }
+      }
+      
+      if (hour >= 7 && hour < 15) {
+        console.log('It is work time!');
+      }
+      
+      if (hour === 6 || hour === 20) {
+        console.log('Brush your teeth!');
+      }
+    }
+    switches50();
   </script>
 </body>
 </html>
