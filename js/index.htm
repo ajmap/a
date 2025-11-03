@@ -1510,8 +1510,99 @@
     <br />
     <p class="cd">calculator(5, 2, '&');</p>
     <br />  
-
-
+    <p class="cd"><i>52. Truthy & Falsy</i></p>
+    <br>  
+    <p class="cd">// Falsy Values:</p>
+    <p class="cd">// - false</p>
+    <p class="cd">// - 0</p>
+    <p class="cd">// - "" or '' (Empty string)</p>
+    <p class="cd">// - null</p>
+    <p class="cd">// - undefined</p>
+    <p class="cd">// - NaN</p>
+    <br />
+    <p class="cd">// Truthy Values:</p>
+    <p class="cd">// - Everything else that is not falsy</p>
+    <p class="cd">// - true</p>
+    <p class="cd">// - '0' (0 in a string)</p>
+    <p class="cd">// - ' ' (space in a string)</p>
+    <p class="cd">// - 'false' (false in a string)</p>
+    <p class="cd">// - [] (empty array)</p>
+    <p class="cd">// - {} (empty object)</p>
+    <p class="cd">// - function () {} (empty function)</p>
+    <br />
+    <p class="cd">const x = function () {};</p>
+    <br />
+    <p class="cd">if (x) {</p>
+    <p class="cd">&emsp;&emsp;console.log('This is truthy');</p>
+    <p class="cd">} else {</p>
+    <p class="cd">&emsp;&emsp;console.log('This is falsy');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">console.log(Boolean(x));</p>
+    <br />
+    <p class="cd">// Truthy and falsy caveats</p>
+    <p class="cd">const children = 3;</p>
+    <br />
+    <p class="cd">// Checking for literal 0</p>
+    <p class="cd">if (children) {</p>
+    <p class="cd">&emsp;&emsp;console.log(`You have ${children} children`);</p>
+    <p class="cd">} else {</p>
+    <p class="cd">&emsp;&emsp;console.log('Please enter number of children');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">// Solution</p>
+    <p class="cd">if (!isNaN(children)) {</p>
+    <p class="cd">&emsp;&emsp;console.log(`You have ${children} children`);</p>
+    <p class="cd">} else {</p>
+    <p class="cd">&emsp;&emsp;console.log('Please enter number of children');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">// Checking for empty arrays</p>
+    <p class="cd">const posts = ['Post One'];</p>
+    <br />
+    <p class="cd">// Always true even when empty</p>
+    <p class="cd">if (posts) {</p>
+    <p class="cd">&emsp;&emsp;console.log('List Posts');</p>
+    <p class="cd">} else {</p>
+    <p class="cd">&emsp;&emsp;console.log('No Posts To List');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">// Solution</p>
+    <p class="cd">if (posts.length > 0) {</p>
+    <p class="cd">&emsp;&emsp;console.log('List Posts');</p>
+    <p class="cd">} else {</p>
+    <p class="cd">&emsp;&emsp;console.log('No Posts To List');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">// Checking for empty objects</p>
+    <p class="cd">const user = {</p>
+    <p class="cd">&emsp;&emsp;name: 'Brad',</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">// Always true, even when no properties</p>
+    <p class="cd">if (user) {</p>
+    <p class="cd">&emsp;&emsp;console.log('List User');</p>
+    <p class="cd">} else {</p>
+    <p class="cd">&emsp;&emsp;console.log('No User');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">// Solution</p>
+    <p class="cd">if (Object.keys(user).length > 0) {</p>
+    <p class="cd">&emsp;&emsp;console.log('List User');</p>
+    <p class="cd">} else {</p>
+    <p class="cd">&emsp;&emsp;console.log('No User');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">// Loose Equality (==)</p>
+    <p class="cd">console.log(false == 0); // true</p>
+    <p class="cd">console.log('' == 0); // true</p>
+    <p class="cd">console.log(null == undefined); // true</p>
+    <br />
+    <p class="cd">// Strict Equality</p>
+    <p class="cd">console.log(false === 0); // false</p>
+    <p class="cd">console.log('' === 0); // false</p>
+    <p class="cd">console.log(null === undefined); // false</p>
+    <br />
 
       
     <p class="cd">INTEESQUE C (JS2)</p>
