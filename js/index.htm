@@ -1482,6 +1482,33 @@
     <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log('Good Night');</p>
     <p class="cd">}</p>
     <br />
+    <p class="cd"><i>51. Calculator Challenge  </i></p>
+    <br />  
+    <p class="cd">function calculator(num1, num2, operator) {</p>
+    <p class="cd">&emsp;&emsp;let result;</p>
+    <br />
+    <p class="cd">&emsp;&emsp;switch (operator) {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;case '+':</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;result = num1 + num2;</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;break;</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;case '-':</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;result = num1 - num2;</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;break;</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;case '*':</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;result = num1 * num2;</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;break;</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;case '/':</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;result = num1 / num2;</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;break;</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;default:</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;result = 'Invalid Operator';</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <br />
+    <p class="cd">&emsp;&emsp;console.log(result);</p>
+    <p class="cd">&emsp;&emsp;return result;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">calculator(5, 2, '&');</p>
     <br />  
 
 
@@ -2823,6 +2850,32 @@
       }
     }
     switches50();
+
+    function calculator(num1, num2, operator) {
+      let result;
+    
+      switch (operator) {
+        case '+':
+          result = num1 + num2;
+          break;
+        case '-':
+          result = num1 - num2;
+          break;
+        case '*':
+          result = num1 * num2;
+          break;
+        case '/':
+          result = num1 / num2;
+          break;
+        default:
+          result = 'Invalid Operator';
+      }
+    
+      console.log(result);
+      return result;
+    }
+    
+    calculator(5, 2, '&');
   </script>
 </body>
 </html>
