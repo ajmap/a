@@ -1455,7 +1455,7 @@
     <p class="cd">const month = d.getMonth();</p>
     <p class="cd">const hour = d.getHours();</p>
     <br />
-    <p class="cd">// Immediate value evaluation</p>
+    <p class="cm">// Immediate value evaluation</p>
     <p class="cd">switch (month) {</p>
     <p class="cd">&emsp;&emsp;case 1:</p>
     <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log('It is January');</p>
@@ -1470,7 +1470,7 @@
     <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log('It is not Jan, Feb or March');</p>
     <p class="cd">}</p>
     <br />
-    <p class="cd">// Range evaluation</p>
+    <p class="cm">// Range evaluation</p>
     <p class="cd">switch (true) {</p>
     <p class="cd">&emsp;&emsp;case hour < 12:</p>
     <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log('Good Morning');</p>
@@ -1512,23 +1512,23 @@
     <br />  
     <p class="cd"><i>52. Truthy & Falsy</i></p>
     <br>  
-    <p class="cd">// Falsy Values:</p>
-    <p class="cd">// - false</p>
-    <p class="cd">// - 0</p>
-    <p class="cd">// - "" or '' (Empty string)</p>
-    <p class="cd">// - null</p>
-    <p class="cd">// - undefined</p>
-    <p class="cd">// - NaN</p>
+    <p class="cm">// Falsy Values:</p>
+    <p class="cm">// - false</p>
+    <p class="cm">// - 0</p>
+    <p class="cm">// - "" or '' (Empty string)</p>
+    <p class="cm">// - null</p>
+    <p class="cm">// - undefined</p>
+    <p class="cm">// - NaN</p>
     <br />
-    <p class="cd">// Truthy Values:</p>
-    <p class="cd">// - Everything else that is not falsy</p>
-    <p class="cd">// - true</p>
-    <p class="cd">// - '0' (0 in a string)</p>
-    <p class="cd">// - ' ' (space in a string)</p>
-    <p class="cd">// - 'false' (false in a string)</p>
-    <p class="cd">// - [] (empty array)</p>
-    <p class="cd">// - {} (empty object)</p>
-    <p class="cd">// - function () {} (empty function)</p>
+    <p class="cm">// Truthy Values:</p>
+    <p class="cm">// - Everything else that is not falsy</p>
+    <p class="cm">// - true</p>
+    <p class="cm">// - '0' (0 in a string)</p>
+    <p class="cm">// - ' ' (space in a string)</p>
+    <p class="cm">// - 'false' (false in a string)</p>
+    <p class="cm">// - [] (empty array)</p>
+    <p class="cm">// - {} (empty object)</p>
+    <p class="cm">// - function () {} (empty function)</p>
     <br />
     <p class="cd">const x = function () {};</p>
     <br />
@@ -1540,65 +1540,65 @@
     <br />
     <p class="cd">console.log(Boolean(x));</p>
     <br />
-    <p class="cd">// Truthy and falsy caveats</p>
+    <p class="cm">// Truthy and falsy caveats</p>
     <p class="cd">const children = 3;</p>
     <br />
-    <p class="cd">// Checking for literal 0</p>
+    <p class="cm">// Checking for literal 0</p>
     <p class="cd">if (children) {</p>
     <p class="cd">&emsp;&emsp;console.log(`You have ${children} children`);</p>
     <p class="cd">} else {</p>
     <p class="cd">&emsp;&emsp;console.log('Please enter number of children');</p>
     <p class="cd">}</p>
     <br />
-    <p class="cd">// Solution</p>
+    <p class="cm">// Solution</p>
     <p class="cd">if (!isNaN(children)) {</p>
     <p class="cd">&emsp;&emsp;console.log(`You have ${children} children`);</p>
     <p class="cd">} else {</p>
     <p class="cd">&emsp;&emsp;console.log('Please enter number of children');</p>
     <p class="cd">}</p>
     <br />
-    <p class="cd">// Checking for empty arrays</p>
+    <p class="cm">// Checking for empty arrays</p>
     <p class="cd">const posts = ['Post One'];</p>
     <br />
-    <p class="cd">// Always true even when empty</p>
+    <p class="cm">// Always true even when empty</p>
     <p class="cd">if (posts) {</p>
     <p class="cd">&emsp;&emsp;console.log('List Posts');</p>
     <p class="cd">} else {</p>
     <p class="cd">&emsp;&emsp;console.log('No Posts To List');</p>
     <p class="cd">}</p>
     <br />
-    <p class="cd">// Solution</p>
+    <p class="cm">// Solution</p>
     <p class="cd">if (posts.length > 0) {</p>
     <p class="cd">&emsp;&emsp;console.log('List Posts');</p>
     <p class="cd">} else {</p>
     <p class="cd">&emsp;&emsp;console.log('No Posts To List');</p>
     <p class="cd">}</p>
     <br />
-    <p class="cd">// Checking for empty objects</p>
+    <p class="cm">// Checking for empty objects</p>
     <p class="cd">const user = {</p>
     <p class="cd">&emsp;&emsp;name: 'Brad',</p>
     <p class="cd">};</p>
     <br />
-    <p class="cd">// Always true, even when no properties</p>
+    <p class="cm">// Always true, even when no properties</p>
     <p class="cd">if (user) {</p>
     <p class="cd">&emsp;&emsp;console.log('List User');</p>
     <p class="cd">} else {</p>
     <p class="cd">&emsp;&emsp;console.log('No User');</p>
     <p class="cd">}</p>
     <br />
-    <p class="cd">// Solution</p>
+    <p class="cm">// Solution</p>
     <p class="cd">if (Object.keys(user).length > 0) {</p>
     <p class="cd">&emsp;&emsp;console.log('List User');</p>
     <p class="cd">} else {</p>
     <p class="cd">&emsp;&emsp;console.log('No User');</p>
     <p class="cd">}</p>
     <br />
-    <p class="cd">// Loose Equality (==)</p>
+    <p class="cm">// Loose Equality (==)</p>
     <p class="cd">console.log(false == 0); // true</p>
     <p class="cd">console.log('' == 0); // true</p>
     <p class="cd">console.log(null == undefined); // true</p>
     <br />
-    <p class="cd">// Strict Equality</p>
+    <p class="cm">// Strict Equality</p>
     <p class="cd">console.log(false === 0); // false</p>
     <p class="cd">console.log('' === 0); // false</p>
     <p class="cd">console.log(null === undefined); // false</p>
@@ -2967,6 +2967,101 @@
     }
     
     calculator(5, 2, '&');
+
+    function f52() {
+      // Falsy Values:
+      // - false
+      // - 0
+      // - "" or '' (Empty string)
+      // - null
+      // - undefined
+      // - NaN
+      
+      // Truthy Values:
+      // - Everything else that is not falsy
+      // - true
+      // - '0' (0 in a string)
+      // - ' ' (space in a string)
+      // - 'false' (false in a string)
+      // - [] (empty array)
+      // - {} (empty object)
+      // - function () {} (empty function)
+      
+      const x = function () {};
+      
+      if (x) {
+        console.log('This is truthy');
+      } else {
+        console.log('This is falsy');
+      }
+      
+      console.log(Boolean(x));
+      
+      // Truthy and falsy caveats
+      const children = 3;
+      
+      // Checking for literal 0
+      if (children) {
+        console.log(`You have ${children} children`);
+      } else {
+        console.log('Please enter number of children');
+      }
+      
+      // Solution
+      if (!isNaN(children)) {
+        console.log(`You have ${children} children`);
+      } else {
+        console.log('Please enter number of children');
+      }
+      
+      // Checking for empty arrays
+      const posts = ['Post One'];
+      
+      // Always true even when empty
+      if (posts) {
+        console.log('List Posts');
+      } else {
+        console.log('No Posts To List');
+      }
+      
+      // Solution
+      if (posts.length > 0) {
+        console.log('List Posts');
+      } else {
+        console.log('No Posts To List');
+      }
+      
+      // Checking for empty objects
+      const user = {
+        name: 'Brad',
+      };
+      
+      // Always true, even when no properties
+      if (user) {
+        console.log('List User');
+      } else {
+        console.log('No User');
+      }
+      
+      // Solution
+      if (Object.keys(user).length > 0) {
+        console.log('List User');
+      } else {
+        console.log('No User');
+      }
+      
+      // Loose Equality (==)
+      console.log(false == 0); // true
+      console.log('' == 0); // true
+      console.log(null == undefined); // true
+      
+      // Strict Equality
+      console.log(false === 0); // false
+      console.log('' === 0); // false
+      console.log(null === undefined); // false
+    }
+
+    f52();
   </script>
 </body>
 </html>
