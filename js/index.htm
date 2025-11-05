@@ -1604,45 +1604,47 @@
     <p class="cd">console.log(null === undefined); // false</p>
     <br />
     <p class="cd"><i>53. Logical Operators</i></p>
-    <br>  
-    <p class='cd'>	console.log(10 < 20 && 30 > 15 && 40 > 30); // Must all be true	</p>
-    <p class='cd'>	console.log(10 > 20 || 30 < 15); // Only one has to be true	</p>
-    <br>		
-    <p class='cd'>	// && - Will return first falsy value or the last value	</p>
-    <p class='cd'>	let a;	</p>
-    <br>		
-    <p class='cd'>	a = 10 && 20;	</p>
-    <p class='cd'>	a = 10 && 20 && 30;	</p>
-    <p class='cd'>	a = 10 && 0 && 30;	</p>
-    <p class='cd'>	a = 10 && '' && 0 && 30;	</p>
-    <br>		
-    <p class='cd'>	console.log(a);	</p>
-    <br>		
-    <p class='cd'>	const posts = ['Post One', 'Post Two'];	</p>
-    <p class='cd'>	posts.length > 0 && console.log(posts[0]);	</p>
-    <br>		
-    <p class='cd'>	// || - Will return the first truthy value or the last value	</p>
-    <br>		
-    <p class='cd'>	let b;	</p>
-    <br>		
-    <p class='cd'>	b = 10 || 20;	</p>
-    <p class='cd'>	b = 0 || 20;	</p>
-    <p class='cd'>	b = 0 || null || '' || undefined;	</p>
-    <br>		
-    <p class='cd'>	console.log(b);	</p>
-    <br>		
-    <p class='cd'>	// ?? - Returns the right side operand when the left is null or undefined	</p>
-    <br>		
-    <p class='cd'>	let c;	</p>
-    <br>		
-    <p class='cd'>	c = 10 ?? 20;	</p>
-    <p class='cd'>	c = null ?? 20;	</p>
-    <p class='cd'>	c = undefined ?? 30;	</p>
-    <p class='cd'>	c = 0 ?? 30;	</p>
-    <p class='cd'>	c = '' ?? 30;	</p>
-    <br>		
-    <p class='cd'>	console.log(c);	</p>
-    <br>		  
+	  <br />
+    <p class="cd">
+    console.log(10 < 20 && 30 > 15 && 40 > 30); // Must all be true
+    </p>
+    <p class="cd">console.log(10 > 20 || 30 < 15); // Only one has to be true</p>
+    <br />
+    <p class="cm">// && - Will return first falsy value or the last value</p>
+    <p class="cd">let a;</p>
+    <br />
+    <p class="cd">a = 10 && 20;</p>
+    <p class="cd">a = 10 && 20 && 30;</p>
+    <p class="cd">a = 10 && 0 && 30;</p>
+    <p class="cd">a = 10 && '' && 0 && 30;</p>
+    <br />
+    <p class="cd">console.log(a);</p>
+    <br />
+    <p class="cd">const posts = ['Post One', 'Post Two'];</p>
+    <p class="cd">posts.length > 0 && console.log(posts[0]);</p>
+    <br />
+    <p class="cm">// || - Will return the first truthy value or the last value</p>
+    <br />
+    <p class="cd">let b;</p>
+    <br />
+    <p class="cd">b = 10 || 20;</p>
+    <p class="cd">b = 0 || 20;</p>
+    <p class="cd">b = 0 || null || '' || undefined;</p>
+    <br />
+    <p class="cd">console.log(b);</p>
+    <br />
+    <p class="cm">// ?? - Returns the right side operand when the left is null or undefined</p>
+    <br />
+    <p class="cd">let c;</p>
+    <br />
+    <p class="cd">c = 10 ?? 20;</p>
+    <p class="cd">c = null ?? 20;</p>
+    <p class="cd">c = undefined ?? 30;</p>
+    <p class="cd">c = 0 ?? 30;</p>
+    <p class="cd">c = '' ?? 30;</p>
+    <br />
+    <p class="cd">console.log(c);</p>
+    <br />
       
     <p class="cd">INTEESQUE C (JS2)</p>
     <p class="cm">// Loop through arrays</p>
