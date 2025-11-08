@@ -1645,6 +1645,50 @@
     <br />
     <p class="cd">console.log(c);</p>
     <br />
+	<p class="cd"><i>54. Logical Assignment</i></p>
+	<br>	
+	<p class="cd">// ||= assigns the right side value only if the left is a falsy value.</p>
+    <br />
+    <p class="cd">let a = null;</p>
+    <br />
+    <p class="cd">// if (!a) {</p>
+    <p class="cd">// a = 10;</p>
+    <p class="cd">// }</p>
+    <br />
+    <p class="cd">// a = a || 10;</p>
+    <br />
+    <p class="cd">a ||= 10;</p>
+    <br />
+    <p class="cd">console.log(a);</p>
+    <br />
+    <p class="cd">// &&= assigns the right side value only if the left is a truthy value.</p>
+    <br />
+    <p class="cd">let b = 10;</p>
+    <br />
+    <p class="cd">if (b) {</p>
+    <p class="cd">&emsp;&emsp;b = 20;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">b = b && 20;</p>
+    <br />
+    <p class="cd">b &&= 20;</p>
+    <br />
+    <p class="cd">console.log(b);</p>
+    <br />
+    <p class="cd">// ??= assigns the right side value only if the left is null or undefined.</p>
+    <br />
+    <p class="cd">let c = null;</p>
+    <br />
+    <p class="cd">if (c === null || c === undefined) {</p>
+    <p class="cd">&emsp;&emsp;c = 20;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">c = c ?? 20;</p>
+    <br />
+    <p class="cd">c ??= 20;</p>
+    <br />
+    <p class="cd">console.log(c);</p>
+    <br />	
       
     <p class="cd">INTEESQUE C (JS2)</p>
     <p class="cm">// Loop through arrays</p>
@@ -3145,6 +3189,52 @@
     }
 
     logical53();
+
+	function Assignment54() {
+		// ||= assigns the right side value only if the left is a falsy value.
+
+		let a = null;
+		
+		// if (!a) {
+		//   a = 10;
+		// }
+		
+		// a = a || 10;
+		
+		a ||= 10;
+		
+		console.log(a);
+		
+		// &&= assigns the right side value only if the left is a truthy value.
+		
+		let b = 10;
+		
+		if (b) {
+		  b = 20;
+		}
+		
+		b = b && 20;
+		
+		b &&= 20;
+		
+		console.log(b);
+		
+		// ??= assigns the right side value only if the left is null or undefined.
+		
+		let c = null;
+		
+		if (c === null || c === undefined) {
+		  c = 20;
+		}
+		
+		c = c ?? 20;
+		
+		c ??= 20;
+		
+		console.log(c);
+	}
+
+	Assignment();  
   </script>
 </body>
 </html>
