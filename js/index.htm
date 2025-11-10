@@ -1647,21 +1647,21 @@
     <br />
 	<p class="cd"><i>54. Logical Assignment</i></p>
 	<br>	
-	<p class="cd">// ||= assigns the right side value only if the left is a falsy value.</p>
+	<p class="cm">// ||= assigns the right side value only if the left is a falsy value.</p>
     <br />
     <p class="cd">let a = null;</p>
     <br />
-    <p class="cd">// if (!a) {</p>
-    <p class="cd">// a = 10;</p>
-    <p class="cd">// }</p>
+    <p class="cm">// if (!a) {</p>
+    <p class="cm">// a = 10;</p>
+    <p class="cm">// }</p>
     <br />
-    <p class="cd">// a = a || 10;</p>
+    <p class="cm">// a = a || 10;</p>
     <br />
     <p class="cd">a ||= 10;</p>
     <br />
     <p class="cd">console.log(a);</p>
     <br />
-    <p class="cd">// &&= assigns the right side value only if the left is a truthy value.</p>
+    <p class="cm">// &&= assigns the right side value only if the left is a truthy value.</p>
     <br />
     <p class="cd">let b = 10;</p>
     <br />
@@ -1675,7 +1675,7 @@
     <br />
     <p class="cd">console.log(b);</p>
     <br />
-    <p class="cd">// ??= assigns the right side value only if the left is null or undefined.</p>
+    <p class="cm">// ??= assigns the right side value only if the left is null or undefined.</p>
     <br />
     <p class="cd">let c = null;</p>
     <br />
@@ -1689,6 +1689,56 @@
     <br />
     <p class="cd">console.log(c);</p>
     <br />	
+	<p class="cd"><i>55. Ternary Operator</i></p>
+	<br>
+	<p class="cd">const age = 17;</p>
+    <br />
+    <p class="cm">// Using an if statement</p>
+    <p class="cd">if (age >= 18) {</p>
+    <p class="cd">&emsp;&emsp;console.log('You can vote!');</p>
+    <p class="cd">} else {</p>
+    <p class="cd">&emsp;&emsp;console.log('You can not vote');</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Using a ternary operator</p>
+    <p class="cd">age >= 18 ? console.log('You can vote!') : console.log('You can not vote');</p>
+    <br />
+    <p class="cm">// Assigning a conditional value to a variable</p>
+    <p class="cd">const canVote = age >= 18 ? true : false;</p>
+    <p class="cd">const canVote2 = age >= 18 ? 'You can vote!' : 'You can not vote';</p>
+    <br />
+    <p class="cd">console.log(canVote);</p>
+    <p class="cd">console.log(canVote2);</p>
+    <br />
+    <p class="cm">// Multiple statements</p>
+    <br />
+    <p class="cd">const auth = true;</p>
+    <br />
+    <p class="cm">// Long version</p>
+    <p class="cm">// let redirect;</p>
+    <br />
+    <p class="cm">// if (auth) {</p>
+    <p class="cm">// &emsp;&emsp;alert('Welcome to the dashboard');</p>
+    <p class="cm">//&emsp;&emsp; redirect = '/dashboard';</p>
+    <p class="cm">// } else {</p>
+    <p class="cm">// &emsp;&emsp;alert('Access Denied');</p>
+    <p class="cm">// &emsp;&emsp;redirect = '/login';</p>
+    <p class="cm">// }</p>
+    <br />
+    <p class="cm">// Shorter ternary version</p>
+    <p class="cd">const redirect = auth</p>
+    <p class="cd">&emsp;&emsp;: (alert('Access Denied'), '/login');</p>
+    <p class="cd">&emsp;&emsp;? (alert('Welcome to the dashbaord'), '/dashboard')</p>
+    <br />
+    <p class="cd">console.log(redirect);</p>
+    <br />
+    <p class="cm">// Ternary with no else</p>
+    <p class="cd">auth ? console.log('Welcome to the dashboard') : null;</p>
+    <p class="cm">// Shorthand for ternary with no else</p>
+    <p class="cd">auth && console.log('Welcome to the dashoard');</p>
+    <br />	
+
+		
       
     <p class="cd">INTEESQUE C (JS2)</p>
     <p class="cm">// Loop through arrays</p>
@@ -3235,6 +3285,54 @@
 	}
 
 	Assignment54();  
+	function Ternary55() {
+		const age = 17;
+
+		// Using an if statement
+		if (age >= 18) {
+		  console.log('You can vote!');
+		} else {
+		  console.log('You can not vote');
+		}
+		
+		// Using a ternary operator
+		age >= 18 ? console.log('You can vote!') : console.log('You can not vote');
+		
+		// Assigning a conditional value to a variable
+		const canVote = age >= 18 ? true : false;
+		const canVote2 = age >= 18 ? 'You can vote!' : 'You can not vote';
+		
+		console.log(canVote);
+		console.log(canVote2);
+		
+		// Multiple statements
+		
+		const auth = true;
+		
+		// Long version
+		// let redirect;
+		
+		// if (auth) {
+		//   alert('Welcome to the dashboard');
+		//   redirect = '/dashboard';
+		// } else {
+		//   alert('Access Denied');
+		//   redirect = '/login';
+		// }
+		
+		// Shorter ternary version
+		const redirect = auth
+		  ? (alert('Welcome to the dashbaord'), '/dashboard')
+		  : (alert('Access Denied'), '/login');
+		
+		console.log(redirect);
+		
+		// Ternary with no else
+		auth ? console.log('Welcome to the dashboard') : null;
+		// Shorthand for ternary with no else
+		auth && console.log('Welcome to the dashoard');
+	}  
+	Ternary55();  
   </script>
 </body>
 </html>
