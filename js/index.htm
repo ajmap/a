@@ -1737,7 +1737,43 @@
     <p class="cm">// Shorthand for ternary with no else</p>
     <p class="cd">auth && console.log('Welcome to the dashoard');</p>
     <br />	
-
+	<p class="cd"><i>57. For Loop</i></p>
+	<p class="cd">// for ([initialExpression]; [conditionExpression]; [incrementExpression])</p>
+    <p class="cd">// statement;</p>
+    <br />
+    <p class="cd">// INITITAL EXPRESSION - Initializes a variable/counter</p>
+    <p class="cd">// CONDITION EXPRESSION - Condition that the loop will continue to run as long as it is met or until the condition is false</p>
+    <p class="cd">// INCREMENT EXPRESSION - Expression that will be executed after each iteration of the loop. Usually increments the variable</p>
+    <p class="cd">// STATEMENT - Code that will be executed each time the loop is run. To execute a `block` of code, use the `{}` syntax</p>
+    <br />
+    <p class="cd">// for (let i = 0; i <= 10; i++) {</p>
+    <p class="cd">// &emsp;&emsp;if (i === 7) {</p>
+    <p class="cd">// &emsp;&emsp;&emsp;&emsp;console.log('7 is my lucky number');</p>
+    <p class="cd">// &emsp;&emsp;} else {</p>
+    <p class="cd">// &emsp;&emsp;&emsp;&emsp;console.log('Number ' + i);</p>
+    <p class="cd">// &emsp;&emsp;}</p>
+    <p class="cd">// }</p>
+    <br />
+    <p class="cd">// Nested loops</p>
+    <p class="cd">// for (let i = 1; i <= 10; i++) {</p>
+    <p class="cd">// &emsp;&emsp;console.log('Number ' + i);</p>
+    <br />
+    <p class="cd">// &emsp;&emsp;for (let j = 1; j <= 5; j++) {</p>
+    <p class="cd">// &emsp;&emsp;&emsp;&emsp;console.log(`${i} * ${j} = ${i * j}`);</p>
+    <p class="cd">// &emsp;&emsp;}</p>
+    <p class="cd">// }</p>
+    <br />
+    <p class="cd">// Loop through an array</p>
+    <p class="cd">const names = ['Brad', 'Sam', 'Sara', 'John', 'Tim'];</p>
+    <br />
+    <p class="cd">for (let i = 0; i < names.length; i++) {</p>
+    <p class="cd">&emsp;&emsp;if (names[i] === 'John') {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log(names[i] + ' is the best');</p>
+    <p class="cd">&emsp;&emsp;} else {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp; console.log(names[i]);</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <p class="cd">}</p>
+    <br />
 		
       
     <p class="cd">INTEESQUE C (JS2)</p>
@@ -3332,7 +3368,46 @@
 		// Shorthand for ternary with no else
 		auth && console.log('Welcome to the dashoard');
 	}  
-	Ternary55();  
+	Ternary55();
+
+	function For57() {
+		// for ([initialExpression]; [conditionExpression]; [incrementExpression])
+		//   statement;
+		
+		// INITITAL EXPRESSION - Initializes a variable/counter
+		// CONDITION EXPRESSION - Condition that the loop will continue to run as long as it is met or until the condition is false
+		// INCREMENT EXPRESSION - Expression that will be executed after each iteration of the loop. Usually increments the variable
+		// STATEMENT - Code that will be executed each time the loop is run. To execute a `block` of code, use the `{}` syntax
+		
+		// for (let i = 0; i <= 10; i++) {
+		//   if (i === 7) {
+		//     console.log('7 is my lucky number');
+		//   } else {
+		//     console.log('Number ' + i);
+		//   }
+		// }
+		
+		// Nested loops
+		// for (let i = 1; i <= 10; i++) {
+		//   console.log('Number ' + i);
+		
+		//   for (let j = 1; j <= 5; j++) {
+		//     console.log(`${i} * ${j} = ${i * j}`);
+		//   }
+		// }
+		
+		// Loop through an array
+		const names = ['Brad', 'Sam', 'Sara', 'John', 'Tim'];
+		
+		for (let i = 0; i < names.length; i++) {
+		  if (names[i] === 'John') {
+		    console.log(names[i] + ' is the best');
+		  } else {
+		    console.log(names[i]);
+		  }
+		}
+	}  
+	For57();  
   </script>
 </body>
 </html>
