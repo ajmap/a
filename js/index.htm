@@ -1795,7 +1795,42 @@
     <p class="cd">&emsp;&emsp;console.log(i);</p>
     <p class="cd">}</p>
     <br />	
-		
+	<p class="cd"><i>59. While & Do While Loops</i></p>
+	<br>	
+	<p class="cd">let i = 0;</p>
+    <br />
+    <p class="cd">while (i <= 20) {</p>
+    <p class="cd">&emsp;&emsp;console.log('Number ' + i);</p>
+    <p class="cd">&emsp;&emsp;i++;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">// Loop over arrays</p>
+    <p class="cd">const arr = [10, 20, 30, 40, 50];</p>
+    <br />
+    <p class="cd">while (i < arr.length) {</p>
+    <p class="cd">&emsp;&emsp;console.log(arr[i]);</p>
+    <p class="cd">&emsp;&emsp;i++;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">// Nesting while loops</p>
+    <p class="cd">while (i <= 5) {</p>
+    <p class="cd">&emsp;&emsp;console.log('Number ' + i);</p>
+    <br />
+    <p class="cd">&emsp;&emsp;let j = 1;</p>
+    <p class="cd">&emsp;&emsp;while (j <= 5) {</p>
+    <p class="cd">&emsp;&emsp;console.log(`${i} * ${j} = ${i * j}`);</p>
+    <p class="cd">&emsp;&emsp;j++;</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <br />
+    <p class="cd">&emsp;&emsp;i++;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">// Do While Loop - Always runs once</p>
+    <p class="cd">do {</p>
+    <p class="cd">&emsp;&emsp;console.log('Number ' + i);</p>
+    <p class="cd">&emsp;&emsp;i++;</p>
+    <p class="cd">} while (i <= 20);</p>
+    <br />	
 
 
 		
@@ -3450,6 +3485,43 @@
 	  }
 	  console.log(i);
 	}  
+
+	function While59() {
+		let i = 0;
+
+		while (i <= 20) {
+		  console.log('Number ' + i);
+		  i++;
+		}
+		
+		// Loop over arrays
+		const arr = [10, 20, 30, 40, 50];
+		
+		while (i < arr.length) {
+		  console.log(arr[i]);
+		  i++;
+		}
+		
+		// Nesting while loops
+		while (i <= 5) {
+		  console.log('Number ' + i);
+		
+		  let j = 1;
+		  while (j <= 5) {
+		    console.log(`${i} * ${j} = ${i * j}`);
+		    j++;
+		  }
+		
+		  i++;
+		}
+		
+		// Do While Loop - Always runs once
+		do {
+		  console.log('Number ' + i);
+		  i++;
+		} while (i <= 20);
+	}
+	While59();  
   </script>
 </body>
 </html>
