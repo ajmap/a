@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Band Song List</title>
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 500px;
+      margin: 30px auto;
+    }
+    .hidden { display: none; }
+    button { margin: 10px; padding: 10px 20px; }
+    input { display: block; margin: 5px 0; padding: 5px; width: 100%; }
+    ul { padding-left: 18px; }
+  </style>
+</head>
+
+<body>
+
+<h2>Select Your User</h2>
+
+<button onclick="selectUser('User A')">User A</button>
+<button onclick="selectUser('User B')">User B</button>
+
+<div id="app" class="hidden">
+  <h2 id="userLabel"></h2>
+
+  <h3>Add Song</h3>
+  <input id="titleInput" placeholder="Song title" />
+  <input id="artistInput" placeholder="Artist" />
+  <button onclick="addSong()">Add</button>
+
+  <h3>Your Songs</h3>
+  <ul id="songList"></ul>
+</div>
+
+<script>
+const API_URL = "https://script.google.com/macros/s/AKfycbyFBp9V5VacR09QF9VpOuy3TMMCXNxOmc1QGibOS1zIj1DvoQjnUXdrs7xP66pYozTVBw/exec";
+let currentUser = null;
+
+// User selection
+function selectUser(user) {
+  currentUser = user;
+  document.getElementById("userLabel").innerText = "User: " + user;
+  document.getElementById("app").classList.remove("hidden");
+  loadSongs();
+}
+
+// Load songs from Google Sheet
+async function loadSongs() {
+  const list = document.getElementById("songList");
+  list.innerHTML = "<li>Loading...</li>";
+
+  const res = await fetch(API_URL);
+  const data = await res.json();
+
+  const userSongs = data.filter(s => s.user === currentUser);
+
+  list.innerHTML = "";
+
+  if (userSongs.length === 0) {
+    list.innerHTML = "<li>No songs yet.</li>";
+  } else {
+    userSongs.forEach(song => {
+      const li = document.createElement("li");
+      li.textContent = `${song.title} — ${song.artist}`;
+      list.appendChild(li);
+    });
+  }
+}
+
+// Add song
+async function addSong() {
+  const title = document.getElementById("titleInput").value.trim();
+  const artist = document.getElementById("artistInput").value.trim();
+
+  if (!title || !artist) {
+    alert("Please enter both title and artist.");
+    return;
+  }
+
+  const body = {
+    user: currentUser,
+    title,
+    artist
+  };
+
+  await fetch(API_URL, {
+    method: "POST",
+    contentType: "application/json",
+    body: JSON.stringify(body)
+  });
+
+  document.getElementById("titleInput").value = "";
+  document.getElementById("artistInput").value = "";
+
+  loadSongs();
+}
+</script>
+
+</body>
+</html>
