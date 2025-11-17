@@ -4,7 +4,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JS1</title>
+  <title>Javscript</title>
   <style>
     * {
       margin: 0;
@@ -1831,7 +1831,7 @@
     <p class="cd">&emsp;&emsp;i++;</p>
     <p class="cd">} while (i <= 20);</p>
     <br />	
-	<p class="cd"><i>60. FizzBuzz Challenge</i></p>61. For Of Loop
+	<p class="cd"><i>60. FizzBuzz Challenge</i></p>
 	<br>
 	<p class="cm">// For Loop</p>
     <p class="cm">// for (let i = 1; i <= 100; i++) {</p>
@@ -1865,8 +1865,317 @@
     <br />
 	<p class="cd"><i>61. For Of Loo	</i></p>
 	<br>	
-	<p class="cd"><i>61. For Of Loop</i></p>
-	<br>
+	<p class="cm">// Loop through arrays</p>
+    <p class="cd">const items = ['book', 'table', 'chair', 'kite'];</p>
+    <p class="cd">const users = [{ name: 'Brad' }, { name: 'Kate' }, { name: 'Steve' }];</p>
+    <br />
+    <p class="cm">// for (const item of items) {</p>
+    <p class="cm">// console.log(item);</p>
+    <p class="cm">// }</p>
+    <br />
+    <p class="cd">for (const user of users) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(user.name);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Loop over strings</p>
+    <p class="cd">const str = 'Hello World';</p>
+    <br />
+    <p class="cd">for (const letter of str) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(letter);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Loop over Maps</p>
+    <p class="cd">const map = new Map();</p>
+    <p class="cd">map.set('name', 'John');</p>
+    <p class="cd">map.set('age', 30);</p>
+    <br />
+    <p class="cd">for (const [key, value] of map) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(key, value);</p>
+    <p class="cd">}</p>
+    <br />
+
+	<br>	
+    <p class="cm">// Loop through objects</p>
+    <p class="cd">const colorObj = {</p>
+    <p class="cd">color1: 'red',</p>
+    <p class="cd">color2: 'blue',</p>
+    <p class="cd">color3: 'orange',</p>
+    <p class="cd">color4: 'green',</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">for (const key in colorObj) {</p>
+    <p class="cd">console.log(key, colorObj[key]);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Loop through arrays</p>
+    <p class="cd">const colorArr = ['red', 'green', 'blue', 'yellow'];</p>
+    <br />
+    <p class="cd">for (const key in colorArr) {</p>
+    <p class="cd">console.log(colorArr[key]);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">const socials = ['Twitter', 'LinkedIn', 'Facebook', 'Instagram'];</p>
+    <br />
+    <p class="cm">// View prototype chain</p>
+    <p class="cd">console.log(socials.__proto__);</p>
+    <br />
+    <p class="cm">// Long form</p>
+    <p class="cd">socials.forEach(function (item) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(item);</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cm">// Short form</p>
+    <p class="cd">socials.forEach((item) => console.log(item));</p>
+    <br />
+    <p class="cm">// We can also pass in the index and original array</p>
+    <p class="cd">socials.forEach((item, index, arr) => console.log(`${index} - ${item}`,arr));</p>
+    <br />
+    <p class="cm">// Using a named function</p>
+    <p class="cd">function logSocials(social) {</p>
+    <p class="cd">&nbsp;&nbsp;console.log(social);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">socials.forEach(logSocials);</p>
+    <br />
+    <p class="cm">// Array of objects</p>
+    <p class="cd">const socialObjs = [</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Twitter', url: 'https://twitter.com' },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Facebook', url: 'https://facebook.com' },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Linkedin', url: 'https://linkedin.com' },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Instagram', url: 'https://instagram.com' },</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cd">socialObjs.forEach((item) => console.log(item.url));</p>
+    <br />
+    <p class="cd">const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];</p>
+    <br />
+    <p class="cd">const evenNumbers = numbers.filter(function (number) {</p>
+    <p class="cd">&nbsp;&nbsp;return number % 2 === 0;</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cm">// Short version</p>
+    <p class="cd">const evenNumbers2 = numbers.filter((number) => number % 2 === 0);</p>
+    <br />
+    <p class="cm">// Same with forEach</p>
+    <p class="cd">const evenNumbers3 = [];</p>
+    <p class="cd">numbers.forEach((number) => {</p>
+    <p class="cd">&nbsp;&nbsp;if (number % 2 === 0) {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;evenNumbers.push(number);</p>
+    <p class="cd">&nbsp;&nbsp;}</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">const companies = [</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company One', category: 'Finance', start: 1981, end: 2004 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Two', category: 'Retail', start: 1992, end: 2008 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Three', category: 'Auto', start: 1999, end: 2007 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Four', category: 'Retail', start: 1989, end: 2010 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Five', category: 'Technology', start: 2009, end: 2014 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Six', category: 'Finance', start: 1987, end: 2010 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Seven', category: 'Auto', start: 1986, end: 1996 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Eight', category: 'Technology', start: 2011, end: 2016 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Nine', category: 'Retail', start: 1981, end: 1989 },</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cm">// Get only retail companies</p>
+    <p class="cd">const retailCompanies = companies.filter(</p>
+    <p class="cd">&nbsp;&nbsp;(company) => company.category === 'Retail'</p>
+    <p class="cd">);</p>
+    <p class="cm">// console.log(retailCompanies);</p>
+    <br />
+    <p class="cm">// Get companies that started in or after 1980 and ended in or before 2005</p>
+    <p class="cd">const earlyCompanies = companies.filter(</p>
+    <p class="cd">&nbsp;&nbsp;(company) => company.start >= 1980 && company.end <= 2005</p>
+    <p class="cd">);</p>
+    <p class="cm">// console.log(earlyCompanies);</p>
+    <br />
+    <p class="cm">// Get companies that lasted 10 years or more</p>
+    <p class="cd">const longCompanies = companies.filter(</p>
+    <p class="cd">&nbsp;&nbsp;(company) => company.end - company.start >= 10</p>
+    <p class="cd">);</p>
+    <br />
+    <p class="cd">console.log(longCompanies);</p>
+    <br />
+    <p class="cd">const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];</p>
+    <br />
+    <p class="cd">
+      const doubledNumbers = numbers.map((number) => number * 2);
+    </p>
+    <p class="cd">console.log(doubledNumbers);</p>
+    <br />
+    <p class="cm">// Same with forEach</p>
+    <p class="cd">const doubledNumbers2 = [];</p>
+    <p class="cd">numbers.forEach((number) => {</p>
+    <p class="cd">&nbsp;&nbsp;doubledNumbers2.push(number * 2);</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">const companies = [</p>
+    <p class="cd">
+      &nbsp;&nbsp;{ name: 'Company One', category: 'Finance', start: 1981, end:
+      2004 },
+    </p>
+    <p class="cd">
+      &nbsp;&nbsp;{ name: 'Company Two', category: 'Retail', start: 1992, end:
+      2008 },
+    </p>
+    <p class="cd">
+      &nbsp;&nbsp;{ name: 'Company Three', category: 'Auto', start: 1999, end:
+      2007 },
+    </p>
+    <p class="cd">
+      &nbsp;&nbsp;{ name: 'Company Four', category: 'Retail', start: 1989, end:
+      2010 },
+    </p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Five', category: 'Technology', start: 2009, end: 2014 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Six', category: 'Finance', start: 1987, end: 2010 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Seven', category: 'Auto', start: 1986, end: 1996 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Eight', category: 'Technology', start: 2011, end: 2016 },</p>
+    <p class="cd">&nbsp;&nbsp;{ name: 'Company Nine', category: 'Retail', start: 1981, end:1989 },</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cm">// Create an array of company names</p>
+    <p class="cd">const companyNames = companies.map((company) => company.name);</p>
+    <p class="cm">// console.log(companyNames);</p>
+    <br />
+    <p class="cm">// Create an array with just company and category</p>
+    <p class="cd">const companyInfo = companies.map((company) => {</p>
+    <p class="cd">&nbsp;&nbsp;return {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;name: company.name,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;category: company.category,</p>
+    <p class="cd">&nbsp;&nbsp;};</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cm">// Create an array of objects with the name and the length of each company in years</p>
+    <p class="cd">const companyYears = companies.map((company) => {</p>
+    <p class="cd">&nbsp;&nbsp;return {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;name: company.name,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;length: company.end - company.start + ' years',</p>
+    <p class="cd">&nbsp;&nbsp;};</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">console.log(companyYears);</p>
+    <br />
+    <p class="cm">// Chain map methods</p>
+    <p class="cd">const squareAndDouble = numbers</p>
+    <p class="cd">&nbsp;&nbsp;.map((number) => Math.sqrt(number))</p>
+    <p class="cd">&nbsp;&nbsp;.map((sqrt) => sqrt * 2);</p>
+    <br />
+    <p class="cd">const squareAndDouble2 = numbers</p>
+    <p class="cd">&nbsp;&nbsp;.map(function (number) {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;return Math.sqrt(number);</p>
+    <p class="cd">&nbsp;&nbsp;})</p>
+    <p class="cd">&nbsp;&nbsp;.map(function (sqrt) {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;return sqrt * 2;</p>
+    <p class="cd">&nbsp;&nbsp;})</p>
+    <p class="cd">&nbsp;&nbsp;.map(function (sqrtDoubled) {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;return sqrtDoubled * 3;</p>
+    <p class="cd">&nbsp;&nbsp;});</p>
+    <br />
+    <p class="cm">// Chaining different methods</p>
+    <p class="cd">const evenDouble = numbers</p>
+    <p class="cd">&nbsp;&nbsp;.filter((number) => number % 2 === 0)</p>
+    <p class="cd">&nbsp;&nbsp;.map((number) => number * 2);</p>
+    <br />
+    <p class="cd">console.log(evenDouble);</p>
+    <br /> 
+    <p class="cd">const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];</p>
+    <br />
+    <p class="cd">10-reduce</p>
+    <p class="cm">// Add all numbers together</p>
+    <p class="cd">const sum = numbers.reduce(function (accumulator, currentValue) {</p>
+    <p class="cd">&nbsp;&nbsp;return accumulator + currentValue;</p>
+    <p class="cd">}, 0);</p>
+    <br />
+    <p class="cd">const sum2 = numbers.reduce((acc, cur) => acc + cur, 0);</p>
+    <br />
+    <p class="cm">// Using a for loop</p>
+    <p class="cd">const sum3 = () => {</p>
+    <p class="cd">&nbsp;&nbsp;let acc = 0;</p>
+    <p class="cd">&nbsp;&nbsp;for (const cur of numbers) {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;acc += cur;</p>
+    <p class="cd">&nbsp;&nbsp;}</p>
+    <p class="cd">&nbsp;&nbsp;return acc;</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cm">// Shopping cart example (objects)</p>
+    <p class="cd">const cart = [</p>
+    <p class="cd">&nbsp;&nbsp;{ id: 1, name: 'Product 1', price: 130 },</p>
+    <p class="cd">&nbsp;&nbsp;{ id: 2, name: 'Product 2', price: 150 },</p>
+    <p class="cd">&nbsp;&nbsp;{ id: 3, name: 'Product 3', price: 200 },</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cd">const total = cart.reduce(function (acc, product) {</p>
+    <p class="cd">&nbsp;&nbsp;return acc + product.price;</p>
+    <p class="cd">}, 0);</p>
+    <br />
+    <p class="cd">console.log(total);</p>
+    <br />
+    <p class="cd">11-array-method-challenges</p>  
+    <p class="cm">// Challenge 1</p>
+    <p class="cd">const people = [</p>
+    <p class="cd">&nbsp;&nbsp;{</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; firstName: 'John',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; lastName: 'Doe',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; email: 'john@gmail.com',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; phone: '111-111-1111',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; age: 30,</p>
+    <p class="cd">&nbsp;&nbsp; },</p>
+    <p class="cd">&nbsp;&nbsp; {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; firstName: 'Jane',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; lastName: 'Poe',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; email: 'jane@gmail.com',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; phone: '222-222-2222',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; age: 25,</p>
+    <p class="cd">&nbsp;&nbsp; },</p>
+    <p class="cd">&nbsp;&nbsp; {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; firstName: 'Bob',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; lastName: 'Foe',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; email: 'bob@gmail.com',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; phone: '333-333-3333',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; age: 45,</p>
+    <p class="cd">&nbsp;&nbsp; },</p>
+    <p class="cd">&nbsp;&nbsp; {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; firstName: 'Sara',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; lastName: 'Soe',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; email: 'Sara@gmail.com',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; phone: '444-444-4444',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; age: 19,</p>
+    <p class="cd">&nbsp;&nbsp; },</p>
+    <p class="cd">&nbsp;&nbsp; {</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; firstName: 'Jose',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; lastName: 'Koe',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; email: 'jose@gmail.com',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; phone: '555-555-5555',</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; age: 23,</p>
+    <p class="cd">&nbsp;&nbsp; },</p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cd">const youngPeople = people</p>
+    <p class="cd">&nbsp;&nbsp; .filter((person) => person.age <= 25)</p>
+    <p class="cd">&nbsp;&nbsp; .map((person) => ({</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; name: person.firstName + ' ' + person.lastName,</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp; email: person.email,</p>
+    <p class="cd">&nbsp;&nbsp; }));</p>
+    <br />
+    <p class="cd">console.log(youngPeople);</p>
+    <br />
+    <p class="cm">// Challenge 2</p>
+    <p class="cd">const numbers = [2, -30, 50, 20, -12, -9, 7];</p>
+    <br />
+    <p class="cd">const positiveSum = numbers</p>
+    <p class="cd">&nbsp;&nbsp; .filter((number) => number > 0)</p>
+    <p class="cd">&nbsp;&nbsp; .reduce((acc, cur) => acc + cur, 0);</p>
+    <br />
+    <p class="cd">console.log(positiveSum);</p>
+    <br />
+    <p class="cm">// Challenge 3</p>
+    <p class="cd">const words = ['coder', 'programmer', 'developer'];</p>
+    <br />
+    <p class="cd">const cWords = words.map((word) => {</p>
+    <p class="cd">&nbsp;&nbsp; return word[0].toUpperCase() + word.slice(1, word.length);</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">console.log(cWords);</p>
+    <br />  
 		
   	</div>
   <script>
