@@ -2172,7 +2172,28 @@
     <br />
     <p class="cd">console.log(cWords);</p>
     <br />  
-		
+	<br>
+	<p class="cm">// Global window object</p>
+    <p class="cd">console.log(window);</p>
+    <br />
+    <p class="cm">// The document object is part of the window object</p>
+    <p class="cd">console.dir(window.document);</p>
+    <br />
+    <p class="cm">// We can access DOM elements directly with properties</p>
+    <p class="cd">console.log(document.body);</p>
+    <p class="cd">console.log(document.links[0]);</p>
+    <br />
+    <p class="cm">// We can set properties of elements</p>
+    <p class="cm">// document.body.innerHTML = '&lt;h1&gt;Hello from body&lt;/h1&gt;';</p>
+    <br />
+    <p class="cm">// The document object has a ton of methods. One is `document.write()`, which will write something to the document</p>
+    <p class="cd">document.write('Hello from JS');</p>
+    <br />
+    <p class="cm">// We also have methods to select elements more directly</p>
+    <p class="cd">document.getElementById('main').innerHTML = '&lt;h1&gt;Hello from main&lt;/h1&gt;';</p>
+    <br />
+    <p class="cd">document.querySelector('#main h1').innerText = 'Hello';</p>
+    <br />
   	</div>
   <script>
     const startScreen = document.getElementById('start-screen');
