@@ -2197,7 +2197,61 @@
     <br />
 	<p class="cd"><i>70. Document Element Properties</i></p>
 	<br>
-		
+	<p class="cd">let output;</p>
+    <br />
+    <p class="cm">// document.all is deprecated</p>
+    <p class="cd">output = document.all;</p>
+    <p class="cd">output = document.all[11];</p>
+    <p class="cd">output = document.all.length;</p>
+    <br />
+    <p class="cm">// Everything in the html tags</p>
+    <p class="cd">output = document.documentElement;</p>
+    <br />
+    <p class="cm">// Head and body tags</p>
+    <p class="cd">output = document.head;</p>
+    <p class="cd">output = document.body;</p>
+    <br />
+    <p class="cm">// HTMLCollection of everything in head/body</p>
+    <p class="cd">output = document.head.children;</p>
+    <p class="cd">output = document.body.children;</p>
+    <br />
+    <p class="cm">// Random properties</p>
+    <p class="cd">output = document.doctype;</p>
+    <p class="cd">output = document.domain;</p>
+    <p class="cd">output = document.URL;</p>
+    <p class="cd">output = document.characterSet;</p>
+    <p class="cd">output = document.contentType;</p>
+    <br />
+    <p class="cm">// Get all forms</p>
+    <p class="cd">output = document.forms;</p>
+    <p class="cd">output = document.forms[0];</p>
+    <p class="cd">output = document.forms[0].id;</p>
+    <p class="cd">output = document.forms[0].method;</p>
+    <p class="cd">output = document.forms[0].action;</p>
+    <br />
+    <p class="cm">// Change a form id</p>
+    <p class="cd">document.forms[0].id = 'new-id';</p>
+    <br />
+    <p class="cm">// Get all links</p>
+    <p class="cm">// output = document.links;</p>
+    <p class="cm">// output = document.links[0];</p>
+    <p class="cm">// output = document.links[0].href;</p>
+    <p class="cm">// output = document.links[0].href = 'https://facebook.com';</p>
+    <p class="cm">// output = document.links[0].id = 'google-link';</p>
+    <p class="cm">// output = document.links[0].className = 'google-class';</p>
+    <p class="cm">// output = document.links[0].classList;</p>
+    <br />
+    <p class="cm">// Get all images</p>
+    <p class="cd">output = document.images;</p>
+    <p class="cd">output = document.images[0];</p>
+    <p class="cd">output = document.images[0].src;</p>
+    <br />
+    <p class="cm">// Turn an HTMLCollection into an array</p>
+    <p class="cd">const forms = Array.from(document.forms);</p>
+    <p class="cd">forms.forEach((form) => console.log(form));</p>
+    <br />
+    <p class="cd">console.log(output);</p>
+    <br />
   	</div>
   <script>
     const startScreen = document.getElementById('start-screen');
