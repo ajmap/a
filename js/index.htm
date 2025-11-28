@@ -2252,6 +2252,54 @@
     <br />
     <p class="cd">console.log(output);</p>
     <br />
+	<p class="cd"><i>71. DOM Selectors - Single Elements</i></p>
+	<br>	
+	<p class="cm">// document.getElementById()</p>
+    <br />
+    <p class="cd">console.log(document.getElementById('app-title'));</p>
+    <br />
+    <p class="cm">// Get attributes</p>
+    <p class="cd">console.log(document.getElementById('app-title').id);</p>
+    <p class="cd">console.log(document.getElementById('app-title').className);</p>
+    <p class="cd">console.log(document.getElementById('app-title').getAttribute('id'));</p>
+    <br />
+    <p class="cm">// Set attributes</p>
+    <p class="cd">document.getElementById('app-title').title = 'Shopping List';</p>
+    <p class="cd">document.getElementById('app-title').setAttribute('class', 'title');</p>
+    <br />
+    <p class="cd">const title = document.getElementById('app-title');</p>
+    <br />
+    <p class="cm">// Get/change content</p>
+    <p class="cd">console.log(title.textContent);</p>
+    <p class="cd">title.textContent = 'Hello World';</p>
+    <p class="cd">title.innerText = 'Hello Again';</p>
+    <p class="cd">title.innerHTML = '&lt;strong&gt;Shopping List&lt;/strong&gt;';</p>
+    <br />
+    <p class="cm">// Change styles</p>
+    <p class="cd">title.style.color = 'red';</p>
+    <p class="cd">title.style.backgroundColor = 'black';</p>
+    <p class="cd">title.style.padding = '10px';</p>
+    <p class="cd">title.style.borderRadius = '10px';</p>
+    <br />
+    <p class="cm">// document.querySelector()</p>
+    <br />
+    <p class="cm">// Use any CSS selector</p>
+    <p class="cd">console.log(document.querySelector('h1'));</p>
+    <p class="cd">console.log(document.querySelector('#app-title'));</p>
+    <p class="cd">console.log(document.querySelector('.container'));</p>
+    <p class="cd">console.log(document.querySelector('input[type="text"]'));</p>
+    <p class="cd">console.log(document.querySelector('li:nth-child(2)').innerText);</p>
+    <br />
+    <p class="cd">const secondItem = document.querySelector('li:nth-child(2)');</p>
+    <p class="cd">secondItem.innerText = 'Apple Juice';</p>
+    <p class="cd">secondItem.style.color = 'red';</p>
+    <br />
+    <p class="cm">// Use these methods on other elements</p>
+    <p class="cd">const list = document.querySelector('ul');</p>
+    <p class="cd">console.log(list);</p>
+    <p class="cd">const firstItem = list.querySelector('li');</p>
+    <p class="cd">firstItem.style.color = 'blue';</p>
+    <br />	
   	</div>
   <script>
     const startScreen = document.getElementById('start-screen');
