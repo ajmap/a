@@ -2299,6 +2299,53 @@
     <p class="cd">console.log(list);</p>
     <p class="cd">const firstItem = list.querySelector('li');</p>
     <p class="cd">firstItem.style.color = 'blue';</p>
+    <br />
+	<p class="cd"><i>72. DOM Selectors - Multiple Elements</i></p>
+	<br>	
+	<p class="cm">// querySelectorAll()</p>
+    <p class="cm">// Returns a NodeList</p>
+    <br />
+    <p class="cd">const listItems = document.querySelectorAll('.item');</p>
+    <br />
+    <p class="cm">// Access elements by index</p>
+    <p class="cd">console.log(listItems[1].innerText);</p>
+    <br />
+    <p class="cm">// Setting a color for specific element</p>
+    <p class="cd">listItems[1].style.color = 'red';</p>
+    <br />
+    <p class="cm">// We can use forEach() on a NodeList</p>
+    <p class="cd">listItems.forEach((item, index) =&gt; {</p>
+    <p class="cd">&emsp;&emsp;item.style.color = 'red';</p>
+    <br />
+    <p class="cd">&emsp;&emsp;if (index === 1) {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;item.remove();</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <br />
+    <p class="cd">&emsp;&emsp;if (index === 0) {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;item.innerHTML = ` Oranges</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&lt;button class="remove-item btn-link text-red"&gt;</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&lt;i class="fa-solid fa-xmark"&gt;&lt;/i&gt;</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&lt;/button&gt;`;</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cm">// getElementsByClassName()</p>
+    <p class="cm">// Returns an HTMLCollection</p>
+    <br />
+    <p class="cd">const listItems2 = document.getElementsByClassName('item');</p>
+    <br />
+    <p class="cd">console.log(listItems2[2].innerText);</p>
+    <br />
+    <p class="cd">const listItemsArray = Array.from(listItems2);</p>
+    <br />
+    <p class="cd">&emsp;&emsp;console.log(item.innerText);</p>
+    <p class="cd">listItemsArray.forEach((item) =&gt; {</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cm">// getElementsByTagName()</p>
+    <br />
+    <p class="cd">const listItems3 = document.getElementsByTagName('li');</p>
+    <p class="cd">console.log(listItems3[0].innerText);</p>
     <br />	
   	</div>
   <script>
