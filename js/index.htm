@@ -2387,6 +2387,47 @@
     <br />
     <br />
     <p class="cd">console.log(output);</p>
+	<br>
+	<p class="cd"><i>74. Traversing The DOM - Nodes	</i></p>
+	<br>
+	<p class="cd">let output;</p>
+    <br />
+    <p class="cm">// Get child nodes</p>
+    <br />
+    <p class="cd">const parent = document.querySelector('.parent');</p>
+    <br />
+    <p class="cd">output = parent.childNodes;</p>
+    <p class="cd">output = parent.childNodes[0].textContent;</p>
+    <p class="cd">output = parent.childNodes[0].nodeName;</p>
+    <p class="cd">output = parent.childNodes[3].textContent;</p>
+    <p class="cd">output = parent.childNodes[3].outerHTML;</p>
+    <br />
+    <p class="cd">output = parent.childNodes[3].innerText = 'Child One';</p>
+    <p class="cd">output = parent.childNodes[5].style.color = 'red';</p>
+    <br />
+    <p class="cd">output = parent.firstChild;</p>
+    <p class="cd">output = parent.lastChild;</p>
+    <br />
+    <p class="cd">parent.lastChild.textContent = 'Hello';</p>
+    <br />
+    <p class="cm">// Get parent node</p>
+    <br />
+    <p class="cd">const child = document.querySelector('.child');</p>
+    <br />
+    <p class="cd">output = child.parentNode;</p>
+    <p class="cd">output = child.parentElement;</p>
+    <br />
+    <p class="cd">child.parentNode.style.backgroundColor = '#ccc';</p>
+    <p class="cd">child.parentNode.style.padding = '10px';</p>
+    <br />
+    <p class="cm">// Get sibling nodes</p>
+    <p class="cd">const secondItem = document.querySelector('.child:nth-child(2)');</p>
+    <br />
+    <p class="cd">output = secondItem.nextSibling;</p>
+    <p class="cd">output = secondItem.previousSibling;</p>
+    <br />
+    <br />
+    <p class="cd">console.log(output);</p>
 	<br>	
   	</div>
   <script>
