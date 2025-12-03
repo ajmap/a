@@ -2346,7 +2346,48 @@
     <br />
     <p class="cd">const listItems3 = document.getElementsByTagName('li');</p>
     <p class="cd">console.log(listItems3[0].innerText);</p>
-    <br />	
+    <br />
+	<p class="cd"><i>73. Traversing The DOM - Elements</i></p>
+	<br>
+	<p class="cd">let output;</p>
+    <br />
+    <p class="cd">// Get child elements from a parent</p>
+    <br />
+    <p class="cd">const parent = document.querySelector('.parent');</p>
+    <br />
+    <p class="cd">output = parent.children;</p>
+    <br />
+    <p class="cd">output = parent.children[1].innerText;</p>
+    <p class="cd">output = parent.children[1].className;</p>
+    <p class="cd">output = parent.children[1].nodeName;</p>
+    <br />
+    <p class="cd">parent.children[1].innerText = 'Child Two';</p>
+    <p class="cd">parent.children[1].style.color = 'red';</p>
+    <br />
+    <p class="cd">parent.firstElementChild.innerText = 'Child One';</p>
+    <p class="cd">parent.lastElementChild.innerText = 'Child Three';</p>
+    <br />
+    <p class="cd">// Get parent elements from a child</p>
+    <br />
+    <p class="cd">const child = document.querySelector('.child');</p>
+    <br />
+    <p class="cd">output = child.parentElement;</p>
+    <p class="cd">child.parentElement.style.border = '1px solid #ccc';</p>
+    <p class="cd">child.parentElement.style.padding = '10px';</p>
+    <br />
+    <p class="cd">// Get sibling elements</p>
+    <br />
+    <p class="cd">const secondItem = document.querySelector('.child:nth-child(2)');</p>
+    <br />
+    <p class="cd">output = secondItem;</p>
+    <p class="cd">output = secondItem.nextElementSibling;</p>
+    <br />
+    <p class="cd">secondItem.nextElementSibling.style.color = 'green';</p>
+    <p class="cd">secondItem.previousElementSibling.style.color = 'orange';</p>
+    <br />
+    <br />
+    <p class="cd">console.log(output);</p>
+	<br>	
   	</div>
   <script>
     const startScreen = document.getElementById('start-screen');
