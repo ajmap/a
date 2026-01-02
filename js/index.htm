@@ -2444,7 +2444,40 @@
     <p class="cm">// document.body.appendChild(div);</p>
     <br />
     <p class="cd">document.querySelector('ul').appendChild(div);</p>
-    <br />	
+    <br />
+	<p class="cd"><i>76. InnerHTML vs createElement()</i></p>
+    <p class='cd'>// Quick & Dirty	</p>
+    <p class='cd'>function createListItem(item) {	</p>
+    <p class='cd'>&emsp;&emsp;const li = document.createElement('li');	</p>
+    <br>		
+    <p class='cd'>&emsp;&emsp;li.innerHTML = `${item}	</p>
+    <p class='cd'>&emsp;&emsp;<button class="remove-item btn-link text-red">	</p>
+    <p class='cd'>&emsp;&emsp;&emsp;&emsp;<i class="fa-solid fa-xmark"></i>	</p>
+    <p class='cd'>&emsp;&emsp;</button>`;	</p>
+    <br>		
+    <p class='cd'>&emsp;&emsp;document.querySelector('.items').appendChild(li);	</p>
+    <p class='cd'>}	</p>
+    <br>		
+    <p class='cd'>// Clean & Performant	</p>
+    <p class='cd'>function createNewItem(item) {	</p>
+    <p class='cd'>&emsp;&emsp;const li = document.createElement('li');	</p>
+    <p class='cd'>&emsp;&emsp;li.appendChild(document.createTextNode(item));	</p>
+    <br>		
+    <p class='cd'>&emsp;&emsp;const button = document.createElement('button');	</p>
+    <p class='cd'>&emsp;&emsp;button.className = 'remove-item btn-link text-red';	</p>
+    <br>		
+    <p class='cd'>&emsp;&emsp;const icon = document.createElement('i');	</p>
+    <p class='cd'>&emsp;&emsp;icon.className = 'fa-solid fa-xmark';	</p>
+    <br>		
+    <p class='cd'>&emsp;&emsp;button.appendChild(icon);	</p>
+    <p class='cd'>&emsp;&emsp;li.appendChild(button);	</p>
+    <br>		
+    <p class='cd'>&emsp;&emsp;document.querySelector('.items').appendChild(li);	</p>
+    <p class='cd'>}	</p>
+    <br>		
+    <p class='cd'>createListItem('Eggs');	</p>
+    <p class='cd'>createNewItem('Cheese');	</p>
+    <br>	
   	</div>
   <script>
     const startScreen = document.getElementById('start-screen');
