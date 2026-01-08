@@ -1,8 +1,72 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="css/fretboard.css">
+
         <title>Fretboard</title>
+        <style>
+            *   { position: absolute; font-family: sans-serif; font-size: 1vw; color: #444 }
+#c { width: 100vw; height: 100vh; position: relative }
+button { cursor: pointer }
+a { cursor: pointer }
+.ss { background-color: steelblue; width: 91rem; z-index: 1 }
+.fs { background-color: #000; height: 11rem; width: 0.4rem }
+.ds { font-size: 6.6rem; z-index: -1 }
+.n { background-color: lightyellow; opacity: 0; font-size: 1.4rem; border: solid 0.11rem #666; border-radius: 50%; width: 1.99rem;
+     height: 1.99rem; z-index: 2; color: black; font-weight: bold;
+     display: flex;
+     align-items: center;
+     justify-content: center }
+.n0 { font-size: 1.7rem; opacity: 0 }
+.shw { opacity: 1 }
+.shwe { background-color: lightyellow; opacity: 1; border: solid 0.11rem black; border-radius: 50%; width: 1.99rem;
+     height: 1.99rem; z-index: 2; color: white}
+#btns { display: flex; margin: 1rem; left: 2.5rem;  }
+#bts2 { display: flex; margin: 1rem; left: 2.5rem; top: 4rem }
+#bts3 { display: flex; margin: 1rem; left: 2.5rem; top: 35rem }
+#btsw { display: flex; margin: 1rem; left: 2.5rem; top: 9.5rem }
+#fbts { display: flex; margin: 1rem; left: 2.5rem; top: 13.5rem }
+.btns { position: relative; font-size: 1.3rem; margin: 0.5rem; width: 6.5rem; background-color: cyan; border-radius: 5px; padding: 0.5rem }
+.bts2 { position: relative; font-size: 1.3rem; margin: 0.5rem; width: 10.25rem; background-color: lightorange; border-radius: 5px; padding: 0.5rem }
+.bts3 { position: relative; font-size: 1.3rem; margin: 0.5rem; width: 10.25rem; background-color: lightpink; border-radius: 5px; padding: 0.5rem }
+.btsw { position: relative; font-size: 1.3rem; margin: 0.5rem; width: 29rem; background-color: #fff; border-radius: 5px; padding: 0.5rem }
+.fbts { position: relative; font-size: 1.3rem; margin: 0.42rem; width: 6.07rem; background-color: lightcyan; border-radius: 5px; padding: 0.5rem }
+#bb { background-color: #000; color: #fff }
+#bg { background-color: yellow }
+#s1{height:0.09rem;top:21.6rem;left:4rem}#s2{height:0.12rem;top:23.75rem;left:4rem}#s3{height:0.15rem;top:25.9rem;left:4rem}#s4{height:0.18rem;top:28.05rem;left:4rem}#s5 {height: 0.21rem; top: 30.2rem;left:4rem}#s6{ height:0.24rem;top:32.4rem;left:4rem}
+#f0 {top: 21.58rem; left: 4rem; width: 0.8vw } #E1 { top: 20.6rem; left: 1.8rem } #B2 { top: 22.8rem; left: 1.8rem } #G3 { top: 25rem; left: 1.8rem }
+#D4 { top: 27.2rem; left: 1.8rem } #A5 { top: 29.4rem; left: 1.8rem } #E6 { top: 31.6rem; left: 1.8rem }
+#f1 { top: 21.6rem; left: 13rem }#F1 { top: 20.6rem; left: 7.95rem } #C2 { top: 22.8rem; left: 7.95rem } #Gis3 { top: 25rem; left: 7.95rem }
+#Dis4 { top: 27.2rem; left: 7.95rem } #Ais5 { top: 29.4rem; left: 7.95rem } #F6 { top: 31.6rem; left: 7.95rem } 
+#f2 { top: 21.6rem; left: 21.7rem } #Fis1 { top: 20.6rem; left: 16.6rem } #Cis2 { top: 22.8rem; left: 16.6rem } #A3 { top: 25rem; left: 16.6rem }
+#E4 { top: 27.2rem; left: 16.6rem } #B5 { top: 29.4rem; left: 16.6rem } #Fis6 { top: 31.6rem; left: 16.6rem } 
+#f3 { top: 21.6rem; left: 30.1rem } #G1 { top: 20.6rem; left: 25.1rem } #D2 { top: 22.8rem; left: 25.1rem } #Ais3 { top: 25rem; left: 25.1rem }
+#F4 { top: 27.2rem; left: 25.1rem } #C5 { top: 29.4rem; left: 25.1rem } #G6 { top: 31.6rem; left: 25.1rem } 
+#f4 { top: 21.6rem; left: 38.2rem } #Gis1 { top: 20.6rem; left: 33.4rem } #Dis2 { top: 22.8rem; left: 33.4rem } #B3 { top: 25rem; left: 33.4rem }
+#Fis4 { top: 27.2rem; left:33.4rem } #Cis5 { top: 29.4rem; left:33.4rem } #Gis6 { top: 31.6rem; left: 33.4rem }
+#f5 { top: 21.6rem; left: 46rem } #A1 { top: 20.6rem; left: 41.2rem } #E2 { top: 22.8rem; left: 41.2rem } #C3 { top: 25rem; left: 41.2rem }
+#G4 { top: 27.2rem; left: 41.2rem } #D5 { top: 29.4rem; left: 41.2rem } #A6 { top: 31.6rem; left: 41.2rem }
+#f6 { top: 21.6rem; left: 53.5rem } #Ais1 { top: 20.6rem; left: 48.9rem } #F2 { top: 22.8rem; left: 48.9rem } #Cis3 { top: 25rem; left: 48.9rem }
+#Gis4 { top: 27.2rem; left: 48.9rem } #Dis5 { top: 29.4rem; left: 48.9rem } #Ais6 { top: 31.6rem; left: 48.9rem }
+#f7 { top: 21.6rem; left: 60.7rem } #B1 { top: 20.6rem; left: 56.25rem } #Fis2 { top: 22.8rem; left: 56.25rem } #D3 { top: 25rem; left: 56.25rem }
+#A4 { top: 27.2rem; left: 56.25rem } #E5 { top: 29.4rem; left: 56.25rem } #B6 { top: 31.6rem; left: 56.25rem }
+#f8 { top: 21.6rem; left: 67.6rem } #C1 { top: 20.6rem; left: 63.3rem } #G2 { top: 22.8rem; left: 63.3rem } #Dis3 { top: 25rem; left: 63.3rem }
+#Ais4 { top: 27.2rem; left: 63.3rem } #F5 { top: 29.4rem; left: 63.3rem } #C6 { top: 31.6rem; left: 63.3rem }
+#f9 { top: 21.6rem; left: 74.2rem } #Cis1 { top: 20.6rem; left: 70.2rem } #Gis2 { top: 22.8rem; left: 70.2rem } #E3 { top: 25rem; left: 70.2rem }
+#B4 { top: 27.2rem; left: 70.2rem } #Fis5 { top: 29.4rem; left: 70.2rem } #Cis6 { top: 31.6rem; left: 70.2rem }
+#f10 { top: 21.6rem; left: 80.5rem } #D1 { top: 20.6rem; left: 76.5rem } #A2 { top: 22.8rem; left: 76.5rem } #F3 { top: 25rem; left: 76.5rem }
+#C4 { top: 27.2rem; left: 76.5rem } #G5 { top: 29.4rem; left: 76.5rem } #D6 { top: 31.6rem; left: 76.5rem }
+#f11 { top: 21.6rem; left: 86.5rem } #Dis1 { top: 20.6rem; left: 82.7rem } #Ais2 { top: 22.8rem; left: 82.7rem } #Fis3 { top: 25rem; left: 82.7rem }
+#Cis4 { top: 27.2rem; left: 82.7rem } #Gis5 { top: 29.4rem; left: 82.7rem } #Dis6 { top: 31.6rem; left: 82.7rem }
+#f12 { top: 21.6rem; left: 92.2rem } #E12 { top: 20.6rem; left: 88.5rem } #B22 { top: 22.8rem; left: 88.5rem } #G32 { top: 25rem; left: 88.5rem }
+#D42 { top: 27.2rem; left: 88.5rem } #A52 { top: 29.4rem; left: 88.5rem } #E62 { top: 31.6rem; left: 88.5rem }
+#d3 { top: 23.2rem; left: 25.05rem } #d5 { top: 23.2rem; left: 41.25rem } #d7 { top: 23.2rem; left: 56.15rem } #d9 { top: 23.2rem; left: 70.2rem } 
+#d1 { top: 18.8rem; left: 88.45rem } 
+#d2 { top: 27.5rem; left: 88.45rem }
+#C1e { top: 20.6rem; left: 63.3rem;border: solid 0.11rem #666; border-radius: 50%; width: 1.99rem;
+     height: 1.99rem; z-index: 2;background-color: white } 
+#G2e { top: 22.8rem; left: 63.3rem } 
+#Dis3e { top: 25rem; left: 63.3rem }
+        </style>    
     </head><body>
     <main id='c' class=''>
         <div id='btns'>
