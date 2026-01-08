@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/fretboard.css">
+        <title>Fretboard</title>
+    </head><body>
+    <main id='c' class=''>
+        <div id='btns'>
+            <button id='bC' class='btns'>C</button>
+            <button id='bCis' class='btns'>C#</button>
+            <button id='bD' class='btns'>D</button>
+            <button id='bDis' class='btns'>D#</button>
+            <button id='bE' class='btns'>E</button>
+            <button id='bF' class='btns'>F</button>
+            <button id='bFis' class='btns'>F#</button>
+            <button id='bG' class='btns'>G</button>
+            <button id='bGis' class='btns'>G#</button>
+            <button id='bA' class='btns'>A</button>
+            <button id='bAis' class='btns'>A#</button>
+            <button id='bB' class='btns'>B</button>
+        </div>
+        <div id='bts2'>
+            <button id='bEAd' class='bts2'>E - A</br>diagonal down</button>
+            <button id='bFAisd' class='bts2'>F - A#</br>diagonal down</button>
+            <button id='bFisBd' class='bts2'>F# - B</br>diagonal down</button>
+            <button id='bGCd' class='bts2'>G - C</br>diagonal down</button>
+            <button id='bGisCisd' class='bts2'>G# - Cis</br>diagonal down</button>
+            <button id='bADd' class='bts2'>A - D</br>diagonal down</button>
+            <button id='bAisDisd' class='bts2'>A# - D#</br>diagonal down</button>   
+            <button id='bBEd' class='bts2'>B - E</br>diagonal down</button>
+        </div>
+        <div id='bts3'>
+            <button id='bEAdu' class='bts3'>E - A</br>diagonal up</button>
+            <button id='bFAisdu' class='bts3'>F - A#</br>diagonal up</button>
+            <button id='bFisBdu' class='bts3'>F# - B</br>diagonal up</button>
+            <button id='bGCdu' class='bts3'>G - C</br>diagonal up</button>
+            <button id='bGisCisdu' class='bts3'>G# - Cis</br>diagonal up</button>
+            <button id='bADdu' class='bts3'>A - D</br>diagonal up</button>
+            <button id='bAisDisdu' class='bts3'>A# - D#</br>diagonal up</button>
+            <button id='bBEdu' class='bts3'>E</br>diagonal up</button>
+        </div>  
+        <div id='btsw'>
+            <button id='bw' class='btsw'>White Keys on the Piano</button>
+            <button id='bb' class='btsw'>Black Keys on the Piano</button>
+            <button id='bg' class='btsw'>Take a Guess</button></div>  
+        <div id='fbts'>
+            <button id='fr0' class='fbts'>open</button>
+            <button id='fr1' class='fbts'>1th fret</button>
+            <button id='fr2' class='fbts'>2nd fret</button>
+            <button id='fr3' class='fbts'>3rd fret</button>
+            <button id='fr4' class='fbts'>4th fret</button>
+            <button id='fr5' class='fbts'>5th fret</button>
+            <button id='fr6' class='fbts'>6th fret</button>
+            <button id='fr7' class='fbts'>7th fret</button>
+            <button id='fr8' class='fbts'>8th fret</button>
+            <button id='fr9' class='fbts'>9th fret</button>
+            <button id='fr10' class='fbts'>10th fret</button>
+            <button id='fr11' class='fbts'>11th fret</button>
+            <button id='fr12' class='fbts'>12th fret</button>
+        </div>   
+        <div id='s1' class='ss'></div>
+        <div id='s2' class='ss'></div>
+        <div id='s3' class='ss'></div>
+        <div id='s4' class='ss'></div>
+        <div id='s5' class='ss'></div>
+        <div id='s6' class='ss'></div>
+        <div id='f0' class='fs'></div>
+            <a onclick='sE1()'><div id='E1' class='n0'>E</div></a>
+                <audio id='sndE1' src='sound/E1.mp3'></audio>
+            <a onclick='sB2()'><div id='B2' class='n0'>B</div>
+                <audio id='sndB2' src='sound/B2.mp3'></audio> 
+            <a onclick='sG3()'><div id='G3' class='n0'>G</div></a>
+                <audio id='sndG3' src='sound/G3.mp3'></audio>  
+            <a onclick='sD4()'><div id='D4' class='n0'>D</div>
+                <audio id='sndD4' src='sound/D4.mp3'></audio>  
+            <a onclick='sA5()'><div id='A5' class='n0'>A</div></a>
+                <audio id='sndA5' src='sound/A5.mp3'></audio>  
+            <a onclick='sE6()'><div id='E6' class='n0'>E</div></a>
+                <audio id='sndE6' src='sound/E6.mp3'></audio>  
+        <div id='f1' class='fs'></div>
+            <a onclick='sF1()'><div id='F1' class='n'>F</div></a>
+                <audio id='sndF1' src='sound/F1.mp3'></audio>          
+            <a onclick='sC2()'><div id='C2' class='n'>C</div></a>
+                <audio id='sndC2' src='sound/C2.mp3'></audio>        
+            <a onclick='sGis3()'><div id='Gis3' class='n'>G#</div>
+                <audio id='sndGis3' src='sound/Gis3.mp3'></audio>
+            <a onclick='sDis4()'><div id='Dis4' class='n'>D#</div></a>
+                <audio id='sndDis4' src='sound/Dis4.mp3'></audio> 
+            <a onclick='sAis5()'><div id='Ais5' class='n'>A#</div></a>
+                <audio id='sndAis5' src='sound/Ais5.mp3'></audio>
+            <a onclick='sF6()'><div id='F6' class='n'>F</div></a>
+                <audio id='sndF6' src='sound/F6.mp3'></audio>
+        <div id='f2' class='fs'></div>
+            <a onclick='sFis1()'><div id='Fis1' class='n'>F#</div></a>
+                <audio id='sndFis1' src='sound/Fis1.mp3'></audio>     
+            <a onclick='sCis2()'><div id='Cis2' class='n'>C#</div>
+                <audio id='sndCis2' src='sound/Cis2.mp3'></audio>
+            <a onclick='sA3()'><div id='A3' class='n'>A</div></a>
+                <audio id='sndA3' src='sound/A3.mp3'></audio> 
+            <a onclick='sE4()'><div id='E4' class='n'>E</div>
+                <audio id='sndE4' src='sound/E4.mp3'></audio>
+            <a onclick='sB5()'><div id='B5' class='n'>B</div>
+                <audio id='sndB5' src='sound/B5.mp3'></audio>  
+            <a onclick='sFis6()'><div id='Fis6' class='n'>F#</div></a>
+                <audio id='sndFis6' src='sound/Fis6.mp3'></audio>      
+        <div id='f3' class='fs'></div>
+            <a onclick='sG1()'><div id='G1' class='n'>G</div></a>
+                <audio id='sndG1' src='sound/G1.mp3'></audio> 
+            <a onclick='sD2()'><div id='D2' class='n'>D</div>
+                <audio id='sndD2' src='sound/D2.mp3'></audio> 
+            <a onclick='sAis3()'><div id='Ais3' class='n'>A#</div></a>
+                <audio id='sndAis3' src='sound/Ais3.mp3'></audio>
+            <a onclick='sF4()'><div id='F4' class='n'>F</div></a>
+                <audio id='sndF4' src='sound/F4.mp3'></audio>  
+            <a onclick='sC5()'><div id='C5' class='n'>C</div></a>
+                <audio id='sndC5' src='sound/C5.mp3'></audio>  
+            <a onclick='sG6()'><div id='G6' class='n'>G</div></a>
+                <audio id='sndG6' src='sound/G6.mp3'></audio>            
+        <div id='f4' class='fs'></div>
+            <a onclick='sGis1()'><div id='Gis1' class='n'>G#</div>
+                <audio id='sndGis1' src='sound/Gis1.mp3'></audio>
+            <a onclick='sDis2()'><div id='Dis2' class='n'>D#</div>
+                <audio id='sndDis2' src='sound/Dis2.mp3'></audio>
+            <a onclick='sB3()'><div id='B3' class='n'>B</div>
+                <audio id='sndB3' src='sound/B3.mp3'></audio>
+            <a onclick='sFis4()'><div id='Fis4' class='n'>F#</div>
+                <audio id='sndFis4' src='sound/Fis4.mp3'></audio>
+            <a onclick='sCis5()'><div id='Cis5' class='n'>C#</div>
+                <audio id='sndCis5' src='sound/Cis5.mp3'></audio>
+            <a onclick='sGis6()'><div id='Gis6' class='n'>G#</div>
+                <audio id='sndGis6' src='sound/Gis6.mp3'></audio>
+        <div id='f5' class='fs'></div>
+            <a onclick='sA1()'><div id='A1' class='n'>A</div></a>
+                <audio id='sndA1' src='sound/A1.mp3'></audio>  
+            <a onclick='sE2()'><div id='E2' class='n'>E</div></a>
+                <audio id='sndE2' src='sound/E2.mp3'></audio>
+            <a onclick='sC3()'><div id='C3' class='n'>C</div></a>
+                <audio id='sndC3' src='sound/C3.mp3'></audio>  
+            <a onclick='sG4()'><div id='G4' class='n'>G</div></a>
+                <audio id='sndG4' src='sound/G4.mp3'></audio>  
+            <a onclick='sD5()'><div id='D5' class='n'>D</div></a>
+                <audio id='sndD5' src='sound/D5.mp3'></audio>  
+            <a onclick='sA6()'><div id='A6' class='n'>A</div>
+                <audio id='sndA6' src='sound/A6.mp3'></audio>
+        <div id='f6' class='fs'></div>
+            <a onclick='sAis1()'><div id='Ais1' class='n'>A#</div></a>
+                <audio id='sndAis1' src='sound/Ais1.mp3'></audio>  
+            <a onclick='sF2()'><div id='F2' class='n'>F</div></a>
+                <audio id='sndF2' src='sound/F2.mp3'></audio>
+            <a onclick='sCis3()'><div id='Cis3' class='n'>C#</div></a>
+                <audio id='sndCis3' src='sound/Cis3.mp3'></audio>  
+            <a onclick='sGis4()'><div id='Gis4' class='n'>G#</div></a>
+                <audio id='sndGis4' src='sound/Gis4.mp3'></audio>  
+            <a onclick='sDis5()'><div id='Dis5' class='n'>D#</div></a>
+                <audio id='sndDis5' src='sound/Dis5.mp3'></audio>  
+            <a onclick='sAis6()'><div id='Ais6' class='n'>A#</div>
+                <audio id='sndAis6' src='sound/Ais6.mp3'></audio>
+        <div id='f7' class='fs'></div>
+            <a onclick='sB1()'><div id='B1' class='n'>B</div></a>
+                <audio id='sndB1' src='sound/B1.mp3'></audio>  
+            <a onclick='sFis2()'><div id='Fis2' class='n'>F#</div></a>
+                <audio id='sndFis2' src='sound/Fis2.mp3'></audio>
+            <a onclick='sD3()'><div id='D3' class='n'>D</div></a>
+                <audio id='sndD3' src='sound/D3.mp3'></audio>  
+            <a onclick='sA4()'><div id='A4' class='n'>A</div></a>
+                <audio id='sndA4' src='sound/A4.mp3'></audio>  
+            <a onclick='sE5()'><div id='E5' class='n'>E</div></a>
+                <audio id='sndE5' src='sound/E5.mp3'></audio>  
+            <a onclick='sB6()'><div id='B6' class='n'>B</div>
+                <audio id='sndB6' src='sound/B6.mp3'></audio>   
+        <div id='f8' class='fs'></div>
+            <a onclick='sC1()'><div id='C1' class='n'>C</div></a>
+                <audio id='sndC1' src='sound/C1.mp3'></audio>  
+            <a onclick='sG2()'><div id='G2' class='n'>G</div></a>
+                <audio id='sndG2' src='sound/G2.mp3'></audio>  
+            <a onclick='sDis3()'><div id='Dis3' class='n'>D#</div></a>
+                <audio id='sndDis3' src='sound/Dis3.mp3'></audio>  
+            <a onclick='sAis4()'><div id='Ais4' class='n'>A#</div></a>
+                <audio id='sndAis4' src='sound/Ais4.mp3'></audio>  
+            <a onclick='sF5()'><div id='F5' class='n'>F</div></a>
+                <audio id='sndF5' src='sound/F5.mp3'></audio>  
+            <a onclick='sC6()'><div id='C6' class='n'>C</div></a>
+                <audio id='sndC6' src='sound/C6.mp3'></audio>     
+        <div id='f9' class='fs'></div>
+            <a onclick='sCis1()'><div id='Cis1' class='n'>C#</div></a>
+                <audio id='sndCis1' src='sound/Cis1.mp3'></audio>  
+            <a onclick='sGis2()'><div id='Gis2' class='n'>G#</div></a>
+                <audio id='sndGis2' src='sound/Gis2.mp3'></audio>  
+            <a onclick='sE3()'><div id='E3' class='n'>E</div></a>
+                <audio id='sndE3' src='sound/E3.mp3'></audio>  
+            <a onclick='sB4()'><div id='B4' class='n'>B</div></a>
+                <audio id='sndB4' src='sound/B4.mp3'></audio>  
+            <a onclick='sFis5()'><div id='Fis5' class='n'>F#</div></a>
+                <audio id='sndFis5' src='sound/Fis5.mp3'></audio>  
+            <a onclick='sCis6()'><div id='Cis6' class='n'>C#</div></a>
+                <audio id='sndCis6' src='sound/Cis6.mp3'></audio>  
+        <div id='f10' class='fs'></div>
+            <a onclick='sD1()'><div id='D1' class='n'>D</div></a>
+                <audio id='sndD1' src='sound/D1.mp3'></audio>  
+            <a onclick='sA2()'><div id='A2' class='n'>A</div></a>
+                <audio id='sndA2' src='sound/A2.mp3'></audio>  
+            <a onclick='sF3()'><div id='F3' class='n'>F</div></a>
+                <audio id='sndF3' src='sound/F3.mp3'></audio>  
+            <a onclick='sC4()'><div id='C4' class='n'>C</div></a>
+                <audio id='sndC4' src='sound/C4.mp3'></audio>  
+            <a onclick='sG5()'><div id='G5' class='n'>G</div></a>
+                <audio id='sndG5' src='sound/G5.mp3'></audio>  
+            <a onclick='sD6()'><div id='D6' class='n'>D</div></a>
+                <audio id='sndD6' src='sound/D6.mp3'></audio>  
+        <div id='f11' class='fs'></div>
+            <a onclick='sDis1()'><div id='Dis1' class='n'>D#</div></a>
+                <audio id='sndDis1' src='sound/Dis1.mp3'></audio>   
+            <a onclick='sAis2()'><div id='Ais2' class='n'>A#</div></a>
+                <audio id='sndAis2' src='sound/Ais2.mp3'></audio>   
+            <a onclick='sFis3()'><div id='Fis3' class='n'>F#</div></a>
+                <audio id='sndFis3' src='sound/Fis3.mp3'></audio>   
+            <a onclick='sCis4()'><div id='Cis4' class='n'>C#</div></a>
+                <audio id='sndCis4' src='sound/Cis4.mp3'></audio>   
+            <a onclick='sGis5()'><div id='Gis5' class='n'>G#</div></a>
+                <audio id='sndGis5' src='sound/Gis5.mp3'></audio>   
+            <a onclick='sDis6()'><div id='Dis6' class='n'>D#</div></a>
+                <audio id='sndDis6' src='sound/Dis6.mp3'></audio>   
+        <div id='f12' class='fs'></div>
+            <a onclick='sE12()'><div id='E12' class='n'>E</div></a>
+                <audio id='sndE12' src='sound/E12.mp3'></audio>   
+            <a onclick='sB22()'><div id='B22' class='n'>B</div></a>
+                <audio id='sndB22' src='sound/B22.mp3'></audio>   
+            <a onclick='sG32()'><div id='G32' class='n'>G</div></a>
+                <audio id='sndG32' src='sound/G32.mp3'></audio>   
+            <a onclick='sD42()'><div id='D42' class='n'>D</div></a>
+                <audio id='sndD42' src='sound/D42.mp3'></audio>   
+            <a onclick='sA52()'><div id='A52' class='n'>A</div></a>
+                <audio id='sndA52' src='sound/A52.mp3'></audio>   
+            <a onclick='sE62()'><div id='E62' class='n'>E</div></a>
+                <audio id='sndE62' src='sound/E62.mp3'></audio>   
+            
+        <div id='d3' class='ds'>&bull;</div>
+        <div id='d5' class='ds'>&bull;</div>
+        <div id='d7' class='ds'>&bull;</div>
+        <div id='d9' class='ds'>&bull;</div>
+        <div id='d1' class='ds'>&bull;</div>
+        <div id='d2' class='ds'>&bull;</div>
+        </main>
+        <script src="js/fretboard.js">
+        </script>
+    </body>
+</html>
