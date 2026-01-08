@@ -305,7 +305,459 @@ a { cursor: pointer }
         <div id='d1' class='ds'>&bull;</div>
         <div id='d2' class='ds'>&bull;</div>
         </main>
-        <script src="js/fretboard.js">
+        <script>
+            const nts = document.querySelectorAll('.n')
+const n0 = document.querySelectorAll('.n0')
+
+function delShw() { nts.forEach ( n => { n.classList.remove('shw') } ) }
+function delShw0() { n0.forEach ( n => { n.classList.remove('shw') } ) }
+function delShwe() { nts.forEach ( n => { n.classList.remove('shwe') } ) }
+function delS() { delShw0();delShw();delShwe() }
+
+bC.addEventListener('click', () => { delS();
+                                    C1.classList.add('shw');
+                                    C2.classList.add('shw');
+                                    C3.classList.add('shw');
+                                    C4.classList.add('shw');
+                                    C5.classList.add('shw');
+                                    C6.classList.add('shw')  
+                                    })
+
+bCis.addEventListener('click', () => {  delS();
+                                        Cis1.classList.add('shw');
+                                        Cis2.classList.add('shw');
+                                        Cis3.classList.add('shw');
+                                        Cis4.classList.add('shw');
+                                        Cis5.classList.add('shw');
+                                        Cis6.classList.add('shw') 
+                                     })
+
+bD.addEventListener('click', () => {    delS();
+                                        D1.classList.add('shw');
+                                        D2.classList.add('shw');
+                                        D3.classList.add('shw');
+                                        D4.classList.add('shw');
+                                        D5.classList.add('shw');
+                                        D6.classList.add('shw');
+                                        D42.classList.add('shw') 
+                                     })
+bDis.addEventListener('click', () => { delS();Dis1.classList.add('shw');Dis2.classList.add('shw');Dis3.classList.add('shw');Dis4.classList.add('shw');Dis5.classList.add('shw');Dis6.classList.add('shw') })
+bE.addEventListener('click', () => { delS();E1.classList.add('shw');E2.classList.add('shw');E3.classList.add('shw');E4.classList.add('shw');E5.classList.add('shw');E6.classList.add('shw');E12.classList.add('shw') ;E62.classList.add('shw')  })
+bF.addEventListener('click', () => { delS();F1.classList.add('shw');F2.classList.add('shw');F3.classList.add('shw');F4.classList.add('shw');F5.classList.add('shw');F6.classList.add('shw') })
+bFis.addEventListener('click', () => { delS();Fis1.classList.add('shw');Fis2.classList.add('shw');Fis3.classList.add('shw');Fis4.classList.add('shw');Fis5.classList.add('shw');Fis6.classList.add('shw') })
+bG.addEventListener('click', () => { delS();G1.classList.add('shw');G2.classList.add('shw');G3.classList.add('shw');G4.classList.add('shw');G5.classList.add('shw');G6.classList.add('shw');G32 .classList.add('shw') })
+bGis.addEventListener('click', () => { delS();Gis1.classList.add('shw');Gis2.classList.add('shw');Gis3.classList.add('shw');Gis4.classList.add('shw');Gis5.classList.add('shw');Gis6.classList.add('shw') })
+bA.addEventListener('click', () => { delS();A1.classList.add('shw');A2.classList.add('shw');A3.classList.add('shw');A4.classList.add('shw');A5.classList.add('shw');A6.classList.add('shw');A52.classList.add('shw') })
+bAis.addEventListener('click', () => { delS();Ais1.classList.add('shw');Ais2.classList.add('shw');Ais3.classList.add('shw');Ais4.classList.add('shw');Ais5.classList.add('shw');Ais6.classList.add('shw') })
+bB.addEventListener('click', () => { delS();B1.classList.add('shw');B2.classList.add('shw');B3.classList.add('shw');B4.classList.add('shw');B5.classList.add('shw');B6.classList.add('shw');B22.classList.add('shw') })
+bEAd.addEventListener('click', () => { delS();E1.classList.add('shw');C2.classList.add('shw');A3.classList.add('shw');F4.classList.add('shw');Cis5.classList.add('shw');A6.classList.add('shw') })
+bFAisd.addEventListener('click', () => { delS();F1.classList.add('shw');Cis2.classList.add('shw');Ais3.classList.add('shw');Fis4.classList.add('shw');D5.classList.add('shw');Ais6.classList.add('shw') })
+bFisBd.addEventListener('click', () => { delS();Fis1.classList.add('shw');D2.classList.add('shw');B3.classList.add('shw');G4.classList.add('shw');Dis5.classList.add('shw');B6.classList.add('shw')})
+bGCd.addEventListener('click', () => { delS();G1.classList.add('shw');Dis2.classList.add('shw');C3.classList.add('shw');Gis4.classList.add('shw');E5.classList.add('shw');C6.classList.add('shw') })
+bGisCisd.addEventListener('click', () => { delS();Gis1.classList.add('shw');E2.classList.add('shw');Cis3.classList.add('shw');A4.classList.add('shw');F5.classList.add('shw');Cis6.classList.add('shw') })
+bADd.addEventListener('click', () => { delS();A1.classList.add('shw');F2.classList.add('shw');D3.classList.add('shw');Ais4.classList.add('shw');Fis5.classList.add('shw');D6.classList.add('shw') })
+bAisDisd.addEventListener('click', () => { delS();Ais1.classList.add('shw');Fis2.classList.add('shw');Dis3.classList.add('shw');B4.classList.add('shw');G5.classList.add('shw');Dis6.classList.add('shw') })
+bBEd.addEventListener('click', () => { delS();B1.classList.add('shw');G2.classList.add('shw');E3.classList.add('shw');C4.classList.add('shw');Gis5.classList.add('shw');E62.classList.add('shw') })
+bEAdu.addEventListener('click', () => { delS();E6.classList.add('shw');Ais5.classList.add('shw');E4.classList.add('shw');Ais3.classList.add('shw');Dis2.classList.add('shw');A1.classList.add('shw') })
+bFAisdu.addEventListener('click', () => { delS();F6.classList.add('shw');B5.classList.add('shw');F4.classList.add('shw');B3.classList.add('shw');E2.classList.add('shw');Ais1.classList.add('shw') })
+bFisBdu.addEventListener('click', () => { delS();Fis6.classList.add('shw');C5.classList.add('shw');Fis4.classList.add('shw');C3.classList.add('shw');F2.classList.add('shw');B1.classList.add('shw')})
+bGCdu.addEventListener('click', () => { delS();G6.classList.add('shw');Cis5.classList.add('shw');G4.classList.add('shw');Cis3.classList.add('shw');Fis2.classList.add('shw');C1.classList.add('shw') })
+bGisCisdu.addEventListener('click', () => { delS();Gis6.classList.add('shw');D5.classList.add('shw');Gis4.classList.add('shw');D3.classList.add('shw');G2.classList.add('shw');Cis1.classList.add('shw') })
+bADdu.addEventListener('click', () => { delS();A6.classList.add('shw');Dis5.classList.add('shw');A4.classList.add('shw');Dis3.classList.add('shw');Gis2.classList.add('shw');D1.classList.add('shw') })
+bAisDisdu.addEventListener('click', () => { delS();Ais6.classList.add('shw');E5.classList.add('shw');Ais4.classList.add('shw');E3.classList.add('shw');A2.classList.add('shw');Dis1.classList.add('shw') })
+bBEdu.addEventListener('click', () => { delS();B6.classList.add('shw');F5.classList.add('shw');B4.classList.add('shw');F3.classList.add('shw');Ais2.classList.add('shw');E12.classList.add('shw') })
+bb.addEventListener('click', () => { delS();Cis1.classList.add('shw');Cis2.classList.add('shw');Cis3.classList.add('shw');Cis4.classList.add('shw');Cis5.classList.add('shw');Cis6.classList.add('shw');Dis1.classList.add('shw');Dis2.classList.add('shw');Dis3.classList.add('shw');Dis4.classList.add('shw');Dis5.classList.add('shw');Dis6.classList.add('shw');Fis1.classList.add('shw');Fis2.classList.add('shw');Fis3.classList.add('shw');Fis4.classList.add('shw');Fis5.classList.add('shw');Fis6.classList.add('shw');Gis1.classList.add('shw');Gis2.classList.add('shw');Gis3.classList.add('shw');Gis4.classList.add('shw');Gis5.classList.add('shw');Gis6.classList.add('shw');Ais1.classList.add('shw');Ais2.classList.add('shw');Ais3.classList.add('shw');Ais4.classList.add('shw');Ais5.classList.add('shw');Ais6.classList.add('shw') })
+bw.addEventListener('click', () => { delS();C1.classList.add('shw');C2.classList.add('shw');C3.classList.add('shw');C4.classList.add('shw');C5.classList.add('shw');C6.classList.add('shw') ;D1.classList.add('shw');D2.classList.add('shw');D3.classList.add('shw');D4.classList.add('shw');D5.classList.add('shw');D6.classList.add('shw');D42.classList.add('shw');E1.classList.add('shw');E2.classList.add('shw');E3.classList.add('shw');E4.classList.add('shw');E5.classList.add('shw');E6.classList.add('shw');E12.classList.add('shw') ;E62.classList.add('shw');F1.classList.add('shw');F2.classList.add('shw');F3.classList.add('shw');F4.classList.add('shw');F5.classList.add('shw');F6.classList.add('shw');G1.classList.add('shw');G2.classList.add('shw');G3.classList.add('shw');G4.classList.add('shw');G5.classList.add('shw');G6.classList.add('shw');G32 .classList.add('shw');A1.classList.add('shw');A2.classList.add('shw');A3.classList.add('shw');A4.classList.add('shw');A5.classList.add('shw');A6.classList.add('shw');A52.classList.add('shw');B1.classList.add('shw');B2.classList.add('shw');B3.classList.add('shw');B4.classList.add('shw');B5.classList.add('shw');B6.classList.add('shw');B22.classList.add('shw') })
+fr0.addEventListener('click', () => { delS();E1.classList.add('shw');B2.classList.add('shw');G3.classList.add('shw');D4.classList.add('shw');A5.classList.add('shw');E6.classList.add('shw') })
+fr1.addEventListener('click', () => { delS();F1.classList.add('shw');C2.classList.add('shw');Gis3.classList.add('shw');Dis4.classList.add('shw');Ais5.classList.add('shw');F6.classList.add('shw') }) 
+fr2.addEventListener('click', () => { delS();Fis1.classList.add('shw');Cis2.classList.add('shw');A3.classList.add('shw');E4.classList.add('shw');B5.classList.add('shw');Fis6.classList.add('shw') })
+fr3.addEventListener('click', () => { delS();G1.classList.add('shw');D2.classList.add('shw');Ais3.classList.add('shw');F4.classList.add('shw');C5.classList.add('shw');G6.classList.add('shw') }) 
+fr4.addEventListener('click', () => { delS();Gis1.classList.add('shw');Dis2.classList.add('shw');B3.classList.add('shw');Fis4.classList.add('shw');Cis5.classList.add('shw');Gis6.classList.add('shw') })
+fr5.addEventListener('click', () => { delS();A1.classList.add('shw');E2.classList.add('shw');C3.classList.add('shw');G4.classList.add('shw');D5.classList.add('shw');A6.classList.add('shw') }) 
+fr6.addEventListener('click', () => { delS();Ais1.classList.add('shw');F2.classList.add('shw');Cis3.classList.add('shw');Gis4.classList.add('shw');Dis5.classList.add('shw');Ais6.classList.add('shw') })
+fr7.addEventListener('click', () => { delS();B1.classList.add('shw');Fis2.classList.add('shw');D3.classList.add('shw');A4.classList.add('shw');E5.classList.add('shw');B6.classList.add('shw') }) 
+fr8.addEventListener('click', () => { delS();C1.classList.add('shw');G2.classList.add('shw');Dis3.classList.add('shw');Ais4.classList.add('shw');F5.classList.add('shw');C6.classList.add('shw') })
+fr9.addEventListener('click', () => { delS();Cis1.classList.add('shw');Gis2.classList.add('shw');E3.classList.add('shw');B4.classList.add('shw');Fis5.classList.add('shw');Cis6.classList.add('shw') }) 
+fr10.addEventListener('click', () => { delS();D1.classList.add('shw');A2.classList.add('shw');F3.classList.add('shw');C4.classList.add('shw');G5.classList.add('shw');D6.classList.add('shw') }) 
+fr11.addEventListener('click', () => { delS();Dis1.classList.add('shw');Ais2.classList.add('shw');Fis3.classList.add('shw');Cis4.classList.add('shw');Gis5.classList.add('shw');Dis6.classList.add('shw') })
+fr12.addEventListener('click', () => { delS();E12.classList.add('shw');B22.classList.add('shw');G32.classList.add('shw');D42.classList.add('shw');A52.classList.add('shw');E62.classList.add('shw') }) 
+
+x = Math.floor(Math.random() * 10 )
+
+function rndmNote() { x = Math.floor((Math.random() * 66) + 1 );
+                     delS();
+                    console.log(x);
+                     switch(x) {
+                        case 1:     
+                    sC1e();
+                        break;
+                         case 2:
+                    sC2e();
+                        break;     
+                        case 3:
+                    sC3e();
+                        break;
+                        case 4:     
+                    sC4e();
+                        break;
+                        case 5:
+                    sC5e();
+                        break;     
+                        case 6:
+                    sC6e();
+                        break;
+                        case 7:     
+                    sD1e();
+                        break;
+                         case 8:
+                    sD2e();
+                        break;     
+                        case 9:
+                    sD3e();
+                        break;
+                        case 10:     
+                    sAis1e();
+                        break;
+                        case 11:
+                    sD5e();
+                        break;     
+                        case 12:
+                    sD6e();
+                        break;
+                        case 13:     
+                    sAis2e();
+                        break;
+                         case 14:
+                    sE2e();
+                        break;     
+                        case 15:
+                    sE3e();
+                        break;
+                        case 16:     
+                    sE4e();
+                        break;
+                        case 17:
+                    sE5e();
+                        break;     
+                        case 18:
+                    sAis3e();
+                        break;
+                        case 19:     
+                    sF1e();
+                        break;
+                         case 20:
+                    sF2e();
+                        break;     
+                        case 21:
+                    sF3e();
+                        break;
+                        case 22:     
+                    sF4e();
+                        break;
+                        case 23:
+                    sF5e();
+                        break;     
+                        case 24:
+                    sF6e();
+                        break;
+                         case 25:     
+                    sG1e();
+                        break;
+                         case 26:
+                    sG2e();
+                        break;     
+                        case 27:
+                    sAis4e();
+                        break;
+                        case 28:     
+                    sG4e();
+                        break;
+                        case 29:
+                    sG5e();
+                        break;     
+                        case 30:
+                    sG6e();
+                        break;
+                        case 31:     
+                    sA1e();
+                        break;
+                         case 32:
+                    sA2e();
+                        break;     
+                        case 33:
+                    sA3e();
+                        break;
+                        case 34:     
+                    sA4e();
+                        break;
+                        case 35:
+                    sAis5e();
+                        break;     
+                        case 36:
+                    sA6e();
+                        break;
+                        case 37:     
+                    sB1e();
+                        break;
+                         case 38:
+                    sAis6e();
+                        break;     
+                        case 39:
+                    sB3e();
+                        break;
+                        case 40:     
+                    sB4e();
+                        break;
+                        case 41:
+                    sB5e();
+                        break;     
+                        case 42:
+                    sB6e();
+                        break;
+                        case 43:     
+                    sCis1e();
+                        break;
+                         case 44:
+                    sCis2e();
+                        break;     
+                        case 45:
+                    sCis3e();
+                        break;
+                        case 46:     
+                    sCis4e();
+                        break;
+                        case 47:
+                    sCis5e();
+                        break;     
+                        case 48:
+                    sCis6e();
+                        break;
+                        case 49:     
+                    sDis1e();
+                        break;
+                         case 50:
+                    sDis2e();
+                        break;     
+                        case 51:
+                    sDis3e();
+                        break;
+                        case 52:     
+                    sDis4e();
+                        break;
+                        case 53:
+                    sDis5e();
+                        break;     
+                        case 54:
+                    sDis6e();
+                        break;
+                        case 55:                             
+                    sFis1e();
+                        break;
+                         case 56:
+                    sFis2e();
+                        break;     
+                        case 57:
+                    sFis3e();
+                        break;
+                        case 58:     
+                    sFis4e();
+                        break;
+                        case 59:
+                    sFis5e();
+                        break;     
+                        case 60:
+                    sFis6e();
+                        break;      
+                        case 61:     
+                    sGis1e();
+                        break;
+                         case 62:
+                    sGis2e();
+                        break;     
+                        case 63:
+                    sGis3e();
+                        break;
+                        case 64:     
+                    sGis4e();
+                        break;
+                        case 65:
+                    sGis5e();
+                        break;     
+                        case 66:
+                    sGis6e();
+                        break; 
+                                
+                     } }
+
+
+
+
+bg.addEventListener('click', () => { rndmNote() } )
+
+function sE1() { delS(); E1.classList.add('shw'); document.getElementById('sndE1').play() }
+function sB2() { delS(); B2.classList.add('shw'); document.getElementById('sndB2').play() }
+function sG3() { delS(); G3.classList.add('shw'); document.getElementById('sndG3').play() }
+function sD4() { delS(); D4.classList.add('shw'); document.getElementById('sndD4').play() }
+function sA5() { delS(); A5.classList.add('shw'); document.getElementById('sndA5').play() }
+function sE6() { delS(); E6.classList.add('shw'); document.getElementById('sndE6').play() }
+function sF1() { delS(); F1.classList.add('shw'); document.getElementById('sndF1').play() }
+function sC2() { delS(); C2.classList.add('shw'); document.getElementById('sndC2').play() }
+function sGis3() { delS();Gis3.classList.add('shw'); document.getElementById('sndGis3').play() }
+function sDis4() { delS(); Dis4.classList.add('shw'); document.getElementById('sndDis4').play() }
+function sAis5() { delS(); Ais5.classList.add('shw'); document.getElementById('sndAis5').play() }
+function sF6() { delS(); F6.classList.add('shw'); document.getElementById('sndF6').play() }
+function sFis1() { delS(); Fis1.classList.add('shw'); document.getElementById('sndFis1').play() }
+function sCis2() { delS(); Cis2.classList.add('shw'); document.getElementById('sndCis2').play() }
+function sA3() { delS(); A3.classList.add('shw'); document.getElementById('sndA3').play() }
+function sE4() { delS(); E4.classList.add('shw'); document.getElementById('sndE4').play() }
+function sB5() { delS(); B5.classList.add('shw'); document.getElementById('sndB5').play() }
+function sFis6() { delS(); Fis6.classList.add('shw'); document.getElementById('sndFis6').play() }
+function sG1() { delS(); G1.classList.add('shw'); document.getElementById('sndG1').play() }
+function sD2() { delS(); D2.classList.add('shw'); document.getElementById('sndD2').play() }
+function sAis3() { delS(); Ais3.classList.add('shw'); document.getElementById('sndAis3').play() }
+function sF4() { delS(); F4.classList.add('shw'); document.getElementById('sndF4').play() }
+function sC5() { delS(); C5.classList.add('shw'); document.getElementById('sndC5').play() }
+function sG6() { delS(); G6.classList.add('shw'); document.getElementById('sndG6').play() }
+function sGis1() { delS(); Gis1.classList.add('shw'); document.getElementById('sndGis1').play() }
+function sDis2() { delS(); Dis2.classList.add('shw'); document.getElementById('sndDis2').play() }
+function sB3() { delS(); B3.classList.add('shw'); document.getElementById('sndB3').play() }
+function sFis4() { delS(); Fis4.classList.add('shw'); document.getElementById('sndFis4').play() }
+function sCis5() { delS(); Cis5.classList.add('shw'); document.getElementById('sndCis5').play() }
+function sGis6() { delS(); Gis6.classList.add('shw'); document.getElementById('sndGis6').play() }
+function sA1() { delS(); A1.classList.add('shw'); document.getElementById('sndA1').play() }
+function sE2() { delS(); E2.classList.add('shw'); document.getElementById('sndE2').play() }
+function sC3() { delS(); C3.classList.add('shw'); document.getElementById('sndC3').play() }
+function sG4() { delS(); G4.classList.add('shw'); document.getElementById('sndG4').play() }
+function sD5() { delS(); D5.classList.add('shw'); document.getElementById('sndD5').play() }
+function sA6() { delS(); A6.classList.add('shw'); document.getElementById('sndA6').play() }
+function sAis1() { delS(); Ais1.classList.add('shw'); document.getElementById('sndAis1').play() }
+function sF2() { delS(); F2.classList.add('shw'); document.getElementById('sndF2').play() }
+function sCis3() { delS(); Cis3.classList.add('shw'); document.getElementById('sndCis3').play() }
+function sGis4() { delS(); Gis4.classList.add('shw'); document.getElementById('sndGis4').play() }
+function sDis5() { delS(); Dis5.classList.add('shw'); document.getElementById('sndDis5').play() }
+function sAis6() { delS(); Ais6.classList.add('shw'); document.getElementById('sndAis6').play() }
+function sB1() { delS(); B1.classList.add('shw'); document.getElementById('sndB1').play() }
+function sFis2() { delS(); Fis2.classList.add('shw'); document.getElementById('sndFis2').play() }
+function sD3() { delS(); D3.classList.add('shw'); document.getElementById('sndD3').play() }
+function sA4() { delS(); A4.classList.add('shw'); document.getElementById('sndA4').play() }
+function sE5() { delS(); E5.classList.add('shw'); document.getElementById('sndE5').play() }
+function sB6() { delS(); B6.classList.add('shw'); document.getElementById('sndB6').play() }
+function sC1() { delS(); C1.classList.add('shw'); document.getElementById('sndC1').play() }
+function sG2() { delS(); G2.classList.add('shw'); document.getElementById('sndG2').play() }
+function sDis3() { delS(); Dis3.classList.add('shw'); document.getElementById('sndDis3').play() }
+function sAis4() { delS(); Ais4.classList.add('shw'); document.getElementById('sndAis4').play() }
+function sF5() { delS(); F5.classList.add('shw'); document.getElementById('sndF5').play() }
+function sC6() { delS(); C6.classList.add('shw'); document.getElementById('sndC6').play() }
+function sCis1() { delS(); Cis1.classList.add('shw'); document.getElementById('sndCis1').play() }
+function sGis2() { delS(); Gis2.classList.add('shw'); document.getElementById('sndGis2').play() }
+function sE3() { delS(); E3.classList.add('shw'); document.getElementById('sndE3').play() }
+function sB4() { delS(); B4.classList.add('shw'); document.getElementById('sndB4').play() }
+function sFis5() { delS(); Fis5.classList.add('shw'); document.getElementById('sndFis5').play() }
+function sCis6() { delS(); Cis6.classList.add('shw'); document.getElementById('sndCis6').play() }
+function sD1() { delS(); D1.classList.add('shw'); document.getElementById('sndD1').play() }
+function sA2() { delS(); A2.classList.add('shw'); document.getElementById('sndA2').play() }
+function sF3() { delS(); F3.classList.add('shw'); document.getElementById('sndF3').play() }
+function sC4() { delS(); C4.classList.add('shw'); document.getElementById('sndC4').play() }
+function sG5() { delS(); G5.classList.add('shw'); document.getElementById('sndG5').play() }
+function sD6() { delS(); D6.classList.add('shw'); document.getElementById('sndD6').play() }
+function sDis1() { delS(); Dis1.classList.add('shw'); document.getElementById('sndDis1').play() }
+function sAis2() { delS(); Ais2.classList.add('shw'); document.getElementById('sndAis2').play() }
+function sFis3() { delS(); Fis3.classList.add('shw'); document.getElementById('sndFis3').play() }
+function sCis4() { delS(); Cis4.classList.add('shw'); document.getElementById('sndCis4').play() }
+function sGis5() { delS(); Gis5.classList.add('shw'); document.getElementById('sndGis5').play() }
+function sDis6() { delS(); Dis6.classList.add('shw'); document.getElementById('sndDis6').play() }
+function sE12() { delS(); E12.classList.add('shw'); document.getElementById('sndA12').play() }
+function sB22() { delS(); B22.classList.add('shw'); document.getElementById('sndB22').play() }
+function sG32() { delS(); G32.classList.add('shw'); document.getElementById('sndG32').play() }
+function sD42() { delS(); D42.classList.add('shw'); document.getElementById('sndD42').play() }
+function sA52() { delS(); A52.classList.add('shw'); document.getElementById('sndA52').play() }
+function sE62() { delS(); E62.classList.add('shw'); document.getElementById('sndE62').play() }
+
+
+function sE1e() { delS(); E1.classList.add('shwe'); document.getElementById('sndE1').play() }
+function sB2e() { delS(); B2.classList.add('shwe'); document.getElementById('sndB2').play() }
+function sG3e() { delS(); G3.classList.add('shwe'); document.getElementById('sndG3').play() }
+function sD4e() { delS(); D4.classList.add('shwe'); document.getElementById('sndD4').play() }
+function sA5e() { delS(); A5.classList.add('shwe'); document.getElementById('sndA5').play() }
+function sE6e() { delS(); E6.classList.add('shwe'); document.getElementById('sndE6').play() }
+function sF1e() { delS(); F1.classList.add('shwe'); document.getElementById('sndF1').play() }
+function sC2e() { delS(); C2.classList.add('shwe'); document.getElementById('sndC2').play() }
+function sGis3e() { delS();Gis3.classList.add('shwe'); document.getElementById('sndGis3').play() }
+function sDis4e() { delS(); Dis4.classList.add('shwe'); document.getElementById('sndDis4').play() }
+function sAis5e() { delS(); Ais5.classList.add('shwe'); document.getElementById('sndAis5').play() }
+function sF6e() { delS(); F6.classList.add('shwe'); document.getElementById('sndF6').play() }
+function sFis1e() { delS(); Fis1.classList.add('shwe'); document.getElementById('sndFis1').play() }
+function sCis2e() { delS(); Cis2.classList.add('shwe'); document.getElementById('sndCis2').play() }
+function sA3e() { delS(); A3.classList.add('shwe'); document.getElementById('sndA3').play() }
+function sE4e() { delS(); E4.classList.add('shwe'); document.getElementById('sndE4').play() }
+function sB5e() { delS(); B5.classList.add('shwe'); document.getElementById('sndB5').play() }
+function sFis6e() { delS(); Fis6.classList.add('shwe'); document.getElementById('sndFis6').play() }
+function sG1e() { delS(); G1.classList.add('shwe'); document.getElementById('sndG1').play() }
+function sD2e() { delS(); D2.classList.add('shwe'); document.getElementById('sndD2').play() }
+function sAis3e() { delS(); Ais3.classList.add('shwe'); document.getElementById('sndAis3').play() }
+function sF4e() { delS(); F4.classList.add('shwe'); document.getElementById('sndF4').play() }
+function sC5e() { delS(); C5.classList.add('shwe'); document.getElementById('sndC5').play() }
+function sG6e() { delS(); G6.classList.add('shwe'); document.getElementById('sndG6').play() }
+function sGis1e() { delS(); Gis1.classList.add('shwe'); document.getElementById('sndGis1').play() }
+function sDis2e() { delS(); Dis2.classList.add('shwe'); document.getElementById('sndDis2').play() }
+function sB3e() { delS(); B3.classList.add('shwe'); document.getElementById('sndB3').play() }
+function sFis4e() { delS(); Fis4.classList.add('shwe'); document.getElementById('sndFis4').play() }
+function sCis5e() { delS(); Cis5.classList.add('shwe'); document.getElementById('sndCis5').play() }
+function sGis6e() { delS(); Gis6.classList.add('shwe'); document.getElementById('sndGis6').play() }
+function sA1e() { delS(); A1.classList.add('shwe'); document.getElementById('sndA1').play() }
+function sE2e() { delS(); E2.classList.add('shwe'); document.getElementById('sndE2').play() }
+function sC3e() { delS(); C3.classList.add('shwe'); document.getElementById('sndC3').play() }
+function sG4e() { delS(); G4.classList.add('shwe'); document.getElementById('sndG4').play() }
+function sD5e() { delS(); D5.classList.add('shwe'); document.getElementById('sndD5').play() }
+function sA6e() { delS(); A6.classList.add('shwe'); document.getElementById('sndA6').play() }
+function sAis1e() { delS(); Ais1.classList.add('shwe'); document.getElementById('sndAis1').play() }
+function sF2e() { delS(); F2.classList.add('shwe'); document.getElementById('sndF2').play() }
+function sCis3e() { delS(); Cis3.classList.add('shwe'); document.getElementById('sndCis3').play() }
+function sGis4e() { delS(); Gis4.classList.add('shwe'); document.getElementById('sndGis4').play() }
+function sDis5e() { delS(); Dis5.classList.add('shwe'); document.getElementById('sndDis5').play() }
+function sAis6e() { delS(); Ais6.classList.add('shwe'); document.getElementById('sndAis6').play() }
+function sB1e() { delS(); B1.classList.add('shwe'); document.getElementById('sndB1').play() }
+function sFis2e() { delS(); Fis2.classList.add('shwe'); document.getElementById('sndFis2').play() }
+function sD3e() { delS(); D3.classList.add('shwe'); document.getElementById('sndD3').play() }
+function sA4e() { delS(); A4.classList.add('shwe'); document.getElementById('sndA4').play() }
+function sE5e() { delS(); E5.classList.add('shwe'); document.getElementById('sndE5').play() }
+function sB6e() { delS(); B6.classList.add('shwe'); document.getElementById('sndB6').play() }
+function sC1e() { delS(); C1.classList.add('shwe'); document.getElementById('sndC1').play() }
+function sG2e() { delS(); G2.classList.add('shwe'); document.getElementById('sndG2').play() }
+function sDis3e() { delS(); Dis3.classList.add('shwe'); document.getElementById('sndDis3').play() }
+function sAis4e() { delS(); Ais4.classList.add('shwe'); document.getElementById('sndAis4').play() }
+function sF5e() { delS(); F5.classList.add('shwe'); document.getElementById('sndF5').play() }
+function sC6e() { delS(); C6.classList.add('shwe'); document.getElementById('sndC6').play() }
+function sCis1e() { delS(); Cis1.classList.add('shwe'); document.getElementById('sndCis1').play() }
+function sGis2e() { delS(); Gis2.classList.add('shwe'); document.getElementById('sndGis2').play() }
+function sE3e() { delS(); E3.classList.add('shwe'); document.getElementById('sndE3').play() }
+function sB4e() { delS(); B4.classList.add('shwe'); document.getElementById('sndB4').play() }
+function sFis5e() { delS(); Fis5.classList.add('shwe'); document.getElementById('sndFis5').play() }
+function sCis6e() { delS(); Cis6.classList.add('shwe'); document.getElementById('sndCis6').play() }
+function sD1e() { delS(); D1.classList.add('shwe'); document.getElementById('sndD1').play() }
+function sA2e() { delS(); A2.classList.add('shwe'); document.getElementById('sndA2').play() }
+function sF3e() { delS(); F3.classList.add('shwe'); document.getElementById('sndF3').play() }
+function sC4e() { delS(); C4.classList.add('shwe'); document.getElementById('sndC4').play() }
+function sG5e() { delS(); G5.classList.add('shwe'); document.getElementById('sndG5').play() }
+function sD6e() { delS(); D6.classList.add('shwe'); document.getElementById('sndD6').play() }
+function sDis1e() { delS(); Dis1.classList.add('shwe'); document.getElementById('sndDis1').play() }
+function sAis2e() { delS(); Ais2.classList.add('shwe'); document.getElementById('sndAis2').play() }
+function sFis3e() { delS(); Fis3.classList.add('shwe'); document.getElementById('sndFis3').play() }
+function sCis4e() { delS(); Cis4.classList.add('shwe'); document.getElementById('sndCis4').play() }
+function sGis5e() { delS(); Gis5.classList.add('shwe'); document.getElementById('sndGis5').play() }
+function sDis6e() { delS(); Dis6.classList.add('shwe'); document.getElementById('sndDis6').play() }
+function sE12e() { delS(); E12.classList.add('shwe'); document.getElementById('sndA12').play() }
+function sB22e() { delS(); B22.classList.add('shwe'); document.getElementById('sndB22').play() }
+function sG32e() { delS(); G32.classList.add('shwe'); document.getElementById('sndG32').play() }
+function sD42e() { delS(); D42.classList.add('shwe'); document.getElementById('sndD42').play() }
+function sA52e() { delS(); A52.classList.add('shwe'); document.getElementById('sndA52').play() }
+function sE62e() { delS(); E62.classList.add('shwe'); document.getElementById('sndE62').play() }
+
+
+
+
+
+
         </script>
     </body>
 </html>
