@@ -2478,7 +2478,39 @@
     <br>		
     <p class='cd'>createListItem('Eggs');	</p>
     <p class='cd'>createNewItem('Cheese');	</p>
-    <br>	
+    <br>
+	<p class="cd"><i>77. Refactor To Multiple Functions</i></p>
+	<br>	
+	<p class="cd">function createNewItem(item) {</p>
+    <p class="cd">&emsp;&emsp;const li = document.createElement('li');</p>
+    <p class="cd">&emsp;&emsp;li.appendChild(document.createTextNode(item));</p>
+    <br />
+    <p class="cd">&emsp;&emsp;const button = createButton('remove-item btn-link text-red');</p>
+    <br />
+    <p class="cd">&emsp;&emsp;li.appendChild(button);</p>
+    <br />
+    <p class="cd">&emsp;&emsp;document.querySelector('.items').appendChild(li);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">function createButton(classes) {</p>
+    <p class="cd">&emsp;&emsp;const button = document.createElement('button');</p>
+    <p class="cd">&emsp;&emsp;button.className = classes;</p>
+    <br />
+    <p class="cd">&emsp;&emsp;const icon = createIcon('fa-solid fa-xmark');</p>
+    <p class="cd">&emsp;&emsp;button.appendChild(icon);</p>
+    <br />
+    <p class="cd">&emsp;&emsp;return button;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">function createIcon(classes) {</p>
+    <p class="cd">&emsp;&emsp;const icon = document.createElement('i');</p>
+    <p class="cd">&emsp;&emsp;icon.className = classes;</p>
+    <p class="cd">&emsp;&emsp;return icon;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">createNewItem('Cheese');</p>
+    <p class="cd">createNewItem('Sauce');</p>
+    <br />	
   	</div>
   <script>
     const startScreen = document.getElementById('start-screen');
