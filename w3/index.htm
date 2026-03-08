@@ -89,6 +89,19 @@
     <br />
 
   	</div>
-
+    <script>
+		    const startScreen = document.getElementById('start-screen');
+		    const reader = document.getElementById('reader');
+		    startScreen.onclick = async () => {
+		      startScreen.style.display = 'none';
+		      reader.style.display = 'block';
+		      if (document.documentElement.requestFullscreen) {
+		        await document.documentElement.requestFullscreen();
+		      }
+		      setTimeout(() => {
+		        window.scrollTo(0, document.body.scrollHeight);
+		      }, 100); // even wachten tot layout klaar is
+		    };
+	</script>	
 </body>
 </html>
