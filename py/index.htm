@@ -246,12 +246,166 @@
     <p class="cd">print("degrees(1.5708) = ", math.degrees(1.5708))</p>
     <p class="cd">print("radians(90) = ", math.radians(90))</p>
     <br />
+	<p class="cd"><i>9. Conditional Operators</i></p>	
+    <br>
+	<p class="cm"># Conditional Operators</p>
+    <p class="cm"># > : Greater than</p>
+    <p class="cm"># < : Less than</p>
+    <p class="cm"># >= : Greater than or equal to</p>
+    <p class="cm"># <= : Less than or equal to</p>
+    <p class="cm"># == : Equal to</p>
+    <p class="cm"># != : Not equal to</p>
+    <br />
+    <p class="cm"># Drink Question Code</p>
+    <p class="cm"># if, elif, and else are followed by a condition and then a colon
+    </p>
+    <p class="cm"># The code that follows is indented to show what code should be executed
+      depending on the condition
+    </p>
+    <p class="cm"># It is important that the lines be indented exactly the same amount on
+      each line
+    </p>
+    <p class="cm"># I added a default condition with else, so that if the user wanted
+      neither they would get water
+    </p>
+    <p class="cd">drink = input("Pick One (Coke, or Pepsi) : ")</p>
+    <p class="cd">if drink == "Coke":</p>
+    <p class="cd">print("Here is your Coke")</p>
+    <p class="cd">elif drink == "Pepsi":</p>
+    <p class="cd">print("Here is your Pepsi")</p>
+    <p class="cd">else:</p>
+    <p class="cd">print("Here is your water")</p>
+    <br />
+    <p class="cm"># Python Problem for you to Solve</p>
+    <br />
+    <p class="cm"># Taking what you have learned about conditional operators and previous
+      videos, I want you to make a calculator
+    </p>
+    <p class="cm"># You’ll accept 2 numbers separated by an operator</p>
+    <p class="cm"># You’ll then use conditional operators to determine what calculation to
+      make
+    </p>
+    <p class="cm"># Sample output to model :</p>
+    <p class="cm"># Enter Calculation : 5 * 6</p>
+    <p class="cm"># 5 * 6 = 30</p>
+    <br />
+    <p class="cm"># Store the user input of 2 numbers and an operator</p>
+    <p class="cd">
+      num1, operator, num2 = input('Enter Calculation: ').split()
+    </p>
+    <br />
+    <p class="cm"># Convert strings into integers</p>
+    <p class="cd">num1 = int(num1)</p>
+    <p class="cd">num2 = int(num2)</p>
+    <p class="cm"># If, else if (elif) and else execute different code depending on a
+      condition
+    </p>
+    <br />
+    <p class="cd">if operator == "+":</p>
+    <p class="cd">print("{} + {} = {}".format(num1, num2, num1+num2))</p>
+    <br />
+    <p class="cm"># If the 1st condition wasn't true check if this one is</p>
+    <p class="cd">elif operator == "-":</p>
+    <p class="cd">print("{} - {} = {}".format(num1, num2, num1 - num2))</p>
+    <p class="cd">elif operator == "*":</p>
+    <p class="cd">print("{} * {} = {}".format(num1, num2, num1 * num2))</p>
+    <p class="cd">elif operator == "/":</p>
+    <p class="cd">print("{} / {} = {}".format(num1, num2, num1 / num2))</p>
+    <br />
+    <p class="cm"># If none of the above conditions were true then execute this by default
+    </p>
+    <p class="cd">else:</p>
+    <p class="cd">print("Use either + - * or / next time")</p>
+    <br />
+    <p class="cm"># Logical Operators</p>
+    <p class="cm"># and : If both are true it returns true</p>
+    <p class="cm"># or : If either are true it returns true</p>
+    <p class="cm"># not : Converts true into false and vice versa</p>
+    <br />
+    <p class="cm"># Write a program that will determine whether a birthday is important or
+      not
+    </p>
+    <p class="cm"># I’ll use the following criteria to determine that.</p>
+    <br />
+    <p class="cm"># 1 - 18 -> Important</p>
+    <p class="cm"># 21, 50, > 65 -> Important</p>
+    <p class="cm"># All others -> Not Important</p>
+    <br />
+    <p class="cm"># Ask for the users age and cast to an integer</p>
+    <p class="cd">age = int(input("Enter Age : "))</p>
+    <p class="cm"># If age is both greater than or equal to 1 and less than or equal to 18
+      it is true
+    </p>
+    <p class="cd">if (age >= 1) and (age <= 18):</p>
+    <p class="cd">print("Important Birthday")</p>
+    <p class="cm"># If age is either 21 or 50 then it is true</p>
+    <p class="cd">elif (age == 21) or (age == 50):</p>
+    <p class="cd">print("Important Birthday")</p>
+    <p class="cm"># We check if age is less than 65 and then convert true to false or vice
+      versa
+    </p>
+    <p class="cm"># This is the same as if we put age > 65</p>
+    <p class="cd">elif not(age < 65):</p>
+    <p class="cd">print("Important Birthday")</p>
+    <p class="cd">else:</p>
+    <p class="cd">print("Sorry Not Important")</p>
+    <br />
+    <p class="cm"># 2nd Python Problem for you to Solve</p>
+    <br />
+    <p class="cm"># We’ll determine what grade someone should go to depending on their age.
+      Here is my criteria for determining grade :
+    </p>
+    <p class="cm"># 1. If age 5 “Go to Kindergarten”</p>
+    <p class="cm"># 2. Ages 6 through 17 goes to grades 1 through 12 “Go to Grade 6”
+    </p>
+    <p class="cm"># 3. If age is greater then 17 then say “Go to College”</p>
+    <br />
+    <p class="cm"># Here is sample output :</p>
+    <p class="cm"># Enter age : 6</p>
+    <p class="cm"># Go to Grade 6</p>
+    <br />
+    <p class="cm"># Ask for the age</p>
+    <p class="cd">age = int(input("Enter age: "))</p>
+    <br />
+    <p class="cm"># Handle if age < 5</p>
+    <p class="cd">if age < 5:</p>
+    <p class="cd">print("Too Young for School")</p>
+    <br />
+    <p class="cm"># Special output just for age 5</p>
+    <p class="cd">elif age == 5:</p>
+    <p class="cd">print("Go to Kindergarten")</p>
+    <br />
+    <p class="cm"># Since a number is the result for ages 6 - 17 we can check them all
+    </p>
+    <p class="cm"># with 1 condition</p>
+    <p class="cm"># Use calculation to limit the conditions checked</p>
+    <p class="cd">elif (age > 5) and (age <= 17):</p>
+    <p class="cd">grade = age - 5</p>
+    <p class="cd">print("Go to Grade {}".format(grade))</p>
+    <br />
+    <p class="cm"># Handle everyone else</p>
+    <p class="cd">else:</p>
+    <p class="cd">print("Go to College")</p>
+    <br />
+    <p class="cm"># Ternary Operator</p>
+    <p class="cm"># The ternary operator is used to assign one value or another based on a
+      condition
+    </p>
+    <p class="cm"># It follows this format condition_true if condition else condition_false
+    </p>
+    <br />
+    <p class="cd">age = int(input("What is your age? "))</p>
+    <p class="cd">can_vote = True if age >= 18 else False</p>
+    <p class="cd">print("You can vote :", can_vote)</p>
+    <br />	
 	<p class="cd"><i></i></p>	
     <br>
 	<p class="cd"><i></i></p>	
     <br>
 	<p class="cd"><i></i></p>	
-    <br>	
+    <br>
+	<p class="cd"><i></i></p>	
+    <br>		
   	</div>
     <script>
 		    const startScreen = document.getElementById('start-screen');
