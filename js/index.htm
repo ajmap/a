@@ -2510,7 +2510,59 @@
     <br />
     <p class="cd">createNewItem('Cheese');</p>
     <p class="cd">createNewItem('Sauce');</p>
+    <br />
+	<p class="cd"><i>78. Insert Elements, Text & HTML</i></p>
+	<br />
+	<p class="cm">// insertAdjacentElement Example</p>
+    <p class="cd">function insertElement() {</p>
+    <p class="cd">const filter = document.querySelector('.filter');</p>
+    <br />
+    <p class="cd">const h1 = document.createElement('h1');</p>
+    <p class="cd">h1.textContent = 'insertAdjacentElement';</p>
+    <br />
+    <p class="cd">filter.insertAdjacentElement('beforebegin', h1);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// insertAdjacentText Example</p>
+    <p class="cd">function insertText() {</p>
+    <p class="cd">const item = document.querySelector('li:first-child');</p>
+    <br />
+    <p class="cd">
+      item.insertAdjacentText('beforebegin', 'insertAdjacentText');
+    </p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// insertAdjacentHTML example</p>
+    <p class="cd">function insertHTML() {</p>
+    <p class="cd">const clearBtn = document.querySelector('#clear');</p>
+    <br />
+    <p class="cd">
+      clearBtn.insertAdjacentHTML('afterend',
+      '&lt;h2&gt;insertAdjacentHTML&lt;/h2&gt;');
+    </p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// insertBefore Example</p>
+    <p class="cd">function insertBeforeItem() {</p>
+    <p class="cd">const ul = document.querySelector('ul');</p>
+    <br />
+    <p class="cd">const li = document.createElement('li');</p>
+    <p class="cd">li.textContent = 'insertBefore';</p>
+    <br />
+    <p class="cd">
+      const thirdItem = document.querySelector('li:nth-child(3)');
+    </p>
+    <br />
+    <p class="cd">ul.insertBefore(li, thirdItem);</p>
+    <p class="cd">}</p>
+    <br />
+    <br />
+    <p class="cd">insertElement();</p>
     <br />	
+	<p class="cd"><i></i></p>
+	<br />
+	<p class="cd"><i></i></p>	
+		
   	</div>
   <script>
     const startScreen = document.getElementById('start-screen');
