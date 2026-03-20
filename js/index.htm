@@ -2559,8 +2559,32 @@
     <br />
     <p class="cd">insertElement();</p>
     <br />	
-	<p class="cd"><i></i></p>
+	<p class="cd"><i>79. Custom insertAfter Challenge</i></p>
 	<br />
+	<p class="cd">function insertAfter(newEl, existingEl) {</p>
+    <p class="cd">existingEl.parentElement.insertBefore(newEl, existingEl.nextSibling);
+    </p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// New element to insert</p>
+    <p class="cd">const li = document.createElement('li');</p>
+    <p class="cd">li.textContent = 'Insert Me After!';</p>
+    <br />
+    <p class="cm">// Existing element to insert after</p>
+    <p class="cd">const firstItem = document.querySelector('li:first-child');
+    </p>
+    <br />
+    <p class="cm">// Our custom function</p>
+    <p class="cd">insertAfter(li, firstItem);</p>
+    <br />	
+	<p class="cd"><i></i></p>
+	<br />	
+	<p class="cd"><i></i></p>
+	<br />	
+	<p class="cd"><i></i></p>
+	<br />	
+	<p class="cd"><i></i></p>
+	<br />	
 	<p class="cd"><i></i></p>	
 		
   	</div>
