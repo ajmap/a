@@ -2577,8 +2577,73 @@
     <p class="cm">// Our custom function</p>
     <p class="cd">insertAfter(li, firstItem);</p>
     <br />	
-	<p class="cd"><i></i></p>
-	<br />	
+	<p class="cd"><i>0. Replace Elements</i></p>
+	<br />
+	<p class="cm">// replaceWith() Method</p>
+    <p class="cd">function replaceFirstItem() {</p>
+    <p class="cd">
+      &emsp;&emsp;const firstItem = document.querySelector('li:first-child');
+    </p>
+    <br />
+    <p class="cd">&emsp;&emsp;const li = document.createElement('li');</p>
+    <p class="cd">&emsp;&emsp;li.textContent = 'Replaced First';</p>
+    <br />
+    <p class="cd">&emsp;&emsp;firstItem.replaceWith(li);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// OuterHTML Property</p>
+    <p class="cd">function replaceSecondItem() {</p>
+    <p class="cd">
+      &emsp;&emsp;const secondItem = document.querySelector('li:nth-child(2)');
+    </p>
+    <br />
+    <p class="cd">
+      &emsp;&emsp;secondItem.outerHTML = '&lt;li&gt;Replaced Second&lt;/li&gt;';
+    </p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Replace All Items</p>
+    <p class="cd">function replaceAllItems() {</p>
+    <p class="cd">&emsp;&emsp;const lis = document.querySelectorAll('li');</p>
+    <br />
+    <p class="cm">&emsp;&emsp;// lis.forEach((item, index) =&gt; {</p>
+    <p class="cm">&emsp;&emsp;// // item.outerHTML = '&lt;li&gt;Replace All&lt;/li&gt;';</p>
+    <p class="cm">&emsp;&emsp;// if (index === 1) {</p>
+    <p class="cm">&emsp;&emsp;// item.innerHTML = 'Second Item';</p>
+    <p class="cm">&emsp;&emsp;// } else {</p>
+    <p class="cm">&emsp;&emsp;// item.innerHTML = 'Replace All';</p>
+    <p class="cm">&emsp;&emsp;// }</p>
+    <p class="cm">&emsp;&emsp;// });</p>
+    <br />
+    <p class="cd">&emsp;&emsp;lis.forEach(</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;(item, index) =&gt;</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(item.outerHTML = index === 1 ?
+      '&lt;li&gt;Second Item&lt;/li&gt;' : '&lt;li&gt;Item&lt;/li&gt;')
+    </p>
+    <p class="cd">&emsp;&emsp;);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// replaceChild() Method</p>
+    <p class="cd">function replaceChildHeading() {</p>
+    <p class="cd">
+      &emsp;&emsp;const header = document.querySelector('header');
+    </p>
+    <p class="cd">
+      &emsp;&emsp;const h1 = document.querySelector('header h1');
+    </p>
+    <br />
+    <p class="cd">&emsp;&emsp;const h2 = document.createElement('h2');</p>
+    <p class="cd">&emsp;&emsp;h2.id = 'app-title';</p>
+    <p class="cd">&emsp;&emsp;h2.textContent = 'Shopping List';</p>
+    <p class="cd">&emsp;&emsp;header.replaceChild(h2, h1);</p>
+    <p class="cd">}</p>
+    <p class="cd">replaceFirstItem();</p>
+    <br />
+    <p class="cd">replaceSecondItem();</p>
+    <p class="cd">replaceAllItems();</p>
+    <p class="cd">replaceChildHeading();</p>
+    <br />	
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
