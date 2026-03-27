@@ -2644,8 +2644,62 @@
     <p class="cd">replaceAllItems();</p>
     <p class="cd">replaceChildHeading();</p>
     <br />	
-	<p class="cd"><i></i></p>
-	<br />	
+	<p class="cd"><i>81. Remove Elements</i></p>
+	<br />
+	<p class="cm">// remove() Method</p>
+    <p class="cd">function removeClearButton() {</p>
+    <p class="cd">
+      &emsp;&emsp;const clearBtn = document.querySelector('#clear');
+    </p>
+    <p class="cd">&emsp;&emsp;clearBtn.remove();</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// removeChild() Method</p>
+    <p class="cd">function removeFirstItem() {</p>
+    <p class="cd">&emsp;&emsp;const ul = document.querySelector('ul');</p>
+    <p class="cd">
+      &emsp;&emsp;const li = document.querySelector('li:first-child');
+    </p>
+    <br />
+    <p class="cd">&emsp;&emsp;ul.removeChild(li);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Other examples</p>
+    <br />
+    <p class="cd">function removeItem(itemNumber) {</p>
+    <p class="cd">&emsp;&emsp;const ul = document.querySelector('ul');</p>
+    <p class="cd">
+      &emsp;&emsp;const li =
+      document.querySelector(`li:nth-child(${itemNumber})`);
+    </p>
+    <br />
+    <p class="cd">&emsp;&emsp;ul.removeChild(li);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">function removeItem2(itemNumber) {</p>
+    <p class="cd">&emsp;&emsp;const ul = document.querySelector('ul');</p>
+    <p class="cd">
+      &emsp;&emsp;const li = document.querySelectorAll('li')[itemNumber - 1];
+    </p>
+    <br />
+    <p class="cd">ul.removeChild(li);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">function removeItem3(itemNumber) {</p>
+    <p class="cd">&emsp;&emsp;const li = document.querySelectorAll('li');</p>
+    <p class="cd">&emsp;&emsp;li[itemNumber - 1].remove();</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">const removeItem4 = (itemNumber) =></p>
+    <p class="cd">
+      &emsp;&emsp;document.querySelectorAll('li')[itemNumber - 1].remove();
+    </p>
+    <br />
+    <p class="cd">removeClearButton();</p>
+    <p class="cm">// removeFirstItem();</p>
+    <p class="cm">// removeItem(2);</p>
+    <p class="cd">removeItem4(2);</p>
+    <br />	
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
