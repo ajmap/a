@@ -398,7 +398,118 @@
     <p class="cd">can_vote = True if age >= 18 else False</p>
     <p class="cd">print("You can vote :", can_vote)</p>
     <br />	
-	<p class="cd"><i></i></p>	
+	<p class="cd"><i>10. For and Range</i></p>
+	<p class="cm"># Multiple For Loops</p>
+    <br />
+    <p class="cm"># You can loop through a list of values. That list is surrounded with
+      square brackets
+    </p>
+    <p class="cm"># Each time through the list the next value will be assigned to the
+      variable i in this example
+    </p>
+    <p class="cd">for i in [2, 4, 6, 8, 10]:</p>
+    <p class="cd">&emsp;&emsp;print("i = ", i)</p>
+    <br />
+    <p class="cm"># For with Range</p>
+    <br />
+    <p class="cm"># We can also have the keyword range define our list for us
+    </p>
+    <p class="cm"># range(10) will create a list starting at 0 and go up to, but not include
+      10, the number passed into it
+    </p>
+    <p class="cd">for i in range(5):</p>
+    <p class="cd">&emsp;&emsp;print("i = ", i)</p>
+    <br />
+    <p class="cm"># We can also define the starting and ending values with range
+    </p>
+    <p class="cd">for i in range(2, 5):</p>
+    <p class="cd">&emsp;&emsp;print("i = ", i)</p>
+    <br />
+    <p class="cm"># Test if Value is Even</p>
+    <br />
+    <p class="cm"># If you divide any even number by 2 it will not have a remainder
+    </p>
+    <p class="cm"># The modulus operator provides the remainder of a division as I covered
+      previously
+    </p>
+    <p class="cd">i = 6</p>
+    <p class="cd">print("Is 6 even :", ((i % 2) == 0))</p>
+    <br />
+    <p class="cm"># Python Problem for you to Solve</p>
+    <br />
+    <p class="cm"># Use the knowledge you have gained to print out all odd numbers from 1 to
+      20
+    </p>
+    <p class="cm"># Use for to loop through the list from 1 to 21</p>
+    <p class="cd">for i in range(1, 21):</p>
+    <p class="cm">&emsp;&emsp;# Use modulus to check that the result is NOT EQUAL to 0
+    </p>
+    <p class="cm">&emsp;&emsp;# Print the odds</p>
+    <p class="cd">&emsp;&emsp;if (i % 2) != 0:</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;print("i = ", i)</p>
+    <br />
+    <p class="cm"># More About Floats</p>
+    <br />
+    <p class="cm"># Convert string input into a float like this</p>
+    <p class="cd">your_float = input("Enter a float : ")</p>
+    <p class="cd">your_float = float(your_float)</p>
+    <br />
+    <p class="cm"># Use format with print to define the number of decimals displayed in
+      output
+    </p>
+    <p class="cm"># If you wanted to show 2 decimal values you would use {:.2f} like in this
+      example
+    </p>
+    <p class="cd">print("Rounded to 2 decimals : {:.2f}".format(your_float))</p>
+    <br />
+    <p class="cm"># 2nd Python Problem for you to Solve</p>
+    <p class="cm"># Calculate how much money a person will have after investing for 10 years
+    </p>
+    <br />
+    <p class="cm"># Compounding interest is the act of reinvesting each years interest
+      payment and then receiving interest on the initial value as well as on
+      interest payments
+    </p>
+    <br />
+    <p class="cm"># Your program will :</p>
+    <p class="cm"># 1. Have the user enter their investment amount and expected interest
+    </p>
+    <p class="cm"># 2. Each year their investment will increase by their investment + their
+      investment * the interest rate
+    </p>
+    <p class="cm"># 3. Print out their earnings after a 10 year period</p>
+    <br />
+    <p class="cm"># Ask for money invested + the interest rate</p>
+    <p class="cd">money = input("How much to invest: ")</p>
+    <p class="cd">interest_rate = input("Interest Rate: ")</p>
+    <br />
+    <p class="cm"># Convert value to a float</p>
+    <p class="cd">money = float(money)</p>
+    <br />
+    <p class="cm"># Convert value to a float and round the percentage rate by 2 digits
+    </p>
+    <p class="cd">interest_rate = float(interest_rate) * .01</p>
+    <br />
+    <p class="cm"># Cycle through 10 years using for and range from 0 to 9</p>
+    <p class="cd">for i in range(10):</p>
+    <p class="cm">&emsp;&emsp;# Add the current money in the account + interest earned that
+      year
+    </p>
+    <p class="cd">&emsp;&emsp;money = money + (money * interest_rate)</p>
+    <br />
+    <p class="cm"># Output the results</p>
+    <p class="cd">print("Investment after 10 years: {:.2f}".format(money))</p>
+    <br />
+    <p class="cm"># Order of Operations</p>
+    <br />
+    <p class="cm"># Calculations will occur in this order :</p>
+    <p class="cm"># 1. exponentiation and root extraction</p>
+    <p class="cm"># 2. multiplication and division</p>
+    <p class="cm"># 3. addition and subtraction</p>
+    <p class="cd">print("2 + (3 * 4) =", (2 + (3 * 4)))</p>
+    <p class="cd">print("(2 + 3) * 4 =", ((2 + 3) * 4))</p>
+    <p class="cd">print("2 + (3 * 4) =", 2 + 3 * 4)</p>
+    <br />	
     <br>
 	<p class="cd"><i></i></p>	
     <br>
