@@ -2788,8 +2788,57 @@
     <p class="cm">// Fire off event from JS</p>
     <p class="cd">setTimeout(() => clearBtn.click(), 5000);</p>
     <br />	
-	<p class="cd"><i></i></p>
-	<br />	
+	<p class="cd"><i>85. Mouse Even</i></p>
+	<br />
+	<p class="cd">const logo = document.querySelector('img');</p>
+    <br />
+    <p class="cd">const onClick = () => console.log('click event');</p>
+    <p class="cd">const onDoubleClick = () => {</p>
+    <p class="cd">
+      &emsp;&emsp;if (document.body.style.backgroundColor !== 'purple') {
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;document.body.style.backgroundColor = 'purple';
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;document.body.style.color = 'white';
+    </p>
+    <p class="cd">&emsp;&emsp;} else {</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;document.body.style.backgroundColor = 'white';
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;document.body.style.color = 'black';
+    </p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <p class="cd">};</p>
+    <p class="cd">
+      const onRightClick = () => console.log('right click event');
+    </p>
+    <p class="cd">const onMouseDown = () => console.log('mouse down event');</p>
+    <p class="cd">const onMouseUp = () => console.log('mouse up event');</p>
+    <p class="cd">
+      const onMouseWheel = () => console.log('mouse wheel event');
+    </p>
+    <p class="cd">const onMouseOver = () => console.log('mouse over event');</p>
+    <p class="cd">const onMouseOut = () => console.log('mouse out event');</p>
+    <p class="cd">const onDragStart = () => console.log('drag start event');</p>
+    <p class="cd">const onDrag = () => console.log('drag event');</p>
+    <p class="cd">const onDragEnd = () => console.log('drag end event');</p>
+    <br />
+    <p class="cm">// Event Listeners</p>
+    <p class="cd">logo.addEventListener('click', onClick);</p>
+    <p class="cd">logo.addEventListener('dblclick', onDoubleClick);</p>
+    <p class="cd">logo.addEventListener('contextmenu', onRightClick);</p>
+    <p class="cd">logo.addEventListener('mousedown', onMouseDown);</p>
+    <p class="cd">logo.addEventListener('mouseup', onMouseUp);</p>
+    <p class="cd">logo.addEventListener('wheel', onMouseWheel);</p>
+    <p class="cd">logo.addEventListener('mouseover', onMouseOver);</p>
+    <p class="cd">logo.addEventListener('mouseout', onMouseOut);</p>
+    <p class="cd">logo.addEventListener('dragstart', onDragStart);</p>
+    <p class="cd">logo.addEventListener('drag', onDrag);</p>
+    <p class="cd">logo.addEventListener('dragend', onDragEnd);</p>
+    <br />	
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
