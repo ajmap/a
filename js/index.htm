@@ -2700,11 +2700,65 @@
     <p class="cm">// removeItem(2);</p>
     <p class="cd">removeItem4(2);</p>
     <br />	
+	<p class="cd"><i>82. Working With Styles & Classes</i></p>
+	<br />
+	<p class="cd">const text = document.querySelector('p');</p>
+    <p class="cd">const itemList = document.querySelector('.item-list');</p>
+    <p class="cd">const items = itemList.querySelectorAll('li');</p>
+    <br />
+    <p class="cd">function run() {</p>
+    <p class="cm">&emsp;&emsp;// className - Gets a string of all classes</p>
+    <p class="cd">&emsp;&emsp;console.log(itemList.className);</p>
+    <p class="cm">&emsp;&emsp;// Changing the classes with className</p>
+    <p class="cd">&emsp;&emsp;text.className = 'card dark';</p>
+    <br />
+    <p class="cm">&emsp;&emsp;// classList - Array of classes, which also has methods to
+      add, remove, toggle and replace
+    </p>
+    <p class="cd">&emsp;&emsp;console.log(itemList.classList);</p>
+    <br />
+    <p class="cm">&emsp;&emsp;// We can loop through the classes</p>
+    <p class="cd">
+      &emsp;&emsp;itemList.classList.forEach((c) => console.log(c));
+    </p>
+    <br />
+    <p class="cm">&emsp;&emsp;// Add, remove, toggle, replace</p>
+    <p class="cd">&emsp;&emsp;text.classList.add('dark');</p>
+    <p class="cd">&emsp;&emsp;text.classList.remove('card');</p>
+    <p class="cd">&emsp;&emsp;text.classList.toggle('hidden');</p>
+    <p class="cd">&emsp;&emsp;text.classList.replace('card', 'dark');</p>
+    <br />
+    <p class="cm">&emsp;&emsp;// style property - Add styles to elements</p>
+    <p class="cd">&emsp;&emsp;itemList.style.lineHeight = '3';</p>
+    <br />
+    <p class="cd">&emsp;&emsp;items.forEach((item, index) => {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;item.style.color = 'red';</p>
+    <br />
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;if (index === 2) {</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;item.style.color = 'blue';
+    </p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;}</p>
+    <p class="cd">&emsp;&emsp;});</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">document.querySelector('button').onclick = run;</p>
+    <br />	
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
 	<br />	
-	<p class="cd"><i></i></p>	
+	<p class="cd"><i></i></p>
+	<br />	
+	<p class="cd"><i></i></p>
+	<br />	
+	<p class="cd"><i></i></p>
+	<br />	
+	<p class="cd"><i></i></p>
+	<br />	
+	<p class="cd"><i></i></p>
+	<br />	
+	<p class="cd"><i></i></p>		
 		
   	</div>
   <script>
