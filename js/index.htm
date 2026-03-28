@@ -2744,8 +2744,50 @@
     <br />
     <p class="cd">document.querySelector('button').onclick = run;</p>
     <br />	
-	<p class="cd"><i></i></p>
-	<br />	
+	<p class="cd"><i>84. Event Listeners</i></p>
+	<br />
+    <p class="cd">const clearBtn = document.querySelector('#clear');</p>
+    <br />
+    <p class="cd">function onClear() {</p>
+    <p class="cd">&emsp;&emsp;const itemList = document.querySelector('ul');</p>
+    <p class="cd">&emsp;&emsp;const items = itemList.querySelectorAll('li');</p>
+    <br />
+    <p class="cm">&emsp;&emsp;/ itemList.innerHTML = '';</p>
+    <br />
+    <p class="cm">&emsp;&emsp;/ items.forEach((item) => item.remove());</p>
+    <br />
+    <p class="cd">&emsp;&emsp;while (itemList.firstChild) {</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;itemList.removeChild(itemList.firstChild);
+    </p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// JavaScript Event Listener</p>
+    <p class="cd">clearBtn.onclick = function () {</p>
+    <p class="cd">&emsp;&emsp;alert('Clear Items');</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">clearBtn.onclick = function () {</p>
+    <p class="cd">&emsp;&emsp;console.log('Clear Items');</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cm">// addEventListener()</p>
+    <p class="cd">
+      clearBtn.addEventListener('click', () => alert('Clear Items'));
+    </p>
+    <br />
+    <p class="cm">// Use named function</p>
+    <p class="cd">clearBtn.addEventListener('click', onClear);</p>
+    <br />
+    <p class="cm">// removeEventListener()</p>
+    <p class="cd">
+      setTimeout(() => clearBtn.removeEventListener('click', onClear), 5000);
+    </p>
+    <br />
+    <p class="cm">// Fire off event from JS</p>
+    <p class="cd">setTimeout(() => clearBtn.click(), 5000);</p>
+    <br />	
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
