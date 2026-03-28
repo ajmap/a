@@ -511,6 +511,167 @@
     <p class="cd">print("(2 + 3) * 4 =", ((2 + 3) * 4))</p>
     <p class="cd">print("2 + (3 * 4) =", 2 + 3 * 4)</p>
     <br />	
+	<p class="cd"><i>11. While / Break / Continue</i></p>	
+    <br>
+	<p class="cm"># While Loop</p>
+    <br />
+    <p class="cm"># While loops are used when you don't know how many times you will have to
+      loop
+    </p>
+    <p class="cm"># Here we’ll generate a random number with the random module and
+      randrange()
+    </p>
+    <br />
+    <p class="cm"># We can use the random module to generate random numbers</p>
+    <p class="cd">import random</p>
+    <br />
+    <p class="cm"># Generate a random integer between 1 and 50</p>
+    <p class="cd">rand_num = random.randrange(1, 51)</p>
+    <br />
+    <p class="cm"># The value we increment in the while loop is defined before the loop
+    </p>
+    <p class="cd">i = 1</p>
+    <br />
+    <p class="cm"># Define the condition that while true we will continue looping
+    </p>
+    <p class="cd">while i != rand_num:</p>
+    <br />
+    <p class="cm">&emsp;&emsp;# You must increment your iterator inside the while loop
+    </p>
+    <p class="cd">&emsp;&emsp;i += 1</p>
+    <br />
+    <p class="cm"># Outside of the while loop when we stop adding whitespace</p>
+    <p class="cd">print("The random value is : ", rand_num)</p>
+    <br />
+    <p class="cm"># Break & Continue</p>
+    <br />
+    <p class="cm"># Continue stops executing the code that remains in the loop and jumps
+      back to the top
+    </p>
+    <p class="cm"># Break ends execution and jumps directly to the code that lies
+      immediately outside of the loop
+    </p>
+    <br />
+    <p class="cm"># Here we’ll cycle from 0 to 20 with a while loop</p>
+    <p class="cm"># If a number is even will use continue to skip printing it
+    </p>
+    <p class="cm"># If it is odd we’ll print it</p>
+    <p class="cm"># We’ll then end execution with break if the value ever reaches 15
+    </p>
+    <br />
+    <p class="cd">i = 1</p>
+    <p class="cd">while i <= 20:</p>
+    <p class="cm">&emsp;&emsp;# If a number is even don't print it</p>
+    <p class="cd">&emsp;&emsp;if (i % 2) == 0:</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;i += 1</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;continue</p>
+    <br />
+    <p class="cm">&emsp;&emsp;# If i equals 15 stop looping</p>
+    <p class="cd">&emsp;&emsp;if i == 15:</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;break</p>
+    <br />
+    <p class="cm">&emsp;&emsp;# Print the odds</p>
+    <p class="cd">&emsp;&emsp;print("Odd : ", i)</p>
+    <p class="cm">&emsp;&emsp;# Increment i</p>
+    <p class="cd">&emsp;&emsp;i += 1</p>
+    <br />
+    <p class="cm"># Python Problem for you to Solve</p>
+    <br />
+    <p class="cm"># For this problem I want you to draw a pine tree after asking the user
+      for the number of rows
+    </p>
+    <p class="cm"># This problem is the most difficult you have had so far, but it will
+      teach a lot
+    </p>
+    <br />
+    <p class="cd">''</p>
+    <p class="cd">Here is the sample program</p>
+    <p class="cd"> </p>
+    <p class="cd">How tall is the tree : 5</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#####</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#######</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;#########</p>
+    <p class="cd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#</p>
+    <p class="cd">''</p>
+    <br />
+    <p class="cm"># Tip 1 : You should use a while loop and 3 for loops</p>
+    <p class="cd">''</p>
+    <p class="cd">Tip 2</p>
+    <p class="cd">
+      I know that this is the number of spaces and hashes for the tree
+    </p>
+    <p class="cd">4 - 1</p>
+    <p class="cd">3 - 3</p>
+    <p class="cd">2 - 5</p>
+    <p class="cd">1 - 7</p>
+    <p class="cd">0 - 9</p>
+    <p class="cd">Spaces before stump = Spaces before top</p>
+    <p class="cd">''</p>
+    <br />
+    <p class="cd">''</p>
+    <p class="cd">TIP 3</p>
+    <br />
+    <p class="cd">You will need to do the following in your program :</p>
+    <br />
+    <p class="cd">1. Decrement spaces by one each time through the loop</p>
+    <p class="cd">2. Increment the hashes by 2 each time through the loop</p>
+    <p class="cd">3. Save spaces to the stump by calculating tree height - 1</p>
+    <p class="cd">4. Decrement from tree height until it equals 0</p>
+    <p class="cd">5. Print spaces and then hashes for each row</p>
+    <p class="cd">6. Print stump spaces and then 1 hash</p>
+    <p class="cd">''</p>
+    <br />
+    <p class="cm"># Get the number of rows for the tree</p>
+    <p class="cd">tree_height = input("How tall is the tree : ")</p>
+    <br />
+    <p class="cm"># Convert into an integer</p>
+    <p class="cd">tree_height = int(tree_height)</p>
+    <br />
+    <p class="cm"># Get the starting spaces for the top of the tree</p>
+    <p class="cd">spaces = tree_height - 1</p>
+    <br />
+    <p class="cm"># There is one hash to start that will be incremented</p>
+    <p class="cd">hashes = 1</p>
+    <br />
+    <p class="cm"># Save stump spaces til later</p>
+    <p class="cd">stump_spaces = tree_height - 1</p>
+    <br />
+    <p class="cm"># Makes sure the right number of rows are printed</p>
+    <p class="cd">while tree_height != 0:</p>
+    <p class="cm">&emsp;&emsp;# Print the spaces</p>
+    <p class="cm">&emsp;&emsp;# end="" means a newline won't be added</p>
+    <p class="cd">&emsp;&emsp;for i in range(spaces):</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;print(' ', end="")</p>
+    <br />
+    <p class="cm">&emsp;&emsp;# Print the hashes</p>
+    <p class="cd">&emsp;&emsp;for i in range(hashes):</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;print('#', end="")</p>
+    <br />
+    <p class="cm">&emsp;&emsp;# Newline after each row is printed</p>
+    <p class="cd">&emsp;&emsp;print()</p>
+    <br />
+    <p class="cm">&emsp;&emsp;# I know from research that spaces is decremented by 1 each
+      time
+    </p>
+    <p class="cd">&emsp;&emsp;spaces -= 1</p>
+    <br />
+    <p class="cm">&emsp;&emsp;# I know from research that hashes is incremented by 2 each
+      time
+    </p>
+    <p class="cd">&emsp;&emsp;hashes += 2</p>
+    <br />
+    <p class="cm">&emsp;&emsp;# Decrement tree height each time to jump out of loop
+    </p>
+    <p class="cd">&emsp;&emsp;tree_height -= 1</p>
+    <br />
+    <p class="cm"># Print the spaces before the stump and then a hash</p>
+    <p class="cd">for i in range(stump_spaces):</p>
+    <p class="cd">&emsp;&emsp;print(' ', end="")</p>
+    <p class="cd">print("#")</p>
+    <br />	
+	<p class="cd"><i></i></p>	
     <br>
 	<p class="cd"><i></i></p>	
     <br>
@@ -518,6 +679,10 @@
     <br>
 	<p class="cd"><i></i></p>	
     <br>		
+	<p class="cd"><i></i></p>	
+    <br>
+	<p class="cd"><i></i></p>	
+    <br>	
   	</div>
     <script>
 		    const startScreen = document.getElementById('start-screen');
