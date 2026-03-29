@@ -2788,7 +2788,7 @@
     <p class="cm">// Fire off event from JS</p>
     <p class="cd">setTimeout(() => clearBtn.click(), 5000);</p>
     <br />	
-	<p class="cd"><i>85. Mouse Even</i></p>
+	<p class="cd"><i>85. Mouse Events</i></p>
 	<br />
 	<p class="cd">const logo = document.querySelector('img');</p>
     <br />
@@ -2839,8 +2839,73 @@
     <p class="cd">logo.addEventListener('drag', onDrag);</p>
     <p class="cd">logo.addEventListener('dragend', onDragEnd);</p>
     <br />	
-	<p class="cd"><i></i></p>
-	<br />	
+	<p class="cd"><i>86. The Event Object</i></p>
+	<br />
+	<p class="cd">const logo = document.querySelector('img');</p>
+    <br />
+    <p class="cd">function onClick(e) {</p>
+    <p class="cm">&emsp;&emsp;// Event properties</p>
+    <p class="cm">&emsp;&emsp;// console.log(e.target);</p>
+    <p class="cm">&emsp;&emsp;// console.log(e.currentTarget);</p>
+    <p class="cm">&emsp;&emsp;// console.log(e.type);</p>
+    <p class="cm">&emsp;&emsp;// console.log(e.timeStamp);</p>
+    <p class="cm">&emsp;&emsp;// console.log(e.clientX);</p>
+    <p class="cm">&emsp;&emsp;// console.log(e.clientY);</p>
+    <p class="cm">&emsp;&emsp;// console.log(e.offsetX);</p>
+    <p class="cm">&emsp;&emsp;// console.log(e.offsetY);</p>
+    <p class="cm">&emsp;&emsp;// console.log(e.pageX);</p>
+    <p class="cm">&emsp;&emsp;// console.log(e.pageY);</p>
+    <p class="cm">&emsp;&emsp;// console.log(e.screenX);</p>
+    <p class="cm">&emsp;&emsp;// console.log(e.screenY);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">function onDrag(e) {</p>
+    <p class="cd">&emsp;&emsp;document.querySelector('h1').textContent = `X ${e.clientX} Y
+      ${e.clientY}`;
+    </p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">logo.addEventListener('click', onClick);</p>
+    <p class="cd">logo.addEventListener('drag', onDrag);</p>
+    <br />
+    <p class="cm">// document.body.addEventListener('click', function (e) {</p>
+    <p class="cm">// console.log(e.target);</p>
+    <p class="cm">// console.log(e.currentTarget);</p>
+    <p class="cm">// });</p>
+    <br />
+    <p class="cm">// e.preventDefault() method prevents the default behavior</p>
+    <p class="cd">
+      document.querySelector('a').addEventListener('click', function (e) {
+    </p>
+    <p class="cd">&emsp;&emsp;e.preventDefault();</p>
+    <p class="cd">&emsp;&emsp;console.log('Link was clicked');</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cm">/*</p>
+    <p class="cm">- `target` - The element that triggered the event</p>
+    <p class="cm">- `currentTarget` - The element that the event listener is attached to
+      (These are the same in this case
+    </p>
+    <p class="cm">- `type` - The type of event that was triggered</p>
+    <p class="cm">- `timeStamp` - The time that the event was triggered</p>
+    <p class="cm">- `clientX` - The x position of the mouse click relative to the window
+    </p>
+    <p class="cm">- `clientY` - The y position of the mouse click relative to the window
+    </p>
+    <p class="cm">- `offsetX` - The x position of the mouse click relative to the element
+    </p>
+    <p class="cm">- `offsetY` - The y position of the mouse click relative to the element
+    </p>
+    <p class="cm">- `pageX` - The x position of the mouse click relative to the page
+    </p>
+    <p class="cm">- `pageY` - The y position of the mouse click relative to the page
+    </p>
+    <p class="cm">- `screenX` - The x position of the mouse click relative to the screen
+    </p>
+    <p class="cm">- `screenY` - The y position of the mouse click relative to the screen
+    </p>
+    <p class="cm">*/</p>
+    <br />	
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
