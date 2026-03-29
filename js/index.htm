@@ -2906,8 +2906,59 @@
     </p>
     <p class="cm">*/</p>
     <br />	
-	<p class="cd"><i></i></p>
-	<br />	
+	<p class="cd"><i>87. Keyboard Events & Key Properties</i></p>
+	<br />
+	<p class="cd">const itemInput = document.getElementById('item-input');</p>
+    <br />
+    <p class="cd">const onKeyPress = (e) => {</p>
+    <p class="cd">&emsp;&emsp;console.log('keypress');</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">const onKeyUp = (e) => {</p>
+    <p class="cd">&emsp;&emsp;console.log('keyup');</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cd">const onKeyDown = (e) => {</p>
+    <p class="cm">&emsp;&emsp;// key</p>
+    <p class="cm">&emsp;&emsp;// if (e.key === 'Enter') {</p>
+    <p class="cm">&emsp;&emsp;// alert('You pressed enter');</p>
+    <p class="cm">&emsp;&emsp;// }</p>
+    <br />
+    <p class="cm">&emsp;&emsp;// keyCode</p>
+    <p class="cm">&emsp;&emsp;//
+      https://www.toptal.com/developers/keycode/table-of-all-keycodes
+    </p>
+    <p class="cd">&emsp;&emsp;if (e.keyCode === 13) {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;alert('You pressed enter');</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <br />
+    <p class="cm">&emsp;&emsp;// code</p>
+    <p class="cd">&emsp;&emsp;if (e.code === 'Digit1') {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log('You pressed 1');</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <br />
+    <p class="cm">&emsp;&emsp;// repeat</p>
+    <p class="cd">&emsp;&emsp;if (e.repeat) {</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;console.log('You are holding down ' + e.key);
+    </p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <br />
+    <p class="cm">&emsp;&emsp;// shiftKey, ctrlKey & altKey</p>
+    <p class="cd">&emsp;&emsp;console.log('Shift: ' + e.shiftKey);</p>
+    <p class="cd">&emsp;&emsp;console.log('Control: ' + e.ctrlKey);</p>
+    <p class="cd">&emsp;&emsp;console.log('Alt: ' + e.altKey);</p>
+    <br />
+    <p class="cd">&emsp;&emsp;if (e.shiftKey && e.key === 'K') {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log('You hit shift + K');</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cm">// Event Listeners</p>
+    <p class="cd">itemInput.addEventListener('keypress', onKeyPress);</p>
+    <p class="cd">itemInput.addEventListener('keyup', onKeyUp);</p>
+    <p class="cd">itemInput.addEventListener('keydown', onKeyDown);</p>
+    <br />	
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
