@@ -2447,7 +2447,7 @@
     <br />
 	<p class="cd"><i>76. InnerHTML vs createElement()</i></p>
 	<br>	
-    <p class='cd'>// Quick & Dirty	</p>
+    <p class='cm">// Quick & Dirty	</p>
     <p class='cd'>function createListItem(item) {	</p>
     <p class='cd'>&emsp;&emsp;const li = document.createElement('li');	</p>
     <br>		
@@ -2459,7 +2459,7 @@
     <p class='cd'>&emsp;&emsp;document.querySelector('.items').appendChild(li);	</p>
     <p class='cd'>}	</p>
     <br>		
-    <p class='cd'>// Clean & Performant	</p>
+    <p class='cm">// Clean & Performant	</p>
     <p class='cd'>function createNewItem(item) {	</p>
     <p class='cd'>&emsp;&emsp;const li = document.createElement('li');	</p>
     <p class='cd'>&emsp;&emsp;li.appendChild(document.createTextNode(item));	</p>
@@ -2960,12 +2960,80 @@
     <p class="cd">itemInput.addEventListener('keydown', onKeyDown);</p>
     <br />	
 	<p class="cd"><i></i></p>
-	<br />	
+	<br />
+	<p class='cm">// Method 1	</p>
+	<p class='cm">// window.addEventListener('keydown', (e) => {	</p>
+	<p class='cm">//&emsp;&emsp;const insert = document.getElementById('insert');	</p>
+	<br>		
+	<p class='cm">//&emsp;&emsp;insert.innerHTML = `	</p>
+	<p class='cm">//&emsp;&emsp;&emsp;&emsp;<div class="key">	</p>
+	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${e.key === ' ' ? 'Space' : e.key}	</p>
+	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<small>e.key</small>	</p>
+	<p class='cm">//&emsp;&emsp;&emsp;&emsp;</div>	</p>
+	<br>		
+	<p class='cm">//&emsp;&emsp;&emsp;&emsp;<div class="key">	</p>
+	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${e.keyCode}	</p>
+	<p class='cm">//&emsp;&emsp;&emsp;&emsp;<small>e.keyCode</small>	</p>
+	<p class='cm">//&emsp;&emsp;&emsp;&emsp;</div>	</p>
+	<br>		
+	<p class='cm">//&emsp;&emsp;&emsp;&emsp;<div class="key">	</p>
+	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${e.code}	</p>
+	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<small>e.code</small>	</p>
+	<p class='cm">//&emsp;&emsp;&emsp;&emsp;</div>	</p>
+	<p class='cm">//&emsp;&emsp;`;	</p>
+	<p class='cm">// });	</p>
+	<br>		
+	<p class='cm">// Method 2	</p>
+	<p class='cd'>function showKeyCodes(e) {	</p>
+	<p class='cd'>&emsp;&emsp;const insert = document.getElementById('insert');	</p>
+	<p class='cd'>&emsp;&emsp;insert.innerHTML = '';	</p>
+	<br>		
+	<p class='cd'>&emsp;&emsp;const keyCodes = {	</p>
+	<p class='cd'>&emsp;&emsp;&emsp;&emsp;'e.key': e.key === ' ' ? 'Space' : e.key,	</p>
+	<p class='cd'>&emsp;&emsp;&emsp;&emsp;'e.keyCode': e.keyCode,	</p>
+	<p class='cd'>&emsp;&emsp;&emsp;&emsp;'e.code': e.code,	</p>
+	<p class='cd'>&emsp;&emsp;};	</p>
+	<br>		
+	<p class='cd'>&emsp;&emsp;for (let key in keyCodes) {	</p>
+	<p class='cd'>&emsp;&emsp;&emsp;&emsp;const div = document.createElement('div');	</p>
+	<p class='cd'>&emsp;&emsp;&emsp;&emsp;div.className = 'key';	</p>
+	<p class='cd'>&emsp;&emsp;&emsp;&emsp;const small = document.createElement('small');	</p>
+	<br>		
+	<p class='cd'>&emsp;&emsp;&emsp;&emsp;const keyText = document.createTextNode(key);	</p>
+	<p class='cd'>&emsp;&emsp;&emsp;&emsp;const valueText = document.createTextNode(keyCodes[key]);	</p>
+	<br>		
+	<p class='cd'>&emsp;&emsp;&emsp;&emsp;small.appendChild(keyText);	</p>
+	<p class='cd'>&emsp;&emsp;&emsp;&emsp;div.appendChild(valueText);	</p>
+	<p class='cd'>&emsp;&emsp;&emsp;&emsp;div.appendChild(small);	</p>
+	<br>		
+	<p class='cd'>&emsp;&emsp;&emsp;&emsp;insert.appendChild(div);	</p>
+	<p class='cd'>}	</p>
+	<p class='cd'>&emsp;&emsp;}	</p>
+	<br>		
+	<p class='cd'>window.addEventListener('keydown', showKeyCodes);	</p>
+	<br>	
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
 	<br />	
-	<p class="cd"><i></i></p>		
+	<p class="cd"><i></i></p>
+	<br>	
+	<p class="cd"><i></i></p>
+	<br />	
+	<p class="cd"><i></i></p>
+	<br />	
+	<p class="cd"><i></i></p>
+	<br />
+	<p class="cd"><i></i></p>
+	<br />	
+	<p class="cd"><i></i></p>
+	<br />	
+	<p class="cd"><i></i></p>
+	<br>	
+	<p class="cd"><i></i></p>
+	<br />	
+	<p class="cd"><i></i></p>
+	<br />		
 		
   	</div>
   <script>
