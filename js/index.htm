@@ -3012,8 +3012,45 @@
 	<br>		
 	<p class='cd'>window.addEventListener('keydown', showKeyCodes);	</p>
 	<br>	
-	<p class="cd"><i></i></p>
+	<p class="cd"><i>89. Input Events</i></p>
 	<br />	
+	<p class="cd">const itemInput = document.getElementById('item-input');</p>
+    <p class="cd">
+      const priorityInput = document.getElementById('priority-input');
+    </p>
+    <p class="cd">const checkbox = document.getElementById('checkbox');</p>
+    <p class="cd">const heading = document.querySelector('h1');</p>
+    <br />
+    <p class="cd">function onInput(e) {</p>
+    <p class="cd">&emsp;&emsp;heading.textContent = e.target.value;</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">function onChecked(e) {</p>
+    <p class="cd">&emsp;&emsp;const isChecked = e.target.checked;</p>
+    <p class="cd">
+      &emsp;&emsp;heading.textContent = isChecked ? 'Checked' : 'Not Checked';
+    </p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">function onFocus() {</p>
+    <p class="cd">&emsp;&emsp;console.log('Input is focused');</p>
+    <p class="cd">&emsp;&emsp;itemInput.style.outlineStyle = 'solid';</p>
+    <p class="cd">&emsp;&emsp;itemInput.style.outlineWidth = '1px';</p>
+    <p class="cd">&emsp;&emsp;itemInput.style.outlineColor = 'red';</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">function onBlur() {</p>
+    <p class="cd">&emsp;&emsp;console.log('Input is not focused');</p>
+    <p class="cd">&emsp;&emsp;itemInput.style.outlineStyle = 'none';</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// input, change, focus and blur events</p>
+    <p class="cd">itemInput.addEventListener('input', onInput);</p>
+    <p class="cd">priorityInput.addEventListener('change', onInput);</p>
+    <p class="cd">checkbox.addEventListener('input', onChecked);</p>
+    <p class="cd">itemInput.addEventListener('focus', onFocus);</p>
+    <p class="cd">itemInput.addEventListener('blur', onBlur);</p>
+    <br />	
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
