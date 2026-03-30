@@ -671,8 +671,92 @@
     <p class="cd">&emsp;&emsp;print(' ', end="")</p>
     <p class="cd">print("#")</p>
     <br />	
-	<p class="cd"><i></i></p>	
+	<p class="cd"><i>12. Exception Handling & Accurate Floats</i></p>	
     <br>
+	<p class="cd"># Exception Handling & Accurate Floats</p>
+    <br />
+    <p class="cd"># By giving the while a value of True it will cycle until a break is
+      reached
+    </p>
+    <p class="cd">while True:</p>
+    <p class="cd">&emsp;&emsp;# If we expect an error can occur surround potential error
+      with try
+    </p>
+    <p class="cd">&emsp;&emsp;try:</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;number = int(input("Please enter a number : "))
+    </p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;break</p>
+    <br />
+    <p class="cd">&emsp;&emsp;# The code in the except block provides an error message to
+      set things right
+    </p>
+    <p class="cd">&emsp;&emsp;# We can either target a specific error like ValueError
+    </p>
+    <p class="cd">&emsp;&emsp;except ValueError:</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;print("You didn't enter a number")</p>
+    <br />
+    <p class="cd">&emsp;&emsp;# We can target all other errors with a default
+    </p>
+    <p class="cd">&emsp;&emsp;except:</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;print("An unknown error occurred")</p>
+    <p class="cd">print("Thank you for entering a number")</p>
+    <br />
+    <p class="cd"># Python Problem for you to Solve</p>
+    <br />
+    <p class="cd"># I want you to implement a Do While loop in Python</p>
+    <p class="cd"># The rules for a Do While loop is that they always execute all of the
+      code at least once
+    </p>
+    <p class="cd"># After that 1st loop if the condition is true they will run that code
+      again.
+    </p>
+    <p class="cd">''</p>
+    <p class="cd">
+      I want you to create a guessing game in which the user must chose a number
+      between 1 and 10 with the following format.
+    </p>
+    <br />
+    <p class="cd">Guess a number between 1 and 10 : 1</p>
+    <p class="cd">Guess a number between 1 and 10 : 3</p>
+    <p class="cd">Guess a number between 1 and 10 : 5</p>
+    <p class="cd">Guess a number between 1 and 10 : 7</p>
+    <p class="cd">You guessed it</p>
+    <p class="cd">''</p>
+    <br />
+    <p class="cd">secret_number = 7</p>
+    <p class="cd">while True:</p>
+    <p class="cd">
+      &emsp;&emsp;guess = int(input("Guess a number between 1 and 10 : "))
+    </p>
+    <br />
+    <p class="cd">&emsp;&emsp;if guess == secret_number:</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;print("You guessed it")</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;break</p>
+    <br />
+    <p class="cd"># More Accurate Floats</p>
+    <br />
+    <p class="cd"># The decimal module provides for more accurate floating point
+      calculations
+    </p>
+    <p class="cd"># With from you can reference methods without the need to reference the
+      module like we had to do with math in a previous video
+    </p>
+    <p class="cd"># 28 points of precision by default.</p>
+    <p class="cd"># We can also create an alias being D here to avoid conflicts with methods
+      with the same name
+    </p>
+    <br />
+    <p class="cd">from decimal import Decimal as D</p>
+    <br />
+    <p class="cd">sum = D(0)</p>
+    <p class="cd">sum += D("0.0111111111111111")</p>
+    <p class="cd">sum += D("0.0111111111111111")</p>
+    <p class="cd">sum += D("0.0111111111111111")</p>
+    <p class="cd">print("Sum = ", sum)</p>
+    <p class="cd">sum -= D("0.0333333333333333")</p>
+    <p class="cd">print("Sum = ", sum)</p>
+    <br />
 	<p class="cd"><i></i></p>	
     <br>
 	<p class="cd"><i></i></p>	
