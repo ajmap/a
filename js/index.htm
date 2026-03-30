@@ -2447,7 +2447,7 @@
     <br />
 	<p class="cd"><i>76. InnerHTML vs createElement()</i></p>
 	<br>	
-    <p class='cm">// Quick & Dirty	</p>
+    <p class="cm">// Quick & Dirty	</p>
     <p class='cd'>function createListItem(item) {	</p>
     <p class='cd'>&emsp;&emsp;const li = document.createElement('li');	</p>
     <br>		
@@ -2459,7 +2459,7 @@
     <p class='cd'>&emsp;&emsp;document.querySelector('.items').appendChild(li);	</p>
     <p class='cd'>}	</p>
     <br>		
-    <p class='cm">// Clean & Performant	</p>
+    <p class="cm">// Clean & Performant	</p>
     <p class='cd'>function createNewItem(item) {	</p>
     <p class='cd'>&emsp;&emsp;const li = document.createElement('li');	</p>
     <p class='cd'>&emsp;&emsp;li.appendChild(document.createTextNode(item));	</p>
@@ -2961,29 +2961,29 @@
     <br />	
 	<p class="cd"><i>88. KeyCode Mini-Project</i></p>
 	<br />
-	<p class='cm">// Method 1	</p>
-	<p class='cm">// window.addEventListener('keydown', (e) => {	</p>
-	<p class='cm">//&emsp;&emsp;const insert = document.getElementById('insert');	</p>
+	<p class="cm">// Method 1	</p>
+	<p class="cm">// window.addEventListener('keydown', (e) => {	</p>
+	<p class="cm">//&emsp;&emsp;const insert = document.getElementById('insert');	</p>
 	<br>		
-	<p class='cm">//&emsp;&emsp;insert.innerHTML = `	</p>
-	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&lt;div class="key"&gt;	</p>
-	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${e.key === ' ' ? 'Space' : e.key}	</p>
-	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<small>e.key</small>	</p>
-	<p class='cm">//&emsp;&emsp;&emsp;&emsp;</div>	</p>
+	<p class="cm">//&emsp;&emsp;insert.innerHTML = `	</p>
+	<p class="cm">//&emsp;&emsp;&emsp;&emsp;&lt;div class="key"&gt;	</p>
+	<p class="cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${e.key === ' ' ? 'Space' : e.key}	</p>
+	<p class="cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<small>e.key</small>	</p>
+	<p class="cm">//&emsp;&emsp;&emsp;&emsp;</div>	</p>
 	<br>		
-	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&ltdiv class="key"&gt;	</p>
-	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${e.keyCode}	</p>
-	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&ltsmall&gt;e.keyCode&lt/small&gt;	</p>
-	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&lt/div&gt;	</p>
+	<p class="cm">//&emsp;&emsp;&emsp;&emsp;&ltdiv class="key"&gt;	</p>
+	<p class="cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${e.keyCode}	</p>
+	<p class="cm">//&emsp;&emsp;&emsp;&emsp;&ltsmall&gt;e.keyCode&lt/small&gt;	</p>
+	<p class="cm">//&emsp;&emsp;&emsp;&emsp;&lt/div&gt;	</p>
 	<br>		
-	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&ltdiv class="key"&gt;	</p>
-	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${e.code}	</p>
-	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ltsmall&gt;e.code&lt/small&gt;	</p>
-	<p class='cm">//&emsp;&emsp;&emsp;&emsp;&lt/div&gt;	</p>
-	<p class='cm">//&emsp;&emsp;`;	</p>
-	<p class='cm">// });	</p>
+	<p class="cm">//&emsp;&emsp;&emsp;&emsp;&ltdiv class="key"&gt;	</p>
+	<p class="cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${e.code}	</p>
+	<p class="cm">//&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ltsmall&gt;e.code&lt/small&gt;	</p>
+	<p class="cm">//&emsp;&emsp;&emsp;&emsp;&lt/div&gt;	</p>
+	<p class="cm">//&emsp;&emsp;`;	</p>
+	<p class="cm">// });	</p>
 	<br>		
-	<p class='cm">// Method 2	</p>
+	<p class="cm">// Method 2	</p>
 	<p class='cd'>function showKeyCodes(e) {	</p>
 	<p class='cd'>&emsp;&emsp;const insert = document.getElementById('insert');	</p>
 	<p class='cd'>&emsp;&emsp;insert.innerHTML = '';	</p>
