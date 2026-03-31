@@ -3051,8 +3051,56 @@
     <p class="cd">itemInput.addEventListener('focus', onFocus);</p>
     <p class="cd">itemInput.addEventListener('blur', onBlur);</p>
     <br />	
-	<p class="cd"><i></i></p>
-	<br />	
+	<p class="cd"><i>90. Form Submission & FormData Object</i></p>
+	<br />
+	<p class="cd">const form = document.getElementById('item-form');</p>
+    <br />
+    <p class="cd">function onSubmit(e) {</p>
+    <p class="cd">&emsp;&emsp;e.preventDefault();</p>
+    <br />
+    <p class="cm">&emsp;&emsp;// Get value with .value</p>
+    <p class="cd">
+      &emsp;&emsp;const item = document.getElementById('item-input').value;
+    </p>
+    <p class="cd">
+      &emsp;&emsp;const priority =
+      document.getElementById('priority-input').value;
+    </p>
+    <br />
+    <p class="cd">&emsp;&emsp;if (item === '' || priority === '0') {</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;alert('Please fill in all fields');
+    </p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;return;</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <br />
+    <p class="cd">&emsp;&emsp;console.log(item, priority);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// Using the FormData Object</p>
+    <p class="cd">function onSubmit2(e) {</p>
+    <p class="cd">&emsp;&emsp;e.preventDefault();</p>
+    <br />
+    <p class="cd">&emsp;&emsp;const formData = new FormData(form);</p>
+    <br />
+    <p class="cm">&emsp;&emsp;// Get individual items</p>
+    <p class="cd">&emsp;&emsp;const item = formData.get('item');</p>
+    <p class="cd">&emsp;&emsp;const priority = formData.get('priority');</p>
+    <br />
+    <p class="cd">&emsp;&emsp;console.log(item, priority);</p>
+    <br />
+    <p class="cm">&emsp;&emsp;// Get al entried as an Iterator</p>
+    <p class="cd">&emsp;&emsp;const entries = formData.entries();</p>
+    <p class="cd">&emsp;&emsp;console.log(entries);</p>
+    <br />
+    <p class="cm">&emsp;&emsp;// Loop through entries</p>
+    <p class="cd">&emsp;&emsp;for (let entry of entries) {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;console.log(entry[1]);</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">form.addEventListener('submit', onSubmit2);</p>
+    <br />	
 	<p class="cd"><i></i></p>
 	<br>	
 	<p class="cd"><i></i></p>
