@@ -3101,8 +3101,31 @@
     <br />
     <p class="cd">form.addEventListener('submit', onSubmit2);</p>
     <br />	
-	<p class="cd"><i></i></p>
-	<br>	
+	<p class="cd"><i>1. Event Bubbling</i></p>
+	<br />
+    <p class="cd">const button = document.querySelector('form button');</p>
+    <p class="cd">
+      const div = document.querySelector('form div:nth-child(2)');
+    </p>
+    <p class="cd">const form = document.querySelector('form');</p>
+    <br />
+    <p class="cd">button.addEventListener('click', (e) => {</p>
+    <p class="cd">&emsp;&emsp;alert('Button was clicked');</p>
+    <p class="cd">&emsp;&emsp;e.stopPropagation();</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">div.addEventListener('click', () => {</p>
+    <p class="cd">&emsp;&emsp;alert('Div was clicked');</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">form.addEventListener('click', () => {</p>
+    <p class="cd">&emsp;&emsp;alert('Form was clicked');</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">document.body.addEventListener('click', () => {</p>
+    <p class="cd">&emsp;&emsp;alert('Body was clicked');</p>
+    <p class="cd">});</p>
+    <br />	
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
