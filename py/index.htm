@@ -673,13 +673,13 @@
     <br />	
 	<p class="cd"><i>12. Exception Handling & Accurate Floats</i></p>	
     <br>
-	<p class="cd"># Exception Handling & Accurate Floats</p>
+	<p class="cm"># Exception Handling & Accurate Floats</p>
     <br />
-    <p class="cd"># By giving the while a value of True it will cycle until a break is
+    <p class="cm"># By giving the while a value of True it will cycle until a break is
       reached
     </p>
     <p class="cd">while True:</p>
-    <p class="cd">&emsp;&emsp;# If we expect an error can occur surround potential error
+    <p class="cm">&emsp;&emsp;# If we expect an error can occur surround potential error
       with try
     </p>
     <p class="cd">&emsp;&emsp;try:</p>
@@ -688,27 +688,27 @@
     </p>
     <p class="cd">&emsp;&emsp;&emsp;&emsp;break</p>
     <br />
-    <p class="cd">&emsp;&emsp;# The code in the except block provides an error message to
+    <p class="cm">&emsp;&emsp;# The code in the except block provides an error message to
       set things right
     </p>
-    <p class="cd">&emsp;&emsp;# We can either target a specific error like ValueError
+    <p class="cm">&emsp;&emsp;# We can either target a specific error like ValueError
     </p>
     <p class="cd">&emsp;&emsp;except ValueError:</p>
     <p class="cd">&emsp;&emsp;&emsp;&emsp;print("You didn't enter a number")</p>
     <br />
-    <p class="cd">&emsp;&emsp;# We can target all other errors with a default
+    <p class="cm">&emsp;&emsp;# We can target all other errors with a default
     </p>
     <p class="cd">&emsp;&emsp;except:</p>
     <p class="cd">&emsp;&emsp;&emsp;&emsp;print("An unknown error occurred")</p>
     <p class="cd">print("Thank you for entering a number")</p>
     <br />
-    <p class="cd"># Python Problem for you to Solve</p>
+    <p class="cm"># Python Problem for you to Solve</p>
     <br />
-    <p class="cd"># I want you to implement a Do While loop in Python</p>
-    <p class="cd"># The rules for a Do While loop is that they always execute all of the
+    <p class="cm"># I want you to implement a Do While loop in Python</p>
+    <p class="cm"># The rules for a Do While loop is that they always execute all of the
       code at least once
     </p>
-    <p class="cd"># After that 1st loop if the condition is true they will run that code
+    <p class="cm"># After that 1st loop if the condition is true they will run that code
       again.
     </p>
     <p class="cd">''</p>
@@ -734,16 +734,16 @@
     <p class="cd">&emsp;&emsp;&emsp;&emsp;print("You guessed it")</p>
     <p class="cd">&emsp;&emsp;&emsp;&emsp;break</p>
     <br />
-    <p class="cd"># More Accurate Floats</p>
+    <p class="cm"># More Accurate Floats</p>
     <br />
-    <p class="cd"># The decimal module provides for more accurate floating point
+    <p class="cm"># The decimal module provides for more accurate floating point
       calculations
     </p>
-    <p class="cd"># With from you can reference methods without the need to reference the
+    <p class="cm"># With from you can reference methods without the need to reference the
       module like we had to do with math in a previous video
     </p>
-    <p class="cd"># 28 points of precision by default.</p>
-    <p class="cd"># We can also create an alias being D here to avoid conflicts with methods
+    <p class="cm"># 28 points of precision by default.</p>
+    <p class="cm"># We can also create an alias being D here to avoid conflicts with methods
       with the same name
     </p>
     <br />
@@ -757,8 +757,153 @@
     <p class="cd">sum -= D("0.0333333333333333")</p>
     <p class="cd">print("Sum = ", sum)</p>
     <br />
-	<p class="cd"><i></i></p>	
+	<p class="cd">13. Strings<i></i></p>	
     <br>
+	<p class="cm"># Strings</p>
+    <br />
+    <p class="cm"># Strings are a series of characters between quotes. You can use Single
+      quotes, double quotes or triple quotes.
+    </p>
+    <p class="cd">print(type("3"))</p>
+    <p class="cd">print(type('3'))</p>
+    <p class="cd">print(type('''3'''))</p>
+    <br />
+    <p class="cm"># You can see the data type for data using type</p>
+    <p class="cd">print(type(3))</p>
+    <p class="cd">print(type(3.14))</p>
+    <br />
+    <p class="cm"># Each character is stored in a series of boxes labeled with index numbers
+    </p>
+    <p class="cm"># You can find out how many characters a string contains</p>
+    <p class="cd">samp_string = "This is a very important string"</p>
+    <p class="cd">print("Length :", len(samp_string))</p>
+    <br />
+    <p class="cm"># You can get characters using index numbers starting at 0</p>
+    <p class="cd">samp_string = "This is a very important string"</p>
+    <p class="cd">print(samp_string[0])</p>
+    <p class="cm"># Get the last character</p>
+    <p class="cd">print(samp_string[-1])</p>
+    <br />
+    <p class="cm"># You can get a block of characters using slice</p>
+    <p class="cm"># A slice is where you define what index values you want between 2
+      brackets
+    </p>
+    <p class="cd">samp_string = "This is a very important string"</p>
+    <p class="cm"># Get a slice by saying where to start and end</p>
+    <p class="cm"># The 4th index isn't returned</p>
+    <p class="cd">print(samp_string[0:4])</p>
+    <br />
+    <p class="cm"># Get everything starting at an index</p>
+    <p class="cd">print(samp_string[8:])</p>
+    <br />
+    <p class="cm"># More slices</p>
+    <p class="cd">print("Every Other ", samp_string[0:-1:2])</p>
+    <p class="cd">print("Reverse ", samp_string[::-1])</p>
+    <br />
+    <p class="cm"># Join or concatenate strings with +</p>
+    <p class="cd">print("Green " + "Eggs")</p>
+    <br />
+    <p class="cm"># Repeat strings with *</p>
+    <p class="cd">print("Hello " * 5)</p>
+    <br />
+    <p class="cm"># Convert an int into a string</p>
+    <p class="cd">num_string = str(4)</p>
+    <br />
+    <p class="cm"># You can cycle through each character with for</p>
+    <p class="cd">for char in samp_string:</p>
+    <p class="cd">samp_string = "This is a very important string"</p>
+    <p class="cd">&emsp;&emsp;print(char)</p>
+    <br />
+    <p class="cm"># You can cycle through characters in pairs</p>
+    <p class="cm"># Subtract 1 from the length because length is 1 more then the highest
+      index because strings are 0 indexed
+    </p>
+    <p class="cm"># Then use range starting at index 0 through string length and increment
+      by 2 each time through
+    </p>
+    <p class="cd">samp_string = "This is a very important string"</p>
+    <p class="cd">for i in range(0, len(samp_string)-1, 2):</p>
+    <p class="cd">&emsp;&emsp;print(samp_string[i] + samp_string[i+1])</p>
+    <br />
+    <p class="cm"># Computers assign characters with a number known as a Unicode A-Z have
+      the numbers 65-90 and a-z 97-122
+    </p>
+    <p class="cm"># 2 functions allow you to work with unicodes</p>
+    <p class="cm"># You can get the Unicode code with ord()</p>
+    <p class="cd">print("A =", ord("A"))</p>
+    <p class="cm"># You can convert from Unicode with chr</p>
+    <p class="cd">print("65 =", chr(65))</p>
+    <br />
+    <p class="cm"># Let’s say you want to add val plus 1. You could type out val = val + 1,
+      but there is a shortcut way val_1 += 1
+    </p>
+    <p class="cm"># This shortcut can be used for all math operations</p>
+    <p class="cd">val_1 -= 5</p>
+    <p class="cd">val_1 *= 3</p>
+    <p class="cd">val_1 /= 2</p>
+    <p class="cd">val_1 %= 6</p>
+    <br />
+    <p class="cm"># Likewise you can also add one string to another in the same way
+    </p>
+    <p class="cm"># str_1 += str_2</p>
+    <br />
+    <p class="cm"># Python Problem for you to Solve</p>
+    <br />
+    <p class="cm"># Here is another problem you can work through</p>
+    <p class="cm"># Remember it isn’t important if you don’t get it right</p>
+    <p class="cm"># Think in new ways, search the internet and the only goal is to
+      understand the solution.
+    </p>
+    <p class="cm"># Your code should receive a uppercase string and then hide it’s meaning
+      by turning it into a string of unicodes
+    </p>
+    <p class="cm"># Then it should translate the unicodes back into the original message
+    </p>
+    <br />
+    <p class="cd">
+      norm_string = input("Enter a string to hide in uppercase: ")
+    </p>
+    <br />
+    <p class="cd">secret_string = ""</p>
+    <br />
+    <p class="cm"># Cycle through each character in the string</p>
+    <p class="cd">for char in norm_string:</p>
+    <p class="cm">&emsp;&emsp;# Store each character code in a new string</p>
+    <p class="cm">&emsp;&emsp;# += is the same as secret_string = secret_string + whatever
+    </p>
+    <p class="cd">&emsp;&emsp;secret_string += str(ord(char))</p>
+    <br />
+    <p class="cd">print("Secret Message :", secret_string)</p>
+    <br />
+    <p class="cd">norm_string = ""</p>
+    <br />
+    <p class="cm"># Cycle through each character code 2 at a time by incrementing by
+    </p>
+    <p class="cm"># 2 each time through since unicodes go from 65 to 90</p>
+    <p class="cd">for i in range(0, len(secret_string)-1, 2):</p>
+    <p class="cm">&emsp;&emsp;# Get the 1st and 2nd for the 2 digit number</p>
+    <p class="cd">&emsp;&emsp;char_code = secret_string[i] + secret_string[i+1]
+    </p>
+    <br />
+    <p class="cm">&emsp;&emsp;# Convert the codes into characters and add them to the new
+      string
+    </p>
+    <p class="cd">&emsp;&emsp;norm_string += chr(int(char_code))</p>
+    <p class="cd">print("Original Message :", norm_string)</p>
+    <br />
+    <p class="cm"># 2nd Python Problem for you to Solve</p>
+    <br />
+    <p class="cm"># Now if you solved the previous problem I have another for you
+    </p>
+    <p class="cm"># Make the above work with upper and lowercase letters by changing 2 lines
+      of code
+    </p>
+    <br />
+    <p class="cm"># Add these 2 changes</p>
+    <br />
+    <p class="cd">secret_string += str(ord(char) - 23)</p>
+    <p class="cd">norm_string += chr(int(char_code) + 23)</p>
+    <br />	
 	<p class="cd"><i></i></p>	
     <br>
 	<p class="cd"><i></i></p>	
@@ -766,7 +911,8 @@
 	<p class="cd"><i></i></p>	
     <br>
 	<p class="cd"><i></i></p>	
-    <br>	
+    <br>
+		
   	</div>
     <script>
 		    const startScreen = document.getElementById('start-screen');
