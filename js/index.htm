@@ -3099,7 +3099,7 @@
     <br />
     <p class="cd">form.addEventListener('submit', onSubmit2);</p>
     <br />	
-	<p class="cd"><i>1. Event Bubbling</i></p>
+	<p class="cd"><i>91. Event Bubbling</i></p>
 	<br />
     <p class="cd">const button = document.querySelector('form button');</p>
     <p class="cd">
@@ -3124,8 +3124,32 @@
     <p class="cd">&emsp;&emsp;alert('Body was clicked');</p>
     <p class="cd">});</p>
     <br />	
-	<p class="cd"><i></i></p>
+	<p class="cd"><i>92. Event Delegation & Multiple Elements</i></p>
 	<br />	
+	<p class="cd">const listItems = document.querySelectorAll('li');</p>
+    <p class="cd">const list = document.querySelector('ul');</p>
+    <br />
+    <p class="cm">// Add an event listener on all items</p>
+    <p class="cm">// listItems.forEach((item) => {</p>
+    <p class="cm">//&emsp;&emsp;item.addEventListener('click', (e) => {</p>
+    <p class="cm">//&emsp;&emsp;&emsp;&emsp;e.target.remove();</p>
+    <p class="cm">//&emsp;&emsp;});</p>
+    <p class="cm">// });</p>
+    <br />
+    <p class="cm">// Add a single event listener on the parent (Event Delegation)
+    </p>
+    <p class="cd">list.addEventListener('click', (e) => {</p>
+    <p class="cd">&emsp;&emsp;if (e.target.tagName === 'LI') {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;e.target.remove();</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">list.addEventListener('mouseover', (e) => {</p>
+    <p class="cd">&emsp;&emsp;if (e.target.tagName === 'LI') {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;e.target.style.color = 'red';</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <p class="cd">});</p>
+    <br />	
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
