@@ -3150,8 +3150,77 @@
     <p class="cd">&emsp;&emsp;}</p>
     <p class="cd">});</p>
     <br />	
-	<p class="cd"><i></i></p>
-	<br />	
+	<p class="cd"><i>93. Page Loading & Window Events</i></p>
+	<br />
+	<p class="cd">// On Page Load</p>
+    <p class="cd">// window.onload = function () {</p>
+    <p class="cd">//&emsp;&emsp;document.querySelector('h1').textContent = 'Hello World';
+    </p>
+    <p class="cd">// };</p>
+    <br />
+    <p class="cd">
+      window.addEventListener('load', () => console.log('Page Loaded'));
+    </p>
+    <br />
+    <p class="cd">// On DOM Load</p>
+    <p class="cd">
+      window.addEventListener('DOMContentLoaded', () => console.log('DOM
+      Loaded'));
+    </p>
+    <br />
+    <p class="cd">console.log('Run me');</p>
+    <br />
+    <p class="cd">// Resize Event</p>
+    <p class="cd">window.addEventListener('resize', () => {</p>
+    <p class="cd">&emsp;&emsp;document.querySelector(</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;'h1'</p>
+    <p class="cd">
+      &emsp;&emsp;).innerText = `Resized to ${window.innerWidth} x
+      ${window.innerHeight}`;
+    </p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">// Scroll Event</p>
+    <p class="cd">window.addEventListener('scroll', () => {</p>
+    <p class="cd">
+      &emsp;&emsp;console.log(`Scrolled: ${window.scrollX} x
+      ${window.scrollY}`);
+    </p>
+    <br />
+    <p class="cd">&emsp;&emsp;if (window.scrollY > 70) {</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;document.body.style.backgroundColor = 'black';
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;document.body.style.color = 'white';
+    </p>
+    <p class="cd">&emsp;&emsp;} else {</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;document.body.style.backgroundColor = 'white';
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;document.body.style.color = 'black';
+    </p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">// Focus & Blur Events</p>
+    <p class="cd">window.addEventListener('focus', () => {</p>
+    <p class="cd">
+      &emsp;&emsp;document.querySelectorAll('p').forEach((p) => {
+    </p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;p.style.color = 'blue';</p>
+    <p class="cd">&emsp;&emsp;});</p>
+    <p class="cd">});</p>
+    <br />
+    <p class="cd">window.addEventListener('blur', () => {</p>
+    <p class="cd">
+      &emsp;&emsp;document.querySelectorAll('p').forEach((p) => {
+    </p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;p.style.color = 'black';</p>
+    <p class="cd">&emsp;&emsp;});</p>
+    <p class="cd">});</p>
+    <br />
 	<p class="cd"><i></i></p>
 	<br />
 	<p class="cd"><i></i></p>
