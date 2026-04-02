@@ -904,8 +904,250 @@
     <p class="cd">secret_string += str(ord(char) - 23)</p>
     <p class="cd">norm_string += chr(int(char_code) + 23)</p>
     <br />	
-	<p class="cd"><i></i></p>	
+	<p class="cd"><i>14. More String Functions</i></p>	
     <br>
+	<p class="cm"># MORE STRING FUNCTIONS</p>
+    <br />
+    <p class="cm"># Strings have many methods we can use beyond what I covered last time
+    </p>
+    <p class="cd">rand_string = "   this is an important string   "</p>
+    <br />
+    <p class="cm"># Delete whitespace on left</p>
+    <p class="cd">rand_string = rand_string.lstrip()</p>
+    <br />
+    <p class="cm"># Delete whitespace on right</p>
+    <p class="cd">rand_string = rand_string.rstrip()</p>
+    <br />
+    <p class="cm"># Delete whitespace on right and left</p>
+    <p class="cd">rand_string = rand_string.strip()</p>
+    <br />
+    <p class="cm"># Capitalize the 1st letter</p>
+    <p class="cd">print(rand_string.capitalize())</p>
+    <br />
+    <p class="cm"># Capitalize every letter</p>
+    <p class="cd">print(rand_string.upper())</p>
+    <br />
+    <p class="cm"># lowercase all letters</p>
+    <p class="cd">print(rand_string.lower())</p>
+    <br />
+    <p class="cm"># Turn a list into a string</p>
+    <p class="cd">a_list = ["Bunch", "of", "random", "words"]</p>
+    <p class="cd">print(" ".join(a_list))</p>
+    <br />
+    <p class="cm"># Convert a string into a list</p>
+    <p class="cd">rand_string = "this is an important string"</p>
+    <p class="cd">a_list_2 = rand_string.split()</p>
+    <br />
+    <p class="cd">for i in a_list_2:</p>
+    <p class="cd">&emsp;&emsp;print(i)</p>
+    <br />
+    <p class="cm"># We can find how many times a string occurs in a string</p>
+    <p class="cd">rand_string = "this is an important string"</p>
+    <p class="cd">print("How many is :", rand_string.count("is"))</p>
+    <br />
+    <p class="cm"># Get an index for a matching string</p>
+    <p class="cd">rand_string = "this is an important string"</p>
+    <p class="cd">print("Where is string :", rand_string.find("string"))</p>
+    <br />
+    <p class="cm"># Replace a string</p>
+    <p class="cd">rand_string = "this is an important string"</p>
+    <p class="cd">print(rand_string.replace("an ", "a kind of "))</p>
+    <br />
+    <p class="cm"># Python Problem for you to Solve</p>
+    <br />
+    <p class="cm"># It’s time to test what you have learned</p>
+    <p class="cm"># You will create an acronym generator</p>
+    <p class="cm"># The user will enter a string and then convert it to an acronym with
+      uppercase letters like this
+    </p>
+    <p class="cm"># Convert to Acronym : Random Access Memory</p>
+    <p class="cm"># RAM</p>
+    <br />
+    <p class="cm"># Ask for a string</p>
+    <p class="cd">orig_string = input("Convert to Acronym : ")</p>
+    <br />
+    <p class="cm"># Convert the string to all uppercase</p>
+    <p class="cd">orig_string = orig_string.upper()</p>
+    <br />
+    <p class="cm"># Convert the string into a list</p>
+    <p class="cd">list_of_words = orig_string.split()</p>
+    <br />
+    <p class="cm"># Cycle through the list</p>
+    <p class="cd">for word in list_of_words:</p>
+    <br />
+    <p class="cm">&emsp;&emsp;# Get the 1st letter of the word and eliminate the newline
+    </p>
+    <p class="cd">&emsp;&emsp;print(word[0], end="")</p>
+    <p class="cd">print()</p>
+    <br />
+    <p class="cm"># More String Methods</p>
+    <br />
+    <p class="cm"># Returns True if characters are letters or numbers</p>
+    <p class="cm"># Whitespace is false</p>
+    <p class="cd">letter_z = "z"</p>
+    <p class="cd">print("Is z a letter or number :", letter_z.isalnum())</p>
+    <br />
+    <p class="cm"># Returns True if characters are letters</p>
+    <p class="cd">print("Is z a letter :", letter_z.isalpha())</p>
+    <br />
+    <p class="cm"># Returns True if characters are numbers (Floats are False)
+    </p>
+    <p class="cd">num_3 = "3"</p>
+    <p class="cd">print("Is 3 a number :", num_3.isdigit())</p>
+    <br />
+    <p class="cm"># Returns True if all are lowercase</p>
+    <p class="cd">print("Is z a lowercase :", letter_z.islower())</p>
+    <br />
+    <p class="cm"># Returns True if all are uppercase</p>
+    <p class="cd">print("Is z a uppercase :", letter_z.isupper())</p>
+    <br />
+    <p class="cm"># Returns True if all are spaces</p>
+    <p class="cd">a_space = " "</p>
+    <p class="cd">print("Is space a space :", a_space.isspace())</p>
+    <br />
+    <p class="cm"># 2nd Python Problem for you to Solve</p>
+    <br />
+    <p class="cm"># This problem will really wrack your brain, so don’t worry if you can’t
+      solve it
+    </p>
+    <p class="cm"># Feel free to use all the resources of the internet to try.
+    </p>
+    <br />
+    <p class="cm"># We are going to make a Caesar’s Cipher</p>
+    <p class="cm"># Encryption is super popular so let’s take a look at one of the first
+    </p>
+    <p class="cm"># Here is what you’ll have to program.</p>
+    <br />
+    <p class="cm"># Receive a message and then encrypt it by shifting the characters by a
+      requested amount to the right
+    </p>
+    <p class="cm"># A becomes D, B becomes E for example. Also decrypt the message back
+      again.
+    </p>
+    <br />
+    <p class="cm"># You should check if a character is a letter and if not leave it as its
+      default.
+    </p>
+    <br />
+    <p class="cd">''</p>
+    <p class="cd">HINTS</p>
+    <p class="cd">1. A-Z have the numbers 65-90 in unicode</p>
+    <p class="cd">2. a-z have the numbers 97-122</p>
+    <p class="cd">3. You get the unicode of a character with ord(yourLetter)</p>
+    <p class="cd">
+      4. You convert from unicode to character with chr(yourNumber)
+    </p>
+    <p class="cd">5. Use isupper() to decided which unicodes to work with</p>
+    <p class="cd">
+      6. Add the key (number of characters to shift) and if bigger or smaller
+      then the unicode for A, Z, a, or z increase or decrease by 26
+    </p>
+    <p class="cd">''</p>
+    <br />
+    <p class="cm"># Receive the message to encrypt and the number of characters to shift
+    </p>
+    <p class="cd">message = input("Enter your message : ")</p>
+    <p class="cd">
+      key = int(input("How many characters should we shift (1 - 26)"))
+    </p>
+    <br />
+    <p class="cm"># Prepare your secret message</p>
+    <p class="cd">secret_message = ""</p>
+    <br />
+    <p class="cm"># Cycle through each character in the message</p>
+    <p class="cd">for char in message:</p>
+    <br />
+    <p class="cm">&emsp;&emsp;# If it isn't a letter then keep it as it is in the else below
+    </p>
+    <p class="cd">&emsp;&emsp;if char.isalpha():</p>
+    <br />
+    <p class="cm">&emsp;&emsp;&emsp;&emsp;# Get the character code and add the shift amount
+    </p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;char_code = ord(char)</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;char_code += key</p>
+    <br />
+    <p class="cm">&emsp;&emsp;&emsp;&emsp;# If uppercase then compare to uppercase unicodes
+    </p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;if char.isupper():</p>
+    <br />
+    <p class="cm">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# If bigger than Z subtract 26
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;if char_code > ord('Z'):
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;char_code -= 26
+    </p>
+    <br />
+    <p class="cm">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# If smaller than A add 26
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;elif char_code < ord('A'):
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;char_code += 26
+    </p>
+    <br />
+    <p class="cm">&emsp;&emsp;&emsp;&emsp;# Do the same for lowercase characters
+    </p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;else:</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;if char_code > ord('z'):</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;char_code -= 26</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;elif char_code < ord('a'):</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;char_code += 26</p>
+    <br />
+    <p class="cm">&emsp;&emsp;&emsp;&emsp;# Convert from code to letter and add to message
+    </p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;secret_message += chr(char_code)</p>
+    <br />
+    <p class="cm">&emsp;&emsp;# If not a letter leave the character as is</p>
+    <p class="cd">&emsp;&emsp;else:</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;secret_message += char</p>
+    <br />
+    <p class="cd">print("Encrypted :", secret_message)</p>
+    <br />
+    <p class="cm"># To decrypt the only thing that changes is the sign of the key
+    </p>
+    <p class="cd">key = -key</p>
+    <br />
+    <p class="cd">orig_message = ""</p>
+    <br />
+    <p class="cd">for char in secret_message:</p>
+    <p class="cd">&emsp;&emsp;if char.isalpha():</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;char_code = ord(char)</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;char_code += key</p>
+    <br />
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;if char.isupper():</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;if char_code > ord('Z'):
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;char_code -= 26
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;elif char_code < ord('A'):
+    </p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;char_code += 26</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;else:</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;if char_code > ord('z'):
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;char_code -= 26
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;elif char_code < ord('a'):
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;char_code += 26
+    </p>
+    <br />
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;orig_message += chr(char_code)</p>
+    <br />
+    <p class="cd">&emsp;&emsp;else:</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;orig_message += char</p>
+    <p class="cd">print("Decrypted :", orig_message)</p>
+    <br />	
 	<p class="cd"><i></i></p>	
     <br>		
 	<p class="cd"><i></i></p>	
