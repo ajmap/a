@@ -3152,17 +3152,17 @@
     <br />	
 	<p class="cd"><i>93. Page Loading & Window Events</i></p>
 	<br />
-	<p class="cd">// On Page Load</p>
-    <p class="cd">// window.onload = function () {</p>
-    <p class="cd">//&emsp;&emsp;document.querySelector('h1').textContent = 'Hello World';
+	<p class="cm">// On Page Load</p>
+    <p class="cm">// window.onload = function () {</p>
+    <p class="cm">//&emsp;&emsp;document.querySelector('h1').textContent = 'Hello World';
     </p>
-    <p class="cd">// };</p>
+    <p class="cm">// };</p>
     <br />
     <p class="cd">
       window.addEventListener('load', () => console.log('Page Loaded'));
     </p>
     <br />
-    <p class="cd">// On DOM Load</p>
+    <p class="cm">// On DOM Load</p>
     <p class="cd">
       window.addEventListener('DOMContentLoaded', () => console.log('DOM
       Loaded'));
@@ -3170,7 +3170,7 @@
     <br />
     <p class="cd">console.log('Run me');</p>
     <br />
-    <p class="cd">// Resize Event</p>
+    <p class="cm">// Resize Event</p>
     <p class="cd">window.addEventListener('resize', () => {</p>
     <p class="cd">&emsp;&emsp;document.querySelector(</p>
     <p class="cd">&emsp;&emsp;&emsp;&emsp;'h1'</p>
@@ -3180,7 +3180,7 @@
     </p>
     <p class="cd">});</p>
     <br />
-    <p class="cd">// Scroll Event</p>
+    <p class="cm">// Scroll Event</p>
     <p class="cd">window.addEventListener('scroll', () => {</p>
     <p class="cd">
       &emsp;&emsp;console.log(`Scrolled: ${window.scrollX} x
@@ -3204,7 +3204,7 @@
     <p class="cd">&emsp;&emsp;}</p>
     <p class="cd">});</p>
     <br />
-    <p class="cd">// Focus & Blur Events</p>
+    <p class="cm">// Focus & Blur Events</p>
     <p class="cd">window.addEventListener('focus', () => {</p>
     <p class="cd">
       &emsp;&emsp;document.querySelectorAll('p').forEach((p) => {
@@ -3223,7 +3223,35 @@
     <br />
 	<p class="cd"><i>111. setTimeout & clearTimeout</i></p>
 	<br />
-		
+	<p class="cm">// setTimeout - takes in a callback and a time to wait until that callback
+      is executed
+    </p>
+    <br />
+    <p class="cd">setTimeout(function () {</p>
+    <p class="cd">&emsp;&emsp;console.log('Hello from callback');</p>
+    <p class="cd">}, 2000);</p>
+    <br />
+    <p class="cm">// Named function</p>
+    <p class="cd">setTimeout(changeText, 3000);</p>
+    <br />
+    <p class="cd">function changeText() {</p>
+    <p class="cd">
+      &emsp;&emsp;document.querySelector('h1').textContent = 'Hello from
+      callback';
+    </p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// clearTimeout() will clear a timer</p>
+    <p class="cd">const timerId = setTimeout(changeText, 3000);</p>
+    <br />
+    <p class="cd">
+      document.querySelector('#cancel').addEventListener('click', () => {
+    </p>
+    <p class="cd">&emsp;&emsp;console.log(timerId);</p>
+    <p class="cd">&emsp;&emsp;clearTimeout(timerId);</p>
+    <p class="cd">&emsp;&emsp;console.log('Timer Cancelled');</p>
+    <p class="cd">});</p>
+    <br />	
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
@@ -3234,7 +3262,7 @@
 	<br />	
 	<p class="cd"><i></i></p>
 	<br />
-		<p class="cd"><i></i></p>
+	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
 	<br />	
