@@ -3252,8 +3252,61 @@
     <p class="cd">&emsp;&emsp;console.log('Timer Cancelled');</p>
     <p class="cd">});</p>
     <br />	
-	<p class="cd"><i></i></p>
-	<br />	
+	<p class="cd"><i>112. setInterval & clearInterval</i></p>
+	<br />
+	<p class="cm">// const intervalID = setInterval(myCallback, 1000, 'Hello');
+    </p>
+    <br />
+    <p class="cm">// function myCallback(a) {</p>
+    <p class="cm">// console.log(a, Date.now());</p>
+    <p class="cm">// }</p>
+    <br />
+    <p class="cd">let intervalID;</p>
+    <br />
+    <p class="cd">function startChange() {</p>
+    <p class="cd">&emsp;&emsp;if (!intervalID) {</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;intervalID = setInterval(changeRandomColor, 1000);
+    </p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cm">// function changeColor() {</p>
+    <p class="cm">// &emsp;&emsp;if (document.body.style.backgroundColor !== 'black') {
+    </p>
+    <p class="cm">// &emsp;&emsp;&emsp;&emsp;document.body.style.backgroundColor = 'black';
+    </p>
+    <p class="cm">// &emsp;&emsp;&emsp;&emsp;document.body.style.color = 'white';
+    </p>
+    <p class="cm">// &emsp;&emsp;} else {</p>
+    <p class="cm">// &emsp;&emsp;&emsp;&emsp;document.body.style.backgroundColor = 'white';
+    </p>
+    <p class="cm">// &emsp;&emsp;&emsp;&emsp;document.body.style.color = 'black';
+    </p>
+    <p class="cm">// &emsp;&emsp;}</p>
+    <p class="cm">// }</p>
+    <br />
+    <p class="cd">function changeRandomColor() {</p>
+    <p class="cd">
+      &emsp;&emsp;const randomColor = Math.floor(Math.random() *
+      16777215).toString(16);
+    </p>
+    <p class="cd">
+      &emsp;&emsp;document.body.style.backgroundColor = `#${randomColor}`;
+    </p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">function stopChange() {</p>
+    <p class="cd">&emsp;&emsp;clearInterval(intervalID);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">
+      document.getElementById('start').addEventListener('click', startChange);
+    </p>
+    <p class="cd">
+      document.getElementById('stop').addEventListener('click', stopChange);
+    </p>
+    <br />	
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
