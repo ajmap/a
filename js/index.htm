@@ -3311,9 +3311,53 @@
       document.getElementById('stop').addEventListener('click', stopChange);
     </p>
     <br />	
-	<a href="https://www.interesque.com/js/i113.htm"><p class="cd"><i>113. Callbacks</i></p></a>
+	<a href="https://www.interesque.com/js/index/i113.htm"><p class="cd"><i>113. Callbacks</i></p></a>
 	<br />
-		
+	<p class="cm">// function toggle(e) {</p>
+    <p class="cm">// e.target.classList.toggle('danger');</p>
+    <p class="cm">// }</p>
+    <br />
+    <p class="cm">// document.querySelector('button').addEventListener('click', toggle);
+    </p>
+    <br />
+    <p class="cd">const posts = [</p>
+    <p class="cd">
+      &emsp;&emsp;{ title: 'Post One', body: 'This is post one' },
+    </p>
+    <p class="cd">
+      &emsp;&emsp;{ title: 'Post Two', body: 'This is post two' },
+    </p>
+    <p class="cd">];</p>
+    <br />
+    <p class="cd">function createPost(post, cb) {</p>
+    <p class="cd">&emsp;&emsp;setTimeout(() => {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;posts.push(post);</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;cb();</p>
+    <p class="cd">&emsp;&emsp;}, 2000);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">function getPosts() {</p>
+    <p class="cd">&emsp;&emsp;setTimeout(() => {</p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;posts.forEach(function (post) {</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const div =
+      document.createElement('div');
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;div.innerHTML =
+      `&lt;strong&gt;${post.title}&lt;/strong&gt; - ${post.body}`;
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;document.querySelector('#posts').appendChild(div);
+    </p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;});</p>
+    <p class="cd">&emsp;&emsp;}, 1000);</p>
+    <p class="cd">}</p>
+    <br />
+    <p class="cd">
+      createPost({ title: 'Post Three', body: 'This is post' }, getPosts);
+    </p>
+    <br />
 	<p class="cd"><i></i></p>
 	<br>	
 	<p class="cd"><i></i></p>
