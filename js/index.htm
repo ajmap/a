@@ -3358,8 +3358,51 @@
       createPost({ title: 'Post Three', body: 'This is post' }, getPosts);
     </p>
     <br />
-	<p class="cd"><i></i></p>
+	<p class="cd"><i>114. HTTP Request Crash Course</i></p>
 	<br>	
+	<p class="cd">const xhr = new XMLHttpRequest();</p>
+    <br />
+    <p class="cm">// Specify method and endpoint/URL</p>
+    <p class="cm">// xhr.open('GET', './movies.json');</p>
+    <p class="cd">
+      xhr.open('GET', 'https://api.github.com/users/bradtraversy/repos');
+    </p>
+    <br />
+    <p class="cm">// readyState has 5 possible values</p>
+    <p class="cm">// - 0: request not initialized</p>
+    <p class="cm">// - 1: server connection established</p>
+    <p class="cm">// - 2: request received</p>
+    <p class="cm">// - 3: processing request</p>
+    <p class="cm">// - 4: request finished and response is ready</p>
+    <p class="cd">xhr.onreadystatechange = function () {</p>
+    <p class="cd">
+      &emsp;&emsp;if (this.readyState === 4 && this.status === 200) {
+    </p>
+    <p class="cm">&emsp;&emsp;&emsp;&emsp;// console.log(JSON.parse(this.responseText));
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;const data = JSON.parse(this.responseText);
+    </p>
+    <br />
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;data.forEach((repo) => {</p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const li =
+      document.createElement('li');
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;li.innerHTML = `&lt;strong&gt;${repo.name}&lt;/strong&gt;
+      - ${repo.description}`;
+    </p>
+    <p class="cd">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;document.querySelector('#results').appendChild(li);
+    </p>
+    <p class="cd">&emsp;&emsp;&emsp;&emsp;});</p>
+    <p class="cd">&emsp;&emsp;}</p>
+    <p class="cd">};</p>
+    <br />
+    <p class="cm">// Send request</p>
+    <p class="cd">xhr.send();</p>
+    <br />
 	<p class="cd"><i></i></p>
 	<br />	
 	<p class="cd"><i></i></p>
@@ -3376,7 +3419,7 @@
 	<br />		
 		
   	</div>
-	<!--end-->	
+	<!--e-->	
   <script>
     const startScreen = document.getElementById('start-screen');
     const reader = document.getElementById('reader');
