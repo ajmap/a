@@ -35,13 +35,24 @@
 	 a {
 		 text-decoration: none;
 		 color: DarkGreen;
-	 } 
+	 }
+	.hvr:hover {
+  font-size: 0;
+}
+
+.hvr:hover::after {
+  content: attr(data-hover);
+  font-size: 1.1rem;
+  color: DodgerBlue;
+}
+	
+	  
   </style>
 </head>
 <body>
     <div id="start-screen">START</div>
     <div id="reader">
-    <p class="cd"><i>9. Using The Console</i></p>
+    <p class="cd hvr" data-hover="9. Using The Console" ><i>1. Console</i></p>
     <br>  
     <p class="cm">// Log number</p>
     <p class="cd">console.log(100);</p>
