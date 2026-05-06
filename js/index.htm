@@ -3403,8 +3403,66 @@
     <p class="cm">// Send request</p>
     <p class="cd">xhr.send();</p>
     <br />
-	<p class="cd"><i></i></p>
-	<br />	
+	<p class="cd"><i>126. Random User Mini-Project</i></p>
+	<br />
+		    <p class='cd'>	function fetchUser() {	</p>
+      <p class='cd'>	&emsp;&emsp;showSpinner();	</p>
+      <p class='cd'>	&emsp;&emsp;fetch('https://randomuser.me/api')	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;.then((res) => res.json())	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;.then((data) => {	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;hideSpinner();	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;displayUser(data.results[0]);	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;});	</p>
+      <p class='cd'>	}	</p>
+      <br>		
+      <p class='cd'>	function displayUser(user) {	</p>
+      <p class='cd'>	&emsp;&emsp;const userDisplay = document.querySelector('#user');	</p>
+      <br>		
+      <p class='cd'>	&emsp;&emsp;if (user.gender === 'female') {	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;document.body.style.backgroundColor = 'rebeccapurple';	</p>
+      <p class='cd'>	&emsp;&emsp;} else {	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;document.body.style.backgroundColor = 'steelblue';	</p>
+      <p class='cd'>	&emsp;&emsp;}	</p>
+      <br>		
+      <p class='cd'>	&emsp;&emsp;userDisplay.innerHTML = `	</p>
+      <p class='cd'>	&emsp;&emsp;<div class="flex justify-between">	</p>
+      <p class='cd'>	&emsp;&emsp;<div class="flex">	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;<img	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;class="w-48 h-48 rounded-full mr-8"	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;src="${user.picture.large}"	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;/>	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;<div class="space-y-3">	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<p class="text-xl">	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="font-bold">Name: </span>${user.name.first} ${user.name.last}	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<p class="text-xl">	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="font-bold">Email: </span> ${user.email}	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<p class="text-xl">	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="font-bold">Phone: </span> ${user.phone}	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<p class="text-xl">	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="font-bold">Location: </span> ${user.location.city} ${user.location.country}	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<p class="text-xl"><span class="font-bold">Age: </span> ${user.dob.age}</p>	</p>
+      <p class='cd'>	&emsp;&emsp;&emsp;&emsp;</div>	</p>
+      <p class='cd'>	&emsp;&emsp;</div>	</p>
+      <p class='cd'>	</div>	</p>
+      <p class='cd'>	`;	</p>
+      <p class='cd'>	}	</p>
+      <br>		
+      <p class='cd'>	&emsp;&emsp;document.querySelector('.spinner').style.display = 'block';	</p>
+      <p class='cd'>	function showSpinner() {	</p>
+      <p class='cd'>	}	</p>
+      <br>		
+      <p class='cd'>	function hideSpinner() {	</p>
+      <p class='cd'>	&emsp;&emsp;document.querySelector('.spinner').style.display = 'none';	</p>
+      <p class='cd'>	}	</p>
+      <br>		
+      <p class='cd'>	document.querySelector('#generate').addEventListener('click', fetchUser);	</p>
+      <br>		
+      <p class='cd'>	fetchUser();	</p>
+      <br>		
 	<p class="cd"><i></i></p>
 	<br />
 	<p class="cd"><i></i></p>
