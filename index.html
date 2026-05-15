@@ -8,94 +8,22 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 20px;
         }
-        .container {
-            display: grid;
-            /* Default: Mobile/Portrait - 1 column (Items 1 to 9 top to bottom) */
-            grid-template-columns: 1fr;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Desktop/Landscape Styling */
-        /* We trigger the 3-column layout at 768px width (standard tablet/laptop breakpoint) */
-        @media (min-width: 768px) {
-            .container {
-                grid-template-columns: repeat(3, 1fr); /* 3 equal columns: 1-2-3, 4-5-6, 7-8-9 */
-            }
-        }
-
-        /* Styling for the content boxes */
-        .item {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-top: 5px solid #3498db;
-            transition: transform 0.2s;
-        }
-
-        .item:hover {
-            transform: translateY(-5px);
-        }
-
-        .item h2 {
-            margin-top: 0;
-            color: #3498db;
-            font-size: 1.2rem;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        .item p {
-            font-size: 0.95rem;
-            color: #555;
+        #a {
+            display: flex;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="item">
-            <h2>Content Part 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div id="a">
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </div>
-        <div class="item">
-            <h2>Content Part 2</h2>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </div>
-        <div class="item">
-            <h2>Content Part 3</h2>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-        </div>
-        <div class="item">
-            <h2>Content Part 4</h2>
-            <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.</p>
-        </div>
-        <div class="item">
-            <h2>Content Part 5</h2>
-            <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.</p>
-        </div>
-        <div class="item">
-            <h2>Content Part 6</h2>
-            <p>Ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
-        </div>
-        <div class="item">
-            <h2>Content Part 7</h2>
-            <p>Eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Aliquam erat volutpat. Mauris vel dui a lacus pretium ultrices. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer.</p>
-        </div>
-        <div class="item">
-            <h2>Content Part 8</h2>
-            <p>Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante.</p>
-        </div>
-        <div class="item">
-            <h2>Content Part 9</h2>
-            <p>Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae.</p>
+        <div>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
         </div>
     </div>
 
