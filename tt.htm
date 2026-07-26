@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Size Finder</title>
+  <style>
+    /* Base Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      color: #fff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Start Screen State */
+    #start-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    #start-btn {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: #fff;
+    }
+
+    /* App Workspace */
+    #app-container {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    /* Main Poem/Lyric Text Zone */
+    #text-content {
+      width: 100%;
+      height: 100%;
+      padding: 8px; /* Minimal margin */
+      word-wrap: break-word;
+      white-space: pre-wrap; /* Preserves line breaks for poetry/lyrics */
+      cursor: pointer;
+      overflow: hidden; /* Helps identify when text overflows viewport */
+      line-height: 1.25;
+    }
+
+    /* Floating Layer for Floating Controls */
+    #hud-layer {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 999; /* Higher layer to float above text */
+      pointer-events: auto;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: monospace;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    #font-size-display {
+      font-size: 14px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    .hud-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .hud-btn:active {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Start Screen -->
+  <div id="start-screen">
+    <div id="start-btn">START</div>
+  </div>
+
+  <!-- Main App Window -->
+  <div id="app-container">
+    
+    <!-- Floating HUD (Layered on top) -->
+    <div id="hud-layer">
+      <span id="font-size-display">16px</span>
+      <button class="hud-btn" id="btn-decrease" title="Decrease font size">-</button>
+      <button class="hud-btn" id="btn-increase" title="Increase font size">+</button>
+    </div>
+
+    <!-- Clickable Poem / Lyric Zone -->
+    <div id="text-content">&nbsp;I dim all the lights and I sink in my chair &nbsp;The smoke from my cigarette climbs through the air &nbsp;The walls of my room fade away in the blue &nbsp;And I'm deep in a dream of you &nbsp;The smoke makes a stairway for you to descend &nbsp;You come to my arms, may this bliss never end &nbsp;For we love anew just as we used to do &nbsp;When I'm deep in a dream of you &nbsp;Then from the ceiling, sweet music comes stealing &nbsp;We glide through a lover's refrain, you're so appealing &nbsp;That I'm soon revealing my love for you over again &nbsp;My cigarette burns me, I wake with a start &nbsp;My hand isn't hurt, but there's pain in my heart &nbsp;Awake or asleep, ev'ry mem'ry I'll keep &nbsp;Deep in a dream of you.</div></div>
+
+  <script>
+    const startScreen = document.getElementById('start-screen');
+    const appContainer = document.getElementById('app-container');
+    const textContent = document.getElementById('text-content');
+    const fontSizeDisplay = document.getElementById('font-size-display');
+    const btnDecrease = document.getElementById('btn-decrease');
+    const btnIncrease = document.getElementById('btn-increase');
+
+    let currentFontSize = 16; // Initial size in pixels
+
+    // Function to update font size display & style
+    function setFontSize(newSize) {
+      currentFontSize = Math.max(6, newSize); // Ensure size stays positive
+      textContent.style.fontSize = `${currentFontSize}px`;
+      fontSizeDisplay.textContent = `${currentFontSize}px`;
+    }
+
+    // Launch Fullscreen and Switch View
+    startScreen.addEventListener('click', async () => {
+      try {
+        if (document.documentElement.requestFullscreen) {
+          await document.documentElement.requestFullscreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { /* Safari / iOS support */
+          await document.documentElement.webkitRequestFullscreen();
+        }
+      } catch (err) {
+        console.warn('Fullscreen request bypassed or denied:', err);
+      }
+
+      startScreen.style.display = 'none';
+      appContainer.style.display = 'block';
+      setFontSize(currentFontSize);
+    });
+
+    // Tap text zone to increase font size
+    textContent.addEventListener('click', () => {
+      setFontSize(currentFontSize + 1);
+    });
+
+    // Control panel buttons (prevent click event bubbling to main text)
+    btnIncrease.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setFontSize(currentFontSize + 1);
+    });
+
+    btnDecrease.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setFontSize(currentFontSize - 1);
+    });
+  </script>
+</body>
+</html>
