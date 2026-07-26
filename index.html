@@ -1,13 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I n t e r e s q u e</title>
-    <style>
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mantheapple@gmail.com</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    #s {
+      position: absolute;
+      inset: 0;
+      color: #fff;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    #b {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+
+    #a {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .t {
+      display: none;
+      width: 100%;
+      height: 100%;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 3rem;
+    }
+      #i1 {
+          font-size: 28px;
+      }
+  </style>
 </head>
 <body>
-    Questions about this domain? contact mantheapple@gmail.com
+  <div id="s">
+    <div id="b">START</div>
+  </div>
+
+  <div id="a">
+
+    <div class="t" id="i1">I dim all the lights and I sink in my chair &nbsp;The smoke from my cigarette climbs through the air &nbsp;The walls of my room fade away in the blue &nbsp;And I'm deep in a dream of you &nbsp;The smoke makes a stairway for you to descend &nbsp;You come to my arms, may this bliss never end &nbsp;For we love anew just as we used to do &nbsp;When I'm deep in a dream of you &nbsp;Then from the ceiling, sweet music comes stealing &nbsp;We glide through a lover's refrain, you're so appealing &nbsp;That I'm soon revealing my love for you over again &nbsp;My cigarette burns me, I wake with a start &nbsp;My hand isn't hurt, but there's pain in my heart &nbsp;Awake or asleep, ev'ry mem'ry I'll keep &nbsp;Deep in a dream of you.
+    </div>
+
+    <div class="t">
+      This is text number 2.
+    </div>
+
+    <div class="t">
+      This is text number 3.
+    </div>
+
+  </div>
+
+  <script>
+    const s = document.getElementById('s');
+    const a = document.getElementById('a');
+    const t = document.querySelectorAll('.t');
+
+    let c = -1;
+
+    function S() {
+      let n;
+
+      do {
+        n = Math.floor(Math.random() * t.length);
+      } while (t.length > 1 && n === c);
+
+      t.forEach(b => {
+        b.style.display = 'none';
+      });
+
+      t[n].style.display = 'flex';
+      c = n;
+    }
+
+    s.addEventListener('click', async () => {
+      try {
+        if (document.documentElement.requestFullscreen) {
+          await document.documentElement.requestFullscreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {
+          await document.documentElement.webkitRequestFullscreen();
+        }
+      } catch (err) {
+        console.warn('!', err);
+      }
+
+      s.style.display = 'none';
+      a.style.display = 'block';
+
+      S();
+    });
+
+    a.addEventListener('click', S);
+  </script>
+
 </body>
 </html>
