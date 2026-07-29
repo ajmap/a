@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mantheapple@gmail.com</title>
+  <title>I N T E R E S Q U E</title>
 
   <style>
     * {
@@ -27,6 +27,7 @@
       color: #fff;
       background: #000;
       display: flex;
+      flex-direction: column;  
       justify-content: center;
       align-items: center;
       background: #000;
@@ -38,7 +39,14 @@
       font-size: 2.5rem;
       font-weight: 700;
       letter-spacing: 4px;
+      padding: 24px 0; 
     }
+    #c {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      padding: 24px 0;   
+    }  
 
     #a {
       display: none;
@@ -55,13 +63,34 @@
           padding: 12px;
           font-size: 26px;
       }
+    #d {
+      display: none;
+          font-size: 24px;
+    margin: 20%;
+
+
+    }
   </style>
 </head>
 <body>
+    <!--
+    a = waar de verschillende lyrics in zit
+    b = LYRICS button
+    c = INFO button
+    d = INFO screen
+    s = zwart scherm met INFO button en LYRICS button
+    
+    -->
   <div id="s">
-    <div id="b">START</div>
+    <div id="c">INFO</div>
+  
+    <div id="b">LYRICS</div>  
   </div>
-
+  <div id="d">
+      This is my personal domain and website for creating simple apps.
+      <br><br><br>
+      For information about this domain please mail mantheapple at gmail.com
+  </div>  
   <div id="a">
 
     <div class="t" id="i1">I dim all the lights and I sink in my chair. The smoke from my cigarette climbs through the air. The walls of my room fade away in the blue. And I'm deep in a dream of you. The smoke makes a stairway for you to descend. You come to my arms, may this bliss never end. For we love anew just as we used to do. When I'm deep in a dream of you. Then from the ceiling, sweet music comes stealing. We glide through a lover's refrain, you're so appealing. That I'm soon revealing my love for you over again. My cigarette burns me, I wake with a start. My hand isn't hurt, but there's pain in my heart. Awake or asleep, every memory I'll keep. Deep in a dream of you.
@@ -75,7 +104,9 @@
 
   <script>
     const s = document.getElementById('s');
+    const b = document.getElementById('b');  
     const a = document.getElementById('a');
+    const d = document.getElementById('d');
     const t = document.querySelectorAll('.t');
 
     let c = -1;
@@ -95,7 +126,7 @@
       c = n;
     }
 
-    s.addEventListener('click', async () => {
+    b.addEventListener('click', async () => {
       try {
         if (document.documentElement.requestFullscreen) {
           await document.documentElement.requestFullscreen();
@@ -107,10 +138,19 @@
       }
 
       s.style.display = 'none';
-      a.style.display = 'block';
+      d.style.display = 'none';
+      a.style.display = 'block';  
 
       S();
     });
+        s.addEventListener('click', () => {
+     
+
+      s.style.display = 'none';
+      a.style.display = 'none';
+      d.style.display = 'flex';  
+
+    });  
 
     a.addEventListener('click', S);
   </script>
