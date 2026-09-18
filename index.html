@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Stop Counter</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      overflow: hidden;
+    }
+
+    button {
+      border: none;
+      border-radius: 12px;
+      padding: 25px 60px;
+
+      font-size: 40px;
+      font-weight: bold;
+
+      cursor: pointer;
+      background: white;
+      color: #111;
+
+      transition: transform 0.1s;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    #number {
+      display: none;
+      font-size: 30vw;
+      font-weight: bold;
+      line-height: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button id="startButton">START</button>
+
+  <button id="stopButton" style="display: none;">
+    STOP
+  </button>
+
+  <div id="number"></div>
+
+  <script>
+    const startButton = document.getElementById("startButton");
+    const stopButton = document.getElementById("stopButton");
+    const number = document.getElementById("number");
+
+    let startTime = 0;
+    let intervalTime = 0;
+    let count = 1;
+    let timer = null;
+
+    // START
+    startButton.addEventListener("click", async () => {
+
+      // Enter fullscreen
+      try {
+        if (document.documentElement.requestFullscreen) {
+          await document.documentElement.requestFullscreen();
+        }
+      } catch (error) {
+        console.log("Fullscreen was not allowed.");
+      }
+
+      // Remember when START was clicked
+      startTime = performance.now();
+
+      // Show STOP
+      startButton.style.display = "none";
+      stopButton.style.display = "block";
+    });
+
+
+    // STOP
+    stopButton.addEventListener("click", () => {
+
+      // Calculate the time between START and STOP
+      intervalTime = performance.now() - startTime;
+
+      // Hide STOP and show the counter
+      stopButton.style.display = "none";
+      number.style.display = "block";
+
+      count = 1;
+
+      // Show first number immediately
+      number.textContent = count;
+
+      // Start counting using the measured interval
+      timer = setInterval(() => {
+
+        count++;
+
+        if (count <= 100) {
+          number.textContent = count;
+        } else {
+          clearInterval(timer);
+        }
+
+      }, intervalTime);
+    });
+  </script>
+
+</body>
+</html>
 
