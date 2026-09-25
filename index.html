@@ -47,36 +47,285 @@
       transform: scale(0.95);
     }
 
+    /* START / STOP */
+    #startButton,
+    #stopButton {
+      position: absolute;
+    }
+
+    /* NUMBER */
     #number {
       display: none;
+
       font-size: 30vw;
       font-weight: bold;
       line-height: 1;
+
+      cursor: pointer;
+      user-select: none;
+
+      width: 100%;
+      height: 100%;
+
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* RESULTS SCREEN */
+    #resultsScreen {
+      display: none;
+
+      width: 100%;
+      height: 100%;
+
+      padding: 30px;
+
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+    }
+
+    #resultsScreen h1 {
+      margin: 0 0 30px 0;
+      font-size: 48px;
+    }
+
+    .stat {
+      margin: 8px 0;
+      font-size: 25px;
+    }
+
+    .stat strong {
+      font-size: 32px;
+    }
+
+    .date {
+      color: #aaa;
+      font-size: 18px;
+      margin-top: 3px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .smallButton {
+      padding: 15px 25px;
+      font-size: 22px;
+    }
+
+    #clearButton {
+      background: #333;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      #resultsScreen {
+        padding: 20px;
+      }
+
+      #resultsScreen h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .stat {
+        font-size: 20px;
+      }
+
+      .stat strong {
+        font-size: 27px;
+      }
+
+      .date {
+        font-size: 15px;
+      }
+
+      .smallButton {
+        font-size: 18px;
+        padding: 13px 20px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <button id="startButton">START</button>
+  <!-- START -->
+  <button id="startButton">
+    START
+  </button>
 
+  <!-- STOP -->
   <button id="stopButton" style="display: none;">
     STOP
   </button>
 
+  <!-- COUNTING NUMBER -->
   <div id="number"></div>
+
+  <!-- RESULTS -->
+  <div id="resultsScreen">
+
+    <h1>Session Result</h1>
+
+    <div class="stat">
+      Last count:
+      <strong id="lastCount">-</strong>
+    </div>
+
+    <div class="stat">
+      Average:
+      <strong id="averageCount">-</strong>
+    </div>
+
+    <div class="stat">
+      Highest:
+      <strong id="highestCount">-</strong>
+      <div class="date" id="highestDate">-</div>
+    </div>
+
+    <div class="stat">
+      Lowest:
+      <strong id="lowestCount">-</strong>
+      <div class="date" id="lowestDate">-</div>
+    </div>
+
+    <div class="stat">
+      Total recorded sessions:
+      <strong id="totalSessions">0</strong>
+    </div>
+
+    <div class="buttons">
+      <button class="smallButton" id="newSessionButton">
+        NEW SESSION
+      </button>
+
+      <button class="smallButton" id="clearButton">
+        CLEAR HISTORY
+      </button>
+    </div>
+
+  </div>
+
 
   <script>
     const startButton = document.getElementById("startButton");
     const stopButton = document.getElementById("stopButton");
     const number = document.getElementById("number");
 
+    const resultsScreen = document.getElementById("resultsScreen");
+
+    const lastCount = document.getElementById("lastCount");
+    const averageCount = document.getElementById("averageCount");
+    const highestCount = document.getElementById("highestCount");
+    const lowestCount = document.getElementById("lowestCount");
+
+    const highestDate = document.getElementById("highestDate");
+    const lowestDate = document.getElementById("lowestDate");
+
+    const totalSessions = document.getElementById("totalSessions");
+
+    const newSessionButton =
+      document.getElementById("newSessionButton");
+
+    const clearButton =
+      document.getElementById("clearButton");
+
+
+    /*
+      ==========================================
+      SETTINGS / VARIABLES
+      ==========================================
+    */
+
+    const STORAGE_KEY = "startStopCounterHistory";
+
     let startTime = 0;
     let intervalTime = 0;
+
     let count = 1;
+
     let timer = null;
 
-    // START
+    let sessionStartedAt = null;
+
+
+    /*
+      ==========================================
+      LOCAL STORAGE
+      ==========================================
+    */
+
+    function getHistory() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+
+        if (!saved) {
+          return [];
+        }
+
+        const history = JSON.parse(saved);
+
+        if (Array.isArray(history)) {
+          return history;
+        }
+
+        return [];
+
+      } catch (error) {
+        console.log("Could not read saved history.");
+        return [];
+      }
+    }
+
+
+    function saveHistory(history) {
+      try {
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify(history)
+        );
+      } catch (error) {
+        console.log("Could not save history.");
+      }
+    }
+
+
+    /*
+      ==========================================
+      DATE / TIME
+      ==========================================
+    */
+
+    function formatDateTime(timestamp) {
+
+      const date = new Date(timestamp);
+
+      return date.toLocaleString(undefined, {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      });
+    }
+
+
+    /*
+      ==========================================
+      START
+      ==========================================
+    */
+
     startButton.addEventListener("click", async () => {
 
       // Enter fullscreen
@@ -88,45 +337,311 @@
         console.log("Fullscreen was not allowed.");
       }
 
+
       // Remember when START was clicked
       startTime = performance.now();
+
+      sessionStartedAt = new Date().toISOString();
+
+
+      // Reset counter
+      count = 1;
+
 
       // Show STOP
       startButton.style.display = "none";
       stopButton.style.display = "block";
+
+      // Hide results if necessary
+      resultsScreen.style.display = "none";
     });
 
 
-    // STOP
+    /*
+      ==========================================
+      STOP
+      ==========================================
+    */
+
     stopButton.addEventListener("click", () => {
 
-      // Calculate the time between START and STOP
+      // Calculate time between START and STOP
       intervalTime = performance.now() - startTime;
 
-      // Hide STOP and show the counter
-      stopButton.style.display = "none";
-      number.style.display = "block";
 
+      // Hide STOP
+      stopButton.style.display = "none";
+
+
+      // Show number
+      number.style.display = "flex";
+
+
+      // Reset counter
       count = 1;
 
-      // Show first number immediately
+
+      // Show first number
       number.textContent = count;
 
-      // Start counting using the measured interval
+
+      // Prevent an old timer from continuing
+      if (timer !== null) {
+        clearInterval(timer);
+      }
+
+
+      // Start counting
       timer = setInterval(() => {
 
         count++;
 
         if (count <= 100) {
+
           number.textContent = count;
+
         } else {
+
           clearInterval(timer);
+          timer = null;
+
         }
 
       }, intervalTime);
     });
+
+
+    /*
+      ==========================================
+      NUMBER CLICK
+      ==========================================
+      
+      Clicking the number records the current
+      number and ends the session.
+    */
+
+    number.addEventListener("click", () => {
+
+      // Make sure we actually have a session
+      if (!sessionStartedAt) {
+        return;
+      }
+
+
+      // Stop the automatic counter
+      if (timer !== null) {
+        clearInterval(timer);
+        timer = null;
+      }
+
+
+      /*
+        Save this session
+      */
+
+      const record = {
+        number: count,
+
+        // Exact date/time when the number was pressed
+        timestamp: new Date().toISOString(),
+
+        // When this session started
+        sessionStartedAt: sessionStartedAt
+      };
+
+
+      const history = getHistory();
+
+      history.push(record);
+
+      saveHistory(history);
+
+
+      // End current session
+      sessionStartedAt = null;
+
+
+      // Show statistics
+      showResults(history);
+    });
+
+
+    /*
+      ==========================================
+      SHOW RESULTS
+      ==========================================
+    */
+
+    function showResults(history) {
+
+      if (history.length === 0) {
+        return;
+      }
+
+
+      /*
+        Last count
+      */
+
+      const lastRecord = history[history.length - 1];
+
+      lastCount.textContent = lastRecord.number;
+
+
+      /*
+        All numbers
+      */
+
+      const numbers = history.map(record => {
+        return Number(record.number);
+      });
+
+
+      /*
+        Average
+      */
+
+      const total = numbers.reduce(
+        (sum, value) => sum + value,
+        0
+      );
+
+      const average = total / numbers.length;
+
+      averageCount.textContent = average.toFixed(2);
+
+
+      /*
+        Highest
+      */
+
+      const highest = Math.max(...numbers);
+
+      const highestRecord = history.find(record => {
+        return Number(record.number) === highest;
+      });
+
+      highestCount.textContent = highest;
+
+      highestDate.textContent =
+        formatDateTime(highestRecord.timestamp);
+
+
+      /*
+        Lowest
+      */
+
+      const lowest = Math.min(...numbers);
+
+      const lowestRecord = history.find(record => {
+        return Number(record.number) === lowest;
+      });
+
+      lowestCount.textContent = lowest;
+
+      lowestDate.textContent =
+        formatDateTime(lowestRecord.timestamp);
+
+
+      /*
+        Total sessions
+      */
+
+      totalSessions.textContent = history.length;
+
+
+      /*
+        Change screen
+      */
+
+      number.style.display = "none";
+
+      startButton.style.display = "none";
+
+      stopButton.style.display = "none";
+
+      resultsScreen.style.display = "flex";
+    }
+
+
+    /*
+      ==========================================
+      NEW SESSION
+      ==========================================
+    */
+
+    newSessionButton.addEventListener("click", () => {
+
+      // Hide results
+      resultsScreen.style.display = "none";
+
+
+      // Show START
+      startButton.style.display = "block";
+
+
+      // Reset variables
+      count = 1;
+      startTime = 0;
+      intervalTime = 0;
+      sessionStartedAt = null;
+
+
+      if (timer !== null) {
+        clearInterval(timer);
+        timer = null;
+      }
+    });
+
+
+    /*
+      ==========================================
+      CLEAR HISTORY
+      ==========================================
+    */
+
+    clearButton.addEventListener("click", () => {
+
+      const confirmed = confirm(
+        "Are you sure you want to delete all saved sessions?"
+      );
+
+
+      if (!confirmed) {
+        return;
+      }
+
+
+      localStorage.removeItem(STORAGE_KEY);
+
+
+      // Reset displayed statistics
+      lastCount.textContent = "-";
+      averageCount.textContent = "-";
+      highestCount.textContent = "-";
+      lowestCount.textContent = "-";
+      highestDate.textContent = "-";
+      lowestDate.textContent = "-";
+      totalSessions.textContent = "0";
+
+
+      // Return to start
+      resultsScreen.style.display = "none";
+      startButton.style.display = "block";
+    });
+
+
+    /*
+      ==========================================
+      SAFETY
+      ==========================================
+      
+      If the page is reloaded, the saved history
+      remains in localStorage.
+    */
+
   </script>
 
 </body>
 </html>
-
+```
