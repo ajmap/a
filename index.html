@@ -39,11 +39,13 @@
 <body>
 
   Dit is een test1
-  <footer></footer>
+  <div id="y"></div>
+  <div id="z"></div>
   <script>
-        let f = document.getElementsByTagName("footer")[0];
-        f.addEventListener("click", function() {
-        f.style.backgroundColor = "lightblue";
+        let y = document.getElementById("y");
+        let z = document.getElementById("z");
+        y.addEventListener("click", function() {
+        y.style.backgroundColor = "lightblue";
     });
   </script>
 </body>
