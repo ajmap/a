@@ -45,7 +45,11 @@
         let y = document.getElementById("y");
         let z = document.getElementById("z");
         y.addEventListener("click", function() {
-        y.style.backgroundColor = "lightblue";
+                if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
     });
   </script>
 </body>
