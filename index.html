@@ -49,6 +49,10 @@
   <div id="y"></div>
   <div id="z"></div>
   <script>
+        let a = document.getElementById("a");
+        let bb = document.getElementById("bb");
+        let cc = document.getElementById("cc");
+        let dd = document.getElementById("dd");
         let y = document.getElementById("y");
         let z = document.getElementById("z");
         y.addEventListener("click", function() {
@@ -57,6 +61,14 @@
         } else if (document.exitFullscreen) {
           document.exitFullscreen();
         }
+    });
+    z.addEventListener("click", function() {
+        x.style.display = "none";
+        a.style.display = "block";
+    });
+    bb.addEventListener("click", function() {
+        x.style.display = "none";
+        bb.style.display = "block";
     });
   </script>
 </body>
