@@ -1,1 +1,365 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Screen App</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #151515;
+      color: white;
+    }
+
+    .screen {
+      display: none;
+      width: 100%;
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    .screen.active {
+      display: flex;
+    }
+
+    /* START screen */
+    #STA {
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: #151515;
+      font-size: 3rem;
+      font-weight: bold;
+      letter-spacing: 5px;
+    }
+
+    /* Menu screen */
+    #IDX {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    #IDX h1 {
+      margin-bottom: 20px;
+    }
+
+    .menu-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 220px));
+      gap: 15px;
+    }
+
+    button {
+      padding: 16px 24px;
+      border: none;
+      border-radius: 8px;
+      background: #303030;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #505050;
+    }
+
+    /* Content screens */
+    .content-screen {
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #dddddd;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .navigation button {
+      min-width: 120px;
+    }
+
+    .navigation .menu-button {
+      background: #444;
+    }
+
+    @media (max-width: 480px) {
+      .screen {
+        padding: 20px;
+      }
+
+      #STA {
+        font-size: 2.2rem;
+      }
+
+      .menu-buttons {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+      }
+
+      .navigation {
+        gap: 8px;
+      }
+
+      .navigation button {
+        min-width: 0;
+        padding: 14px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 1. START SCREEN -->
+  <div id="STA" class="screen active">
+    START
+  </div>
+
+  <!-- 2. INDEX / MENU SCREEN -->
+  <div id="IDX" class="screen">
+    <h1>MENU</h1>
+
+    <div class="menu-buttons">
+      <button data-target="ABC">ABC</button>
+      <button data-target="DEF">DEF</button>
+      <button data-target="GHI">GHI</button>
+      <button data-target="JKL">JKL</button>
+      <button data-target="MNO">MNO</button>
+      <button data-target="PQR">PQR</button>
+      <button data-target="XYZ">XYZ</button>
+    </div>
+  </div>
+  <div id="XYZ" class="screen content-screen">
+    <div class="content">
+      <h1>XYZ</h1>
+      <p>
+        XYZ
+      </p>
+    </div>
+
+    <div class="navigation">
+      <button data-direction="down" >DOWN</button>
+      <button class="menu-button" data-target="IDX">MENU</button>
+      <button data-direction="up" disabled>UP</button>
+    </div>
+  </div>
+
+
+  <!-- 3. ABC -->
+  <div id="ABC" class="screen content-screen">
+    <div class="content">
+      <h1>ABC</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+
+    <div class="navigation">
+      <button data-direction="down" disabled>DOWN</button>
+      <button class="menu-button" data-target="IDX">MENU</button>
+      <button data-direction="up">UP</button>
+    </div>
+  </div>
+
+  <!-- 4. DEF -->
+  <div id="DEF" class="screen content-screen">
+    <div class="content">
+      <h1>DEF</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Duis aute irure dolor in reprehenderit in voluptate velit
+        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia.
+      </p>
+    </div>
+
+    <div class="navigation">
+      <button data-direction="down">DOWN</button>
+      <button class="menu-button" data-target="IDX">MENU</button>
+      <button data-direction="up">UP</button>
+    </div>
+  </div>
+
+  <!-- 5. GHI -->
+  <div id="GHI" class="screen content-screen">
+    <div class="content">
+      <h1>GHI</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Integer nec odio. Praesent libero. Sed cursus ante dapibus
+        diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+        Duis sagittis ipsum. Praesent mauris.
+      </p>
+    </div>
+
+    <div class="navigation">
+      <button data-direction="down">DOWN</button>
+      <button class="menu-button" data-target="IDX">MENU</button>
+      <button data-direction="up">UP</button>
+    </div>
+  </div>
+
+  <!-- 6. JKL -->
+  <div id="JKL" class="screen content-screen">
+    <div class="content">
+      <h1>JKL</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Fusce nec tellus sed augue semper porta. Mauris massa.
+        Vestibulum lacinia arcu eget nulla. Class aptent taciti
+        sociosqu ad litora torquent per conubia nostra.
+      </p>
+    </div>
+
+    <div class="navigation">
+      <button data-direction="down">DOWN</button>
+      <button class="menu-button" data-target="IDX">MENU</button>
+      <button data-direction="up">UP</button>
+    </div>
+  </div>
+
+  <!-- 7. MNO -->
+  <div id="MNO" class="screen content-screen">
+    <div class="content">
+      <h1>MNO</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nam nec ante. Sed lacinia, urna non tincidunt mattis,
+        tortor neque adipiscing diam, a cursus ipsum ante quis turpis.
+        Nulla facilisi. Ut fringilla.
+      </p>
+    </div>
+
+    <div class="navigation">
+      <button data-direction="down">DOWN</button>
+      <button class="menu-button" data-target="IDX">MENU</button>
+      <button data-direction="up">UP</button>
+    </div>
+  </div>
+
+  <!-- 8. PQR -->
+  <div id="PQR" class="screen content-screen">
+    <div class="content">
+      <h1>PQR</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
+        Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque
+        sem at dolor. Maecenas mattis.
+      </p>
+    </div>
+
+    <div class="navigation">
+      <button data-direction="down">DOWN</button>
+      <button class="menu-button" data-target="IDX">MENU</button>
+      <button data-direction="up" >UP</button>
+    </div>
+  </div>
+
+  <script>
+    const screens = [
+      "STA",
+      "IDX",
+      "ABC",
+      "DEF",
+      "GHI",
+      "JKL",
+      "MNO",
+      "PQR",
+      "XYZ"
+    ];
+
+    const contentScreens = [
+      "ABC",
+      "DEF",
+      "GHI",
+      "JKL",
+      "MNO",
+      "PQR",
+      "XYZ"
+    ];
+
+    function showScreen(id) {
+      screens.forEach(screenId => {
+        document.getElementById(screenId)
+          .classList.toggle("active", screenId === id);
+      });
+    }
+
+    // START: enter fullscreen and open the menu.
+    document.getElementById("STA").addEventListener("click", async () => {
+      try {
+        if (!document.fullscreenElement) {
+          await document.documentElement.requestFullscreen();
+        }
+      } catch (error) {
+        // Fullscreen may be unavailable; the app still works.
+        console.warn("Fullscreen is unavailable.", error);
+      }
+
+      showScreen("IDX");
+    });
+
+    // Menu and MENU buttons.
+    document.querySelectorAll("[data-target]").forEach(button => {
+      button.addEventListener("click", () => {
+        showScreen(button.dataset.target);
+      });
+    });
+
+    // UP and DOWN navigation.
+    document.querySelectorAll("[data-direction]").forEach(button => {
+      button.addEventListener("click", () => {
+        const currentScreen = button.closest(".screen").id;
+        const currentIndex = contentScreens.indexOf(currentScreen);
+        const direction = button.dataset.direction;
+
+        const nextIndex = direction === "up"
+          ? currentIndex + 1
+          : currentIndex - 1;
+
+        // Stay within the first and last content screens.
+        if (nextIndex >= 0 && nextIndex < contentScreens.length) {
+          showScreen(contentScreens[nextIndex]);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
