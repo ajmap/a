@@ -53,6 +53,7 @@
         let bb = document.getElementById("bb");
         let cc = document.getElementById("cc");
         let dd = document.getElementById("dd");
+        let x = document.getElementsByClassName("x");
         let y = document.getElementById("y");
         let z = document.getElementById("z");
         y.addEventListener("click", function() {
@@ -67,7 +68,10 @@
         a.style.display = "block";
     });
     bb.addEventListener("click", function() {
-        x.style.display = "none";
+        for (let i of x) {
+          i.style.display = 'none';
+        }
+        a.style.display = "none";
         bb.style.display = "block";
     });
   </script>
