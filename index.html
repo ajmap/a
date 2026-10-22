@@ -25,22 +25,6 @@
       font-size: 61px;
       padding: 16px 0 0 16px;
     }
-    #y {
-      background-color: rgb(225, 225, 225);
-      width: 50vw;
-      height: 5vh;
-      position: absolute;
-      bottom: 0;
-      left 0;
-    }
-    #z {
-      background-color: rgb(225, 225, 225);
-      width: 50vw;
-      height: 5vh;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-    }
     .x { display: none; }
     #iwbl {
       font-size: 22px;
@@ -88,8 +72,6 @@
   </div>
   <div class="x" id="unfo"></div>
   <div class="x" id="otra"></div>  
-  <div id="y"></div>
-  <div id="z"></div>
   <script>
         let indx = document.getElementById("indx");
         let iwb = document.getElementById("iwb");
@@ -98,16 +80,13 @@
         let otra = document.getElementById("otra");
         let fsn = document.getElementsByClassName("fsn");
         let x = document.getElementsByClassName("x");
-        let y = document.getElementById("y");
-        let z = document.getElementById("z");
-        y.addEventListener("click", function() {
-          for (let j of fsn) {     
-          if (!document.fullscreenElement) {
+        for (let j of fsn) {
+          j.addEventListener("click", function() {
+            if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
         } else if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }}
-    });
+          document.exitFullscreen(); }
+          })}
     iwb.addEventListener("click", function() {
         for (let i of x) {
           i.style.display = 'none';
