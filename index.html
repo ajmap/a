@@ -13,6 +13,10 @@
       font-style: normal;
       font-display: swap  
     }
+    a {
+      text-decoration: none;
+      color: black;
+    }
     body {
       font-family: 'Droid Serif', serif;
       background-color: rgb(225, 225, 225);
@@ -39,7 +43,7 @@
     }
     .x { display: none; }
     #iwbl {
-      font-size: 29px;
+      font-size: 22px;
       padding: 16px 0 0 16px;
     }
   </style>
@@ -51,7 +55,7 @@
     <span id="otr">On The Road Again</span>
   </div>  
   <div class="x" id="iwbl">
-    &nbsp;I wanna be loved by you just you<br>
+    <a class="fsn">&nbsp;I wanna be loved by you just you</a><br>
     Nobody else but you<br>
     I wanna be loved by you alone<br>
     Poo poopi too<br>
@@ -92,15 +96,17 @@
         let iwbl = document.getElementById("iwbl");
         let unfo = document.getElementById("unfo");
         let otra = document.getElementById("otra");
+        let fsn = document.getElementsByClassName("fsn");
         let x = document.getElementsByClassName("x");
         let y = document.getElementById("y");
         let z = document.getElementById("z");
         y.addEventListener("click", function() {
-                if (!document.fullscreenElement) {
+          for (let j of fsn) {     
+          if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen();
         } else if (document.exitFullscreen) {
           document.exitFullscreen();
-        }
+        }}
     });
     iwb.addEventListener("click", function() {
         for (let i of x) {
