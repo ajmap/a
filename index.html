@@ -68,12 +68,13 @@
     Nobody else but you<br>
     I wanna be loved by you<br>
     Ba deedly deedly deedly dum<br> 
-    <a class="indx">Poo poopi thoo</a>
+    <a class="idx">Poo poopi thoo</a>
   </div>
   <div class="x" id="unfo"></div>
   <div class="x" id="otra"></div>  
   <script>
         let indx = document.getElementById("indx");
+        let idx = document.getElementsByClassName("idx");
         let iwb = document.getElementById("iwb");
         let iwbl = document.getElementById("iwbl");
         let unfo = document.getElementById("unfo");
@@ -94,7 +95,7 @@
         indx.style.display = "none";
         iwbl.style.display = "block";
     });
-    for (let k of indx) {
+    for (let k of idx) {
    k.addEventListener("click", function() {
         for (let i of x) {
           i.style.display = 'none';
