@@ -91,8 +91,6 @@
     <audio id="e3p" src="a/e3p.mp3"></audio>
     <script>
 
-      const xy = document.getElementById("x");
-      const r = document.getElementById("r");
       let sta = document.getElementsByClassName("sta");
       let sto = document.getElementsByClassName("sto");
       const f = document.getElementById("f");
@@ -318,19 +316,21 @@
       function XX() {
         tSec++;
       }
-      xy.onclick = () => {
+      for (let m of sta) {
+      m.onclick = () => {
         ranDom();
         clearInterval(iVal);
         iVal = setInterval(XX, 10);
-      }; 
+      }; } 
       let intVal;
       let clearIval;
-      r.onclick = () => {
+      for (let l of sto) {
+      l.onclick = () => {
         clearInterval(iVal);
         ranDom();
         intVal = setInterval(ranDom, tSec * 10);
         clearIval = setInterval(clearFunc, tSec * 110);
-      };
+      }; }
       function clearFunc() {
         clearInterval(intVal);
         clearInterval(clearIval);
