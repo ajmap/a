@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interesque</title>
+  <style>
+    * { margin: 0 }
+    @font-face {
+      font-family: 'Droid Serif';
+      src: url('droid.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap  
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    body {
+      font-family: 'Droid Serif', serif;
+      background-color: rgb(225, 225, 225);
+    }
+    #indx {
+      font-size: 59px;
+      padding: 16px 0 0 16px;
+    }
+    .x { display: none; }
+    #iwbl {
+      font-size: 22px;
+      padding: 16px 0 0 16px;
+    }
+  </style>
+</head>
+<body>
+  <div id="indx">
+    <span id="iwb">I Wanna Be Loved By You</span>
+    <span id="unf">Unforgetable</span>
+    <span id="otr">On The Road Again</span>
+  </div>  
+  <div class="x" id="iwbl">
+    <a class="fsn">&nbsp;I wanna be loved by you just you</a><br>
+    Nobody else but you<br>
+    I wanna be loved by you alone<br>
+    Poo poopi too<br>
+    <br>
+    I wanna be kissed by you just you<br>
+    Nobody else but you<br>
+    I wanna be kissed by you alone<br>
+    <br>
+    I couldn't aspire<br>
+    To anything higher<br>
+    Than to feel the desire<br>
+    To make you my own<br>
+    Padam padam patoodly dam poo<br>
+    <br>
+    I wanna be loved by you just you<br> 
+    And nobody else but you<br> 
+    I wanna be loved by you alone<br>
+    <br>
+    I couldn't aspire<br>
+    To anything higher<br>
+    Than to feel the desire<br>
+    To make you my own<br>
+    Padam padam patoo pitam phoo<br>
+    <br>
+    I wanna be loved by you just you<br>
+    Nobody else but you<br>
+    I wanna be loved by you<br>
+    Ba deedly deedly deedly dum<br> 
+    <a class="idx">Poo poopi thoo</a>
+  </div>
+  <div class="x" id="unfo"></div>
+  <div class="x" id="otra"></div>  
+  <script>
+        let indx = document.getElementById("indx");
+        let idx = document.getElementsByClassName("idx");
+        let iwb = document.getElementById("iwb");
+        let iwbl = document.getElementById("iwbl");
+        let unfo = document.getElementById("unfo");
+        let otra = document.getElementById("otra");
+        let fsn = document.getElementsByClassName("fsn");
+        let x = document.getElementsByClassName("x");
+        for (let j of fsn) {
+          j.addEventListener("click", function() {
+            if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen(); }
+          })}
+    iwb.addEventListener("click", function() {
+        for (let i of x) {
+          i.style.display = 'none';
+        }
+        indx.style.display = "none";
+        iwbl.style.display = "block";
+    });
+    for (let k of idx) {
+   k.addEventListener("click", function() {
+        for (let i of x) {
+          i.style.display = 'none';
+        }
+        indx.style.display = "block";
+    });
+    }  
+  </script>
+</body>
+</html>
