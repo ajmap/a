@@ -64,7 +64,278 @@
   </div>
   <div class="x" id="unfo"></div>
   <div class="x" id="otra"></div>  
-  <script>
+  
+    <audio id="f1p" src="f1p.mp3"></audio>
+    <audio id="f2p" src="f2p.mp3"></audio>
+    <audio id="fg1p" src="fg1p.mp3"></audio>
+    <audio id="fg2p" src="fg2p.mp3"></audio>
+    <audio id="g1p" src="g1p.mp3"></audio>
+    <audio id="g2p" src="g2p.mp3"></audio>
+    <audio id="ga1p" src="ga1p.mp3"></audio>
+    <audio id="ga2p" src="ga2p.mp3"></audio>
+    <audio id="a1p" src="a1p.mp3"></audio>
+    <audio id="a2p" src="a2p.mp3"></audio>
+    <audio id="ab1p" src="ab1p.mp3"></audio>
+    <audio id="ab2p" src="ab2p.mp3"></audio>
+    <audio id="b1p" src="b1p.mp3"></audio>
+    <audio id="b2p" src="b2p.mp3"></audio>
+    <audio id="c2p" src="c2p.mp3"></audio>
+    <audio id="c3p" src="c3p.mp3"></audio>
+    <audio id="cd2p" src="cd2p.mp3"></audio>
+    <audio id="cd3p" src="cd3p.mp3"></audio>
+    <audio id="d2p" src="d2p.mp3"></audio>
+    <audio id="d3p" src="d3p.mp3"></audio>
+    <audio id="de2p" src="de2p.mp3"></audio>
+    <audio id="de3p" src="de3p.mp3"></audio>
+    <audio id="e2p" src="e2p.mp3"></audio>
+    <audio id="e3p" src="e3p.mp3"></audio>
+    <script>
+
+      const x = document.getElementById("x");
+      const r = document.getElementById("r");
+
+      const f = document.getElementById("f");
+      const f0 = document.getElementById("f0");
+      const fg0 = document.getElementById("fg0");
+      const fg = document.getElementById("fg");
+      const g = document.getElementById("g");
+      const g0 = document.getElementById("g0");
+      const ga0 = document.getElementById("ga0");
+      const ga = document.getElementById("ga");
+      const a = document.getElementById("a");
+      const a0 = document.getElementById("a0");
+      const ab0 = document.getElementById("ab0");
+      const ab = document.getElementById("ab");
+      const b = document.getElementById("b");
+      const b0 = document.getElementById("b0");
+      const c = document.getElementById("c");
+      const c0 = document.getElementById("c0");
+      const cd0 = document.getElementById("cd0");
+      const cd = document.getElementById("cd");
+      const d = document.getElementById("d");
+      const d0 = document.getElementById("d0");
+      const de0 = document.getElementById("de0");
+      const de = document.getElementById("de");
+      const e = document.getElementById("e");
+      const e0 = document.getElementById("e0");
+      const f1p = document.getElementById("f1p");
+      const f2p = document.getElementById("f2p");
+      const fg1p = document.getElementById("fg1p");
+      const fg2p = document.getElementById("fg2p");
+      const g1p = document.getElementById("g1p");
+      const g2p = document.getElementById("g2p");
+      const ga1p = document.getElementById("ga1p");
+      const ga2p = document.getElementById("ga2p");
+      const a1p = document.getElementById("a1p");
+      const a2p = document.getElementById("a2p");
+      const ab1p = document.getElementById("ab1p");
+      const ab2p = document.getElementById("ab2p");
+      const b1p = document.getElementById("b1p");
+      const b2p = document.getElementById("b2p");
+      const c2p = document.getElementById("c2p");
+      const c3p = document.getElementById("c3p");
+      const cd2p = document.getElementById("cd2p");
+      const cd3p = document.getElementById("cd3p");
+      const d2p = document.getElementById("d2p");
+      const d3p = document.getElementById("d3p");
+      const de2p = document.getElementById("de2p");
+      const de3p = document.getElementById("de3p");
+      const e2p = document.getElementById("e2p");
+      const e3p = document.getElementById("e3p");
+
+    
+
+      let notes = [
+        "c",
+        "cd",
+        "d",
+        "de",
+        "e",
+        "f",
+        "fg",
+        "g",
+        "ga",
+        "a",
+        "ab",
+        "b",
+      ];
+      function ranDom() {
+        let j;
+        let xx = Math.floor(Math.random() * notes.length);
+        switch (notes[xx]) {
+          case "f":
+            playF0();
+            setTimeout(playF, 1700);
+            notes.splice(xx, 1);
+ 
+            break;
+          case "fg":
+            playFG0();
+            setTimeout(playFG, 1700);
+            notes.splice(xx, 1);
+
+            break;
+          case "g":
+            playG0();
+            setTimeout(playG, 1700);
+            notes.splice(xx, 1);
+
+            break;
+          case "ga":
+            playGA0();
+            setTimeout(playGA, 1700);
+            notes.splice(xx, 1);
+   
+            break;
+          case "a":
+            playA0();
+            setTimeout(playA, 1700);
+            notes.splice(xx, 1);
+
+            break;
+          case "ab":
+            playAB0();
+            setTimeout(playAB, 1700);
+            notes.splice(xx, 1);
+
+            break;
+          case "b":
+            playB0();
+            setTimeout(playB, 1700);
+            notes.splice(xx, 1);
+
+            break;
+          case "c":
+            playC0();
+            setTimeout(playC, 1700);
+            notes.splice(xx, 1);
+
+            break;
+          case "cd":
+            playCD0();
+            setTimeout(playCD, 1700);
+            notes.splice(xx, 1);
+
+            break;
+          case "d":
+            playD0();
+            setTimeout(playD, 1700);
+            notes.splice(xx, 1);
+
+            break;
+          case "de":
+            playDE0();
+            setTimeout(playDE, 1700);
+            notes.splice(xx, 1);
+ 
+            break;
+          case "e":
+            playE0();
+            setTimeout(playE, 1700);
+            notes.splice(xx, 1);
+
+            break;
+        }
+      }
+
+      function playF() {
+        f1p.play();
+      }
+      function playF0() {
+        f2p.play();
+      }
+      function playFG() {
+        fg1p.play();
+      }
+      function playFG0() {
+        fg2p.play();
+      }
+      function playG() {
+        g1p.play();
+      }
+      function playG0() {
+        g2p.play();
+      }
+      function playGA() {
+        ga1p.play();
+      }
+      function playGA0() {
+        ga2p.play();
+      }
+      function playA() {
+        a1p.play();
+      }
+      function playA0() {
+        a2p.play();
+      }
+      function playAB() {
+        ab1p.play();
+      }
+      function playAB0() {
+        ab2p.play();
+      }
+      function playB() {
+        b1p.play();
+      }
+      function playB0() {
+        b2p.play();
+      }
+      function playC() {
+        c2p.play();
+      }
+      function playC0() {
+        c3p.play();
+      }
+      function playCD() {
+        cd2p.play();
+      }
+      function playCD0() {
+        cd3p.play();
+      }
+      function playD() {
+        d2p.play();
+      }
+      function playD0() {
+        d3p.play();
+      }
+      function playDE() {
+        de2p.play();
+      }
+      function playDE0() {
+        de3p.play();
+      }
+      function playE() {
+        e2p.play();
+      }
+      function playE0() {
+        e3p.play();
+      }
+
+ 
+      let tSec = 0;
+      let iVal;
+      function XX() {
+        tSec++;
+      }
+      x.onclick = () => {
+        ranDom();
+        clearInterval(iVal);
+        iVal = setInterval(XX, 10);
+      }; 
+      let intVal;
+      let clearIval;
+      r.onclick = () => {
+        clearInterval(iVal);
+        ranDom();
+        intVal = setInterval(ranDom, tSec * 10);
+        clearIval = setInterval(clearFunc, tSec * 110);
+      };
+      function clearFunc() {
+        clearInterval(intVal);
+        clearInterval(clearIval);
+      }
+
+  //  hieronder alles van de lyrics app en hierboven alles van de piano app
         let indx = document.getElementById("indx");
         let idx = document.getElementsByClassName("idx");
         let iwb = document.getElementById("iwb");
