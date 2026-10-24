@@ -91,7 +91,7 @@
     <audio id="e3p" src="a/e3p.mp3"></audio>
     <script>
 
-      const x = document.getElementById("x");
+      const xy = document.getElementById("x");
       const r = document.getElementById("r");
 
       const f = document.getElementById("f");
@@ -317,7 +317,7 @@
       function XX() {
         tSec++;
       }
-      x.onclick = () => {
+      xy.onclick = () => {
         ranDom();
         clearInterval(iVal);
         iVal = setInterval(XX, 10);
