@@ -36,15 +36,15 @@
     I wanna be loved by you alone<br>
     Poo poopi too<br>
     <br>
-    I wanna be kissed by you just you<br>
+    <a class="sta">I wanna be kissed by you just you</a><br>
     Nobody else but you<br>
-    I wanna be kissed by you alone<br>
+    <a class="sto">I wanna be kissed by you alone</a><br>
     <br>
-    <a class="sta">I couldn't aspire</a><br>
+    I couldn't aspire<br>
     To anything higher<br>
     Than to feel the desire<br>
     To make you my own<br>
-    <a class="sto">Padam padam patoodly dam poo</a><br>
+    Padam padam patoodly dam poo<br>
     <br>
     I wanna be loved by you just you<br> 
     And nobody else but you<br> 
@@ -62,7 +62,27 @@
     Ba deedly deedly deedly dum<br> 
     <a class="idx">Poo poopi thoo</a>
   </div>
-  <div class="x" id="unfo"></div>
+  <div class="x" id="unfo">
+    <a class="fsn">&nbsp;Unforgettable that's what you are</a><br>
+    Unforgettable though near or far<br>
+    Like a song of love that clings to me<br>
+    How the thoughts of you does things to me<br>
+    Never before has someone been more<br>
+    <br>
+    <a class="sta">Unforgettable in every way</a><br>
+    And forevermore<br>
+    That's how you'll stay<br>
+    That's why darling it's incredible<br>
+    That someone so unforgettable<br>
+    <a class="sto">Thinks that I am unforgettable to</a>o<br>
+    <br>
+    Unforgettable in every way<br>
+    And forevermore<br>
+    That's how you'll stay<br>
+    That's why darling it's incredible<br>
+    That someone so unforgettable<br>
+    <a class="idx">Thinks that I am unforgettable too</a>
+  </div>
   <div class="x" id="otra"></div>  
   
     <audio id="f1p" src="a/f1p.mp3"></audio>
@@ -341,6 +361,7 @@
         let idx = document.getElementsByClassName("idx");
         let iwb = document.getElementById("iwb");
         let iwbl = document.getElementById("iwbl");
+        let unf = document.getElementById("unf");
         let unfo = document.getElementById("unfo");
         let otra = document.getElementById("otra");
         let fsn = document.getElementsByClassName("fsn");
@@ -359,6 +380,13 @@
         indx.style.display = "none";
         iwbl.style.display = "block";
     });
+    unf.addEventListener("click", function() {
+        for (let i of x) {
+          i.style.display = 'none';
+        }
+        indx.style.display = "none";
+        unfo.style.display = "block";
+    });  
     for (let k of idx) {
    k.addEventListener("click", function() {
         for (let i of x) {
