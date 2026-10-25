@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interesque</title>
+  <style>
+    * { margin: 0 }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    body {
+      background-color: rgb(225, 225, 225);
+    }
+    #indx {
+      font-size: 59px;
+      padding: 16px 0 0 16px;
+    }
+    .x { 
+      display: none;
+      padding: 16px;
+       }
+    # {
+      font-size: 23px;
+    }
+    # {
+      font-size: 25px;
+    }
+  </style>
+</head>
+<body>
+  <div id="indx">
+    <span id="iwb"></span>
+    <span id="unf"></span>
+    <span id="otr"></span>
+  </div>  
+  <div class="x" id="">
+  </div>
+  <div class="x" id="">
+  </div>
+  <div class="x" id="">   
+  </div>  
+  
+<script>
+
+        let indx = document.getElementById("indx");
+        let idx = document.getElementsByClassName("idx");
+        let iwb = document.getElementById("iwb");
+        let iwbl = document.getElementById("iwbl");
+        let unf = document.getElementById("unf");
+        let unfo = document.getElementById("unfo");
+        let otra = document.getElementById("otra");
+        let fsn = document.getElementsByClassName("fsn");
+        let x = document.getElementsByClassName("x");
+        for (let j of fsn) {
+          j.addEventListener("click", function() {
+            if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen(); }
+          })}
+    iwb.addEventListener("click", function() {
+        for (let i of x) {
+          i.style.display = 'none';
+        }
+        indx.style.display = "none";
+        iwbl.style.display = "block";
+    });
+    unf.addEventListener("click", function() {
+        for (let i of x) {
+          i.style.display = 'none';
+        }
+        indx.style.display = "none";
+        unfo.style.display = "block";
+    });  
+    for (let k of idx) {
+   k.addEventListener("click", function() {
+        for (let i of x) {
+          i.style.display = 'none';
+        }
+        indx.style.display = "block";
+    });
+    }  
+  </script>
+</body>
+</html>
+
