@@ -27,6 +27,9 @@
     #evlo {
       font-size: 17px;
     }
+    #nokn {
+      font-size: 17px;
+    }
 
   </style>
 </head>
@@ -121,7 +124,45 @@
     The only thing I'll ever ask of you<br>
     <a class="idx">You've got to promise not to stop when I say when</a><br>
   </div>
-  <div class="x" id="xyz">   
+  <div class="x" id="nokn">
+    <a class="fsn">We get some rules to follow</a><br>
+    That and this<br>
+    These and those<br>
+    No one knows<br>
+    We get these pills to swallow<br>
+    How they stick<br>
+    In your throat<br>
+    Tastes like gold<br>
+    Oh, what you do to me<br>
+    No one knows<br>
+    And I realize you're mine<br>
+    Indeed a fool am I<br>
+    And I realize you're mine<br>
+    Indeed a fool am I<br>
+    Ah<br>
+    I journey through the desert<br>
+    Of the mind<br>
+    With no hope<br>
+    I follow<br>
+    I drift along the ocean<br>
+    Dead lifeboats in the sun<br>
+    And come undone<br>
+    Pleasantly caving in<br>
+    I come undone<br>
+    And I realize you're mine<br>
+    Indeed a fool am I<br>
+    And I realize you're mine<br>
+    Indeed a fool am I<br>
+    Ah<br>
+    Heaven smiles above me<br>
+    What a gift here below<br>
+    But no one knows<br>
+    A gift that you give to me<br>
+    <a class="idx">No one knows</a>
+  </div>
+  <div class="x" id="xyz">
+  </div>  
+  <div class="x" id="abc">
   </div>  
   
 <script>
@@ -131,6 +172,8 @@
         let ltfl = document.getElementById("ltfl");
         let evl = document.getElementById("evl");
         let evlo = document.getElementById("evlo");
+        let nok = document.getElementById("nok");
+        let nokn = document.getElementById("nokn");
         let fsn = document.getElementsByClassName("fsn");
         let x = document.getElementsByClassName("x");
         for (let j of fsn) {
@@ -153,6 +196,13 @@
         }
         indx.style.display = "none";
         evlo.style.display = "block";
+    });
+    nok.addEventListener("click", function() {
+        for (let i of x) {
+          i.style.display = 'none';
+        }
+        indx.style.display = "none";
+        nokn.style.display = "block";
     });
     for (let k of idx) {
       k.addEventListener("click", function() {
