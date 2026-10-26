@@ -17,7 +17,7 @@
       font-size: 59px;
       padding: 16px 0 0 16px;
     }
-    .x { 
+    .lrcs { 
       display: none;
       padding: 16px;
        }
@@ -44,7 +44,7 @@
     <span id="aos">The Ace of Spades</span>
     <span id="xyz"></span>
   </div>  
-  <div class="x" id="ltfl">
+  <div class="lrcs" id="ltfl">
     <a class="fsn">Run and tell all of the angels</a><br>
     This could take all night<br>
     Think I need a devil to help me get things right<br>
@@ -91,7 +91,7 @@
     Make my way back home when I learn to fly<br>
     <a class="idx">Make my way back home when I learn to</a><br>
   </div>
-  <div class="x" id="evlo">
+  <div class="lrcs" id="evlo">
     <a class="fsn">Hello, I've waited here for you</a><br>
     Everlong<br>    
     Tonight, I throw myself into<br>
@@ -129,7 +129,7 @@
     The only thing I'll ever ask of you<br>
     <a class="idx">You've got to promise not to stop when I say when</a><br>
   </div>
-  <div class="x" id="nokn">
+  <div class="lrcs" id="nokn">
     <a class="fsn">We get some rules to follow</a><br>
     That and this<br>
     These and those<br>
@@ -165,7 +165,7 @@
     A gift that you give to me<br>
     <a class="idx">No one knows</a>
   </div>
-  <div class="x" id="taos">
+  <div class="lrcs" id="taos">
     <a class="fsn">If you like to gamble</a><br>
     I tell you, I'm your man<br>
     You win some, lose some<br>
@@ -202,11 +202,11 @@
     The Ace of Spades<br>   
     <a class="idx">The Ace of Spades, uh</a><br>
   </div>  
-  <div class="x" id="abc">
+  <div class="lrcs" id="abc">
   </div>  
-  <div class="x" id="xyz">
+  <div class="lrcs" id="xyz">
   </div>  
-  <div class="x" id="klm">
+  <div class="lrcs" id="klm">
   </div> 
   
 <script>
@@ -221,7 +221,7 @@
         let aos = document.getElementById("aos");
         let taos = document.getElementById("taos");
         let fsn = document.getElementsByClassName("fsn");
-        let x = document.getElementsByClassName("x");
+        let lrcs = document.getElementsByClassName("lrcs");
         for (let j of fsn) {
           j.addEventListener("click", function() {
             if (!document.fullscreenElement) {
@@ -230,28 +230,28 @@
           document.exitFullscreen(); }
           })}
     ltf.addEventListener("click", function() {
-        for (let i of x) {
+        for (let i of lrcs) {
           i.style.display = 'none';
         }
         indx.style.display = "none";
         ltfl.style.display = "block";
     }); 
     evl.addEventListener("click", function() {
-        for (let i of x) {
+        for (let i of lrcs) {
           i.style.display = 'none';
         }
         indx.style.display = "none";
         evlo.style.display = "block";
     });
     nok.addEventListener("click", function() {
-        for (let i of x) {
+        for (let i of lrcs) {
           i.style.display = 'none';
         }
         indx.style.display = "none";
         nokn.style.display = "block";
     });
     aos.addEventListener("click", function() {
-        for (let i of x) {
+        for (let i of lrcs) {
           i.style.display = 'none';
         }
         indx.style.display = "none";
@@ -259,7 +259,7 @@
     });
     for (let k of idx) {
       k.addEventListener("click", function() {
-        for (let i of x) {
+        for (let i of lrcs) {
           i.style.display = 'none';
         }
         indx.style.display = "block";
