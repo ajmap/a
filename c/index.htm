@@ -126,6 +126,8 @@
         let idx = document.getElementsByClassName("idx");
         let ltf = document.getElementById("ltf");
         let ltfl = document.getElementById("ltfl");
+        let evl = document.getElementById("ltf");
+        let evlo = document.getElementById("ltfl");
         let fsn = document.getElementsByClassName("fsn");
         let x = document.getElementsByClassName("x");
         for (let j of fsn) {
@@ -142,6 +144,13 @@
         indx.style.display = "none";
         ltfl.style.display = "block";
     }); 
+    evl.addEventListener("click", function() {
+        for (let i of x) {
+          i.style.display = 'none';
+        }
+        indx.style.display = "none";
+        evlo.style.display = "block";
+    });
     for (let k of idx) {
       k.addEventListener("click", function() {
         for (let i of x) {
