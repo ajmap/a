@@ -62,7 +62,7 @@
     To make you my own<br>
     Padam padam patoo pitam phoo<br>
     <br>
-    I wanna be loved by you just you<br>
+    <a id='blaw'>I wanna be loved by you just you</a><br>
     Nobody else but you<br>
     I wanna be loved by you<br>
     Ba deedly deedly deedly dum<br> 
@@ -125,6 +125,8 @@
     <audio id="de3p" src="a/de3p.mp3"></audio>
     <audio id="e2p" src="a/e2p.mp3"></audio>
     <audio id="e3p" src="a/e3p.mp3"></audio>
+    <audio id="blw" src="../blauw.mp3"></audio>
+    
     <script>
 
       let sta = document.getElementsByClassName("sta");
@@ -177,6 +179,8 @@
       const de3p = document.getElementById("de3p");
       const e2p = document.getElementById("e2p");
       const e3p = document.getElementById("e3p");
+      const blaw = document.getElementById("blaw");
+      const blw = document.getElementById("blw");
 
     
 
@@ -411,6 +415,13 @@
         indx.style.display = "block";
     });
     }  
+
+   blaw.addEventListener("click", function() {
+    blw.currentTime = 45;
+    blw.play();
+        
+    });
+   
   </script>
 </body>
 </html>
