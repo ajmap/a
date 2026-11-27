@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#000000">
-  <title>White Screen Fade</title>
+  <title>White Circle Fade</title>
   <style>
     * { box-sizing: border-box; }
     html, body {
@@ -16,127 +16,126 @@
       font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     }
     body {
+      position: relative;
       display: grid;
       place-items: center;
       background: #000;
       touch-action: manipulation;
     }
-    #start {
+    button {
       appearance: none;
-      border: 1px solid rgba(255,255,255,.8);
-      border-radius: 999px;
-      padding: 15px 38px;
-      color: #000;
-      background: #fff;
-      font: 600 18px/1 system-ui, sans-serif;
-      cursor: pointer;
       -webkit-tap-highlight-color: transparent;
+      cursor: pointer;
     }
-    #start:active { transform: scale(.97); }
-    #screen {
+    #start, #again {
       position: fixed;
-      left: 50%;
-      top: 50%;
-      width: min(100vw, calc(100dvh * 9 / 20));
-      height: min(100dvh, calc(100vw * 20 / 9));
-      background: #fff;
-      border-radius: clamp(18px, 4vw, 34px);
-      transform: translate(-50%, -50%) scale(1);
-      transform-origin: center;
-      display: none;
-      will-change: width, height, border-radius, transform;
-    }
-    #screen.running { display: block; }
-    #screen.done { display: none; }
-    #restart {
-      position: fixed;
+      z-index: 2;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      display: none;
-      appearance: none;
-      border: 1px solid rgba(255,255,255,.8);
       border-radius: 999px;
-      padding: 13px 28px;
+      padding: 15px 38px;
+      font: 600 18px/1 system-ui, sans-serif;
+    }
+    #start {
+      color: #000;
+      background: #fff;
+      border: 1px solid #fff;
+    }
+    #again {
+      display: none;
       color: #fff;
       background: #000;
-      font: 600 16px/1 system-ui, sans-serif;
-      cursor: pointer;
+      border: 1px solid rgba(255,255,255,.8);
     }
-    #restart.show { display: block; }
+    #again.show { display: block; }
+    #circle {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: #fff;
+      transform: translate(-50%, -50%);
+      display: none;
+      will-change: width, height, opacity;
+      pointer-events: none;
+    }
+    #circle.active { display: block; }
   </style>
 </head>
 <body>
   <button id="start" type="button">Start</button>
-  <div id="screen" aria-hidden="true"></div>
-  <button id="restart" type="button">Again</button>
+  <div id="circle" aria-hidden="true"></div>
+  <button id="again" type="button">Again</button>
 
   <script>
     const startButton = document.getElementById('start');
-    const screen = document.getElementById('screen');
-    const restartButton = document.getElementById('restart');
+    const againButton = document.getElementById('again');
+    const circle = document.getElementById('circle');
 
-    let animationFrame = 0;
+    const DURATION = 120000; // 2 minutes
+    const FADE_LAST_MS = 8000;
     let startedAt = 0;
-    const duration = 120_000;
-    const morphDuration = 10_000;
+    let frameId = 0;
 
-    function easeInOut(t) {
-      return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    function screenCoveringDiameter() {
+      // The circle starts slightly larger than the screen's diagonal,
+      // so it covers the entire rectangular display at the beginning.
+      return Math.hypot(window.innerWidth, window.innerHeight) * 1.03;
     }
 
     function animate(now) {
-      const elapsed = Math.min(now - startedAt, duration);
-      const progress = elapsed / duration;
-      const morph = easeInOut(Math.min(elapsed / morphDuration, 1));
+      const elapsed = Math.min(now - startedAt, DURATION);
+      const progress = elapsed / DURATION;
+      const diameter = screenCoveringDiameter() * (1 - progress);
+      const fadeProgress = Math.max(0, (elapsed - (DURATION - FADE_LAST_MS)) / FADE_LAST_MS);
 
-      // During the first 30 seconds the phone-shaped panel scales down
-      // and its corners round into a circle. During the next 30 seconds,
-      // that circle continues shrinking until it disappears.
-      const scale = elapsed <= morphDuration
-        ? 1 - 0.58 * easeInOut(elapsed / morphDuration)
-        : 0.42 * (1 - easeInOut((elapsed - morphDuration) / morphDuration));
+      circle.style.width = `${diameter}px`;
+      circle.style.height = `${diameter}px`;
+      circle.style.opacity = String(1 - fadeProgress);
 
-      const radius = 4 + morph * 46;
-      screen.style.borderRadius = `${radius}%`;
-      screen.style.transform = `translate(-50%, -50%) scale(${Math.max(0, scale)})`;
-
-      if (elapsed < duration) {
-        animationFrame = requestAnimationFrame(animate);
+      if (elapsed < DURATION) {
+        frameId = requestAnimationFrame(animate);
       } else {
-        screen.classList.remove('running');
-        screen.classList.add('done');
-        restartButton.classList.add('show');
+        circle.classList.remove('active');
+        againButton.classList.add('show');
       }
     }
 
     async function start() {
-      cancelAnimationFrame(animationFrame);
+      cancelAnimationFrame(frameId);
       startButton.style.display = 'none';
-      restartButton.classList.remove('show');
-      screen.classList.remove('done');
-      screen.classList.add('running');
+      againButton.classList.remove('show');
+      circle.classList.add('active');
+      circle.style.opacity = '1';
+      circle.style.width = `${screenCoveringDiameter()}px`;
+      circle.style.height = `${screenCoveringDiameter()}px`;
 
-      // Fullscreen must be requested directly from the user's tap.
+      // Fullscreen is requested directly from the tap, as required by browsers.
       try {
         if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
           await document.documentElement.requestFullscreen();
         }
       } catch (_) {
-        // Some mobile browsers do not allow webpage fullscreen; the animation
-        // still runs edge-to-edge within the available browser viewport.
+        // The animation still works if this browser does not permit fullscreen.
       }
 
       startedAt = performance.now();
-      animationFrame = requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
     }
 
     startButton.addEventListener('click', start);
-    restartButton.addEventListener('click', start);
+    againButton.addEventListener('click', start);
 
-    document.addEventListener('fullscreenchange', () => {
-      // Keep the black canvas filling the newly available fullscreen viewport.
-      document.body.style.height = '100%';
+    window.addEventListener('resize', () => {
+      // Keep the starting circle large enough if the viewport changes.
+      if (circle.classList.contains('active') && startedAt === 0) {
+        const diameter = screenCoveringDiameter();
+        circle.style.width = `${diameter}px`;
+        circle.style.height = `${diameter}px`;
+      }
     });
   </script>
 </body>
