@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>White Screen Fade</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #000;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    body {
+      display: grid;
+      place-items: center;
+      background: #000;
+      touch-action: manipulation;
+    }
+    #start {
+      appearance: none;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 999px;
+      padding: 15px 38px;
+      color: #000;
+      background: #fff;
+      font: 600 18px/1 system-ui, sans-serif;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    #start:active { transform: scale(.97); }
+    #screen {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      width: min(100vw, calc(100dvh * 9 / 20));
+      height: min(100dvh, calc(100vw * 20 / 9));
+      background: #fff;
+      border-radius: clamp(18px, 4vw, 34px);
+      transform: translate(-50%, -50%) scale(1);
+      transform-origin: center;
+      display: none;
+      will-change: width, height, border-radius, transform;
+    }
+    #screen.running { display: block; }
+    #screen.done { display: none; }
+    #restart {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      appearance: none;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 999px;
+      padding: 13px 28px;
+      color: #fff;
+      background: #000;
+      font: 600 16px/1 system-ui, sans-serif;
+      cursor: pointer;
+    }
+    #restart.show { display: block; }
+  </style>
+</head>
+<body>
+  <button id="start" type="button">Start</button>
+  <div id="screen" aria-hidden="true"></div>
+  <button id="restart" type="button">Again</button>
+
+  <script>
+    const startButton = document.getElementById('start');
+    const screen = document.getElementById('screen');
+    const restartButton = document.getElementById('restart');
+
+    let animationFrame = 0;
+    let startedAt = 0;
+    const duration = 120_000;
+    const morphDuration = 60_000;
+
+    function easeInOut(t) {
+      return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    }
+
+    function animate(now) {
+      const elapsed = Math.min(now - startedAt, duration);
+      const progress = elapsed / duration;
+      const morph = easeInOut(Math.min(elapsed / morphDuration, 1));
+
+      // During the first 30 seconds the phone-shaped panel scales down
+      // and its corners round into a circle. During the next 30 seconds,
+      // that circle continues shrinking until it disappears.
+      const scale = elapsed <= morphDuration
+        ? 1 - 0.58 * easeInOut(elapsed / morphDuration)
+        : 0.42 * (1 - easeInOut((elapsed - morphDuration) / morphDuration));
+
+      const radius = 4 + morph * 46;
+      screen.style.borderRadius = `${radius}%`;
+      screen.style.transform = `translate(-50%, -50%) scale(${Math.max(0, scale)})`;
+
+      if (elapsed < duration) {
+        animationFrame = requestAnimationFrame(animate);
+      } else {
+        screen.classList.remove('running');
+        screen.classList.add('done');
+        restartButton.classList.add('show');
+      }
+    }
+
+    async function start() {
+      cancelAnimationFrame(animationFrame);
+      startButton.style.display = 'none';
+      restartButton.classList.remove('show');
+      screen.classList.remove('done');
+      screen.classList.add('running');
+
+      // Fullscreen must be requested directly from the user's tap.
+      try {
+        if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+          await document.documentElement.requestFullscreen();
+        }
+      } catch (_) {
+        // Some mobile browsers do not allow webpage fullscreen; the animation
+        // still runs edge-to-edge within the available browser viewport.
+      }
+
+      startedAt = performance.now();
+      animationFrame = requestAnimationFrame(animate);
+    }
+
+    startButton.addEventListener('click', start);
+    restartButton.addEventListener('click', start);
+
+    document.addEventListener('fullscreenchange', () => {
+      // Keep the black canvas filling the newly available fullscreen viewport.
+      document.body.style.height = '100%';
+    });
+  </script>
+</body>
+</html>
